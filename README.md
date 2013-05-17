@@ -1,6 +1,6 @@
 # Overcoat
 
-Overcoat is an AFNetworking extension that makes it super simple for developers to use Mantle model objects with a REST client.
+Overcoat is an [AFNetworking](https://github.com/AFNetworking/AFNetworking) extension that makes it super simple for developers to use Mantle model objects with a REST client.
 
 You can learn more about Mantle [here](https://github.com/github/Mantle/blob/master/README.md).
 
