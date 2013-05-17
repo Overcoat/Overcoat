@@ -27,6 +27,49 @@
 		9943A3101744ECC000403CA3 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A30F1744ECC000403CA3 /* Accounts.framework */; };
 		9943A3121744ECE300403CA3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A3111744ECE300403CA3 /* Social.framework */; };
 		9943A3151744EDBB00403CA3 /* OVCSocialClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */; };
+		994B287517463C9A003E487E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 994B287317463C9A003E487E /* InfoPlist.strings */; };
+		994B288017463C9A003E487E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */; };
+		994B288417463C9A003E487E /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B286917463C9A003E487E /* Overcoat.framework */; };
+		994B289717463E06003E487E /* OVCQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 993002DA173BFC010077FAA5 /* OVCQuery.m */; };
+		994B289817463E16003E487E /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
+		994B289917463E16003E487E /* OVCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BB4173BEB0A0036969E /* OVCClient.m */; };
+		994B289A17463E16003E487E /* OVCSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A30A1744E4C200403CA3 /* OVCSocialClient.m */; };
+		994B289B17463E16003E487E /* OVCRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993002E0173BFDE40077FAA5 /* OVCRequestOperation.m */; };
+		994B289C17463E16003E487E /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */; };
+		994B289D17463E64003E487E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B94173BEA3D0036969E /* AFHTTPClient.m */; };
+		994B289E17463E64003E487E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B96173BEA3D0036969E /* AFHTTPRequestOperation.m */; };
+		994B289F17463E64003E487E /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B98173BEA3D0036969E /* AFImageRequestOperation.m */; };
+		994B28A017463E64003E487E /* AFJSONRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B9A173BEA3D0036969E /* AFJSONRequestOperation.m */; };
+		994B28A117463E64003E487E /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B9C173BEA3D0036969E /* AFNetworkActivityIndicatorManager.m */; };
+		994B28A217463E64003E487E /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B9F173BEA3D0036969E /* AFPropertyListRequestOperation.m */; };
+		994B28A317463E64003E487E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BA1173BEA3D0036969E /* AFURLConnectionOperation.m */; };
+		994B28A417463E64003E487E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BA3173BEA3D0036969E /* AFXMLRequestOperation.m */; };
+		994B28A617463FE1003E487E /* OVCQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002D9173BFC010077FAA5 /* OVCQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28A717463FF3003E487E /* OVCMultipartPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A479FC173D4043008C570A /* OVCMultipartPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28A817464000003E487E /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28A917464006003E487E /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28AA1746400E003E487E /* OVCRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002DF173BFDE40077FAA5 /* OVCRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2311741438E00717F72 /* NSDictionaryTests.m */; };
+		994B28B2174643AC003E487E /* OVCQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2081740CFD900717F72 /* OVCQueryTests.m */; };
+		994B28B3174643AC003E487E /* OVCMultipartPartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2191741243A00717F72 /* OVCMultipartPartTests.m */; };
+		994B28B4174643AC003E487E /* OVCRequestOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985CCD117427415006241AA /* OVCRequestOperationTests.m */; };
+		994B28B5174643AC003E487E /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BDC173BED190036969E /* OVCClientTests.m */; };
+		994B28B6174643AC003E487E /* OVCSocialClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */; };
+		994B28B8174643AC003E487E /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E23A1741487600717F72 /* TestModel.m */; };
+		994B28BE174644A0003E487E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BAF173BEA7F0036969E /* SystemConfiguration.framework */; };
+		994B28BF174644A8003E487E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
+		994B28C0174644B5003E487E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A3111744ECE300403CA3 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		994B28C1174644BB003E487E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A30F1744ECC000403CA3 /* Accounts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		994B28C317464EF6003E487E /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B28C217464EF6003E487E /* CoreServices.framework */; };
+		994B28C517464FBC003E487E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B28C417464FBC003E487E /* Cocoa.framework */; };
+		994B28C817465048003E487E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BD1173BECA10036969E /* Mantle.framework */; };
+		994B28CB17465150003E487E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A3111744ECE300403CA3 /* Social.framework */; };
+		994B28CC17465156003E487E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A30F1744ECC000403CA3 /* Accounts.framework */; };
+		994B28CD1746518F003E487E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BD1173BECA10036969E /* Mantle.framework */; };
+		994B28CE174653B2003E487E /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
+		994B28D0174653D4003E487E /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
+		994B28D717465782003E487E /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9954E2091740CFD900717F72 /* OVCQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2081740CFD900717F72 /* OVCQueryTests.m */; };
 		9954E21A1741243A00717F72 /* OVCMultipartPartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2191741243A00717F72 /* OVCMultipartPartTests.m */; };
 		9954E22C17413FBD00717F72 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */; };
@@ -34,13 +77,13 @@
 		9954E23B1741487600717F72 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E23A1741487600717F72 /* TestModel.m */; };
 		99663E13173BAD1D0090F0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
 		99663E22173BAD1D0090F0E6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */; };
-		99663E24173BAD1D0090F0E6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E23173BAD1D0090F0E6 /* UIKit.framework */; };
 		99663E25173BAD1D0090F0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
 		99663E28173BAD1D0090F0E6 /* libOvercoat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E0F173BAD1D0090F0E6 /* libOvercoat.a */; };
 		99663E2E173BAD1D0090F0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99663E2C173BAD1D0090F0E6 /* InfoPlist.strings */; };
 		9975EA451742218200C63065 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9975EA441742218200C63065 /* libOCMock.a */; };
 		9985CCD217427415006241AA /* OVCRequestOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985CCD117427415006241AA /* OVCRequestOperationTests.m */; };
 		99A479FE173D4043008C570A /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
+		99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FDF717465C03006F32A2 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +122,20 @@
 			remoteGlobalIDString = D042FC7815F72BC7004E8054;
 			remoteInfo = "Mantle iOS";
 		};
+		994B288217463C9A003E487E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99663E07173BAD1D0090F0E6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 994B286817463C9A003E487E;
+			remoteInfo = Overcoat;
+		};
+		994B28C61746503E003E487E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993E4BC7173BECA10036969E /* Mantle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D042FC3B15F72B23004E8054;
+			remoteInfo = "Mantle Mac";
+		};
 		99663E26173BAD1D0090F0E6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99663E07173BAD1D0090F0E6 /* Project object */;
@@ -89,6 +146,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		994B28CF174653C3003E487E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				994B28D0174653D4003E487E /* OCMock.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99663E0D173BAD1D0090F0E6 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -135,6 +202,14 @@
 		9943A30F1744ECC000403CA3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		9943A3111744ECE300403CA3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialClientTests.m; sourceTree = "<group>"; };
+		994B286917463C9A003E487E /* Overcoat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overcoat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		994B287217463C9A003E487E /* Overcoat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overcoat-Info.plist"; sourceTree = "<group>"; };
+		994B287417463C9A003E487E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		994B287F17463C9A003E487E /* Overcoat Mac Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat Mac Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		994B28C217464EF6003E487E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
+		994B28C417464FBC003E487E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		994B28C91746511E003E487E /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
+		994B28D117465711003E487E /* Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		9954E2081740CFD900717F72 /* OVCQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCQueryTests.m; sourceTree = "<group>"; };
 		9954E2191741243A00717F72 /* OVCMultipartPartTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPartTests.m; sourceTree = "<group>"; };
 		9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
@@ -145,18 +220,45 @@
 		99663E0F173BAD1D0090F0E6 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		99663E12173BAD1D0090F0E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99663E16173BAD1D0090F0E6 /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
-		99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvercoatTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OvercoatTests.octest; path = "Overcoat iOS Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		99663E23173BAD1D0090F0E6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		99663E2B173BAD1D0090F0E6 /* OvercoatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OvercoatTests-Info.plist"; sourceTree = "<group>"; };
 		99663E2D173BAD1D0090F0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9975EA441742218200C63065 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
 		9985CCD117427415006241AA /* OVCRequestOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCRequestOperationTests.m; sourceTree = "<group>"; };
 		99A479FC173D4043008C570A /* OVCMultipartPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCMultipartPart.h; sourceTree = "<group>"; };
 		99A479FD173D4043008C570A /* OVCMultipartPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPart.m; sourceTree = "<group>"; };
+		99B8FDF717465C03006F32A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		994B286517463C9A003E487E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B28C817465048003E487E /* Mantle.framework in Frameworks */,
+				994B28C517464FBC003E487E /* Cocoa.framework in Frameworks */,
+				994B28C317464EF6003E487E /* CoreServices.framework in Frameworks */,
+				994B28BE174644A0003E487E /* SystemConfiguration.framework in Frameworks */,
+				994B28BF174644A8003E487E /* Foundation.framework in Frameworks */,
+				994B28C0174644B5003E487E /* Social.framework in Frameworks */,
+				994B28C1174644BB003E487E /* Accounts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		994B287B17463C9A003E487E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B28CD1746518F003E487E /* Mantle.framework in Frameworks */,
+				994B288017463C9A003E487E /* SenTestingKit.framework in Frameworks */,
+				994B288417463C9A003E487E /* Overcoat.framework in Frameworks */,
+				994B28CB17465150003E487E /* Social.framework in Frameworks */,
+				994B28CC17465156003E487E /* Accounts.framework in Frameworks */,
+				994B28CE174653B2003E487E /* OCMock.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99663E0C173BAD1D0090F0E6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -169,6 +271,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */,
 				9943A3121744ECE300403CA3 /* Social.framework in Frameworks */,
 				9943A3101744ECC000403CA3 /* Accounts.framework in Frameworks */,
 				9975EA451742218200C63065 /* libOCMock.a in Frameworks */,
@@ -176,7 +279,6 @@
 				993E4BB2173BEA850036969E /* MobileCoreServices.framework in Frameworks */,
 				993E4BB0173BEA7F0036969E /* SystemConfiguration.framework in Frameworks */,
 				99663E22173BAD1D0090F0E6 /* SenTestingKit.framework in Frameworks */,
-				99663E24173BAD1D0090F0E6 /* UIKit.framework in Frameworks */,
 				99663E25173BAD1D0090F0E6 /* Foundation.framework in Frameworks */,
 				99663E28173BAD1D0090F0E6 /* libOvercoat.a in Frameworks */,
 			);
@@ -248,6 +350,8 @@
 			children = (
 				99663E0F173BAD1D0090F0E6 /* libOvercoat.a */,
 				99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */,
+				994B286917463C9A003E487E /* Overcoat.framework */,
+				994B287F17463C9A003E487E /* Overcoat Mac Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,14 +359,17 @@
 		99663E11173BAD1D0090F0E6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9975EA441742218200C63065 /* libOCMock.a */,
+				994B28C91746511E003E487E /* OCMock.framework */,
+				99B8FDF717465C03006F32A2 /* UIKit.framework */,
+				994B28C417464FBC003E487E /* Cocoa.framework */,
+				994B28C217464EF6003E487E /* CoreServices.framework */,
 				9943A3111744ECE300403CA3 /* Social.framework */,
 				9943A30F1744ECC000403CA3 /* Accounts.framework */,
-				9975EA441742218200C63065 /* libOCMock.a */,
 				993E4BB1173BEA850036969E /* MobileCoreServices.framework */,
 				993E4BAF173BEA7F0036969E /* SystemConfiguration.framework */,
 				99663E12173BAD1D0090F0E6 /* Foundation.framework */,
 				99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */,
-				99663E23173BAD1D0090F0E6 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -270,6 +377,7 @@
 		99663E14173BAD1D0090F0E6 /* Overcoat */ = {
 			isa = PBXGroup;
 			children = (
+				994B28D117465711003E487E /* Overcoat.h */,
 				993002D9173BFC010077FAA5 /* OVCQuery.h */,
 				993002DA173BFC010077FAA5 /* OVCQuery.m */,
 				99A479FC173D4043008C570A /* OVCMultipartPart.h */,
@@ -290,6 +398,8 @@
 		99663E15173BAD1D0090F0E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				994B287217463C9A003E487E /* Overcoat-Info.plist */,
+				994B287317463C9A003E487E /* InfoPlist.strings */,
 				99663E16173BAD1D0090F0E6 /* Overcoat-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -322,10 +432,66 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		994B286617463C9A003E487E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B28A617463FE1003E487E /* OVCQuery.h in Headers */,
+				994B28A717463FF3003E487E /* OVCMultipartPart.h in Headers */,
+				994B28A817464000003E487E /* OVCClient.h in Headers */,
+				994B28A917464006003E487E /* OVCSocialClient.h in Headers */,
+				994B28AA1746400E003E487E /* OVCRequestOperation.h in Headers */,
+				994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */,
+				994B28D717465782003E487E /* Overcoat.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		99663E0E173BAD1D0090F0E6 /* Overcoat */ = {
+		994B286817463C9A003E487E /* Overcoat Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99663E34173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat" */;
+			buildConfigurationList = 994B289517463C9A003E487E /* Build configuration list for PBXNativeTarget "Overcoat Mac" */;
+			buildPhases = (
+				994B286417463C9A003E487E /* Sources */,
+				994B286517463C9A003E487E /* Frameworks */,
+				994B286617463C9A003E487E /* Headers */,
+				994B286717463C9A003E487E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				994B28C71746503E003E487E /* PBXTargetDependency */,
+			);
+			name = "Overcoat Mac";
+			productName = Overcoat;
+			productReference = 994B286917463C9A003E487E /* Overcoat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		994B287E17463C9A003E487E /* Overcoat Mac Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 994B289617463C9A003E487E /* Build configuration list for PBXNativeTarget "Overcoat Mac Tests" */;
+			buildPhases = (
+				994B287A17463C9A003E487E /* Sources */,
+				994B287B17463C9A003E487E /* Frameworks */,
+				994B287C17463C9A003E487E /* Resources */,
+				994B28CF174653C3003E487E /* CopyFiles */,
+				994B287D17463C9A003E487E /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				994B288317463C9A003E487E /* PBXTargetDependency */,
+			);
+			name = "Overcoat Mac Tests";
+			productName = OvercoatTests;
+			productReference = 994B287F17463C9A003E487E /* Overcoat Mac Tests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+		99663E0E173BAD1D0090F0E6 /* Overcoat iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99663E34173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat iOS" */;
 			buildPhases = (
 				99663E0B173BAD1D0090F0E6 /* Sources */,
 				99663E0C173BAD1D0090F0E6 /* Frameworks */,
@@ -335,14 +501,14 @@
 			);
 			dependencies = (
 			);
-			name = Overcoat;
+			name = "Overcoat iOS";
 			productName = Overcoat;
 			productReference = 99663E0F173BAD1D0090F0E6 /* libOvercoat.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		99663E1F173BAD1D0090F0E6 /* OvercoatTests */ = {
+		99663E1F173BAD1D0090F0E6 /* Overcoat iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 99663E37173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "OvercoatTests" */;
+			buildConfigurationList = 99663E37173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat iOS Tests" */;
 			buildPhases = (
 				99663E1B173BAD1D0090F0E6 /* Sources */,
 				99663E1C173BAD1D0090F0E6 /* Frameworks */,
@@ -355,7 +521,7 @@
 				993E4BD9173BECBD0036969E /* PBXTargetDependency */,
 				99663E27173BAD1D0090F0E6 /* PBXTargetDependency */,
 			);
-			name = OvercoatTests;
+			name = "Overcoat iOS Tests";
 			productName = OvercoatTests;
 			productReference = 99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */;
 			productType = "com.apple.product-type.bundle";
@@ -388,8 +554,10 @@
 			);
 			projectRoot = "";
 			targets = (
-				99663E0E173BAD1D0090F0E6 /* Overcoat */,
-				99663E1F173BAD1D0090F0E6 /* OvercoatTests */,
+				99663E0E173BAD1D0090F0E6 /* Overcoat iOS */,
+				99663E1F173BAD1D0090F0E6 /* Overcoat iOS Tests */,
+				994B286817463C9A003E487E /* Overcoat Mac */,
+				994B287E17463C9A003E487E /* Overcoat Mac Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -426,6 +594,21 @@
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
+		994B286717463C9A003E487E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B287517463C9A003E487E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		994B287C17463C9A003E487E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99663E1D173BAD1D0090F0E6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -437,6 +620,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		994B287D17463C9A003E487E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
 		99663E1E173BAD1D0090F0E6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +649,41 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		994B286417463C9A003E487E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B289717463E06003E487E /* OVCQuery.m in Sources */,
+				994B289817463E16003E487E /* OVCMultipartPart.m in Sources */,
+				994B289917463E16003E487E /* OVCClient.m in Sources */,
+				994B289A17463E16003E487E /* OVCSocialClient.m in Sources */,
+				994B289B17463E16003E487E /* OVCRequestOperation.m in Sources */,
+				994B289C17463E16003E487E /* NSDictionary+Overcoat.m in Sources */,
+				994B289D17463E64003E487E /* AFHTTPClient.m in Sources */,
+				994B289E17463E64003E487E /* AFHTTPRequestOperation.m in Sources */,
+				994B289F17463E64003E487E /* AFImageRequestOperation.m in Sources */,
+				994B28A017463E64003E487E /* AFJSONRequestOperation.m in Sources */,
+				994B28A117463E64003E487E /* AFNetworkActivityIndicatorManager.m in Sources */,
+				994B28A217463E64003E487E /* AFPropertyListRequestOperation.m in Sources */,
+				994B28A317463E64003E487E /* AFURLConnectionOperation.m in Sources */,
+				994B28A417463E64003E487E /* AFXMLRequestOperation.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		994B287A17463C9A003E487E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */,
+				994B28B2174643AC003E487E /* OVCQueryTests.m in Sources */,
+				994B28B3174643AC003E487E /* OVCMultipartPartTests.m in Sources */,
+				994B28B4174643AC003E487E /* OVCRequestOperationTests.m in Sources */,
+				994B28B5174643AC003E487E /* OVCClientTests.m in Sources */,
+				994B28B6174643AC003E487E /* OVCSocialClientTests.m in Sources */,
+				994B28B8174643AC003E487E /* TestModel.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		99663E0B173BAD1D0090F0E6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -497,14 +728,32 @@
 			name = "Mantle iOS";
 			targetProxy = 993E4BD8173BECBD0036969E /* PBXContainerItemProxy */;
 		};
+		994B288317463C9A003E487E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 994B286817463C9A003E487E /* Overcoat Mac */;
+			targetProxy = 994B288217463C9A003E487E /* PBXContainerItemProxy */;
+		};
+		994B28C71746503E003E487E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Mantle Mac";
+			targetProxy = 994B28C61746503E003E487E /* PBXContainerItemProxy */;
+		};
 		99663E27173BAD1D0090F0E6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 99663E0E173BAD1D0090F0E6 /* Overcoat */;
+			target = 99663E0E173BAD1D0090F0E6 /* Overcoat iOS */;
 			targetProxy = 99663E26173BAD1D0090F0E6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		994B287317463C9A003E487E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				994B287417463C9A003E487E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		99663E2C173BAD1D0090F0E6 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -516,6 +765,98 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		994B288E17463C9A003E487E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		994B288F17463C9A003E487E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		994B289017463C9A003E487E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/OCMock/OSX\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		994B289117463C9A003E487E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"\"$(SRCROOT)/OCMock/OSX\"",
+				);
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
 		99663E32173BAD1D0090F0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -574,11 +915,11 @@
 		99663E35173BAD1D0090F0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/Overcoat.dst;
+				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -586,11 +927,11 @@
 		99663E36173BAD1D0090F0E6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DSTROOT = /tmp/Overcoat.dst;
+				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -646,6 +987,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		994B289517463C9A003E487E /* Build configuration list for PBXNativeTarget "Overcoat Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				994B288E17463C9A003E487E /* Debug */,
+				994B288F17463C9A003E487E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		994B289617463C9A003E487E /* Build configuration list for PBXNativeTarget "Overcoat Mac Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				994B289017463C9A003E487E /* Debug */,
+				994B289117463C9A003E487E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		99663E0A173BAD1D0090F0E6 /* Build configuration list for PBXProject "Overcoat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -655,7 +1014,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99663E34173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat" */ = {
+		99663E34173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99663E35173BAD1D0090F0E6 /* Debug */,
@@ -664,7 +1023,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		99663E37173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "OvercoatTests" */ = {
+		99663E37173BAD1D0090F0E6 /* Build configuration list for PBXNativeTarget "Overcoat iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				99663E38173BAD1D0090F0E6 /* Debug */,
