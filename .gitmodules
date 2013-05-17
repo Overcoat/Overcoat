@@ -1,0 +1,3 @@
+[submodule "Mantle"]
+	path = Mantle
+	url = git://github.com/github/Mantle.git
