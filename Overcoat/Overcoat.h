@@ -24,7 +24,7 @@
 #define _OVERCOAT_H
 
 #import "OVCQuery.h"
-#import "OVCMultipart.h"
+#import "OVCMultipartPart.h"
 #import "OVCClient.h"
 #import "OVCRequestOperation.h"
 #import "NSDictionary+Overcoat.h"
