@@ -6,9 +6,9 @@ You can learn more about Mantle [here](https://github.com/github/Mantle/blob/mas
 
 ## Usage
 
-In Overcoat, server API requests are defined by instances of the OVCQuery class. Using OVCQuery you can specify an HTTP method, a path that identifies the resource, a set of parameters, and a model class.
+In Overcoat, server API requests are defined by instances of the `OVCQuery` class. Using `OVCQuery` you can specify an HTTP method, a path that identifies the resource, a set of parameters, and a model class.
 
-Servers typically respond to client API request with a dictionary or an array of dictionaries. Overcoat will transparently map those into model objects.
+Servers typically respond to client API request with a dictionary or an array of dictionaries. Overcoat will transparently map those into model objects in a background queue.
 
 For example, using [this](https://github.com/github/Mantle/blob/master/README.md#mtlmodel) model of a GitHub issue, here is how we could use the [GitHub API](http://developer.github.com) to list all the closed issues.
 
