@@ -67,7 +67,6 @@
 		994B28CB17465150003E487E /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A3111744ECE300403CA3 /* Social.framework */; };
 		994B28CC17465156003E487E /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A30F1744ECC000403CA3 /* Accounts.framework */; };
 		994B28CD1746518F003E487E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BD1173BECA10036969E /* Mantle.framework */; };
-		994B28CE174653B2003E487E /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
 		994B28D0174653D4003E487E /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
 		994B28D717465782003E487E /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9954E2091740CFD900717F72 /* OVCQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2081740CFD900717F72 /* OVCQueryTests.m */; };
@@ -75,15 +74,16 @@
 		9954E22C17413FBD00717F72 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */; };
 		9954E2321741438E00717F72 /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2311741438E00717F72 /* NSDictionaryTests.m */; };
 		9954E23B1741487600717F72 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E23A1741487600717F72 /* TestModel.m */; };
+		995E0D79174661FC00708FD5 /* OCMock.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
 		99663E13173BAD1D0090F0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
 		99663E22173BAD1D0090F0E6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */; };
 		99663E25173BAD1D0090F0E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
 		99663E28173BAD1D0090F0E6 /* libOvercoat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E0F173BAD1D0090F0E6 /* libOvercoat.a */; };
 		99663E2E173BAD1D0090F0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99663E2C173BAD1D0090F0E6 /* InfoPlist.strings */; };
-		9975EA451742218200C63065 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9975EA441742218200C63065 /* libOCMock.a */; };
 		9985CCD217427415006241AA /* OVCRequestOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985CCD117427415006241AA /* OVCRequestOperationTests.m */; };
 		99A479FE173D4043008C570A /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
 		99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FDF717465C03006F32A2 /* UIKit.framework */; };
+		99B8FE031746612E006F32A2 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9975EA441742218200C63065 /* libOCMock.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,7 +208,7 @@
 		994B287F17463C9A003E487E /* Overcoat Mac Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat Mac Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		994B28C217464EF6003E487E /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/CoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		994B28C417464FBC003E487E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
-		994B28C91746511E003E487E /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
+		994B28C91746511E003E487E /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = OvercoatTests/OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
 		994B28D117465711003E487E /* Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		9954E2081740CFD900717F72 /* OVCQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCQueryTests.m; sourceTree = "<group>"; };
 		9954E2191741243A00717F72 /* OVCMultipartPartTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPartTests.m; sourceTree = "<group>"; };
@@ -220,11 +220,11 @@
 		99663E0F173BAD1D0090F0E6 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		99663E12173BAD1D0090F0E6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99663E16173BAD1D0090F0E6 /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
-		99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = OvercoatTests.octest; path = "Overcoat iOS Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99663E20173BAD1D0090F0E6 /* Overcoat iOS Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat iOS Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		99663E2B173BAD1D0090F0E6 /* OvercoatTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OvercoatTests-Info.plist"; sourceTree = "<group>"; };
 		99663E2D173BAD1D0090F0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9975EA441742218200C63065 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
+		9975EA441742218200C63065 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OvercoatTests/OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
 		9985CCD117427415006241AA /* OVCRequestOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCRequestOperationTests.m; sourceTree = "<group>"; };
 		99A479FC173D4043008C570A /* OVCMultipartPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCMultipartPart.h; sourceTree = "<group>"; };
 		99A479FD173D4043008C570A /* OVCMultipartPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPart.m; sourceTree = "<group>"; };
@@ -255,7 +255,7 @@
 				994B288417463C9A003E487E /* Overcoat.framework in Frameworks */,
 				994B28CB17465150003E487E /* Social.framework in Frameworks */,
 				994B28CC17465156003E487E /* Accounts.framework in Frameworks */,
-				994B28CE174653B2003E487E /* OCMock.framework in Frameworks */,
+				995E0D79174661FC00708FD5 /* OCMock.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +274,8 @@
 				99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */,
 				9943A3121744ECE300403CA3 /* Social.framework in Frameworks */,
 				9943A3101744ECC000403CA3 /* Accounts.framework in Frameworks */,
-				9975EA451742218200C63065 /* libOCMock.a in Frameworks */,
 				993E4BDA173BECC70036969E /* libMantle.a in Frameworks */,
+				99B8FE031746612E006F32A2 /* libOCMock.a in Frameworks */,
 				993E4BB2173BEA850036969E /* MobileCoreServices.framework in Frameworks */,
 				993E4BB0173BEA7F0036969E /* SystemConfiguration.framework in Frameworks */,
 				99663E22173BAD1D0090F0E6 /* SenTestingKit.framework in Frameworks */,
@@ -349,7 +349,7 @@
 			isa = PBXGroup;
 			children = (
 				99663E0F173BAD1D0090F0E6 /* libOvercoat.a */,
-				99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */,
+				99663E20173BAD1D0090F0E6 /* Overcoat iOS Tests.octest */,
 				994B286917463C9A003E487E /* Overcoat.framework */,
 				994B287F17463C9A003E487E /* Overcoat Mac Tests.octest */,
 			);
@@ -523,7 +523,7 @@
 			);
 			name = "Overcoat iOS Tests";
 			productName = OvercoatTests;
-			productReference = 99663E20173BAD1D0090F0E6 /* OvercoatTests.octest */;
+			productReference = 99663E20173BAD1D0090F0E6 /* Overcoat iOS Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -821,7 +821,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/OCMock/OSX\"",
+					"\"$(SRCROOT)/OvercoatTests/OCMock/OSX\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -843,7 +843,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-					"\"$(SRCROOT)/OCMock/OSX\"",
+					"\"$(SRCROOT)/OvercoatTests/OCMock/OSX\"",
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -947,12 +947,12 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
-				HEADER_SEARCH_PATHS = "${SRCROOT}/OCMock/iOS";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/OvercoatTests/OCMock/iOS";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/OCMock/iOS\"",
+					"\"$(SRCROOT)/OvercoatTests/OCMock/iOS\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -971,12 +971,12 @@
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
-				HEADER_SEARCH_PATHS = "${SRCROOT}/OCMock/iOS";
+				HEADER_SEARCH_PATHS = "${SRCROOT}/OvercoatTests/OCMock/iOS";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/OCMock/iOS\"",
+					"\"$(SRCROOT)/OvercoatTests/OCMock/iOS\"",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
