@@ -29,6 +29,58 @@ OVCQuery *closedIssues = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/use
 }];
 ```
 
+### Social Client
+
+Overcoat features a special client class which can authenticate API requests using an `ACAccount` object on supported social networking services (currently Twitter, Facebook, and Sina Weibo).
+
+Here is how we could lookup for Twitter users.
+
+```objc
+@interface TwitterUser : MTLModel
+
+@property (copy, nonatomic) NSString *identifier;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *screenName;
+@property (copy, nonatomic) NSURL *profileImageURL;
+
+@end
+```
+
+```objc
+@implementation TwitterUser
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+        @"identifier": @"id_str",
+        @"screenName": @"screen_name",
+        @"profileImageURL": @"profile_image_url"
+    };
+}
+
++ (NSValueTransformer *)profileImageURLJSONTransformer {
+    return [NSValueTransformer valueTransformerForName:MTLURLValueTransformerName];
+}
+
+@end
+```
+
+```objc
+OVCSocialClient *twitterClient = [[OVCSocialClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1"]];
+twitterClient.account = myAccount;
+
+OVCQuery *lookupUsers = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/users/lookup.json" parameters:@{
+        @"screen_name" : @"twitterapi,twitter"
+} modelClass:[TwitterUser class]];
+
+[twitterClient executeQuery:lookupUsers completionBlock:^(OVCRequestOperation *operation, NSArray *users, NSError *error) {
+    if (!error) {
+        for (TwitterUser *user in users) {
+            NSLog(@"name: %@ screenName: %@", user.name, user.screenName);
+        }
+    }
+}];
+```
+
 ## Contact
 
 [Guillermo Gonzalez](http://github.com/gonzalezreal)  
