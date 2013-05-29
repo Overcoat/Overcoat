@@ -59,20 +59,36 @@ static const signed short kOperationFinishedState = 3;
     STAssertThrows([self.client executeQuery:nil completionBlock:nil], nil);
 }
 
-- (void)testThatExecuteQueryCallsRequestWithQuery {
-    id mockedClient = [OCMockObject partialMockForObject:self.client];
-
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"];
-    [[mockedClient expect] requestWithQuery:query];
-
-    [mockedClient executeQuery:query completionBlock:nil];
-    [mockedClient verify];
+- (void)testExecuteQueryWithoutCompletionBlock {
+    STAssertNoThrow([self.client executeQuery:[OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"] completionBlock:nil], nil);
 }
 
-- (void)testExecuteQueryWithoutCompletionBlock {
-    OVCRequestOperation *operation = [self.client executeQuery:[OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"]
-                                               completionBlock:nil];
-    STAssertNil([operation completionBlock], nil);
+- (void)testRequestWithQueryPassingNil {
+    STAssertThrows([self.client requestWithQuery:nil], nil);
+}
+
+- (void)testExecuteQuery {
+    OVCTransformBlock block = ^id (id object){
+        return nil;
+    };
+
+    id mockedQuery = [OCMockObject mockForClass:[OVCQuery class]];
+    [[[mockedQuery expect] andReturnValue:OCMOCK_VALUE(block)] transformBlock];
+
+    id mockedClient = [OCMockObject partialMockForObject:self.client];
+    id mockedRequest = [OCMockObject mockForClass:[NSMutableURLRequest class]];
+    [[[mockedClient expect] andReturn:mockedRequest] requestWithQuery:mockedQuery];
+
+    id mockedOperation = [OCMockObject mockForClass:[OVCRequestOperation class]];
+    [[mockedOperation expect] setTransformBlock:block];
+    [[[mockedClient expect] andReturn:mockedOperation] HTTPRequestOperationWithRequest:mockedRequest success:nil failure:nil];
+    [[mockedClient expect] enqueueHTTPRequestOperation:mockedOperation];
+
+    [mockedClient executeQuery:mockedQuery completionBlock:nil];
+
+    [mockedQuery verify];
+    [mockedOperation verify];
+    [mockedClient verify];
 }
 
 - (void)testExecuteQueryCompletion {
@@ -146,18 +162,6 @@ static const signed short kOperationFinishedState = 3;
     STAssertNil(blockModel, nil);
     STAssertNotNil(blockError, nil);
     STAssertEqualObjects(operation.error, blockError, nil);
-}
-
-- (void)testThatExecuteQueryEnqueuesOperation {
-    id mockedClient = [OCMockObject partialMockForObject:self.client];
-    [[mockedClient expect] enqueueHTTPRequestOperation:OCMOCK_ANY];
-
-    [mockedClient executeQuery:[OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"] completionBlock:nil];
-    [mockedClient verify];
-}
-
-- (void)testRequestWithQueryPassingNil {
-    STAssertThrows([self.client requestWithQuery:nil], nil);
 }
 
 - (void)testThatRequestWithQueryCallsMultipartFormRequestWithMethod {

@@ -55,8 +55,11 @@ static NSString *HTTPMethod(OVCQueryMethod method) {
 - (OVCRequestOperation *)executeQuery:(OVCQuery *)query completionBlock:(void (^)(OVCRequestOperation *, id, NSError *))block {
     NSParameterAssert(query);
 
-    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] initWithRequest:[self requestWithQuery:query]
-                                                                          transformBlock:query.transformBlock];
+    OVCRequestOperation *requestOperation = (OVCRequestOperation *)[self HTTPRequestOperationWithRequest:[self requestWithQuery:query] success:nil failure:nil];
+    NSAssert([requestOperation isKindOfClass:[OVCRequestOperation class]], @"*** Unsupported operation class.");
+    
+    requestOperation.transformBlock = query.transformBlock;
+    
     if (block) {
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             block((OVCRequestOperation *) operation, responseObject, nil);
