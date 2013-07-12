@@ -888,7 +888,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/libextobjc/extobjc\"";
+				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/Mantle/extobjc\"";
 			};
 			name = Debug;
 		};
@@ -911,7 +911,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/libextobjc/extobjc\"";
+				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/Mantle/extobjc\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
