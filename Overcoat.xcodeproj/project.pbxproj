@@ -81,6 +81,7 @@
 		99663E28173BAD1D0090F0E6 /* libOvercoat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E0F173BAD1D0090F0E6 /* libOvercoat.a */; };
 		99663E2E173BAD1D0090F0E6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99663E2C173BAD1D0090F0E6 /* InfoPlist.strings */; };
 		9985CCD217427415006241AA /* OVCRequestOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985CCD117427415006241AA /* OVCRequestOperationTests.m */; };
+		99A3250817900B24001DB36A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99A3250717900B24001DB36A /* CoreGraphics.framework */; };
 		99A479FE173D4043008C570A /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
 		99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FDF717465C03006F32A2 /* UIKit.framework */; };
 		99B8FE031746612E006F32A2 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9975EA441742218200C63065 /* libOCMock.a */; };
@@ -226,6 +227,7 @@
 		99663E2D173BAD1D0090F0E6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9975EA441742218200C63065 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = OvercoatTests/OCMock/iOS/libOCMock.a; sourceTree = "<group>"; };
 		9985CCD117427415006241AA /* OVCRequestOperationTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCRequestOperationTests.m; sourceTree = "<group>"; };
+		99A3250717900B24001DB36A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		99A479FC173D4043008C570A /* OVCMultipartPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCMultipartPart.h; sourceTree = "<group>"; };
 		99A479FD173D4043008C570A /* OVCMultipartPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPart.m; sourceTree = "<group>"; };
 		99B8FDF717465C03006F32A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -271,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99A3250817900B24001DB36A /* CoreGraphics.framework in Frameworks */,
 				99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */,
 				9943A3121744ECE300403CA3 /* Social.framework in Frameworks */,
 				9943A3101744ECC000403CA3 /* Accounts.framework in Frameworks */,
@@ -360,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				9975EA441742218200C63065 /* libOCMock.a */,
+				99A3250717900B24001DB36A /* CoreGraphics.framework */,
 				994B28C91746511E003E487E /* OCMock.framework */,
 				99B8FDF717465C03006F32A2 /* UIKit.framework */,
 				994B28C417464FBC003E487E /* Cocoa.framework */,
