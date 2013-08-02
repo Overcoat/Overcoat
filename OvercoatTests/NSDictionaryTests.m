@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <Overcoat/Overcoat.h>
-
 @interface NSDictionaryTests : SenTestCase
 
 @end

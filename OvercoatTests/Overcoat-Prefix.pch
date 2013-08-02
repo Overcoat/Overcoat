@@ -1,0 +1,19 @@
+//
+// Prefix header for all source files of the 'Overcoat' target in the 'Overcoat' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <SystemConfiguration/SystemConfiguration.h>
+
+#if TARGET_OS_IPHONE
+    #import <MobileCoreServices/MobileCoreServices.h>
+#else
+    #import <CoreServices/CoreServices.h>
+#endif
+
+#import <SenTestingKit/SenTestingKit.h>
+#import <OCMock/OCMock.h>
+#import <Overcoat/Overcoat.h>
+
+#endif

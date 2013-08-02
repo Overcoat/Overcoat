@@ -255,6 +255,7 @@
 		99ED270517ABC2E900E5CF8B /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		99ED270617ABC2E900E5CF8B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		99ED270B17ABC57C00E5CF8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		99ED271E17ABCD4000E5CF8B /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +455,7 @@
 		99663E2A173BAD1D0090F0E6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				99ED271E17ABCD4000E5CF8B /* Overcoat-Prefix.pch */,
 				9954E2391741487600717F72 /* TestModel.h */,
 				9954E23A1741487600717F72 /* TestModel.m */,
 				99663E2B173BAD1D0090F0E6 /* OvercoatTests-Info.plist */,
@@ -943,7 +945,7 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -966,7 +968,7 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -1070,7 +1072,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SRCROOT}/OvercoatTests/OCMock/iOS";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
@@ -1095,7 +1097,7 @@
 				GCC_GENERATE_TEST_COVERAGE_FILES = YES;
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				HEADER_SEARCH_PATHS = "${SRCROOT}/OvercoatTests/OCMock/iOS";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
