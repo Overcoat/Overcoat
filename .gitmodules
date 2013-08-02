@@ -6,3 +6,7 @@
 	path = AFNetworking
 	url = git://github.com/AFNetworking/AFNetworking.git
 	ignore = dirty
+[submodule "Configuration"]
+	path = Configuration
+	url = git://github.com/jspahrsummers/xcconfigs.git
+	ignore = dirty

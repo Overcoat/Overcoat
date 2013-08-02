@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import "OVCMultipartPart.h"
-
 @interface OVCMultipartPartTests : SenTestCase
 
 @property (strong, nonatomic) OVCMultipartPart *part;
