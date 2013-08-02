@@ -7,7 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OVCMultipartPart.h"
+#import <Overcoat/Overcoat.h>
 
 @interface OVCMultipartPartTests : SenTestCase
 

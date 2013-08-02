@@ -7,7 +7,7 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "NSDictionary+Overcoat.h"
+#import <Overcoat/Overcoat.h>
 
 @interface NSDictionaryTests : SenTestCase
 

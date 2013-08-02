@@ -85,6 +85,15 @@
 		99A479FE173D4043008C570A /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
 		99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99B8FDF717465C03006F32A2 /* UIKit.framework */; };
 		99B8FE031746612E006F32A2 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9975EA441742218200C63065 /* libOCMock.a */; };
+		99ED270C17ABC57C00E5CF8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ED270B17ABC57C00E5CF8B /* Security.framework */; };
+		99ED270F17ABC7D800E5CF8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ED270B17ABC57C00E5CF8B /* Security.framework */; };
+		99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271417ABC9E500E5CF8B /* OVCQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002D9173BFC010077FAA5 /* OVCQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271517ABC9ED00E5CF8B /* OVCMultipartPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A479FC173D4043008C570A /* OVCMultipartPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271817ABCA0100E5CF8B /* OVCRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002DF173BFDE40077FAA5 /* OVCRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +153,13 @@
 			remoteGlobalIDString = 99663E0E173BAD1D0090F0E6;
 			remoteInfo = Overcoat;
 		};
+		99ED271A17ABCB4700E5CF8B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 993E4BC7173BECA10036969E /* Mantle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D042FC7815F72BC7004E8054;
+			remoteInfo = "Mantle iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -154,15 +170,6 @@
 			dstSubfolderSpec = 16;
 			files = (
 				994B28D0174653D4003E487E /* OCMock.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		99663E0D173BAD1D0090F0E6 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +238,23 @@
 		99A479FC173D4043008C570A /* OVCMultipartPart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCMultipartPart.h; sourceTree = "<group>"; };
 		99A479FD173D4043008C570A /* OVCMultipartPart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPart.m; sourceTree = "<group>"; };
 		99B8FDF717465C03006F32A2 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		99ED26F317ABC2E900E5CF8B /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		99ED26F517ABC2E900E5CF8B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		99ED26F617ABC2E900E5CF8B /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		99ED26F717ABC2E900E5CF8B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		99ED26F817ABC2E900E5CF8B /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		99ED26FA17ABC2E900E5CF8B /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		99ED26FB17ABC2E900E5CF8B /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		99ED26FE17ABC2E900E5CF8B /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		99ED270217ABC2E900E5CF8B /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		99ED270317ABC2E900E5CF8B /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		99ED270517ABC2E900E5CF8B /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		99ED270617ABC2E900E5CF8B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		99ED270B17ABC57C00E5CF8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +269,7 @@
 				994B28BF174644A8003E487E /* Foundation.framework in Frameworks */,
 				994B28C0174644B5003E487E /* Social.framework in Frameworks */,
 				994B28C1174644BB003E487E /* Accounts.framework in Frameworks */,
+				99ED270F17ABC7D800E5CF8B /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +298,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99ED270C17ABC57C00E5CF8B /* Security.framework in Frameworks */,
 				99A3250817900B24001DB36A /* CoreGraphics.framework in Frameworks */,
 				99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */,
 				9943A3121744ECE300403CA3 /* Social.framework in Frameworks */,
@@ -343,6 +369,7 @@
 				993E4B91173BEA240036969E /* External */,
 				99663E14173BAD1D0090F0E6 /* Overcoat */,
 				99663E29173BAD1D0090F0E6 /* OvercoatTests */,
+				99ED26F117ABC2E900E5CF8B /* Configuration */,
 				99663E11173BAD1D0090F0E6 /* Frameworks */,
 				99663E10173BAD1D0090F0E6 /* Products */,
 			);
@@ -363,6 +390,7 @@
 			isa = PBXGroup;
 			children = (
 				9975EA441742218200C63065 /* libOCMock.a */,
+				99ED270B17ABC57C00E5CF8B /* Security.framework */,
 				99A3250717900B24001DB36A /* CoreGraphics.framework */,
 				994B28C91746511E003E487E /* OCMock.framework */,
 				99B8FDF717465C03006F32A2 /* UIKit.framework */,
@@ -434,6 +462,69 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		99ED26F117ABC2E900E5CF8B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				99ED26F217ABC2E900E5CF8B /* Base */,
+				99ED26FC17ABC2E900E5CF8B /* iOS */,
+				99ED270017ABC2E900E5CF8B /* Mac OS X */,
+				99ED270617ABC2E900E5CF8B /* README.md */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		99ED26F217ABC2E900E5CF8B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				99ED26F317ABC2E900E5CF8B /* Common.xcconfig */,
+				99ED26F417ABC2E900E5CF8B /* Configurations */,
+				99ED26F917ABC2E900E5CF8B /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		99ED26F417ABC2E900E5CF8B /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				99ED26F517ABC2E900E5CF8B /* Debug.xcconfig */,
+				99ED26F617ABC2E900E5CF8B /* Profile.xcconfig */,
+				99ED26F717ABC2E900E5CF8B /* Release.xcconfig */,
+				99ED26F817ABC2E900E5CF8B /* Test.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		99ED26F917ABC2E900E5CF8B /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				99ED26FA17ABC2E900E5CF8B /* Application.xcconfig */,
+				99ED26FB17ABC2E900E5CF8B /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		99ED26FC17ABC2E900E5CF8B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */,
+				99ED26FE17ABC2E900E5CF8B /* iOS-Base.xcconfig */,
+				99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		99ED270017ABC2E900E5CF8B /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */,
+				99ED270217ABC2E900E5CF8B /* Mac-Base.xcconfig */,
+				99ED270317ABC2E900E5CF8B /* Mac-DynamicLibrary.xcconfig */,
+				99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */,
+				99ED270517ABC2E900E5CF8B /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -448,6 +539,20 @@
 				994B28AA1746400E003E487E /* OVCRequestOperation.h in Headers */,
 				994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */,
 				994B28D717465782003E487E /* Overcoat.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99ED271217ABC9C500E5CF8B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */,
+				99ED271417ABC9E500E5CF8B /* OVCQuery.h in Headers */,
+				99ED271517ABC9ED00E5CF8B /* OVCMultipartPart.h in Headers */,
+				99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */,
+				99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */,
+				99ED271817ABCA0100E5CF8B /* OVCRequestOperation.h in Headers */,
+				99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,11 +604,12 @@
 			buildPhases = (
 				99663E0B173BAD1D0090F0E6 /* Sources */,
 				99663E0C173BAD1D0090F0E6 /* Frameworks */,
-				99663E0D173BAD1D0090F0E6 /* CopyFiles */,
+				99ED271217ABC9C500E5CF8B /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				99ED271B17ABCB4700E5CF8B /* PBXTargetDependency */,
 			);
 			name = "Overcoat iOS";
 			productName = Overcoat;
@@ -747,6 +853,11 @@
 			target = 99663E0E173BAD1D0090F0E6 /* Overcoat iOS */;
 			targetProxy = 99663E26173BAD1D0090F0E6 /* PBXContainerItemProxy */;
 		};
+		99ED271B17ABCB4700E5CF8B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Mantle iOS";
+			targetProxy = 99ED271A17ABCB4700E5CF8B /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -771,6 +882,7 @@
 /* Begin XCBuildConfiguration section */
 		994B288E17463C9A003E487E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -795,6 +907,7 @@
 		};
 		994B288F17463C9A003E487E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -820,6 +933,7 @@
 		};
 		994B289017463C9A003E487E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -841,6 +955,7 @@
 		};
 		994B289117463C9A003E487E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -863,6 +978,7 @@
 		};
 		99663E32173BAD1D0090F0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26F517ABC2E900E5CF8B /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -885,15 +1001,16 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "Mantle/Mantle/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/Mantle/extobjc\"";
 			};
 			name = Debug;
 		};
 		99663E33173BAD1D0090F0E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26F717ABC2E900E5CF8B /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -909,15 +1026,16 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "Mantle/Mantle/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
-				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Mantle/Mantle\" \"${SRCROOT}/Mantle/Mantle/extobjc\"";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		99663E35173BAD1D0090F0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -930,6 +1048,7 @@
 		};
 		99663E36173BAD1D0090F0E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -942,6 +1061,7 @@
 		};
 		99663E38173BAD1D0090F0E6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -966,6 +1086,7 @@
 		};
 		99663E39173BAD1D0090F0E6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",

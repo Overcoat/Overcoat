@@ -9,9 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 #import <OCMock/OCMock.h>
 #import <Accounts/Accounts.h>
-
-#import "OVCSocialClient.h"
-#import "OVCQuery.h"
+#import <Overcoat/Overcoat.h>
 
 @interface OVCSocialClient ()
 - (SLRequest *)socialRequestWithQuery:(OVCQuery *)query;

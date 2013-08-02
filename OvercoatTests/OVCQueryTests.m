@@ -7,8 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OVCQuery.h"
-#import "OVCMultipartPart.h"
+#import <Overcoat/Overcoat.h>
+
 #import "TestModel.h"
 
 @interface OVCQueryTests : SenTestCase

@@ -8,8 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import <OCMock/OCMock.h>
-#import "OVCClient.h"
-#import "OVCRequestOperation.h"
+#import <Overcoat/Overcoat.h>
+
 #import "TestModel.h"
 
 @interface AFHTTPClient ()

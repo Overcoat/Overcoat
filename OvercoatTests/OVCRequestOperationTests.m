@@ -7,7 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "OVCRequestOperation.h"
+#import <Overcoat/Overcoat.h>
+
 #import "TestModel.h"
 
 @interface AFURLConnectionOperation ()
