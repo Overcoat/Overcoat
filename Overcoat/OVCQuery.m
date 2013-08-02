@@ -23,7 +23,8 @@
 #import "OVCQuery.h"
 #import "OVCMultipartPart.h"
 #import "NSDictionary+Overcoat.h"
-#import "NSValueTransformer+MTLPredefinedTransformerAdditions.h"
+
+#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
 
 @interface OVCQuery ()
 

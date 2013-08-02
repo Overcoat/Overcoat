@@ -6,10 +6,6 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <OCMock/OCMock.h>
-#import "OVCClient.h"
-#import "OVCRequestOperation.h"
 #import "TestModel.h"
 
 @interface AFHTTPClient ()

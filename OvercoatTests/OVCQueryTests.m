@@ -6,9 +6,6 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import "OVCQuery.h"
-#import "OVCMultipartPart.h"
 #import "TestModel.h"
 
 @interface OVCQueryTests : SenTestCase

@@ -6,12 +6,7 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <SenTestingKit/SenTestingKit.h>
-#import <OCMock/OCMock.h>
 #import <Accounts/Accounts.h>
-
-#import "OVCSocialClient.h"
-#import "OVCQuery.h"
 
 @interface OVCSocialClient ()
 - (SLRequest *)socialRequestWithQuery:(OVCQuery *)query;
