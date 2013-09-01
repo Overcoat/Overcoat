@@ -81,6 +81,10 @@ OVCQuery *lookupUsers = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/user
 }];
 ```
 
+## Sample Application
+
+[ReadingList](https://github.com/gonzalezreal/ReadingList) is a fairly complete iOS example application that shows how to use Overcoat. 
+
 ## Contact
 
 [Guillermo Gonzalez](http://github.com/gonzalezreal)  
