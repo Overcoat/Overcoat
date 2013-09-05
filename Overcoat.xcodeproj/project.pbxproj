@@ -94,6 +94,8 @@
 		99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271817ABCA0100E5CF8B /* OVCRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002DF173BFDE40077FAA5 /* OVCRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99FC436017D8C6CB007276B5 /* libOHHTTPStubs-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FC435917D8C699007276B5 /* libOHHTTPStubs-iOS.a */; };
+		99FC436317D8C6DE007276B5 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FC435D17D8C699007276B5 /* OHHTTPStubs.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,41 @@
 			proxyType = 1;
 			remoteGlobalIDString = D042FC7815F72BC7004E8054;
 			remoteInfo = "Mantle iOS";
+		};
+		99FC435817D8C699007276B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 09793579161B6251006DB5D5;
+			remoteInfo = "OHHTTPStubs-iOS";
+		};
+		99FC435A17D8C699007276B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 098368CE168FC7920082B1A4;
+			remoteInfo = UnitTests;
+		};
+		99FC435C17D8C699007276B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F6C37BA016F6C8680082B630;
+			remoteInfo = OHHTTPStubs;
+		};
+		99FC435E17D8C6B2007276B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 09793578161B6251006DB5D5;
+			remoteInfo = "OHHTTPStubs-iOS";
+		};
+		99FC436117D8C6D4007276B5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F6C37B9F16F6C8680082B630;
+			remoteInfo = OHHTTPStubs;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -256,6 +293,7 @@
 		99ED270617ABC2E900E5CF8B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		99ED270B17ABC57C00E5CF8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		99ED271E17ABCD4000E5CF8B /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
+		99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OHHTTPStubs.xcodeproj; path = OHHTTPStubs/OHHTTPStubs/OHHTTPStubs.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -278,6 +316,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FC436317D8C6DE007276B5 /* OHHTTPStubs.framework in Frameworks */,
 				994B28CD1746518F003E487E /* Mantle.framework in Frameworks */,
 				994B288017463C9A003E487E /* SenTestingKit.framework in Frameworks */,
 				994B288417463C9A003E487E /* Overcoat.framework in Frameworks */,
@@ -299,6 +338,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FC436017D8C6CB007276B5 /* libOHHTTPStubs-iOS.a in Frameworks */,
 				99ED270C17ABC57C00E5CF8B /* Security.framework in Frameworks */,
 				99A3250817900B24001DB36A /* CoreGraphics.framework in Frameworks */,
 				99B8FDF817465C03006F32A2 /* UIKit.framework in Frameworks */,
@@ -320,6 +360,7 @@
 		993E4B91173BEA240036969E /* External */ = {
 			isa = PBXGroup;
 			children = (
+				99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */,
 				993E4BC7173BECA10036969E /* Mantle.xcodeproj */,
 				993E4B92173BEA3D0036969E /* AFNetworking */,
 			);
@@ -527,6 +568,16 @@
 			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
+		99FC435117D8C698007276B5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99FC435917D8C699007276B5 /* libOHHTTPStubs-iOS.a */,
+				99FC435B17D8C699007276B5 /* UnitTests.octest */,
+				99FC435D17D8C699007276B5 /* OHHTTPStubs.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -593,6 +644,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				99FC436217D8C6D4007276B5 /* PBXTargetDependency */,
 				994B288317463C9A003E487E /* PBXTargetDependency */,
 			);
 			name = "Overcoat Mac Tests";
@@ -630,6 +682,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				99FC435F17D8C6B2007276B5 /* PBXTargetDependency */,
 				993E4BD9173BECBD0036969E /* PBXTargetDependency */,
 				99663E27173BAD1D0090F0E6 /* PBXTargetDependency */,
 			);
@@ -662,6 +715,10 @@
 				{
 					ProductGroup = 993E4BC8173BECA10036969E /* Products */;
 					ProjectRef = 993E4BC7173BECA10036969E /* Mantle.xcodeproj */;
+				},
+				{
+					ProductGroup = 99FC435117D8C698007276B5 /* Products */;
+					ProjectRef = 99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -701,6 +758,27 @@
 			fileType = wrapper.cfbundle;
 			path = "Mantle iOS Tests.octest";
 			remoteRef = 993E4BD6173BECA10036969E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99FC435917D8C699007276B5 /* libOHHTTPStubs-iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libOHHTTPStubs-iOS.a";
+			remoteRef = 99FC435817D8C699007276B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99FC435B17D8C699007276B5 /* UnitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = UnitTests.octest;
+			remoteRef = 99FC435A17D8C699007276B5 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		99FC435D17D8C699007276B5 /* OHHTTPStubs.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OHHTTPStubs.framework;
+			remoteRef = 99FC435C17D8C699007276B5 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -859,6 +937,16 @@
 			isa = PBXTargetDependency;
 			name = "Mantle iOS";
 			targetProxy = 99ED271A17ABCB4700E5CF8B /* PBXContainerItemProxy */;
+		};
+		99FC435F17D8C6B2007276B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "OHHTTPStubs-iOS";
+			targetProxy = 99FC435E17D8C6B2007276B5 /* PBXContainerItemProxy */;
+		};
+		99FC436217D8C6D4007276B5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OHHTTPStubs;
+			targetProxy = 99FC436117D8C6D4007276B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

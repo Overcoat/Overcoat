@@ -14,6 +14,7 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import <OCMock/OCMock.h>
+#import <OHHTTPStubs/OHHTTPStubs.h>
 #import <Overcoat/Overcoat.h>
 
 #endif
