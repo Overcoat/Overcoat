@@ -20,20 +20,26 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
 #import "AFJSONRequestOperation.h"
-#import "OVCQuery.h"
 
 // AFJSONRequestOperation subclass for downloading and transforming JSON data into model objects.
 @interface OVCRequestOperation : AFJSONRequestOperation
 
 // Transforms the JSON response into a model object or an array of model objects.
-@property (copy, nonatomic) OVCTransformBlock transformBlock;
+@property (strong, nonatomic, readonly) NSValueTransformer *valueTransformer;
 
-// Single model object or array of model objects constructed from the JSON response
+// Single model object or array of model objects constructed from the JSON response.
 @property (strong, nonatomic, readonly) id responseObject;
 
-// Initializes the receiver with the specified url request and transform block.
-- (id)initWithRequest:(NSURLRequest *)urlRequest transformBlock:(OVCTransformBlock)transformBlock;
+// Initializes the receiver with the specified url request, result model class and result object key path.
+- (id)initWithRequest:(NSURLRequest *)urlRequest resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath;
+
+@end
+
+@interface OVCRequestOperation (Unavailable)
+
+@property (copy, nonatomic) id (^transformBlock)(id obj) __attribute__((deprecated("Replaced by OVCRequestOperation.valueTransformer")));
+
+- (id)initWithRequest:(NSURLRequest *)urlRequest transformBlock:(id (^)(id obj))transformBlock __attribute__((deprecated("Replaced by -initWithRequest:resultClass:resultKeyPath:")));
 
 @end

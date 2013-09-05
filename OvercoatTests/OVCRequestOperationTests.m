@@ -8,20 +8,10 @@
 
 #import "TestModel.h"
 
-@interface AFURLConnectionOperation ()
-
-- (void)finish;
-
-@end
-
-@interface AFHTTPRequestOperation ()
-
-@property (copy, nonatomic, readwrite) NSString *responseString;
-@property (strong, nonatomic, readwrite) NSData *responseData;
-
-@end
-
 @interface OVCRequestOperationTests : SenTestCase
+
+@property (copy, nonatomic) NSURLRequest *urlRequest;
+@property (strong, nonatomic) id requestHandler;
 
 - (BOOL)waitForSemaphore:(dispatch_semaphore_t)semaphore timeout:(NSTimeInterval)timeout;
 
@@ -29,63 +19,42 @@
 
 @implementation OVCRequestOperationTests
 
+- (void)setUp {
+    [super setUp];
+
+    self.urlRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.example.com"]];
+    
+    self.requestHandler = [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+        NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:@"testResponse" withExtension:@"json"];
+        return [OHHTTPStubsResponse responseWithFileURL:fileURL contentType:@"application/json" responseTime:0];
+    }];
+}
+
+- (void)tearDown {
+    [OHHTTPStubs removeRequestHandler:self.requestHandler];
+    self.requestHandler = nil;
+    self.urlRequest = nil;
+
+    [super tearDown];
+}
+
 - (void)testResponseObject {
-    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] init];
-    requestOperation.transformBlock = [OVCQuery transformBlockWithModelClass:[TestModel class] objectKeyPath:nil];
-
-    NSString *responseString = @"{\"first_name\" : \"Bruce\", \"last_name\" : \"Wayne\"}";
-    requestOperation.responseString = responseString;
-    requestOperation.responseData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-
-    [requestOperation finish];
-
-    TestModel *model = requestOperation.responseObject;
-    TestModel *expectedModel = [TestModel testModelWithFirstName:@"Bruce" lastName:@"Wayne"];
-
-    STAssertEqualObjects(model, expectedModel, nil);
-}
-
-- (void)testResponseObjectWithoutTransformBlock {
-    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] init];
-
-    NSString *responseString = @"[\"Tony\", \"Bruce\", \"Natasha\", \"Steve\"]";
-    requestOperation.responseString = responseString;
-    requestOperation.responseData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-
-    [requestOperation finish];
-
-    NSArray *expected = @[@"Tony", @"Bruce", @"Natasha", @"Steve"];
-
-    STAssertEqualObjects(requestOperation.responseObject, expected, nil);
-}
-
-- (void)testCompletion {
-    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] init];
-    requestOperation.transformBlock = [OVCQuery transformBlockWithModelClass:[TestModel class] objectKeyPath:nil];
-
-    NSString *responseString = @"{\"first_name\" : \"Bruce\", \"last_name\" : \"Wayne\"}";
-    requestOperation.responseString = responseString;
-    requestOperation.responseData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-
-    [requestOperation finish];
+    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] initWithRequest:self.urlRequest
+                                                                             resultClass:TestModel.class
+                                                                           resultKeyPath:@"data.object"];
 
     __block TestModel *model = nil;
-
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         model = responseObject;
         dispatch_semaphore_signal(semaphore);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    }                                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         dispatch_semaphore_signal(semaphore);
     }];
 
-    STAssertNotNil(requestOperation.completionBlock, nil);
+    [requestOperation start];
 
-    // Call NSOperation completion block
-    requestOperation.completionBlock();
-
-    // Need to wait for the semaphore to be signaled as the transform block is executed in a private queue
     BOOL timeout = [self waitForSemaphore:semaphore timeout:5];
     STAssertFalse(timeout, @"Timeout waiting for processing queue");
 
@@ -93,40 +62,56 @@
     STAssertEqualObjects(model, expectedModel, nil);
 }
 
-- (void)testCompletionWithError {
-    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] init];
-    requestOperation.transformBlock = [OVCQuery transformBlockWithModelClass:[TestModel class] objectKeyPath:nil];
+- (void)testResponseObjectWithArray {
+    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] initWithRequest:self.urlRequest
+                                                                             resultClass:TestModel.class
+                                                                           resultKeyPath:@"data.objects"];
 
-    NSString *responseString = @"<!DOCTYPE html><html lang=\"en\"></html>";
-    requestOperation.responseString = responseString;
-    requestOperation.responseData = [responseString dataUsingEncoding:NSUTF8StringEncoding];
-
-    [requestOperation finish];
-
-    __block TestModel *model = nil;
-    __block NSError *error = nil;
-
+    __block NSArray *models = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        model = responseObject;
+        models = responseObject;
         dispatch_semaphore_signal(semaphore);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *e) {
-        error = e;
+    }                                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         dispatch_semaphore_signal(semaphore);
     }];
 
-    STAssertNotNil(requestOperation.completionBlock, nil);
+    [requestOperation start];
 
-    // Call NSOperation completion block
-    requestOperation.completionBlock();
-
-    // Need to wait for the semaphore to be signaled as the transform block is executed in a private queue
     BOOL timeout = [self waitForSemaphore:semaphore timeout:5];
     STAssertFalse(timeout, @"Timeout waiting for processing queue");
 
-    STAssertNil(model, nil);
-    STAssertNotNil(error, nil);
+    NSArray *expectedModels = @[
+            [TestModel testModelWithFirstName:@"Tony" lastName:@"Stark"],
+            [TestModel testModelWithFirstName:@"Bruce" lastName:@"Banner"],
+    ];
+    STAssertEqualObjects(models, expectedModels, nil);
+}
+
+- (void)testResponseObjectWithoutValueTransformer {
+    OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] initWithRequest:self.urlRequest];
+
+    __block NSDictionary *dictionary = nil;
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        dictionary = responseObject;
+        dispatch_semaphore_signal(semaphore);
+    }                                       failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        dispatch_semaphore_signal(semaphore);
+    }];
+
+    [requestOperation start];
+
+    BOOL timeout = [self waitForSemaphore:semaphore timeout:5];
+    STAssertFalse(timeout, @"Timeout waiting for processing queue");
+
+    NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:@"testResponse" withExtension:@"json"];
+    NSData *data = [NSData dataWithContentsOfURL:fileURL];
+    NSDictionary *testResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+
+    STAssertEqualObjects(dictionary, testResponse, nil);
 }
 
 - (BOOL)waitForSemaphore:(dispatch_semaphore_t)semaphore timeout:(NSTimeInterval)timeout {

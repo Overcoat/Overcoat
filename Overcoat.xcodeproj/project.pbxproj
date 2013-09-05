@@ -96,6 +96,8 @@
 		99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FC436017D8C6CB007276B5 /* libOHHTTPStubs-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FC435917D8C699007276B5 /* libOHHTTPStubs-iOS.a */; };
 		99FC436317D8C6DE007276B5 /* OHHTTPStubs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FC435D17D8C699007276B5 /* OHHTTPStubs.framework */; };
+		99FC436717D8CAE0007276B5 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 99FC436617D8CAE0007276B5 /* testResponse.json */; };
+		99FC436817D8CAE0007276B5 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 99FC436617D8CAE0007276B5 /* testResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -294,6 +296,7 @@
 		99ED270B17ABC57C00E5CF8B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		99ED271E17ABCD4000E5CF8B /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
 		99FC435017D8C698007276B5 /* OHHTTPStubs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OHHTTPStubs.xcodeproj; path = OHHTTPStubs/OHHTTPStubs/OHHTTPStubs.xcodeproj; sourceTree = "<group>"; };
+		99FC436617D8CAE0007276B5 /* testResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -488,6 +491,7 @@
 				9985CCD117427415006241AA /* OVCRequestOperationTests.m */,
 				993E4BDC173BED190036969E /* OVCClientTests.m */,
 				9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */,
+				99FC436517D8CAE0007276B5 /* Stubs */,
 				99663E2A173BAD1D0090F0E6 /* Supporting Files */,
 			);
 			path = OvercoatTests;
@@ -576,6 +580,14 @@
 				99FC435D17D8C699007276B5 /* OHHTTPStubs.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		99FC436517D8CAE0007276B5 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				99FC436617D8CAE0007276B5 /* testResponse.json */,
+			);
+			path = Stubs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -796,6 +808,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99FC436817D8CAE0007276B5 /* testResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +817,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99663E2E173BAD1D0090F0E6 /* InfoPlist.strings in Resources */,
+				99FC436717D8CAE0007276B5 /* testResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

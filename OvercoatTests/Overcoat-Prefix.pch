@@ -14,7 +14,13 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 #import <OCMock/OCMock.h>
-#import <OHHTTPStubs/OHHTTPStubs.h>
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED
+    #import <OHHTTPStubs-iOS/OHHTTPStubs.h>
+#else
+    #import <OHHTTPStubs/OHHTTPStubs.h>
+#endif
+
 #import <Overcoat/Overcoat.h>
 
 #endif
