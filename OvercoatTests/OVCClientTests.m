@@ -36,14 +36,14 @@
 }
 
 - (void)testInit {
-    BOOL operationClassRegistered = [self.client.registeredHTTPOperationClassNames containsObject:NSStringFromClass([OVCRequestOperation class])];
+    BOOL operationClassRegistered = [self.client.registeredHTTPOperationClassNames containsObject:NSStringFromClass(OVCRequestOperation.class)];
     STAssertTrue(operationClassRegistered, nil);
     STAssertEqualObjects([self.client defaultValueForHeader:@"Accept"], @"application/json", nil);
 }
 
 - (void)testGET {
-    id mockRequest = [OCMockObject mockForClass:[NSURLRequest class]];
-    id mockOperation = [OCMockObject mockForClass:[OVCRequestOperation class]];
+    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
+    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
     id mockClient = [OCMockObject partialMockForObject:self.client];
 
     NSString *path = @"search";
@@ -71,8 +71,8 @@
 }
 
 - (void)testPOST {
-    id mockRequest = [OCMockObject mockForClass:[NSURLRequest class]];
-    id mockOperation = [OCMockObject mockForClass:[OVCRequestOperation class]];
+    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
+    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
     id mockClient = [OCMockObject partialMockForObject:self.client];
 
     NSString *path = @"create";
@@ -100,8 +100,8 @@
 }
 
 - (void)testPUT {
-    id mockRequest = [OCMockObject mockForClass:[NSURLRequest class]];
-    id mockOperation = [OCMockObject mockForClass:[OVCRequestOperation class]];
+    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
+    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
     id mockClient = [OCMockObject partialMockForObject:self.client];
 
     NSString *path = @"update";
@@ -212,7 +212,7 @@
     };
     NSArray *parts = [NSArray array];
 
-    id mockRequest = [OCMockObject mockForClass:[NSMutableURLRequest class]];
+    id mockRequest = [OCMockObject mockForClass:NSMutableURLRequest.class];
     [[[mockClient expect] andReturn:mockRequest] multipartFormRequestWithMethod:method
                                                                            path:path
                                                                      parameters:parameters
