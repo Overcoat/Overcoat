@@ -22,18 +22,16 @@
 
 #import "OVCMultipartPart.h"
 
-@interface OVCMultipartPart ()
-
-+ (NSArray *)propertyKeys;
-
-@end
-
 @implementation OVCMultipartPart
+
++ (instancetype)partWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename {
+    return [[self alloc] initWithData:data name:name type:type filename:filename];
+}
 
 - (id)initWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename {
     self = [super init];
     if (self) {
-        _data = data;
+        _data = [data copy];
         _name = [name copy];
         _type = [type copy];
         _filename = [filename copy];
@@ -42,46 +40,9 @@
     return self;
 }
 
-- (NSUInteger)hash {
-    NSUInteger value = 0;
-
-    for (NSString *key in [[self class] propertyKeys]) {
-        value ^= [[self valueForKey:key] hash];
-    }
-
-    return value;
-}
-
-- (BOOL)isEqual:(id)other {
-    if (other == self) {
-        return YES;
-    }
-    if (![other isMemberOfClass:[self class]]) {
-        return NO;
-    }
-
-    for (NSString *key in [[self class] propertyKeys]) {
-        id selfValue = [self valueForKey:key];
-        id otherValue = [other valueForKey:key];
-
-        BOOL valuesEqual = ((selfValue == nil && otherValue == nil) || [selfValue isEqual:otherValue]);
-        if (!valuesEqual) return NO;
-    }
-
-    return YES;
-}
-
-#pragma mark - Private methods
-
-+ (NSArray *)propertyKeys {
-    static dispatch_once_t onceToken;
-    static NSArray *propertyKeys;
-
-    dispatch_once(&onceToken, ^{
-        propertyKeys = @[@"data", @"name", @"type", @"filename"];
-    });
-
-    return propertyKeys;
+- (id)copyWithZone:(NSZone *)zone {
+    // As we are immutable, returning self is enough
+    return self;
 }
 
 @end

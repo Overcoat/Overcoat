@@ -23,7 +23,6 @@
 #ifndef _OVERCOAT_H
 #define _OVERCOAT_H
 
-#import "OVCQuery.h"
 #import "OVCMultipartPart.h"
 #import "OVCClient.h"
 #import "OVCRequestOperation.h"

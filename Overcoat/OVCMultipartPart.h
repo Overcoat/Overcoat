@@ -20,14 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <Mantle/MTLModel.h>
 
-@interface OVCMultipartPart : NSObject
+@interface OVCMultipartPart : MTLModel
 
-@property (strong, nonatomic, readonly) NSData *data;
-@property (copy, nonatomic) NSString *name;
-@property (copy, nonatomic) NSString *type;
-@property (copy, nonatomic) NSString *filename;
+@property (copy, nonatomic, readonly) NSData *data;
+@property (copy, nonatomic, readonly) NSString *name;
+@property (copy, nonatomic, readonly) NSString *type;
+@property (copy, nonatomic, readonly) NSString *filename;
+
++ (instancetype)partWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename;
 
 - (id)initWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename;
 
