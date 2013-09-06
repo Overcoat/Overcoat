@@ -17,7 +17,10 @@
 - (void)setUp {
     [super setUp];
 
-    self.part = [[OVCMultipartPart alloc] init];
+    self.part = [OVCMultipartPart partWithData:[@"Some data" dataUsingEncoding:NSUTF8StringEncoding]
+                                          name:@"blob"
+                                          type:@"text/plain"
+                                      filename:@"blob.txt"];
 }
 
 - (void)tearDown {
@@ -30,50 +33,20 @@
     STAssertNotNil(self.part, @"Object should be created properly", nil);
 }
 
-- (void)testInitWithData {
-    NSData *data = [@"Some data" dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *name = @"blob";
-    NSString *type = @"text/plain";
-    NSString *filename = @"blob.txt";
-
-    OVCMultipartPart *part = [[OVCMultipartPart alloc] initWithData:data name:name type:type filename:filename];
-
-    STAssertEqualObjects(part.data, data, nil);
-    STAssertEqualObjects(part.name, name, nil);
-    STAssertEqualObjects(part.type, type, nil);
-    STAssertEqualObjects(part.filename, filename, nil);
+- (void)testPartHasData {
+    STAssertEqualObjects(self.part.data, [@"Some data" dataUsingEncoding:NSUTF8StringEncoding], nil);
 }
 
-- (void)testHash {
-    NSData *data = [@"Some data" dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *name = @"blob";
-    NSString *type = @"text/plain";
-    NSString *filename = @"blob.txt";
-
-    NSUInteger hash = [data hash];
-    hash ^= [name hash];
-    hash ^= [type hash];
-    hash ^= [filename hash];
-
-    OVCMultipartPart *part = [[OVCMultipartPart alloc] initWithData:data name:name type:type filename:filename];
-
-    STAssertEquals([part hash], hash, nil);
+- (void)testPartHasName {
+    STAssertEqualObjects(self.part.name, @"blob", nil);
 }
 
-- (void)testIsEqual {
-    OVCMultipartPart *part1 = [[OVCMultipartPart alloc] initWithData:[@"Some data" dataUsingEncoding:NSUTF8StringEncoding]
-                                                                name:@"text"
-                                                                type:@"text/plain"
-                                                            filename:@"sample.txt"];
-    OVCMultipartPart *part2 = [[OVCMultipartPart alloc] initWithData:[@"Some data" dataUsingEncoding:NSUTF8StringEncoding]
-                                                                name:@"text"
-                                                                type:@"text/plain"
-                                                            filename:@"sample.txt"];
-    STAssertEqualObjects(part1, part2, @"part1 and part2 should be equal");
+- (void)testPartHasType {
+    STAssertEqualObjects(self.part.type, @"text/plain", nil);
+}
 
-    part2.name = @"text2";
-
-    STAssertFalse([part1 isEqual:part2], @"part1 and part2 should be NOT equal");
+- (void)testPartHasFilename {
+    STAssertEqualObjects(self.part.filename, @"blob.txt", nil);
 }
 
 @end

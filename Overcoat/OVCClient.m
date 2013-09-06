@@ -24,22 +24,6 @@
 #import "OVCRequestOperation.h"
 #import "OVCMultipartPart.h"
 
-static NSString *HTTPMethod(OVCQueryMethod method) {
-    static dispatch_once_t onceToken;
-    static NSDictionary *methods;
-
-    dispatch_once(&onceToken, ^{
-        methods = @{
-                @(OVCQueryMethodGet) : @"GET",
-                @(OVCQueryMethodPost) : @"POST",
-                @(OVCQueryMethodPut) : @"PUT",
-                @(OVCQueryMethodDelete) : @"DELETE"
-        };
-    });
-
-    return methods[@(method)];
-}
-
 @implementation OVCClient
 
 - (id)initWithBaseURL:(NSURL *)url {
@@ -52,14 +36,44 @@ static NSString *HTTPMethod(OVCQueryMethod method) {
     return self;
 }
 
-- (OVCRequestOperation *)executeQuery:(OVCQuery *)query completionBlock:(void (^)(OVCRequestOperation *, id, NSError *))block {
-    NSParameterAssert(query);
+- (OVCRequestOperation *)GET:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+    NSURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:parameters];
+    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                               resultClass:resultClass
+                                                             resultKeyPath:keyPath
+                                                                completion:block];
+    [self enqueueHTTPRequestOperation:operation];
+    return operation;
+}
 
-    OVCRequestOperation *requestOperation = (OVCRequestOperation *)[self HTTPRequestOperationWithRequest:[self requestWithQuery:query] success:nil failure:nil];
+- (OVCRequestOperation *)POST:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+    NSURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:parameters];
+    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                               resultClass:resultClass
+                                                             resultKeyPath:keyPath
+                                                                completion:block];
+    [self enqueueHTTPRequestOperation:operation];
+    return operation;
+}
+
+- (OVCRequestOperation *)PUT:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+    NSURLRequest *request = [self requestWithMethod:@"PUT" path:path parameters:parameters];
+    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                               resultClass:resultClass
+                                                             resultKeyPath:keyPath
+                                                                completion:block];
+    [self enqueueHTTPRequestOperation:operation];
+    return operation;
+}
+
+- (OVCRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+    OVCRequestOperation *requestOperation = (OVCRequestOperation *)[self HTTPRequestOperationWithRequest:urlRequest
+                                                                                                 success:nil
+                                                                                                 failure:nil];
     NSAssert([requestOperation isKindOfClass:[OVCRequestOperation class]], @"*** Unsupported operation class.");
-    
-    requestOperation.transformBlock = query.transformBlock;
-    
+
+    requestOperation.valueTransformer = [OVCRequestOperation valueTransformerWithResultClass:resultClass resultKeyPath:keyPath];
+
     if (block) {
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             block((OVCRequestOperation *) operation, responseObject, nil);
@@ -68,24 +82,15 @@ static NSString *HTTPMethod(OVCQueryMethod method) {
         }];
     }
 
-    [self enqueueHTTPRequestOperation:requestOperation];
-
     return requestOperation;
 }
 
-- (NSMutableURLRequest *)requestWithQuery:(OVCQuery *)query {
-    NSParameterAssert(query);
-
-    if ([query.parts count]) {
-        return [self multipartFormRequestWithMethod:HTTPMethod(query.method) path:query.path parameters:query.parameters constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
-            for (OVCMultipartPart *part in query.parts) {
-                [formData appendPartWithFileData:part.data name:part.name fileName:part.filename mimeType:part.type];
-            }
-        }];
-    }
-    else {
-        return [self requestWithMethod:HTTPMethod(query.method) path:query.path parameters:query.parameters];
-    }
+- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
+    return [self multipartFormRequestWithMethod:method path:path parameters:parameters constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
+        for (OVCMultipartPart *part in parts) {
+            [formData appendPartWithFileData:part.data name:part.name fileName:part.filename mimeType:part.type];
+        }
+    }];
 }
 
 @end

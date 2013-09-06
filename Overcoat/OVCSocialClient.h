@@ -34,6 +34,18 @@
 // The social networking service type. If the account property is set this value is not used.
 @property (copy, nonatomic) NSString *serviceType;
 
+// Creates an OAuth-compatible `NSMutableURLRequest` signed with the user's account.
+//
+// method     - The HTTP method for the request. A `PUT` method will be converted to `POST`. This parameter must
+//              not be `PATCH` or `HEAD`, or `nil`.
+// path       - The path to be appended to the HTTP client's base URL and used as the request URL.
+// parameters - The parameters for the HTTP request.
+// parts      - An optional array of OVCMultipartPart objects to construct a multipart POST body.
+- (NSMutableURLRequest *)socialRequestWithMethod:(NSString *)method
+                                            path:(NSString *)path
+                                      parameters:(NSDictionary *)parameters
+                                           parts:(NSArray *)parts;
+
 @end
 
 #else

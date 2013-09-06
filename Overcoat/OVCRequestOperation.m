@@ -22,6 +22,10 @@
 
 #import "OVCRequestOperation.h"
 #import "EXTScope.h"
+#import "NSDictionary+Overcoat.h"
+
+#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
+#import <Mantle/MTLValueTransformer.h>
 
 static dispatch_queue_t OVCRequestOperationProcessingQueue() {
     static dispatch_once_t onceToken;
@@ -51,8 +55,8 @@ static dispatch_queue_t OVCRequestOperationProcessingQueue() {
         id responseJSON = self.responseJSON;
 
         if (responseJSON) {
-            if (self.transformBlock) {
-                self.responseObject = self.transformBlock(responseJSON);
+            if (self.valueTransformer) {
+                self.responseObject = [self.valueTransformer transformedValue:responseJSON];
             }
             else {
                 self.responseObject = self.responseJSON;
@@ -64,10 +68,33 @@ static dispatch_queue_t OVCRequestOperationProcessingQueue() {
     return _responseObject;
 }
 
-- (id)initWithRequest:(NSURLRequest *)urlRequest transformBlock:(OVCTransformBlock)transformBlock {
++ (NSValueTransformer *)valueTransformerWithResultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath {
+    NSParameterAssert(resultClass);
+
+    return [MTLValueTransformer transformerWithBlock:^id(id response) {
+        NSValueTransformer *JSONTransformer = nil;
+        id object = response;
+
+        if ([keyPath length] && [object isKindOfClass:[NSDictionary class]]) {
+            object = [object ovc_objectForKeyPath:keyPath];
+        }
+
+        if ([object isKindOfClass:[NSDictionary class]]) {
+            JSONTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:resultClass];
+        }
+        else if ([object isKindOfClass:[NSArray class]]) {
+            JSONTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:resultClass];
+        }
+
+        return [JSONTransformer transformedValue:object];
+    }];
+}
+
+- (id)initWithRequest:(NSURLRequest *)urlRequest resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath {
     self = [super initWithRequest:urlRequest];
+
     if (self) {
-        _transformBlock = [transformBlock copy];
+        _valueTransformer = [self.class valueTransformerWithResultClass:resultClass resultKeyPath:keyPath];
     }
 
     return self;
