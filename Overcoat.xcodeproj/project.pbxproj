@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		993002DB173BFC010077FAA5 /* OVCQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 993002DA173BFC010077FAA5 /* OVCQuery.m */; };
 		993002E1173BFDE40077FAA5 /* OVCRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993002E0173BFDE40077FAA5 /* OVCRequestOperation.m */; };
 		993E4BA6173BEA3D0036969E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B94173BEA3D0036969E /* AFHTTPClient.m */; };
 		993E4BA7173BEA3D0036969E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B96173BEA3D0036969E /* AFHTTPRequestOperation.m */; };
@@ -30,7 +29,6 @@
 		994B287517463C9A003E487E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 994B287317463C9A003E487E /* InfoPlist.strings */; };
 		994B288017463C9A003E487E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */; };
 		994B288417463C9A003E487E /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B286917463C9A003E487E /* Overcoat.framework */; };
-		994B289717463E06003E487E /* OVCQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 993002DA173BFC010077FAA5 /* OVCQuery.m */; };
 		994B289817463E16003E487E /* OVCMultipartPart.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A479FD173D4043008C570A /* OVCMultipartPart.m */; };
 		994B289917463E16003E487E /* OVCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BB4173BEB0A0036969E /* OVCClient.m */; };
 		994B289A17463E16003E487E /* OVCSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A30A1744E4C200403CA3 /* OVCSocialClient.m */; };
@@ -44,14 +42,12 @@
 		994B28A217463E64003E487E /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4B9F173BEA3D0036969E /* AFPropertyListRequestOperation.m */; };
 		994B28A317463E64003E487E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BA1173BEA3D0036969E /* AFURLConnectionOperation.m */; };
 		994B28A417463E64003E487E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BA3173BEA3D0036969E /* AFXMLRequestOperation.m */; };
-		994B28A617463FE1003E487E /* OVCQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002D9173BFC010077FAA5 /* OVCQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28A717463FF3003E487E /* OVCMultipartPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A479FC173D4043008C570A /* OVCMultipartPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28A817464000003E487E /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28A917464006003E487E /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28AA1746400E003E487E /* OVCRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002DF173BFDE40077FAA5 /* OVCRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2311741438E00717F72 /* NSDictionaryTests.m */; };
-		994B28B2174643AC003E487E /* OVCQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2081740CFD900717F72 /* OVCQueryTests.m */; };
 		994B28B3174643AC003E487E /* OVCMultipartPartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2191741243A00717F72 /* OVCMultipartPartTests.m */; };
 		994B28B4174643AC003E487E /* OVCRequestOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9985CCD117427415006241AA /* OVCRequestOperationTests.m */; };
 		994B28B5174643AC003E487E /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BDC173BED190036969E /* OVCClientTests.m */; };
@@ -69,7 +65,6 @@
 		994B28CD1746518F003E487E /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BD1173BECA10036969E /* Mantle.framework */; };
 		994B28D0174653D4003E487E /* OCMock.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 994B28C91746511E003E487E /* OCMock.framework */; };
 		994B28D717465782003E487E /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9954E2091740CFD900717F72 /* OVCQueryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2081740CFD900717F72 /* OVCQueryTests.m */; };
 		9954E21A1741243A00717F72 /* OVCMultipartPartTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2191741243A00717F72 /* OVCMultipartPartTests.m */; };
 		9954E22C17413FBD00717F72 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */; };
 		9954E2321741438E00717F72 /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2311741438E00717F72 /* NSDictionaryTests.m */; };
@@ -88,7 +83,6 @@
 		99ED270C17ABC57C00E5CF8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ED270B17ABC57C00E5CF8B /* Security.framework */; };
 		99ED270F17ABC7D800E5CF8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ED270B17ABC57C00E5CF8B /* Security.framework */; };
 		99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99ED271417ABC9E500E5CF8B /* OVCQuery.h in Headers */ = {isa = PBXBuildFile; fileRef = 993002D9173BFC010077FAA5 /* OVCQuery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271517ABC9ED00E5CF8B /* OVCMultipartPart.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A479FC173D4043008C570A /* OVCMultipartPart.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -215,8 +209,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		993002D9173BFC010077FAA5 /* OVCQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCQuery.h; sourceTree = "<group>"; };
-		993002DA173BFC010077FAA5 /* OVCQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCQuery.m; sourceTree = "<group>"; };
 		993002DF173BFDE40077FAA5 /* OVCRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCRequestOperation.h; sourceTree = "<group>"; };
 		993002E0173BFDE40077FAA5 /* OVCRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCRequestOperation.m; sourceTree = "<group>"; };
 		993E4B93173BEA3D0036969E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -257,7 +249,6 @@
 		994B28C417464FBC003E487E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		994B28C91746511E003E487E /* OCMock.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OCMock.framework; path = OvercoatTests/OCMock/OSX/OCMock.framework; sourceTree = "<group>"; };
 		994B28D117465711003E487E /* Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
-		9954E2081740CFD900717F72 /* OVCQueryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCQueryTests.m; sourceTree = "<group>"; };
 		9954E2191741243A00717F72 /* OVCMultipartPartTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCMultipartPartTests.m; sourceTree = "<group>"; };
 		9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
 		9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
@@ -455,8 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				994B28D117465711003E487E /* Overcoat.h */,
-				993002D9173BFC010077FAA5 /* OVCQuery.h */,
-				993002DA173BFC010077FAA5 /* OVCQuery.m */,
 				99A479FC173D4043008C570A /* OVCMultipartPart.h */,
 				99A479FD173D4043008C570A /* OVCMultipartPart.m */,
 				993E4BB3173BEB0A0036969E /* OVCClient.h */,
@@ -486,7 +475,6 @@
 			isa = PBXGroup;
 			children = (
 				9954E2311741438E00717F72 /* NSDictionaryTests.m */,
-				9954E2081740CFD900717F72 /* OVCQueryTests.m */,
 				9954E2191741243A00717F72 /* OVCMultipartPartTests.m */,
 				9985CCD117427415006241AA /* OVCRequestOperationTests.m */,
 				993E4BDC173BED190036969E /* OVCClientTests.m */,
@@ -597,7 +585,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994B28A617463FE1003E487E /* OVCQuery.h in Headers */,
 				994B28A717463FF3003E487E /* OVCMultipartPart.h in Headers */,
 				994B28A817464000003E487E /* OVCClient.h in Headers */,
 				994B28A917464006003E487E /* OVCSocialClient.h in Headers */,
@@ -612,7 +599,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */,
-				99ED271417ABC9E500E5CF8B /* OVCQuery.h in Headers */,
 				99ED271517ABC9ED00E5CF8B /* OVCMultipartPart.h in Headers */,
 				99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */,
 				99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */,
@@ -857,7 +843,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				994B289717463E06003E487E /* OVCQuery.m in Sources */,
 				994B289817463E16003E487E /* OVCMultipartPart.m in Sources */,
 				994B289917463E16003E487E /* OVCClient.m in Sources */,
 				994B289A17463E16003E487E /* OVCSocialClient.m in Sources */,
@@ -879,7 +864,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */,
-				994B28B2174643AC003E487E /* OVCQueryTests.m in Sources */,
 				994B28B3174643AC003E487E /* OVCMultipartPartTests.m in Sources */,
 				994B28B4174643AC003E487E /* OVCRequestOperationTests.m in Sources */,
 				994B28B5174643AC003E487E /* OVCClientTests.m in Sources */,
@@ -902,7 +886,6 @@
 				993E4BAD173BEA3D0036969E /* AFXMLRequestOperation.m in Sources */,
 				993E4BAE173BEA3D0036969E /* UIImageView+AFNetworking.m in Sources */,
 				993E4BB5173BEB0A0036969E /* OVCClient.m in Sources */,
-				993002DB173BFC010077FAA5 /* OVCQuery.m in Sources */,
 				993002E1173BFDE40077FAA5 /* OVCRequestOperation.m in Sources */,
 				99A479FE173D4043008C570A /* OVCMultipartPart.m in Sources */,
 				9954E22C17413FBD00717F72 /* NSDictionary+Overcoat.m in Sources */,
@@ -915,7 +898,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				993E4BDD173BED190036969E /* OVCClientTests.m in Sources */,
-				9954E2091740CFD900717F72 /* OVCQueryTests.m in Sources */,
 				9954E21A1741243A00717F72 /* OVCMultipartPartTests.m in Sources */,
 				9954E2321741438E00717F72 /* NSDictionaryTests.m in Sources */,
 				9954E23B1741487600717F72 /* TestModel.m in Sources */,
