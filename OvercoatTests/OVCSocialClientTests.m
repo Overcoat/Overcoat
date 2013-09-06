@@ -9,8 +9,9 @@
 #import <Accounts/Accounts.h>
 
 @interface OVCSocialClient ()
-- (SLRequest *)socialRequestWithQuery:(OVCQuery *)query;
-- (NSMutableURLRequest *)preparedURLRequestWithSocialRequest:(SLRequest *)request query:(OVCQuery *)query;
+
+- (NSString *)socialRequestServiceType;
+
 @end
 
 @interface OVCSocialClientTests : SenTestCase
@@ -34,111 +35,69 @@
     [super tearDown];
 }
 
-- (void)testRequestWithQueryRequiresQuery {
-    STAssertThrows([self.socialClient requestWithQuery:nil], nil);
-}
-
-- (void)testRequestWithQueryCallsSocialRequestWithQuery {
+- (void)testRequestWithMethod {
     id mockClient = [OCMockObject partialMockForObject:self.socialClient];
 
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"];
-    [[mockClient expect] socialRequestWithQuery:query];
+    NSString *method = @"GET";
+    NSString *path = @"test";
+    NSDictionary *parameters = @{
+            @"foo" : @"bar"
+    };
 
-    [mockClient requestWithQuery:query];
+    id mockRequest = [OCMockObject mockForClass:NSMutableURLRequest.class];
+    [[[mockClient expect] andReturn:mockRequest] socialRequestWithMethod:method
+                                                                    path:path
+                                                              parameters:parameters
+                                                                   parts:nil];
+
+    NSMutableURLRequest *request = [self.socialClient requestWithMethod:method path:path parameters:parameters];
     [mockClient verify];
+    STAssertEqualObjects(request, mockRequest, nil);
 }
 
-- (void)testRequestWithQueryCallsPreparedURLRequestWithSocialRequest {
+- (void)testMultipartFormRequestWithMethod {
     id mockClient = [OCMockObject partialMockForObject:self.socialClient];
 
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"];
-    id socialRequest = [OCMockObject mockForClass:[SLRequest class]];
-    [[[mockClient stub] andReturn:socialRequest] socialRequestWithQuery:query];
+    NSString *method = @"GET";
+    NSString *path = @"test";
+    NSDictionary *parameters = @{
+            @"foo" : @"bar"
+    };
+    NSArray *parts = @[[OVCMultipartPart partWithData:[@"Some data" dataUsingEncoding:NSUTF8StringEncoding]
+                                                 name:@"blob"
+                                                 type:@"text/plain"
+                                             filename:@"blob.txt"]];
 
-    [[mockClient expect] preparedURLRequestWithSocialRequest:socialRequest query:query];
+    id mockRequest = [OCMockObject mockForClass:NSMutableURLRequest.class];
+    [[[mockClient expect] andReturn:mockRequest] socialRequestWithMethod:method
+                                                                    path:path
+                                                              parameters:parameters
+                                                                   parts:parts];
 
-    [mockClient requestWithQuery:query];
+    NSMutableURLRequest *request = [self.socialClient multipartFormRequestWithMethod:method
+                                                                                path:path
+                                                                          parameters:parameters
+                                                                               parts:parts];
     [mockClient verify];
+    STAssertEqualObjects(request, mockRequest, nil);
 }
 
-- (void)testSocialRequestWithQueryRequiresServiceType {
-    STAssertThrows([self.socialClient socialRequestWithQuery:[OVCQuery queryWithMethod:OVCQueryMethodGet path:@"/"]], nil);
-}
-
-- (void)testSocialRequestWithQueryUsingAccountType {
-    self.socialClient.serviceType = SLServiceTypeFacebook; // Facebook service
-
-    id accountType = [OCMockObject mockForClass:[ACAccountType class]];
+- (void)testSocialRequestServiceTypeWithAccount {
+    id accountType = [OCMockObject mockForClass:ACAccountType.class];
     [[[accountType stub] andReturn:ACAccountTypeIdentifierTwitter] identifier];
-
-    id account = [OCMockObject mockForClass:[ACAccount class]];
+    id account = [OCMockObject mockForClass:ACAccount.class];
     [[[account stub] andReturn:accountType] accountType];
 
+    self.socialClient.serviceType = SLServiceTypeFacebook; // Facebook service
     self.socialClient.account = account; // Twitter account
 
-    id request = [OCMockObject mockForClass:[SLRequest class]];
-
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodPost path:@"/path" parameters:@{@"foo" : @"bar"}];
-    [[request expect] requestForServiceType:SLServiceTypeTwitter // <-- Overridden by account
-                              requestMethod:SLRequestMethodPOST
-                                        URL:[NSURL URLWithString:query.path relativeToURL:self.socialClient.baseURL]
-                                 parameters:query.parameters];
-    [[[request stub] andReturn:nil] requestForServiceType:OCMOCK_ANY requestMethod:SLRequestMethodPOST URL:OCMOCK_ANY parameters:OCMOCK_ANY];
-
-    [self.socialClient requestWithQuery:query];
-
-    [request verify];
+    // Service must be Twitter because the account is a Twitter account
+    STAssertEqualObjects(self.socialClient.socialRequestServiceType, SLServiceTypeTwitter, nil);
 }
 
-- (void)testSocialRequestWithQueryUsingServiceType {
+- (void)testSocialRequestServiceTypeWithServiceType {
     self.socialClient.serviceType = SLServiceTypeFacebook;
-
-    id request = [OCMockObject mockForClass:[SLRequest class]];
-
-    OVCQuery *query = [OVCQuery queryWithMethod:OVCQueryMethodPost path:@"/path" parameters:@{@"foo" : @"bar"}];
-    [[request expect] requestForServiceType:SLServiceTypeFacebook
-                              requestMethod:SLRequestMethodPOST
-                                        URL:[NSURL URLWithString:query.path relativeToURL:self.socialClient.baseURL]
-                                 parameters:query.parameters];
-    [[[request stub] andReturn:nil] requestForServiceType:OCMOCK_ANY requestMethod:SLRequestMethodPOST URL:OCMOCK_ANY parameters:OCMOCK_ANY];
-
-    [self.socialClient requestWithQuery:query];
-
-    [request verify];
-}
-
-- (void)testThatPreparedURLRequestWithSocialRequestUsesAccount {
-    id accountType = [OCMockObject mockForClass:[ACAccountType class]];
-    [[[accountType stub] andReturn:ACAccountTypeIdentifierTwitter] identifier];
-
-    id account = [OCMockObject mockForClass:[ACAccount class]];
-    [[[account stub] andReturn:accountType] accountType];
-
-    self.socialClient.account = account;
-    id request = [OCMockObject niceMockForClass:[SLRequest class]];
-    [[request expect] setAccount:account];
-
-    [self.socialClient preparedURLRequestWithSocialRequest:request query:nil];
-    [request verify];
-}
-
-- (void)testThatPreparedURLRequestWithSocialRequestAddsMultipartParts {
-    OVCQuery *query = [[OVCQuery alloc] init];
-    [query addMultipartData:[@"some data" dataUsingEncoding:NSUTF8StringEncoding] withName:@"name" type:@"type" filename:@"filename"];
-
-    id request = [OCMockObject niceMockForClass:[SLRequest class]];
-    [[request expect] addMultipartData:[@"some data" dataUsingEncoding:NSUTF8StringEncoding] withName:@"name" type:@"type" filename:@"filename"];
-
-    [self.socialClient preparedURLRequestWithSocialRequest:request query:query];
-    [request verify];
-}
-
-- (void)testThatPreparedURLRequestWithSocialRequestCallsPreparedURLRequest {
-    id request = [OCMockObject niceMockForClass:[SLRequest class]];
-    [[request expect] preparedURLRequest];
-
-    [self.socialClient preparedURLRequestWithSocialRequest:request query:nil];
-    [request verify];
+    STAssertEqualObjects(self.socialClient.socialRequestServiceType, SLServiceTypeFacebook, nil);
 }
 
 @end

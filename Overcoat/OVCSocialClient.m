@@ -22,10 +22,10 @@
 
 #if ((__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0) || (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_8))
 
-#import <Accounts/Accounts.h>
 #import "OVCSocialClient.h"
-#import "OVCQuery.h"
 #import "OVCMultipartPart.h"
+
+#import <Accounts/Accounts.h>
 
 static NSString *OVCServiceTypeForAccountTypeIdentifier(NSString *accountTypeIdentifier) {
     static dispatch_once_t onceToken;
@@ -42,61 +42,53 @@ static NSString *OVCServiceTypeForAccountTypeIdentifier(NSString *accountTypeIde
     return serviceTypes[accountTypeIdentifier];
 }
 
-static SLRequestMethod OVCSocialRequestMethod(OVCQueryMethod method) {
+static SLRequestMethod OVCSocialRequestMethod(NSString *method) {
     static dispatch_once_t onceToken;
     static NSDictionary *methods;
 
     dispatch_once(&onceToken, ^{
         methods = @{
-                @(OVCQueryMethodGet) : @(SLRequestMethodGET),
-                @(OVCQueryMethodPost) : @(SLRequestMethodPOST),
-                @(OVCQueryMethodPut) : @(SLRequestMethodPOST),
-                @(OVCQueryMethodDelete) : @(SLRequestMethodDELETE)
+                @"GET" : @(SLRequestMethodGET),
+                @"POST" : @(SLRequestMethodPOST),
+                @"PUT" : @(SLRequestMethodPOST),
+                @"DELETE" : @(SLRequestMethodDELETE)
         };
     });
 
-    return (SLRequestMethod) [methods[@(method)] integerValue];
+    return (SLRequestMethod) [methods[method] integerValue];
 }
-
-@interface OVCSocialClient ()
-
-- (SLRequest *)socialRequestWithQuery:(OVCQuery *)query;
-
-- (NSMutableURLRequest *)preparedURLRequestWithSocialRequest:(SLRequest *)request query:(OVCQuery *)query;
-
-@end
 
 @implementation OVCSocialClient
 
-- (NSMutableURLRequest *)requestWithQuery:(OVCQuery *)query {
-    NSParameterAssert(query);
+- (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
+    return [self socialRequestWithMethod:method path:path parameters:parameters parts:nil];
+}
 
-    SLRequest *request = [self socialRequestWithQuery:query];
-    return [self preparedURLRequestWithSocialRequest:request query:query];
+- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
+    return [self socialRequestWithMethod:method path:path parameters:parameters parts:parts];
+}
+
+- (NSMutableURLRequest *)socialRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
+    NSString *serviceType = [self socialRequestServiceType];
+    NSAssert(serviceType, @"*** No service type found!");
+
+    SLRequest *request = [SLRequest requestForServiceType:serviceType
+                                            requestMethod:OVCSocialRequestMethod(method)
+                                                      URL:[NSURL URLWithString:path relativeToURL:self.baseURL]
+                                               parameters:parameters];
+    request.account = self.account;
+
+    for (OVCMultipartPart *part in parts) {
+        [request addMultipartData:part.data withName:part.name type:part.type filename:part.filename];
+    }
+
+    return [[request preparedURLRequest] mutableCopy];
 }
 
 #pragma mark - Private methods
 
-- (SLRequest *)socialRequestWithQuery:(OVCQuery *)query {
-    NSString *serviceType = self.account ? OVCServiceTypeForAccountTypeIdentifier(self.account.accountType.identifier) : self.serviceType;
-    NSAssert(serviceType, @"*** No service type found!");
-
-    return [SLRequest requestForServiceType:serviceType
-                              requestMethod:OVCSocialRequestMethod(query.method)
-                                        URL:[NSURL URLWithString:query.path relativeToURL:self.baseURL]
-                                 parameters:query.parameters];
-}
-
-- (NSMutableURLRequest *)preparedURLRequestWithSocialRequest:(SLRequest *)request query:(OVCQuery *)query {
-    request.account = self.account;
-
-    if ([query.parts count]) {
-        for (OVCMultipartPart *part in query.parts) {
-            [request addMultipartData:part.data withName:part.name type:part.type filename:part.filename];
-        }
-    }
-
-    return [[request preparedURLRequest] mutableCopy];
+- (NSString *)socialRequestServiceType {
+    return self.account ? OVCServiceTypeForAccountTypeIdentifier(self.account.accountType.identifier) : self.serviceType;
 }
 
 @end
