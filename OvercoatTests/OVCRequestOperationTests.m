@@ -43,7 +43,7 @@
                                                                              resultClass:TestModel.class
                                                                            resultKeyPath:@"data.object"];
 
-    __block TestModel *model = nil;
+    TestModel *__block model = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -67,7 +67,7 @@
                                                                              resultClass:TestModel.class
                                                                            resultKeyPath:@"data.objects"];
 
-    __block NSArray *models = nil;
+    NSArray * __block models = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -92,7 +92,7 @@
 - (void)testResponseObjectWithoutValueTransformer {
     OVCRequestOperation *requestOperation = [[OVCRequestOperation alloc] initWithRequest:self.urlRequest];
 
-    __block NSDictionary *dictionary = nil;
+    NSDictionary * __block dictionary = nil;
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {

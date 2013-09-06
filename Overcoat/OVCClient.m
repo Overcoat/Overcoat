@@ -36,7 +36,7 @@
     return self;
 }
 
-- (AFHTTPRequestOperation *)GET:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+- (OVCRequestOperation *)GET:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
     NSURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:parameters];
     OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                resultClass:resultClass
@@ -46,7 +46,7 @@
     return operation;
 }
 
-- (AFHTTPRequestOperation *)POST:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+- (OVCRequestOperation *)POST:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
     NSURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:parameters];
     OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                resultClass:resultClass
@@ -56,7 +56,7 @@
     return operation;
 }
 
-- (AFHTTPRequestOperation *)PUT:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
+- (OVCRequestOperation *)PUT:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
     NSURLRequest *request = [self requestWithMethod:@"PUT" path:path parameters:parameters];
     OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                resultClass:resultClass

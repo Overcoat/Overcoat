@@ -36,11 +36,11 @@
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (AFHTTPRequestOperation *)GET:(NSString *)path
-                     parameters:(NSDictionary *)parameters
-                    resultClass:(Class)resultClass
-                  resultKeyPath:(NSString *)keyPath
-                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (OVCRequestOperation *)GET:(NSString *)path
+                  parameters:(NSDictionary *)parameters
+                 resultClass:(Class)resultClass
+               resultKeyPath:(NSString *)keyPath
+                  completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 // Creates an `OVCRequestOperation` with a `POST` request, and enqueues it to the HTTP client's operation queue.
 //
@@ -51,11 +51,11 @@
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (AFHTTPRequestOperation *)POST:(NSString *)path
-                      parameters:(NSDictionary *)parameters
-                     resultClass:(Class)resultClass
-                   resultKeyPath:(NSString *)keyPath
-                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (OVCRequestOperation *)POST:(NSString *)path
+                   parameters:(NSDictionary *)parameters
+                  resultClass:(Class)resultClass
+                resultKeyPath:(NSString *)keyPath
+                   completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 // Creates an `OVCRequestOperation` with a `PUT` request, and enqueues it to the HTTP client's operation queue.
 //
@@ -66,11 +66,11 @@
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (AFHTTPRequestOperation *)PUT:(NSString *)path
-                     parameters:(NSDictionary *)parameters
-                    resultClass:(Class)resultClass
-                  resultKeyPath:(NSString *)keyPath
-                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (OVCRequestOperation *)PUT:(NSString *)path
+                  parameters:(NSDictionary *)parameters
+                 resultClass:(Class)resultClass
+               resultKeyPath:(NSString *)keyPath
+                  completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 
 // Creates an `OVCRequestOperation` that loads the specified request and transforms the result into a model or an
