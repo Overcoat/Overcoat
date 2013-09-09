@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "AFJSONRequestOperation.h"
+#import <AFNetworking/AFNetworking.h>
 
 // AFJSONRequestOperation subclass for downloading and transforming JSON data into model objects.
 @interface OVCRequestOperation : AFJSONRequestOperation

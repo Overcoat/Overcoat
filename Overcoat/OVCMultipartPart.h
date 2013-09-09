@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Mantle/MTLModel.h>
+#import <Mantle/Mantle.h>
 
 @interface OVCMultipartPart : MTLModel
 
