@@ -21,11 +21,10 @@
 // THE SOFTWARE.
 
 #import "OVCRequestOperation.h"
-#import "EXTScope.h"
 #import "NSDictionary+Overcoat.h"
 
-#import <Mantle/NSValueTransformer+MTLPredefinedTransformerAdditions.h>
-#import <Mantle/MTLValueTransformer.h>
+#import <Mantle/Mantle.h>
+#import "EXTScope.h"
 
 static dispatch_queue_t OVCRequestOperationProcessingQueue() {
     static dispatch_once_t onceToken;
