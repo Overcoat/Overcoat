@@ -35,6 +35,25 @@
     [super tearDown];
 }
 
+- (void)testInitWithAccount {
+    id accountType = [OCMockObject mockForClass:ACAccountType.class];
+    [[[accountType stub] andReturn:ACAccountTypeIdentifierTwitter] identifier];
+    id account = [OCMockObject mockForClass:ACAccount.class];
+    [[[account stub] andReturn:accountType] accountType];
+    
+    OVCSocialClient *socialClient = [[OVCSocialClient alloc] initWithAccount:account
+                                                                     baseURL:[NSURL URLWithString:@"http://www.example.com"]];
+    STAssertEqualObjects(socialClient.account, account, nil);
+    STAssertEqualObjects(socialClient.socialRequestServiceType, SLServiceTypeTwitter, nil);
+}
+
+- (void)testInitWithServiceType {
+    OVCSocialClient *socialClient = [[OVCSocialClient alloc] initWithServiceType:SLServiceTypeFacebook
+                                                                         baseURL:[NSURL URLWithString:@"http://www.example.com"]];
+    STAssertEqualObjects(socialClient.serviceType, SLServiceTypeFacebook, nil);
+    STAssertEqualObjects(socialClient.socialRequestServiceType, SLServiceTypeFacebook, nil);
+}
+
 - (void)testRequestWithMethod {
     id mockClient = [OCMockObject partialMockForObject:self.socialClient];
 
@@ -80,24 +99,6 @@
                                                                                parts:parts];
     [mockClient verify];
     STAssertEqualObjects(request, mockRequest, nil);
-}
-
-- (void)testSocialRequestServiceTypeWithAccount {
-    id accountType = [OCMockObject mockForClass:ACAccountType.class];
-    [[[accountType stub] andReturn:ACAccountTypeIdentifierTwitter] identifier];
-    id account = [OCMockObject mockForClass:ACAccount.class];
-    [[[account stub] andReturn:accountType] accountType];
-
-    self.socialClient.serviceType = SLServiceTypeFacebook; // Facebook service
-    self.socialClient.account = account; // Twitter account
-
-    // Service must be Twitter because the account is a Twitter account
-    STAssertEqualObjects(self.socialClient.socialRequestServiceType, SLServiceTypeTwitter, nil);
-}
-
-- (void)testSocialRequestServiceTypeWithServiceType {
-    self.socialClient.serviceType = SLServiceTypeFacebook;
-    STAssertEqualObjects(self.socialClient.socialRequestServiceType, SLServiceTypeFacebook, nil);
 }
 
 @end
