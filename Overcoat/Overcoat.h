@@ -20,6 +20,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Foundation/Foundation.h>
+#import <SystemConfiguration/SystemConfiguration.h>
+
+#if TARGET_OS_IPHONE
+    #import <MobileCoreServices/MobileCoreServices.h>
+#else
+    #import <CoreServices/CoreServices.h>
+#endif
+
 #ifndef _OVERCOAT_H
 #define _OVERCOAT_H
 

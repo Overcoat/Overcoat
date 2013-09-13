@@ -60,6 +60,26 @@ static SLRequestMethod OVCSocialRequestMethod(NSString *method) {
 
 @implementation OVCSocialClient
 
+- (id)initWithAccount:(ACAccount *)account baseURL:(NSURL *)url {
+    self = [super initWithBaseURL:url];
+    
+    if (self) {
+        _account = account;
+    }
+    
+    return self;
+}
+
+- (id)initWithServiceType:(NSString *)serviceType baseURL:(NSURL *)url {
+    self = [super initWithBaseURL:url];
+    
+    if (self) {
+        _serviceType = serviceType;
+    }
+    
+    return self;
+}
+
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
     return [self socialRequestWithMethod:method path:path parameters:parameters parts:nil];
 }
