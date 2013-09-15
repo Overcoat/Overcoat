@@ -29,10 +29,23 @@
 @interface OVCSocialClient : OVCClient
 
 // Account information used to authenticate every request.
-@property (strong, nonatomic) ACAccount *account;
+@property (strong, nonatomic, readonly) ACAccount *account;
 
 // The social networking service type. If the account property is set this value is not used.
-@property (copy, nonatomic) NSString *serviceType;
+@property (copy, nonatomic, readonly) NSString *serviceType;
+
+// Initializes an `OVCSocialClient` object with the specified account and base URL.
+//
+// account - The account information used to authenticate every request.
+// url     - The base URL for the HTTP client. This argument must not be `nil`.
+- (id)initWithAccount:(ACAccount *)account baseURL:(NSURL *)url;
+
+// Initializes an `OVCSocialClient` object with the specified serviceType and base URL.
+//
+// serviceType - The social networking service type. Possible values are SLServiceTypeFacebook,
+//               SLServiceTypeTwitter and SLServiceTypeSinaWeibo.
+// url         - The base URL for the HTTP client. This argument must not be `nil`.
+- (id)initWithServiceType:(NSString *)serviceType baseURL:(NSURL *)url;
 
 // Creates an OAuth-compatible `NSMutableURLRequest` signed with the user's account.
 //
