@@ -1,0 +1,5 @@
+language: objective-c
+before_install: scripts/bootstrap
+script:
+    - xctool -project Overcoat.xcodeproj -scheme "Overcoat iOS Tests" -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator6.1
+    - xctool -project Overcoat.xcodeproj -scheme "Overcoat Mac Tests" -sdk macosx -configuration Release test -test-sdk macosx
