@@ -168,7 +168,7 @@ NSDictionary *parameters = @{
 
 ## Sample Application
 
-[ReadingList](https://github.com/gonzalezreal/ReadingList) is a fairly complete iOS example application that shows how to use Overcoat. 
+[ReadingList](https://github.com/gonzalezreal/ReadingList) is a fairly complete iOS sample application that shows how to use Overcoat.
 
 ## Contact
 
