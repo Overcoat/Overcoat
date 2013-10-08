@@ -679,7 +679,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OVC;
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Guillermo Gonzalez";
 			};
 			buildConfigurationList = 99663E0A173BAD1D0090F0E6 /* Build configuration list for PBXProject "Overcoat" */;
@@ -964,7 +964,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -989,7 +988,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED270417ABC2E900E5CF8B /* Mac-Framework.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1015,7 +1013,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1037,7 +1034,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED270117ABC2E900E5CF8B /* Mac-Application.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
