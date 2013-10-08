@@ -22,58 +22,72 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-@class OVCRequestOperation;
-
 // Provides HTTP methods that return MTLModel subclasses.
-@interface OVCClient : AFHTTPClient
+@interface OVCClient : AFHTTPRequestOperationManager
 
-// Creates an `OVCRequestOperation` with a `GET` request, and enqueues it to the HTTP client's operation queue.
+// Creates and runs an `AFHTTPRequestOperation` with a `GET` request.
 //
-// path        - The path to be appended to the HTTP client's base URL and used as the request URL.
-// parameters  - The parameters to be encoded and appended as the query string for the request URL.
+// URLString   - The URL string used to create the request URL.
+// parameters  - The parameters to be encoded according to the client request serializer.
 // resultClass - MTLModel subclass in which the response (or part of the response) will be transformed.
 // keyPath     - Key path in the JSON response that contains the data to be transformed. If this is nil,
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (OVCRequestOperation *)GET:(NSString *)path
-                  parameters:(NSDictionary *)parameters
-                 resultClass:(Class)resultClass
-               resultKeyPath:(NSString *)keyPath
-                  completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (AFHTTPRequestOperation *)GET:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
-// Creates an `OVCRequestOperation` with a `POST` request, and enqueues it to the HTTP client's operation queue.
+// Creates and runs an `AFHTTPRequestOperation` with a `POST` request.
 //
-// path        - The path to be appended to the HTTP client's base URL and used as the request URL.
-// parameters  - The parameters to be encoded and appended as the query string for the request URL.
+// URLString   - The URL string used to create the request URL.
+// parameters  - The parameters to be encoded according to the client request serializer.
 // resultClass - MTLModel subclass in which the response (or part of the response) will be transformed.
 // keyPath     - Key path in the JSON response that contains the data to be transformed. If this is nil,
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (OVCRequestOperation *)POST:(NSString *)path
-                   parameters:(NSDictionary *)parameters
-                  resultClass:(Class)resultClass
-                resultKeyPath:(NSString *)keyPath
-                   completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                   resultKeyPath:(NSString *)keyPath
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
-// Creates an `OVCRequestOperation` with a `PUT` request, and enqueues it to the HTTP client's operation queue.
+// Creates and runs an `AFHTTPRequestOperation` with a multipart `POST` request.
 //
-// path        - The path to be appended to the HTTP client's base URL and used as the request URL.
-// parameters  - The parameters to be encoded and appended as the query string for the request URL.
+// URLString   - The URL string used to create the request URL.
+// parameters  - The parameters to be encoded according to the client request serializer.
 // resultClass - MTLModel subclass in which the response (or part of the response) will be transformed.
 // keyPath     - Key path in the JSON response that contains the data to be transformed. If this is nil,
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (OVCRequestOperation *)PUT:(NSString *)path
-                  parameters:(NSDictionary *)parameters
-                 resultClass:(Class)resultClass
-               resultKeyPath:(NSString *)keyPath
-                  completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                   resultKeyPath:(NSString *)keyPath
+       constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+
+// Creates and runs an `AFHTTPRequestOperation` with a `PUT` request.
+//
+// URLString   - The URL string used to create the request URL.
+// parameters  - The parameters to be encoded according to the client request serializer.
+// resultClass - MTLModel subclass in which the response (or part of the response) will be transformed.
+// keyPath     - Key path in the JSON response that contains the data to be transformed. If this is nil,
+//               the whole response will be used.
+// completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
+//               parameter will contain either a single instance or an array of instances of `resultClass`.
+- (AFHTTPRequestOperation *)PUT:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 
-// Creates an `OVCRequestOperation` that loads the specified request and transforms the result into a model or an
+// Creates an `AFHTTPRequestOperation` that loads the specified request and transforms the result into a model or an
 // array of model objects.
 //
 // urlRequest  - The request object to be loaded asynchronously during execution of the operation.
@@ -82,28 +96,9 @@
 //               the whole response will be used.
 // completion  - A block to be executed when the operation finishes. Depending on the response, the responseObject
 //               parameter will contain either a single instance or an array of instances of `resultClass`.
-- (OVCRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest
-                                             resultClass:(Class)resultClass
-                                           resultKeyPath:(NSString *)keyPath
-                                              completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
-
-// Creates an `NSMutableURLRequest` object with the specified HTTP method and path, and constructs a `multipart/form-data`
-// HTTP body using the specified parameters and array of parts.
-// method     - The HTTP method for the request. This parameter must not be `GET` or `HEAD`, or `nil`.
-// path       - The path to be appended to the HTTP client's base URL and used as the request URL.
-// parameters - The parameters to be encoded and set in the request HTTP body.
-// parts      - Array of OVCMultipartPart objects.
-- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method
-                                                   path:(NSString *)path
-                                             parameters:(NSDictionary *)parameters
-                                                  parts:(NSArray *)parts;
-
-@end
-
-@interface OVCClient (Unavailable)
-
-- (AFHTTPRequestOperation *)executeQuery:(id)query completionBlock:(void (^)(AFHTTPRequestOperation *operation, id object, NSError *error))block __attribute__((deprecated("Replaced by -HTTPRequestOperationWithRequest:resultClass:resultKeyPath:completion:")));
-
-- (NSMutableURLRequest *)requestWithQuery:(id)query __attribute__((deprecated("Replaced by -HTTPRequestOperationWithRequest:resultClass:resultKeyPath:completion:")));
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest
+                                                resultClass:(Class)resultClass
+                                              resultKeyPath:(NSString *)keyPath
+                                                 completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 @end
