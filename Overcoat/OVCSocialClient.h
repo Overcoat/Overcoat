@@ -20,8 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#if ((__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0) || (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_8))
-
 #import <Social/Social.h>
 #import "OVCClient.h"
 
@@ -60,7 +58,3 @@
                                            parts:(NSArray *)parts;
 
 @end
-
-#else
-#warning OVCSocialClient is available for iOS 6 / OS X 10.8 or higher.
-#endif

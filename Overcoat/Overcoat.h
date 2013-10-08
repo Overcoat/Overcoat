@@ -28,10 +28,7 @@
 #import "OVCMultipartPart.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCClient.h"
+#import "OVCSocialClient.h"
 #import "NSDictionary+Overcoat.h"
-
-#if ((__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0) || (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_8))
-    #import "OVCSocialClient.h"
-#endif
 
 #endif /* _OVERCOAT_H */
