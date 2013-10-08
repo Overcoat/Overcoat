@@ -1,4 +1,4 @@
-// Overcoat.h
+// OVCModelResponseSerializer.h
 //
 // Copyright (c) 2013 Guillermo Gonzalez
 //
@@ -20,18 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <AFNetworking/AFNetworking.h>
 
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
+// AFJSONResponseSerializer subclass that validates and transforms a JSON
+// response into a model object or an array of model objects.
+@interface OVCModelResponseSerializer : AFJSONResponseSerializer
 
-#import "OVCMultipartPart.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCClient.h"
-#import "NSDictionary+Overcoat.h"
+// MTLModel subclass in which the response (or part of the response) will be transformed.
+@property (nonatomic) Class modelClass;
 
-#if ((__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0) || (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_8))
-    #import "OVCSocialClient.h"
-#endif
+// Key path in the JSON response that contains the data to be transformed.
+@property (copy, nonatomic) NSString *responseKeyPath;
 
-#endif /* _OVERCOAT_H */
+// Creates and returns a model serializer with the specified model class and response key path.
++ (instancetype)serializerWithModelClass:(Class)modelClass responseKeyPath:(NSString *)responseKeyPath;
+
+// Creates and returns a model serializer with the specified JSON reading options,
+// model class and response object key path.
++ (instancetype)serializerWithReadingOptions:(NSJSONReadingOptions)readingOptions
+                                  modelClass:(Class)modelClass
+                             responseKeyPath:(NSString *)responseKeyPath;
+
+@end
