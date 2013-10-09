@@ -45,12 +45,12 @@
     id JSONObject = [super responseObjectForResponse:response data:data error:error];
     
     if (JSONObject != nil) {
+        if (self.responseKeyPath.length && [JSONObject isKindOfClass:NSDictionary.class]) {
+            JSONObject = [JSONObject ovc_objectForKeyPath:self.responseKeyPath];
+        }
+        
         if (self.modelClass != Nil) {
             NSValueTransformer *valueTransformer = nil;
-            
-            if (self.responseKeyPath.length && [JSONObject isKindOfClass:NSDictionary.class]) {
-                JSONObject = [JSONObject ovc_objectForKeyPath:self.responseKeyPath];
-            }
             
             if ([JSONObject isKindOfClass:NSDictionary.class]) {
                 valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.modelClass];
