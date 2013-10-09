@@ -8,13 +8,7 @@
 
 #import "TestModel.h"
 
-@interface AFHTTPClient ()
-
-@property (readwrite, nonatomic, strong) NSMutableArray *registeredHTTPOperationClassNames;
-
-@end
-
-@interface OVCClientTests : SenTestCase
+@interface OVCClientTests : OVCTestCase
 
 @property (strong, nonatomic) OVCClient *client;
 
@@ -25,218 +19,206 @@
 - (void)setUp {
     [super setUp];
 
-    self.client = [[OVCClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://www.example.com"]];
+    self.client = [[OVCClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test"]];
 }
 
 - (void)tearDown {
-    [self.client.operationQueue cancelAllOperations];
     self.client = nil;
-
+    [OHHTTPStubs removeAllRequestHandlers];
+    
     [super tearDown];
 }
 
-- (void)testInit {
-    BOOL operationClassRegistered = [self.client.registeredHTTPOperationClassNames containsObject:NSStringFromClass(OVCRequestOperation.class)];
-    STAssertTrue(operationClassRegistered, nil);
-    STAssertEqualObjects([self.client defaultValueForHeader:@"Accept"], @"application/json", nil);
-}
-
 - (void)testGET {
-    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
-    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
-    id mockClient = [OCMockObject partialMockForObject:self.client];
-
-    NSString *path = @"search";
-    NSDictionary *parameters = @{
-            @"foo" : @"bar"
-    };
-    NSString *keyPath = @"data.objects";
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] requestWithMethod:@"GET"
+                                                            URLString:@"http://test/search"
+                                                           parameters:parameters];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
     };
-
-    [[[mockClient expect] andReturn:mockRequest] requestWithMethod:@"GET" path:path parameters:parameters];
-    [[[mockClient expect] andReturn:mockOperation] HTTPRequestOperationWithRequest:mockRequest
-                                                                       resultClass:TestModel.class
-                                                                     resultKeyPath:keyPath
-                                                                        completion:block];
-    [[mockClient expect] enqueueHTTPRequestOperation:mockOperation];
-
-    OVCRequestOperation *operation = [self.client GET:path
-                                           parameters:parameters
-                                          resultClass:TestModel.class
-                                        resultKeyPath:keyPath
-                                           completion:block];
-    [mockClient verify];
-    STAssertEqualObjects(operation, mockOperation, nil);
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client GET:@"search"
+                                              parameters:parameters
+                                             resultClass:TestModel.class
+                                           resultKeyPath:@"data.object"
+                                              completion:block];
+    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
 }
 
 - (void)testPOST {
-    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
-    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
-    id mockClient = [OCMockObject partialMockForObject:self.client];
-
-    NSString *path = @"create";
-    NSDictionary *parameters = @{
-            @"foo" : @"bar"
-    };
-    NSString *keyPath = @"data.object";
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] requestWithMethod:@"POST"
+                                                            URLString:@"http://test/create"
+                                                           parameters:parameters];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
     };
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client POST:@"create"
+                                               parameters:parameters
+                                              resultClass:TestModel.class
+                                            resultKeyPath:@"data.object"
+                                               completion:block];
+    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
+}
 
-    [[[mockClient expect] andReturn:mockRequest] requestWithMethod:@"POST" path:path parameters:parameters];
-    [[[mockClient expect] andReturn:mockOperation] HTTPRequestOperationWithRequest:mockRequest
-                                                                       resultClass:TestModel.class
-                                                                     resultKeyPath:keyPath
-                                                                        completion:block];
-    [[mockClient expect] enqueueHTTPRequestOperation:mockOperation];
-
-    OVCRequestOperation *operation = [self.client POST:path
-                                            parameters:parameters
-                                           resultClass:TestModel.class
-                                         resultKeyPath:keyPath
-                                            completion:block];
-    [mockClient verify];
-    STAssertEqualObjects(operation, mockOperation, nil);
+- (void)testMultipartPOST {
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    void (^bodyBlock)(id <AFMultipartFormData>) = ^(id <AFMultipartFormData> formData) {
+    };
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] multipartFormRequestWithMethod:@"POST"
+                                                                         URLString:@"http://test/create"
+                                                                        parameters:parameters
+                                                         constructingBodyWithBlock:bodyBlock];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
+    void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    };
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client POST:@"create"
+                                               parameters:parameters
+                                              resultClass:TestModel.class
+                                            resultKeyPath:@"data.object"
+                                constructingBodyWithBlock:bodyBlock
+                                               completion:block];
+    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
 }
 
 - (void)testPUT {
-    id mockRequest = [OCMockObject mockForClass:NSURLRequest.class];
-    id mockOperation = [OCMockObject mockForClass:OVCRequestOperation.class];
-    id mockClient = [OCMockObject partialMockForObject:self.client];
-
-    NSString *path = @"update";
-    NSDictionary *parameters = @{
-            @"foo" : @"bar"
-    };
-    NSString *keyPath = @"data.object";
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] requestWithMethod:@"PUT"
+                                                            URLString:@"http://test/update"
+                                                           parameters:parameters];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
     };
-
-    [[[mockClient expect] andReturn:mockRequest] requestWithMethod:@"PUT" path:path parameters:parameters];
-    [[[mockClient expect] andReturn:mockOperation] HTTPRequestOperationWithRequest:mockRequest
-                                                                       resultClass:TestModel.class
-                                                                     resultKeyPath:keyPath
-                                                                        completion:block];
-    [[mockClient expect] enqueueHTTPRequestOperation:mockOperation];
-
-    OVCRequestOperation *operation = [self.client PUT:path
-                                           parameters:parameters
-                                          resultClass:TestModel.class
-                                        resultKeyPath:keyPath
-                                           completion:block];
-    [mockClient verify];
-    STAssertEqualObjects(operation, mockOperation, nil);
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client PUT:@"update"
+                                              parameters:parameters
+                                             resultClass:TestModel.class
+                                           resultKeyPath:@"data.object"
+                                              completion:block];
+    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
 }
 
 - (void)testHTTPRequestOperationCompletion {
-    id requestHandler = [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
         NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:@"testResponse" withExtension:@"json"];
         return [OHHTTPStubsResponse responseWithFileURL:fileURL contentType:@"application/json" responseTime:0];
     }];
-
+    
     AFHTTPRequestOperation * __block blockOperation = nil;
     TestModel * __block blockObject = nil;
     NSError * __block blockError = nil;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
         blockOperation = operation;
         blockObject = responseObject;
         blockError = error;
-        dispatch_semaphore_signal(semaphore);
     };
 
-    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"test" parameters:nil];
-    OVCRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
-                                                                      resultClass:TestModel.class
-                                                                    resultKeyPath:@"data.object"
-                                                                       completion:block];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
+    AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
+                                                                         resultClass:TestModel.class
+                                                                       resultKeyPath:@"data.object"
+                                                                          completion:block];
     [operation start];
 
-    BOOL timeout = [self waitForSemaphore:semaphore timeout:5];
-    STAssertFalse(timeout, @"Timeout waiting for processing queue");
-
-    STAssertNotNil(operation, nil);
-    STAssertEqualObjects(operation, blockOperation, nil);
-    STAssertEqualObjects([TestModel testModelWithFirstName:@"Bruce" lastName:@"Wayne"], blockObject, nil);
-    STAssertNil(blockError, nil);
-
-    [OHHTTPStubs removeRequestHandler:requestHandler];
+    TGRAssertEventually(blockObject != nil, @"should return an object");
+    
+    STAssertEqualObjects(operation, blockOperation, @"should pass the operation in the completion block");
+    STAssertTrue([blockObject isKindOfClass:TestModel.class], @"should return a TestModel object");
+    STAssertNil(blockError, @"should return no error");
 }
 
 - (void)testHTTPRequestOperationCompletionWithError {
-    id requestHandler = [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
         return [OHHTTPStubsResponse responseWithError:[NSError errorWithDomain:NSURLErrorDomain
                                                                           code:NSURLErrorBadServerResponse
                                                                       userInfo:nil]];
     }];
-
-    AFHTTPRequestOperation * __block blockOperation = nil;
-    TestModel * __block blockObject = nil;
+    
     NSError * __block blockError = nil;
-    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
 
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
-        blockOperation = operation;
-        blockObject = responseObject;
         blockError = error;
-        dispatch_semaphore_signal(semaphore);
     };
 
-    NSURLRequest *request = [self.client requestWithMethod:@"GET" path:@"test" parameters:nil];
-    OVCRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
-                                                                      resultClass:TestModel.class
-                                                                    resultKeyPath:@"data.object"
-                                                                       completion:block];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
+    AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
+                                                                         resultClass:TestModel.class
+                                                                       resultKeyPath:@"data.object"
+                                                                          completion:block];
     [operation start];
 
-    BOOL timeout = [self waitForSemaphore:semaphore timeout:5];
-    STAssertFalse(timeout, @"Timeout waiting for processing queue");
+    TGRAssertEventually(blockError != nil, @"should return an error");
 
-    STAssertNotNil(operation, nil);
-    STAssertEqualObjects(operation, blockOperation, nil);
-    STAssertNil(blockObject, nil);
     STAssertEqualObjects(blockError.domain, NSURLErrorDomain, nil);
     STAssertEquals(blockError.code, (NSInteger)NSURLErrorBadServerResponse, nil);
-
-    [OHHTTPStubs removeRequestHandler:requestHandler];
-}
-
-- (void)testMultipartFormRequest {
-    id mockClient = [OCMockObject partialMockForObject:self.client];
-
-    NSString *method = @"GET";
-    NSString *path = @"test";
-    NSDictionary *parameters = @{
-            @"foo" : @"bar"
-    };
-    NSArray *parts = [NSArray array];
-
-    id mockRequest = [OCMockObject mockForClass:NSMutableURLRequest.class];
-    [[[mockClient expect] andReturn:mockRequest] multipartFormRequestWithMethod:method
-                                                                           path:path
-                                                                     parameters:parameters
-                                                      constructingBodyWithBlock:OCMOCK_ANY];
-    NSMutableURLRequest *request = [self.client multipartFormRequestWithMethod:method
-                                                                          path:path
-                                                                    parameters:parameters
-                                                                         parts:parts];
-    [mockClient verify];
-    STAssertEqualObjects(request, mockRequest, nil);
-}
-
-- (BOOL)waitForSemaphore:(dispatch_semaphore_t)semaphore timeout:(NSTimeInterval)timeout {
-    NSDate *date = [NSDate dateWithTimeIntervalSinceNow:timeout];
-
-    while (dispatch_semaphore_wait(semaphore, DISPATCH_TIME_NOW)) {
-        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:date];
-
-        if ([date timeIntervalSinceNow] < 0.0) {
-            return YES;
-        }
-    }
-
-    return NO;
 }
 
 @end
