@@ -190,14 +190,14 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 99C8284D17DDDB47002893C0 /* OvercoatDependencies.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 99C827CB17DDD7F8002893C0;
+			remoteGlobalIDString = 996FDE841805870F00BC0F21;
 			remoteInfo = "AFNetworking iOS";
 		};
 		99C8285B17DDDBB0002893C0 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 99C8284D17DDDB47002893C0 /* OvercoatDependencies.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = 99C8281C17DDD952002893C0;
+			remoteGlobalIDString = 996FDEB01805897A00BC0F21;
 			remoteInfo = "AFNetworking Mac";
 		};
 		99ED271A17ABCB4700E5CF8B /* PBXContainerItemProxy */ = {
