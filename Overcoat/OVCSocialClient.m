@@ -21,92 +21,48 @@
 // THE SOFTWARE.
 
 #import "OVCSocialClient.h"
-#import "OVCMultipartPart.h"
+#import "OVCSocialRequestSerializer.h"
 
-#import <Accounts/Accounts.h>
+@interface OVCSocialClient ()
 
-static NSString *OVCServiceTypeForAccountTypeIdentifier(NSString *accountTypeIdentifier) {
-    static dispatch_once_t onceToken;
-    static NSDictionary *serviceTypes;
+@property (strong, nonatomic, readonly) OVCSocialRequestSerializer *socialRequestSerializer;
 
-    dispatch_once(&onceToken, ^{
-        serviceTypes = @{
-                ACAccountTypeIdentifierTwitter : SLServiceTypeTwitter,
-                ACAccountTypeIdentifierFacebook : SLServiceTypeFacebook,
-                ACAccountTypeIdentifierSinaWeibo : SLServiceTypeSinaWeibo
-        };
-    });
-
-    return serviceTypes[accountTypeIdentifier];
-}
-
-static SLRequestMethod OVCSocialRequestMethod(NSString *method) {
-    static dispatch_once_t onceToken;
-    static NSDictionary *methods;
-
-    dispatch_once(&onceToken, ^{
-        methods = @{
-                @"GET" : @(SLRequestMethodGET),
-                @"POST" : @(SLRequestMethodPOST),
-                @"PUT" : @(SLRequestMethodPOST),
-                @"DELETE" : @(SLRequestMethodDELETE)
-        };
-    });
-
-    return (SLRequestMethod) [methods[method] integerValue];
-}
+@end
 
 @implementation OVCSocialClient
 
+- (ACAccount *)account {
+    return self.socialRequestSerializer.account;
+}
+
+- (NSString *)serviceType {
+    return self.socialRequestSerializer.serviceType;
+}
+
 - (id)initWithAccount:(ACAccount *)account baseURL:(NSURL *)url {
-    self = [super initWithBaseURL:url];
-    
-    if (self) {
-        _account = account;
+    if (self = [super initWithBaseURL:url]) {
+        self.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
     }
     
     return self;
 }
 
 - (id)initWithServiceType:(NSString *)serviceType baseURL:(NSURL *)url {
-    self = [super initWithBaseURL:url];
-    
-    if (self) {
-        _serviceType = serviceType;
+    if (self = [super initWithBaseURL:url]) {
+        self.requestSerializer = [OVCSocialRequestSerializer serializerWithServiceType:serviceType];
     }
     
     return self;
 }
 
-- (NSMutableURLRequest *)requestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters {
-    return [self socialRequestWithMethod:method path:path parameters:parameters parts:nil];
-}
-
-- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
-    return [self socialRequestWithMethod:method path:path parameters:parameters parts:parts];
-}
-
-- (NSMutableURLRequest *)socialRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
-    NSString *serviceType = [self socialRequestServiceType];
-    NSAssert(serviceType, @"*** No service type found!");
-
-    SLRequest *request = [SLRequest requestForServiceType:serviceType
-                                            requestMethod:OVCSocialRequestMethod(method)
-                                                      URL:[NSURL URLWithString:path relativeToURL:self.baseURL]
-                                               parameters:parameters];
-    request.account = self.account;
-
-    for (OVCMultipartPart *part in parts) {
-        [request addMultipartData:part.data withName:part.name type:part.type filename:part.filename];
-    }
-
-    return [[request preparedURLRequest] mutableCopy];
-}
-
 #pragma mark - Private methods
 
-- (NSString *)socialRequestServiceType {
-    return self.account ? OVCServiceTypeForAccountTypeIdentifier(self.account.accountType.identifier) : self.serviceType;
+- (OVCSocialRequestSerializer *)socialRequestSerializer {
+    if ([self.requestSerializer isKindOfClass:OVCSocialRequestSerializer.class]) {
+        return (OVCSocialRequestSerializer *)self.requestSerializer;
+    }
+    
+    return nil;
 }
 
 @end

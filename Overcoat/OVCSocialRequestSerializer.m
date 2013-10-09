@@ -130,7 +130,7 @@
         methods = @{
                 @"GET" : @(SLRequestMethodGET),
                 @"POST" : @(SLRequestMethodPOST),
-                @"PUT" : @(SLRequestMethodPUT),
+                @"PUT" : @(SLRequestMethodPOST),
                 @"DELETE" : @(SLRequestMethodDELETE)
         };
     });

@@ -20,41 +20,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <Accounts/Accounts.h>
 #import <Social/Social.h>
+
 #import "OVCClient.h"
 
-// OVCClient subclass that allows executing queries on supported social networking services.
+// `OVCClient` subclass that authenticates API requests using an ACAccount
+// object on supported social networking services.
 @interface OVCSocialClient : OVCClient
 
-// Account information used to authenticate every request.
+// Account information used to sign requests.
 @property (strong, nonatomic, readonly) ACAccount *account;
 
-// The social networking service type. If the account property is set this value is not used.
+// The social networking service type. If `account` is set this property is ignored.
 @property (copy, nonatomic, readonly) NSString *serviceType;
 
-// Initializes an `OVCSocialClient` object with the specified account and base URL.
+// Initializes the receiver with the specified account and base URL.
 //
-// account - The account information used to authenticate every request.
+// account - The account information that will be used to sign requests.
 // url     - The base URL for the HTTP client. This argument must not be `nil`.
 - (id)initWithAccount:(ACAccount *)account baseURL:(NSURL *)url;
 
-// Initializes an `OVCSocialClient` object with the specified serviceType and base URL.
+// Initializes the receiver with the specified serviceType and base URL.
 //
-// serviceType - The social networking service type. Possible values are SLServiceTypeFacebook,
-//               SLServiceTypeTwitter and SLServiceTypeSinaWeibo.
+// serviceType - The social networking service type.
 // url         - The base URL for the HTTP client. This argument must not be `nil`.
 - (id)initWithServiceType:(NSString *)serviceType baseURL:(NSURL *)url;
-
-// Creates an OAuth-compatible `NSMutableURLRequest` signed with the user's account.
-//
-// method     - The HTTP method for the request. A `PUT` method will be converted to `POST`. This parameter must
-//              not be `PATCH` or `HEAD`, or `nil`.
-// path       - The path to be appended to the HTTP client's base URL and used as the request URL.
-// parameters - The parameters for the HTTP request.
-// parts      - An optional array of OVCMultipartPart objects to construct a multipart POST body.
-- (NSMutableURLRequest *)socialRequestWithMethod:(NSString *)method
-                                            path:(NSString *)path
-                                      parameters:(NSDictionary *)parameters
-                                           parts:(NSArray *)parts;
 
 @end
