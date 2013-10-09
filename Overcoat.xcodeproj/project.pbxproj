@@ -1120,6 +1120,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -1134,6 +1135,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
