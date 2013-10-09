@@ -39,35 +39,6 @@
     return serializer;
 }
 
-#pragma mark - NSCoding
-
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        self.modelClass = NSClassFromString([aDecoder decodeObjectForKey:@"modelClass"]);
-        self.responseKeyPath = [aDecoder decodeObjectForKey:@"responseKeyPath"];
-    }
-    
-    return self;
-}
-
-- (void)encodeWithCoder:(NSCoder *)aCoder {
-    [super encodeWithCoder:aCoder];
-    
-    [aCoder encodeObject:NSStringFromClass(self.modelClass) forKey:@"modelClass"];
-    [aCoder encodeObject:self.responseKeyPath forKey:@"responseKeyPath"];
-}
-
-#pragma mark - NSCopying
-
-- (id)copyWithZone:(NSZone *)zone {
-    OVCModelResponseSerializer *serializer = [[self.class allocWithZone:zone] init];
-    serializer.readingOptions = self.readingOptions;
-    serializer.modelClass = self.modelClass;
-    serializer.responseKeyPath = self.responseKeyPath;
-    
-    return serializer;
-}
-
 #pragma mark - AFURLRequestSerialization
 
 - (id)responseObjectForResponse:(NSURLResponse *)response data:(NSData *)data error:(NSError *__autoreleasing *)error {
@@ -95,6 +66,34 @@
     }
     
     return nil;
+}
+
+#pragma mark - NSCoding
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        self.modelClass = NSClassFromString([aDecoder decodeObjectForKey:@"modelClass"]);
+        self.responseKeyPath = [aDecoder decodeObjectForKey:@"responseKeyPath"];
+    }
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)aCoder {
+    [super encodeWithCoder:aCoder];
+    
+    [aCoder encodeObject:NSStringFromClass(self.modelClass) forKey:@"modelClass"];
+    [aCoder encodeObject:self.responseKeyPath forKey:@"responseKeyPath"];
+}
+
+#pragma mark - NSCopying
+
+- (id)copyWithZone:(NSZone *)zone {
+    OVCModelResponseSerializer *serializer = [super copyWithZone:zone];
+    serializer.modelClass = self.modelClass;
+    serializer.responseKeyPath = self.responseKeyPath;
+    
+    return serializer;
 }
 
 @end
