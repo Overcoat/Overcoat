@@ -54,11 +54,11 @@ We need to tell our model how to map JSON keys to properties. We can do that by 
 ```objc
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-            @"author" : @"artistName",
-            @"overview" : @"description",
-            @"identifier" : @"trackId",
-            @"title" : @"trackName",
-            @"coverURL" : @"artworkUrl100"
+            @"author": @"artistName",
+            @"overview": @"description",
+            @"identifier": @"trackId",
+            @"title": @"trackName",
+            @"coverURL": @"artworkUrl100"
     };
 }
 
@@ -95,8 +95,8 @@ The implementation of `TGRBookCatalog` is pretty simple:
 
 - (void)searchBooksWithTerm:(NSString *)term completion:(void (^)(NSArray *results, NSError *error))block {
     NSDictionary *parameters = @{
-            @"term" : term,
-            @"entity" : @"ebook"
+            @"term": term,
+            @"entity": @"ebook"
     };
 
     [self GET:@"search" parameters:parameters resultClass:TGRBook.class resultKeyPath:@"results" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
@@ -153,7 +153,7 @@ OVCClient *twitterClient = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"h
                                                 account:myAccount];
 
 NSDictionary *parameters = @{
-         @"screen_name" : @"twitterapi,twitter"
+         @"screen_name": @"twitterapi,twitter"
 };
 
 [self GET:@"users/lookup.json" parameters:parameters resultClass:TwitterUser.class resultKeyPath:nil completion:^(AFHTTPRequestOperation *operation, NSArray *users, NSError *error) {
