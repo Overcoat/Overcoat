@@ -950,7 +950,6 @@
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = Overcoat;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
@@ -975,7 +974,6 @@
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = Overcoat;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
@@ -996,7 +994,6 @@
 				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
@@ -1018,7 +1015,6 @@
 				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
@@ -1082,6 +1078,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
@@ -1097,6 +1094,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
@@ -1112,6 +1110,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1138,6 +1137,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
