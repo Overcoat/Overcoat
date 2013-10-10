@@ -149,14 +149,14 @@ For example, here is how we could lookup for Twitter users (provided that we hav
 ```
 
 ```objc
-OVCClient *twitterClient = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1"]
-                                                account:myAccount];
+OVCClient *client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1"]
+                                         account:myAccount];
 
 NSDictionary *parameters = @{
          @"screen_name": @"twitterapi,twitter"
 };
 
-[self GET:@"users/lookup.json" parameters:parameters resultClass:TwitterUser.class resultKeyPath:nil completion:^(AFHTTPRequestOperation *operation, NSArray *users, NSError *error) {
+[client GET:@"users/lookup.json" parameters:parameters resultClass:TwitterUser.class resultKeyPath:nil completion:^(AFHTTPRequestOperation *operation, NSArray *users, NSError *error) {
     if (!error) {
         for (TwitterUser *user in users) {
             NSLog(@"name: %@ screenName: %@", user.name, user.screenName);
