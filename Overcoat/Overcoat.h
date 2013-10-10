@@ -28,9 +28,7 @@
 #import "NSDictionary+Overcoat.h"
 
 #import "OVCModelResponseSerializer.h"
-#import "OVCClient.h"
-
 #import "OVCSocialRequestSerializer.h"
-#import "OVCSocialClient.h"
+#import "OVCClient.h"
 
 #endif /* _OVERCOAT_H */

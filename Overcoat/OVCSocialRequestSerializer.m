@@ -53,16 +53,12 @@
     SLRequest *socialRequest = [SLRequest requestForServiceType:serviceType
                                                   requestMethod:method
                                                             URL:request.URL
-                                                     parameters:parameters];
+                                                     parameters:nil];
     socialRequest.account = self.account;
     
-    NSMutableURLRequest *mutableRequest = [socialRequest.preparedURLRequest mutableCopy];
-    
-    [self.HTTPRequestHeaders enumerateKeysAndObjectsUsingBlock:^(id field, id value, BOOL * __unused stop) {
-        [mutableRequest setValue:value forHTTPHeaderField:field];
-    }];
-    
-    return mutableRequest;
+    return [super requestBySerializingRequest:socialRequest.preparedURLRequest
+                               withParameters:parameters
+                                        error:error];
 }
 
 #pragma mark - NSCoding

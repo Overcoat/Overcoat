@@ -29,6 +29,21 @@
     [super tearDown];
 }
 
+- (void)testInitWithAccount {
+    ACAccountStore *accountStore = [[ACAccountStore alloc] init];
+    ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    ACAccount *account = [[ACAccount alloc] initWithAccountType:accountType];
+    
+    self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"]
+                                       account:account];
+    
+    STAssertEqualObjects(self.client.baseURL, [NSURL URLWithString:@"https://api.twitter.com/1.1/"], @"should initialize baseURL");
+    
+    OVCSocialRequestSerializer *requestSerializer = (OVCSocialRequestSerializer *)self.client.requestSerializer;
+    STAssertTrue([requestSerializer isKindOfClass:OVCSocialRequestSerializer.class], @"requestSerializer should be a social request serializer");
+    STAssertEqualObjects(requestSerializer.account, account, @"should initialize the serializer's account");
+}
+
 - (void)testGET {
     NSDictionary *parameters = @{@"foo" : @"bar"};
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

@@ -21,9 +21,17 @@
 // THE SOFTWARE.
 
 #import <AFNetworking/AFNetworking.h>
+#import <Accounts/Accounts.h>
 
 // Provides HTTP methods that return MTLModel subclasses.
 @interface OVCClient : AFHTTPRequestOperationManager
+
+// Creates and initializes an `OVCClient` object with the specified base URL
+// and account.
+//
+// url     - The base URL for the client. Can be nil.
+// account - The user account that will be used to authenticate requests.
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account;
 
 // Creates and runs an `AFHTTPRequestOperation` with a `GET` request.
 //

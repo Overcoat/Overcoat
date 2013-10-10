@@ -22,22 +22,17 @@
 		993E4BB5173BEB0A0036969E /* OVCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BB4173BEB0A0036969E /* OVCClient.m */; };
 		993E4BDA173BECC70036969E /* libMantle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BD5173BECA10036969E /* libMantle.a */; };
 		993E4BDD173BED190036969E /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BDC173BED190036969E /* OVCClientTests.m */; };
-		9943A30B1744E4C200403CA3 /* OVCSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A30A1744E4C200403CA3 /* OVCSocialClient.m */; };
 		9943A3101744ECC000403CA3 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A30F1744ECC000403CA3 /* Accounts.framework */; };
 		9943A3121744ECE300403CA3 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9943A3111744ECE300403CA3 /* Social.framework */; };
-		9943A3151744EDBB00403CA3 /* OVCSocialClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */; };
 		994B287517463C9A003E487E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 994B287317463C9A003E487E /* InfoPlist.strings */; };
 		994B288017463C9A003E487E /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E21173BAD1D0090F0E6 /* SenTestingKit.framework */; };
 		994B288417463C9A003E487E /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 994B286917463C9A003E487E /* Overcoat.framework */; };
 		994B289917463E16003E487E /* OVCClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BB4173BEB0A0036969E /* OVCClient.m */; };
-		994B289A17463E16003E487E /* OVCSocialClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A30A1744E4C200403CA3 /* OVCSocialClient.m */; };
 		994B289C17463E16003E487E /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */; };
 		994B28A817464000003E487E /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		994B28A917464006003E487E /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E2311741438E00717F72 /* NSDictionaryTests.m */; };
 		994B28B5174643AC003E487E /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 993E4BDC173BED190036969E /* OVCClientTests.m */; };
-		994B28B6174643AC003E487E /* OVCSocialClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */; };
 		994B28B8174643AC003E487E /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9954E23A1741487600717F72 /* TestModel.m */; };
 		994B28BE174644A0003E487E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 993E4BAF173BEA7F0036969E /* SystemConfiguration.framework */; };
 		994B28BF174644A8003E487E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99663E12173BAD1D0090F0E6 /* Foundation.framework */; };
@@ -74,7 +69,6 @@
 		99ED270F17ABC7D800E5CF8B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99ED270B17ABC57C00E5CF8B /* Security.framework */; };
 		99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 994B28D117465711003E487E /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 993E4BB3173BEB0A0036969E /* OVCClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 9943A3091744E4C200403CA3 /* OVCSocialClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FC436717D8CAE0007276B5 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 99FC436617D8CAE0007276B5 /* testResponse.json */; };
 		99FC436817D8CAE0007276B5 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 99FC436617D8CAE0007276B5 /* testResponse.json */; };
@@ -234,11 +228,8 @@
 		993E4BB4173BEB0A0036969E /* OVCClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCClient.m; sourceTree = "<group>"; };
 		993E4BC7173BECA10036969E /* Mantle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Mantle.xcodeproj; path = Mantle/Mantle.xcodeproj; sourceTree = "<group>"; };
 		993E4BDC173BED190036969E /* OVCClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCClientTests.m; sourceTree = "<group>"; };
-		9943A3091744E4C200403CA3 /* OVCSocialClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCSocialClient.h; sourceTree = "<group>"; };
-		9943A30A1744E4C200403CA3 /* OVCSocialClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialClient.m; sourceTree = "<group>"; };
 		9943A30F1744ECC000403CA3 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		9943A3111744ECE300403CA3 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
-		9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialClientTests.m; sourceTree = "<group>"; };
 		994B286917463C9A003E487E /* Overcoat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overcoat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994B287217463C9A003E487E /* Overcoat-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Overcoat-Info.plist"; sourceTree = "<group>"; };
 		994B287417463C9A003E487E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -436,8 +427,6 @@
 				993E4BB4173BEB0A0036969E /* OVCClient.m */,
 				9907B41A18045FCA00ACDA89 /* OVCSocialRequestSerializer.h */,
 				9907B41B18045FCA00ACDA89 /* OVCSocialRequestSerializer.m */,
-				9943A3091744E4C200403CA3 /* OVCSocialClient.h */,
-				9943A30A1744E4C200403CA3 /* OVCSocialClient.m */,
 				9954E22A17413FBD00717F72 /* NSDictionary+Overcoat.h */,
 				9954E22B17413FBD00717F72 /* NSDictionary+Overcoat.m */,
 				99663E15173BAD1D0090F0E6 /* Supporting Files */,
@@ -460,7 +449,6 @@
 			children = (
 				9958C1211805460400A53B67 /* OVCModelResponseSerializerTests.m */,
 				993E4BDC173BED190036969E /* OVCClientTests.m */,
-				9943A3141744EDBB00403CA3 /* OVCSocialClientTests.m */,
 				9954E2311741438E00717F72 /* NSDictionaryTests.m */,
 				99FC436517D8CAE0007276B5 /* Stubs */,
 				99663E2A173BAD1D0090F0E6 /* Supporting Files */,
@@ -572,7 +560,6 @@
 			files = (
 				994B28A817464000003E487E /* OVCClient.h in Headers */,
 				9907B41D18045FCA00ACDA89 /* OVCSocialRequestSerializer.h in Headers */,
-				994B28A917464006003E487E /* OVCSocialClient.h in Headers */,
 				994B28AB17464014003E487E /* NSDictionary+Overcoat.h in Headers */,
 				9907B4141804312700ACDA89 /* OVCModelResponseSerializer.h in Headers */,
 				994B28D717465782003E487E /* Overcoat.h in Headers */,
@@ -586,7 +573,6 @@
 				99ED271317ABC9DF00E5CF8B /* Overcoat.h in Headers */,
 				9907B41C18045FCA00ACDA89 /* OVCSocialRequestSerializer.h in Headers */,
 				99ED271617ABC9F300E5CF8B /* OVCClient.h in Headers */,
-				99ED271717ABC9FA00E5CF8B /* OVCSocialClient.h in Headers */,
 				9907B4131804312700ACDA89 /* OVCModelResponseSerializer.h in Headers */,
 				99ED271917ABCA0A00E5CF8B /* NSDictionary+Overcoat.h in Headers */,
 			);
@@ -819,7 +805,6 @@
 			files = (
 				9907B41F18045FCA00ACDA89 /* OVCSocialRequestSerializer.m in Sources */,
 				994B289917463E16003E487E /* OVCClient.m in Sources */,
-				994B289A17463E16003E487E /* OVCSocialClient.m in Sources */,
 				994B289C17463E16003E487E /* NSDictionary+Overcoat.m in Sources */,
 				9907B4161804312700ACDA89 /* OVCModelResponseSerializer.m in Sources */,
 			);
@@ -832,7 +817,6 @@
 				994B28B1174643AC003E487E /* NSDictionaryTests.m in Sources */,
 				994B28B5174643AC003E487E /* OVCClientTests.m in Sources */,
 				9958C128180553A800A53B67 /* OVCTestCase.m in Sources */,
-				994B28B6174643AC003E487E /* OVCSocialClientTests.m in Sources */,
 				994B28B8174643AC003E487E /* TestModel.m in Sources */,
 				9958C1231805460400A53B67 /* OVCModelResponseSerializerTests.m in Sources */,
 			);
@@ -845,7 +829,6 @@
 				993E4BB5173BEB0A0036969E /* OVCClient.m in Sources */,
 				9907B41E18045FCA00ACDA89 /* OVCSocialRequestSerializer.m in Sources */,
 				9954E22C17413FBD00717F72 /* NSDictionary+Overcoat.m in Sources */,
-				9943A30B1744E4C200403CA3 /* OVCSocialClient.m in Sources */,
 				9907B4151804312700ACDA89 /* OVCModelResponseSerializer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -858,7 +841,6 @@
 				9954E2321741438E00717F72 /* NSDictionaryTests.m in Sources */,
 				9958C127180553A800A53B67 /* OVCTestCase.m in Sources */,
 				9954E23B1741487600717F72 /* TestModel.m in Sources */,
-				9943A3151744EDBB00403CA3 /* OVCSocialClientTests.m in Sources */,
 				9958C1221805460400A53B67 /* OVCModelResponseSerializerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

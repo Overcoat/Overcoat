@@ -22,8 +22,19 @@
 
 #import "OVCClient.h"
 #import "OVCModelResponseSerializer.h"
+#import "OVCSocialRequestSerializer.h"
 
 @implementation OVCClient
+
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account {
+    OVCClient *client = [[self alloc] initWithBaseURL:url];
+    
+    if (account) {
+        client.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
+    }
+    
+    return client;
+}
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(NSDictionary *)parameters
