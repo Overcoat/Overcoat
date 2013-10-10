@@ -623,7 +623,6 @@
 				994B287B17463C9A003E487E /* Frameworks */,
 				994B287C17463C9A003E487E /* Resources */,
 				994B28CF174653C3003E487E /* CopyFiles */,
-				994B287D17463C9A003E487E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -662,7 +661,6 @@
 				99663E1B173BAD1D0090F0E6 /* Sources */,
 				99663E1C173BAD1D0090F0E6 /* Frameworks */,
 				99663E1D173BAD1D0090F0E6 /* Resources */,
-				99663E1E173BAD1D0090F0E6 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -813,35 +811,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		994B287D17463C9A003E487E /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		99663E1E173BAD1D0090F0E6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		994B286417463C9A003E487E /* Sources */ = {
@@ -1120,7 +1089,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -1135,7 +1103,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
