@@ -951,7 +951,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
 				PRODUCT_NAME = Overcoat;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Debug;
@@ -975,7 +974,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "Overcoat/Overcoat-Info.plist";
 				PRODUCT_NAME = Overcoat;
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = framework;
 			};
 			name = Release;
@@ -995,7 +993,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1016,7 +1013,6 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
@@ -1078,7 +1074,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
@@ -1086,7 +1081,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -1094,7 +1088,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FF17ABC2E900E5CF8B /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/$PRODUCT_NAME.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
@@ -1102,7 +1095,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Overcoat;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
@@ -1110,7 +1102,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1128,7 +1119,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1137,7 +1127,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99ED26FD17ABC2E900E5CF8B /* iOS-Application.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
 					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
@@ -1155,7 +1144,6 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
