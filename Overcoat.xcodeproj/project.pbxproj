@@ -1127,6 +1127,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -1152,6 +1153,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv6 armv7 armv7s i386 x86_64";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
