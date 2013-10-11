@@ -36,6 +36,10 @@
     return client;
 }
 
+- (void)cancelAllOperations {
+    [self.operationQueue cancelAllOperations];
+}
+
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(NSDictionary *)parameters
                     resultClass:(Class)resultClass

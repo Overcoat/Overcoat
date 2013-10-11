@@ -44,6 +44,16 @@
     STAssertEqualObjects(requestSerializer.account, account, @"should initialize the serializer's account");
 }
 
+- (void)testCancelAllOperations {
+    id mockQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[mockQueue expect] cancelAllOperations];
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    [[[mockClient stub] andReturn:mockQueue] operationQueue];
+    
+    [self.client cancelAllOperations];
+}
+
 - (void)testGET {
     NSDictionary *parameters = @{@"foo" : @"bar"};
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

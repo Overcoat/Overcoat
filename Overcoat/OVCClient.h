@@ -33,6 +33,9 @@
 // account - The user account that will be used to authenticate requests.
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account;
 
+// Cancels all queued and running `AFHTTPRequestOperation` objects.
+- (void)cancelAllOperations;
+
 // Creates and runs an `AFHTTPRequestOperation` with a `GET` request.
 //
 // URLString   - The URL string used to create the request URL.
