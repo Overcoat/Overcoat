@@ -21,24 +21,14 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <SystemConfiguration/SystemConfiguration.h>
-
-#if TARGET_OS_IPHONE
-    #import <MobileCoreServices/MobileCoreServices.h>
-#else
-    #import <CoreServices/CoreServices.h>
-#endif
 
 #ifndef _OVERCOAT_H
 #define _OVERCOAT_H
 
-#import "OVCMultipartPart.h"
-#import "OVCClient.h"
-#import "OVCRequestOperation.h"
 #import "NSDictionary+Overcoat.h"
 
-#if ((__IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_6_0) || (__MAC_OS_X_VERSION_MAX_ALLOWED >= __MAC_10_8))
-    #import "OVCSocialClient.h"
-#endif
+#import "OVCModelResponseSerializer.h"
+#import "OVCSocialRequestSerializer.h"
+#import "OVCClient.h"
 
 #endif /* _OVERCOAT_H */

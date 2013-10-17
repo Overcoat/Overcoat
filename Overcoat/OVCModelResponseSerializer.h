@@ -1,5 +1,5 @@
-// OVCMultipartPart.m
-// 
+// OVCModelResponseSerializer.h
+//
 // Copyright (c) 2013 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,29 +20,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OVCMultipartPart.h"
+#import <AFNetworking/AFURLResponseSerialization.h>
 
-@implementation OVCMultipartPart
+// AFJSONResponseSerializer subclass that validates and transforms a JSON
+// response into a model object or an array of model objects.
+@interface OVCModelResponseSerializer : AFJSONResponseSerializer
 
-+ (instancetype)partWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename {
-    return [[self alloc] initWithData:data name:name type:type filename:filename];
-}
+// MTLModel subclass in which the response (or part of the response) will be transformed.
+@property (nonatomic) Class modelClass;
 
-- (id)initWithData:(NSData *)data name:(NSString *)name type:(NSString *)type filename:(NSString *)filename {
-    self = [super init];
-    if (self) {
-        _data = [data copy];
-        _name = [name copy];
-        _type = [type copy];
-        _filename = [filename copy];
-    }
+// Key path in the JSON response that contains the data to be transformed.
+@property (copy, nonatomic) NSString *responseKeyPath;
 
-    return self;
-}
+// Creates and returns a model serializer with the specified model class and response key path.
++ (instancetype)serializerWithModelClass:(Class)modelClass responseKeyPath:(NSString *)responseKeyPath;
 
-- (id)copyWithZone:(NSZone *)zone {
-    // As we are immutable, returning self is enough
-    return self;
-}
+// Creates and returns a model serializer with the specified JSON reading options,
+// model class and response object key path.
++ (instancetype)serializerWithReadingOptions:(NSJSONReadingOptions)readingOptions
+                                  modelClass:(Class)modelClass
+                             responseKeyPath:(NSString *)responseKeyPath;
 
 @end

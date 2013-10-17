@@ -21,76 +21,117 @@
 // THE SOFTWARE.
 
 #import "OVCClient.h"
-#import "OVCRequestOperation.h"
-#import "OVCMultipartPart.h"
+#import "OVCModelResponseSerializer.h"
+#import "OVCSocialRequestSerializer.h"
 
 @implementation OVCClient
 
-- (id)initWithBaseURL:(NSURL *)url {
-    self = [super initWithBaseURL:url];
-    if (self) {
-        [self registerHTTPOperationClass:[OVCRequestOperation class]];
-        [self setDefaultHeader:@"Accept" value:@"application/json"];
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account {
+    OVCClient *client = [[self alloc] initWithBaseURL:url];
+    
+    if (account) {
+        client.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
     }
-
-    return self;
+    
+    return client;
 }
 
-- (OVCRequestOperation *)GET:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
-    NSURLRequest *request = [self requestWithMethod:@"GET" path:path parameters:parameters];
-    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
-                                                               resultClass:resultClass
-                                                             resultKeyPath:keyPath
-                                                                completion:block];
-    [self enqueueHTTPRequestOperation:operation];
+- (void)cancelAllOperations {
+    [self.operationQueue cancelAllOperations];
+}
+
+- (AFHTTPRequestOperation *)GET:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET"
+                                                                   URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
+                                                                  parameters:parameters];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                  resultClass:resultClass
+                                                                resultKeyPath:keyPath
+                                                                   completion:block];
+    [self.operationQueue addOperation:operation];
+    
     return operation;
 }
 
-- (OVCRequestOperation *)POST:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
-    NSURLRequest *request = [self requestWithMethod:@"POST" path:path parameters:parameters];
-    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
-                                                               resultClass:resultClass
-                                                             resultKeyPath:keyPath
-                                                                completion:block];
-    [self enqueueHTTPRequestOperation:operation];
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                   resultKeyPath:(NSString *)keyPath
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST"
+                                                                   URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
+                                                                  parameters:parameters];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                  resultClass:resultClass
+                                                                resultKeyPath:keyPath
+                                                                   completion:block];
+    [self.operationQueue addOperation:operation];
+    
     return operation;
 }
 
-- (OVCRequestOperation *)PUT:(NSString *)path parameters:(NSDictionary *)parameters resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
-    NSURLRequest *request = [self requestWithMethod:@"PUT" path:path parameters:parameters];
-    OVCRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
-                                                               resultClass:resultClass
-                                                             resultKeyPath:keyPath
-                                                                completion:block];
-    [self enqueueHTTPRequestOperation:operation];
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                   resultKeyPath:(NSString *)keyPath
+       constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))bodyBlock
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST"
+                                                                                URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
+                                                                               parameters:parameters
+                                                                constructingBodyWithBlock:bodyBlock];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                  resultClass:resultClass
+                                                                resultKeyPath:keyPath
+                                                                   completion:block];
+    [self.operationQueue addOperation:operation];
+    
     return operation;
 }
 
-- (OVCRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest resultClass:(Class)resultClass resultKeyPath:(NSString *)keyPath completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block {
-    OVCRequestOperation *requestOperation = (OVCRequestOperation *)[self HTTPRequestOperationWithRequest:urlRequest
-                                                                                                 success:nil
-                                                                                                 failure:nil];
-    NSAssert([requestOperation isKindOfClass:[OVCRequestOperation class]], @"*** Unsupported operation class.");
+- (AFHTTPRequestOperation *)PUT:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PUT"
+                                                                   URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
+                                                                  parameters:parameters];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                  resultClass:resultClass
+                                                                resultKeyPath:keyPath
+                                                                   completion:block];
+    [self.operationQueue addOperation:operation];
+    
+    return operation;
+}
 
-    requestOperation.valueTransformer = [OVCRequestOperation valueTransformerWithResultClass:resultClass resultKeyPath:keyPath];
-
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest
+                                                resultClass:(Class)resultClass
+                                              resultKeyPath:(NSString *)keyPath
+                                                 completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:urlRequest success:nil failure:nil];
+    requestOperation.responseSerializer = [OVCModelResponseSerializer serializerWithModelClass:resultClass
+                                                                               responseKeyPath:keyPath];
+    
     if (block) {
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-            block((OVCRequestOperation *) operation, responseObject, nil);
+            block(operation, responseObject, nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            block((OVCRequestOperation *) operation, nil, error);
+            block(operation, nil, error);
         }];
     }
 
     return requestOperation;
-}
-
-- (NSMutableURLRequest *)multipartFormRequestWithMethod:(NSString *)method path:(NSString *)path parameters:(NSDictionary *)parameters parts:(NSArray *)parts {
-    return [self multipartFormRequestWithMethod:method path:path parameters:parameters constructingBodyWithBlock:^(id <AFMultipartFormData> formData) {
-        for (OVCMultipartPart *part in parts) {
-            [formData appendPartWithFileData:part.data name:part.name fileName:part.filename mimeType:part.type];
-        }
-    }];
 }
 
 @end
