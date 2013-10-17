@@ -1,7 +1,8 @@
 # Overcoat
 
+<!---
 [![Build Status](https://travis-ci.org/gonzalezreal/Overcoat.png?branch=master)](https://travis-ci.org/gonzalezreal/Overcoat)
-
+-->
 Overcoat is an [AFNetworking](https://github.com/AFNetworking/AFNetworking) extension that makes it extremely simple for developers to use Mantle model objects with a REST client.
 
 If you need to learn more about Mantle, we recommend these resources:
@@ -54,11 +55,11 @@ We need to tell our model how to map JSON keys to properties. We can do that by 
 ```objc
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-            @"author" : @"artistName",
-            @"overview" : @"description",
-            @"identifier" : @"trackId",
-            @"title" : @"trackName",
-            @"coverURL" : @"artworkUrl100"
+            @"author": @"artistName",
+            @"overview": @"description",
+            @"identifier": @"trackId",
+            @"title": @"trackName",
+            @"coverURL": @"artworkUrl100"
     };
 }
 
@@ -95,8 +96,8 @@ The implementation of `TGRBookCatalog` is pretty simple:
 
 - (void)searchBooksWithTerm:(NSString *)term completion:(void (^)(NSArray *results, NSError *error))block {
     NSDictionary *parameters = @{
-            @"term" : term,
-            @"entity" : @"ebook"
+            @"term": term,
+            @"entity": @"ebook"
     };
 
     [self GET:@"search" parameters:parameters resultClass:TGRBook.class resultKeyPath:@"results" completion:^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
@@ -106,7 +107,6 @@ The implementation of `TGRBookCatalog` is pretty simple:
 ```
 
 `OVCClient` provides methods to make `GET`, `POST` and `PUT` requests specifiying how to map the response to a model object. In this case we are telling `OVCClient` that we want `TGRBook` objects that can be found under the key `results` in the JSON response.
-`OVCRequestOperation` makes sure that the mapping from the JSON response to the model or array of model objects happens in a private background queue for performance reasons.
 
 Now we can use `TGRBookCatalog` to launch a search in iTunes and get an array of `TGRBook` objects:
 
@@ -120,9 +120,9 @@ Now we can use `TGRBookCatalog` to launch a search in iTunes and get an array of
 
 You can find the complete example (including `TGRBook` serialization to a **Core Data** entity) [here](https://github.com/gonzalezreal/ReadingList).
 
-### OVCSocialClient
+### ACAccount authentication
 
-Overcoat also features an `OVCClient` subclass that authenticates API requests using an `ACAccount` object on supported social networking services (currently Twitter, Facebook, and Sina Weibo).
+`OVCClient` can authenticate API requests using an `ACAccount` object on supported social networking services (currently Twitter, Facebook, and Sina Weibo).
 
 For example, here is how we could lookup for Twitter users (provided that we have an Twitter account).
 
@@ -150,14 +150,14 @@ For example, here is how we could lookup for Twitter users (provided that we hav
 ```
 
 ```objc
-OVCSocialClient *twitterClient = [[OVCSocialClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1"]];
-twitterClient.account = myAccount;
+OVCClient *client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1"]
+                                         account:myAccount];
 
 NSDictionary *parameters = @{
-         @"screen_name" : @"twitterapi,twitter"
+         @"screen_name": @"twitterapi,twitter"
 };
 
-[self GET:@"users/lookup.json" parameters:parameters resultClass:TwitterUser.class resultKeyPath:nil completion:^(AFHTTPRequestOperation *operation, NSArray *users, NSError *error) {
+[client GET:@"users/lookup.json" parameters:parameters resultClass:TwitterUser.class resultKeyPath:nil completion:^(AFHTTPRequestOperation *operation, NSArray *users, NSError *error) {
     if (!error) {
         for (TwitterUser *user in users) {
             NSLog(@"name: %@ screenName: %@", user.name, user.screenName);

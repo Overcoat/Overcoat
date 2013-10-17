@@ -14,4 +14,7 @@
     #endif
 
     #import <Overcoat/Overcoat.h>
+
+    #import "TGRAsyncTestHelper.h"
+    #import "OVCTestCase.h"
 #endif
