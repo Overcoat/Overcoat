@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking/AFNetworking.h>
 #import <Accounts/Accounts.h>
 
 // Provides HTTP methods that return MTLModel subclasses.

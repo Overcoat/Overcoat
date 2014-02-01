@@ -48,7 +48,8 @@
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
-                                                                  parameters:parameters];
+                                                                  parameters:parameters
+                                                                       error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
                                                                 resultKeyPath:keyPath
@@ -66,7 +67,8 @@
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
-                                                                  parameters:parameters];
+                                                                  parameters:parameters
+                                                                       error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
                                                                 resultKeyPath:keyPath
@@ -86,7 +88,8 @@
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST"
                                                                                 URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
                                                                                parameters:parameters
-                                                                constructingBodyWithBlock:bodyBlock];
+                                                                constructingBodyWithBlock:bodyBlock
+                                                                                    error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
                                                                 resultKeyPath:keyPath
@@ -104,7 +107,8 @@
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PUT"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
-                                                                  parameters:parameters];
+                                                                  parameters:parameters
+                                                                       error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
                                                                 resultKeyPath:keyPath

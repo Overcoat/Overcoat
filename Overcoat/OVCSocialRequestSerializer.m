@@ -121,6 +121,7 @@
 - (NSMutableURLRequest *)requestWithMethod:(NSString *)method
                                  URLString:(NSString *)URLString
                                 parameters:(NSDictionary *)parameters
+                                     error:(NSError * __autoreleasing *)error
 {
     SLRequest *socialRequest = [self socialRequestWithMethod:method
                                                    URLString:URLString
@@ -133,6 +134,7 @@
                                               URLString:(NSString *)URLString
                                              parameters:(NSDictionary *)parameters
                               constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
+                                                  error:(NSError *__autoreleasing *)error
 {
     SLRequest *socialRequest = [self socialRequestWithMethod:method
                                                    URLString:URLString

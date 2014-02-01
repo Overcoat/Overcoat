@@ -23,5 +23,5 @@ while (!(a1) && __runLoopCount < TGR_RUNLOOP_COUNT) { \
     __runLoopCount++; \
 } \
 if (__runLoopCount >= TGR_RUNLOOP_COUNT) { \
-    STFail(format); \
+    XCTFail(format); \
 }
