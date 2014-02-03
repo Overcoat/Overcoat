@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <AFNetworking/AFURLResponseSerialization.h>
+#import <AFNetworking/AFNetworking.h>
 
 // AFJSONResponseSerializer subclass that validates and transforms a JSON
 // response into a model object or an array of model objects.

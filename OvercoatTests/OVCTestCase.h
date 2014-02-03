@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Guillermo Gonzalez. All rights reserved.
 //
 
-@interface OVCTestCase : SenTestCase
+@interface OVCTestCase : XCTestCase
 
 // Calls +[OCMockObject mockForClass:] and adds the mock and call -verify on it during -tearDown.
 - (id)autoVerifiedMockForClass:(Class)aClass;
