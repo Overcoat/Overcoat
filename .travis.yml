@@ -1,5 +1,5 @@
 language: objective-c
-before_install: scripts/bootstrap
+before_install: gem install cocoapods
 script:
     - xctool -project Overcoat.xcodeproj -scheme "Overcoat iOS Tests" -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator7.0
     - xctool -project Overcoat.xcodeproj -scheme "Overcoat Mac Tests" -sdk macosx -configuration Release test -test-sdk macosx
