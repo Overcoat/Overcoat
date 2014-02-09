@@ -8,6 +8,8 @@
 
 #import "TestModel.h"
 
+@import Accounts;
+
 @interface OVCClientTests : OVCTestCase
 
 @property (strong, nonatomic) OVCClient *client;
@@ -24,7 +26,7 @@
 
 - (void)tearDown {
     self.client = nil;
-    [OHHTTPStubs removeAllRequestHandlers];
+    [OHHTTPStubs removeAllStubs];
     
     [super tearDown];
 }
@@ -37,11 +39,11 @@
     self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"]
                                        account:account];
     
-    STAssertEqualObjects(self.client.baseURL, [NSURL URLWithString:@"https://api.twitter.com/1.1/"], @"should initialize baseURL");
+    XCTAssertEqualObjects([NSURL URLWithString:@"https://api.twitter.com/1.1/"], self.client.baseURL, @"should initialize baseURL");
     
     OVCSocialRequestSerializer *requestSerializer = (OVCSocialRequestSerializer *)self.client.requestSerializer;
-    STAssertTrue([requestSerializer isKindOfClass:OVCSocialRequestSerializer.class], @"requestSerializer should be a social request serializer");
-    STAssertEqualObjects(requestSerializer.account, account, @"should initialize the serializer's account");
+    XCTAssertTrue([requestSerializer isKindOfClass:OVCSocialRequestSerializer.class], @"requestSerializer should be a social request serializer");
+    XCTAssertEqualObjects(account, requestSerializer.account, @"should initialize the serializer's account");
 }
 
 - (void)testCancelAllOperations {
@@ -61,7 +63,8 @@
     id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
     [[[requestSerializer expect] andReturn:request] requestWithMethod:@"GET"
                                                             URLString:@"http://test/search"
-                                                           parameters:parameters];
+                                                           parameters:parameters
+                                                                error:NULL];
     
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
     id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
@@ -84,7 +87,7 @@
                                              resultClass:TestModel.class
                                            resultKeyPath:@"data.object"
                                               completion:block];
-    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
 }
 
 - (void)testPOST {
@@ -94,7 +97,8 @@
     id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
     [[[requestSerializer expect] andReturn:request] requestWithMethod:@"POST"
                                                             URLString:@"http://test/create"
-                                                           parameters:parameters];
+                                                           parameters:parameters
+                                                                error:NULL];
     
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
     id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
@@ -117,7 +121,7 @@
                                               resultClass:TestModel.class
                                             resultKeyPath:@"data.object"
                                                completion:block];
-    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
 }
 
 - (void)testMultipartPOST {
@@ -130,7 +134,8 @@
     [[[requestSerializer expect] andReturn:request] multipartFormRequestWithMethod:@"POST"
                                                                          URLString:@"http://test/create"
                                                                         parameters:parameters
-                                                         constructingBodyWithBlock:bodyBlock];
+                                                         constructingBodyWithBlock:bodyBlock
+                                                                             error:NULL];
     
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
     id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
@@ -154,7 +159,7 @@
                                             resultKeyPath:@"data.object"
                                 constructingBodyWithBlock:bodyBlock
                                                completion:block];
-    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
 }
 
 - (void)testPUT {
@@ -164,7 +169,8 @@
     id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
     [[[requestSerializer expect] andReturn:request] requestWithMethod:@"PUT"
                                                             URLString:@"http://test/update"
-                                                           parameters:parameters];
+                                                           parameters:parameters
+                                                                error:NULL];
     
     AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
     id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
@@ -187,13 +193,17 @@
                                              resultClass:TestModel.class
                                            resultKeyPath:@"data.object"
                                               completion:block];
-    STAssertEqualObjects(operation, requestOperation, @"should return the operation");
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
 }
 
 - (void)testHTTPRequestOperationCompletion {
-    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
-        NSURL *fileURL = [[NSBundle bundleForClass:self.class] URLForResource:@"testResponse" withExtension:@"json"];
-        return [OHHTTPStubsResponse responseWithFileURL:fileURL contentType:@"application/json" responseTime:0];
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString * path = OHPathForFileInBundle(@"testResponse.json", nil);
+        return [OHHTTPStubsResponse responseWithFileAtPath:path
+                                                statusCode:200
+                                                   headers:@{@"Content-Type": @"application/json"}];
     }];
     
     AFHTTPRequestOperation * __block blockOperation = nil;
@@ -215,13 +225,15 @@
 
     TGRAssertEventually(blockObject != nil, @"should return an object");
     
-    STAssertEqualObjects(operation, blockOperation, @"should pass the operation in the completion block");
-    STAssertTrue([blockObject isKindOfClass:TestModel.class], @"should return a TestModel object");
-    STAssertNil(blockError, @"should return no error");
+    XCTAssertEqualObjects(operation, blockOperation, @"should pass the operation in the completion block");
+    XCTAssertTrue([blockObject isKindOfClass:TestModel.class], @"should return a TestModel object");
+    XCTAssertNil(blockError, @"should return no error");
 }
 
 - (void)testHTTPRequestOperationCompletionWithError {
-    [OHHTTPStubs addRequestHandler:^OHHTTPStubsResponse *(NSURLRequest *request, BOOL onlyCheck) {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         return [OHHTTPStubsResponse responseWithError:[NSError errorWithDomain:NSURLErrorDomain
                                                                           code:NSURLErrorBadServerResponse
                                                                       userInfo:nil]];
@@ -242,8 +254,8 @@
 
     TGRAssertEventually(blockError != nil, @"should return an error");
 
-    STAssertEqualObjects(blockError.domain, NSURLErrorDomain, nil);
-    STAssertEquals(blockError.code, (NSInteger)NSURLErrorBadServerResponse, nil);
+    XCTAssertEqualObjects(NSURLErrorDomain, blockError.domain, @"");
+    XCTAssertEqual((NSInteger)NSURLErrorBadServerResponse, blockError.code, @"");
 }
 
 @end

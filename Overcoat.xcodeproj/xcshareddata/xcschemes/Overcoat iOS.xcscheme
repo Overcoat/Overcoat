@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "99663E0E173BAD1D0090F0E6"
+               BlueprintIdentifier = "99697868189D53120064DF57"
                BuildableName = "libOvercoat.a"
                BlueprintName = "Overcoat iOS"
                ReferencedContainer = "container:Overcoat.xcodeproj">
@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "99663E1F173BAD1D0090F0E6"
-               BuildableName = "Overcoat iOS Tests.octest"
+               BlueprintIdentifier = "99697878189D53120064DF57"
+               BuildableName = "Overcoat iOS Tests.xctest"
                BlueprintName = "Overcoat iOS Tests"
                ReferencedContainer = "container:Overcoat.xcodeproj">
             </BuildableReference>

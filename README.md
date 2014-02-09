@@ -1,8 +1,7 @@
 # Overcoat
 
-<!---
 [![Build Status](https://travis-ci.org/gonzalezreal/Overcoat.png?branch=master)](https://travis-ci.org/gonzalezreal/Overcoat)
--->
+
 Overcoat is an [AFNetworking](https://github.com/AFNetworking/AFNetworking) extension that makes it extremely simple for developers to use Mantle model objects with a REST client.
 
 If you need to learn more about Mantle, we recommend these resources:
@@ -165,6 +164,22 @@ NSDictionary *parameters = @{
     }
 }];
 ```
+
+## Installation
+
+Add the following to your `Podfile` and run `$ pod install`.
+
+``` ruby
+pod 'Overcoat', '~>1.2'
+```
+
+ If you don't have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
+
+## Building the library
+
+In order to build the library and run unit tests, you will first need to install project dependencies by running `$ pod install` in the project directory.
+
+Once the process is complete open the generated `Overcoat.xcworkspace` with **Xcode**.
 
 ## Sample Application
 

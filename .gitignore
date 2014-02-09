@@ -1,6 +1,9 @@
-# Xcode
+# System
 .DS_Store
-*/build/*
+# Subversion
+.svn
+# Xcode
+build/*
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -9,10 +12,13 @@
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+*.xcworkspace
 xcuserdata
 profile
 *.moved-aside
-DerivedData
-.idea/
-*.hmap
-*.xccheckout
+# AppCode
+.idea
+#Cocoapods
+Pods
+
+Podfile.lock

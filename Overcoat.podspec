@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Overcoat is an AFNetworking extension that makes it extremely simple for developers to use Mantle model objects with a REST client.'
   s.homepage = 'https://github.com/gonzalezreal/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com' }
+  s.social_media_url = 'https://twitter.com/gonzalezreal'
   s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '1.2' }
   s.source_files = 'Overcoat'
   s.requires_arc = true

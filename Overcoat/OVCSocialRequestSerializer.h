@@ -20,28 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <AFNetworking/AFURLRequestSerialization.h>
+#import <AFNetworking/AFNetworking.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
-// Serializes requests for supported Social networking services and signs them
-// using the user's social media accounts.
+/**
+ Serializes requests for supported Social networking services and signs them using the user's social media accounts.
+ */
 @interface OVCSocialRequestSerializer : AFHTTPRequestSerializer
 
-// Account information used to sign requests.
+/**
+ Account information used to sign requests.
+ */
 @property (strong, nonatomic) ACAccount *account;
 
-// The social networking service type. If `account` is set this property is ignored.
+/**
+ The social networking service type. If `account` is set this property is ignored.
+ */
 @property (copy, nonatomic) NSString *serviceType;
 
-// Creates and returns a Social request serializer with the specified account.
-//
-// account - The account information that will be used to sign requests.
+/**
+ Creates and returns a Social request serializer with the specified account.
+ 
+ @param account The account information that will be used to sign requests.
+ */
 + (instancetype)serializerWithAccount:(ACAccount *)account;
 
-// Creates and returns a Social request serializer with the specified service type.
-//
-// serviceType - The social networking service type.
+/**
+ Creates and returns a Social request serializer with the specified service type.
+ 
+ @param serviceType The social networking service type.
+ */
 + (instancetype)serializerWithServiceType:(NSString *)serviceType;
 
 @end
