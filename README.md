@@ -165,6 +165,22 @@ NSDictionary *parameters = @{
 }];
 ```
 
+## Installation
+
+Add the following to your `Podfile` and run `$ pod install`.
+
+``` ruby
+pod 'Overcoat', '~>1.2'
+```
+
+ If you don't have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
+
+## Building the library
+
+In order to build the library and run unit tests, you will first need to install project dependencies by running `$ pod install` in the project directory.
+
+Once the process is complete open the generated `Overcoat.xcworkspace` with **Xcode**.
+
 ## Sample Application
 
 [ReadingList](https://github.com/gonzalezreal/ReadingList) is a fairly complete iOS sample application that shows how to use Overcoat.
