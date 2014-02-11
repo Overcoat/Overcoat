@@ -7,6 +7,7 @@
 //
 
 #import "TestModel.h"
+#import "TestErrorModel.h"
 
 @import Accounts;
 
@@ -79,6 +80,7 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
+                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -113,6 +115,7 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
+                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -150,6 +153,7 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
+                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -185,6 +189,7 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
+                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -239,9 +244,11 @@
                                                                       userInfo:nil]];
     }];
     
+    TestModel * __block blockObject = nil;
     NSError * __block blockError = nil;
 
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        blockObject = responseObject;
         blockError = error;
     };
 
@@ -256,6 +263,42 @@
 
     XCTAssertEqualObjects(NSURLErrorDomain, blockError.domain, @"");
     XCTAssertEqual((NSInteger)NSURLErrorBadServerResponse, blockError.code, @"");
+    XCTAssertNil(blockObject, @"should return no object");
+}
+
+- (void)testHTTPRequestOperationCompletionWithErrorObject {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString * path = OHPathForFileInBundle(@"testErrorResponse.json", nil);
+        return [OHHTTPStubsResponse responseWithFileAtPath:path
+                                                statusCode:400
+                                                   headers:@{@"Content-Type": @"application/json"}];
+    }];
+    
+    AFHTTPRequestOperation * __block blockOperation = nil;
+    TestModel * __block blockObject = nil;
+    NSError * __block blockError = nil;
+    
+    void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        blockOperation = operation;
+        blockObject = responseObject;
+        blockError = error;
+    };
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
+    AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
+                                                                         resultClass:TestModel.class
+                                                                    errorResultClass:TestErrorModel.class
+                                                                       resultKeyPath:@"data.object"
+                                                                          completion:block];
+    [operation start];
+    
+    TGRAssertEventually(blockObject != nil, @"should return an error object");
+    
+    XCTAssertEqualObjects(operation, blockOperation, @"should pass the operation in the completion block");
+    XCTAssertTrue([blockObject isKindOfClass:TestErrorModel.class], @"should return a TestErrorModel object");
+    TGRAssertEventually(blockError != nil, @"should return an error");
 }
 
 @end
