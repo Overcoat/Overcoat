@@ -27,13 +27,14 @@
 
 @implementation OVCModelResponseSerializer
 
-+ (instancetype)serializerWithModelClass:(Class)modelClass responseKeyPath:(NSString *)responseKeyPath {
-    return [self serializerWithReadingOptions:0 modelClass:modelClass responseKeyPath:responseKeyPath];
++ (instancetype)serializerWithModelClass:(Class)modelClass errorModelClass:(Class)errorModelClass responseKeyPath:(NSString *)responseKeyPath {
+    return [self serializerWithReadingOptions:0 modelClass:modelClass errorModelClass:errorModelClass responseKeyPath:responseKeyPath];
 }
 
-+ (instancetype)serializerWithReadingOptions:(NSJSONReadingOptions)readingOptions modelClass:(Class)modelClass responseKeyPath:(NSString *)responseKeyPath {
++ (instancetype)serializerWithReadingOptions:(NSJSONReadingOptions)readingOptions modelClass:(Class)modelClass errorModelClass:(Class)errorModelClass responseKeyPath:(NSString *)responseKeyPath {
     OVCModelResponseSerializer *serializer = [self serializerWithReadingOptions:readingOptions];
     serializer.modelClass = modelClass;
+    serializer.errorModelClass = errorModelClass;
     serializer.responseKeyPath = responseKeyPath;
     
     return serializer;
@@ -49,14 +50,23 @@
             JSONObject = [JSONObject ovc_objectForKeyPath:self.responseKeyPath];
         }
         
-        if (self.modelClass != Nil) {
+        Class transformerModelClass = nil;
+        
+        if (error && *error) {
+            transformerModelClass = self.errorModelClass;
+        }
+        else {
+            transformerModelClass = self.modelClass;
+        }
+        
+        if (transformerModelClass != Nil) {
             NSValueTransformer *valueTransformer = nil;
             
             if ([JSONObject isKindOfClass:NSDictionary.class]) {
-                valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:self.modelClass];
+                valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:transformerModelClass];
             }
             else if ([JSONObject isKindOfClass:NSArray.class]) {
-                valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:self.modelClass];
+                valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:transformerModelClass];
             }
             
             return [valueTransformer transformedValue:JSONObject];
@@ -73,6 +83,7 @@
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super initWithCoder:aDecoder]) {
         self.modelClass = NSClassFromString([aDecoder decodeObjectForKey:@"modelClass"]);
+        self.errorModelClass = NSClassFromString([aDecoder decodeObjectForKey:@"errorModelClass"]);
         self.responseKeyPath = [aDecoder decodeObjectForKey:@"responseKeyPath"];
     }
     
@@ -83,6 +94,7 @@
     [super encodeWithCoder:aCoder];
     
     [aCoder encodeObject:NSStringFromClass(self.modelClass) forKey:@"modelClass"];
+    [aCoder encodeObject:NSStringFromClass(self.errorModelClass) forKey:@"errorModelClass"];
     [aCoder encodeObject:self.responseKeyPath forKey:@"responseKeyPath"];
 }
 
@@ -91,6 +103,7 @@
 - (id)copyWithZone:(NSZone *)zone {
     OVCModelResponseSerializer *serializer = [super copyWithZone:zone];
     serializer.modelClass = self.modelClass;
+    serializer.errorModelClass = self.errorModelClass;
     serializer.responseKeyPath = self.responseKeyPath;
     
     return serializer;

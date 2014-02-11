@@ -46,12 +46,23 @@
                   resultKeyPath:(NSString *)keyPath
                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
 {
+    return [self GET:URLString parameters:parameters resultClass:resultClass errorResultClass:nil resultKeyPath:keyPath completion:block];
+}
+
+- (AFHTTPRequestOperation *)GET:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+               errorResultClass:(Class)errorResultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"GET"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
                                                                   parameters:parameters
                                                                        error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
+                                                             errorResultClass:errorResultClass
                                                                 resultKeyPath:keyPath
                                                                    completion:block];
     [self.operationQueue addOperation:operation];
@@ -65,12 +76,23 @@
                    resultKeyPath:(NSString *)keyPath
                       completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
 {
+    return [self POST:URLString parameters:parameters resultClass:resultClass errorResultClass:nil resultKeyPath:keyPath completion:block];
+}
+
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                errorResultClass:(Class)errorResultClass
+                   resultKeyPath:(NSString *)keyPath
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
                                                                   parameters:parameters
                                                                        error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
+                                                             errorResultClass:errorResultClass
                                                                 resultKeyPath:keyPath
                                                                    completion:block];
     [self.operationQueue addOperation:operation];
@@ -85,6 +107,17 @@
        constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))bodyBlock
                       completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
 {
+    return [self POST:URLString parameters:parameters resultClass:resultClass errorResultClass:nil resultKeyPath:keyPath constructingBodyWithBlock:bodyBlock completion:block];
+}
+
+- (AFHTTPRequestOperation *)POST:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                     resultClass:(Class)resultClass
+                errorResultClass:(Class)errorResultClass
+                   resultKeyPath:(NSString *)keyPath
+       constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))bodyBlock
+                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST"
                                                                                 URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
                                                                                parameters:parameters
@@ -92,6 +125,7 @@
                                                                                     error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
+                                                             errorResultClass:errorResultClass
                                                                 resultKeyPath:keyPath
                                                                    completion:block];
     [self.operationQueue addOperation:operation];
@@ -105,12 +139,23 @@
                   resultKeyPath:(NSString *)keyPath
                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
 {
+    return [self PUT:URLString parameters:parameters resultClass:resultClass errorResultClass:nil resultKeyPath:keyPath completion:block];
+}
+
+- (AFHTTPRequestOperation *)PUT:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                    resultClass:(Class)resultClass
+               errorResultClass:(Class)errorResultClass
+                  resultKeyPath:(NSString *)keyPath
+                     completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PUT"
                                                                    URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
                                                                   parameters:parameters
                                                                        error:NULL];
     AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
                                                                   resultClass:resultClass
+                                                             errorResultClass:errorResultClass
                                                                 resultKeyPath:keyPath
                                                                    completion:block];
     [self.operationQueue addOperation:operation];
@@ -123,15 +168,25 @@
                                               resultKeyPath:(NSString *)keyPath
                                                  completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
 {
+    return [self HTTPRequestOperationWithRequest:urlRequest resultClass:resultClass errorResultClass:nil resultKeyPath:keyPath completion:block];
+}
+
+- (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest
+                                                resultClass:(Class)resultClass
+                                           errorResultClass:(Class)errorResultClass
+                                              resultKeyPath:(NSString *)keyPath
+                                                 completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
     AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:urlRequest success:nil failure:nil];
     requestOperation.responseSerializer = [OVCModelResponseSerializer serializerWithModelClass:resultClass
+                                                                               errorModelClass:errorResultClass
                                                                                responseKeyPath:keyPath];
     
     if (block) {
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             block(operation, responseObject, nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            block(operation, nil, error);
+            block(operation, operation.responseObject, error);
         }];
     }
 
