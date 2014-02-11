@@ -38,7 +38,8 @@
     ACAccount *account = [[ACAccount alloc] initWithAccountType:accountType];
     
     self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"]
-                                       account:account];
+                                       account:account
+                              errorResultClass:TestErrorModel.class];
     
     XCTAssertEqualObjects([NSURL URLWithString:@"https://api.twitter.com/1.1/"], self.client.baseURL, @"should initialize baseURL");
     
@@ -263,6 +264,10 @@
 }
 
 - (void)testHTTPRequestOperationCompletionWithErrorObject {
+    self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"http://test"] account:nil errorResultClass:TestErrorModel.class];
+
+    XCTAssertEqualObjects(TestErrorModel.class, self.client.errorResultClass, @"should initialize errorResultClass");
+
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -281,8 +286,6 @@
         blockObject = responseObject;
         blockError = error;
     };
-    
-    self.client.errorResultClass = TestErrorModel.class;
     
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
     AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request

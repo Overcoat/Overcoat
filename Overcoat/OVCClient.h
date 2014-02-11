@@ -32,15 +32,26 @@
 /**
  MTLModel subclass used for failing requests in which the response (or part of the response) will be transformed.
  */
-@property (nonatomic) Class errorResultClass;
+@property (nonatomic, readonly) Class errorResultClass;
 
 /**
  Creates and initializes an `OVCClient` object with the specified base URL and account.
  
  @param url The base URL for the client. Can be nil.
  @param account The user account that will be used to authenticate requests.
+ 
+ @see -clientWithBaseURL:account:errorResultClass:
  */
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account;
+
+/**
+ Creates and initializes an `OVCClient` object with the specified base URL, account and error result class.
+ 
+ @param url The base URL for the client. Can be nil.
+ @param account The user account that will be used to authenticate requests.
+ @param errorResultClass An MTLModel subclass used for failing requests.
+ */
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account errorResultClass:(Class)errorResultClass;
 
 /**
  Cancels all queued and running `AFHTTPRequestOperation` objects.

@@ -24,10 +24,22 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"
 
+@interface OVCClient ()
+
+@property (nonatomic, readwrite) Class errorResultClass;
+
+@end
+
+
 @implementation OVCClient
 
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account {
+    return [self clientWithBaseURL:url account:account errorResultClass:nil];
+}
+
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account errorResultClass:(Class)errorResultClass {
     OVCClient *client = [[self alloc] initWithBaseURL:url];
+    client.errorResultClass = errorResultClass;
     
     if (account) {
         client.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
