@@ -33,7 +33,7 @@
 @property (nonatomic) Class modelClass;
 
 /**
- MTLModel subclass in used for failing requests which the response (or part of the response) will be transformed.
+ MTLModel subclass used for failing requests in which the response (or part of the response) will be transformed.
  */
 @property (nonatomic) Class errorModelClass;
 

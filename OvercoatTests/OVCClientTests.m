@@ -80,7 +80,6 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
-                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -115,7 +114,6 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
-                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -153,7 +151,6 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
-                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -189,7 +186,6 @@
     [[[mockClient stub] andReturn:operationQueue] operationQueue];
     [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
                                                                           resultClass:TestModel.class
-                                                                     errorResultClass:nil
                                                                         resultKeyPath:@"data.object"
                                                                            completion:block];
     
@@ -286,10 +282,11 @@
         blockError = error;
     };
     
+    self.client.errorResultClass = TestErrorModel.class;
+    
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
     AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
                                                                          resultClass:TestModel.class
-                                                                    errorResultClass:TestErrorModel.class
                                                                        resultKeyPath:@"data.object"
                                                                           completion:block];
     [operation start];
