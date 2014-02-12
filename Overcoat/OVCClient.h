@@ -72,7 +72,7 @@
                       completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 /**
- Creates and runs an `AFHTTPRequestOperation` with a `POST` request.
+ Creates and runs an `AFHTTPRequestOperation` with a multipart `POST` request.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
