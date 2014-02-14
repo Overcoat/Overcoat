@@ -48,6 +48,16 @@
  Creates and initializes an `OVCClient` object with the specified base URL, account and error result class.
  
  @param url The base URL for the client. Can be nil.
+ @param errorResultClass An MTLModel subclass used for failing requests.
+ 
+ @see -clientWithBaseURL:account:errorResultClass:
+ */
++ (instancetype)clientWithBaseURL:(NSURL *)url errorResultClass:(Class)errorResultClass;
+
+/**
+ Creates and initializes an `OVCClient` object with the specified base URL, account and error result class.
+ 
+ @param url The base URL for the client. Can be nil.
  @param account The user account that will be used to authenticate requests.
  @param errorResultClass An MTLModel subclass used for failing requests.
  */

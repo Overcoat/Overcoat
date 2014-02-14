@@ -37,6 +37,10 @@
     return [self clientWithBaseURL:url account:account errorResultClass:nil];
 }
 
++ (instancetype)clientWithBaseURL:(NSURL *)url errorResultClass:(Class)errorResultClass {
+    return [self clientWithBaseURL:url account:nil errorResultClass:errorResultClass];
+}
+
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account errorResultClass:(Class)errorResultClass {
     OVCClient *client = [[self alloc] initWithBaseURL:url];
     client.errorResultClass = errorResultClass;
