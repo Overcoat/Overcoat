@@ -7,6 +7,7 @@
 //
 
 #import "TestModel.h"
+#import "TestErrorModel.h"
 
 @import Accounts;
 
@@ -37,9 +38,11 @@
     ACAccount *account = [[ACAccount alloc] initWithAccountType:accountType];
     
     self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"]
-                                       account:account];
+                                       account:account
+                              errorResultClass:TestErrorModel.class];
     
     XCTAssertEqualObjects([NSURL URLWithString:@"https://api.twitter.com/1.1/"], self.client.baseURL, @"should initialize baseURL");
+    XCTAssertEqualObjects(TestErrorModel.class, self.client.errorResultClass, @"should initialize errorResultClass");
     
     OVCSocialRequestSerializer *requestSerializer = (OVCSocialRequestSerializer *)self.client.requestSerializer;
     XCTAssertTrue([requestSerializer isKindOfClass:OVCSocialRequestSerializer.class], @"requestSerializer should be a social request serializer");
@@ -239,9 +242,11 @@
                                                                       userInfo:nil]];
     }];
     
+    TestModel * __block blockObject = nil;
     NSError * __block blockError = nil;
 
     void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        blockObject = responseObject;
         blockError = error;
     };
 
@@ -256,6 +261,45 @@
 
     XCTAssertEqualObjects(NSURLErrorDomain, blockError.domain, @"");
     XCTAssertEqual((NSInteger)NSURLErrorBadServerResponse, blockError.code, @"");
+    XCTAssertNil(blockObject, @"should return no object");
+}
+
+- (void)testHTTPRequestOperationCompletionWithErrorObject {
+    self.client = [OVCClient clientWithBaseURL:[NSURL URLWithString:@"http://test"] account:nil errorResultClass:TestErrorModel.class];
+
+    XCTAssertEqualObjects(TestErrorModel.class, self.client.errorResultClass, @"should initialize errorResultClass");
+
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSString * path = OHPathForFileInBundle(@"testErrorResponse.json", nil);
+        return [OHHTTPStubsResponse responseWithFileAtPath:path
+                                                statusCode:400
+                                                   headers:@{@"Content-Type": @"application/json"}];
+    }];
+    
+    AFHTTPRequestOperation * __block blockOperation = nil;
+    TestModel * __block blockObject = nil;
+    NSError * __block blockError = nil;
+    
+    void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+        blockOperation = operation;
+        blockObject = responseObject;
+        blockError = error;
+    };
+    
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://test"]];
+    AFHTTPRequestOperation *operation = [self.client HTTPRequestOperationWithRequest:request
+                                                                         resultClass:TestModel.class
+                                                                       resultKeyPath:@"data.object"
+                                                                          completion:block];
+    [operation start];
+    
+    TGRAssertEventually(blockObject != nil, @"should return an error object");
+    
+    XCTAssertEqualObjects(operation, blockOperation, @"should pass the operation in the completion block");
+    XCTAssertTrue([blockObject isKindOfClass:TestErrorModel.class], @"should return a TestErrorModel object");
+    TGRAssertEventually(blockError != nil, @"should return an error");
 }
 
 @end

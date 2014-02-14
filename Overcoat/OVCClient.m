@@ -24,10 +24,26 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"
 
+@interface OVCClient ()
+
+@property (nonatomic, readwrite) Class errorResultClass;
+
+@end
+
+
 @implementation OVCClient
 
 + (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account {
+    return [self clientWithBaseURL:url account:account errorResultClass:nil];
+}
+
++ (instancetype)clientWithBaseURL:(NSURL *)url errorResultClass:(Class)errorResultClass {
+    return [self clientWithBaseURL:url account:nil errorResultClass:errorResultClass];
+}
+
++ (instancetype)clientWithBaseURL:(NSURL *)url account:(ACAccount *)account errorResultClass:(Class)errorResultClass {
     OVCClient *client = [[self alloc] initWithBaseURL:url];
+    client.errorResultClass = errorResultClass;
     
     if (account) {
         client.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
@@ -125,13 +141,14 @@
 {
     AFHTTPRequestOperation *requestOperation = [self HTTPRequestOperationWithRequest:urlRequest success:nil failure:nil];
     requestOperation.responseSerializer = [OVCModelResponseSerializer serializerWithModelClass:resultClass
+                                                                               errorModelClass:self.errorResultClass
                                                                                responseKeyPath:keyPath];
     
     if (block) {
         [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
             block(operation, responseObject, nil);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            block(operation, nil, error);
+            block(operation, operation.responseObject, error);
         }];
     }
 

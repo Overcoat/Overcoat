@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2ABD5B6518AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
+		2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
+		2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
+		2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
 		9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD69189D6AD000E064E3 /* TestModel.m */; };
@@ -73,6 +77,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testErrorResponse.json; sourceTree = "<group>"; };
+		2ABD5B6718AA8DD700AF409B /* TestErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestErrorModel.h; sourceTree = "<group>"; };
+		2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestErrorModel.m; sourceTree = "<group>"; };
 		428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.xcconfig"; path = "Pods/Pods-Overcoat iOS Tests.xcconfig"; sourceTree = "<group>"; };
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,6 +174,7 @@
 		9942CD64189D6A9C00E064E3 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
+				2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */,
 				9942CD65189D6A9C00E064E3 /* testResponse.json */,
 			);
 			path = Stubs;
@@ -258,6 +266,8 @@
 			children = (
 				9942CD68189D6AD000E064E3 /* TestModel.h */,
 				9942CD69189D6AD000E064E3 /* TestModel.m */,
+				2ABD5B6718AA8DD700AF409B /* TestErrorModel.h */,
+				2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */,
 				9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */,
 				9942CD6B189D6AD000E064E3 /* OVCTestCase.h */,
 				9942CD6C189D6AD000E064E3 /* OVCTestCase.m */,
@@ -430,6 +440,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABD5B6518AA8C5500AF409B /* testErrorResponse.json in Resources */,
 				9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */,
 				99697887189D53130064DF57 /* InfoPlist.strings in Resources */,
 			);
@@ -447,6 +458,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */,
 				9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */,
 				996978C1189D57580064DF57 /* InfoPlist.strings in Resources */,
 			);
@@ -595,6 +607,7 @@
 			files = (
 				9942CD75189D6CCB00E064E3 /* OVCClientTests.m in Sources */,
 				996978D2189D590C0064DF57 /* NSDictionaryTests.m in Sources */,
+				2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */,
 				9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */,
 				9942CD6F189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
@@ -618,6 +631,7 @@
 			files = (
 				9942CD76189D6CCB00E064E3 /* OVCClientTests.m in Sources */,
 				996978D3189D590C0064DF57 /* NSDictionaryTests.m in Sources */,
+				2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */,
 				9942CD6E189D6AD000E064E3 /* TestModel.m in Sources */,
 				9942CD70189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */,

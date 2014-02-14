@@ -33,20 +33,26 @@
 @property (nonatomic) Class modelClass;
 
 /**
+ MTLModel subclass used for failing requests in which the response (or part of the response) will be transformed.
+ */
+@property (nonatomic) Class errorModelClass;
+
+/**
  Key path in the JSON response that contains the data to be transformed.
  */
 @property (copy, nonatomic) NSString *responseKeyPath;
 
 /**
- Creates and returns a model serializer with the specified model class and response key path.
+ Creates and returns a model serializer with the specified model class, error class and response key path.
  */
-+ (instancetype)serializerWithModelClass:(Class)modelClass responseKeyPath:(NSString *)responseKeyPath;
++ (instancetype)serializerWithModelClass:(Class)modelClass errorModelClass:(Class)errorModelClass responseKeyPath:(NSString *)responseKeyPath;
 
 /**
- Creates and returns a model serializer with the specified JSON reading options, model class and response object key path.
+ Creates and returns a model serializer with the specified JSON reading options, model class, error model class and response object key path.
  */
 + (instancetype)serializerWithReadingOptions:(NSJSONReadingOptions)readingOptions
                                   modelClass:(Class)modelClass
+                             errorModelClass:(Class)errorModelClass
                              responseKeyPath:(NSString *)responseKeyPath;
 
 @end

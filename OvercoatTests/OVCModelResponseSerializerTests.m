@@ -7,12 +7,15 @@
 //
 
 #import "TestModel.h"
+#import "TestErrorModel.h"
 
 @interface OVCModelResponseSerializerTests : XCTestCase
 
 @property (strong, nonatomic) OVCModelResponseSerializer *serializer;
 @property (strong, nonatomic) NSHTTPURLResponse *response;
+@property (strong, nonatomic) NSHTTPURLResponse *errorResponse;
 @property (strong, nonatomic) NSData *data;
+@property (strong, nonatomic) NSData *errorData;
 
 @end
 
@@ -22,15 +25,24 @@
     [super setUp];
     
     self.serializer = [OVCModelResponseSerializer serializerWithModelClass:TestModel.class
+                                                           errorModelClass:TestErrorModel.class
                                                            responseKeyPath:@"data.object"];
     self.response = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://test"]
                                                 statusCode:200
                                                HTTPVersion:@"1.1"
                                               headerFields:@{@"Content-Type": @"text/json"}];
+    self.errorResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://test"]
+                                                     statusCode:400
+                                                    HTTPVersion:@"1.1"
+                                                   headerFields:@{@"Content-Type": @"text/json"}];
     
     NSString *path = [[NSBundle bundleForClass:self.class] pathForResource:@"testResponse"
                                                                     ofType:@"json"];
     self.data = [NSData dataWithContentsOfFile:path];
+    
+    path = [[NSBundle bundleForClass:self.class] pathForResource:@"testErrorResponse"
+                                                          ofType:@"json"];
+    self.errorData = [NSData dataWithContentsOfFile:path];
 }
 
 - (void)tearDown {
@@ -81,6 +93,37 @@
     NSDictionary *expectedObject = @{
         @"first_name": @"Bruce",
         @"last_name": @"Wayne"
+    };
+    XCTAssertEqualObjects(expectedObject, object, @"");
+}
+
+- (void)testSingleErrorModelObjectSerialization {
+    NSError *error = nil;
+    TestErrorModel *object = [self.serializer responseObjectForResponse:self.errorResponse data:self.errorData error:&error];
+    TestErrorModel *expectedObject = [TestErrorModel testErrorModelWithErrorName:@"Parameter missing" errorCode:@1];
+    XCTAssertEqualObjects(expectedObject, object, @"");
+}
+
+- (void)testMultipleErrorModelObjectSerialization {
+    self.serializer.responseKeyPath = @"data.objects";
+    NSError *error = nil;
+    NSArray *objects = [self.serializer responseObjectForResponse:self.errorResponse data:self.errorData error:&error];
+    
+    NSArray *expectedObjects = @[
+                                 [TestErrorModel testErrorModelWithErrorName:@"Parameter value not allowed" errorCode:@2],
+                                 [TestErrorModel testErrorModelWithErrorName:@"Parameter missing" errorCode:@1]
+    ];
+    XCTAssertEqualObjects(expectedObjects, objects, @"");
+}
+
+- (void)testSerializationWithoutErrorModelClass {
+    self.serializer.errorModelClass = nil;
+    NSError *error = nil;
+    id object = [self.serializer responseObjectForResponse:self.errorResponse data:self.errorData error:&error];
+    
+    NSDictionary *expectedObject = @{
+                                     @"error_name": @"Parameter missing",
+                                     @"error_code": @1
     };
     XCTAssertEqualObjects(expectedObject, object, @"");
 }
