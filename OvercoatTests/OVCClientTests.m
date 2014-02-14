@@ -42,6 +42,7 @@
                               errorResultClass:TestErrorModel.class];
     
     XCTAssertEqualObjects([NSURL URLWithString:@"https://api.twitter.com/1.1/"], self.client.baseURL, @"should initialize baseURL");
+    XCTAssertEqualObjects(TestErrorModel.class, self.client.errorResultClass, @"should initialize errorResultClass");
     
     OVCSocialRequestSerializer *requestSerializer = (OVCSocialRequestSerializer *)self.client.requestSerializer;
     XCTAssertTrue([requestSerializer isKindOfClass:OVCSocialRequestSerializer.class], @"requestSerializer should be a social request serializer");
