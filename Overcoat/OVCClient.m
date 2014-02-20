@@ -118,6 +118,25 @@
     return operation;
 }
 
+- (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
+                       parameters:(NSDictionary *)parameters
+                      resultClass:(Class)resultClass
+                    resultKeyPath:(NSString *)keyPath
+                       completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PATCH"
+                                                                   URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString]
+                                                                  parameters:parameters
+                                                                       error:NULL];
+    AFHTTPRequestOperation *operation = [self HTTPRequestOperationWithRequest:request
+                                                                  resultClass:resultClass
+                                                                resultKeyPath:keyPath
+                                                                   completion:block];
+    [self.operationQueue addOperation:operation];
+    
+    return operation;
+}
+
 - (AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest
                                                 resultClass:(Class)resultClass
                                               resultKeyPath:(NSString *)keyPath

@@ -104,6 +104,21 @@
                      completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
 
 /**
+ Creates and runs an `AFHTTPRequestOperation` with a `PATCH` request.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ @param resultClass MTLModel subclass in which the response (or part of the response) will be transformed.
+ @param keyPath Key path in the JSON response that contains the data to be transformed. If this is nil, the whole response will be used.
+ @param completion A block to be executed when the operation finishes. Depending on the response, the responseObject parameter will contain either a single instance or an array of instances of `resultClass`.
+ */
+- (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
+                       parameters:(NSDictionary *)parameters
+                      resultClass:(Class)resultClass
+                    resultKeyPath:(NSString *)keyPath
+                       completion:(void (^)(AFHTTPRequestOperation *operation, id responseObject, NSError *error))block;
+
+/**
  Creates an `AFHTTPRequestOperation` that loads the specified request and transforms the result into a model or an array of model objects.
  
  @param urlRequest The request object to be loaded asynchronously during execution of the operation.
