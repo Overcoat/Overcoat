@@ -162,6 +162,78 @@
     XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
 }
 
+- (void)testPATCH {
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] requestWithMethod:@"PATCH"
+                                                            URLString:@"http://test/patch"
+                                                           parameters:parameters
+                                                                error:NULL];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
+    void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    };
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client PATCH:@"patch"
+                                                parameters:parameters
+                                               resultClass:TestModel.class
+                                             resultKeyPath:@"data.object"
+                                                completion:block];
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
+}
+
+- (void)testMultipartPATCH {
+    NSDictionary *parameters = @{@"foo" : @"bar"};
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    void (^bodyBlock)(id <AFMultipartFormData>) = ^(id <AFMultipartFormData> formData) {
+    };
+    
+    id requestSerializer = [self autoVerifiedMockForClass:AFHTTPRequestSerializer.class];
+    [[[requestSerializer expect] andReturn:request] multipartFormRequestWithMethod:@"PATCH"
+                                                                         URLString:@"http://test/patch"
+                                                                        parameters:parameters
+                                                         constructingBodyWithBlock:bodyBlock
+                                                                             error:NULL];
+    
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] init];
+    id operationQueue = [self autoVerifiedMockForClass:NSOperationQueue.class];
+    [[operationQueue expect] addOperation:requestOperation];
+    
+    void (^block)(AFHTTPRequestOperation *, id, NSError *) = ^(AFHTTPRequestOperation *operation, id responseObject, NSError *error) {
+    };
+    
+    id mockClient = [self autoVerifiedPartialMockForObject:self.client];
+    
+    [[[mockClient stub] andReturn:requestSerializer] requestSerializer];
+    [[[mockClient stub] andReturn:operationQueue] operationQueue];
+    [[[mockClient expect] andReturn:requestOperation] HTTPRequestOperationWithRequest:request
+                                                                          resultClass:TestModel.class
+                                                                        resultKeyPath:@"data.object"
+                                                                           completion:block];
+    
+    AFHTTPRequestOperation *operation = [self.client PATCH:@"patch"
+                                                parameters:parameters
+                                               resultClass:TestModel.class
+                                             resultKeyPath:@"data.object"
+                                 constructingBodyWithBlock:bodyBlock
+                                                completion:block];
+    XCTAssertEqualObjects(requestOperation, operation, @"should return the operation");
+}
+
 - (void)testPUT {
     NSDictionary *parameters = @{@"foo" : @"bar"};
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
