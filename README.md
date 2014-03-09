@@ -16,6 +16,8 @@ We will use the [iTunes Search API](http://www.apple.com/itunes/affiliates/resou
 First, lets create a book model using **Mantle**:
 
 ```objc
+#import <Mantle/Mantle.h>
+
 @interface TGRBook : MTLModel <MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *author;
