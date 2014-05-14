@@ -65,6 +65,7 @@
 		9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; };
 		9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
+		999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */; };
 		A89EAB6C7F8240FEB104924F /* libPods-Overcoat Mac Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */; };
 		CCC64A123EEF47108D555837 /* libPods-Overcoat iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */; };
 		E9DA65292DFE4AB9B26F035D /* libPods-Overcoat iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */; };
@@ -137,6 +138,7 @@
 		9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
 		9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
+		999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManagerTests.m; sourceTree = "<group>"; };
 		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -271,6 +273,7 @@
 		99697882189D53130064DF57 /* OvercoatTests */ = {
 			isa = PBXGroup;
 			children = (
+				999CD4881923C774004045DC /* 2.0 */,
 				996978D1189D590C0064DF57 /* NSDictionaryTests.m */,
 				9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */,
 				9942CD74189D6CCB00E064E3 /* OVCClientTests.m */,
@@ -316,6 +319,14 @@
 				9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */,
 				9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */,
 				9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */,
+			);
+			name = 2.0;
+			sourceTree = "<group>";
+		};
+		999CD4881923C774004045DC /* 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
 			);
 			name = 2.0;
 			sourceTree = "<group>";
@@ -651,6 +662,7 @@
 				2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */,
 				9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */,
 				9942CD6F189D6AD000E064E3 /* OVCTestCase.m in Sources */,
+				999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

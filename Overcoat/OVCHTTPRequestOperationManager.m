@@ -21,17 +21,18 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPRequestOperationManager.h"
+#import "OVCResponse.h"
 
 @implementation OVCHTTPRequestOperationManager
 
 + (Class)responseClass {
-    // TODO: implement
-    return Nil;
+    return [OVCResponse class];
 }
 
 + (NSDictionary *)modelClassesByResourcePath {
-    // TODO: implement
-    return nil;
+    [NSException raise:NSInvalidArgumentException
+                format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
+    return nil; // Not reached
 }
 
 - (id)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context {

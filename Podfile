@@ -1,7 +1,7 @@
 target "Overcoat iOS" do
   platform :ios, "6.0"
   pod 'AFNetworking', '~> 2.0'
-  pod 'Mantle', '~> 1.3'
+  pod 'Mantle', '~> 1.4'
 end
 
 target "Overcoat iOS Tests" do
