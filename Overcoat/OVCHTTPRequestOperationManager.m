@@ -29,6 +29,10 @@
     return [OVCResponse class];
 }
 
++ (Class)errorResultClass {
+    return Nil;
+}
+
 + (NSDictionary *)modelClassesByResourcePath {
     [NSException raise:NSInvalidArgumentException
                 format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
@@ -60,7 +64,7 @@
                  if (completion) completion(responseObject, nil);
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 if (completion) completion(nil, error);
+                 if (completion) completion(operation.responseObject, error);
              }];
 }
 
@@ -73,7 +77,7 @@
                   if (completion) completion(operation.responseObject, nil);
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(nil, error);
+                  if (completion) completion(operation.responseObject, error);
               }];
 }
 
@@ -86,7 +90,7 @@
                   if (completion) completion(responseObject, nil);
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(nil, error);
+                  if (completion) completion(operation.responseObject, error);
               }];
 }
 
@@ -100,7 +104,7 @@
                   if (completion) completion(responseObject, nil);
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(nil, error);
+                  if (completion) completion(operation.responseObject, error);
               }];
 }
 
@@ -113,7 +117,7 @@
                  if (completion) completion(responseObject, nil);
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 if (completion) completion(nil, error);
+                 if (completion) completion(operation.responseObject, error);
              }];
 }
 
@@ -126,7 +130,7 @@
                    if (completion) completion(responseObject, nil);
                }
                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                   if (completion) completion(nil, error);
+                   if (completion) completion(operation.responseObject, error);
                }];
 }
 
@@ -139,7 +143,7 @@
                     if (completion) completion(responseObject, nil);
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    if (completion) completion(nil, error);
+                    if (completion) completion(operation.responseObject, error);
                 }];
 }
 

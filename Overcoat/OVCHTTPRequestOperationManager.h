@@ -40,6 +40,14 @@
  */
 + (Class)responseClass;
 
+/**
+ Specifies a model class for server error responses.
+ 
+ This methods returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
+ subclass that will be used to parse the JSON in an error response.
+ */
++ (Class)errorResultClass;
+
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wcomment"
 /**
@@ -90,8 +98,8 @@
  Enqueues a `GET` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  If the receiver has been initialized with a valid `NSManagedObjectContext` object and the
  request completes successfully, the resulting model objects are inserted into the context and the
@@ -109,8 +117,8 @@
  Enqueues a `HEAD` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
@@ -124,8 +132,8 @@
  Enqueues a `POST` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
@@ -139,8 +147,8 @@
  Enqueues a multipart `POST` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
@@ -157,8 +165,8 @@
  Enqueues a `PUT` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
@@ -172,8 +180,8 @@
  Enqueues a `PATCH` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
@@ -187,8 +195,8 @@
  Enqueues a `DELETE` request and executes a block when the request completes or fails.
  
  If the request completes successfully, the `response` parameter of the completion block contains a
- `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the `response`
- parameter is `nil` and the error parameter contains information about the failure.
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
  
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.

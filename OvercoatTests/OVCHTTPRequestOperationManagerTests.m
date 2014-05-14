@@ -29,6 +29,10 @@
     XCTAssertEqualObjects([OVCHTTPRequestOperationManager responseClass], [OVCResponse class], @"should return OVCResponse");
 }
 
+- (void)testErrorResultClass {
+    XCTAssertNil([OVCHTTPRequestOperationManager errorResultClass], @"should be Nil");
+}
+
 - (void)testModelClassesByResourcePathMustBeOverridenBySubclass {
     XCTAssertThrows([OVCHTTPRequestOperationManager modelClassesByResourcePath], @"should throw an exception");
 }
