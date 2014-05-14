@@ -11,6 +11,8 @@
 		2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
 		2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
 		2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
+		9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
 		9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD69189D6AD000E064E3 /* TestModel.m */; };
@@ -53,6 +55,16 @@
 		996978CF189D58250064DF57 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = 996978CB189D58250064DF57 /* NSDictionary+Overcoat.m */; };
 		996978D2189D590C0064DF57 /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 996978D1189D590C0064DF57 /* NSDictionaryTests.m */; };
 		996978D3189D590C0064DF57 /* NSDictionaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 996978D1189D590C0064DF57 /* NSDictionaryTests.m */; };
+		9975E381191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9975E382191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9975E383191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */; };
+		9975E384191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */; };
+		9975E385191FCE8B0086C786 /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9975E386191FCE930086C786 /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
+		9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; };
+		9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; };
+		9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
+		9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		A89EAB6C7F8240FEB104924F /* libPods-Overcoat Mac Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */; };
 		CCC64A123EEF47108D555837 /* libPods-Overcoat iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */; };
 		E9DA65292DFE4AB9B26F035D /* libPods-Overcoat iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */; };
@@ -84,6 +96,8 @@
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.xcconfig"; path = "Pods/Pods-Overcoat iOS.xcconfig"; sourceTree = "<group>"; };
+		9911A06C191E7C0200DFE29D /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
+		9911A06D191E7C0200DFE29D /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
 		9942CD65189D6A9C00E064E3 /* testResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testResponse.json; sourceTree = "<group>"; };
 		9942CD68189D6AD000E064E3 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		9942CD69189D6AD000E064E3 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
@@ -119,6 +133,10 @@
 		996978CB189D58250064DF57 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
 		996978D0189D587C0064DF57 /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
 		996978D1189D590C0064DF57 /* NSDictionaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryTests.m; sourceTree = "<group>"; };
+		9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
+		9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
 		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -225,6 +243,7 @@
 		9969786E189D53120064DF57 /* Overcoat */ = {
 			isa = PBXGroup;
 			children = (
+				9975E37E191FCD120086C786 /* 2.0 */,
 				99482701189D63550039F2F3 /* Overcoat.h */,
 				99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */,
 				99482703189D63550039F2F3 /* OVCModelResponseSerializer.m */,
@@ -288,6 +307,19 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
+		9975E37E191FCD120086C786 /* 2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				9911A06C191E7C0200DFE29D /* OVCResponse.h */,
+				9911A06D191E7C0200DFE29D /* OVCResponse.m */,
+				9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */,
+				9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */,
+				9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */,
+				9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */,
+			);
+			name = 2.0;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -299,6 +331,9 @@
 				996978CD189D58250064DF57 /* NSDictionary+Overcoat.h in Headers */,
 				9948270B189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */,
 				99482709189D63550039F2F3 /* Overcoat.h in Headers */,
+				9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
+				9975E382191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */,
+				9975E385191FCE8B0086C786 /* OVCResponse.h in Headers */,
 				99482713189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,8 +342,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9975E381191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */,
 				9948270E189D63550039F2F3 /* OVCClient.h in Headers */,
 				996978CC189D58250064DF57 /* NSDictionary+Overcoat.h in Headers */,
+				9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */,
+				9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
 				9948270A189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */,
 				99482708189D63550039F2F3 /* Overcoat.h in Headers */,
 				99482712189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,
@@ -404,7 +442,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = OVC;
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Guillermo Gonzalez";
 				TargetAttributes = {
 					99697878189D53120064DF57 = {
@@ -594,8 +632,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */,
 				996978CE189D58250064DF57 /* NSDictionary+Overcoat.m in Sources */,
+				9975E383191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */,
 				99482714189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
+				9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */,
 				99482710189D63550039F2F3 /* OVCClient.m in Sources */,
 				9948270C189D63550039F2F3 /* OVCModelResponseSerializer.m in Sources */,
 			);
@@ -622,6 +663,9 @@
 				99482715189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
 				99482711189D63550039F2F3 /* OVCClient.m in Sources */,
 				9948270D189D63550039F2F3 /* OVCModelResponseSerializer.m in Sources */,
+				9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */,
+				9975E384191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */,
+				9975E386191FCE930086C786 /* OVCResponse.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +721,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -715,7 +758,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -775,7 +817,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -799,7 +840,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
