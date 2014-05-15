@@ -22,6 +22,59 @@
 
 #import "OVCResponse.h"
 
+@interface OVCResponse ()
+
+@property (strong, nonatomic, readwrite) NSHTTPURLResponse *HTTPResponse;
+@property (strong, nonatomic, readwrite) id result;
+
+@end
+
 @implementation OVCResponse
+
++ (instancetype)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary {
+    return nil;
+}
+
++ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
+                          JSONDictionary:(NSDictionary *)JSONDictionary
+                             resultClass:(Class)resultClass
+                                   error:(NSError *__autoreleasing *)error
+{
+    NSString *resultKey = [self resultKeyPathForJSONDictionary:JSONDictionary];
+    OVCResponse *response = resultKey
+        ? [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONDictionary error:error]
+        : [[self alloc] init];
+    
+    if (!response) {
+        return nil;
+    }
+    
+    response.HTTPResponse = HTTPResponse;
+    id result = JSONDictionary[resultKey];
+    
+    if (result != nil) {
+        if (resultClass != Nil) {
+            NSValueTransformer *valueTransformer = nil;
+            
+            if ([result isKindOfClass:[NSDictionary class]]) {
+                valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:resultClass];
+            } else if ([result isKindOfClass:[NSArray class]]) {
+                valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:resultClass];
+            }
+            
+            result = [valueTransformer transformedValue:result];
+        }
+        
+        response.result = result;
+    }
+    
+    return response;
+}
+
+#pragma mark - MTLJSONSerializing
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{};
+}
 
 @end

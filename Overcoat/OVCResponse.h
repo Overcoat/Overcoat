@@ -22,6 +22,45 @@
 
 #import <Mantle/Mantle.h>
 
+/**
+ Represents a parsed response.
+ */
 @interface OVCResponse : MTLModel<MTLJSONSerializing>
+
+/**
+ The HTTP response.
+ */
+@property (strong, nonatomic, readonly) NSHTTPURLResponse *HTTPResponse;
+
+/**
+ The parsed result.
+ 
+ Depending on the response JSON, this can contain a single `MTLModel` object or an array of
+ `MTLModel` objects.
+ */
+@property (strong, nonatomic, readonly) id result;
+
+/**
+ Returns the result key path in the JSON.
+ 
+ This method returns `nil` by default. For JSON responses with additional metadata, subclasses
+ should override this method and return the key path of the result.
+ */
++ (instancetype)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary;
+
+/**
+ Attempts to parse a JSON dictionary into an `OVCResponse` object.
+ 
+ @param HTTPResponse The HTTP response.
+ @param JSONDictionary A dictionary representing JSON data.
+ @param resultClass The `MTLModel` subclass in which `result` will be transformed.
+ @param error If not `NULL`, this may be set to an error that occurs during parsing.
+ 
+ @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
+ */
++ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
+                          JSONDictionary:(NSDictionary *)JSONDictionary
+                             resultClass:(Class)resultClass
+                                   error:(NSError **)error;
 
 @end

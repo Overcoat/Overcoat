@@ -43,7 +43,7 @@
 /**
  Specifies a model class for server error responses.
  
- This methods returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
+ This method returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
  subclass that will be used to parse the JSON in an error response.
  */
 + (Class)errorResultClass;
