@@ -22,7 +22,7 @@
 
 #import <AFNetworking/AFNetworking.h>
 
-@class OVCResponse;
+@class NSManagedObjectContext;
 
 /**
  `OVCHTTPRequestOperationManager` provides methods to communicate with a web application over HTTP,
