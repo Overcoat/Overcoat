@@ -38,11 +38,10 @@
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
                           JSONDictionary:(NSDictionary *)JSONDictionary
                              resultClass:(Class)resultClass
-                                   error:(NSError *__autoreleasing *)error
 {
     NSString *resultKey = [self resultKeyPathForJSONDictionary:JSONDictionary];
     OVCResponse *response = resultKey
-        ? [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONDictionary error:error]
+        ? [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONDictionary error:NULL]
         : [[self alloc] init];
     
     if (!response) {

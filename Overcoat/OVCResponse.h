@@ -54,13 +54,11 @@
  @param HTTPResponse The HTTP response.
  @param JSONDictionary A dictionary representing JSON data.
  @param resultClass The `MTLModel` subclass in which `result` will be transformed.
- @param error If not `NULL`, this may be set to an error that occurs during parsing.
  
  @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
  */
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
                           JSONDictionary:(NSDictionary *)JSONDictionary
-                             resultClass:(Class)resultClass
-                                   error:(NSError **)error;
+                             resultClass:(Class)resultClass;
 
 @end

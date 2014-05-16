@@ -76,8 +76,8 @@
  This is the designated initializer.
  
  @param url The base URL for the HTTP client.
- @param context An optional managed object context where response model objects originated from a
-                GET request will be inserted. If the context concurrency type is not
+ @param context An optional managed object context that will be used to persist model objects
+                parsed from a response. If the context concurrency type is not
                 `NSPrivateQueueConcurrencyType`, a private context will be used to perform
                 insertions in the background.
  

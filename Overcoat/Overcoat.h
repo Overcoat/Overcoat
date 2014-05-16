@@ -27,13 +27,13 @@
 
 // 2.0
 #import "OVCResponse.h"
+#import "OVCModelResponseSerializer.h"
 #import "OVCHTTPRequestOperationManager.h"
 #import "OVCHTTPSessionManager.h"
 
 // 1.x
 #import "NSDictionary+Overcoat.h"
 
-#import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"
 #import "OVCClient.h"
 
