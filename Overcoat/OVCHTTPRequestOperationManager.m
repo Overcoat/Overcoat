@@ -29,7 +29,7 @@
     return [OVCResponse class];
 }
 
-+ (Class)errorResultClass {
++ (Class)errorModelClass {
     return Nil;
 }
 

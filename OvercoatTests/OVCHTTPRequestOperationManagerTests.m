@@ -30,7 +30,7 @@
 }
 
 - (void)testErrorResultClass {
-    XCTAssertNil([OVCHTTPRequestOperationManager errorResultClass], @"should be Nil");
+    XCTAssertNil([OVCHTTPRequestOperationManager errorModelClass], @"should be Nil");
 }
 
 - (void)testModelClassesByResourcePathMustBeOverridenBySubclass {

@@ -46,7 +46,7 @@
  This method returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
  subclass that will be used to parse the JSON in an error response.
  */
-+ (Class)errorResultClass;
++ (Class)errorModelClass;
 
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wcomment"
