@@ -61,8 +61,8 @@
 		9975E384191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */; };
 		9975E385191FCE8B0086C786 /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9975E386191FCE930086C786 /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
-		9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; };
-		9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; };
+		9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */; };
