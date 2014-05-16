@@ -50,7 +50,7 @@
     }
     
     response.HTTPResponse = HTTPResponse;
-    id result = JSONDictionary[resultKey];
+    id result = resultKey ? JSONDictionary[resultKey] : JSONDictionary;
     
     if (result != nil) {
         if (resultClass != Nil) {
@@ -74,7 +74,10 @@
 #pragma mark - MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-    return @{};
+    return @{
+               @"HTTPResponse": [NSNull null],
+               @"result": [NSNull null]
+    };
 }
 
 @end
