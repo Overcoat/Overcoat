@@ -244,8 +244,15 @@
 		9969786E189D53120064DF57 /* Overcoat */ = {
 			isa = PBXGroup;
 			children = (
-				9975E37E191FCD120086C786 /* 2.0 */,
 				99482701189D63550039F2F3 /* Overcoat.h */,
+				9911A06C191E7C0200DFE29D /* OVCResponse.h */,
+				9911A06D191E7C0200DFE29D /* OVCResponse.m */,
+				9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */,
+				9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */,
+				9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */,
+				9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */,
+				99A746771925EE7600D35505 /* OVCURLMatcher.h */,
+				99A746781925EE7600D35505 /* OVCURLMatcher.m */,
 				99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */,
 				99482703189D63550039F2F3 /* OVCModelResponseSerializer.m */,
 				99482706189D63550039F2F3 /* OVCSocialRequestSerializer.h */,
@@ -302,21 +309,6 @@
 				9969789D189D55170064DF57 /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		9975E37E191FCD120086C786 /* 2.0 */ = {
-			isa = PBXGroup;
-			children = (
-				9911A06C191E7C0200DFE29D /* OVCResponse.h */,
-				9911A06D191E7C0200DFE29D /* OVCResponse.m */,
-				9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */,
-				9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */,
-				9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */,
-				9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */,
-				99A746771925EE7600D35505 /* OVCURLMatcher.h */,
-				99A746781925EE7600D35505 /* OVCURLMatcher.m */,
-			);
-			name = 2.0;
 			sourceTree = "<group>";
 		};
 		999CD4881923C774004045DC /* 2.0 */ = {
