@@ -31,6 +31,11 @@
 @interface OVCHTTPRequestOperationManager : AFHTTPRequestOperationManager
 
 /**
+ The managed object context that will be used to persist model objects parsed from a response.
+ */
+@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+/**
  Returns the class used to create responses.
  
  This method returns the `OVCResponse` class object by default. Subclasses can override this method

@@ -22,6 +22,14 @@
 
 #import "OVCHTTPRequestOperationManager.h"
 #import "OVCResponse.h"
+#import "OVCModelResponseSerializer.h"
+#import "OVCURLMatcher.h"
+
+@interface OVCHTTPRequestOperationManager ()
+
+@property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
+
+@end
 
 @implementation OVCHTTPRequestOperationManager
 
@@ -43,7 +51,10 @@
     self = [super initWithBaseURL:url];
     
     if (self) {
-        // TODO: implement
+        _managedObjectContext = context;
+        
+        [self setupBackgroundContext];
+        [self setupResponseSerializer];
     }
     
     return self;
@@ -145,6 +156,43 @@
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     if (completion) completion(operation.responseObject, error);
                 }];
+}
+
+#pragma mark - Private
+
+- (void)setupResponseSerializer {
+    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
+                                                  modelClassesByPath:[[self class] modelClassesByResourcePath]];
+    self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                              managedObjectContext:self.backgroundContext
+                                                                     responseClass:[[self class] responseClass]
+                                                                   errorModelClass:[[self class] errorModelClass]];
+}
+
+- (void)setupBackgroundContext {
+    if (self.managedObjectContext == nil) {
+        return;
+    }
+    
+    if ([self.managedObjectContext concurrencyType] == NSPrivateQueueConcurrencyType) {
+        self.backgroundContext = self.managedObjectContext;
+        return;
+    }
+    
+    self.backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [self.backgroundContext setPersistentStoreCoordinator:self.managedObjectContext.persistentStoreCoordinator];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(backgroundContextDidSave:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:self.backgroundContext];
+}
+
+- (void)backgroundContextDidSave:(NSNotification *)notification {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context performBlock:^{
+        [context mergeChangesFromContextDidSaveNotification:notification];
+    }];
 }
 
 @end
