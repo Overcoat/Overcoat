@@ -9,16 +9,10 @@
 /* Begin PBXBuildFile section */
 		2ABD5B6518AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
 		2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
-		2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
-		2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */; };
 		9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
 		9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
-		9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD69189D6AD000E064E3 /* TestModel.m */; };
-		9942CD6E189D6AD000E064E3 /* TestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD69189D6AD000E064E3 /* TestModel.m */; };
-		9942CD6F189D6AD000E064E3 /* OVCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD6C189D6AD000E064E3 /* OVCTestCase.m */; };
-		9942CD70189D6AD000E064E3 /* OVCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD6C189D6AD000E064E3 /* OVCTestCase.m */; };
 		9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
 		9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
 		99482708189D63550039F2F3 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482701189D63550039F2F3 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +28,8 @@
 		994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */; };
 		994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */; };
 		994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
+		994BEDB419290AA700B261DE /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDB219290AA700B261DE /* Test.xcdatamodeld */; };
+		994BEDB519290AA700B261DE /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDB219290AA700B261DE /* Test.xcdatamodeld */; };
 		9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
 		9969786D189D53120064DF57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969786C189D53120064DF57 /* Foundation.framework */; };
 		9969787B189D53120064DF57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969787A189D53120064DF57 /* XCTest.framework */; };
@@ -92,8 +88,6 @@
 
 /* Begin PBXFileReference section */
 		2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testErrorResponse.json; sourceTree = "<group>"; };
-		2ABD5B6718AA8DD700AF409B /* TestErrorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestErrorModel.h; sourceTree = "<group>"; };
-		2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestErrorModel.m; sourceTree = "<group>"; };
 		428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.xcconfig"; path = "Pods/Pods-Overcoat iOS Tests.xcconfig"; sourceTree = "<group>"; };
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,11 +95,7 @@
 		9911A06C191E7C0200DFE29D /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
 		9911A06D191E7C0200DFE29D /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
 		9942CD65189D6A9C00E064E3 /* testResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testResponse.json; sourceTree = "<group>"; };
-		9942CD68189D6AD000E064E3 /* TestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
-		9942CD69189D6AD000E064E3 /* TestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestModel.m; sourceTree = "<group>"; };
 		9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRAsyncTestHelper.h; sourceTree = "<group>"; };
-		9942CD6B189D6AD000E064E3 /* OVCTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCTestCase.h; sourceTree = "<group>"; };
-		9942CD6C189D6AD000E064E3 /* OVCTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCTestCase.m; sourceTree = "<group>"; };
 		9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerTests.m; sourceTree = "<group>"; };
 		99482701189D63550039F2F3 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
@@ -114,6 +104,7 @@
 		99482707189D63550039F2F3 /* OVCSocialRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialRequestSerializer.m; sourceTree = "<group>"; };
 		994BEDAD1928EDEF00B261DE /* OVCTestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCTestResponse.h; sourceTree = "<group>"; };
 		994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCTestResponse.m; sourceTree = "<group>"; };
+		994BEDB319290AA700B261DE /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		9951AD611927FF3F00E65D97 /* OVCResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseTests.m; sourceTree = "<group>"; };
 		99697869189D53120064DF57 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969786C189D53120064DF57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -131,7 +122,6 @@
 		996978A2189D55170064DF57 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		996978AC189D55170064DF57 /* Overcoat Mac Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat Mac Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		996978C2189D57C20064DF57 /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
-		996978D0189D587C0064DF57 /* Overcoat-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Overcoat-Prefix.pch"; sourceTree = "<group>"; };
 		9975E37F191FCE690086C786 /* OVCHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPRequestOperationManager.h; sourceTree = "<group>"; };
 		9975E380191FCE690086C786 /* OVCHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		9975E387191FCED50086C786 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
@@ -279,6 +269,7 @@
 		99697882189D53130064DF57 /* OvercoatTests */ = {
 			isa = PBXGroup;
 			children = (
+				994BEDB219290AA700B261DE /* Test.xcdatamodeld */,
 				9951AD611927FF3F00E65D97 /* OVCResponseTests.m */,
 				9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */,
 				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
@@ -296,14 +287,7 @@
 		99697883189D53130064DF57 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9942CD68189D6AD000E064E3 /* TestModel.h */,
-				9942CD69189D6AD000E064E3 /* TestModel.m */,
-				2ABD5B6718AA8DD700AF409B /* TestErrorModel.h */,
-				2ABD5B6818AA8DD700AF409B /* TestErrorModel.m */,
 				9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */,
-				9942CD6B189D6AD000E064E3 /* OVCTestCase.h */,
-				9942CD6C189D6AD000E064E3 /* OVCTestCase.m */,
-				996978D0189D587C0064DF57 /* Overcoat-Prefix.pch */,
 				99697884189D53130064DF57 /* OvercoatTests-Info.plist */,
 				99697885189D53130064DF57 /* InfoPlist.strings */,
 			);
@@ -644,10 +628,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */,
+				994BEDB419290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
-				2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */,
-				9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */,
-				9942CD6F189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */,
@@ -673,11 +655,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				99A746801926080900D35505 /* OVCHTTPRequestOperationManagerTests.m in Sources */,
-				2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */,
+				994BEDB519290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467F1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */,
-				9942CD6E189D6AD000E064E3 /* TestModel.m in Sources */,
-				9942CD70189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */,
 				99A746841926092300D35505 /* OVCTestModel.m in Sources */,
@@ -825,7 +805,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -848,7 +828,7 @@
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -920,7 +900,7 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -947,7 +927,7 @@
 				);
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OvercoatTests/Overcoat-Prefix.pch";
+				GCC_PREFIX_HEADER = "Overcoat/Overcoat-Prefix.pch";
 				INFOPLIST_FILE = "OvercoatTests/OvercoatTests-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1006,6 +986,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		994BEDB219290AA700B261DE /* Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				994BEDB319290AA700B261DE /* Test.xcdatamodel */,
+			);
+			currentVersion = 994BEDB319290AA700B261DE /* Test.xcdatamodel */;
+			path = Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 99697861189D53120064DF57 /* Project object */;
 }

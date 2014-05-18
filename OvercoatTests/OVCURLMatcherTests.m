@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Guillermo Gonzalez. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
+#import <Overcoat/Overcoat.h>
+
 #import "OVCTestModel.h"
 
 @interface OVCURLMatcherTests : XCTestCase
