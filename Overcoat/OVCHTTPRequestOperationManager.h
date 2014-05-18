@@ -106,10 +106,6 @@
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
  
- If the receiver has been initialized with a valid `NSManagedObjectContext` object and the
- request completes successfully, the resulting model objects are inserted into the context and the
- context is saved before executing the completion block.
- 
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.

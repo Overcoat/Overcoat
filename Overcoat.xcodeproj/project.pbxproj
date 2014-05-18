@@ -36,6 +36,8 @@
 		994BEDC819291E5100B261DE /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC319291E5100B261DE /* model.json */; };
 		994BEDC919291E5100B261DE /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC419291E5100B261DE /* models.json */; };
 		994BEDCA19291E5100B261DE /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC419291E5100B261DE /* models.json */; };
+		994BEDCC19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDCB19294C9E00B261DE /* OVCHTTPSessionManagerTests.m */; };
+		994BEDCD19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDCB19294C9E00B261DE /* OVCHTTPSessionManagerTests.m */; };
 		9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
 		9969786D189D53120064DF57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969786C189D53120064DF57 /* Foundation.framework */; };
 		9969787B189D53120064DF57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969787A189D53120064DF57 /* XCTest.framework */; };
@@ -114,6 +116,7 @@
 		994BEDC219291E5100B261DE /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
 		994BEDC319291E5100B261DE /* model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = model.json; sourceTree = "<group>"; };
 		994BEDC419291E5100B261DE /* models.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
+		994BEDCB19294C9E00B261DE /* OVCHTTPSessionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerTests.m; sourceTree = "<group>"; };
 		9951AD611927FF3F00E65D97 /* OVCResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseTests.m; sourceTree = "<group>"; };
 		99697869189D53120064DF57 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969786C189D53120064DF57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +288,7 @@
 				9951AD611927FF3F00E65D97 /* OVCResponseTests.m */,
 				9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */,
 				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
+				994BEDCB19294C9E00B261DE /* OVCHTTPSessionManagerTests.m */,
 				99A7467D1926080300D35505 /* OVCURLMatcherTests.m */,
 				99A746811926092300D35505 /* OVCTestModel.h */,
 				99A746821926092300D35505 /* OVCTestModel.m */,
@@ -645,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */,
+				994BEDCC19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
 				994BEDB419290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */,
@@ -673,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				99A746801926080900D35505 /* OVCHTTPRequestOperationManagerTests.m in Sources */,
+				994BEDCD19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
 				994BEDB519290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467F1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */,

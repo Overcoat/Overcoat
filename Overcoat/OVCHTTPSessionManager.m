@@ -21,7 +21,205 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager.h"
+#import "OVCResponse.h"
+#import "OVCModelResponseSerializer.h"
+#import "OVCURLMatcher.h"
+
+@interface OVCHTTPSessionManager ()
+
+@property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
+
+@end
 
 @implementation OVCHTTPSessionManager
+
++ (Class)responseClass {
+    return [OVCResponse class];
+}
+
++ (Class)errorModelClass {
+    return Nil;
+}
+
++ (NSDictionary *)modelClassesByResourcePath {
+    [NSException raise:NSInvalidArgumentException
+                format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
+    return nil; // Not reached
+}
+
+- (id)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {
+    return [self initWithBaseURL:url managedObjectContext:nil sessionConfiguration:configuration];
+}
+
+- (id)initWithBaseURL:(NSURL *)url
+ managedObjectContext:(NSManagedObjectContext *)context
+ sessionConfiguration:(NSURLSessionConfiguration *)configuration
+{
+    self = [super initWithBaseURL:url sessionConfiguration:configuration];
+    
+    if (self) {
+        _managedObjectContext = context;
+        
+        [self setupBackgroundContext];
+        [self setupResponseSerializer];
+    }
+    
+    return self;
+}
+
+#pragma mark - Making requests
+
+- (NSURLSessionDataTask *)GET:(NSString *)URLString
+                   parameters:(id)parameters
+                   completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer
+                                    requestWithMethod:@"GET"
+                                            URLString:[[NSURL URLWithString:URLString
+                                                              relativeToURL:self.baseURL] absoluteString]
+                                           parameters:parameters
+                                                error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)HEAD:(NSString *)URLString
+                    parameters:(id)parameters
+                    completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer
+                                    requestWithMethod:@"HEAD"
+                                            URLString:[[NSURL URLWithString:URLString
+                                                              relativeToURL:self.baseURL] absoluteString]
+                                           parameters:parameters
+                                                error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id __unused responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(NSDictionary *)parameters
+                    completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(NSDictionary *)parameters
+     constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
+                    completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
+    
+    NSURLSessionDataTask *task = [self uploadTaskWithStreamedRequest:request progress:nil completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)PUT:(NSString *)URLString
+                   parameters:(NSDictionary *)parameters
+                   completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PUT" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)PATCH:(NSString *)URLString
+                     parameters:(NSDictionary *)parameters
+                     completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PATCH" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+- (NSURLSessionDataTask *)DELETE:(NSString *)URLString
+                      parameters:(NSDictionary *)parameters
+                      completion:(void (^)(id, NSError *))completion
+{
+    NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"DELETE" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    
+    NSURLSessionDataTask *task = [self dataTaskWithRequest:request completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+        if (completion) completion(responseObject, error);
+    }];
+    
+    [task resume];
+    
+    return task;
+}
+
+#pragma mark - Private
+
+- (void)setupResponseSerializer {
+    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
+                                                  modelClassesByPath:[[self class] modelClassesByResourcePath]];
+    self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                              managedObjectContext:self.backgroundContext
+                                                                     responseClass:[[self class] responseClass]
+                                                                   errorModelClass:[[self class] errorModelClass]];
+}
+
+- (void)setupBackgroundContext {
+    if (self.managedObjectContext == nil) {
+        return;
+    }
+    
+    if ([self.managedObjectContext concurrencyType] == NSPrivateQueueConcurrencyType) {
+        self.backgroundContext = self.managedObjectContext;
+        return;
+    }
+    
+    self.backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+    [self.backgroundContext setPersistentStoreCoordinator:self.managedObjectContext.persistentStoreCoordinator];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(backgroundContextDidSave:)
+                                                 name:NSManagedObjectContextDidSaveNotification
+                                               object:self.backgroundContext];
+}
+
+- (void)backgroundContextDidSave:(NSNotification *)notification {
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context performBlock:^{
+        [context mergeChangesFromContextDidSaveNotification:notification];
+    }];
+}
 
 @end
