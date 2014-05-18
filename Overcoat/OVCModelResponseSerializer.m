@@ -88,7 +88,7 @@
                                                                     JSONObject:JSONObject
                                                                    resultClass:resultClass];
     
-    if (self.managedObjectContext && responseObject.result) {
+    if (!serializationError && self.managedObjectContext && responseObject.result) {
         [self saveResult:responseObject.result];
     }
     

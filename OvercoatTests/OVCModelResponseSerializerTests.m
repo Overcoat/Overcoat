@@ -89,30 +89,25 @@
     OVCURLMatcher *matcher = self.serializer.URLMatcher;
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
                                                       managedObjectContext:context
-                                                             responseClass:[OVCTestResponse class]
+                                                             responseClass:[OVCResponse class]
                                                            errorModelClass:[OVCErrorModel class]];
     
-    // Setup input data
+    // Serialize successful response
     
-    NSData *data = [NSJSONSerialization dataWithJSONObject:@{
-                        @"status": @"ok",
-                        @"data": @[
-                            @{
-                                @"name": @"Iron Man",
-                                @"realName": @"Anthony Stark"
-                            },
-                            @{
-                                @"name": @"Batman",
-                                @"realName": @"Bruce Wayne"
-                            }
-                        ]
-                    } options:0 error:NULL];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:@[
+                        @{
+                            @"name": @"Iron Man",
+                            @"realName": @"Anthony Stark"
+                        },
+                        @{
+                            @"name": @"Batman",
+                            @"realName": @"Bruce Wayne"
+                        }
+                    ] options:0 error:NULL];
     NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/test"]
                                                              statusCode:200
                                                             HTTPVersion:@"1.1"
                                                            headerFields:@{@"Content-Type": @"text/json"}];
-    
-    // Perform serialization
     
     OVCResponse *response = [self.serializer responseObjectForResponse:URLResponse data:data error:NULL];
     
@@ -122,6 +117,28 @@
     NSArray *objects = [context executeFetchRequest:fetchRequest error:NULL];
     
     XCTAssertEqual(2U, [objects count], @"should return two objects");
+    
+    // Serialize error response (should not be persisted)
+    
+    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
+                                                                    object:context
+                                                                     queue:nil
+                                                                usingBlock:^(NSNotification *note) {
+                                                                    XCTFail(@"should ignore error responses");
+                                                                }];
+    
+    data = [NSJSONSerialization dataWithJSONObject:@{
+                @"status": @"failed",
+                @"code": @97,
+                @"message": @"Missing signature"
+            } options:0 error:NULL];
+    URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/test"]
+                                              statusCode:401
+                                             HTTPVersion:@"1.1"
+                                            headerFields:@{@"Content-Type": @"text/json"}];
+    response = [self.serializer responseObjectForResponse:URLResponse data:data error:NULL];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:observer];
 }
 
 @end
