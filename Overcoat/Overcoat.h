@@ -28,8 +28,10 @@
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
 #import "OVCModelResponseSerializer.h"
+#import "OVCSocialRequestSerializer.h"
+
 #import "OVCHTTPRequestOperationManager.h"
 #import "OVCHTTPSessionManager.h"
-#import "OVCSocialRequestSerializer.h"
+#import "OVCManagedStore.h"
 
 #endif /* _OVERCOAT_H */
