@@ -31,25 +31,34 @@
 
 @implementation OVCResponse
 
-+ (instancetype)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary {
++ (NSString *)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary {
     return nil;
 }
 
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
-                          JSONDictionary:(NSDictionary *)JSONDictionary
+                              JSONObject:(id)JSONObject
                              resultClass:(Class)resultClass
 {
-    NSString *resultKey = [self resultKeyPathForJSONDictionary:JSONDictionary];
-    OVCResponse *response = resultKey
-        ? [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONDictionary error:NULL]
-        : [[self alloc] init];
+    OVCResponse *response = nil;
+    id result = JSONObject;
     
-    if (!response) {
+    if ([JSONObject isKindOfClass:[NSDictionary class]]) {
+        NSString *resultKey = [self resultKeyPathForJSONDictionary:JSONObject];
+        if (resultKey) {
+            response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:NULL];
+            result = [(NSDictionary *)JSONObject objectForKey:resultKey];
+        } else {
+            response = [[self alloc] init];
+        }
+    } else {
+        response = [[self alloc] init];
+    }
+    
+    if (response == nil) {
         return nil;
     }
     
     response.HTTPResponse = HTTPResponse;
-    id result = resultKey ? JSONDictionary[resultKey] : JSONDictionary;
     
     if (result != nil) {
         if (resultClass != Nil) {

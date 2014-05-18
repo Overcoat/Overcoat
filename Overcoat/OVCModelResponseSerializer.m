@@ -65,7 +65,7 @@
                           error:(NSError *__autoreleasing *)error
 {
     NSError *serializationError = nil;
-    NSDictionary *JSONDictionary = [super responseObjectForResponse:response data:data error:&serializationError];
+    id JSONObject = [super responseObjectForResponse:response data:data error:&serializationError];
     
     if (error) {
         *error = serializationError;
@@ -85,7 +85,7 @@
     }
     
     OVCResponse *responseObject = [self.responseClass responseWithHTTPResponse:HTTPResponse
-                                                                JSONDictionary:JSONDictionary
+                                                                    JSONObject:JSONObject
                                                                    resultClass:resultClass];
     
     if (self.managedObjectContext && responseObject.result) {

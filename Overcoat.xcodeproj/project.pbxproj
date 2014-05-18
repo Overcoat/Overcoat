@@ -21,8 +21,6 @@
 		9942CD70189D6AD000E064E3 /* OVCTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD6C189D6AD000E064E3 /* OVCTestCase.m */; };
 		9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
 		9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
-		9942CD75189D6CCB00E064E3 /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD74189D6CCB00E064E3 /* OVCClientTests.m */; };
-		9942CD76189D6CCB00E064E3 /* OVCClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD74189D6CCB00E064E3 /* OVCClientTests.m */; };
 		99482708189D63550039F2F3 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482701189D63550039F2F3 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99482709189D63550039F2F3 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482701189D63550039F2F3 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9948270A189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -33,6 +31,10 @@
 		99482713189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482706189D63550039F2F3 /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99482714189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 99482707189D63550039F2F3 /* OVCSocialRequestSerializer.m */; };
 		99482715189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 99482707189D63550039F2F3 /* OVCSocialRequestSerializer.m */; };
+		994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */; };
+		994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */; };
+		994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
+		9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
 		9969786D189D53120064DF57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969786C189D53120064DF57 /* Foundation.framework */; };
 		9969787B189D53120064DF57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969787A189D53120064DF57 /* XCTest.framework */; };
 		9969787C189D53130064DF57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969786C189D53120064DF57 /* Foundation.framework */; };
@@ -56,8 +58,8 @@
 		9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9975E388191FCED50086C786 /* OVCHTTPSessionManager.m */; };
 		999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */; };
-		99A746791925EE7600D35505 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A746771925EE7600D35505 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Private, ); }; };
-		99A7467A1925EE7600D35505 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A746771925EE7600D35505 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		99A746791925EE7600D35505 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A746771925EE7600D35505 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99A7467A1925EE7600D35505 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = 99A746771925EE7600D35505 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99A7467B1925EE7600D35505 /* OVCURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A746781925EE7600D35505 /* OVCURLMatcher.m */; };
 		99A7467C1925EE7600D35505 /* OVCURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A746781925EE7600D35505 /* OVCURLMatcher.m */; };
 		99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99A7467D1926080300D35505 /* OVCURLMatcherTests.m */; };
@@ -105,12 +107,14 @@
 		9942CD6B189D6AD000E064E3 /* OVCTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCTestCase.h; sourceTree = "<group>"; };
 		9942CD6C189D6AD000E064E3 /* OVCTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCTestCase.m; sourceTree = "<group>"; };
 		9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerTests.m; sourceTree = "<group>"; };
-		9942CD74189D6CCB00E064E3 /* OVCClientTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCClientTests.m; sourceTree = "<group>"; };
 		99482701189D63550039F2F3 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
 		99482703189D63550039F2F3 /* OVCModelResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializer.m; sourceTree = "<group>"; };
 		99482706189D63550039F2F3 /* OVCSocialRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCSocialRequestSerializer.h; sourceTree = "<group>"; };
 		99482707189D63550039F2F3 /* OVCSocialRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialRequestSerializer.m; sourceTree = "<group>"; };
+		994BEDAD1928EDEF00B261DE /* OVCTestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCTestResponse.h; sourceTree = "<group>"; };
+		994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCTestResponse.m; sourceTree = "<group>"; };
+		9951AD611927FF3F00E65D97 /* OVCResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseTests.m; sourceTree = "<group>"; };
 		99697869189D53120064DF57 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969786C189D53120064DF57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		99697879189D53120064DF57 /* Overcoat iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -275,9 +279,14 @@
 		99697882189D53130064DF57 /* OvercoatTests */ = {
 			isa = PBXGroup;
 			children = (
-				999CD4881923C774004045DC /* 2.0 */,
+				9951AD611927FF3F00E65D97 /* OVCResponseTests.m */,
 				9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */,
-				9942CD74189D6CCB00E064E3 /* OVCClientTests.m */,
+				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
+				99A7467D1926080300D35505 /* OVCURLMatcherTests.m */,
+				99A746811926092300D35505 /* OVCTestModel.h */,
+				99A746821926092300D35505 /* OVCTestModel.m */,
+				994BEDAD1928EDEF00B261DE /* OVCTestResponse.h */,
+				994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */,
 				9942CD64189D6A9C00E064E3 /* Stubs */,
 				99697883189D53130064DF57 /* Supporting Files */,
 			);
@@ -309,17 +318,6 @@
 				9969789D189D55170064DF57 /* AppKit.framework */,
 			);
 			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		999CD4881923C774004045DC /* 2.0 */ = {
-			isa = PBXGroup;
-			children = (
-				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
-				99A7467D1926080300D35505 /* OVCURLMatcherTests.m */,
-				99A746811926092300D35505 /* OVCTestModel.h */,
-				99A746821926092300D35505 /* OVCTestModel.m */,
-			);
-			name = 2.0;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -645,13 +643,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9942CD75189D6CCB00E064E3 /* OVCClientTests.m in Sources */,
+				994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */,
 				99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				2ABD5B6918AA8DD700AF409B /* TestErrorModel.m in Sources */,
 				9942CD6D189D6AD000E064E3 /* TestModel.m in Sources */,
 				9942CD6F189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
+				9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */,
 				99A746831926092300D35505 /* OVCTestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -674,12 +673,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				99A746801926080900D35505 /* OVCHTTPRequestOperationManagerTests.m in Sources */,
-				9942CD76189D6CCB00E064E3 /* OVCClientTests.m in Sources */,
 				2ABD5B6A18AA8DD700AF409B /* TestErrorModel.m in Sources */,
 				99A7467F1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
+				994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */,
 				9942CD6E189D6AD000E064E3 /* TestModel.m in Sources */,
 				9942CD70189D6AD000E064E3 /* OVCTestCase.m in Sources */,
 				9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
+				994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */,
 				99A746841926092300D35505 /* OVCTestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

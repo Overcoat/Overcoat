@@ -46,19 +46,19 @@
  This method returns `nil` by default. For JSON responses with additional metadata, subclasses
  should override this method and return the key path of the result.
  */
-+ (instancetype)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary;
++ (NSString *)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary;
 
 /**
  Attempts to parse a JSON dictionary into an `OVCResponse` object.
  
  @param HTTPResponse The HTTP response.
- @param JSONDictionary A dictionary representing JSON data.
+ @param JSONObject A foundation object with JSON data.
  @param resultClass The `MTLModel` subclass in which `result` will be transformed.
  
  @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
  */
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
-                          JSONDictionary:(NSDictionary *)JSONDictionary
+                              JSONObject:(id)JSONObject
                              resultClass:(Class)resultClass;
 
 @end

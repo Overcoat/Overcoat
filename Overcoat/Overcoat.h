@@ -26,6 +26,7 @@
 #define _OVERCOAT_H
 
 #import "OVCResponse.h"
+#import "OVCURLMatcher.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCHTTPRequestOperationManager.h"
 #import "OVCHTTPSessionManager.h"

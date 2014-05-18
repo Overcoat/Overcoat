@@ -16,7 +16,15 @@
 
 @end
 
-@implementation OVCAlternativeTestModel
+@implementation OVCErrorModel
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{};
+}
+
+@end
+
+@implementation OVCAlternativeModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{};

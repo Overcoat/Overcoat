@@ -6,9 +6,6 @@
 //  Copyright (c) 2014 Guillermo Gonzalez. All rights reserved.
 //
 
-#import <XCTest/XCTest.h>
-
-#import "OVCURLMatcher.h"
 #import "OVCTestModel.h"
 
 @interface OVCURLMatcherTests : XCTestCase
@@ -26,7 +23,7 @@
 - (void)testMatchFound {
     NSDictionary *modelClassesByPath = @{
         @"test": [OVCTestModel class],
-        @"alternative": [OVCAlternativeTestModel class]
+        @"alternative": [OVCAlternativeModel class]
     };
     
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:nil
@@ -36,7 +33,7 @@
     XCTAssertEqualObjects([OVCTestModel class], modelClass, @"should return OVCTestModel class");
     
     modelClass = [matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/alternative"]];
-    XCTAssertEqualObjects([OVCAlternativeTestModel class], modelClass, @"should return OVCAlternativeTestModel class");
+    XCTAssertEqualObjects([OVCAlternativeModel class], modelClass, @"should return OVCAlternativeTestModel class");
 }
 
 - (void)testMatchWithBasePath {
