@@ -14,6 +14,14 @@
     return @{};
 }
 
++ (NSString *)managedObjectEntityName {
+    return @"TestModel";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return @{};
+}
+
 @end
 
 @implementation OVCErrorModel

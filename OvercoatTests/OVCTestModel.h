@@ -8,7 +8,7 @@
 
 #import <Mantle/Mantle.h>
 
-@interface OVCTestModel : MTLModel <MTLJSONSerializing>
+@interface OVCTestModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
 @property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) NSString *realName;

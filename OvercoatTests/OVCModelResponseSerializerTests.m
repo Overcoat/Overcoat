@@ -75,7 +75,53 @@
 }
 
 - (void)testManagedObjectModelSerialization {
-    XCTAssertTrue(NO, @"TODO: implement");
+    // Setup the Core Data stack
+    
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
+    OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
+    
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
+    
+    // Setup the serializer
+    
+    OVCURLMatcher *matcher = self.serializer.URLMatcher;
+    self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                      managedObjectContext:context
+                                                             responseClass:[OVCTestResponse class]
+                                                           errorModelClass:[OVCErrorModel class]];
+    
+    // Setup input data
+    
+    NSData *data = [NSJSONSerialization dataWithJSONObject:@{
+                        @"status": @"ok",
+                        @"data": @[
+                            @{
+                                @"name": @"Iron Man",
+                                @"realName": @"Anthony Stark"
+                            },
+                            @{
+                                @"name": @"Batman",
+                                @"realName": @"Bruce Wayne"
+                            }
+                        ]
+                    } options:0 error:NULL];
+    NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/test"]
+                                                             statusCode:200
+                                                            HTTPVersion:@"1.1"
+                                                           headerFields:@{@"Content-Type": @"text/json"}];
+    
+    // Perform serialization
+    
+    OVCResponse *response = [self.serializer responseObjectForResponse:URLResponse data:data error:NULL];
+    
+    XCTAssertTrue([response isKindOfClass:[OVCResponse class]], @"should return a OVCResponse instance");
+    
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TestModel"];
+    NSArray *objects = [context executeFetchRequest:fetchRequest error:NULL];
+    
+    XCTAssertEqual(2U, [objects count], @"should return two objects");
 }
 
 @end
