@@ -7,12 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2ABD5B6518AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
-		2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */; };
 		9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
-		9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
-		9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9942CD65189D6A9C00E064E3 /* testResponse.json */; };
 		9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
 		9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */; };
 		99482708189D63550039F2F3 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 99482701189D63550039F2F3 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +30,12 @@
 		994BEDBF19290E4D00B261DE /* OVCManagedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 994BEDBC19290E4D00B261DE /* OVCManagedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		994BEDC019290E4D00B261DE /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDBD19290E4D00B261DE /* OVCManagedStore.m */; };
 		994BEDC119290E4D00B261DE /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 994BEDBD19290E4D00B261DE /* OVCManagedStore.m */; };
+		994BEDC519291E5100B261DE /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC219291E5100B261DE /* error.json */; };
+		994BEDC619291E5100B261DE /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC219291E5100B261DE /* error.json */; };
+		994BEDC719291E5100B261DE /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC319291E5100B261DE /* model.json */; };
+		994BEDC819291E5100B261DE /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC319291E5100B261DE /* model.json */; };
+		994BEDC919291E5100B261DE /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC419291E5100B261DE /* models.json */; };
+		994BEDCA19291E5100B261DE /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = 994BEDC419291E5100B261DE /* models.json */; };
 		9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9951AD611927FF3F00E65D97 /* OVCResponseTests.m */; };
 		9969786D189D53120064DF57 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969786C189D53120064DF57 /* Foundation.framework */; };
 		9969787B189D53120064DF57 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9969787A189D53120064DF57 /* XCTest.framework */; };
@@ -91,14 +93,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testErrorResponse.json; sourceTree = "<group>"; };
 		428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.xcconfig"; path = "Pods/Pods-Overcoat iOS Tests.xcconfig"; sourceTree = "<group>"; };
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.xcconfig"; path = "Pods/Pods-Overcoat iOS.xcconfig"; sourceTree = "<group>"; };
 		9911A06C191E7C0200DFE29D /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
 		9911A06D191E7C0200DFE29D /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
-		9942CD65189D6A9C00E064E3 /* testResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = testResponse.json; sourceTree = "<group>"; };
 		9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRAsyncTestHelper.h; sourceTree = "<group>"; };
 		9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerTests.m; sourceTree = "<group>"; };
 		99482701189D63550039F2F3 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
@@ -111,6 +111,9 @@
 		994BEDB319290AA700B261DE /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
 		994BEDBC19290E4D00B261DE /* OVCManagedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedStore.h; sourceTree = "<group>"; };
 		994BEDBD19290E4D00B261DE /* OVCManagedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedStore.m; sourceTree = "<group>"; };
+		994BEDC219291E5100B261DE /* error.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		994BEDC319291E5100B261DE /* model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = model.json; sourceTree = "<group>"; };
+		994BEDC419291E5100B261DE /* models.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
 		9951AD611927FF3F00E65D97 /* OVCResponseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseTests.m; sourceTree = "<group>"; };
 		99697869189D53120064DF57 /* libOvercoat.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOvercoat.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9969786C189D53120064DF57 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -193,8 +196,9 @@
 		9942CD64189D6A9C00E064E3 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
-				2ABD5B6418AA8C5500AF409B /* testErrorResponse.json */,
-				9942CD65189D6A9C00E064E3 /* testResponse.json */,
+				994BEDC219291E5100B261DE /* error.json */,
+				994BEDC319291E5100B261DE /* model.json */,
+				994BEDC419291E5100B261DE /* models.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -470,8 +474,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ABD5B6518AA8C5500AF409B /* testErrorResponse.json in Resources */,
-				9942CD66189D6A9C00E064E3 /* testResponse.json in Resources */,
+				994BEDC519291E5100B261DE /* error.json in Resources */,
+				994BEDC919291E5100B261DE /* models.json in Resources */,
+				994BEDC719291E5100B261DE /* model.json in Resources */,
 				99697887189D53130064DF57 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,8 +493,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2ABD5B6618AA8C5500AF409B /* testErrorResponse.json in Resources */,
-				9942CD67189D6A9C00E064E3 /* testResponse.json in Resources */,
+				994BEDC619291E5100B261DE /* error.json in Resources */,
+				994BEDCA19291E5100B261DE /* models.json in Resources */,
+				994BEDC819291E5100B261DE /* model.json in Resources */,
 				996978C1189D57580064DF57 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

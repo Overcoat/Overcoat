@@ -47,6 +47,10 @@
     return nil; // Not reached
 }
 
+- (id)initWithBaseURL:(NSURL *)url {
+    return [self initWithBaseURL:url managedObjectContext:nil];
+}
+
 - (id)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context {
     self = [super initWithBaseURL:url];
     
