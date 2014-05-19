@@ -28,6 +28,7 @@
 @interface OVCHTTPRequestOperationManager ()
 
 @property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
+@property (strong, nonatomic) id contextObserver;
 
 @end
 
@@ -45,6 +46,12 @@
     [NSException raise:NSInvalidArgumentException
                 format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
     return nil; // Not reached
+}
+
+- (void)dealloc {
+    if (self.contextObserver) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.contextObserver];
+    }
 }
 
 - (id)initWithBaseURL:(NSURL *)url {
@@ -186,17 +193,17 @@
     self.backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
     [self.backgroundContext setPersistentStoreCoordinator:self.managedObjectContext.persistentStoreCoordinator];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(backgroundContextDidSave:)
-                                                 name:NSManagedObjectContextDidSaveNotification
-                                               object:self.backgroundContext];
-}
-
-- (void)backgroundContextDidSave:(NSNotification *)notification {
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
     NSManagedObjectContext *context = self.managedObjectContext;
-    [context performBlock:^{
-        [context mergeChangesFromContextDidSaveNotification:notification];
-    }];
+    
+    self.contextObserver = [notificationCenter addObserverForName:NSManagedObjectContextDidSaveNotification
+                                                           object:self.backgroundContext
+                                                            queue:nil
+                                                       usingBlock:^(NSNotification *note) {
+                                                           [context performBlock:^{
+                                                               [context mergeChangesFromContextDidSaveNotification:note];
+                                                           }];
+                                                       }];
 }
 
 @end
