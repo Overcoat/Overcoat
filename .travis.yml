@@ -4,5 +4,5 @@ before_install:
   - brew upgrade xctool
   - gem install cocoapods
 script:
-  - xctool -workspace Overcoat.xcworkspace -scheme "Overcoat iOS" -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator7.0 -freshInstall -freshSimulator
+  # - xctool -workspace Overcoat.xcworkspace -scheme "Overcoat iOS" -sdk iphonesimulator -configuration Release test -test-sdk iphonesimulator7.0 -freshInstall -freshSimulator
   - xctool -workspace Overcoat.xcworkspace -scheme "Overcoat Mac" -sdk macosx -configuration Release test -test-sdk macosx
