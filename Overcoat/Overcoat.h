@@ -25,10 +25,13 @@
 #ifndef _OVERCOAT_H
 #define _OVERCOAT_H
 
-#import "NSDictionary+Overcoat.h"
-
+#import "OVCResponse.h"
+#import "OVCURLMatcher.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"
-#import "OVCClient.h"
+
+#import "OVCHTTPRequestOperationManager.h"
+#import "OVCHTTPSessionManager.h"
+#import "OVCManagedStore.h"
 
 #endif /* _OVERCOAT_H */
