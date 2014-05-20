@@ -88,7 +88,8 @@
                                                                     JSONObject:JSONObject
                                                                    resultClass:resultClass];
     
-    if (!serializationError && self.managedObjectContext && responseObject.result) {
+    if (responseObject.result && self.managedObjectContext &&
+        [resultClass conformsToProtocol:@protocol(MTLManagedObjectSerializing)]) {
         [self saveResult:responseObject.result];
     }
     
