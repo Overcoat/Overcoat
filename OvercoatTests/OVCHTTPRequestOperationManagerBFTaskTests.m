@@ -135,4 +135,32 @@
     XCTAssertNil(response, @"should not return a response");
 }
 
+- (void)testHEAD {
+    NSURLRequest * __block request = nil;
+    
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *r) {
+        request = r;
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        return [OHHTTPStubsResponse responseWithData:nil
+                                          statusCode:200
+                                             headers:@{@"Content-Type": @"application/json"}];
+    }];
+    
+    OVCResponse * __block response = nil;
+    NSError * __block error = nil;
+    
+    [[self.client bf_HEAD:@"models" parameters:@{@"foo": @"bar"}] continueWithBlock:^id(BFTask *task) {
+        response = task.result;
+        error = task.error;
+        return nil;
+    }];
+    
+    TGRAssertEventually(response, @"should complete with a response");
+    XCTAssertNil(error, @"should not return an error");
+    XCTAssertNil(response.result, @"should return an empty response");
+    
+    XCTAssertEqualObjects(@"HEAD", request.HTTPMethod, @"should send a HEAD request");
+}
+
 @end

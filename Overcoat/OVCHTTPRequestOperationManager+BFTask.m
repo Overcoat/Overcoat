@@ -44,6 +44,22 @@
     return completionSource.task;
 }
 
+- (BFTask *)bf_HEAD:(NSString *)URLString parameters:(id)parameters {
+    BFTaskCompletionSource *completionSource = [BFTaskCompletionSource taskCompletionSource];
+    
+    [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
+        if (response) {
+            [completionSource setResult:response];
+        } else if (error) {
+            [completionSource setError:error];
+        } else {
+            [completionSource setResult:nil];
+        }
+    }];
+    
+    return completionSource.task;
+}
+
 @end
 
 #endif
