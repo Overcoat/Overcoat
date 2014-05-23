@@ -8,7 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
-#import <OVercoat/Overcoat.h>
+#import <Overcoat/Overcoat.h>
 
 #import "TGRAsyncTestHelper.h"
 #import "OVCTestModel.h"

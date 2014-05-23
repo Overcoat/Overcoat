@@ -1,0 +1,117 @@
+// OVCHTTPRequestOperationManager+BFTask.h
+//
+// Copyright (c) 2014 Guillermo Gonzalez
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+#import "OVCHTTPRequestOperationManager.h"
+
+#if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
+
+@class BFTask;
+
+@interface OVCHTTPRequestOperationManager (BFTask)
+
+///---------------------------
+/// @name Making HTTP Requests
+///---------------------------
+
+/**
+ Enqueues a `GET` request and returns a `BFTask` that will be completed when the request completes
+ or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+
+/**
+ Enqueues a `HEAD` request and returns a `BFTask` that will be completed when the request completes
+ or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_HEAD:(NSString *)URLString parameters:(id)parameters;
+
+/**
+ Enqueues a `POST` request and returns a `BFTask` that will be completed when the request completes
+ or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
+
+/**
+ Enqueues a multipart `POST` request and returns a `BFTask` that will be completed when the request
+ completes or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param block A block that takes a single argument and appends data to the HTTP body. The block
+ argument is an object adopting the `AFMultipartFormData` protocol.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_POST:(NSString *)URLString
+         parameters:(NSDictionary *)parameters
+constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
+
+/**
+ Enqueues a `PUT` request and returns a `BFTask` that will be completed when the request completes
+ or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
+
+/**
+ Enqueues a `PATCH` request and returns a `BFTask` that will be completed when the request completes
+ or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
+
+/**
+ Enqueues a `DELETE` request and returns a `BFTask` that will be completed when the request
+ completes or fails.
+ 
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ 
+ @return A task that will return a `OVCResponse` object when the request finishes.
+ */
+- (BFTask *)bf_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
+
+@end
+
+#endif
