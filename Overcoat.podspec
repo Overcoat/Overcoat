@@ -32,4 +32,11 @@ Pod::Spec.new do |s|
     ss.dependency 'Overcoat/NSURLConnection'
     ss.source_files = 'Overcoat/OVCHTTPSessionManager.{h,m}'
   end
+  
+  s.subspec 'PromiseKit' do |ss|
+    ss.dependency 'Overcoat/NSURLSession'
+    ss.dependency 'PromiseKit'
+    ss.source_files = 'Overcoat/OVCHTTPRequestOperationManager+PromiseKit.{h,m}'
+  end
+  
 end

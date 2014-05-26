@@ -1,4 +1,4 @@
-// Bolts+Overcoat.h
+// PromiseKit+Overcoat.h
 //
 // Copyright (c) 2014 Guillermo Gonzalez
 //
@@ -20,11 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Bolts/Bolts.h>
+#import <PromiseKit/PromiseKit.h>
 
-#ifndef _BOLTS_OVERCOAT_H
-#define _BOLTS_OVERCOAT_H
+#ifndef _PROMISEKIT_OVERCOAT_H
+#define _PROMISEKIT_OVERCOAT_H
 
-#import "OVCHTTPRequestOperationManager+BFTask.h"
+#import "OVCHTTPRequestOperationManager+PromiseKit.h"
 
 #endif
