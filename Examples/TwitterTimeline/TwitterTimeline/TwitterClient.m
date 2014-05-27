@@ -29,7 +29,7 @@
 
 static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
-static NSString *timeline_name(Timeline timeline) {
+static NSString *timeline_name(TimelineType timeline) {
     static dispatch_once_t onceToken;
     static NSDictionary *names;
     
@@ -63,8 +63,8 @@ static NSString *timeline_name(Timeline timeline) {
 
 #pragma mark - Requests
 
-- (Promise *)fetchTimeline:(Timeline)timeline parameters:(NSDictionary *)parameters {
-    NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timeline)];
+- (Promise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters {
+    NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timelineType)];
     
     return [self GET:path parameters:parameters].then(^(OVCResponse *response) {
         // Will return an array of Tweet objects

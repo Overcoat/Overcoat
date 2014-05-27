@@ -25,7 +25,7 @@
 @class ACAccount;
 @class Promise;
 
-typedef NS_ENUM(NSInteger, Timeline) {
+typedef NS_ENUM(NSInteger, TimelineType) {
     TimelineMentions,
     TimelineUser,
     TimelineHome,
@@ -44,6 +44,6 @@ typedef NS_ENUM(NSInteger, Timeline) {
  
  @return A `Promise` that will `then` an array of `Tweet` objects.
  */
-- (Promise *)fetchTimeline:(Timeline)timeline parameters:(NSDictionary *)parameters;
+- (Promise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
 
 @end
