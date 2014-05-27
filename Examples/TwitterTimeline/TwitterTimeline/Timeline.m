@@ -9,6 +9,8 @@
 #import "Timeline.h"
 #import "TwitterClient.h"
 
+static NSString * const kIdentifierKey = @"identifier";
+
 @interface Timeline ()
 
 @property (strong, nonatomic) ACAccount *account;
@@ -38,7 +40,7 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"parentStatus = nil"];
     [fetchRequest setPredicate:predicate];
     
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"identifier"
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:kIdentifierKey
                                                                  ascending:NO];
     [fetchRequest setSortDescriptors:@[descriptor]];
     
@@ -63,11 +65,33 @@
 #pragma mark - Fetching tweets
 
 - (Promise *)refresh {
-    return nil;
+    NSDictionary *parameters = @{
+        @"include_rts": @"true"
+    };
+    
+    NSNumber *identifier = [self lastTweetIdentifier];
+    
+    if (identifier) {
+        parameters = [parameters mtl_dictionaryByAddingEntriesFromDictionary:@{
+                          @"since_id": [identifier stringValue]
+                      }];
+    }
+    
+    return [self.client fetchTimeline:self.type parameters:parameters];
 }
 
 - (Promise *)loadMoreTweets {
-    return nil;
+    NSNumber *identifier = [self firstTweetIdentifier];
+    NSAssert(identifier, @"loadMoreTweets should not be called when the cache is empty");
+    
+    identifier = @([identifier longLongValue] - 1);
+    
+    NSDictionary *parameters = @{
+        @"include_rts": @"true",
+        @"max_id": [identifier stringValue]
+    };
+    
+    return [self.client fetchTimeline:self.type parameters:parameters];
 }
 
 #pragma mark - Private properties
@@ -89,6 +113,36 @@
     }
     
     return _store;
+}
+
+#pragma mark - Private
+
+- (NSNumber *)firstTweetIdentifier {
+    NSFetchRequest *fetchRequest = [[self class] fetchRequest];
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:kIdentifierKey
+                                                                 ascending:YES];
+    [fetchRequest setSortDescriptors:@[descriptor]];
+    
+    [fetchRequest setResultType:NSDictionaryResultType];
+    [fetchRequest setPropertiesToFetch:@[@"identifier"]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSDictionary *result = [[self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                     error:NULL] firstObject];
+    return result[@"identifier"];
+}
+
+- (NSNumber *)lastTweetIdentifier {
+    NSFetchRequest *fetchRequest = [[self class] fetchRequest];
+    
+    [fetchRequest setResultType:NSDictionaryResultType];
+    [fetchRequest setPropertiesToFetch:@[@"identifier"]];
+    [fetchRequest setFetchLimit:1];
+    
+    NSDictionary *result = [[self.managedObjectContext executeFetchRequest:fetchRequest
+                                                                     error:NULL] firstObject];
+    return result[@"identifier"];
 }
 
 @end
