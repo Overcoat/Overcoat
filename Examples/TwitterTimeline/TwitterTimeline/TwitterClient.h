@@ -21,16 +21,10 @@
 // THE SOFTWARE.
 
 #import <Overcoat/Overcoat.h>
+#import "TimelineType.h"
 
 @class ACAccount;
 @class Promise;
-
-typedef NS_ENUM(NSInteger, TimelineType) {
-    TimelineMentions,
-    TimelineUser,
-    TimelineHome,
-    TimelineRetweetsOfMe
-};
 
 @interface TwitterClient : OVCHTTPSessionManager
 

@@ -32,6 +32,8 @@
 		9996A7FB1934C09000B083A0 /* TweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A7F91934C09000B083A0 /* TweetCell.m */; };
 		9996A7FC1934C09000B083A0 /* TweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9996A7FA1934C09000B083A0 /* TweetCell.xib */; };
 		9996A8021934CA5200B083A0 /* UIImageView+Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8011934CA5200B083A0 /* UIImageView+Twitter.m */; };
+		9996A8051934D1E800B083A0 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8041934D1E800B083A0 /* Timeline.m */; };
+		9996A8081934D23C00B083A0 /* TimelineType.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8071934D23C00B083A0 /* TimelineType.m */; };
 		DBDEB97DA5AD43F083454373 /* libPods-TwitterTimeline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F64D9E6B9A4EC3AE8FF8DD /* libPods-TwitterTimeline.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,10 @@
 		9996A7FA1934C09000B083A0 /* TweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCell.xib; sourceTree = "<group>"; };
 		9996A8001934CA5200B083A0 /* UIImageView+Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Twitter.h"; sourceTree = "<group>"; };
 		9996A8011934CA5200B083A0 /* UIImageView+Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Twitter.m"; sourceTree = "<group>"; };
+		9996A8031934D1E800B083A0 /* Timeline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timeline.h; sourceTree = "<group>"; };
+		9996A8041934D1E800B083A0 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
+		9996A8061934D23C00B083A0 /* TimelineType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineType.h; sourceTree = "<group>"; };
+		9996A8071934D23C00B083A0 /* TimelineType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineType.m; sourceTree = "<group>"; };
 		AA1C6C8B187A427F8FBFC101 /* Pods-TwitterTimeline.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTimeline.xcconfig"; path = "Pods/Pods-TwitterTimeline.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -226,6 +232,10 @@
 				9996A7ED1934A13800B083A0 /* TwitterError.m */,
 				9996A7EF1934A1A500B083A0 /* TwitterErrorResponse.h */,
 				9996A7F01934A1A500B083A0 /* TwitterErrorResponse.m */,
+				9996A8031934D1E800B083A0 /* Timeline.h */,
+				9996A8041934D1E800B083A0 /* Timeline.m */,
+				9996A8061934D23C00B083A0 /* TimelineType.h */,
+				9996A8071934D23C00B083A0 /* TimelineType.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -392,8 +402,10 @@
 				991DCAEC193464C40055BD38 /* AppDelegate.m in Sources */,
 				991DCB23193486080055BD38 /* Tweet.m in Sources */,
 				991DCB291934899E0055BD38 /* NSDateFormatter+Twitter.m in Sources */,
+				9996A8051934D1E800B083A0 /* Timeline.m in Sources */,
 				991DCAE8193464C40055BD38 /* main.m in Sources */,
 				9996A7F11934A1A500B083A0 /* TwitterErrorResponse.m in Sources */,
+				9996A8081934D23C00B083A0 /* TimelineType.m in Sources */,
 				991DCB1919346AFB0055BD38 /* ACAccountStore+Twitter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
