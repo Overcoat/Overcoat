@@ -28,6 +28,8 @@
 #ifndef _REACTIVECOCOA_OVERCOAT_H
 #define _REACTIVECOCOA_OVERCOAT_H
 
+#import "OVCHTTPRequestOperationManager+ReactiveCocoa.h"
+
 #if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
 ( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
 #import "OVCHTTPSessionManager+ReactiveCocoa.h"
