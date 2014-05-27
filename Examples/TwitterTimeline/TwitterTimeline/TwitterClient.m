@@ -67,6 +67,7 @@ static NSString *timeline_name(Timeline timeline) {
     NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timeline)];
     
     return [self GET:path parameters:parameters].then(^(OVCResponse *response) {
+        // Will return an array of Tweet objects
         return response.result;
     });
 }
