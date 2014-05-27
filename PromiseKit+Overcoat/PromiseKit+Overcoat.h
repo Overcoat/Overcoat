@@ -1,6 +1,6 @@
-// Overcoat.h
+// PromiseKit+Overcoat.h
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,22 +20,16 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
+#import <PromiseKit/PromiseKit.h>
 
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
+#ifndef _PROMISEKIT_OVERCOAT_H
+#define _PROMISEKIT_OVERCOAT_H
 
-#import "OVCResponse.h"
-#import "OVCURLMatcher.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCSocialRequestSerializer.h"
-#import "OVCManagedStore.h"
-
-#import "OVCHTTPRequestOperationManager.h"
+#import "OVCHTTPRequestOperationManager+PromiseKit.h"
 
 #if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
 ( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager.h"
+    #import "OVCHTTPSessionManager+PromiseKit.h"
 #endif
 
-#endif /* _OVERCOAT_H */
+#endif

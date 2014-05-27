@@ -1,25 +1,26 @@
 //
-//  OVCHTTPRequestOperationManagerTests.m
+//  OVCHTTPRequestOperationManagerPromiseTests.m
 //  Overcoat
 //
-//  Created by guille on 14/05/14.
+//  Created by guille on 23/05/14.
 //  Copyright (c) 2014 Guillermo Gonzalez. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <Overcoat/Overcoat.h>
+#import <Overcoat/PromiseKit+Overcoat.h>
 
 #import "TGRAsyncTestHelper.h"
 #import "OVCTestModel.h"
 
-#pragma mark - TestClient
+#pragma mark - PromiseTestClient
 
-@interface TestClient : OVCHTTPRequestOperationManager
+@interface PromiseTestClient : OVCHTTPRequestOperationManager
 
 @end
 
-@implementation TestClient
+@implementation PromiseTestClient
 
 + (Class)errorModelClass {
     return [OVCErrorModel class];
@@ -34,19 +35,19 @@
 
 @end
 
-#pragma mark - OVCHTTPRequestOperationManagerTests
+#pragma mark - OVCHTTPRequestOperationManagerPromiseTests
 
-@interface OVCHTTPRequestOperationManagerTests : XCTestCase
+@interface OVCHTTPRequestOperationManagerPromiseTests : XCTestCase
 
-@property (strong, nonatomic) TestClient *client;
+@property (strong, nonatomic) PromiseTestClient *client;
 
 @end
 
-@implementation OVCHTTPRequestOperationManagerTests
+@implementation OVCHTTPRequestOperationManagerPromiseTests
 
 - (void)setUp {
     [super setUp];
-    self.client = [[TestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
+    self.client = [[PromiseTestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
 }
 
 - (void)tearDown {
@@ -56,18 +57,6 @@
     [OHHTTPStubs removeAllStubs];
     
     [super tearDown];
-}
-
-- (void)testResponseClass {
-    XCTAssertEqualObjects([OVCHTTPRequestOperationManager responseClass], [OVCResponse class], @"should return OVCResponse");
-}
-
-- (void)testErrorResultClass {
-    XCTAssertNil([OVCHTTPRequestOperationManager errorModelClass], @"should be Nil");
-}
-
-- (void)testModelClassesByResourcePathMustBeOverridenBySubclass {
-    XCTAssertThrows([OVCHTTPRequestOperationManager modelClassesByResourcePath], @"should throw an exception");
 }
 
 - (void)testGET {
@@ -86,10 +75,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
+    [self.client GET:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -98,7 +88,7 @@
     XCTAssertEqualObjects(@"GET", request.HTTPMethod, @"should send a GET request");
 }
 
-- (void)testGETError {
+- (void)testGETServerError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -111,14 +101,38 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
+    [self.client GET:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNotNil(error, @"should return an error");
+    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+}
+
+- (void)testGETError {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:NSURLErrorNotConnectedToInternet
+                                         userInfo:nil];
+        return [OHHTTPStubsResponse responseWithError:error];
+    }];
+    
+    OVCResponse * __block response = nil;
+    NSError * __block error = nil;
+    
+    [self.client GET:@"model/42" parameters:nil].then(^(OVCResponse *r) {
+        response = r;
+    }).catch(^(NSError *e) {
+        error = e;
+    });
+    
+    TGRAssertEventually(error, @"should complete with an error");
+    XCTAssertNil(response, @"should not return a response");
 }
 
 - (void)testHEAD {
@@ -136,10 +150,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client HEAD:@"models" parameters:@{@"foo": @"bar"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client HEAD:@"models" parameters:@{@"foo": @"bar"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -164,10 +179,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -176,7 +192,7 @@
     XCTAssertEqualObjects(@"POST", request.HTTPMethod, @"should send a POST request");
 }
 
-- (void)testPOSTError {
+- (void)testPOSTServerError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -189,14 +205,38 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNotNil(error, @"should return an error");
+    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+}
+
+- (void)testPOSTError {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:NSURLErrorNotConnectedToInternet
+                                         userInfo:nil];
+        return [OHHTTPStubsResponse responseWithError:error];
+    }];
+    
+    OVCResponse * __block response = nil;
+    NSError * __block error = nil;
+    
+    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"}].then(^(OVCResponse *r) {
+        response = r;
+    }).catch(^(NSError *e) {
+        error = e;
+    });
+    
+    TGRAssertEventually(error, @"should complete with an error");
+    XCTAssertNil(response, @"should not return a response");
 }
 
 - (void)testPUT {
@@ -215,10 +255,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -227,7 +268,7 @@
     XCTAssertEqualObjects(@"PUT", request.HTTPMethod, @"should send a PUT request");
 }
 
-- (void)testPUTError {
+- (void)testPUTServerError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -240,14 +281,38 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNotNil(error, @"should return an error");
+    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+}
+
+- (void)testPUTError {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:NSURLErrorNotConnectedToInternet
+                                         userInfo:nil];
+        return [OHHTTPStubsResponse responseWithError:error];
+    }];
+    
+    OVCResponse * __block response = nil;
+    NSError * __block error = nil;
+    
+    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
+        response = r;
+    }).catch(^(NSError *e) {
+        error = e;
+    });
+    
+    TGRAssertEventually(error, @"should complete with an error");
+    XCTAssertNil(response, @"should not return a response");
 }
 
 - (void)testPATCH {
@@ -266,10 +331,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -278,7 +344,7 @@
     XCTAssertEqualObjects(@"PATCH", request.HTTPMethod, @"should send a PATCH request");
 }
 
-- (void)testPATCHError {
+- (void)testPATCHServerError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -291,14 +357,38 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"} completion:^(OVCResponse *r, NSError *e) {
+    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNotNil(error, @"should return an error");
+    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+}
+
+- (void)testPATCHError {
+    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
+        return YES;
+    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:NSURLErrorNotConnectedToInternet
+                                         userInfo:nil];
+        return [OHHTTPStubsResponse responseWithError:error];
+    }];
+    
+    OVCResponse * __block response = nil;
+    NSError * __block error = nil;
+    
+    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
+        response = r;
+    }).catch(^(NSError *e) {
+        error = e;
+    });
+    
+    TGRAssertEventually(error, @"should complete with an error");
+    XCTAssertNil(response, @"should not return a response");
 }
 
 - (void)testDELETE {
@@ -317,10 +407,11 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client DELETE:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
+    [self.client DELETE:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
     XCTAssertNil(error, @"should not return an error");
@@ -329,7 +420,7 @@
     XCTAssertEqualObjects(@"DELETE", request.HTTPMethod, @"should send a DELETE request");
 }
 
-- (void)testDELETEError {
+- (void)testDELETEServerError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
@@ -342,76 +433,38 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client DELETE:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
+    [self.client DELETE:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNotNil(error, @"should return an error");
+    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
-- (void)testCoreDataSerialization {
-    // Setup the Core Data stack
-    
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
-    OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
-    
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
-    
-    // Observe changes in Core Data
-    
-    NSNotification * __block notification = nil;
-    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                                                                    object:context
-                                                                     queue:nil
-                                                                usingBlock:^(NSNotification *note) {
-                                                                    notification = note;
-                                                                }];
-    
-    // Setup client
-    
-    self.client = [[TestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]
-                                 managedObjectContext:context];
-    
-    // Setup HTTP stub
-    
+- (void)testDELETEError {
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"models.json", nil);
-        return [OHHTTPStubsResponse responseWithFileAtPath:path
-                                                statusCode:200
-                                                   headers:@{@"Content-Type": @"application/json"}];
+        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
+                                             code:NSURLErrorNotConnectedToInternet
+                                         userInfo:nil];
+        return [OHHTTPStubsResponse responseWithError:error];
     }];
-    
-    // Get models
     
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
-    [self.client GET:@"models" parameters:nil completion:^(OVCResponse *r, NSError *e) {
+    [self.client DELETE:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
+    }).catch(^(NSError *e) {
         error = e;
-    }];
+    });
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[NSArray class]], @"should return an array of test models");
-    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCTestModel class]], @"should return an array of test models");
-    
-    NSDictionary *userInfo = [notification userInfo];
-    NSSet *objects = userInfo[NSInsertedObjectsKey];
-    
-    XCTAssertEqual(2U, [objects count], @"should insert two objects");
-    
-    for (NSManagedObject *object in objects) {
-        XCTAssertEqualObjects(@"TestModel", [[object entity] name], @"should insert TestModel objects");
-    }
-    [[NSNotificationCenter defaultCenter] removeObserver:observer];
+    TGRAssertEventually(error, @"should complete with an error");
+    XCTAssertNil(response, @"should not return a response");
 }
 
 @end
