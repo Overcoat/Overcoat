@@ -22,6 +22,10 @@
 		991DCB0A193464C40055BD38 /* TwitterTimelineTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB09193464C40055BD38 /* TwitterTimelineTests.m */; };
 		991DCB15193469430055BD38 /* TwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB14193469430055BD38 /* TwitterViewController.m */; };
 		991DCB1919346AFB0055BD38 /* ACAccountStore+Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB1819346AFB0055BD38 /* ACAccountStore+Twitter.m */; };
+		991DCB1E193479B90055BD38 /* Twitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB1C193479B90055BD38 /* Twitter.xcdatamodeld */; };
+		991DCB23193486080055BD38 /* Tweet.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB22193486080055BD38 /* Tweet.m */; };
+		991DCB26193489330055BD38 /* TwitterUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB25193489330055BD38 /* TwitterUser.m */; };
+		991DCB291934899E0055BD38 /* NSDateFormatter+Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 991DCB281934899E0055BD38 /* NSDateFormatter+Twitter.m */; };
 		DBDEB97DA5AD43F083454373 /* libPods-TwitterTimeline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F64D9E6B9A4EC3AE8FF8DD /* libPods-TwitterTimeline.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +62,13 @@
 		991DCB14193469430055BD38 /* TwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterViewController.m; sourceTree = "<group>"; };
 		991DCB1719346AFB0055BD38 /* ACAccountStore+Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ACAccountStore+Twitter.h"; sourceTree = "<group>"; };
 		991DCB1819346AFB0055BD38 /* ACAccountStore+Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ACAccountStore+Twitter.m"; sourceTree = "<group>"; };
+		991DCB1D193479B90055BD38 /* Twitter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Twitter.xcdatamodel; sourceTree = "<group>"; };
+		991DCB21193486080055BD38 /* Tweet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tweet.h; sourceTree = "<group>"; };
+		991DCB22193486080055BD38 /* Tweet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tweet.m; sourceTree = "<group>"; };
+		991DCB24193489330055BD38 /* TwitterUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterUser.h; sourceTree = "<group>"; };
+		991DCB25193489330055BD38 /* TwitterUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterUser.m; sourceTree = "<group>"; };
+		991DCB271934899E0055BD38 /* NSDateFormatter+Twitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Twitter.h"; sourceTree = "<group>"; };
+		991DCB281934899E0055BD38 /* NSDateFormatter+Twitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Twitter.m"; sourceTree = "<group>"; };
 		AA1C6C8B187A427F8FBFC101 /* Pods-TwitterTimeline.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTimeline.xcconfig"; path = "Pods/Pods-TwitterTimeline.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +132,7 @@
 		991DCAE1193464C40055BD38 /* TwitterTimeline */ = {
 			isa = PBXGroup;
 			children = (
+				991DCB1B193479980055BD38 /* Model */,
 				991DCB1A193472940055BD38 /* Controllers */,
 				991DCB1619346AB20055BD38 /* Helpers */,
 				991DCAEA193464C40055BD38 /* AppDelegate.h */,
@@ -166,6 +178,8 @@
 			children = (
 				991DCB1719346AFB0055BD38 /* ACAccountStore+Twitter.h */,
 				991DCB1819346AFB0055BD38 /* ACAccountStore+Twitter.m */,
+				991DCB271934899E0055BD38 /* NSDateFormatter+Twitter.h */,
+				991DCB281934899E0055BD38 /* NSDateFormatter+Twitter.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -177,6 +191,18 @@
 				991DCB14193469430055BD38 /* TwitterViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		991DCB1B193479980055BD38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				991DCB1C193479B90055BD38 /* Twitter.xcdatamodeld */,
+				991DCB21193486080055BD38 /* Tweet.h */,
+				991DCB22193486080055BD38 /* Tweet.m */,
+				991DCB24193489330055BD38 /* TwitterUser.h */,
+				991DCB25193489330055BD38 /* TwitterUser.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,8 +337,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				991DCB1E193479B90055BD38 /* Twitter.xcdatamodeld in Sources */,
+				991DCB26193489330055BD38 /* TwitterUser.m in Sources */,
 				991DCB15193469430055BD38 /* TwitterViewController.m in Sources */,
 				991DCAEC193464C40055BD38 /* AppDelegate.m in Sources */,
+				991DCB23193486080055BD38 /* Tweet.m in Sources */,
+				991DCB291934899E0055BD38 /* NSDateFormatter+Twitter.m in Sources */,
 				991DCAE8193464C40055BD38 /* main.m in Sources */,
 				991DCB1919346AFB0055BD38 /* ACAccountStore+Twitter.m in Sources */,
 			);
@@ -533,6 +563,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		991DCB1C193479B90055BD38 /* Twitter.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				991DCB1D193479B90055BD38 /* Twitter.xcdatamodel */,
+			);
+			currentVersion = 991DCB1D193479B90055BD38 /* Twitter.xcdatamodel */;
+			path = Twitter.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 991DCAD0193464C40055BD38 /* Project object */;
 }
