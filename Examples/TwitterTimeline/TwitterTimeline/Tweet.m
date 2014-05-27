@@ -65,4 +65,11 @@
     return [NSSet setWithObject:@"identifier"];
 }
 
++ (NSDictionary *)relationshipModelClassesByPropertyKey {
+    return @{
+               @"retweetedStatus": [Tweet class],
+               @"user": [TwitterUser class]
+    };
+}
+
 @end
