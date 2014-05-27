@@ -42,4 +42,13 @@ Pod::Spec.new do |s|
     ss.source_files = 'PromiseKit+Overcoat'
   end
 
+  s.subspec 'ReactiveCocoa' do |ss|
+    ss.dependency 'Overcoat/NSURLConnection'
+    ss.dependency 'Overcoat/NSURLSession'
+    ss.dependency 'ReactiveCocoa'
+    
+    ss.public_header_files = 'ReactiveCocoa+Overcoat/*.h'
+    ss.source_files = 'ReactiveCocoa+Overcoat'
+  end
+
 end
