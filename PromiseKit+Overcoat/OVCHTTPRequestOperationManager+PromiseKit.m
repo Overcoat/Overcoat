@@ -29,12 +29,10 @@
 - (Promise *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -43,12 +41,10 @@
 - (Promise *)HEAD:(NSString *)URLString parameters:(id)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -57,12 +53,10 @@
 - (Promise *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -74,12 +68,10 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
 {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self POST:URLString parameters:parameters constructingBodyWithBlock:block completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -88,12 +80,10 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
 - (Promise *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -102,12 +92,10 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
 - (Promise *)PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
@@ -116,12 +104,10 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
 - (Promise *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [Promise new:^(PromiseFulfiller fulfiller, PromiseRejecter rejecter) {
         [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
-                fulfiller(response);
-            } else if (error) {
+            if (error) {
                 rejecter(error);
             } else {
-                fulfiller(nil);
+                fulfiller(response);
             }
         }];
     }];
