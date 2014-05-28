@@ -84,7 +84,6 @@
     }];
     
     TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"GET", request.HTTPMethod, @"should send a GET request");
@@ -111,30 +110,9 @@
     }];
     
     TGRAssertEventually(error, @"should complete with an error");
-}
-
-- (void)testGETError
-{
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorNotConnectedToInternet
-                                         userInfo:nil];
-        return [OHHTTPStubsResponse responseWithError:error];
-    }];
     
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [[self.client rac_GET:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
-        error = e;
-    }];
-    
-    TGRAssertEventually(error, @"should complete with an error");
-    XCTAssertNil(response, @"should not return a response");
+    response = [error ovc_response];
+    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
 - (void)testHEAD
@@ -217,30 +195,9 @@
     }];
     
     TGRAssertEventually(error, @"should complete with an error");
-}
-
-- (void)testPOSTError
-{
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorNotConnectedToInternet
-                                         userInfo:nil];
-        return [OHHTTPStubsResponse responseWithError:error];
-    }];
     
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
-        error = e;
-    }];
-    
-    TGRAssertEventually(error, @"should complete with an error");
-    XCTAssertNil(response, @"should not return a response");
+    response = [error ovc_response];
+    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
 - (void)testPUT
@@ -294,30 +251,9 @@
     }];
     
     TGRAssertEventually(error, @"should complete with an error");
-}
-
-- (void)testPUTError
-{
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorNotConnectedToInternet
-                                         userInfo:nil];
-        return [OHHTTPStubsResponse responseWithError:error];
-    }];
     
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [[self.client rac_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
-        error = e;
-    }];
-    
-    TGRAssertEventually(error, @"should complete with an error");
-    XCTAssertNil(response, @"should not return a response");
+    response = [error ovc_response];
+    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
 - (void)testPATCH
@@ -371,30 +307,9 @@
     }];
     
     TGRAssertEventually(error, @"should complete with an error");
-}
-
-- (void)testPATCHError
-{
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorNotConnectedToInternet
-                                         userInfo:nil];
-        return [OHHTTPStubsResponse responseWithError:error];
-    }];
     
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [[self.client rac_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
-        error = e;
-    }];
-    
-    TGRAssertEventually(error, @"should complete with an error");
-    XCTAssertNil(response, @"should not return a response");
+    response = [error ovc_response];
+    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
 - (void)testDELETE
@@ -448,30 +363,9 @@
     }];
     
     TGRAssertEventually(error, @"should complete with an error");
-}
-
-- (void)testDELETEError
-{
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSError *error = [NSError errorWithDomain:NSURLErrorDomain
-                                             code:NSURLErrorNotConnectedToInternet
-                                         userInfo:nil];
-        return [OHHTTPStubsResponse responseWithError:error];
-    }];
     
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [[self.client rac_DELETE:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
-        error = e;
-    }];
-    
-    TGRAssertEventually(error, @"should complete with an error");
-    XCTAssertNil(response, @"should not return a response");
+    response = [error ovc_response];
+    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
 @end
