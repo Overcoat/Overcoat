@@ -35,7 +35,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
@@ -45,7 +45,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
@@ -55,7 +55,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
@@ -67,7 +67,7 @@
  @param block A block that takes a single argument and appends data to the HTTP body. The block
  argument is an object adopting the `AFMultipartFormData` protocol.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
@@ -77,7 +77,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
@@ -87,7 +87,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
@@ -97,7 +97,7 @@
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  
- @return A cold signal which sends a `OVCResponse` on next event or error, and completes
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
 

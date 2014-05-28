@@ -35,13 +35,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -54,13 +53,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -73,13 +71,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -92,13 +89,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self POST:URLString parameters:parameters constructingBodyWithBlock:block completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -111,13 +107,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -130,13 +125,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{
@@ -149,13 +143,12 @@
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         __block NSURLSessionDataTask *task = [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (response) {
+            if (!error) {
                 [subscriber sendNext:response];
-            } else if (error) {
+                [subscriber sendCompleted];
+            } else {
                 [subscriber sendError:error];
             }
-            
-            [subscriber sendCompleted];
         }];
         
         return [RACDisposable disposableWithBlock:^{

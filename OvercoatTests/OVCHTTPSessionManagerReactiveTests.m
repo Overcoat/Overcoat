@@ -112,9 +112,7 @@
         error = e;
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+    TGRAssertEventually(error, @"should complete with an error");
 }
 
 - (void)testGETError
@@ -220,9 +218,7 @@
         error = e;
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+    TGRAssertEventually(error, @"should complete with an error");
 }
 
 - (void)testPOSTError
@@ -299,9 +295,7 @@
         error = e;
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+    TGRAssertEventually(error, @"should complete with an error");
 }
 
 - (void)testPUTError
@@ -378,9 +372,7 @@
         error = e;
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+    TGRAssertEventually(error, @"should complete with an error");
 }
 
 - (void)testPATCHError
@@ -457,9 +449,7 @@
         error = e;
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
+    TGRAssertEventually(error, @"should complete with an error");
 }
 
 - (void)testDELETEError
