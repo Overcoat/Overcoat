@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     ss.dependency 'AFNetworking', '~> 2.0'
     ss.dependency 'Mantle', '~> 1.3'
     
-    ss.source_files = 'Overcoat/OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}'
+    ss.source_files = 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}'
     ss.frameworks = 'Foundation', 'Accounts', 'Social', 'CoreData'
   end
   
