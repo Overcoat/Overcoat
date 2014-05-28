@@ -17,7 +17,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eq9-QA-ai8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="64"/>
+            <point key="canvasLocation" x="-307" y="61"/>
         </scene>
         <!--Twitter View Controller - Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -47,6 +47,9 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="voI-o3-8Yj" kind="push" identifier="home" id="R91-yy-iff"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -60,7 +63,26 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="459" y="64"/>
+            <point key="canvasLocation" x="153" y="61"/>
+        </scene>
+        <!--Timeline View Controller-->
+        <scene sceneID="2HY-9h-CDg">
+            <objects>
+                <tableViewController id="voI-o3-8Yj" customClass="TimelineViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TOe-SH-60B">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="voI-o3-8Yj" id="cSX-OG-5gl"/>
+                            <outlet property="delegate" destination="voI-o3-8Yj" id="GVO-fU-6SA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="QAg-CX-k62"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WgG-9f-CfH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="617" y="61"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
