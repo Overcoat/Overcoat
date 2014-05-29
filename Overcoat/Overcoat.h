@@ -31,6 +31,8 @@
 #import "OVCSocialRequestSerializer.h"
 #import "OVCManagedStore.h"
 
+#import "NSError+OVCResponse.h"
+
 #import "OVCHTTPRequestOperationManager.h"
 
 #if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \

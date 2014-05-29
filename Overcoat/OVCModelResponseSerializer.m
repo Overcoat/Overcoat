@@ -23,6 +23,7 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
+#import "NSError+OVCResponse.h"
 
 #import <CoreData/CoreData.h>
 #import <Mantle/Mantle.h>
@@ -91,6 +92,10 @@
     if (responseObject.result && self.managedObjectContext &&
         [resultClass conformsToProtocol:@protocol(MTLManagedObjectSerializing)]) {
         [self saveResult:responseObject.result];
+    }
+    
+    if (serializationError && error) {
+        *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
     }
     
     return responseObject;
