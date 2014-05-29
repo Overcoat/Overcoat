@@ -12,29 +12,22 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
   
-  s.public_header_files = 'Overcoat/*.h'
-  s.source_files = 'Overcoat/Overcoat.h'
-  
   s.subspec 'Core' do |ss|
     ss.dependency 'AFNetworking', '~> 2.0'
     ss.dependency 'Mantle', '~> 1.3'
     
-    ss.source_files = 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}'
+    ss.public_header_files = 'Overcoat/*.h'
+    ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}', 'Overcoat/OVCHTTPRequestOperationManager.{h,m}'
     ss.frameworks = 'Foundation', 'Accounts', 'Social', 'CoreData'
   end
-  
-  s.subspec 'NSURLConnection' do |ss|
-    ss.dependency 'Overcoat/Core'
-    ss.source_files = 'Overcoat/OVCHTTPRequestOperationManager.{h,m}'
-  end
-  
+    
   s.subspec 'NSURLSession' do |ss|
-    ss.dependency 'Overcoat/NSURLConnection'
+    ss.dependency 'Overcoat/Core'
     ss.source_files = 'Overcoat/OVCHTTPSessionManager.{h,m}'
   end
   
   s.subspec 'PromiseKit' do |ss|
-    ss.dependency 'Overcoat/NSURLConnection'
+    ss.dependency 'Overcoat/Core'
     ss.dependency 'Overcoat/NSURLSession'
     ss.dependency 'PromiseKit'
     
