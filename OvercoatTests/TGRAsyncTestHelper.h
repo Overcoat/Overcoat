@@ -6,9 +6,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <libkern/OSAtomic.h>
 
-#define TGR_RUNLOOP_INTERVAL 0.05
-#define TGR_TIMEOUT_INTERVAL 10.0
+#define TGR_RUNLOOP_INTERVAL 0.1
+#define TGR_TIMEOUT_INTERVAL 1.0
 #define TGR_RUNLOOP_COUNT TGR_TIMEOUT_INTERVAL / TGR_RUNLOOP_INTERVAL
 
 #define TGR_CAT(x, y) x ## y
@@ -21,6 +22,7 @@ while (!(a1) && __runLoopCount < TGR_RUNLOOP_COUNT) { \
     NSDate* date = [NSDate dateWithTimeIntervalSinceNow:TGR_RUNLOOP_INTERVAL]; \
     [NSRunLoop.currentRunLoop runUntilDate:date]; \
     __runLoopCount++; \
+    OSMemoryBarrier(); \
 } \
 if (__runLoopCount >= TGR_RUNLOOP_COUNT) { \
     XCTFail(format); \
