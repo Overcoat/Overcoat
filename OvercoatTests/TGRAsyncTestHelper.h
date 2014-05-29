@@ -8,8 +8,8 @@
 #import <Foundation/Foundation.h>
 #import <libkern/OSAtomic.h>
 
-#define TGR_RUNLOOP_INTERVAL 0.01
-#define TGR_TIMEOUT_INTERVAL 10.0
+#define TGR_RUNLOOP_INTERVAL 0.1
+#define TGR_TIMEOUT_INTERVAL 1.0
 #define TGR_RUNLOOP_COUNT TGR_TIMEOUT_INTERVAL / TGR_RUNLOOP_INTERVAL
 
 #define TGR_CAT(x, y) x ## y
