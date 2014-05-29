@@ -3,6 +3,7 @@ target "Overcoat iOS" do
   pod 'AFNetworking', '~> 2.0'
   pod 'Mantle', '~> 1.4'
   pod 'PromiseKit/base'
+  pod 'ReactiveCocoa'
 end
 
 target "Overcoat iOS Tests" do
@@ -15,6 +16,7 @@ target "Overcoat Mac" do
   pod 'AFNetworking', '~> 2.0'
   pod 'Mantle', '~> 1.3'
   pod 'PromiseKit/base'
+  pod 'ReactiveCocoa'
 end
 
 target "Overcoat Mac Tests" do

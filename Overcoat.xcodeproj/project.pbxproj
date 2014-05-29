@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C23C3971935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3951935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3981935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3951935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3991935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3961935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
+		8C23C39A1935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3961935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
+		8C23C39C1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C39B1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m */; };
+		8C23C3A51935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3A31935478100E2F06D /* ReactiveCocoa+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3A61935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3A31935478100E2F06D /* ReactiveCocoa+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3A91935484B00E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C39B1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m */; };
+		8C23C3AC19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3AA19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3AD19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C23C3AA19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C23C3AE19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3AB19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */; };
+		8C23C3AF19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3AB19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */; };
+		8C23C3B119354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3B019354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m */; };
+		8C23C3B2193550B000E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C23C3B019354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m */; };
 		9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9911A06C191E7C0200DFE29D /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 9911A06D191E7C0200DFE29D /* OVCResponse.m */; };
 		9931076D1936159500B1F3F7 /* NSError+OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = 9931076B1936159500B1F3F7 /* NSError+OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -117,6 +131,13 @@
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.xcconfig"; path = "Pods/Pods-Overcoat iOS.xcconfig"; sourceTree = "<group>"; };
+		8C23C3951935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		8C23C3961935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		8C23C39B1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerReactiveTests.m; sourceTree = "<group>"; };
+		8C23C3A31935478100E2F06D /* ReactiveCocoa+Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ReactiveCocoa+Overcoat.h"; sourceTree = "<group>"; };
+		8C23C3AA19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		8C23C3AB19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		8C23C3B019354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManagerReactiveTests.m; sourceTree = "<group>"; };
 		9911A06C191E7C0200DFE29D /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
 		9911A06D191E7C0200DFE29D /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
 		9931076B1936159500B1F3F7 /* NSError+OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+OVCResponse.h"; sourceTree = "<group>"; };
@@ -223,6 +244,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C23C3941935390900E2F06D /* ReactiveCocoa+Overcoat */ = {
+			isa = PBXGroup;
+			children = (
+				8C23C3AA19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */,
+				8C23C3AB19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */,
+				8C23C3951935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h */,
+				8C23C3961935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m */,
+				8C23C3A31935478100E2F06D /* ReactiveCocoa+Overcoat.h */,
+			);
+			path = "ReactiveCocoa+Overcoat";
+			sourceTree = "<group>";
+		};
 		9942CD64189D6A9C00E064E3 /* Stubs */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +271,7 @@
 			children = (
 				9969786E189D53120064DF57 /* Overcoat */,
 				9977C8AF193322360064FC0D /* PromiseKit+Overcoat */,
+				8C23C3941935390900E2F06D /* ReactiveCocoa+Overcoat */,
 				99697882189D53130064DF57 /* OvercoatTests */,
 				9969786B189D53120064DF57 /* Frameworks */,
 				9969786A189D53120064DF57 /* Products */,
@@ -306,7 +340,9 @@
 				9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */,
 				999CD4891923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m */,
 				99CBC853192F62F3003AF7CC /* OVCHTTPRequestOperationManagerPromiseTests.m */,
+				8C23C3B019354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m */,
 				99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */,
+				8C23C39B1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m */,
 				994BEDCB19294C9E00B261DE /* OVCHTTPSessionManagerTests.m */,
 				99A7467D1926080300D35505 /* OVCURLMatcherTests.m */,
 				99A746811926092300D35505 /* OVCTestModel.h */,
@@ -402,9 +438,12 @@
 				99482709189D63550039F2F3 /* Overcoat.h in Headers */,
 				99A7467A1925EE7600D35505 /* OVCURLMatcher.h in Headers */,
 				9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
+				8C23C3AD19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */,
+				8C23C3A61935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */,
 				99E8441119337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B8193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9975E382191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */,
+				8C23C3981935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
 				9975E385191FCE8B0086C786 /* OVCResponse.h in Headers */,
 				99482713189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,
 			);
@@ -421,9 +460,12 @@
 				9911A06E191E7C0200DFE29D /* OVCResponse.h in Headers */,
 				99A746791925EE7600D35505 /* OVCURLMatcher.h in Headers */,
 				9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
+				8C23C3AC19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */,
+				8C23C3A51935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */,
 				99E8441019337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B7193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9948270A189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */,
+				8C23C3971935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
 				99482708189D63550039F2F3 /* Overcoat.h in Headers */,
 				99482712189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,
 			);
@@ -713,10 +755,12 @@
 				9911A06F191E7C0200DFE29D /* OVCResponse.m in Sources */,
 				9931076F1936159500B1F3F7 /* NSError+OVCResponse.m in Sources */,
 				99A7467B1925EE7600D35505 /* OVCURLMatcher.m in Sources */,
+				8C23C3AE19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */,
 				9975E383191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */,
 				99482714189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
 				994BEDC019290E4D00B261DE /* OVCManagedStore.m in Sources */,
 				99E8441219337751005280DA /* OVCHTTPSessionManager+PromiseKit.m in Sources */,
+				8C23C3991935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */,
 				9977C8B5193322360064FC0D /* OVCHTTPRequestOperationManager+PromiseKit.m in Sources */,
 				9975E38B191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */,
 				9948270C189D63550039F2F3 /* OVCModelResponseSerializer.m in Sources */,
@@ -730,6 +774,7 @@
 				994BEDAF1928EDEF00B261DE /* OVCTestResponse.m in Sources */,
 				99E8441519337977005280DA /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
 				994BEDCC19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
+				8C23C3B119354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				994BEDB419290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				99CBC854192F62F3003AF7CC /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
@@ -737,6 +782,7 @@
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */,
 				99A746831926092300D35505 /* OVCTestModel.m in Sources */,
+				8C23C39C1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -747,10 +793,12 @@
 				99A7467C1925EE7600D35505 /* OVCURLMatcher.m in Sources */,
 				993107701936159500B1F3F7 /* NSError+OVCResponse.m in Sources */,
 				99482715189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
+				8C23C3AF19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */,
 				9948270D189D63550039F2F3 /* OVCModelResponseSerializer.m in Sources */,
 				9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */,
 				994BEDC119290E4D00B261DE /* OVCManagedStore.m in Sources */,
 				99E8441319337751005280DA /* OVCHTTPSessionManager+PromiseKit.m in Sources */,
+				8C23C39A1935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */,
 				9977C8B6193322360064FC0D /* OVCHTTPRequestOperationManager+PromiseKit.m in Sources */,
 				9975E384191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */,
 				9975E386191FCE930086C786 /* OVCResponse.m in Sources */,
@@ -764,6 +812,7 @@
 				99A746801926080900D35505 /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				99E8441619337977005280DA /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
 				994BEDCD19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
+				8C23C3B2193550B000E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				994BEDB519290AA700B261DE /* Test.xcdatamodeld in Sources */,
 				99A7467F1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				9977C89E1933161E0064FC0D /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
@@ -771,6 +820,7 @@
 				9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */,
 				99A746841926092300D35505 /* OVCTestModel.m in Sources */,
+				8C23C3A91935484B00E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
