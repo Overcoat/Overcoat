@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "TwitterViewController.h"
+#import "TimelineViewController.h"
 
 #import "ACAccountStore+Twitter.h"
 
@@ -49,6 +50,20 @@
         }).catch(^(NSError *error) {
             NSLog(@"Error accessing Twitter accounts: %@", error);
         });
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"home"]) {
+        TimelineViewController *timelineViewController = segue.destinationViewController;
+        timelineViewController.title = @"Home";
+        timelineViewController.account = self.account;
+        timelineViewController.type = TimelineHome;
+    } else if ([segue.identifier isEqualToString:@"mentions"]) {
+        TimelineViewController *timelineViewController = segue.destinationViewController;
+        timelineViewController.title = @"Mentions";
+        timelineViewController.account = self.account;
+        timelineViewController.type = TimelineMentions;
     }
 }
 

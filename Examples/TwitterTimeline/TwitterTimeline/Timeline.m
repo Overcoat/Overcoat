@@ -94,6 +94,11 @@ static NSString * const kIdentifierKey = @"identifier";
     return [self.client fetchTimeline:self.type parameters:parameters];
 }
 
+- (void)cancelAllRequests {
+    [self.client invalidateSessionCancelingTasks:YES];
+    self.client = nil;
+}
+
 #pragma mark - Private properties
 
 - (TwitterClient *)client {

@@ -7,7 +7,13 @@
 //
 
 #import "TGRFetchedResultsTableViewController.h"
+#import "TimelineType.h"
+
+#import <Accounts/Accounts.h>
 
 @interface TimelineViewController : TGRFetchedResultsTableViewController
+
+@property (strong, nonatomic) ACAccount *account;
+@property (nonatomic) TimelineType type;
 
 @end

@@ -51,6 +51,11 @@
     self.statusLabel.text = tweet.text;
 }
 
+- (CGFloat)height {
+    UIView *view = self.retweetedByLabel.text ? self.retweetedByLabel : self.statusLabel;
+    return MAX(CGRectGetMaxY(view.frame), CGRectGetMaxY(self.profileImageView.frame)) + 8;
+}
+
 - (void)configureDateLabelWithDate:(NSDate *)date {
     NSCalendar *calendar = [NSCalendar currentCalendar];
     NSDate *now = [NSDate date];

@@ -34,4 +34,6 @@
 
 - (void)configureWithTweet:(Tweet *)tweet;
 
+- (CGFloat)height;
+
 @end

@@ -35,6 +35,7 @@
 		9996A8021934CA5200B083A0 /* UIImageView+Twitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8011934CA5200B083A0 /* UIImageView+Twitter.m */; };
 		9996A8051934D1E800B083A0 /* Timeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8041934D1E800B083A0 /* Timeline.m */; };
 		9996A8081934D23C00B083A0 /* TimelineType.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8071934D23C00B083A0 /* TimelineType.m */; };
+		99ACC6F519376DEC0016447E /* TimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99ACC6F419376DEC0016447E /* TimelineDataSource.m */; };
 		DBDEB97DA5AD43F083454373 /* libPods-TwitterTimeline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F64D9E6B9A4EC3AE8FF8DD /* libPods-TwitterTimeline.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,8 @@
 		9996A8041934D1E800B083A0 /* Timeline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Timeline.m; sourceTree = "<group>"; };
 		9996A8061934D23C00B083A0 /* TimelineType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineType.h; sourceTree = "<group>"; };
 		9996A8071934D23C00B083A0 /* TimelineType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineType.m; sourceTree = "<group>"; };
+		99ACC6F319376DEC0016447E /* TimelineDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineDataSource.h; sourceTree = "<group>"; };
+		99ACC6F419376DEC0016447E /* TimelineDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineDataSource.m; sourceTree = "<group>"; };
 		AA1C6C8B187A427F8FBFC101 /* Pods-TwitterTimeline.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterTimeline.xcconfig"; path = "Pods/Pods-TwitterTimeline.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -241,6 +244,8 @@
 				9996A8041934D1E800B083A0 /* Timeline.m */,
 				9996A8061934D23C00B083A0 /* TimelineType.h */,
 				9996A8071934D23C00B083A0 /* TimelineType.m */,
+				99ACC6F319376DEC0016447E /* TimelineDataSource.h */,
+				99ACC6F419376DEC0016447E /* TimelineDataSource.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -413,6 +418,7 @@
 				9996A7F11934A1A500B083A0 /* TwitterErrorResponse.m in Sources */,
 				9996A8081934D23C00B083A0 /* TimelineType.m in Sources */,
 				991DCB1919346AFB0055BD38 /* ACAccountStore+Twitter.m in Sources */,
+				99ACC6F519376DEC0016447E /* TimelineDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

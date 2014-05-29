@@ -70,6 +70,13 @@
                     <constraint firstItem="fwB-3v-yla" firstAttribute="leading" secondItem="HRN-Ao-uZ7" secondAttribute="trailing" constant="8" symbolic="YES" id="vqz-fs-ReM"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="dateLabel" destination="Zpm-7h-er7" id="dUe-2l-V8K"/>
+                <outlet property="nameLabel" destination="fwB-3v-yla" id="yvn-df-fDL"/>
+                <outlet property="profileImageView" destination="HRN-Ao-uZ7" id="75h-CY-y74"/>
+                <outlet property="retweetedByLabel" destination="d0d-w2-Amz" id="awl-9x-2gs"/>
+                <outlet property="statusLabel" destination="jiM-Ks-hEL" id="0VW-cX-GM8"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>
