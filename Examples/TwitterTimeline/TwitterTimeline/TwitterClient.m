@@ -23,6 +23,8 @@
 #import "TwitterClient.h"
 #import "TwitterErrorResponse.h"
 #import "Tweet.h"
+#import "TwitterUser.h"
+#import "UserIdentifierCollection.h"
 
 #import <Accounts/Accounts.h>
 #import <Overcoat/PromiseKit+Overcoat.h>
@@ -30,6 +32,12 @@
 static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
 @implementation TwitterClient
+
+#pragma mark - Properties
+
+- (ACAccount *)account {
+    return [(OVCSocialRequestSerializer *)self.requestSerializer account];
+}
 
 #pragma mark - Lifecycle
 
@@ -51,7 +59,41 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timelineType)];
     
     return [self GET:path parameters:parameters].then(^(OVCResponse *response) {
-        // Will return an array of Tweet objects
+        return response.result;
+    });
+}
+
+- (Promise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor {
+    NSDictionary *parameters = @{
+        @"screen_name": self.account.username,
+        @"cursor": cursor ? [cursor stringValue] : @"-1",
+        @"count": @"100"
+    };
+    
+    return [self GET:@"friends/ids.json" parameters:parameters].then(^(OVCResponse *response) {
+        return response.result;
+    });
+}
+
+- (Promise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor {
+    NSDictionary *parameters = @{
+        @"screen_name": self.account.username,
+        @"cursor": cursor ? [cursor stringValue] : @"-1",
+        @"count": @"100"
+    };
+    
+    return [self GET:@"followers/ids.json" parameters:parameters].then(^(OVCResponse *response) {
+        return response.result;
+    });
+}
+
+- (Promise *)lookupUsersWithIdentifiers:(NSArray *)identifiers {
+    NSDictionary *parameters = @{
+        @"screen_name": self.account.username,
+        @"user_id": [identifiers componentsJoinedByString:@","]
+    };
+
+    return [self GET:@"users/lookup.json" parameters:parameters].then(^(OVCResponse *response) {
         return response.result;
     });
 }
@@ -64,7 +106,10 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-               @"statuses/*": [Tweet class]
+               @"statuses/*": [Tweet class],
+               @"users/*": [TwitterUser class],
+               @"friends/ids.json": [UserIdentifierCollection class],
+               @"followers/ids.json": [UserIdentifierCollection class]
     };
 }
 

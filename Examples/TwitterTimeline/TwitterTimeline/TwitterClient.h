@@ -28,6 +28,8 @@
 
 @interface TwitterClient : OVCHTTPSessionManager
 
+@property (strong, nonatomic, readonly) ACAccount *account;
+
 - (id)initWithAccount:(ACAccount *)account managedObjectContext:(NSManagedObjectContext *)context;
 
 /**
@@ -39,5 +41,26 @@
  @return A `Promise` that will `then` an array of `Tweet` objects.
  */
 - (Promise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
+
+/**
+ Fetches a cursored collection of user IDs for every user the specified user is following.
+ 
+ @return A `Promise` that will `then` a `UserIdentifierCollection` object.
+ */
+- (Promise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor;
+
+/**
+ Fetches a cursored collection of user IDs for every user following the specified user.
+ 
+ @return A `Promise` that will `then` a `UserIdentifierCollection` object.
+ */
+- (Promise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor;
+
+/**
+ Fetches fully-hydrated user objects for up to 100 users per request.
+ 
+ @return A `Promise` that will `then` an array of `TwitterUser` objects.
+ */
+- (Promise *)lookupUsersWithIdentifiers:(NSArray *)identifiers;
 
 @end
