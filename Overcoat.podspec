@@ -36,7 +36,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
-    ss.dependency 'Overcoat/NSURLConnection'
+    ss.dependency 'Overcoat/Core'
     ss.dependency 'Overcoat/NSURLSession'
     ss.dependency 'ReactiveCocoa'
     
