@@ -127,7 +127,9 @@ static NSString * const kCellIdentifier = @"TweetCell";
     self.loading = YES;
     
     @weakify(self);
-    [self.timeline loadMoreTweets].finally(^{
+    [self.timeline loadMoreTweets].catch(^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }).finally(^{
         @strongify(self);
         self.loading = NO;
     });
@@ -137,7 +139,9 @@ static NSString * const kCellIdentifier = @"TweetCell";
     UIRefreshControl *refreshControl = self.refreshControl;
     [refreshControl beginRefreshing];
     
-    [self.timeline refresh].finally(^{
+    [self.timeline refresh].catch(^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }).finally(^{
         [refreshControl endRefreshing];
     });
 }
