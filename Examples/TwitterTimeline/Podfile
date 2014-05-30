@@ -1,0 +1,11 @@
+platform :ios, '7.0'
+
+target 'TwitterTimeline' do
+  pod 'Overcoat', :path => '../../'
+  pod 'TGRDataSource'
+end
+
+target 'TwitterTimelineTests' do
+
+end
+
