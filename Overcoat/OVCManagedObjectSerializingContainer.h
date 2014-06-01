@@ -1,6 +1,6 @@
-// Overcoat.h
+// OVCManagedObjectSerializingContainer.h
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,23 +22,14 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
+/**
+ A parent `MTLModel` with a property containing `MTLManagedObjectSerializing` value(s).
+ */
+@protocol OVCManagedObjectSerializingContainer
 
-#import "OVCResponse.h"
-#import "OVCURLMatcher.h"
-#import "OVCManagedObjectSerializingContainer.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCSocialRequestSerializer.h"
-#import "OVCManagedStore.h"
+/**
+ Returns the key path of the property containing `MTLManagedObjectSerializing` value(s).
+ */
++ (NSString *)managedObjectSerializingKeyPath;
 
-#import "NSError+OVCResponse.h"
-
-#import "OVCHTTPRequestOperationManager.h"
-
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager.h"
-#endif
-
-#endif /* _OVERCOAT_H */
+@end

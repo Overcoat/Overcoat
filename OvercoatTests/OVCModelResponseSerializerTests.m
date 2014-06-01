@@ -25,7 +25,8 @@
     
     NSDictionary *modelClassesByPath = @{
         @"test": [OVCTestModel class],
-        @"alternative": [OVCAlternativeModel class]
+        @"alternative": [OVCAlternativeModel class],
+        @"paginated": [OVCAlternativeModel class]
     };
     
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:nil
@@ -94,17 +95,22 @@
     
     // Serialize successful response
     
-    NSData *data = [NSJSONSerialization dataWithJSONObject:@[
-                        @{
-                            @"name": @"Iron Man",
-                            @"realName": @"Anthony Stark"
-                        },
-                        @{
-                            @"name": @"Batman",
-                            @"realName": @"Bruce Wayne"
-                        }
-                    ] options:0 error:NULL];
-    NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/test"]
+    NSData *data = [NSJSONSerialization dataWithJSONObject:@{
+                        @"offset": @0,
+                        @"limit": @100,
+                        @"objects": @[
+                            @{
+                                @"name": @"Iron Man",
+                                @"realName": @"Anthony Stark"
+                            },
+                            @{
+                                @"name": @"Batman",
+                                @"realName": @"Bruce Wayne"
+                            }
+                        ]
+                    } options:0 error:NULL];
+    
+    NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/paginated"]
                                                              statusCode:200
                                                             HTTPVersion:@"1.1"
                                                            headerFields:@{@"Content-Type": @"text/json"}];

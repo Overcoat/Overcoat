@@ -38,4 +38,12 @@
     return @{};
 }
 
++ (NSValueTransformer *)objectsJSONTransformer {
+    return [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:[OVCTestModel class]];
+}
+
++ (NSString *)managedObjectSerializingKeyPath {
+    return @"objects";
+}
+
 @end
