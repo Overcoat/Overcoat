@@ -1,9 +1,7 @@
+// OVCHTTPRequestOperationManager+ReactiveCocoa.h
 //
-//  OVCHTTPRequestOperationManager+ReactiveCocoa.h
-//  Overcoat
-//
-//  Created by Joan Romano on 28/05/14.
-//  Copyright (c) 2014 Guillermo Gonzalez. All rights reserved.
+// Created by Joan Romano on 28/05/14.
+// Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
