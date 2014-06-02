@@ -21,7 +21,11 @@
 // THE SOFTWARE.
 
 #import "ACAccountStore+Twitter.h"
+
 #import <PromiseKit/PromiseKit.h>
+
+// PromiseKit+Social.h is not being correctly imported in PromiseKit.h
+#import <PromiseKit/PromiseKit+Social.h>
 
 @implementation ACAccountStore (Twitter)
 

@@ -1,7 +1,7 @@
 platform :ios, '7.0'
 
 target 'TwitterTimeline' do
-  pod 'Overcoat', :path => '../../'
+  pod 'Overcoat/PromiseKit', :path => '../../'
   pod 'TGRDataSource'
 end
 
