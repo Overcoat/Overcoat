@@ -17,7 +17,9 @@ Pod::Spec.new do |s|
     ss.dependency 'Mantle', '~> 1.3'
     
     ss.public_header_files = 'Overcoat/*.h'
-    ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}', 'Overcoat/OVCHTTPRequestOperationManager.{h,m}'
+    ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}',
+                      'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}', 'Overcoat/OVCHTTPRequestOperationManager.{h,m}',
+                      'Overcoat/OVCManagedObjectSerializingContainer.h'
     ss.frameworks = 'Foundation', 'Accounts', 'Social', 'CoreData'
   end
     

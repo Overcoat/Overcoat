@@ -7,6 +7,7 @@
 //
 
 #import <Mantle/Mantle.h>
+#import <Overcoat/Overcoat.h>
 
 @interface OVCTestModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
 
@@ -23,5 +24,10 @@
 
 @end
 
-@interface OVCAlternativeModel : MTLModel <MTLJSONSerializing>
+@interface OVCAlternativeModel : MTLModel <MTLJSONSerializing, OVCManagedObjectSerializingContainer>
+
+@property (copy, nonatomic, readonly) NSNumber *offset;
+@property (copy, nonatomic, readonly) NSNumber *limit;
+@property (copy, nonatomic, readonly) NSArray *objects;
+
 @end

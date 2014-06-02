@@ -103,6 +103,8 @@
 		99E8441319337751005280DA /* OVCHTTPSessionManager+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E8440F19337751005280DA /* OVCHTTPSessionManager+PromiseKit.m */; };
 		99E8441519337977005280DA /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */; };
 		99E8441619337977005280DA /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */; };
+		99FADC88193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		99FADC89193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A89EAB6C7F8240FEB104924F /* libPods-Overcoat Mac Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */; };
 		CCC64A123EEF47108D555837 /* libPods-Overcoat iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */; };
 		E9DA65292DFE4AB9B26F035D /* libPods-Overcoat iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */; };
@@ -192,6 +194,7 @@
 		99E8440E19337751005280DA /* OVCHTTPSessionManager+PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+PromiseKit.h"; sourceTree = "<group>"; };
 		99E8440F19337751005280DA /* OVCHTTPSessionManager+PromiseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+PromiseKit.m"; sourceTree = "<group>"; };
 		99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; };
+		99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
 		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,6 +405,7 @@
 				994BEDBD19290E4D00B261DE /* OVCManagedStore.m */,
 				9931076B1936159500B1F3F7 /* NSError+OVCResponse.h */,
 				9931076C1936159500B1F3F7 /* NSError+OVCResponse.m */,
+				99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -443,6 +447,7 @@
 				99E8441119337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B8193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9975E382191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */,
+				99FADC89193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */,
 				8C23C3981935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
 				9975E385191FCE8B0086C786 /* OVCResponse.h in Headers */,
 				99482713189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,
@@ -465,6 +470,7 @@
 				99E8441019337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B7193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9948270A189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */,
+				99FADC88193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */,
 				8C23C3971935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
 				99482708189D63550039F2F3 /* Overcoat.h in Headers */,
 				99482712189D63550039F2F3 /* OVCSocialRequestSerializer.h in Headers */,

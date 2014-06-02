@@ -23,6 +23,8 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
+#import "OVCManagedObjectSerializingContainer.h"
+
 #import "NSError+OVCResponse.h"
 
 #import <CoreData/CoreData.h>
@@ -89,11 +91,21 @@
                                                                     JSONObject:JSONObject
                                                                    resultClass:resultClass];
     
-    if (responseObject.result && self.managedObjectContext &&
-        [resultClass conformsToProtocol:@protocol(MTLManagedObjectSerializing)]) {
-        [self saveResult:responseObject.result];
+    if (self.managedObjectContext) {
+        id result = nil;
+        
+        if ([resultClass conformsToProtocol:@protocol(MTLManagedObjectSerializing)]) {
+            result = responseObject.result;
+        } else if ([resultClass conformsToProtocol:@protocol(OVCManagedObjectSerializingContainer)]) {
+            NSString *keyPath = [resultClass managedObjectSerializingKeyPath];
+            result = [responseObject.result valueForKeyPath:keyPath];
+        }
+        
+        if (result) {
+            [self saveResult:result];
+        }
     }
-    
+        
     if (serializationError && error) {
         *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
     }
