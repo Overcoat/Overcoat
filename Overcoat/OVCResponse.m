@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "OVCResponse.h"
+#import "NSDictionary+Overcoat.h"
 
 @interface OVCResponse ()
 
@@ -43,10 +44,10 @@
     id result = JSONObject;
     
     if ([JSONObject isKindOfClass:[NSDictionary class]]) {
-        NSString *resultKey = [self resultKeyPathForJSONDictionary:JSONObject];
-        if (resultKey) {
+        NSString *resultKeyPath = [self resultKeyPathForJSONDictionary:JSONObject];
+        if (resultKeyPath) {
             response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:NULL];
-            result = [(NSDictionary *)JSONObject objectForKey:resultKey];
+            result = [(NSDictionary *)JSONObject ovc_objectForKeyPath:resultKeyPath];
         } else {
             response = [[self alloc] init];
         }

@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Overcoat/*.h'
     ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}',
                       'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}', 'Overcoat/OVCHTTPRequestOperationManager.{h,m}',
-                      'Overcoat/OVCManagedObjectSerializingContainer.h'
+                      'Overcoat/OVCManagedObjectSerializingContainer.h', 'Overcoat/NSDictionary+Overcoat.{h,m}'
     ss.frameworks = 'Foundation', 'Accounts', 'Social', 'CoreData'
   end
     
