@@ -25,10 +25,20 @@
 #ifndef _OVERCOAT_H
 #define _OVERCOAT_H
 
-#import "NSDictionary+Overcoat.h"
-
+#import "OVCResponse.h"
+#import "OVCURLMatcher.h"
+#import "OVCManagedObjectSerializingContainer.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"
-#import "OVCClient.h"
+#import "OVCManagedStore.h"
+
+#import "NSError+OVCResponse.h"
+
+#import "OVCHTTPRequestOperationManager.h"
+
+#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
+( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
+    #import "OVCHTTPSessionManager.h"
+#endif
 
 #endif /* _OVERCOAT_H */

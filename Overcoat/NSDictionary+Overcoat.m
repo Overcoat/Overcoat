@@ -27,7 +27,7 @@
 - (id)ovc_objectForKeyPath:(NSString *)keyPath {
     NSArray *keys = [keyPath componentsSeparatedByString:@"."];
     id object = self;
-
+    
     for (NSString *key in keys) {
         if ([object isKindOfClass:[NSDictionary class]]) {
             object = [object objectForKey:key];
@@ -37,7 +37,7 @@
             break;
         }
     }
-
+    
     return object;
 }
 
