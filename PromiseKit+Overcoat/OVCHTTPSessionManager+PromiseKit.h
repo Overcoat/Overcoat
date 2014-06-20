@@ -24,7 +24,7 @@
 
 #if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
 
-@class Promise;
+@class PMKPromise;
 
 @interface OVCHTTPSessionManager (PromiseKit)
 
@@ -40,7 +40,7 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 /**
  Enqueues a `HEAD` request.
@@ -50,7 +50,7 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)HEAD:(NSString *)URLString parameters:(id)parameters;
+- (PMKPromise *)HEAD:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `POST` request.
@@ -60,7 +60,7 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 /**
  Enqueues a multipart `POST` request.
@@ -71,8 +71,8 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)POST:(NSString *)URLString
-       parameters:(NSDictionary *)parameters
+- (PMKPromise *)POST:(NSString *)URLString
+          parameters:(NSDictionary *)parameters
 constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
@@ -83,7 +83,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 /**
  Enqueues a `PATCH` request.
@@ -93,7 +93,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 /**
  Enqueues a `DELETE` request.
@@ -103,7 +103,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (Promise *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 @end
 
