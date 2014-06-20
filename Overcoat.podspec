@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   s.name     = 'Overcoat'
   s.version  = '2.0.1'
   s.license  = 'MIT'
-  s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun. It provides a simple API for making requests and mapping responses to model objects.'
+  s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
   s.homepage = 'https://github.com/gonzalezreal/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com' }
   s.social_media_url = 'https://twitter.com/gonzalezreal'
