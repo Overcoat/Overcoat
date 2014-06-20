@@ -36,12 +36,12 @@
     return accountStore;
 }
 
-- (Promise *)promiseForTwitterAccounts {
+- (PMKPromise *)promiseForTwitterAccounts {
     ACAccountType *type = [self accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
     
     if ([type accessGranted]) {
         NSArray *accounts = [self accountsWithAccountType:type];
-        return [Promise promiseWithValue:accounts];
+        return [PMKPromise promiseWithValue:accounts];
     }
     
     return [self promiseForAccountsWithType:type options:nil];

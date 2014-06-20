@@ -22,12 +22,12 @@
 
 #import <Accounts/Accounts.h>
 
-@class Promise;
+@class PMKPromise;
 
 @interface ACAccountStore (Twitter)
 
 + (ACAccountStore *)sharedAccountStore;
 
-- (Promise *)promiseForTwitterAccounts;
+- (PMKPromise *)promiseForTwitterAccounts;
 
 @end

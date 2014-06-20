@@ -25,7 +25,7 @@
 #import "TimelineType.h"
 
 @class ACAccount;
-@class Promise;
+@class PMKPromise;
 
 @interface Timeline : NSObject
 
@@ -39,9 +39,9 @@
 
 - (id)initWithAccount:(ACAccount *)account type:(TimelineType)type;
 
-- (Promise *)refresh;
+- (PMKPromise *)refresh;
 
-- (Promise *)loadMoreTweets;
+- (PMKPromise *)loadMoreTweets;
 
 - (void)cancelAllRequests;
 

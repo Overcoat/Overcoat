@@ -78,7 +78,7 @@ static NSString * const kIdentifierKey = @"identifier";
 
 #pragma mark - Fetching tweets
 
-- (Promise *)refresh {
+- (PMKPromise *)refresh {
     NSDictionary *parameters = @{
         @"include_rts": @"true"
     };
@@ -94,7 +94,7 @@ static NSString * const kIdentifierKey = @"identifier";
     return [self.client fetchTimeline:self.type parameters:parameters];
 }
 
-- (Promise *)loadMoreTweets {
+- (PMKPromise *)loadMoreTweets {
     NSNumber *identifier = [self firstTweetIdentifier];
     NSAssert(identifier, @"loadMoreTweets should not be called when the cache is empty");
     

@@ -24,7 +24,7 @@
 #import "TimelineType.h"
 
 @class ACAccount;
-@class Promise;
+@class PMKPromise;
 
 @interface TwitterClient : OVCHTTPSessionManager
 
@@ -40,27 +40,27 @@
  
  @return A `Promise` that will `then` an array of `Tweet` objects.
  */
-- (Promise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
+- (PMKPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
 
 /**
  Fetches a cursored collection of user IDs for every user the specified user is following.
  
  @return A `Promise` that will `then` a `UserIdentifierCollection` object.
  */
-- (Promise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor;
+- (PMKPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor;
 
 /**
  Fetches a cursored collection of user IDs for every user following the specified user.
  
  @return A `Promise` that will `then` a `UserIdentifierCollection` object.
  */
-- (Promise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor;
+- (PMKPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor;
 
 /**
  Fetches fully-hydrated user objects for up to 100 users per request.
  
  @return A `Promise` that will `then` an array of `TwitterUser` objects.
  */
-- (Promise *)lookupUsersWithIdentifiers:(NSArray *)identifiers;
+- (PMKPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers;
 
 @end

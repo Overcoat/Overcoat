@@ -55,7 +55,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
 #pragma mark - Requests
 
-- (Promise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters {
+- (PMKPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters {
     NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timelineType)];
     
     return [self GET:path parameters:parameters].then(^(OVCResponse *response) {
@@ -63,7 +63,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (Promise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor {
+- (PMKPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"cursor": cursor ? [cursor stringValue] : @"-1",
@@ -75,7 +75,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (Promise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor {
+- (PMKPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"cursor": cursor ? [cursor stringValue] : @"-1",
@@ -87,7 +87,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (Promise *)lookupUsersWithIdentifiers:(NSArray *)identifiers {
+- (PMKPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"user_id": [identifiers componentsJoinedByString:@","]
