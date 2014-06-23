@@ -163,7 +163,7 @@ Add the following to your `Podfile` to install Overcoat with PromiseKit support:
 pod 'Overcoat/PromiseKit', '~>2.0'
 ```
 
-Now you can get `Promise` objects when making HTTP requests:
+Now you can get `PMKPromise` objects when making HTTP requests:
 
 ```objc
 #import <Overcoat/PromiseKit+Overcoat.h>
