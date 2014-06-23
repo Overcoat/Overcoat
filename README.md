@@ -1,7 +1,5 @@
 # Overcoat
 
-[![Build Status](https://travis-ci.org/gonzalezreal/Overcoat.png?branch=master)](https://travis-ci.org/gonzalezreal/Overcoat)
-
 Overcoat is a small but powerful library that makes creating REST clients simple and fun. It provides a simple API for making requests and mapping responses to model objects.
 
 Overcoat is built on top of [AFNetworking](https://github.com/AFNetworking/AFNetworking) and uses [Mantle](https://github.com/Mantle/Mantle) to map responses into plain or Core Data model objects.
