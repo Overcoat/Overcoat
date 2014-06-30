@@ -1,16 +1,18 @@
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
-  s.version  = '2.0.1'
+  s.version  = '2.0.2'
   s.license  = 'MIT'
   s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
   s.homepage = 'https://github.com/gonzalezreal/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com' }
   s.social_media_url = 'https://twitter.com/gonzalezreal'
-  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.1' }
+  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.2' }
   s.requires_arc = true
   
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
+  
+  s.default_subspec = 'NSURLSession'
   
   s.subspec 'Core' do |ss|
     ss.dependency 'AFNetworking', '~> 2.0'
@@ -31,7 +33,7 @@ Pod::Spec.new do |s|
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'Overcoat/NSURLSession'
-    ss.dependency 'PromiseKit'
+    ss.dependency 'PromiseKit', '0.9.10'
     
     ss.public_header_files = 'PromiseKit+Overcoat/*.h'
     ss.source_files = 'PromiseKit+Overcoat'

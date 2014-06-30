@@ -20,11 +20,7 @@ Overcoat supports OS X 10.8+ and iOS 6.0+. `OVCHTTPSessionManager` requires OS X
 Add the following to your `Podfile` and run `$ pod install`.
 
 ``` ruby
-# This installs all you need if you're targeting iOS 6.0 or OS X 10.8
-pod 'Overcoat/Core', '~>2.0'
-
-# For OS X 10.9+ or iOS 7.0+ use this one instead
-pod 'Overcoat/NSURLSession', '~>2.0'
+pod 'Overcoat', '~>2.0'
 ```
 
 If you don't have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
