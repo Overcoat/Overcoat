@@ -128,7 +128,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
                     break;
 
                 case OVCURLMatcherTypeAny:
-                    return n.class;
+                    return n.modelClass;
 
                 case OVCURLMatcherTypeNone:
                     // Do nothing
