@@ -110,6 +110,10 @@
 		99FADC88193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FADC89193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A89EAB6C7F8240FEB104924F /* libPods-Overcoat Mac Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */; };
+		AEB5762E19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */; };
+		AEB5762F19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */; };
+		AEB5763019CA01CB0015E1A1 /* OVCResponseClassURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */; };
+		AEB5763119CA01CB0015E1A1 /* OVCResponseClassURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */; };
 		CCC64A123EEF47108D555837 /* libPods-Overcoat iOS Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */; };
 		E9DA65292DFE4AB9B26F035D /* libPods-Overcoat iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */; };
 		F64D0785A564431698B984DB /* libPods-Overcoat Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */; };
@@ -202,6 +206,8 @@
 		99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; };
 		99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
 		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
+		AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseClassURLMatcher.m; sourceTree = "<group>"; };
+		AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponseClassURLMatcher.h; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF6D7554A32A4CA78D8458BB /* Pods-Overcoat Mac Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac Tests.xcconfig"; path = "Pods/Pods-Overcoat Mac Tests.xcconfig"; sourceTree = "<group>"; };
@@ -405,6 +411,8 @@
 				99CC4C28193C506400C19388 /* NSDictionary+Overcoat.m */,
 				99A746771925EE7600D35505 /* OVCURLMatcher.h */,
 				99A746781925EE7600D35505 /* OVCURLMatcher.m */,
+				AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */,
+				AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */,
 				99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */,
 				99482703189D63550039F2F3 /* OVCModelResponseSerializer.m */,
 				99482706189D63550039F2F3 /* OVCSocialRequestSerializer.h */,
@@ -453,6 +461,7 @@
 				9975E38A191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
 				8C23C3AD19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */,
 				8C23C3A61935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */,
+				AEB5763119CA01CB0015E1A1 /* OVCResponseClassURLMatcher.h in Headers */,
 				99E8441119337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B8193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9975E382191FCE690086C786 /* OVCHTTPRequestOperationManager.h in Headers */,
@@ -477,6 +486,7 @@
 				9975E389191FCED50086C786 /* OVCHTTPSessionManager.h in Headers */,
 				8C23C3AC19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h in Headers */,
 				8C23C3A51935478100E2F06D /* ReactiveCocoa+Overcoat.h in Headers */,
+				AEB5763019CA01CB0015E1A1 /* OVCResponseClassURLMatcher.h in Headers */,
 				99E8441019337751005280DA /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
 				9977C8B7193322360064FC0D /* PromiseKit+Overcoat.h in Headers */,
 				9948270A189D63550039F2F3 /* OVCModelResponseSerializer.h in Headers */,
@@ -773,6 +783,7 @@
 				99A7467B1925EE7600D35505 /* OVCURLMatcher.m in Sources */,
 				8C23C3AE19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */,
 				99CC4C2B193C506400C19388 /* NSDictionary+Overcoat.m in Sources */,
+				AEB5762E19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */,
 				9975E383191FCE690086C786 /* OVCHTTPRequestOperationManager.m in Sources */,
 				99482714189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
 				994BEDC019290E4D00B261DE /* OVCManagedStore.m in Sources */,
@@ -812,6 +823,7 @@
 				99482715189D63550039F2F3 /* OVCSocialRequestSerializer.m in Sources */,
 				8C23C3AF19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m in Sources */,
 				99CC4C2C193C506400C19388 /* NSDictionary+Overcoat.m in Sources */,
+				AEB5762F19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */,
 				9948270D189D63550039F2F3 /* OVCModelResponseSerializer.m in Sources */,
 				9975E38C191FCED50086C786 /* OVCHTTPSessionManager.m in Sources */,
 				994BEDC119290E4D00B261DE /* OVCManagedStore.m in Sources */,

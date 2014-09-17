@@ -24,6 +24,7 @@
 #import "OVCResponse.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
+#import "OVCResponseClassURLMatcher.h"
 
 @interface OVCHTTPRequestOperationManager ()
 
@@ -46,6 +47,10 @@
     [NSException raise:NSInvalidArgumentException
                 format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
     return nil; // Not reached
+}
+
++ (NSDictionary *)responseClassesByResourcePath {
+    return nil;
 }
 
 - (void)dealloc {
@@ -174,7 +179,12 @@
 - (void)setupResponseSerializer {
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
                                                   modelClassesByPath:[[self class] modelClassesByResourcePath]];
+    
+    OVCResponseClassURLMatcher *responseClassMatcher = [[self class] responseClassesByResourcePath] ? [[OVCResponseClassURLMatcher alloc] initWithBasePath:[self.baseURL path]
+                                                                                                                                     responseClassesByPath:[[self class] responseClassesByResourcePath]] : nil;
+    
     self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                           responseClassURLMatcher:responseClassMatcher
                                                               managedObjectContext:self.backgroundContext
                                                                      responseClass:[[self class] responseClass]
                                                                    errorModelClass:[[self class] errorModelClass]];

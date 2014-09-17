@@ -23,6 +23,7 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
+#import "OVCResponseClassURLMatcher.h"
 #import "OVCManagedObjectSerializingContainer.h"
 
 #import "NSError+OVCResponse.h"
@@ -33,6 +34,7 @@
 @interface OVCModelResponseSerializer ()
 
 @property (strong, nonatomic) OVCURLMatcher *URLMatcher;
+@property (strong, nonatomic) OVCResponseClassURLMatcher *URLResponseClassMatcher;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Class responseClass;
 @property (nonatomic) Class errorModelClass;
@@ -42,6 +44,7 @@
 @implementation OVCModelResponseSerializer
 
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCResponseClassURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass
@@ -54,6 +57,7 @@
     
     OVCModelResponseSerializer *serializer = [self serializerWithReadingOptions:0];
     serializer.URLMatcher = URLMatcher;
+    serializer.URLResponseClassMatcher = URLResponseClassMatcher;
     serializer.managedObjectContext = managedObjectContext;
     serializer.responseClass = responseClass;
     serializer.errorModelClass = errorModelClass;
@@ -80,16 +84,25 @@
     
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
     Class resultClass = Nil;
+    Class responseClass = Nil;
     
     if (!serializationError) {
         resultClass = [self.URLMatcher modelClassForURL:HTTPResponse.URL];
+        
+        if (self.URLResponseClassMatcher) {
+            responseClass = [self.URLResponseClassMatcher responseClassForURL:HTTPResponse.URL];
+        } else if (self.responseClass) {
+            responseClass = self.responseClass;
+        } else {
+            responseClass = [OVCResponse class];
+        }
     } else {
         resultClass = self.errorModelClass;
     }
     
-    OVCResponse *responseObject = [self.responseClass responseWithHTTPResponse:HTTPResponse
-                                                                    JSONObject:JSONObject
-                                                                   resultClass:resultClass];
+    OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
+                                                               JSONObject:JSONObject
+                                                              resultClass:resultClass];
     
     if (self.managedObjectContext) {
         id result = nil;

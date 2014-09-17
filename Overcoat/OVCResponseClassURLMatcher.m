@@ -1,6 +1,6 @@
-// Overcoat.h
+// OVCURLMatcher.m
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Copyright (c) 2014 Elias Turbay
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,26 +20,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
+#import "OVCResponseClassURLMatcher.h"
 
 #import "OVCResponse.h"
-#import "OVCURLMatcher.h"
-#import "OVCResponseClassURLMatcher.h"
-#import "OVCManagedObjectSerializingContainer.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCSocialRequestSerializer.h"
-#import "OVCManagedStore.h"
 
-#import "NSError+OVCResponse.h"
+@implementation OVCResponseClassURLMatcher
 
-#import "OVCHTTPRequestOperationManager.h"
+- (id)initWithBasePath:(NSString *)basePath responseClassesByPath:(NSDictionary *)responseClassesByPath {
+    self = [super initWithBasePath:basePath modelClassesByPath:responseClassesByPath];
+    
+    if (self) {
+        [responseClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class responseClass, BOOL *stop) {
+            NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
+        }];
+    }
+    
+    return self;
+}
 
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager.h"
-#endif
+#pragma mark - Matching
 
-#endif /* _OVERCOAT_H */
+- (Class)responseClassForURL:(NSURL *)url {
+    return [super modelClassForURL:url];
+}
+
+@end

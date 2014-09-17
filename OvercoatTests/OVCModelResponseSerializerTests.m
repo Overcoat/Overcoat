@@ -33,6 +33,7 @@
                                                   modelClassesByPath:modelClassesByPath];
     
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                   responseClassURLMatcher:nil
                                                       managedObjectContext:nil
                                                              responseClass:[OVCResponse class]
                                                            errorModelClass:[OVCErrorModel class]];
@@ -89,6 +90,7 @@
     
     OVCURLMatcher *matcher = self.serializer.URLMatcher;
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                   responseClassURLMatcher:nil
                                                       managedObjectContext:context
                                                              responseClass:[OVCResponse class]
                                                            errorModelClass:[OVCErrorModel class]];
