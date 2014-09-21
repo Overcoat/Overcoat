@@ -1,12 +1,12 @@
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
-  s.version  = '2.0.2'
+  s.version  = '2.0.3'
   s.license  = 'MIT'
   s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
   s.homepage = 'https://github.com/gonzalezreal/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com' }
   s.social_media_url = 'https://twitter.com/gonzalezreal'
-  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.2' }
+  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.3' }
   s.requires_arc = true
   
   s.ios.deployment_target = '6.0'
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Mantle', '~> 1.3'
     
     ss.public_header_files = 'Overcoat/*.h'
-    ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}',
+    ss.source_files = 'Overcoat/Overcoat.h', 'Overcoat/OVCResponse.{h,m}', 'Overcoat/NSError+OVCResponse.{h,m}', 'Overcoat/OVCURLMatcher.{h,m}', 'Overcoat/OVCResponseClassURLMatcher.{h,m}',
                       'Overcoat/OVC{ModelResponse,SocialRequest}Serializer.{h,m}', 'Overcoat/OVCManagedStore.{h,m}', 'Overcoat/OVCHTTPRequestOperationManager.{h,m}',
                       'Overcoat/OVCManagedObjectSerializingContainer.h', 'Overcoat/NSDictionary+Overcoat.{h,m}'
     ss.frameworks = 'Foundation', 'Accounts', 'Social', 'CoreData'

@@ -23,6 +23,7 @@
 #import <AFNetworking/AFNetworking.h>
 
 @class OVCURLMatcher;
+@class OVCResponseClassURLMatcher;
 @class NSManagedObjectContext;
 
 /**
@@ -35,6 +36,10 @@
  Matches URLs in HTTP responses with model classes.
  */
 @property (strong, nonatomic, readonly) OVCURLMatcher *URLMatcher;
+/**
+ Matches URLs in HTTP responses with response classes.
+ */
+@property (strong, nonatomic, readonly) OVCResponseClassURLMatcher *URLResponseClassMatcher;
 
 /**
  The managed object context used to insert model objects.
@@ -55,6 +60,7 @@
  Creates and returns model serializer.
  */
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCResponseClassURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass;
