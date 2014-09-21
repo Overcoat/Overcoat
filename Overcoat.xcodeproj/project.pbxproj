@@ -110,6 +110,14 @@
 		99FADC88193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		99FADC89193B9096005CC166 /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A89EAB6C7F8240FEB104924F /* libPods-Overcoat Mac Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */; };
+		AEABD08619CF401B004C77C4 /* OVCResponseClassPerPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEABD08519CF401B004C77C4 /* OVCResponseClassPerPathTest.m */; };
+		AEABD08719CF401B004C77C4 /* OVCResponseClassPerPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = AEABD08519CF401B004C77C4 /* OVCResponseClassPerPathTest.m */; };
+		AEABD08819CF4027004C77C4 /* envelop1_model.json in Resources */ = {isa = PBXBuildFile; fileRef = AEABD08119CF3EBE004C77C4 /* envelop1_model.json */; };
+		AEABD08919CF4027004C77C4 /* envelop2_model.json in Resources */ = {isa = PBXBuildFile; fileRef = AEABD08319CF3ECB004C77C4 /* envelop2_model.json */; };
+		AEABD08A19CF4028004C77C4 /* envelop1_model.json in Resources */ = {isa = PBXBuildFile; fileRef = AEABD08119CF3EBE004C77C4 /* envelop1_model.json */; };
+		AEABD08B19CF4028004C77C4 /* envelop2_model.json in Resources */ = {isa = PBXBuildFile; fileRef = AEABD08319CF3ECB004C77C4 /* envelop2_model.json */; };
+		AEABD08E19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEABD08D19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m */; };
+		AEABD08F19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = AEABD08D19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m */; };
 		AEB5762E19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */; };
 		AEB5762F19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */; };
 		AEB5763019CA01CB0015E1A1 /* OVCResponseClassURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */; };
@@ -206,6 +214,11 @@
 		99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; };
 		99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
 		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
+		AEABD08119CF3EBE004C77C4 /* envelop1_model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envelop1_model.json; sourceTree = "<group>"; };
+		AEABD08319CF3ECB004C77C4 /* envelop2_model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envelop2_model.json; sourceTree = "<group>"; };
+		AEABD08519CF401B004C77C4 /* OVCResponseClassPerPathTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseClassPerPathTest.m; sourceTree = "<group>"; };
+		AEABD08C19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCCustomEnvelopTestResponse.h; sourceTree = "<group>"; };
+		AEABD08D19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCCustomEnvelopTestResponse.m; sourceTree = "<group>"; };
 		AEB5762C19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseClassURLMatcher.m; sourceTree = "<group>"; };
 		AEB5762D19CA01CA0015E1A1 /* OVCResponseClassURLMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponseClassURLMatcher.h; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -277,6 +290,8 @@
 				994BEDC219291E5100B261DE /* error.json */,
 				994BEDC319291E5100B261DE /* model.json */,
 				994BEDC419291E5100B261DE /* models.json */,
+				AEABD08119CF3EBE004C77C4 /* envelop1_model.json */,
+				AEABD08319CF3ECB004C77C4 /* envelop2_model.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -364,6 +379,9 @@
 				99A746821926092300D35505 /* OVCTestModel.m */,
 				994BEDAD1928EDEF00B261DE /* OVCTestResponse.h */,
 				994BEDAE1928EDEF00B261DE /* OVCTestResponse.m */,
+				AEABD08C19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.h */,
+				AEABD08D19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m */,
+				AEABD08519CF401B004C77C4 /* OVCResponseClassPerPathTest.m */,
 				9942CD64189D6A9C00E064E3 /* Stubs */,
 				99697883189D53130064DF57 /* Supporting Files */,
 			);
@@ -624,6 +642,8 @@
 			files = (
 				994BEDC519291E5100B261DE /* error.json in Resources */,
 				994BEDC919291E5100B261DE /* models.json in Resources */,
+				AEABD08919CF4027004C77C4 /* envelop2_model.json in Resources */,
+				AEABD08819CF4027004C77C4 /* envelop1_model.json in Resources */,
 				994BEDC719291E5100B261DE /* model.json in Resources */,
 				99697887189D53130064DF57 /* InfoPlist.strings in Resources */,
 			);
@@ -643,6 +663,8 @@
 			files = (
 				994BEDC619291E5100B261DE /* error.json in Resources */,
 				994BEDCA19291E5100B261DE /* models.json in Resources */,
+				AEABD08B19CF4028004C77C4 /* envelop2_model.json in Resources */,
+				AEABD08A19CF4028004C77C4 /* envelop1_model.json in Resources */,
 				994BEDC819291E5100B261DE /* model.json in Resources */,
 				996978C1189D57580064DF57 /* InfoPlist.strings in Resources */,
 			);
@@ -804,12 +826,14 @@
 				994BEDCC19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
 				8C23C3B119354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				994BEDB419290AA700B261DE /* Test.xcdatamodeld in Sources */,
+				AEABD08619CF401B004C77C4 /* OVCResponseClassPerPathTest.m in Sources */,
 				99A7467E1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				99CBC854192F62F3003AF7CC /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
 				999CD48A1923C79B004045DC /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				9942CD72189D6B6D00E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				9951AD621927FF4000E65D97 /* OVCResponseTests.m in Sources */,
 				99A746831926092300D35505 /* OVCTestModel.m in Sources */,
+				AEABD08E19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m in Sources */,
 				8C23C39C1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -844,12 +868,14 @@
 				994BEDCD19294C9E00B261DE /* OVCHTTPSessionManagerTests.m in Sources */,
 				8C23C3B2193550B000E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				994BEDB519290AA700B261DE /* Test.xcdatamodeld in Sources */,
+				AEABD08719CF401B004C77C4 /* OVCResponseClassPerPathTest.m in Sources */,
 				99A7467F1926080300D35505 /* OVCURLMatcherTests.m in Sources */,
 				9977C89E1933161E0064FC0D /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
 				994BEDB01928EDEF00B261DE /* OVCTestResponse.m in Sources */,
 				9942CD73189D6BA700E064E3 /* OVCModelResponseSerializerTests.m in Sources */,
 				994BEDB11928F51D00B261DE /* OVCResponseTests.m in Sources */,
 				99A746841926092300D35505 /* OVCTestModel.m in Sources */,
+				AEABD08F19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m in Sources */,
 				8C23C3A91935484B00E2F06D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

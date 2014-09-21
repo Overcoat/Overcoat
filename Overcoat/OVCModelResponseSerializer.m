@@ -93,11 +93,10 @@
             responseClass = [self.URLResponseClassMatcher responseClassForURL:HTTPResponse.URL];
         } else if (self.responseClass) {
             responseClass = self.responseClass;
-        } else {
-            responseClass = [OVCResponse class];
-        }
+        } 
     } else {
         resultClass = self.errorModelClass;
+        responseClass = self.responseClass;
     }
     
     OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
