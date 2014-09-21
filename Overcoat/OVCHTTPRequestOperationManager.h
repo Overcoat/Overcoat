@@ -79,7 +79,7 @@
 #pragma clang diagnostic ignored "-Wcomment"
 /**
  Specifies how to map responses to different response classes. Not mandatory.
- It's intented to address the following case: https://github.com/gonzalezreal/Overcoat/issues/50
+ It's intended to address the following case: https://github.com/gonzalezreal/Overcoat/issues/50
  
  Subclasses can override this method and return a dictionary mapping resource paths to response
  classes. Consider the following example for a GitHub client:
