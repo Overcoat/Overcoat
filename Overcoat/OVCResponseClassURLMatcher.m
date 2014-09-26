@@ -26,11 +26,15 @@
 
 @implementation OVCResponseClassURLMatcher
 
-- (id)initWithBasePath:(NSString *)basePath responseClassesByPath:(NSDictionary *)responseClassesByPath {
+- (id)initWithBasePath:(NSString *)basePath
+ responseClassesByPath:(NSDictionary *)responseClassesByPath {
+    
     self = [super initWithBasePath:basePath modelClassesByPath:responseClassesByPath];
     
     if (self) {
-        [responseClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class responseClass, BOOL *stop) {
+        [responseClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path,
+                                                                   Class responseClass,
+                                                                   BOOL *stop) {
             NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
         }];
     }

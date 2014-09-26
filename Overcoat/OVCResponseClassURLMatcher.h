@@ -27,7 +27,8 @@
  */
 @interface OVCResponseClassURLMatcher : OVCURLMatcher
 
-- (id)initWithBasePath:(NSString *)basePath responseClassesByPath:(NSDictionary *)responseClassesByPath;
+- (id)initWithBasePath:(NSString *)basePath
+ responseClassesByPath:(NSDictionary *)responseClassesByPath;
 
 - (Class)responseClassForURL:(NSURL *)url;
 

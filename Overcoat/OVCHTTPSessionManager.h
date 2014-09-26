@@ -86,12 +86,12 @@
  Subclasses can override this method and return a dictionary mapping resource paths to response
  classes. Consider the following example for a GitHub client:
  
- + (NSDictionary *)responseClassesByResourcePath {
- return @{
- @"/users/*": [GTHUserResponse class],
- @"/orgs/*": [GTHOrganizationResponse class]
- }
- }
+    + (NSDictionary *)responseClassesByResourcePath {
+        return @{
+            @"/users/*": [GTHUserResponse class],
+            @"/orgs/*": [GTHOrganizationResponse class]
+        }
+    }
  
  Note that you can use `*` to match any text or `#` to match only digits.
  If a subclass override this method, the responseClass method will be ignored
