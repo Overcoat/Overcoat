@@ -27,7 +27,6 @@
 
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
-#import "OVCResponseClassURLMatcher.h"
 #import "OVCManagedObjectSerializingContainer.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCSocialRequestSerializer.h"

@@ -23,7 +23,6 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
-#import "OVCResponseClassURLMatcher.h"
 #import "OVCManagedObjectSerializingContainer.h"
 
 #import "NSError+OVCResponse.h"
@@ -34,7 +33,7 @@
 @interface OVCModelResponseSerializer ()
 
 @property (strong, nonatomic) OVCURLMatcher *URLMatcher;
-@property (strong, nonatomic) OVCResponseClassURLMatcher *URLResponseClassMatcher;
+@property (strong, nonatomic) OVCURLMatcher *URLResponseClassMatcher;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Class responseClass;
 @property (nonatomic) Class errorModelClass;
@@ -44,7 +43,7 @@
 @implementation OVCModelResponseSerializer
 
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVCResponseClassURLMatcher *)URLResponseClassMatcher
+                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass
@@ -90,7 +89,7 @@
         resultClass = [self.URLMatcher modelClassForURL:HTTPResponse.URL];
         
         if (self.URLResponseClassMatcher) {
-            responseClass = [self.URLResponseClassMatcher responseClassForURL:HTTPResponse.URL];
+            responseClass = [self.URLResponseClassMatcher modelClassForURL:HTTPResponse.URL];
         } else if (self.responseClass) {
             responseClass = self.responseClass;
         } 

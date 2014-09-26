@@ -24,7 +24,6 @@
 #import "OVCResponse.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
-#import "OVCResponseClassURLMatcher.h"
 
 @interface OVCHTTPRequestOperationManager ()
 
@@ -180,9 +179,19 @@
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
                                                   modelClassesByPath:[[self class] modelClassesByResourcePath]];
     
-    OVCResponseClassURLMatcher *responseClassMatcher = [[self class] responseClassesByResourcePath] ? [[OVCResponseClassURLMatcher alloc] initWithBasePath:[self.baseURL path]
-                                                                                                                                     responseClassesByPath:[[self class] responseClassesByResourcePath]] : nil;
-    
+    OVCURLMatcher *responseClassMatcher = nil;
+    if ([[self class] responseClassesByResourcePath]) {
+        // Check if all the classes used in responseClassesByResourcePath are
+        // subclasses of OVCResponse
+        [[[self class] responseClassesByResourcePath] enumerateKeysAndObjectsUsingBlock:^(NSString *path,
+                                                                                          Class responseClass,
+                                                                                          BOOL *stop) {
+            NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
+        }];
+        
+        responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
+                                                    modelClassesByPath:[[self class] responseClassesByResourcePath]];
+    }
     self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
                                                            responseClassURLMatcher:responseClassMatcher
                                                               managedObjectContext:self.backgroundContext
