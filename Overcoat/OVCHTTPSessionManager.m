@@ -50,6 +50,10 @@
     return nil; // Not reached
 }
 
++ (NSDictionary *)responseClassesByResourcePath {
+    return nil;
+}
+
 - (void)dealloc {
     if (self.contextObserver) {
         [[NSNotificationCenter defaultCenter] removeObserver:self.contextObserver];
@@ -199,7 +203,22 @@
 - (void)setupResponseSerializer {
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
                                                   modelClassesByPath:[[self class] modelClassesByResourcePath]];
+    
+    OVCURLMatcher *responseClassMatcher = nil;
+    if ([[self class] responseClassesByResourcePath]) {
+        // Check if all the classes used in responseClassesByResourcePath are
+        // subclasses of OVCResponse
+        [[[self class] responseClassesByResourcePath] enumerateKeysAndObjectsUsingBlock:^(NSString *path,
+                                                                                          Class responseClass,
+                                                                                          BOOL *stop) {
+            NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
+        }];
+        
+        responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
+                                                    modelClassesByPath:[[self class] responseClassesByResourcePath]];
+    }
     self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                           responseClassURLMatcher:responseClassMatcher
                                                               managedObjectContext:self.backgroundContext
                                                                      responseClass:[[self class] responseClass]
                                                                    errorModelClass:[[self class] errorModelClass]];

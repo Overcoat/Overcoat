@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.homepage = 'https://github.com/gonzalezreal/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com' }
   s.social_media_url = 'https://twitter.com/gonzalezreal'
-  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.2' }
+  s.source   = { :git => 'https://github.com/gonzalezreal/Overcoat.git', :tag => '2.0.3' }
   s.requires_arc = true
   
   s.ios.deployment_target = '6.0'

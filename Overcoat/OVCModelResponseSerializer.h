@@ -35,6 +35,10 @@
  Matches URLs in HTTP responses with model classes.
  */
 @property (strong, nonatomic, readonly) OVCURLMatcher *URLMatcher;
+/**
+ Matches URLs in HTTP responses with response classes.
+ */
+@property (strong, nonatomic, readonly) OVCURLMatcher *URLResponseClassMatcher;
 
 /**
  The managed object context used to insert model objects.
@@ -55,6 +59,7 @@
  Creates and returns model serializer.
  */
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass;
