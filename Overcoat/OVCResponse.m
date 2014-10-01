@@ -48,7 +48,7 @@
         response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:NULL];
         NSString *resultKeyPath = [[response class] resultKeyPathForJSONDictionary:JSONObject];
         if (resultKeyPath) {
-            result = [(NSDictionary *)JSONObject ovc_objectForKeyPath:resultKeyPath];
+            result = [JSONObject ovc_objectForKeyPath:resultKeyPath];
         } else {
             response = [[self alloc] init];
         }
