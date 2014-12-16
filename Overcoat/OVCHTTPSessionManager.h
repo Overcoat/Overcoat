@@ -165,7 +165,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(NSDictionary *)parameters
+                    parameters:(id)parameters
                     completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -182,7 +182,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(NSDictionary *)parameters
+                    parameters:(id)parameters
      constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                     completion:(void (^)(id response, NSError *error))completion;
 
@@ -198,7 +198,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
-                   parameters:(NSDictionary *)parameters
+                   parameters:(id)parameters
                    completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -213,7 +213,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (NSURLSessionDataTask *)PATCH:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -228,7 +228,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (NSURLSessionDataTask *)DELETE:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
                       completion:(void (^)(id response, NSError *error))completion;
 
 @end

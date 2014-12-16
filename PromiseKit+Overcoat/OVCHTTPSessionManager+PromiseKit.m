@@ -28,7 +28,7 @@
 
 @implementation OVCHTTPSessionManager (PromiseKit)
 
-- (PMKPromise *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters {
+- (PMKPromise *)GET:(NSString *)URLString parameters:(id)parameters {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
         [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
             if (error) {
@@ -52,7 +52,7 @@
     }];
 }
 
-- (PMKPromise *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters {
+- (PMKPromise *)POST:(NSString *)URLString parameters:(id)parameters {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
         [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
             if (error) {
@@ -65,7 +65,7 @@
 }
 
 - (PMKPromise *)POST:(NSString *)URLString
-       parameters:(NSDictionary *)parameters
+       parameters:(id)parameters
 constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
 {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
@@ -79,7 +79,7 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
     }];
 }
 
-- (PMKPromise *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters {
+- (PMKPromise *)PUT:(NSString *)URLString parameters:(id)parameters {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
         [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
             if (error) {
@@ -91,7 +91,7 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
     }];
 }
 
-- (PMKPromise *)PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters {
+- (PMKPromise *)PATCH:(NSString *)URLString parameters:(id)parameters {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
         [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
             if (error) {
@@ -103,7 +103,7 @@ constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
     }];
 }
 
-- (PMKPromise *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters {
+- (PMKPromise *)DELETE:(NSString *)URLString parameters:(id)parameters {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
         [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
             if (error) {

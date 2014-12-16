@@ -38,7 +38,7 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (PMKPromise *)GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)GET:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `HEAD` request.
@@ -58,7 +58,7 @@
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (PMKPromise *)POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)POST:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a multipart `POST` request.
@@ -70,7 +70,7 @@
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)POST:(NSString *)URLString
-       parameters:(NSDictionary *)parameters
+       parameters:(id)parameters
 constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
@@ -81,7 +81,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (PMKPromise *)PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)PUT:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `PATCH` request.
@@ -91,7 +91,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (PMKPromise *)PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)PATCH:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `DELETE` request.
@@ -101,6 +101,6 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
  
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (PMKPromise *)DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (PMKPromise *)DELETE:(NSString *)URLString parameters:(id)parameters;
 
 @end

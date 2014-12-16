@@ -123,7 +123,7 @@
 }
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(NSDictionary *)parameters
+                    parameters:(id)parameters
                     completion:(void (^)(id, NSError *))completion
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
@@ -138,7 +138,7 @@
 }
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(NSDictionary *)parameters
+                    parameters:(id)parameters
      constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
                     completion:(void (^)(id, NSError *))completion
 {
@@ -154,7 +154,7 @@
 }
 
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
-                   parameters:(NSDictionary *)parameters
+                   parameters:(id)parameters
                    completion:(void (^)(id, NSError *))completion
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PUT" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
@@ -169,7 +169,7 @@
 }
 
 - (NSURLSessionDataTask *)PATCH:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id, NSError *))completion
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"PATCH" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
@@ -184,7 +184,7 @@
 }
 
 - (NSURLSessionDataTask *)DELETE:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
                       completion:(void (^)(id, NSError *))completion
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:@"DELETE" URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];

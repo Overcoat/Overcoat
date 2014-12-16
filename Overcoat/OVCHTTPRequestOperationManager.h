@@ -135,7 +135,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -165,7 +165,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
                       completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -182,7 +182,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
        constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                       completion:(void (^)(id response, NSError *error))completion;
 
@@ -198,7 +198,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)PUT:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -213,7 +213,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
-                       parameters:(NSDictionary *)parameters
+                       parameters:(id)parameters
                        completion:(void (^)(id response, NSError *error))completion;
 
 /**
@@ -228,7 +228,7 @@
  @param completion A block to be executed when the request finishes.
  */
 - (AFHTTPRequestOperation *)DELETE:(NSString *)URLString
-                        parameters:(NSDictionary *)parameters
+                        parameters:(id)parameters
                         completion:(void (^)(id response, NSError *error))completion;
 
 @end
