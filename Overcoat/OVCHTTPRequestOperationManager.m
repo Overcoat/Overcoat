@@ -82,7 +82,7 @@
 #pragma mark - Making requests
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id, NSError *))completion
 {
     return [self GET:URLString parameters:parameters
@@ -108,7 +108,7 @@
 }
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
                       completion:(void (^)(id, NSError *))completion
 {
     return [self POST:URLString parameters:parameters
@@ -121,7 +121,7 @@
 }
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(NSDictionary *)parameters
+                      parameters:(id)parameters
        constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
                       completion:(void (^)(id, NSError *))completion
 {
@@ -135,7 +135,7 @@
 }
 
 - (AFHTTPRequestOperation *)PUT:(NSString *)URLString
-                     parameters:(NSDictionary *)parameters
+                     parameters:(id)parameters
                      completion:(void (^)(id, NSError *))completion
 {
     return [self PUT:URLString parameters:parameters
@@ -148,7 +148,7 @@
 }
 
 - (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
-                       parameters:(NSDictionary *)parameters
+                       parameters:(id)parameters
                        completion:(void (^)(id, NSError *))completion
 {
     return [self PATCH:URLString parameters:parameters
@@ -161,7 +161,7 @@
 }
 
 - (AFHTTPRequestOperation *)DELETE:(NSString *)URLString
-                        parameters:(NSDictionary *)parameters
+                        parameters:(id)parameters
                         completion:(void (^)(id, NSError *))completion
 {
     return [self DELETE:URLString parameters:parameters
