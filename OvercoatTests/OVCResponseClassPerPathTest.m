@@ -10,7 +10,6 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OVercoat/Overcoat.h>
 
-#import "TGRAsyncTestHelper.h"
 #import "OVCTestModel.h"
 #import "OVCTestResponse.h"
 #import "OVCCustomEnvelopTestResponse.h"
@@ -86,15 +85,18 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
     [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
@@ -114,15 +116,18 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
     [self.client GET:@"model_with_custom_envelop/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
