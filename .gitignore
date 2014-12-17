@@ -20,5 +20,3 @@ profile
 .idea
 #Cocoapods
 Pods
-
-Podfile.lock
