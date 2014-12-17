@@ -11,7 +11,6 @@
 #import <Overcoat/Overcoat.h>
 #import <Overcoat/ReactiveCocoa+Overcoat.h>
 
-#import "TGRAsyncTestHelper.h"
 #import "OVCTestModel.h"
 
 #pragma mark - ReactiveSessionManager
@@ -76,17 +75,16 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_GET:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"GET", request.HTTPMethod, @"should send a GET request");
@@ -103,18 +101,17 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
-    OVCResponse * __block response = nil;
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [[self.client rac_GET:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
+    [[self.client rac_GET:@"model/42" parameters:nil] subscribeError:^(NSError *e) {
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(error, @"should complete with an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    response = [error ovc_response];
+    OVCResponse *response = [error ovc_response];
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -131,17 +128,16 @@
                                              headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_HEAD:@"models" parameters:@{@"foo": @"bar"}] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertNil(response.result, @"should return an empty response");
     
     XCTAssertEqualObjects(@"HEAD", request.HTTPMethod, @"should send a HEAD request");
@@ -161,17 +157,16 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"POST", request.HTTPMethod, @"should send a POST request");
@@ -188,18 +183,17 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
-    OVCResponse * __block response = nil;
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
+    [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeError:^(NSError *e) {
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(error, @"should complete with an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    response = [error ovc_response];
+    OVCResponse *response = [error ovc_response];
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -217,17 +211,16 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"PUT", request.HTTPMethod, @"should send a PUT request");
@@ -244,18 +237,17 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
-    OVCResponse * __block response = nil;
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [[self.client rac_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
+    [[self.client rac_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeError:^(NSError *e) {
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(error, @"should complete with an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    response = [error ovc_response];
+    OVCResponse *response = [error ovc_response];
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -273,17 +265,16 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"PATCH", request.HTTPMethod, @"should send a PATCH request");
@@ -300,18 +291,17 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
-    OVCResponse * __block response = nil;
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [[self.client rac_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
+    [[self.client rac_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}] subscribeError:^(NSError *e) {
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(error, @"should complete with an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    response = [error ovc_response];
+    OVCResponse *response = [error ovc_response];
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -329,17 +319,16 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    NSError * __block error = nil;
     
     [[self.client rac_DELETE:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
         response = r;
-    } error:^(NSError *e) {
-        error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(response, @"should complete with a response");
-    XCTAssertNil(error, @"should not return an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
+    
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"DELETE", request.HTTPMethod, @"should send a DELETE request");
@@ -356,18 +345,17 @@
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
-    OVCResponse * __block response = nil;
+    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [[self.client rac_DELETE:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
-        response = r;
-    } error:^(NSError *e) {
+    [[self.client rac_DELETE:@"model/42" parameters:nil] subscribeError:^(NSError *e) {
         error = e;
+        [completed fulfill];
     }];
     
-    TGRAssertEventually(error, @"should complete with an error");
+    [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    response = [error ovc_response];
+    OVCResponse *response = [error ovc_response];
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
