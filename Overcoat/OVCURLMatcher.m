@@ -104,7 +104,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     for (NSString *u in pathComponents) {
         NSArray *list = node.children;
 
-        if (list.count == 0) break;
+        if (!list) break;
 
         node = nil;
 
