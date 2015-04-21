@@ -1,0 +1,74 @@
+PODS:
+  - AFNetworking (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.3.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.3.1)
+  - AFNetworking/Security (2.3.1)
+  - AFNetworking/Serialization (2.3.1)
+  - AFNetworking/UIKit (2.3.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - ChuzzleKit (1.0.2)
+  - Mantle (1.5):
+    - Mantle/extobjc
+  - Mantle/extobjc (1.5)
+  - OMGHTTPURLRQ (1.1):
+    - ChuzzleKit
+  - Overcoat/Core (2.0.2):
+    - AFNetworking (~> 2.0)
+    - Mantle (~> 1.3)
+  - Overcoat/NSURLSession (2.0.2):
+    - Overcoat/Core
+  - Overcoat/PromiseKit (2.0.2):
+    - Overcoat/Core
+    - Overcoat/NSURLSession
+    - PromiseKit (= 0.9.10)
+  - PromiseKit (0.9.10):
+    - PromiseKit/defaults
+  - PromiseKit/Accounts (0.9.10):
+    - PromiseKit/base
+  - PromiseKit/base (0.9.10)
+  - PromiseKit/defaults (0.9.10):
+    - PromiseKit/Foundation
+    - PromiseKit/UIKit
+  - PromiseKit/Foundation (0.9.10):
+    - ChuzzleKit
+    - OMGHTTPURLRQ
+    - PromiseKit/base
+  - PromiseKit/private (0.9.10)
+  - PromiseKit/UIKit (0.9.10):
+    - PromiseKit/base
+    - PromiseKit/private
+  - TGRDataSource (0.2)
+
+DEPENDENCIES:
+  - Overcoat/PromiseKit (from `../../`)
+  - PromiseKit/Accounts
+  - TGRDataSource
+
+EXTERNAL SOURCES:
+  Overcoat:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  ChuzzleKit: 9932e7e4576360ae6ed95f912e74d2ee4288626b
+  Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
+  OMGHTTPURLRQ: 23e6a85a484f7fe561ac8e181d3fe523c54dc010
+  Overcoat: 2d637f1d648709531f00c2e4cf68349be7a2921d
+  PromiseKit: 8c7c9fd5a326ba19f410a8912da58d6f9c6dc624
+  TGRDataSource: a38d9a72111d8dd9dc95ed08e5f3391c072f8f3d
+
+COCOAPODS: 0.33.1

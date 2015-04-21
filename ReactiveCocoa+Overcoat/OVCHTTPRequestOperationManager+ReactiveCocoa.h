@@ -35,7 +35,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_GET:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `HEAD` request.
@@ -45,7 +45,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `POST` request.
@@ -55,7 +55,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_POST:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a multipart `POST` request.
@@ -67,7 +67,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
+- (RACSignal *)rac_POST:(NSString *)URLString parameters:(id)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
  Enqueues a `PUT` request.
@@ -77,7 +77,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `PATCH` request.
@@ -87,7 +87,7 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `DELETE` request.
@@ -97,6 +97,6 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(id)parameters;
 
 @end

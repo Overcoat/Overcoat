@@ -141,10 +141,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.xcconfig"; path = "Pods/Pods-Overcoat iOS Tests.xcconfig"; sourceTree = "<group>"; };
+		0386FDC2903E1C862661B6F8 /* Pods-Overcoat iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat iOS/Pods-Overcoat iOS.release.xcconfig"; sourceTree = "<group>"; };
+		08A6950541AC26BFAE0AC419 /* Pods-Overcoat iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat iOS/Pods-Overcoat iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		22DFF06DC9E4B1CA4E03BCF3 /* Pods-Overcoat Mac Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat Mac Tests/Pods-Overcoat Mac Tests.release.xcconfig"; sourceTree = "<group>"; };
+		45F63F8031650A32E00B3461 /* Pods-Overcoat iOS Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat iOS Tests/Pods-Overcoat iOS Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		58492FE5CCBF4F43A1F47576 /* libPods-Overcoat Mac Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BED39F174F84D0B8A659E65 /* libPods-Overcoat Mac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat Mac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS.xcconfig"; path = "Pods/Pods-Overcoat iOS.xcconfig"; sourceTree = "<group>"; };
+		849D75BF3FDB12DDB8D33FEB /* Pods-Overcoat Mac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat Mac/Pods-Overcoat Mac.debug.xcconfig"; sourceTree = "<group>"; };
 		8C23C3951935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
 		8C23C3961935394200E2F06D /* OVCHTTPSessionManager+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
 		8C23C39B1935442000E2F06D /* OVCHTTPSessionManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerReactiveTests.m; sourceTree = "<group>"; };
@@ -152,11 +155,11 @@
 		8C23C3AA19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
 		8C23C3AB19354D4A00E2F06D /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
 		8C23C3B019354E6E00E2F06D /* OVCHTTPRequestOperationManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManagerReactiveTests.m; sourceTree = "<group>"; };
+		9586A05CA3BCBC228093A69C /* Pods-Overcoat Mac Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat Mac Tests/Pods-Overcoat Mac Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		9911A06C191E7C0200DFE29D /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
 		9911A06D191E7C0200DFE29D /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
 		9931076B1936159500B1F3F7 /* NSError+OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+OVCResponse.h"; sourceTree = "<group>"; };
 		9931076C1936159500B1F3F7 /* NSError+OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+OVCResponse.m"; sourceTree = "<group>"; };
-		9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGRAsyncTestHelper.h; sourceTree = "<group>"; };
 		9942CD71189D6B6C00E064E3 /* OVCModelResponseSerializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerTests.m; sourceTree = "<group>"; };
 		99482701189D63550039F2F3 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		99482702189D63550039F2F3 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
@@ -209,7 +212,7 @@
 		99E8440F19337751005280DA /* OVCHTTPSessionManager+PromiseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+PromiseKit.m"; sourceTree = "<group>"; };
 		99E8441419337977005280DA /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; };
 		99FADC87193B9096005CC166 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
-		A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.xcconfig"; path = "Pods/Pods-Overcoat Mac.xcconfig"; sourceTree = "<group>"; };
+		A4CE06BDD7D820D5B0DBBD0A /* Pods-Overcoat Mac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac.release.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat Mac/Pods-Overcoat Mac.release.xcconfig"; sourceTree = "<group>"; };
 		AEABD08119CF3EBE004C77C4 /* envelop1_model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envelop1_model.json; sourceTree = "<group>"; };
 		AEABD08319CF3ECB004C77C4 /* envelop2_model.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = envelop2_model.json; sourceTree = "<group>"; };
 		AEABD08519CF401B004C77C4 /* OVCResponseClassPerPathTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponseClassPerPathTest.m; sourceTree = "<group>"; };
@@ -217,8 +220,8 @@
 		AEABD08D19CF4223004C77C4 /* OVCCustomEnvelopTestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCCustomEnvelopTestResponse.m; sourceTree = "<group>"; };
 		B7ED865CC94447EE92E2E7EA /* libPods-Overcoat iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1B3D46C471439595923212 /* libPods-Overcoat iOS Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat iOS Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF6D7554A32A4CA78D8458BB /* Pods-Overcoat Mac Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat Mac Tests.xcconfig"; path = "Pods/Pods-Overcoat Mac Tests.xcconfig"; sourceTree = "<group>"; };
 		F5FD16B80EB64F249998A104 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7C1C08D75458C8F673B3C97 /* Pods-Overcoat iOS Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Overcoat iOS Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Overcoat iOS Tests/Pods-Overcoat iOS Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +269,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BDB6BA255B45B98073848A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				849D75BF3FDB12DDB8D33FEB /* Pods-Overcoat Mac.debug.xcconfig */,
+				A4CE06BDD7D820D5B0DBBD0A /* Pods-Overcoat Mac.release.xcconfig */,
+				9586A05CA3BCBC228093A69C /* Pods-Overcoat Mac Tests.debug.xcconfig */,
+				22DFF06DC9E4B1CA4E03BCF3 /* Pods-Overcoat Mac Tests.release.xcconfig */,
+				08A6950541AC26BFAE0AC419 /* Pods-Overcoat iOS.debug.xcconfig */,
+				0386FDC2903E1C862661B6F8 /* Pods-Overcoat iOS.release.xcconfig */,
+				45F63F8031650A32E00B3461 /* Pods-Overcoat iOS Tests.debug.xcconfig */,
+				F7C1C08D75458C8F673B3C97 /* Pods-Overcoat iOS Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8C23C3941935390900E2F06D /* ReactiveCocoa+Overcoat */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,10 +317,7 @@
 				99697882189D53130064DF57 /* OvercoatTests */,
 				9969786B189D53120064DF57 /* Frameworks */,
 				9969786A189D53120064DF57 /* Products */,
-				DF6D7554A32A4CA78D8458BB /* Pods-Overcoat Mac Tests.xcconfig */,
-				428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */,
-				A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */,
-				828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */,
+				1BDB6BA255B45B98073848A6 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -385,7 +400,6 @@
 		99697883189D53130064DF57 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9942CD6A189D6AD000E064E3 /* TGRAsyncTestHelper.h */,
 				99697884189D53130064DF57 /* OvercoatTests-Info.plist */,
 				99697885189D53130064DF57 /* InfoPlist.strings */,
 			);
@@ -675,7 +689,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Overcoat Mac-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Overcoat Mac/Pods-Overcoat Mac-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		196AFF90BAD74C4CA160FC66 /* Check Pods Manifest.lock */ = {
@@ -735,7 +749,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Overcoat iOS Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Overcoat iOS Tests/Pods-Overcoat iOS Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AEB1A08A69A04590ACE28A2E /* Copy Pods Resources */ = {
@@ -750,7 +764,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Overcoat Mac Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Overcoat Mac Tests/Pods-Overcoat Mac Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C83791244D3F4992BFE85740 /* Copy Pods Resources */ = {
@@ -765,7 +779,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-Overcoat iOS-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Overcoat iOS/Pods-Overcoat iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D3E08B093468427EA2565EC1 /* Check Pods Manifest.lock */ = {
@@ -973,7 +987,7 @@
 		};
 		9969788D189D53130064DF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */;
+			baseConfigurationReference = 08A6950541AC26BFAE0AC419 /* Pods-Overcoat iOS.debug.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/Overcoat.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -987,7 +1001,7 @@
 		};
 		9969788E189D53130064DF57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 828881207C504007B6FF0885 /* Pods-Overcoat iOS.xcconfig */;
+			baseConfigurationReference = 0386FDC2903E1C862661B6F8 /* Pods-Overcoat iOS.release.xcconfig */;
 			buildSettings = {
 				DSTROOT = /tmp/Overcoat.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1001,7 +1015,7 @@
 		};
 		99697890189D53130064DF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */;
+			baseConfigurationReference = 45F63F8031650A32E00B3461 /* Pods-Overcoat iOS Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1024,7 +1038,7 @@
 		};
 		99697891189D53130064DF57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 428EDE4D86B244229CC52289 /* Pods-Overcoat iOS Tests.xcconfig */;
+			baseConfigurationReference = F7C1C08D75458C8F673B3C97 /* Pods-Overcoat iOS Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1043,7 +1057,7 @@
 		};
 		996978BB189D55170064DF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */;
+			baseConfigurationReference = 849D75BF3FDB12DDB8D33FEB /* Pods-Overcoat Mac.debug.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1070,7 +1084,7 @@
 		};
 		996978BC189D55170064DF57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A581631C9D8548EAB5E65055 /* Pods-Overcoat Mac.xcconfig */;
+			baseConfigurationReference = A4CE06BDD7D820D5B0DBBD0A /* Pods-Overcoat Mac.release.xcconfig */;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1094,7 +1108,7 @@
 		};
 		996978BE189D55170064DF57 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF6D7554A32A4CA78D8458BB /* Pods-Overcoat Mac Tests.xcconfig */;
+			baseConfigurationReference = 9586A05CA3BCBC228093A69C /* Pods-Overcoat Mac Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Overcoat.framework/Versions/A/Overcoat";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -1120,7 +1134,7 @@
 		};
 		996978BF189D55170064DF57 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF6D7554A32A4CA78D8458BB /* Pods-Overcoat Mac Tests.xcconfig */;
+			baseConfigurationReference = 22DFF06DC9E4B1CA4E03BCF3 /* Pods-Overcoat Mac Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Overcoat.framework/Versions/A/Overcoat";
 				COMBINE_HIDPI_IMAGES = YES;

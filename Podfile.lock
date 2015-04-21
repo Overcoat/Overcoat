@@ -1,0 +1,61 @@
+PODS:
+  - AFNetworking (2.5.0):
+    - AFNetworking/NSURLConnection (= 2.5.0)
+    - AFNetworking/NSURLSession (= 2.5.0)
+    - AFNetworking/Reachability (= 2.5.0)
+    - AFNetworking/Security (= 2.5.0)
+    - AFNetworking/Serialization (= 2.5.0)
+    - AFNetworking/UIKit (= 2.5.0)
+  - AFNetworking/NSURLConnection (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.0)
+  - AFNetworking/Security (2.5.0)
+  - AFNetworking/Serialization (2.5.0)
+  - AFNetworking/UIKit (2.5.0):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Mantle (1.5.1):
+    - Mantle/extobjc (= 1.5.1)
+  - Mantle/extobjc (1.5.1)
+  - OHHTTPStubs (3.1.9):
+    - OHHTTPStubs/Core (= 3.1.9)
+  - OHHTTPStubs/Core (3.1.9)
+  - PromiseKit/base (1.2):
+    - PromiseKit/Promise
+    - PromiseKit/Until
+    - PromiseKit/When
+  - PromiseKit/Promise (1.2)
+  - PromiseKit/Until (1.2):
+    - PromiseKit/Promise
+    - PromiseKit/When
+  - PromiseKit/When (1.2):
+    - PromiseKit/Promise
+  - ReactiveCocoa (2.4.2):
+    - ReactiveCocoa/UI (= 2.4.2)
+  - ReactiveCocoa/Core (2.4.2):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.2)
+  - ReactiveCocoa/UI (2.4.2):
+    - ReactiveCocoa/Core
+
+DEPENDENCIES:
+  - AFNetworking (~> 2.5)
+  - Mantle (~> 1.5)
+  - OHHTTPStubs
+  - PromiseKit/base
+  - ReactiveCocoa
+
+SPEC CHECKSUMS:
+  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
+  Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
+  OHHTTPStubs: 3c9461386e3ebeaaff55d0291c820192eecad53f
+  PromiseKit: 89cb68ff4093e71221a63ca7272d427bf34c4560
+  ReactiveCocoa: 8418a82b67af2f1b7587baf29c329040a23c2063
+
+COCOAPODS: 0.35.0

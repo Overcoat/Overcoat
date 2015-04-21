@@ -90,9 +90,11 @@
         
         if (self.URLResponseClassMatcher) {
             responseClass = [self.URLResponseClassMatcher modelClassForURL:HTTPResponse.URL];
-        } else if (self.responseClass) {
+        }
+
+        if (!responseClass) {
             responseClass = self.responseClass;
-        } 
+        }
     } else {
         resultClass = self.errorModelClass;
         responseClass = self.responseClass;
