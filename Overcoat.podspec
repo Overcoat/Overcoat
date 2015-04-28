@@ -33,7 +33,7 @@ Pod::Spec.new do |s|
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'Overcoat/NSURLSession'
-    ss.dependency 'PromiseKit', '~>1.2'
+    ss.dependency 'PromiseKit/Promise', '~>1.2'
     
     ss.public_header_files = 'PromiseKit+Overcoat/*.h'
     ss.source_files = 'PromiseKit+Overcoat'
