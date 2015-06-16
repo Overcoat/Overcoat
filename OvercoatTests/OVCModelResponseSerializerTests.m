@@ -31,12 +31,19 @@
     
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:nil
                                                   modelClassesByPath:modelClassesByPath];
-    
+
+#if OVERCOAT_SUPPORT_COREDATA
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
                                                    responseClassURLMatcher:nil
                                                       managedObjectContext:nil
                                                              responseClass:[OVCResponse class]
                                                            errorModelClass:[OVCErrorModel class]];
+#else
+    self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                   responseClassURLMatcher:nil
+                                                             responseClass:[OVCResponse class]
+                                                           errorModelClass:[OVCErrorModel class]];
+#endif
 }
 
 - (void)tearDown {
@@ -45,6 +52,7 @@
     [super tearDown];
 }
 
+#if !OVERCOAT_SUPPORT_COREDATA
 - (void)testSuccessResponseSerialization {
     NSData *data = [NSJSONSerialization dataWithJSONObject:@{
                         @"name": @"Iron Man",
@@ -76,6 +84,7 @@
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return a OVCErrorModel result");
 }
 
+#else
 - (void)testManagedObjectModelSerialization {
     // Setup the Core Data stack
     
@@ -148,5 +157,6 @@
     
     [[NSNotificationCenter defaultCenter] removeObserver:observer];
 }
+#endif
 
 @end

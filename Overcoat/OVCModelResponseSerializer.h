@@ -23,7 +23,9 @@
 #import <AFNetworking/AFNetworking.h>
 
 @class OVCURLMatcher;
+#if OVERCOAT_SUPPORT_COREDATA
 @class NSManagedObjectContext;
+#endif
 
 /**
  AFJSONResponseSerializer subclass that validates and transforms a JSON response into a
@@ -41,11 +43,6 @@
 @property (strong, nonatomic, readonly) OVCURLMatcher *URLResponseClassMatcher;
 
 /**
- The managed object context used to insert model objects.
- */
-@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
-
-/**
  The class used to create responses. Must be `OVCResponse` or a subclass.
  */
 @property (nonatomic, readonly) Class responseClass;
@@ -60,8 +57,23 @@
  */
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
+                           responseClass:(Class)responseClass
+                         errorModelClass:(Class)errorModelClass;
+
+#if OVERCOAT_SUPPORT_COREDATA
+/**
+ The managed object context used to insert model objects.
+ */
+@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+/**
+ Creates and returns model serializer.
+ */
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass;
+#endif
 
 @end

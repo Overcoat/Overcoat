@@ -29,12 +29,20 @@
 #import "OVCURLMatcher.h"
 #import "OVCManagedObjectSerializingContainer.h"
 #import "OVCModelResponseSerializer.h"
-#import "OVCSocialRequestSerializer.h"
-#import "OVCManagedStore.h"
+#import "OVCUtilities.h"
 
 #import "NSError+OVCResponse.h"
 
 #import "OVCHTTPRequestOperationManager.h"
+
+#if OVERCOAT_SUPPORT_SOCIAL
+#import "OVCSocialRequestSerializer.h"
+#endif
+
+#if OVERCOAT_SUPPORT_COREDATA
+#import "MTLManagedObjectAdapter.h"
+#import "OVCManagedStore.h"
+#endif
 
 #if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
 ( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )

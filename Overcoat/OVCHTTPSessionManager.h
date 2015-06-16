@@ -24,7 +24,9 @@
 
 #if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
 
+#if OVERCOAT_SUPPORT_COREDATA
 @class NSManagedObjectContext;
+#endif
 
 /**
  `OVCHTTPSessionManager` provides methods to communicate with a web application over HTTP, mapping
@@ -32,10 +34,12 @@
  */
 @interface OVCHTTPSessionManager : AFHTTPSessionManager
 
+#if OVERCOAT_SUPPORT_COREDATA
 /**
  The managed object context that will be used to persist model objects parsed from a response.
  */
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+#endif
 
 /**
  Returns the class used to create responses.
@@ -101,6 +105,7 @@
 #pragma clang diagnostic pop
 + (NSDictionary *)responseClassesByResourcePath;
 
+#if OVERCOAT_SUPPORT_COREDATA
 /**
  Initializes the receiver with the specified base URL and managed object context.
  
@@ -118,6 +123,7 @@
 - (id)initWithBaseURL:(NSURL *)url
  managedObjectContext:(NSManagedObjectContext *)context
  sessionConfiguration:(NSURLSessionConfiguration *)configuration;
+#endif
 
 ///---------------------------
 /// @name Making HTTP Requests

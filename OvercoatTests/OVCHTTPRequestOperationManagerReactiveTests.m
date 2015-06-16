@@ -67,7 +67,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -93,7 +93,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -121,7 +121,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithData:nil
+        return [OHHTTPStubsResponse responseWithData:[NSData data]
                                           statusCode:200
                                              headers:@{@"Content-Type": @"application/json"}];
     }];
@@ -149,7 +149,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -175,7 +175,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -203,7 +203,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -229,7 +229,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -257,7 +257,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -283,7 +283,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -311,7 +311,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -337,7 +337,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
