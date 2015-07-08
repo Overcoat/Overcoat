@@ -24,6 +24,7 @@
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
+#if OVERCOAT_SUPPORT_SOCIAL
 /**
  Serializes requests for supported Social networking services and signs them using the user's social media accounts.
  */
@@ -54,3 +55,4 @@
 + (instancetype)serializerWithServiceType:(NSString *)serviceType;
 
 @end
+#endif

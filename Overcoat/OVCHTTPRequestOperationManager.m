@@ -25,10 +25,16 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
 
+#if OVERCOAT_SUPPORT_COREDATA
+#import <CoreData/CoreData.h>
+#endif
+
 @interface OVCHTTPRequestOperationManager ()
 
+#if OVERCOAT_SUPPORT_COREDATA
 @property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
 @property (strong, nonatomic) id contextObserver;
+#endif
 
 @end
 
@@ -53,19 +59,20 @@
 }
 
 - (void)dealloc {
+#if OVERCOAT_SUPPORT_COREDATA
     if (self.contextObserver) {
         [[NSNotificationCenter defaultCenter] removeObserver:self.contextObserver];
     }
+#endif
 }
 
+#if OVERCOAT_SUPPORT_COREDATA
 - (id)initWithBaseURL:(NSURL *)url {
     return [self initWithBaseURL:url managedObjectContext:nil];
 }
 
 - (id)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context {
-    self = [super initWithBaseURL:url];
-    
-    if (self) {
+    if (self = [super initWithBaseURL:url]) {
         _managedObjectContext = context;
         
         [self setupBackgroundContext];
@@ -74,6 +81,14 @@
     
     return self;
 }
+#else
+- (id)initWithBaseURL:(NSURL *)url {
+    if (self = [super initWithBaseURL:url]) {
+        [self setupResponseSerializer];
+    }
+    return self;
+}
+#endif
 
 - (void)cancelAllRequests {
     [self.operationQueue cancelAllOperations];
@@ -192,13 +207,21 @@
         responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
                                                     modelClassesByPath:[[self class] responseClassesByResourcePath]];
     }
+#if OVERCOAT_SUPPORT_COREDATA
     self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
                                                            responseClassURLMatcher:responseClassMatcher
                                                               managedObjectContext:self.backgroundContext
                                                                      responseClass:[[self class] responseClass]
                                                                    errorModelClass:[[self class] errorModelClass]];
+#else
+    self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
+                                                           responseClassURLMatcher:responseClassMatcher
+                                                                     responseClass:[[self class] responseClass]
+                                                                   errorModelClass:[[self class] errorModelClass]];
+#endif
 }
 
+#if OVERCOAT_SUPPORT_COREDATA
 - (void)setupBackgroundContext {
     if (self.managedObjectContext == nil) {
         return;
@@ -224,5 +247,6 @@
                                                            }];
                                                        }];
 }
+#endif
 
 @end
