@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <PromiseKit/PromiseKit.h>
+#import <PromiseKit/Promise.h>
 
 #ifndef _PROMISEKIT_OVERCOAT_H
 #define _PROMISEKIT_OVERCOAT_H
