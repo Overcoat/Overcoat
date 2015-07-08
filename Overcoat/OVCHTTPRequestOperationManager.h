@@ -22,7 +22,9 @@
 
 #import <AFNetworking/AFNetworking.h>
 
+#if OVERCOAT_SUPPORT_COREDATA
 @class NSManagedObjectContext;
+#endif
 
 /**
  `OVCHTTPRequestOperationManager` provides methods to communicate with a web application over HTTP,
@@ -30,10 +32,12 @@
  */
 @interface OVCHTTPRequestOperationManager : AFHTTPRequestOperationManager
 
+#if OVERCOAT_SUPPORT_COREDATA
 /**
  The managed object context that will be used to persist model objects parsed from a response.
  */
 @property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+#endif
 
 /**
  Returns the class used to create responses.
@@ -99,6 +103,7 @@
 #pragma clang diagnostic pop
 + (NSDictionary *)responseClassesByResourcePath;
 
+#if OVERCOAT_SUPPORT_COREDATA
 /**
  Initializes the receiver with the specified base URL and managed object context.
  
@@ -113,6 +118,7 @@
  @return An initialized client.
  */
 - (id)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context;
+#endif
 
 /**
  Cancels all outstanding requests.

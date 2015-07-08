@@ -79,7 +79,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"envelop1_model.json", nil);
+        NSString * path = OHPathForFile(@"envelop1_model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -110,7 +110,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"envelop2_model.json", nil);
+        NSString * path = OHPathForFile(@"envelop2_model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
