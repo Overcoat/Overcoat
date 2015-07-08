@@ -1,56 +1,82 @@
 PODS:
-  - AFNetworking (2.3.1):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.5.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-    - AFNetworking/UIKit
-  - AFNetworking/NSURLConnection (2.3.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.3.1):
-    - AFNetworking/Reachability
-    - AFNetworking/Security
-    - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.3.1)
-  - AFNetworking/Security (2.3.1)
-  - AFNetworking/Serialization (2.3.1)
-  - AFNetworking/UIKit (2.3.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
-  - ChuzzleKit (1.0.2)
-  - Mantle (1.5):
-    - Mantle/extobjc
-  - Mantle/extobjc (1.5)
-  - OMGHTTPURLRQ (1.1):
-    - ChuzzleKit
-  - Overcoat/Core (2.0.2):
-    - AFNetworking (~> 2.0)
-    - Mantle (~> 1.3)
-  - Overcoat/NSURLSession (2.0.2):
+  - Mantle (1.5.4):
+    - Mantle/extobjc (= 1.5.4)
+  - Mantle/extobjc (1.5.4)
+  - OMGHTTPURLRQ (2.1.3):
+    - OMGHTTPURLRQ/RQ (= 2.1.3)
+  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
+  - OMGHTTPURLRQ/RQ (2.1.3):
+    - OMGHTTPURLRQ/FormURLEncode
+    - OMGHTTPURLRQ/UserAgent
+  - OMGHTTPURLRQ/UserAgent (2.1.3)
+  - Overcoat/Core (2.1.1):
+    - AFNetworking (~> 2.5)
+    - Mantle (~> 1.5)
+  - Overcoat/NSURLSession (2.1.1):
     - Overcoat/Core
-  - Overcoat/PromiseKit (2.0.2):
+  - Overcoat/PromiseKit (2.1.1):
     - Overcoat/Core
     - Overcoat/NSURLSession
-    - PromiseKit (= 0.9.10)
-  - PromiseKit (0.9.10):
-    - PromiseKit/defaults
-  - PromiseKit/Accounts (0.9.10):
-    - PromiseKit/base
-  - PromiseKit/base (0.9.10)
-  - PromiseKit/defaults (0.9.10):
-    - PromiseKit/Foundation
-    - PromiseKit/UIKit
-  - PromiseKit/Foundation (0.9.10):
-    - ChuzzleKit
-    - OMGHTTPURLRQ
-    - PromiseKit/base
-  - PromiseKit/private (0.9.10)
-  - PromiseKit/UIKit (0.9.10):
-    - PromiseKit/base
-    - PromiseKit/private
+    - PromiseKit (~> 1.2)
+  - PromiseKit (1.6.0):
+    - PromiseKit/CALayer (= 1.6.0)
+    - PromiseKit/NSNotificationCenter (= 1.6.0)
+    - PromiseKit/NSURLConnection (= 1.6.0)
+    - PromiseKit/Pause (= 1.6.0)
+    - PromiseKit/UIActionSheet (= 1.6.0)
+    - PromiseKit/UIAlertView (= 1.6.0)
+    - PromiseKit/UIView (= 1.6.0)
+    - PromiseKit/UIViewController (= 1.6.0)
+    - PromiseKit/Until (= 1.6.0)
+    - PromiseKit/When (= 1.6.0)
+  - PromiseKit/ACAccountStore (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/Accounts (1.6.0):
+    - PromiseKit/ACAccountStore
+  - PromiseKit/CALayer (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/NSNotificationCenter (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/NSURLConnection (1.6.0):
+    - OMGHTTPURLRQ (~> 2.1)
+    - PromiseKit/Promise
+  - PromiseKit/Pause (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/Promise (1.6.0)
+  - PromiseKit/UIActionSheet (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIAlertView (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIView (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/UIViewController (1.6.0):
+    - PromiseKit/Promise
+  - PromiseKit/Until (1.6.0):
+    - PromiseKit/Promise
+    - PromiseKit/When
+  - PromiseKit/When (1.6.0):
+    - PromiseKit/Promise
   - TGRDataSource (0.2)
 
 DEPENDENCIES:
@@ -60,15 +86,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: ../../
+    :path: "../../"
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  ChuzzleKit: 9932e7e4576360ae6ed95f912e74d2ee4288626b
-  Mantle: c67a7e45e14196ed42b2a7cbb98ff6a9920e6b92
-  OMGHTTPURLRQ: 23e6a85a484f7fe561ac8e181d3fe523c54dc010
-  Overcoat: 2d637f1d648709531f00c2e4cf68349be7a2921d
-  PromiseKit: 8c7c9fd5a326ba19f410a8912da58d6f9c6dc624
-  TGRDataSource: a38d9a72111d8dd9dc95ed08e5f3391c072f8f3d
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
+  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
+  Overcoat: a8d02b26f11e72ca10b4d8d786f6df83b3277b28
+  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
+  TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 
-COCOAPODS: 0.33.1
+COCOAPODS: 0.37.2
