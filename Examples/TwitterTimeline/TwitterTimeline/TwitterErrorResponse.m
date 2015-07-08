@@ -22,6 +22,7 @@
 
 #import "TwitterErrorResponse.h"
 #import "TwitterError.h"
+#import <Overcoat/OVCUtilities.h>
 
 @implementation TwitterErrorResponse
 
@@ -39,8 +40,14 @@
     return @{};
 }
 
+#if OVERCOAT_USING_MANTLE_2
++ (NSValueTransformer *)errorsJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[TwitterError class]];
+}
+#else
 + (NSValueTransformer *)errorsJSONTransformer {
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[TwitterError class]];
 }
+#endif
 
 @end

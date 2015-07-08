@@ -20,9 +20,49 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Mantle (1.5.4):
-    - Mantle/extobjc (= 1.5.4)
-  - Mantle/extobjc (1.5.4)
+  - libextobjc (0.4.1):
+    - libextobjc/EXTADT (= 0.4.1)
+    - libextobjc/EXTConcreteProtocol (= 0.4.1)
+    - libextobjc/EXTKeyPathCoding (= 0.4.1)
+    - libextobjc/EXTNil (= 0.4.1)
+    - libextobjc/EXTSafeCategory (= 0.4.1)
+    - libextobjc/EXTScope (= 0.4.1)
+    - libextobjc/EXTSelectorChecking (= 0.4.1)
+    - libextobjc/EXTSynthesize (= 0.4.1)
+    - libextobjc/NSInvocation+EXT (= 0.4.1)
+    - libextobjc/NSMethodSignature+EXT (= 0.4.1)
+    - libextobjc/RuntimeExtensions (= 0.4.1)
+    - libextobjc/UmbrellaHeader (= 0.4.1)
+  - libextobjc/EXTADT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTConcreteProtocol (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTKeyPathCoding (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTNil (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSafeCategory (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTScope (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSelectorChecking (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/EXTSynthesize (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSInvocation+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/NSMethodSignature+EXT (0.4.1):
+    - libextobjc/RuntimeExtensions
+  - libextobjc/RuntimeExtensions (0.4.1)
+  - libextobjc/UmbrellaHeader (0.4.1)
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
+  - MTLManagedObjectAdapter (1.0):
+    - Mantle (~> 2.0)
+    - MTLManagedObjectAdapter/extobjc (= 1.0)
+  - MTLManagedObjectAdapter/extobjc (1.0):
+    - Mantle (~> 2.0)
   - OMGHTTPURLRQ (2.1.3):
     - OMGHTTPURLRQ/RQ (= 2.1.3)
   - OMGHTTPURLRQ/FormURLEncode (2.1.3)
@@ -30,15 +70,19 @@ PODS:
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
   - OMGHTTPURLRQ/UserAgent (2.1.3)
-  - Overcoat/Core (2.1.1):
+  - Overcoat/Core (2.2):
     - AFNetworking (~> 2.5)
-    - Mantle (~> 1.5)
-  - Overcoat/NSURLSession (2.1.1):
+    - Mantle (<= 3.0)
+  - Overcoat/CoreData (2.2):
+    - Overcoat/NSURLSession
+  - Overcoat/NSURLSession (2.2):
     - Overcoat/Core
-  - Overcoat/PromiseKit (2.1.1):
+  - Overcoat/PromiseKit (2.2):
     - Overcoat/Core
     - Overcoat/NSURLSession
     - PromiseKit (~> 1.2)
+  - Overcoat/Social (2.2):
+    - Overcoat/Core
   - PromiseKit (1.6.0):
     - PromiseKit/CALayer (= 1.6.0)
     - PromiseKit/NSNotificationCenter (= 1.6.0)
@@ -80,19 +124,26 @@ PODS:
   - TGRDataSource (0.2)
 
 DEPENDENCIES:
-  - Overcoat/PromiseKit (from `../../`)
+  - libextobjc
+  - Mantle (~> 2.0)
+  - MTLManagedObjectAdapter
+  - Overcoat/CoreData (from `../../Overcoat.podspec`)
+  - Overcoat/PromiseKit (from `../../Overcoat.podspec`)
+  - Overcoat/Social (from `../../Overcoat.podspec`)
   - PromiseKit/Accounts
   - TGRDataSource
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: "../../"
+    :path: "../../Overcoat.podspec"
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Mantle: 60acd0cd363e27d945bda0a6b8e90577112d28f3
+  libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
-  Overcoat: a8d02b26f11e72ca10b4d8d786f6df83b3277b28
+  Overcoat: 295c50698907cfb4ef8844ddf8d6ffb422a658e3
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 

@@ -21,20 +21,54 @@
 // THE SOFTWARE.
 
 #import "TwitterUser.h"
+#import <Overcoat/OVCUtilities.h>
 
 @implementation TwitterUser
 
-#pragma mark - MTLJSONSerializing
+#if OVERCOAT_USING_MANTLE_2
+
+#pragma mark - Using With Mantle 2.x -
+
+#pragma mark MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-               @"identifier": @"id",
-               @"screenName": @"screen_name",
-               @"profileImageURL": @"profile_image_url"
+        @"identifier": @"id",
+        @"name": @"name",
+        @"screenName": @"screen_name",
+        @"profileImageURL": @"profile_image_url"
     };
 }
 
-#pragma mark - MTLManagedObjectSerializing
+#pragma mark MTLManagedObjectSerializing
+
++ (NSString *)managedObjectEntityName {
+    return @"TwitterUser";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return [NSDictionary mtl_identityPropertyMapWithModel:self];
+}
+
++ (NSSet *)propertyKeysForManagedObjectUniquing {
+    return [NSSet setWithObject:@"identifier"];
+}
+
+#else
+
+#pragma mark - Using With Mantle 1.x -
+
+#pragma mark MTLJSONSerializing
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+        @"identifier": @"id",
+        @"screenName": @"screen_name",
+        @"profileImageURL": @"profile_image_url"
+    };
+}
+
+#pragma mark MTLManagedObjectSerializing
 
 + (NSString *)managedObjectEntityName {
     return @"TwitterUser";
@@ -47,5 +81,7 @@
 + (NSSet *)propertyKeysForManagedObjectUniquing {
     return [NSSet setWithObject:@"identifier"];
 }
+
+#endif
 
 @end
