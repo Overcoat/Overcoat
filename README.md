@@ -11,6 +11,9 @@ If you need to learn more about Mantle, we recommend these resources:
 
 **Overcoat 2.0** is the latest major release and introduces several API-breaking changes to support envelop and error responses, Core Data serialization, and a new method to specify how to map responses to model objects.
 
+Check who's using Overcoat [here](https://github.com/Overcoat/Overcoat/wiki/Who-uses-Overcoat).
+You're welcome to add your project/app into this wiki page.
+
 ## Requirements
 
 Overcoat supports OS X 10.8+ and iOS 6.0+. `OVCHTTPSessionManager` requires OS X 10.9+ or iOS 7.0+.
