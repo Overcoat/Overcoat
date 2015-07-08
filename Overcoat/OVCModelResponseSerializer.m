@@ -155,18 +155,19 @@
 - (void)saveResult:(id)result {
     NSParameterAssert(result);
     
-    NSArray *models = [result isKindOfClass:[NSArray class]] ? result : @[result];
-    for (MTLModel<MTLManagedObjectSerializing> *model in models) {
-        NSError *error = nil;
-        [MTLManagedObjectAdapter managedObjectFromModel:model
-                                   insertingIntoContext:self.managedObjectContext
-                                                  error:&error];
-        NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);
-    }
-    
     NSManagedObjectContext *context = self.managedObjectContext;
     
     [context performBlockAndWait:^{
+        NSArray *models = [result isKindOfClass:[NSArray class]] ? result : @[result];
+
+        for (MTLModel<MTLManagedObjectSerializing> *model in models) {
+            NSError *error = nil;
+            [MTLManagedObjectAdapter managedObjectFromModel:model
+                                       insertingIntoContext:context
+                                                      error:&error];
+            NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);
+        }
+
         if ([context hasChanges]) {
             NSError *error = nil;
             [context save:&error];
