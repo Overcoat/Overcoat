@@ -29,13 +29,13 @@ PODS:
   - MTLManagedObjectAdapter/extobjc (1.0):
     - Mantle (~> 2.0)
   - OHHTTPStubs (4.0.2)
-  - OMGHTTPURLRQ (2.1):
-    - OMGHTTPURLRQ/RQ (= 2.1)
-  - OMGHTTPURLRQ/FormURLEncode (2.1)
-  - OMGHTTPURLRQ/RQ (2.1):
+  - OMGHTTPURLRQ (2.1.3):
+    - OMGHTTPURLRQ/RQ (= 2.1.3)
+  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
+  - OMGHTTPURLRQ/RQ (2.1.3):
     - OMGHTTPURLRQ/FormURLEncode
     - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (2.1)
+  - OMGHTTPURLRQ/UserAgent (2.1.3)
   - Overcoat (2.2):
     - Overcoat/NSURLSession (= 2.2)
   - Overcoat/Core (2.2):
@@ -53,39 +53,39 @@ PODS:
     - Overcoat/Core
     - Overcoat/NSURLSession
     - ReactiveCocoa (~> 2.4)
-  - PromiseKit (1.5.3):
-    - PromiseKit/CALayer (= 1.5.3)
-    - PromiseKit/NSNotificationCenter (= 1.5.3)
-    - PromiseKit/NSURLConnection (= 1.5.3)
-    - PromiseKit/Pause (= 1.5.3)
-    - PromiseKit/UIActionSheet (= 1.5.3)
-    - PromiseKit/UIAlertView (= 1.5.3)
-    - PromiseKit/UIView (= 1.5.3)
-    - PromiseKit/UIViewController (= 1.5.3)
-    - PromiseKit/Until (= 1.5.3)
-    - PromiseKit/When (= 1.5.3)
-  - PromiseKit/CALayer (1.5.3):
+  - PromiseKit (1.6.0):
+    - PromiseKit/CALayer (= 1.6.0)
+    - PromiseKit/NSNotificationCenter (= 1.6.0)
+    - PromiseKit/NSURLConnection (= 1.6.0)
+    - PromiseKit/Pause (= 1.6.0)
+    - PromiseKit/UIActionSheet (= 1.6.0)
+    - PromiseKit/UIAlertView (= 1.6.0)
+    - PromiseKit/UIView (= 1.6.0)
+    - PromiseKit/UIViewController (= 1.6.0)
+    - PromiseKit/Until (= 1.6.0)
+    - PromiseKit/When (= 1.6.0)
+  - PromiseKit/CALayer (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/NSNotificationCenter (1.5.3):
+  - PromiseKit/NSNotificationCenter (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/NSURLConnection (1.5.3):
-    - OMGHTTPURLRQ
+  - PromiseKit/NSURLConnection (1.6.0):
+    - OMGHTTPURLRQ (~> 2.1)
     - PromiseKit/Promise
-  - PromiseKit/Pause (1.5.3):
+  - PromiseKit/Pause (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/Promise (1.5.3)
-  - PromiseKit/UIActionSheet (1.5.3):
+  - PromiseKit/Promise (1.6.0)
+  - PromiseKit/UIActionSheet (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/UIAlertView (1.5.3):
+  - PromiseKit/UIAlertView (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/UIView (1.5.3):
+  - PromiseKit/UIView (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/UIViewController (1.5.3):
+  - PromiseKit/UIViewController (1.6.0):
     - PromiseKit/Promise
-  - PromiseKit/Until (1.5.3):
+  - PromiseKit/Until (1.6.0):
     - PromiseKit/Promise
     - PromiseKit/When
-  - PromiseKit/When (1.5.3):
+  - PromiseKit/When (1.6.0):
     - PromiseKit/Promise
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
@@ -113,9 +113,9 @@ SPEC CHECKSUMS:
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
-  OMGHTTPURLRQ: f8c515dfd2f57a5d74c710978f600231f52afec5
+  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
   Overcoat: 295c50698907cfb4ef8844ddf8d6ffb422a658e3
-  PromiseKit: 7ecae7c190ab92ae00aae6ba7f88942107532b8f
+  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.37.2
