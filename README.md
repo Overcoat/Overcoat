@@ -202,8 +202,8 @@ Check the `Makefile` to run other test target.
 
 ## Contact
 
-[Guillermo Gonzalez](https://github.com/gonzalezreal), [@gonzalezreal](https://twitter.com/gonzalezreal)
-[sodastsai](https://github.com/sodastsai), [@sodastsai](https://twitter.com/sodastsai)
+* [Guillermo Gonzalez](https://github.com/gonzalezreal), [@gonzalezreal](https://twitter.com/gonzalezreal)
+* [sodastsai](https://github.com/sodastsai), [@sodastsai](https://twitter.com/sodastsai)
 
 ## License
 
