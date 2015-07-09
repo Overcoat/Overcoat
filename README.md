@@ -11,6 +11,9 @@ If you need to learn more about Mantle, we recommend these resources:
 
 **Overcoat 2.0** is the latest major release and introduces several API-breaking changes to support envelop and error responses, Core Data serialization, and a new method to specify how to map responses to model objects.
 
+Check who's using Overcoat [here](https://github.com/Overcoat/Overcoat/wiki/Who-uses-Overcoat).
+You're welcome to add your project/app into this wiki page.
+
 ## Requirements
 
 Overcoat supports OS X 10.8+ and iOS 6.0+. `OVCHTTPSessionManager` requires OS X 10.9+ or iOS 7.0+.
@@ -24,6 +27,10 @@ pod 'Overcoat', '~>2.0'
 ```
 
 If you don't have CocoaPods installed or integrated into your project, you can learn how to do so [here](http://cocoapods.org).
+
+#### NOTE
+
+Mantle currently supports both Mantle 1.x and 2.x. By default, it will choose **Mantle 2.x** while installing with CocoaPods. If you want to keep using _Mantle 1.x_, you also need to add ```pod 'Mantle', '~> 1.5'``` in your Podfile.
 
 ## Sample Code
 
@@ -104,6 +111,21 @@ You can then specify which response class to use in your client by overriding `+
 ```
 
 ### Core Data Serialization
+
+To support CoreData serialization, you have to use `CoreData` subspec like following line:
+
+``` ruby
+pod 'Overcoat/CoreData', '~>2.0'
+```
+
+CoreData support is not a default podspec of Mantle 2.0, so if you are using Mantle 2.0 and want use CoreData,
+also append following line to enable CoreData support of Mantle 2.0.
+(If you are usign Mantle 1.x, you don't have to add this line)
+
+```ruby
+pod 'MTLManagedObjectAdapter'
+```
+
 If you initialize your client with a valid `NSManagedObjectContext`, it will automatically persist any model object(s) parsed from a response, if the model supports Core Data serialization (that is, implements `MTLManagedObjectSerializing`).
 
 Note that, if you provide a context with an `NSMainQueueConcurrencyType`, a private context will be created to perform insertions in the background.
@@ -111,6 +133,7 @@ Note that, if you provide a context with an `NSMainQueueConcurrencyType`, a priv
 You can see Core Data Serialization in action in the [provided example](https://github.com/gonzalezreal/Overcoat/tree/master/Examples/TwitterTimeline).
 
 ### Making HTTP Requests
+
 Both `OVCHTTPRequestOperationManager` and `OVCHTTPSessionManager` provide the same methods for making HTTP requests.
 
 ```objc
@@ -167,16 +190,23 @@ Now you can get `PMKPromise` objects when making HTTP requests:
 });
 ```
 
-## Building the library
+## Testing the library
 
-In order to build the library and run unit tests, you will first need to install project dependencies by running `$ pod install` in the project directory.
+In order to build the library and run unit tests, you will first need to install 2 tools: `cocoapods` and `xctool`
+* cocoapods: https://cocoapods.org
+* xctool: https://github.com/facebook/xctool
 
-Once the process is complete open the generated `Overcoat.xcworkspace` with **Xcode**.
+After you setup these tools (or you already have these tools), you could run tests via
+```bash
+make test
+```
+
+Check the `Makefile` to run other test target.
 
 ## Contact
 
-[Guillermo Gonzalez](http://github.com/gonzalezreal)  
-[@gonzalezreal](https://twitter.com/gonzalezreal)
+* [Guillermo Gonzalez](https://github.com/gonzalezreal), [@gonzalezreal](https://twitter.com/gonzalezreal)
+* [sodastsai](https://github.com/sodastsai), [@sodastsai](https://twitter.com/sodastsai)
 
 ## License
 

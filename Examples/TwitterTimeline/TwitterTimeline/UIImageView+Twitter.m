@@ -23,7 +23,7 @@
 #import "UIImageView+Twitter.h"
 
 #import <AFNetworking/UIKit+AFNetworking.h>
-#import <Mantle/EXTScope.h>
+#import <libextobjc/EXTScope.h>
 
 static const NSTimeInterval kAnimationDuration = 0.2;
 static const UIViewAnimationOptions kAnimationOptions = UIViewAnimationOptionBeginFromCurrentState |

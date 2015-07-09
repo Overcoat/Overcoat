@@ -26,7 +26,7 @@
 #import "TimelineDataSource.h"
 
 #import <PromiseKit/PromiseKit.h>
-#import <Mantle/EXTScope.h>
+#import <libextobjc/EXTScope.h>
 
 static NSString * const kCellIdentifier = @"TweetCell";
 

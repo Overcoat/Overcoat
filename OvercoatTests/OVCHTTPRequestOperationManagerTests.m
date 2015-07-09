@@ -14,11 +14,11 @@
 
 #pragma mark - TestClient
 
-@interface TestClient : OVCHTTPRequestOperationManager
+@interface OVCHttpRequestOperationTestClient : OVCHTTPRequestOperationManager
 
 @end
 
-@implementation TestClient
+@implementation OVCHttpRequestOperationTestClient
 
 + (Class)errorModelClass {
     return [OVCErrorModel class];
@@ -37,7 +37,7 @@
 
 @interface OVCHTTPRequestOperationManagerTests : XCTestCase
 
-@property (strong, nonatomic) TestClient *client;
+@property (strong, nonatomic) OVCHttpRequestOperationTestClient *client;
 
 @end
 
@@ -45,7 +45,7 @@
 
 - (void)setUp {
     [super setUp];
-    self.client = [[TestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
+    self.client = [[OVCHttpRequestOperationTestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
 }
 
 - (void)tearDown {
@@ -76,7 +76,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -104,7 +104,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -133,7 +133,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        return [OHHTTPStubsResponse responseWithData:nil
+        return [OHHTTPStubsResponse responseWithData:[NSData data]
                                           statusCode:200
                                              headers:@{@"Content-Type": @"application/json"}];
     }];
@@ -163,7 +163,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -191,7 +191,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -220,7 +220,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -248,7 +248,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -277,7 +277,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -305,7 +305,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -334,7 +334,7 @@
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"model.json", nil);
+        NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:200
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -362,7 +362,7 @@
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"error.json", nil);
+        NSString * path = OHPathForFile(@"error.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
                                                 statusCode:401
                                                    headers:@{@"Content-Type": @"application/json"}];
@@ -382,71 +382,6 @@
     
     XCTAssertNotNil(error, @"should return an error");
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
-}
-
-- (void)testCoreDataSerialization {
-    // Setup the Core Data stack
-    
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
-    OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
-    
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
-    
-    // Observe changes in Core Data
-    
-    NSNotification * __block notification = nil;
-    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                                                                    object:context
-                                                                     queue:nil
-                                                                usingBlock:^(NSNotification *note) {
-                                                                    notification = note;
-                                                                }];
-    
-    // Setup client
-    
-    self.client = [[TestClient alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]
-                                 managedObjectContext:context];
-    
-    // Setup HTTP stub
-    
-    [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *request) {
-        return YES;
-    } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFileInBundle(@"models.json", nil);
-        return [OHHTTPStubsResponse responseWithFileAtPath:path
-                                                statusCode:200
-                                                   headers:@{@"Content-Type": @"application/json"}];
-    }];
-    
-    // Get models
-    
-    XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
-    OVCResponse * __block response = nil;
-    NSError * __block error = nil;
-    
-    [self.client GET:@"models" parameters:nil completion:^(OVCResponse *r, NSError *e) {
-        response = r;
-        error = e;
-        [completed fulfill];
-    }];
-    
-    [self waitForExpectationsWithTimeout:1 handler:nil];
-    
-    XCTAssertNil(error, @"should not return an error");
-    XCTAssertTrue([response.result isKindOfClass:[NSArray class]], @"should return an array of test models");
-    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCTestModel class]], @"should return an array of test models");
-    
-    NSDictionary *userInfo = [notification userInfo];
-    NSSet *objects = userInfo[NSInsertedObjectsKey];
-    
-    XCTAssertEqual(2U, [objects count], @"should insert two objects");
-    
-    for (NSManagedObject *object in objects) {
-        XCTAssertEqualObjects(@"TestModel", [[object entity] name], @"should insert TestModel objects");
-    }
-    [[NSNotificationCenter defaultCenter] removeObserver:observer];
 }
 
 @end

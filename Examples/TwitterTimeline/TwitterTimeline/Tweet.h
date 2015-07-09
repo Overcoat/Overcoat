@@ -22,6 +22,11 @@
 
 #import <Mantle/Mantle.h>
 
+#import <Overcoat/OVCUtilities.h>
+#if OVERCOAT_USING_MANTLE_2
+#import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
+#endif
+
 @class TwitterUser;
 
 @interface Tweet : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>

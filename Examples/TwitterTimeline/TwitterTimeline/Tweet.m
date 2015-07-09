@@ -22,18 +22,75 @@
 
 #import "Tweet.h"
 #import "TwitterUser.h"
-
 #import "NSDateFormatter+Twitter.h"
+#import <Overcoat/OVCUtilities.h>
 
 @implementation Tweet
 
-#pragma mark - MTLJSONSerializing
+#if OVERCOAT_USING_MANTLE_2
+
+#pragma mark - Using With Mantle 2.x -
+
+#pragma mark MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-               @"identifier": @"id",
-               @"createdAt": @"created_at",
-               @"retweetedStatus": @"retweeted_status"
+        @"identifier": @"id",
+        @"text": @"text",
+        @"createdAt": @"created_at",
+        @"retweetedStatus": @"retweeted_status",
+        @"user": @"user"
+    };
+}
+
++ (NSValueTransformer *)createdAtJSONTransformer {
+    return [MTLValueTransformer transformerUsingForwardBlock:^id(NSString *stringValue,
+                                                                 BOOL *success,
+                                                                 NSError *__autoreleasing *error) {
+        return [NSDateFormatter dateFromTwitterString:stringValue];
+    }];
+}
+
++ (NSValueTransformer *)retweetedStatusJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[Tweet class]];
+}
+
++ (NSValueTransformer *)userJSONTransformer {
+    return [MTLJSONAdapter dictionaryTransformerWithModelClass:[TwitterUser class]];
+}
+
+#pragma mark MTLManagedObjectSerializing
+
++ (NSString *)managedObjectEntityName {
+    return @"Tweet";
+}
+
++ (NSDictionary *)managedObjectKeysByPropertyKey {
+    return [NSDictionary mtl_identityPropertyMapWithModel:self];
+}
+
++ (NSSet *)propertyKeysForManagedObjectUniquing {
+    return [NSSet setWithObject:@"identifier"];
+}
+
++ (NSDictionary *)relationshipModelClassesByPropertyKey {
+    return @{
+        @"retweetedStatus": [Tweet class],
+        @"user": [TwitterUser class]
+    };
+}
+
+#else
+
+#pragma mark - Using With Mantle 1.x -
+
+#pragma mark MTLJSONSerializing
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+    return @{
+        @"identifier": @"id",
+        @"createdAt": @"created_at",
+        @"retweetedStatus": @"retweeted_status"
     };
 }
 
@@ -51,7 +108,7 @@
     return [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:[TwitterUser class]];
 }
 
-#pragma mark - MTLManagedObjectSerializing
+#pragma mark MTLManagedObjectSerializing
 
 + (NSString *)managedObjectEntityName {
     return @"Tweet";
@@ -67,9 +124,11 @@
 
 + (NSDictionary *)relationshipModelClassesByPropertyKey {
     return @{
-               @"retweetedStatus": [Tweet class],
-               @"user": [TwitterUser class]
+        @"retweetedStatus": [Tweet class],
+        @"user": [TwitterUser class]
     };
 }
+
+#endif
 
 @end

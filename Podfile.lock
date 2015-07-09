@@ -1,61 +1,80 @@
 PODS:
-  - AFNetworking (2.5.0):
-    - AFNetworking/NSURLConnection (= 2.5.0)
-    - AFNetworking/NSURLSession (= 2.5.0)
-    - AFNetworking/Reachability (= 2.5.0)
-    - AFNetworking/Security (= 2.5.0)
-    - AFNetworking/Serialization (= 2.5.0)
-    - AFNetworking/UIKit (= 2.5.0)
-  - AFNetworking/NSURLConnection (2.5.0):
+  - AFNetworking (2.5.4):
+    - AFNetworking/NSURLConnection (= 2.5.4)
+    - AFNetworking/NSURLSession (= 2.5.4)
+    - AFNetworking/Reachability (= 2.5.4)
+    - AFNetworking/Security (= 2.5.4)
+    - AFNetworking/Serialization (= 2.5.4)
+    - AFNetworking/UIKit (= 2.5.4)
+  - AFNetworking/NSURLConnection (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.5.0):
+  - AFNetworking/NSURLSession (2.5.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.5.0)
-  - AFNetworking/Security (2.5.0)
-  - AFNetworking/Serialization (2.5.0)
-  - AFNetworking/UIKit (2.5.0):
+  - AFNetworking/Reachability (2.5.4)
+  - AFNetworking/Security (2.5.4)
+  - AFNetworking/Serialization (2.5.4)
+  - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Mantle (1.5.1):
-    - Mantle/extobjc (= 1.5.1)
-  - Mantle/extobjc (1.5.1)
-  - OHHTTPStubs (3.1.9):
-    - OHHTTPStubs/Core (= 3.1.9)
-  - OHHTTPStubs/Core (3.1.9)
-  - PromiseKit/base (1.2):
-    - PromiseKit/Promise
-    - PromiseKit/Until
-    - PromiseKit/When
-  - PromiseKit/Promise (1.2)
-  - PromiseKit/Until (1.2):
-    - PromiseKit/Promise
-    - PromiseKit/When
-  - PromiseKit/When (1.2):
-    - PromiseKit/Promise
-  - ReactiveCocoa (2.4.2):
-    - ReactiveCocoa/UI (= 2.4.2)
-  - ReactiveCocoa/Core (2.4.2):
+  - Mantle (2.0.2):
+    - Mantle/extobjc (= 2.0.2)
+  - Mantle/extobjc (2.0.2)
+  - MTLManagedObjectAdapter (1.0):
+    - Mantle (~> 2.0)
+    - MTLManagedObjectAdapter/extobjc (= 1.0)
+  - MTLManagedObjectAdapter/extobjc (1.0):
+    - Mantle (~> 2.0)
+  - OHHTTPStubs (4.0.2)
+  - Overcoat (2.2):
+    - Overcoat/NSURLSession (= 2.2)
+  - Overcoat/Core (2.2):
+    - AFNetworking (~> 2.5)
+    - Mantle (<= 3.0)
+  - Overcoat/CoreData (2.2):
+    - Overcoat/NSURLSession
+  - Overcoat/NSURLSession (2.2):
+    - Overcoat/Core
+  - Overcoat/PromiseKit (2.2):
+    - Overcoat/Core
+    - Overcoat/NSURLSession
+    - PromiseKit/Promise (~> 1.2)
+  - Overcoat/ReactiveCocoa (2.2):
+    - Overcoat/Core
+    - Overcoat/NSURLSession
+    - ReactiveCocoa (~> 2.4)
+  - PromiseKit/Promise (1.6.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.4.2)
-  - ReactiveCocoa/UI (2.4.2):
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
-  - AFNetworking (~> 2.5)
-  - Mantle (~> 1.5)
+  - Mantle (~> 2.0)
+  - MTLManagedObjectAdapter
   - OHHTTPStubs
-  - PromiseKit/base
-  - ReactiveCocoa
+  - Overcoat (from `Overcoat.podspec`)
+  - Overcoat/CoreData (from `Overcoat.podspec`)
+  - Overcoat/PromiseKit (from `Overcoat.podspec`)
+  - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
+
+EXTERNAL SOURCES:
+  Overcoat:
+    :path: Overcoat.podspec
 
 SPEC CHECKSUMS:
-  AFNetworking: 0f54cb5d16ce38c1b76948faffb8d5fb705021c7
-  Mantle: d7c5ac734579ec751c58fecbf56189853056c58c
-  OHHTTPStubs: 3c9461386e3ebeaaff55d0291c820192eecad53f
-  PromiseKit: 89cb68ff4093e71221a63ca7272d427bf34c4560
-  ReactiveCocoa: 8418a82b67af2f1b7587baf29c329040a23c2063
+  AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
+  OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
+  Overcoat: ee3a639f3d12a26fdb3c441af246daee0231e869
+  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.37.2

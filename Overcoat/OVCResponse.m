@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "OVCResponse.h"
+#import "OVCUtilities.h"
 #import "NSDictionary+Overcoat.h"
 
 @interface OVCResponse ()
@@ -64,13 +65,20 @@
     if (result != nil) {
         if (resultClass != Nil) {
             NSValueTransformer *valueTransformer = nil;
-            
+
+#if OVERCOAT_USING_MANTLE_2
+            if ([result isKindOfClass:[NSDictionary class]]) {
+                valueTransformer = [MTLJSONAdapter dictionaryTransformerWithModelClass:resultClass];
+            } else if ([result isKindOfClass:[NSArray class]]) {
+                valueTransformer = [MTLJSONAdapter arrayTransformerWithModelClass:resultClass];
+            }
+#else
             if ([result isKindOfClass:[NSDictionary class]]) {
                 valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:resultClass];
             } else if ([result isKindOfClass:[NSArray class]]) {
                 valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:resultClass];
             }
-            
+#endif
             result = [valueTransformer transformedValue:result];
         }
         
@@ -83,10 +91,14 @@
 #pragma mark - MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
+#if OVERCOAT_USING_MANTLE_2
+    return @{};
+#else
     return @{
-               @"HTTPResponse": [NSNull null],
-               @"result": [NSNull null]
+        @"HTTPResponse": [NSNull null],
+        @"result": [NSNull null]
     };
+#endif
 }
 
 @end

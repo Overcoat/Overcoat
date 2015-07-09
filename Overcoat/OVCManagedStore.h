@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#if OVERCOAT_SUPPORT_COREDATA
 #import <CoreData/CoreData.h>
 
 /**
@@ -65,3 +66,4 @@
 - (id)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
 
 @end
+#endif

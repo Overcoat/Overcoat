@@ -43,8 +43,8 @@
         NSArray *accounts = [self accountsWithAccountType:type];
         return [PMKPromise promiseWithValue:accounts];
     }
-    
-    return [self promiseForAccountsWithType:type options:nil];
+
+    return [self requestAccessToAccountsWithType:type options:nil];
 }
 
 @end

@@ -20,47 +20,68 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+
 #import "OVCModelResponseSerializer.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
-#import "OVCManagedObjectSerializingContainer.h"
-
 #import "NSError+OVCResponse.h"
-
-#import <CoreData/CoreData.h>
 #import <Mantle/Mantle.h>
+
+#if OVERCOAT_SUPPORT_COREDATA
+#import <CoreData/CoreData.h>
+#import "MTLManagedObjectAdapter.h"
+#import "OVCManagedObjectSerializingContainer.h"
+#endif
+
 
 @interface OVCModelResponseSerializer ()
 
 @property (strong, nonatomic) OVCURLMatcher *URLMatcher;
 @property (strong, nonatomic) OVCURLMatcher *URLResponseClassMatcher;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic) Class responseClass;
 @property (nonatomic) Class errorModelClass;
+
+#if OVERCOAT_SUPPORT_COREDATA
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+#endif
 
 @end
 
 @implementation OVCModelResponseSerializer
 
+#if OVERCOAT_SUPPORT_COREDATA
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass
 {
+    OVCModelResponseSerializer *serializer = [self serializerWithURLMatcher:URLMatcher
+                                                    responseClassURLMatcher:URLResponseClassMatcher
+                                                              responseClass:responseClass
+                                                            errorModelClass:errorModelClass];
+    serializer.managedObjectContext = managedObjectContext;
+    return serializer;
+}
+#endif
+
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
+                           responseClass:(Class)responseClass
+                         errorModelClass:(Class)errorModelClass
+{
     NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
-    
+
     if (errorModelClass != Nil) {
         NSParameterAssert([errorModelClass isSubclassOfClass:[MTLModel class]]);
     }
-    
+
     OVCModelResponseSerializer *serializer = [self serializerWithReadingOptions:0];
     serializer.URLMatcher = URLMatcher;
     serializer.URLResponseClassMatcher = URLResponseClassMatcher;
-    serializer.managedObjectContext = managedObjectContext;
     serializer.responseClass = responseClass;
     serializer.errorModelClass = errorModelClass;
-    
+
     return serializer;
 }
 
@@ -103,7 +124,8 @@
     OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
                                                                JSONObject:JSONObject
                                                               resultClass:resultClass];
-    
+
+#if OVERCOAT_SUPPORT_COREDATA
     if (self.managedObjectContext) {
         id result = nil;
         
@@ -118,7 +140,8 @@
             [self saveResult:result];
         }
     }
-        
+#endif
+
     if (serializationError && error) {
         *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
     }
@@ -128,21 +151,23 @@
 
 #pragma mark - Private
 
+#if OVERCOAT_SUPPORT_COREDATA
 - (void)saveResult:(id)result {
     NSParameterAssert(result);
-    
-    NSArray *models = [result isKindOfClass:[NSArray class]] ? result : @[result];
-    for (MTLModel<MTLManagedObjectSerializing> *model in models) {
-        NSError *error = nil;
-        [MTLManagedObjectAdapter managedObjectFromModel:model
-                                   insertingIntoContext:self.managedObjectContext
-                                                  error:&error];
-        NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);
-    }
     
     NSManagedObjectContext *context = self.managedObjectContext;
     
     [context performBlockAndWait:^{
+        NSArray *models = [result isKindOfClass:[NSArray class]] ? result : @[result];
+
+        for (MTLModel<MTLManagedObjectSerializing> *model in models) {
+            NSError *error = nil;
+            [MTLManagedObjectAdapter managedObjectFromModel:model
+                                       insertingIntoContext:context
+                                                      error:&error];
+            NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);
+        }
+
         if ([context hasChanges]) {
             NSError *error = nil;
             [context save:&error];
@@ -150,5 +175,6 @@
         }
     }];
 }
+#endif
 
 @end
