@@ -1,4 +1,4 @@
-// OVCSocialRequestSerializer.h
+// Overcoat.h
 //
 // Copyright (c) 2013 Guillermo Gonzalez
 //
@@ -20,39 +20,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <AFNetworking/AFNetworking.h>
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
+#import <Foundation/Foundation.h>
+
+#ifndef _OVERCOAT_H
+#define _OVERCOAT_H
+
+#import "OVCResponse.h"
+#import "OVCURLMatcher.h"
+#import "OVCManagedObjectSerializingContainer.h"
+#import "OVCModelResponseSerializer.h"
+#import "OVCUtilities.h"
+
+#import "NSError+OVCResponse.h"
+
+#import "OVCHTTPRequestOperationManager.h"
 
 #if OVERCOAT_SUPPORT_SOCIAL
-/**
- Serializes requests for supported Social networking services and signs them using the user's social media accounts.
- */
-@interface OVCSocialRequestSerializer : AFHTTPRequestSerializer
-
-/**
- Account information used to sign requests.
- */
-@property (strong, nonatomic) ACAccount *account;
-
-/**
- The social networking service type. If `account` is set this property is ignored.
- */
-@property (copy, nonatomic) NSString *serviceType;
-
-/**
- Creates and returns a Social request serializer with the specified account.
- 
- @param account The account information that will be used to sign requests.
- */
-+ (instancetype)serializerWithAccount:(ACAccount *)account;
-
-/**
- Creates and returns a Social request serializer with the specified service type.
- 
- @param serviceType The social networking service type.
- */
-+ (instancetype)serializerWithServiceType:(NSString *)serviceType;
-
-@end
+#import "OVCSocialRequestSerializer.h"
 #endif
+
+#if OVERCOAT_SUPPORT_COREDATA
+#import "OVCManagedStore.h"
+#endif
+
+#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
+( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
+    #import "OVCHTTPSessionManager.h"
+#endif
+
+#endif /* _OVERCOAT_H */

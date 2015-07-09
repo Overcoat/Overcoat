@@ -1,6 +1,6 @@
-// OVCUtilities.h
+// OVCSocialRequestSerializer.h
 //
-// Copyright (c) 2014 Guillermo Gonzalez
+// Copyright (c) 2013 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,11 +20,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Foundation/Foundation.h>
-#import <Mantle/Mantle.h>
+#import <AFNetworking/AFNetworking.h>
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
-#if __has_include("MTLTransformerErrorHandling.h")  // This is a new header comes with Mantle 2.0
-#define OVERCOAT_USING_MANTLE_2 1
-#else
-#define OVERCOAT_USING_MANTLE_2 0
-#endif
+/**
+ Serializes requests for supported Social networking services and signs them using the user's social media accounts.
+ */
+@interface OVCSocialRequestSerializer : AFHTTPRequestSerializer
+
+/**
+ Account information used to sign requests.
+ */
+@property (strong, nonatomic) ACAccount *account;
+
+/**
+ The social networking service type. If `account` is set this property is ignored.
+ */
+@property (copy, nonatomic) NSString *serviceType;
+
+/**
+ Creates and returns a Social request serializer with the specified account.
+ 
+ @param account The account information that will be used to sign requests.
+ */
++ (instancetype)serializerWithAccount:(ACAccount *)account;
+
+/**
+ Creates and returns a Social request serializer with the specified service type.
+ 
+ @param serviceType The social networking service type.
+ */
++ (instancetype)serializerWithServiceType:(NSString *)serviceType;
+
+@end
