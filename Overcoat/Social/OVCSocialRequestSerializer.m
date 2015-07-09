@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#if OVERCOAT_SUPPORT_SOCIAL
 #import "OVCSocialRequestSerializer.h"
 
 #pragma mark -
@@ -254,4 +253,3 @@
 }
 
 @end
-#endif

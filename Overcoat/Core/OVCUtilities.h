@@ -1,6 +1,6 @@
-// Overcoat.h
+// OVCUtilities.h
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,32 +21,16 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Mantle/Mantle.h>
 
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
-
-#import "OVCResponse.h"
-#import "OVCURLMatcher.h"
-#import "OVCManagedObjectSerializingContainer.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCUtilities.h"
-
-#import "NSError+OVCResponse.h"
-
-#import "OVCHTTPRequestOperationManager.h"
-
-#if OVERCOAT_SUPPORT_SOCIAL
-#import "OVCSocialRequestSerializer.h"
+#if __has_include("MTLTransformerErrorHandling.h")  // This is a new header comes with Mantle 2.0
+#define OVERCOAT_USING_MANTLE_2 1
+#else
+#define OVERCOAT_USING_MANTLE_2 0
 #endif
 
-#if OVERCOAT_SUPPORT_COREDATA
-#import "MTLManagedObjectAdapter.h"
-#import "OVCManagedStore.h"
+#if __has_include("MTLManagedObjectAdapter.h")
+#define OVERCOAT_SUPPORT_COREDATA 1
+#else
+#define OVERCOAT_SUPPORT_COREDATA 0
 #endif
-
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager.h"
-#endif
-
-#endif /* _OVERCOAT_H */

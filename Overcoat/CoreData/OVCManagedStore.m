@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#if OVERCOAT_SUPPORT_COREDATA
 #import "OVCManagedStore.h"
 
 static NSString *OVCApplicationCachePath() {
@@ -128,4 +127,3 @@ static NSString *OVCApplicationCachePath() {
 }
 
 @end
-#endif
