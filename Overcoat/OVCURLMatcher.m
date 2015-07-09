@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, OVCURLMatcherType) {
     OVCURLMatcherTypeExact  = 0,
     OVCURLMatcherTypeNumber = 1,
     OVCURLMatcherTypeText   = 2,
+    OVCURLMatcherTypeAny    = 3
 };
 
 static BOOL OVCTextOnlyContainsDigits(NSString *text) {
@@ -126,6 +127,9 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
                     node = n;
                     break;
 
+                case OVCURLMatcherTypeAny:
+                    return n.modelClass;
+
                 case OVCURLMatcherTypeNone:
                     // Do nothing
                     break;
@@ -185,7 +189,9 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 				existingChild.type = OVCURLMatcherTypeNumber;
 			} else if ([token isEqualToString:@"*"]) {
 				existingChild.type = OVCURLMatcherTypeText;
-			} else {
+            } else if ([token isEqualToString:@"**"]) {
+                existingChild.type = OVCURLMatcherTypeAny;
+            } else {
 				existingChild.type = OVCURLMatcherTypeExact;
 			}
             
