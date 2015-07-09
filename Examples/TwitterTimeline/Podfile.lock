@@ -63,13 +63,6 @@ PODS:
     - MTLManagedObjectAdapter/extobjc (= 1.0)
   - MTLManagedObjectAdapter/extobjc (1.0):
     - Mantle (~> 2.0)
-  - OMGHTTPURLRQ (2.1.3):
-    - OMGHTTPURLRQ/RQ (= 2.1.3)
-  - OMGHTTPURLRQ/FormURLEncode (2.1.3)
-  - OMGHTTPURLRQ/RQ (2.1.3):
-    - OMGHTTPURLRQ/FormURLEncode
-    - OMGHTTPURLRQ/UserAgent
-  - OMGHTTPURLRQ/UserAgent (2.1.3)
   - Overcoat/Core (2.2):
     - AFNetworking (~> 2.5)
     - Mantle (<= 3.0)
@@ -80,47 +73,14 @@ PODS:
   - Overcoat/PromiseKit (2.2):
     - Overcoat/Core
     - Overcoat/NSURLSession
-    - PromiseKit (~> 1.2)
+    - PromiseKit/Promise (~> 1.2)
   - Overcoat/Social (2.2):
     - Overcoat/Core
-  - PromiseKit (1.6.0):
-    - PromiseKit/CALayer (= 1.6.0)
-    - PromiseKit/NSNotificationCenter (= 1.6.0)
-    - PromiseKit/NSURLConnection (= 1.6.0)
-    - PromiseKit/Pause (= 1.6.0)
-    - PromiseKit/UIActionSheet (= 1.6.0)
-    - PromiseKit/UIAlertView (= 1.6.0)
-    - PromiseKit/UIView (= 1.6.0)
-    - PromiseKit/UIViewController (= 1.6.0)
-    - PromiseKit/Until (= 1.6.0)
-    - PromiseKit/When (= 1.6.0)
   - PromiseKit/ACAccountStore (1.6.0):
     - PromiseKit/Promise
   - PromiseKit/Accounts (1.6.0):
     - PromiseKit/ACAccountStore
-  - PromiseKit/CALayer (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/NSNotificationCenter (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/NSURLConnection (1.6.0):
-    - OMGHTTPURLRQ (~> 2.1)
-    - PromiseKit/Promise
-  - PromiseKit/Pause (1.6.0):
-    - PromiseKit/Promise
   - PromiseKit/Promise (1.6.0)
-  - PromiseKit/UIActionSheet (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/UIAlertView (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/UIView (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/UIViewController (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/Until (1.6.0):
-    - PromiseKit/Promise
-    - PromiseKit/When
-  - PromiseKit/When (1.6.0):
-    - PromiseKit/Promise
   - TGRDataSource (0.2)
 
 DEPENDENCIES:
@@ -142,8 +102,7 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
-  OMGHTTPURLRQ: c4268dea4295b585d711055dbcd87bfa82badd5f
-  Overcoat: 295c50698907cfb4ef8844ddf8d6ffb422a658e3
+  Overcoat: ee3a639f3d12a26fdb3c441af246daee0231e869
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 
