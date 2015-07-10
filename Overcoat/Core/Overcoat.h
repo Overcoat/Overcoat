@@ -22,31 +22,24 @@
 
 #import <Foundation/Foundation.h>
 
-#ifndef _OVERCOAT_H
-#define _OVERCOAT_H
+#import <Overcoat/OVCResponse.h>
+#import <Overcoat/OVCURLMatcher.h>
+#import <Overcoat/OVCManagedObjectSerializingContainer.h>
+#import <Overcoat/OVCModelResponseSerializer.h>
+#import <Overcoat/OVCUtilities.h>
 
-#import "OVCResponse.h"
-#import "OVCURLMatcher.h"
-#import "OVCManagedObjectSerializingContainer.h"
-#import "OVCModelResponseSerializer.h"
-#import "OVCUtilities.h"
+#import <Overcoat/NSError+OVCResponse.h>
 
-#import "NSError+OVCResponse.h"
-
-#import "OVCHTTPRequestOperationManager.h"
+#import <Overcoat/OVCHTTPRequestOperationManager.h>
 
 #if OVERCOAT_SUPPORT_SOCIAL
-#import "OVCSocialRequestSerializer.h"
+#import <Overcoat/OVCSocialRequestSerializer.h>
 #endif
 
 #if OVERCOAT_SUPPORT_COREDATA
-#import "MTLManagedObjectAdapter.h"
-#import "OVCManagedStore.h"
+#import <Overcoat/OVCManagedStore.h>
 #endif
 
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager.h"
+#if OVERCOAT_SUPPORT_URLSESSION
+#import <Overcoat/OVCHTTPSessionManager.h>
 #endif
-
-#endif /* _OVERCOAT_H */

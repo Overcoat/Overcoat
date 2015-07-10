@@ -21,15 +21,7 @@
 // THE SOFTWARE.
 
 #import <PromiseKit/Promise.h>
-
-#ifndef _PROMISEKIT_OVERCOAT_H
-#define _PROMISEKIT_OVERCOAT_H
-
-#import "OVCHTTPRequestOperationManager+PromiseKit.h"
-
-#if ( ( defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090) || \
-( defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000 ) )
-    #import "OVCHTTPSessionManager+PromiseKit.h"
-#endif
-
+#import <Overcoat/OVCHTTPRequestOperationManager+PromiseKit.h>
+#if OVERCOAT_SUPPORT_URLSESSION
+#import <Overcoat/OVCHTTPSessionManager+PromiseKit.h>
 #endif

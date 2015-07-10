@@ -20,9 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OVCHTTPSessionManager.h"
-
-#if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
+#import <Overcoat/OVCHTTPSessionManager.h>
 
 @class PMKPromise;
 
@@ -34,41 +32,41 @@
 
 /**
  Enqueues a `GET` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)GET:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `HEAD` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)HEAD:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `POST` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)POST:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a multipart `POST` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param block A block that takes a single argument and appends data to the HTTP body. The block
  argument is an object adopting the `AFMultipartFormData` protocol.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)POST:(NSString *)URLString
@@ -77,34 +75,32 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
  Enqueues a `PUT` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)PUT:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `PATCH` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)PATCH:(NSString *)URLString parameters:(id)parameters;
 
 /**
  Enqueues a `DELETE` request.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
- 
+
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
 - (PMKPromise *)DELETE:(NSString *)URLString parameters:(id)parameters;
 
 @end
-
-#endif
