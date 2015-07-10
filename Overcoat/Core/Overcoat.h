@@ -40,6 +40,7 @@
 #endif
 
 #if OVERCOAT_SUPPORT_COREDATA
+#import "MTLManagedObjectAdapter.h"
 #import "OVCManagedStore.h"
 #endif
 

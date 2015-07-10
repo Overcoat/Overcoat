@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.dependency 'AFNetworking', '~> 2.5'
-    ss.dependency 'Mantle', '~> 2.0'
+    ss.dependency 'Mantle', '<= 3.0'
 
     ss.public_header_files = 'Overcoat/Core/*.h'
     ss.source_files = 'Overcoat/Core/*.{h,m}'
@@ -25,10 +25,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'CoreData' do |ss|
     ss.dependency 'Overcoat/NSURLSession'
-    ss.dependency 'MTLManagedObjectAdapter', '~> 1.0'
     ss.public_header_files = 'Overcoat/CoreData/*.h'
     ss.source_files = 'Overcoat/CoreData/*.{h,m}'
     ss.frameworks = 'CoreData'
+    ss.xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => "OVERCOAT_SUPPORT_COREDATA=1"
+    }
   end
 
   s.subspec 'Social' do |ss|

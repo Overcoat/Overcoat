@@ -1,5 +1,5 @@
 // OVCResponse.m
-// 
+//
 // Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -43,25 +43,25 @@
 {
     OVCResponse *response = nil;
     id result = JSONObject;
-    
+
     if ([JSONObject isKindOfClass:[NSDictionary class]]) {
         response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:NULL];
         NSString *resultKeyPath = [[response class] resultKeyPathForJSONDictionary:JSONObject];
         if (resultKeyPath) {
-            result = [JSONObject ovc_objectForKeyPath:resultKeyPath];
+            result = [(NSDictionary *)JSONObject ovc_objectForKeyPath:resultKeyPath];
         } else {
             response = [[self alloc] init];
         }
     } else {
         response = [[self alloc] init];
     }
-    
+
     if (response == nil) {
         return nil;
     }
-    
+
     response.HTTPResponse = HTTPResponse;
-    
+
     if (result != nil) {
         if (resultClass != Nil) {
             NSValueTransformer *valueTransformer = nil;
@@ -81,10 +81,10 @@
 #endif
             result = [valueTransformer transformedValue:result];
         }
-        
+
         response.result = result;
     }
-    
+
     return response;
 }
 

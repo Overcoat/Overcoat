@@ -41,14 +41,14 @@
 
 /**
  Creates and returns a Social request serializer with the specified account.
- 
+
  @param account The account information that will be used to sign requests.
  */
 + (instancetype)serializerWithAccount:(ACAccount *)account;
 
 /**
  Creates and returns a Social request serializer with the specified service type.
- 
+
  @param serviceType The social networking service type.
  */
 + (instancetype)serializerWithServiceType:(NSString *)serviceType;

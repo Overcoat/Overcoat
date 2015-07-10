@@ -28,9 +28,3 @@
 #else
 #define OVERCOAT_USING_MANTLE_2 0
 #endif
-
-#if __has_include("MTLManagedObjectAdapter.h")
-#define OVERCOAT_SUPPORT_COREDATA 1
-#else
-#define OVERCOAT_SUPPORT_COREDATA 0
-#endif

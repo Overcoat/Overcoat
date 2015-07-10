@@ -1,5 +1,5 @@
 // OVCManagedStore.m
-// 
+//
 // Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -8,10 +8,10 @@
 // to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 // copies of the Software, and to permit persons to whom the Software is
 // furnished to do so, subject to the following conditions:
-// 
+//
 // The above copyright notice and this permission notice shall be included in
 // all copies or substantial portions of the Software.
-// 
+//
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 // FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -25,22 +25,22 @@
 static NSString *OVCApplicationCachePath() {
     static dispatch_once_t onceToken;
     static NSString *path;
-    
+
     dispatch_once(&onceToken, ^{
         path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
         path = [path stringByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
-        
+
         NSError *error = nil;
         BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:path
                                                  withIntermediateDirectories:YES
                                                                   attributes:nil
                                                                        error:&error];
-        
+
         if (!success) {
             NSLog(@"%s Error creating the application cache directory: %@", __PRETTY_FUNCTION__, error);
         }
     });
-    
+
     return path;
 }
 
@@ -60,15 +60,15 @@ static NSString *OVCApplicationCachePath() {
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (!_persistentStoreCoordinator) {
         _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
-        
+
         NSString *storeType = self.path ? NSSQLiteStoreType : NSInMemoryStoreType;
         NSURL *storeURL = self.path ? [NSURL fileURLWithPath:self.path] : nil;
-        
+
         NSDictionary *options = @{
             NSMigratePersistentStoresAutomaticallyOption: @YES,
             NSInferMappingModelAutomaticallyOption: @YES
         };
-        
+
         NSError *error = nil;
         NSPersistentStore *store = [_persistentStoreCoordinator addPersistentStoreWithType:storeType
                                                                              configuration:nil
@@ -79,7 +79,7 @@ static NSString *OVCApplicationCachePath() {
             NSLog(@"%@ Error creating persistent store: %@", self, error);
         }
     }
-    
+
     return _persistentStoreCoordinator;
 }
 
@@ -87,7 +87,7 @@ static NSString *OVCApplicationCachePath() {
     if (!_managedObjectModel) {
         _managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
     }
-    
+
     return _managedObjectModel;
 }
 
@@ -100,13 +100,13 @@ static NSString *OVCApplicationCachePath() {
 + (instancetype)temporaryManagedStore {
     NSString *fileName = [[NSProcessInfo processInfo] globallyUniqueString];
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
-    
+
     return [[self alloc] initWithPath:path managedObjectModel:nil];
 }
 
 + (instancetype)managedStoreWithCacheName:(NSString *)cacheName {
     NSParameterAssert(cacheName);
-    
+
     NSString *path = [OVCApplicationCachePath() stringByAppendingPathComponent:cacheName];
     return [[self alloc] initWithPath:path managedObjectModel:nil];
 }
@@ -117,12 +117,12 @@ static NSString *OVCApplicationCachePath() {
 
 - (id)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel {
     self = [super init];
-    
+
     if (self) {
         _path = [path copy];
         _managedObjectModel = managedObjectModel;
     }
-    
+
     return self;
 }
 
