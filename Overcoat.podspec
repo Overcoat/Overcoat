@@ -5,8 +5,8 @@ Pod::Spec.new do |s|
   s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
   s.homepage = 'https://github.com/overcoat/Overcoat'
   s.authors  = { 'Guillermo Gonzalez' => 'gonzalezreal@icloud.com', 'sodastsai' => 'sodas@icloud.com' }
-  #s.source   = { :git => 'https://github.com/overcoat/Overcoat.git', :tag => "#{s.version.to_s}" }
-  s.source = { :path => '/Users/sodas/Code/objc/Overcoat' }
+  # s.source   = { :git => 'https://github.com/overcoat/Overcoat.git', :tag => "#{s.version.to_s}" }
+  s.source   = { :git => 'https://github.com/sodastsai/Overcoat.git', :branch => "podfile-refinement" }
   s.requires_arc = true
 
   s.ios.deployment_target = '6.0'
@@ -29,15 +29,9 @@ Pod::Spec.new do |s|
       sss.public_header_files = 'Overcoat/CoreData/*.h'
       sss.source_files = 'Overcoat/CoreData/*.{h,m}'
       sss.frameworks = 'CoreData'
-      sss.prepare_command = <<-CMD
-      echo "#define OVERCOAT_SUPPORT_COREDATA 1" >> Overcoat/Core/OVCUtilities.h
-      CMD
-      # sss.user_target_xcconfig = {
-      #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',
-      # }
-      # sss.pod_target_xcconfig = {
-      #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',
-      # }
+      sss.user_target_xcconfig = sss.pod_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',
+      }
     end
 
     ss.subspec 'Mantle2' do |sss|
@@ -53,29 +47,18 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Overcoat/Social/*.h'
     ss.source_files = 'Overcoat/Social/*.{h,m}'
     ss.frameworks = 'Accounts', 'Social'
-    ss.prepare_command = <<-CMD
-    echo "#define OVERCOAT_SUPPORT_SOCIAL 1" >> Overcoat/Core/OVCUtilities.h
-    CMD
-    # ss.user_target_xcconfig = {
-    #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',
-    # }
-    # ss.pod_target_xcconfig = {
-    #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',
-    # }
+    ss.user_target_xcconfig = ss.pod_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',
+    }
   end
 
   s.subspec 'NSURLSession' do |ss|
     ss.dependency 'Overcoat/Core'
     ss.source_files = 'Overcoat/NSURLSession/OVCHTTPSessionManager.{h,m}'
-    sssprepare_command = <<-CMD
-    echo "#define OVERCOAT_SUPPORT_URLSESSION 1" >> Overcoat/Core/OVCUtilities.h
-    CMD
-    # ss.user_target_xcconfig = {
-    #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URLSESSION=1',
-    # }
-    # ss.pod_target_xcconfig = {
-    #   'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URLSESSION=1',
-    # }
+    ss.prefix_header_contents = "#define OVERCOAT_SUPPORT_URLSESSION 1"
+    ss.user_target_xcconfig = ss.pod_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URLSESSION=1',
+    }
   end
 
   s.subspec 'PromiseKit' do |ss|

@@ -22,24 +22,19 @@
 
 #import <Foundation/Foundation.h>
 
+#import <Overcoat/OVCUtilities.h>
 #import <Overcoat/OVCResponse.h>
 #import <Overcoat/OVCURLMatcher.h>
 #import <Overcoat/OVCManagedObjectSerializingContainer.h>
 #import <Overcoat/OVCModelResponseSerializer.h>
-#import <Overcoat/OVCUtilities.h>
-
 #import <Overcoat/NSError+OVCResponse.h>
-
 #import <Overcoat/OVCHTTPRequestOperationManager.h>
-
+#if OVERCOAT_SUPPORT_URLSESSION
+#import <Overcoat/OVCHTTPSessionManager.h>
+#endif
 #if OVERCOAT_SUPPORT_SOCIAL
 #import <Overcoat/OVCSocialRequestSerializer.h>
 #endif
-
 #if OVERCOAT_SUPPORT_COREDATA
 #import <Overcoat/OVCManagedStore.h>
-#endif
-
-#if OVERCOAT_SUPPORT_URLSESSION
-#import <Overcoat/OVCHTTPSessionManager.h>
 #endif
