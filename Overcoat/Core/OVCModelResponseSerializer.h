@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import <AFNetworking/AFNetworking.h>
+#import <Overcoat/OVCUtilities.h>
 
 @class OVCURLMatcher;
 #if OVERCOAT_SUPPORT_COREDATA

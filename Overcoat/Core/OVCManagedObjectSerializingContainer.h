@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Overcoat/OVCUtilities.h>
 
 #if OVERCOAT_SUPPORT_COREDATA
 /**

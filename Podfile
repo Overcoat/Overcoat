@@ -50,10 +50,11 @@ end
 target "Overcoat-#{os_type}-CoreData-Tests" do
   platform platform_type, os_version
   pod 'OHHTTPStubs'
-  pod 'Overcoat/CoreData', :path => overcoat_podspec_path
   pod 'Mantle', "~> #{mantle_version}"
 
   if mantle_version == '2.0'
-    pod 'MTLManagedObjectAdapter'
+    pod 'Overcoat/CoreData/Mantle2', :path => overcoat_podspec_path
+  else
+    pod 'Overcoat/CoreData', :path => overcoat_podspec_path
   end
 end

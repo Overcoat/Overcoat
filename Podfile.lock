@@ -34,8 +34,11 @@ PODS:
   - Overcoat/Core (2.2):
     - AFNetworking (~> 2.5)
     - Mantle (<= 3.0)
-  - Overcoat/CoreData (2.2):
+  - Overcoat/CoreData/Mantle1 (2.2):
     - Overcoat/NSURLSession
+  - Overcoat/CoreData/Mantle2 (2.2):
+    - MTLManagedObjectAdapter
+    - Overcoat/CoreData/Mantle1
   - Overcoat/NSURLSession (2.2):
     - Overcoat/Core
   - Overcoat/PromiseKit (2.2):
@@ -57,10 +60,9 @@ PODS:
 
 DEPENDENCIES:
   - Mantle (~> 2.0)
-  - MTLManagedObjectAdapter
   - OHHTTPStubs
   - Overcoat (from `Overcoat.podspec`)
-  - Overcoat/CoreData (from `Overcoat.podspec`)
+  - Overcoat/CoreData/Mantle2 (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
   - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
 
@@ -73,8 +75,8 @@ SPEC CHECKSUMS:
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
-  Overcoat: 6fd47b452a049b287a0e4b53d6b7fef45eb7d526
+  Overcoat: e4a98b0b45e8e074a763d7d226c6f58ae87e0280
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.0.beta.2
