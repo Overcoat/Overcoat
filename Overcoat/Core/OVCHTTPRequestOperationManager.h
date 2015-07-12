@@ -21,105 +21,13 @@
 // THE SOFTWARE.
 
 #import <AFNetworking/AFNetworking.h>
-#import <Overcoat/OVCUtilities.h>
-
-#if OVERCOAT_SUPPORT_COREDATA
-@class NSManagedObjectContext;
-#endif
+#import <Overcoat/OVCHTTPManager.h>
 
 /**
  `OVCHTTPRequestOperationManager` provides methods to communicate with a web application over HTTP,
- mapping responses into native model objects which can optionally be persisted in a Core Data store.
+ mapping responses into native model objects via Mantle
  */
-@interface OVCHTTPRequestOperationManager : AFHTTPRequestOperationManager
-
-#if OVERCOAT_SUPPORT_COREDATA
-/**
- The managed object context that will be used to persist model objects parsed from a response.
- */
-@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
-#endif
-
-/**
- Returns the class used to create responses.
-
- This method returns the `OVCResponse` class object by default. Subclasses can override this method
- and return a different `OVCResponse` subclass as needed.
-
- @return The class that used to create responses.
- */
-+ (Class)responseClass;
-
-/**
- Specifies a model class for server error responses.
-
- This method returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
- subclass that will be used to parse the JSON in an error response.
- */
-+ (Class)errorModelClass;
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wcomment"
-/**
- Specifies how to map responses to different model classes.
-
- Subclasses must override this method and return a dictionary mapping resource paths to model
- classes. Consider the following example for a GitHub client:
-
-    + (NSDictionary *)modelClassesByResourcePath {
-        return @{
-            @"/users/*": [GTHUser class],
-            @"/orgs/*": [GTHOrganization class]
-        }
-    }
-
- Note that you can use `*` to match any text or `#` to match only digits.
-
- @return A dictionary mapping resource paths to model classes.
- */
-#pragma clang diagnostic pop
-+ (NSDictionary *)modelClassesByResourcePath;
-
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wcomment"
-/**
- Specifies how to map responses to different response classes. Not mandatory.
- It's intended to address the following case: https://github.com/gonzalezreal/Overcoat/issues/50
-
- Subclasses can override this method and return a dictionary mapping resource paths to response
- classes. Consider the following example for a GitHub client:
-
-    + (NSDictionary *)responseClassesByResourcePath {
-        return @{
-            @"/users/*": [GTHUserResponse class],
-            @"/orgs/*": [GTHOrganizationResponse class]
-        }
-    }
-
- Note that you can use `*` to match any text or `#` to match only digits.
- If a subclass override this method, the responseClass method will be ignored
-
- @return A dictionary mapping resource paths to response classes.
- */
-#pragma clang diagnostic pop
-+ (NSDictionary *)responseClassesByResourcePath;
-
-#if OVERCOAT_SUPPORT_COREDATA
-/**
- Initializes the receiver with the specified base URL and managed object context.
-
- This is the designated initializer.
-
- @param url The base URL for the HTTP client.
- @param context An optional managed object context that will be used to persist model objects
-                parsed from a response. If the context concurrency type is not
-                `NSPrivateQueueConcurrencyType`, a private context will be used to perform
-                insertions in the background.
-
- @return An initialized client.
- */
-- (id)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context;
-#endif
+@interface OVCHTTPRequestOperationManager : AFHTTPRequestOperationManager <OVCHTTPManager>
 
 /**
  Cancels all outstanding requests.

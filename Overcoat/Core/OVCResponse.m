@@ -28,6 +28,7 @@
 
 @property (strong, nonatomic, readwrite) NSHTTPURLResponse *HTTPResponse;
 @property (strong, nonatomic, readwrite) id result;
+@property (strong, nonatomic, readwrite) Class resultClass;
 
 @end
 
@@ -85,6 +86,7 @@
         response.result = result;
     }
 
+    response.resultClass = resultClass;
     return response;
 }
 
@@ -96,7 +98,8 @@
 #else
     return @{
         @"HTTPResponse": [NSNull null],
-        @"result": [NSNull null]
+        @"result": [NSNull null],
+        @"resultClass": [NSNull null],
     };
 #endif
 }

@@ -24,23 +24,24 @@
 #import "OVCResponse.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
+#import "OVCHTTPManager_Internal.h"
 
-#if OVERCOAT_SUPPORT_COREDATA
-#import <CoreData/CoreData.h>
-#endif
-
-#if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
+#if OVERCOAT_SUPPORT_URLSESSION
 
 @interface OVCHTTPSessionManager ()
-
-#if OVERCOAT_SUPPORT_COREDATA
-@property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
-@property (strong, nonatomic) id contextObserver;
-#endif
 
 @end
 
 @implementation OVCHTTPSessionManager
+
+- (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {
+    if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
+        self.responseSerializer = OVCHTTPManagerCreateModelResponseSerializer(self);
+    }
+    return self;
+}
+
+#pragma mark - HTTP Manager Protocol
 
 + (Class)responseClass {
     return [OVCResponse class];
@@ -51,49 +52,15 @@
 }
 
 + (NSDictionary *)modelClassesByResourcePath {
-    [NSException raise:NSInvalidArgumentException
-                format:@"[%@ +%@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
-    return nil; // Not reached
+    [NSException
+     raise:NSInvalidArgumentException
+     format:@"+[%@ %@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
+    return nil;  // Not reached
 }
 
 + (NSDictionary *)responseClassesByResourcePath {
     return nil;
 }
-
-- (void)dealloc {
-#if OVERCOAT_SUPPORT_COREDATA
-    if (self.contextObserver) {
-        [[NSNotificationCenter defaultCenter] removeObserver:self.contextObserver];
-    }
-#endif
-}
-
-#if OVERCOAT_SUPPORT_COREDATA
-- (id)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {
-    return [self initWithBaseURL:url managedObjectContext:nil sessionConfiguration:configuration];
-}
-
-- (id)initWithBaseURL:(NSURL *)url
- managedObjectContext:(NSManagedObjectContext *)context
- sessionConfiguration:(NSURLSessionConfiguration *)configuration
-{
-    if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
-        _managedObjectContext = context;
-        
-        [self setupBackgroundContext];
-        [self setupResponseSerializer];
-    }
-    
-    return self;
-}
-#else
-- (id)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {
-    if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
-        [self setupResponseSerializer];
-    }
-    return self;
-}
-#endif
 
 #pragma mark - Making requests
 
@@ -212,67 +179,6 @@
     
     return task;
 }
-
-#pragma mark - Private
-
-- (void)setupResponseSerializer {
-    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
-                                                  modelClassesByPath:[[self class] modelClassesByResourcePath]];
-    
-    OVCURLMatcher *responseClassMatcher = nil;
-    if ([[self class] responseClassesByResourcePath]) {
-        // Check if all the classes used in responseClassesByResourcePath are
-        // subclasses of OVCResponse
-        [[[self class] responseClassesByResourcePath] enumerateKeysAndObjectsUsingBlock:^(NSString *path,
-                                                                                          Class responseClass,
-                                                                                          BOOL *stop) {
-            NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
-        }];
-        
-        responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:[self.baseURL path]
-                                                    modelClassesByPath:[[self class] responseClassesByResourcePath]];
-    }
-#if OVERCOAT_SUPPORT_COREDATA
-    self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
-                                                           responseClassURLMatcher:responseClassMatcher
-                                                              managedObjectContext:self.backgroundContext
-                                                                     responseClass:[[self class] responseClass]
-                                                                   errorModelClass:[[self class] errorModelClass]];
-#else
-    self.responseSerializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
-                                                           responseClassURLMatcher:responseClassMatcher
-                                                                     responseClass:[[self class] responseClass]
-                                                                   errorModelClass:[[self class] errorModelClass]];
-#endif
-}
-
-#if OVERCOAT_SUPPORT_COREDATA
-- (void)setupBackgroundContext {
-    if (self.managedObjectContext == nil) {
-        return;
-    }
-    
-    if ([self.managedObjectContext concurrencyType] == NSPrivateQueueConcurrencyType) {
-        self.backgroundContext = self.managedObjectContext;
-        return;
-    }
-    
-    self.backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    [self.backgroundContext setPersistentStoreCoordinator:self.managedObjectContext.persistentStoreCoordinator];
-    
-    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-    NSManagedObjectContext *context = self.managedObjectContext;
-    
-    self.contextObserver = [notificationCenter addObserverForName:NSManagedObjectContextDidSaveNotification
-                                                           object:self.backgroundContext
-                                                            queue:nil
-                                                       usingBlock:^(NSNotification *note) {
-                                                           [context performBlock:^{
-                                                               [context mergeChangesFromContextDidSaveNotification:note];
-                                                           }];
-                                                       }];
-}
-#endif
 
 @end
 

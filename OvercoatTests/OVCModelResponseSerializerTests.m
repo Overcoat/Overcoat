@@ -33,11 +33,11 @@
                                                   modelClassesByPath:modelClassesByPath];
 
 #if OVERCOAT_SUPPORT_COREDATA
-    self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
-                                                   responseClassURLMatcher:nil
-                                                      managedObjectContext:nil
-                                                             responseClass:[OVCResponse class]
-                                                           errorModelClass:[OVCErrorModel class]];
+    self.serializer = [OVCManagedModelResponseSerializer serializerWithURLMatcher:matcher
+                                                          responseClassURLMatcher:nil
+                                                             managedObjectContext:nil
+                                                                    responseClass:[OVCResponse class]
+                                                                  errorModelClass:[OVCErrorModel class]];
 #else
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
                                                    responseClassURLMatcher:nil
@@ -98,11 +98,11 @@
     // Setup the serializer
     
     OVCURLMatcher *matcher = self.serializer.URLMatcher;
-    self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
-                                                   responseClassURLMatcher:nil
-                                                      managedObjectContext:context
-                                                             responseClass:[OVCResponse class]
-                                                           errorModelClass:[OVCErrorModel class]];
+    self.serializer = [OVCManagedModelResponseSerializer serializerWithURLMatcher:matcher
+                                                          responseClassURLMatcher:nil
+                                                             managedObjectContext:context
+                                                                    responseClass:[OVCResponse class]
+                                                                  errorModelClass:[OVCErrorModel class]];
     
     // Serialize successful response
     

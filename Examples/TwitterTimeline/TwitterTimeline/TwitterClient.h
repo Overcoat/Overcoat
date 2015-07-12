@@ -26,7 +26,7 @@
 @class ACAccount;
 @class PMKPromise;
 
-@interface TwitterClient : OVCHTTPSessionManager
+@interface TwitterClient : OVCManagedHTTPSessionManager
 
 @property (strong, nonatomic, readonly) ACAccount *account;
 

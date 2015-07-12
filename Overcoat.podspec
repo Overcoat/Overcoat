@@ -11,31 +11,37 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.8'
 
-  s.default_subspec = 'NSURLSession'
+  s.default_subspec = 'Core'
 
   s.subspec 'Core' do |ss|
     ss.dependency 'AFNetworking', '~> 2.5'
     ss.dependency 'Mantle', '<= 3.0'
 
     ss.public_header_files = 'Overcoat/Core/*.h'
+    ss.private_header_files = 'Overcoat/Core/*_Internal.h'
     ss.source_files = 'Overcoat/Core/*.{h,m}'
     ss.frameworks = 'Foundation'
   end
 
   s.subspec 'CoreData' do |ss|
-    ss.subspec 'Mantle1' do |sss|
-      sss.dependency 'Overcoat/NSURLSession'
+    ss.subspec 'Core' do |sss|
+      sss.dependency 'Overcoat/Core'
       sss.public_header_files = 'Overcoat/CoreData/*.h'
+      sss.private_header_files = 'Overcoat/CoreData/*_Internal.h'
       sss.source_files = 'Overcoat/CoreData/*.{h,m}'
       sss.frameworks = 'CoreData'
-      sss.user_target_xcconfig = sss.pod_target_xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',
+      sss.xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1'
       }
     end
 
     ss.subspec 'Mantle2' do |sss|
-      sss.dependency 'Overcoat/CoreData/Mantle1'
+      sss.dependency 'Overcoat/CoreData/Core'
       sss.dependency 'MTLManagedObjectAdapter'
+    end
+
+    ss.subspec 'Mantle1' do |sss|
+      sss.dependency 'Overcoat/CoreData/Core'
     end
 
     ss.default_subspec = 'Mantle2'
@@ -46,35 +52,29 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Overcoat/Social/*.h'
     ss.source_files = 'Overcoat/Social/*.{h,m}'
     ss.frameworks = 'Accounts', 'Social'
-    ss.user_target_xcconfig = ss.pod_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',
-    }
-  end
-
-  s.subspec 'NSURLSession' do |ss|
-    ss.dependency 'Overcoat/Core'
-    ss.source_files = 'Overcoat/NSURLSession/OVCHTTPSessionManager.{h,m}'
-    ss.prefix_header_contents = "#define OVERCOAT_SUPPORT_URLSESSION 1"
-    ss.user_target_xcconfig = ss.pod_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URLSESSION=1',
+    ss.xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1'
     }
   end
 
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'Overcoat/Core'
-    ss.dependency 'Overcoat/NSURLSession'
     ss.dependency 'PromiseKit/Promise', '~>1.2'
     ss.public_header_files = 'PromiseKit+Overcoat/*.h'
     ss.source_files = 'PromiseKit+Overcoat'
+    ss.xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1'
+    }
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
     ss.dependency 'Overcoat/Core'
-    ss.dependency 'Overcoat/NSURLSession'
     ss.dependency 'ReactiveCocoa', '~>2.4'
-
     ss.public_header_files = 'ReactiveCocoa+Overcoat/*.h'
     ss.source_files = 'ReactiveCocoa+Overcoat'
+    ss.xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1'
+    }
   end
 
 end

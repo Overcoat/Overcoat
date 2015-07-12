@@ -111,11 +111,11 @@ static NSString *OVCApplicationCachePath() {
     return [[self alloc] initWithPath:path managedObjectModel:nil];
 }
 
-- (id)init {
+- (instancetype)init {
     return [self initWithPath:nil managedObjectModel:nil];
 }
 
-- (id)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel {
+- (instancetype)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel {
     self = [super init];
 
     if (self) {

@@ -25,6 +25,9 @@ else
   end
 end
 
+pod 'AFNetworking', :inhibit_warnings => true
+pod 'OHHTTPStubs', :inhibit_warnings => true
+
 # Targets
 target "Overcoat-#{os_type}-Tests" do
   platform platform_type, os_version
@@ -53,8 +56,9 @@ target "Overcoat-#{os_type}-CoreData-Tests" do
   pod 'Mantle', "~> #{mantle_version}"
 
   if mantle_version == '2.0'
-    pod 'Overcoat/CoreData/Mantle2', :path => overcoat_podspec_path
-  else
     pod 'Overcoat/CoreData', :path => overcoat_podspec_path
+    pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
+  else
+    pod 'Overcoat/CoreData/Mantle1', :path => overcoat_podspec_path
   end
 end

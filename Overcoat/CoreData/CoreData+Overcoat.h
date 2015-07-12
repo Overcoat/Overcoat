@@ -1,4 +1,4 @@
-// Overcoat.h
+// CoreData+Overcoat.h
 //
 // Copyright (c) 2013 Guillermo Gonzalez
 //
@@ -20,24 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCResponse.h>
-#import <Overcoat/OVCURLMatcher.h>
-#import <Overcoat/OVCModelResponseSerializer.h>
-#import <Overcoat/NSError+OVCResponse.h>
-#import <Overcoat/OVCHTTPManager.h>
-#import <Overcoat/OVCHTTPRequestOperationManager.h>
-#import <Overcoat/OVCHTTPSessionManager.h>
-
-#if OVERCOAT_SUPPORT_COREDATA
-#import <Overcoat/CoreData+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_SOCIAL
-#import <Overcoat/OVCSocialRequestSerializer.h>
-#endif
-#if OVERCOAT_SUPPORT_PROMISE_KIT
-#import <Overcoat/PromiseKit+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_REACTIVE_COCOA
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
-#endif
+#import <Overcoat/OVCManagedHTTPManager.h>
+#import <Overcoat/OVCManagedHTTPRequestOperationManager.h>
+#import <Overcoat/OVCManagedHTTPSessionManager.h>
+#import <Overcoat/OVCManagedModelResponseSerializer.h>
+#import <Overcoat/OVCManagedObjectSerializingContainer.h>
+#import <Overcoat/OVCManagedStore.h>

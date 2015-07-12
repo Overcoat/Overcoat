@@ -23,7 +23,6 @@
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCUtilities.h>
 
-#if OVERCOAT_SUPPORT_COREDATA
 /**
  A parent `MTLModel` with a property containing `MTLManagedObjectSerializing` value(s).
  */
@@ -35,5 +34,3 @@
 + (NSString *)managedObjectSerializingKeyPath;
 
 @end
-
-#endif

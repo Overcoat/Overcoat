@@ -41,6 +41,11 @@
 @property (strong, nonatomic, readonly) id result;
 
 /**
+ Class of used to parsed result
+ */
+@property (strong, nonatomic, readonly) Class resultClass;
+
+/**
  Returns the result key path in the JSON.
  
  This method returns `nil` by default. For JSON responses with additional metadata, subclasses

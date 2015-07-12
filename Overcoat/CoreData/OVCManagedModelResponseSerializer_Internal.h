@@ -1,6 +1,6 @@
-// Overcoat.h
+// OVCManagedModelResponseSerializer_Internal.h
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,24 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCResponse.h>
-#import <Overcoat/OVCURLMatcher.h>
-#import <Overcoat/OVCModelResponseSerializer.h>
-#import <Overcoat/NSError+OVCResponse.h>
-#import <Overcoat/OVCHTTPManager.h>
-#import <Overcoat/OVCHTTPRequestOperationManager.h>
-#import <Overcoat/OVCHTTPSessionManager.h>
+#import <Foundation/Foundation.h>
+#import <Overcoat/OVCManagedModelResponseSerializer.h>
 
-#if OVERCOAT_SUPPORT_COREDATA
-#import <Overcoat/CoreData+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_SOCIAL
-#import <Overcoat/OVCSocialRequestSerializer.h>
-#endif
-#if OVERCOAT_SUPPORT_PROMISE_KIT
-#import <Overcoat/PromiseKit+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_REACTIVE_COCOA
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
-#endif
+@interface OVCManagedModelResponseSerializer ()
+
+@property (strong, nonatomic, readwrite) NSManagedObjectContext *managedObjectContext;
+
+@end

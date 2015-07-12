@@ -13,7 +13,7 @@
 
 #pragma mark - TestClient
 
-@interface OVCHTTPSessionCoreDataTestSessionManager : OVCHTTPSessionManager
+@interface OVCHTTPSessionCoreDataTestSessionManager : OVCManagedHTTPSessionManager
 
 @end
 

@@ -67,12 +67,14 @@ PODS:
     - AFNetworking (~> 2.5)
     - Mantle (<= 3.0)
   - Overcoat/CoreData (2.2):
-    - Overcoat/NSURLSession
-  - Overcoat/NSURLSession (2.2):
+    - Overcoat/CoreData/Mantle2 (= 2.2)
+  - Overcoat/CoreData/Core (2.2):
     - Overcoat/Core
+  - Overcoat/CoreData/Mantle2 (2.2):
+    - MTLManagedObjectAdapter
+    - Overcoat/CoreData/Core
   - Overcoat/PromiseKit (2.2):
     - Overcoat/Core
-    - Overcoat/NSURLSession
     - PromiseKit/Promise (~> 1.2)
   - Overcoat/Social (2.2):
     - Overcoat/Core
@@ -84,6 +86,7 @@ PODS:
   - TGRDataSource (0.2)
 
 DEPENDENCIES:
+  - AFNetworking
   - libextobjc
   - Mantle (~> 2.0)
   - MTLManagedObjectAdapter
@@ -102,7 +105,7 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
-  Overcoat: ee3a639f3d12a26fdb3c441af246daee0231e869
+  Overcoat: 9b8dc2fbf46e07f1f8d9ba3fa5a955b2ffd3d3a2
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 

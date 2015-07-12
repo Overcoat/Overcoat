@@ -5,6 +5,7 @@ target 'TwitterTimeline' do
   pod 'PromiseKit/Accounts'
   pod 'TGRDataSource'
   pod 'libextobjc'
+  pod 'AFNetworking', :inhibit_warnings => true
 
   # == Using Mantle 2.x ==========
   pod 'Mantle', '~> 2.0'

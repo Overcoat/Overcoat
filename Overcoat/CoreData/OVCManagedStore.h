@@ -62,6 +62,6 @@
  @param path The persistent store path. If `nil` the persistent store will be created in memory.
  @param managedObjectModel The managed object model. If `nil` all models in the current bundle will be used.
  */
-- (id)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
+- (instancetype)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
 
 @end

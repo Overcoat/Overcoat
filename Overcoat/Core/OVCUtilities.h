@@ -28,3 +28,16 @@
 #else
 #define OVERCOAT_USING_MANTLE_2 0
 #endif
+
+#if ((defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || \
+     (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090))
+#define OVERCOAT_SUPPORT_URLSESSION 1
+#else
+#define OVERCOAT_SUPPORT_URLSESSION 0
+#endif
+
+#ifdef __cplusplus
+#define OVC_EXTERN extern "C"
+#else
+#define OVC_EXTERN extern
+#endif

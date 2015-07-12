@@ -13,7 +13,7 @@
 
 #pragma mark - TestClient
 
-@interface OVCHTTPRequestOperationCoreDataTestClient : OVCHTTPRequestOperationManager
+@interface OVCHTTPRequestOperationCoreDataTestClient : OVCManagedHTTPRequestOperationManager
 
 @end
 

@@ -1,4 +1,4 @@
-// Overcoat.h
+// OVCManagedModelResponseSerializer.h
 //
 // Copyright (c) 2013 Guillermo Gonzalez
 //
@@ -20,24 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCResponse.h>
-#import <Overcoat/OVCURLMatcher.h>
+#import <AFNetworking/AFNetworking.h>
 #import <Overcoat/OVCModelResponseSerializer.h>
-#import <Overcoat/NSError+OVCResponse.h>
-#import <Overcoat/OVCHTTPManager.h>
-#import <Overcoat/OVCHTTPRequestOperationManager.h>
-#import <Overcoat/OVCHTTPSessionManager.h>
 
-#if OVERCOAT_SUPPORT_COREDATA
-#import <Overcoat/CoreData+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_SOCIAL
-#import <Overcoat/OVCSocialRequestSerializer.h>
-#endif
-#if OVERCOAT_SUPPORT_PROMISE_KIT
-#import <Overcoat/PromiseKit+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_REACTIVE_COCOA
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
-#endif
+@class NSManagedObjectContext;
+
+/**
+ AFJSONResponseSerializer subclass that validates and transforms a JSON response into a
+ `OVCResponse` object.
+ */
+@interface OVCManagedModelResponseSerializer : OVCModelResponseSerializer
+
+/**
+ The managed object context used to insert model objects.
+ */
+@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+
+/**
+ Creates and returns model serializer.
+ */
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
+                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+                           responseClass:(Class)responseClass
+                         errorModelClass:(Class)errorModelClass;
+
+@end
