@@ -1,5 +1,5 @@
 //
-//  OVCHttpRequestOperationManagerCoreDataTests.m
+//  OVCHTTPRequestOperationManagerCoreDataTests.m
 //  OvercoatApp
 //
 //  Created by sodas on 6/15/15.
