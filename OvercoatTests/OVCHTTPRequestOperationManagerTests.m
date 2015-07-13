@@ -26,8 +26,8 @@
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-               @"model/#": [OVCTestModel class],
-               @"models": [OVCTestModel class]
+        @"model/#": [OVCTestModel class],
+        @"models": [OVCTestModel class]
     };
 }
 
@@ -58,7 +58,8 @@
 }
 
 - (void)testResponseClass {
-    XCTAssertEqualObjects([OVCHTTPRequestOperationManager responseClass], [OVCResponse class], @"should return OVCResponse");
+    XCTAssertEqualObjects([OVCHTTPRequestOperationManager responseClass],
+                          [OVCResponse class], @"should return OVCResponse");
 }
 
 - (void)testErrorResultClass {

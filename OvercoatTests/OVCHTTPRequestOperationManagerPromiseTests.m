@@ -27,8 +27,8 @@
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-               @"model/#": [OVCTestModel class],
-               @"models": [OVCTestModel class]
+         @"model/#": [OVCTestModel class],
+         @"models": [OVCTestModel class]
     };
 }
 

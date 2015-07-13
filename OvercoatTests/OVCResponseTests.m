@@ -141,7 +141,8 @@
          } error:NULL]
     ];
     
-    XCTAssertEqualObjects(expectedModels, response.result, @"should transform the contents of 'data' into an array of models");
+    XCTAssertEqualObjects(expectedModels, response.result,
+                          @"should transform the contents of 'data' into an array of models");
     
     XCTAssertEqualObjects(@"ok", response.status, @"should initialize metadata");
 }

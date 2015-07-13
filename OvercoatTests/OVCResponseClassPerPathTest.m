@@ -28,18 +28,18 @@
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-             @"model/#": [OVCTestModel class],
-             @"models": [OVCTestModel class],
-             @"model_with_custom_envelop/#": [OVCTestModel class]
-             };
+        @"model/#": [OVCTestModel class],
+        @"models": [OVCTestModel class],
+        @"model_with_custom_envelop/#": [OVCTestModel class]
+    };
 }
 
 + (NSDictionary *)responseClassesByResourcePath {
     return @{
-             @"model/#": [OVCTestResponse class],
-             @"models": [OVCTestResponse class],
-             @"model_with_custom_envelop/#": [OVCCustomEnvelopTestResponse class]
-             };
+        @"model/#": [OVCTestResponse class],
+        @"models": [OVCTestResponse class],
+        @"model_with_custom_envelop/#": [OVCCustomEnvelopTestResponse class]
+    };
 }
 
 @end
@@ -56,7 +56,8 @@
 
 - (void)setUp {
     [super setUp];
-    self.client = [[TestSessionManagerWithCustomResponseClassPerPath alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
+    self.client = [[TestSessionManagerWithCustomResponseClassPerPath alloc]
+                   initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]];
 }
 
 - (void)tearDown {

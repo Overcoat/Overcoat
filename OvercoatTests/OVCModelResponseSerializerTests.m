@@ -121,10 +121,11 @@
                         ]
                     } options:0 error:NULL];
     
-    NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc] initWithURL:[NSURL URLWithString:@"http://example.com/paginated"]
-                                                             statusCode:200
-                                                            HTTPVersion:@"1.1"
-                                                           headerFields:@{@"Content-Type": @"text/json"}];
+    NSURLResponse *URLResponse = [[NSHTTPURLResponse alloc]
+                                  initWithURL:[NSURL URLWithString:@"http://example.com/paginated"]
+                                  statusCode:200
+                                  HTTPVersion:@"1.1"
+                                  headerFields:@{@"Content-Type": @"text/json"}];
     
     OVCResponse *response = [self.serializer responseObjectForResponse:URLResponse data:data error:NULL];
     
@@ -137,12 +138,13 @@
     
     // Serialize error response (should not be persisted)
     
-    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                                                                    object:context
-                                                                     queue:nil
-                                                                usingBlock:^(NSNotification *note) {
-                                                                    XCTFail(@"should ignore error responses");
-                                                                }];
+    id observer = [[NSNotificationCenter defaultCenter]
+                   addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
+                   object:context
+                   queue:nil
+                   usingBlock:^(NSNotification *note) {
+                       XCTFail(@"should ignore error responses");
+                   }];
     
     data = [NSJSONSerialization dataWithJSONObject:@{
                 @"status": @"failed",

@@ -25,9 +25,9 @@
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-             @"model/#": [OVCTestModel class],
-             @"models": [OVCTestModel class]
-             };
+        @"model/#": [OVCTestModel class],
+        @"models": [OVCTestModel class]
+    };
 }
 
 @end
@@ -49,24 +49,27 @@
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
     OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
 
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc]
+                                       initWithConcurrencyType:NSMainQueueConcurrencyType];
     [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
 
     // Observe changes in Core Data
 
     NSNotification * __block notification = nil;
-    id observer = [[NSNotificationCenter defaultCenter] addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                                                                    object:context
-                                                                     queue:nil
-                                                                usingBlock:^(NSNotification *note) {
-                                                                    notification = note;
-                                                                }];
+    id observer = [[NSNotificationCenter defaultCenter]
+                   addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
+                   object:context
+                   queue:nil
+                   usingBlock:^(NSNotification *note) {
+                       notification = note;
+                   }];
 
     // Setup client
 
-    self.client = [[OVCHTTPSessionCoreDataTestSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]
-                                                               managedObjectContext:context
-                                                               sessionConfiguration:nil];
+    self.client = [[OVCHTTPSessionCoreDataTestSessionManager alloc]
+                   initWithBaseURL:[NSURL URLWithString:@"http://test/v1/"]
+                   managedObjectContext:context
+                   sessionConfiguration:nil];
 
     // Setup HTTP stub
 
@@ -95,7 +98,8 @@
 
     XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[NSArray class]], @"should return an array of test models");
-    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCTestModel class]], @"should return an array of test models");
+    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCTestModel class]],
+                  @"should return an array of test models");
 
     NSDictionary *userInfo = [notification userInfo];
     NSSet *objects = userInfo[NSInsertedObjectsKey];
