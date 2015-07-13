@@ -29,22 +29,22 @@ PODS:
   - MTLManagedObjectAdapter/extobjc (1.0):
     - Mantle (~> 2.0)
   - OHHTTPStubs (4.0.2)
-  - Overcoat (2.2):
-    - Overcoat/Core (= 2.2)
-  - Overcoat/Core (2.2):
+  - Overcoat (3.0):
+    - Overcoat/Core (= 3.0)
+  - Overcoat/Core (3.0):
     - AFNetworking (~> 2.5)
     - Mantle (<= 3.0)
-  - Overcoat/CoreData (2.2):
-    - Overcoat/CoreData/Mantle2 (= 2.2)
-  - Overcoat/CoreData/Core (2.2):
+  - Overcoat/CoreData (3.0):
+    - Overcoat/CoreData/Mantle2 (= 3.0)
+  - Overcoat/CoreData/Core (3.0):
     - Overcoat/Core
-  - Overcoat/CoreData/Mantle2 (2.2):
+  - Overcoat/CoreData/Mantle2 (3.0):
     - MTLManagedObjectAdapter
     - Overcoat/CoreData/Core
-  - Overcoat/PromiseKit (2.2):
+  - Overcoat/PromiseKit (3.0):
     - Overcoat/Core
     - PromiseKit/Promise (~> 1.2)
-  - Overcoat/ReactiveCocoa (2.2):
+  - Overcoat/ReactiveCocoa (3.0):
     - Overcoat/Core
     - ReactiveCocoa (~> 2.4)
   - PromiseKit/Promise (1.6.0)
@@ -75,7 +75,7 @@ SPEC CHECKSUMS:
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OHHTTPStubs: dbd1957d414659783e07b49c961940b7564c23d9
-  Overcoat: 9b8dc2fbf46e07f1f8d9ba3fa5a955b2ffd3d3a2
+  Overcoat: 26fb6fb1560a1d71f2ac7847fed4e0ba8988e76b
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
