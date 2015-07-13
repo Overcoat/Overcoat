@@ -28,7 +28,7 @@ NSString * const OVCResponseKey = @"OVCResponse";
 
 @implementation NSError (OVCResponse)
 
-- (NSError *)ovc_errorWithUnderlyingResponse:(OVCResponse *)response {
+- (instancetype)ovc_errorWithUnderlyingResponse:(OVCResponse *)response {
     if (response == nil) {
         return self;
     }
@@ -36,7 +36,7 @@ NSString * const OVCResponseKey = @"OVCResponse";
     NSDictionary *userInfo = @{ OVCResponseKey: response };
     userInfo = [userInfo mtl_dictionaryByAddingEntriesFromDictionary:[self userInfo]];
     
-    return [NSError errorWithDomain:[self domain] code:[self code] userInfo:userInfo];
+    return [[self class] errorWithDomain:[self domain] code:[self code] userInfo:userInfo];
 }
 
 - (OVCResponse *)ovc_response {

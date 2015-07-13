@@ -55,10 +55,8 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 
 #pragma mark - Lifecycle
 
-- (id)init {
-    self = [super init];
-    
-    if (self) {
+- (instancetype)init {
+    if (self = [super init]) {
         _type = OVCURLMatcherTypeNone;
         _children = [NSMutableArray array];
     }
@@ -66,10 +64,8 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     return self;
 }
 
-- (id)initWithBasePath:(NSString *)basePath modelClassesByPath:(NSDictionary *)modelClassesByPath {
-    self = [self init];
-    
-    if (self) {
+- (instancetype)initWithBasePath:(NSString *)basePath modelClassesByPath:(NSDictionary *)modelClassesByPath {
+    if (self = [self init]) {
         _basePath = [basePath copy];
         
         [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class class, BOOL *stop) {

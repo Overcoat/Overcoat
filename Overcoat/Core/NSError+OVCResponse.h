@@ -22,14 +22,18 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @class OVCResponse;
 
 extern NSString * const OVCResponseKey;
 
 @interface NSError (OVCResponse)
 
-- (NSError *)ovc_errorWithUnderlyingResponse:(OVCResponse *)response;
+- (instancetype)ovc_errorWithUnderlyingResponse:(OVCResponse *)response;
 
-- (OVCResponse *)ovc_response;
+@property (nonatomic, readonly, nullable) OVCResponse *ovc_response;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -22,8 +22,12 @@
 
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface NSDictionary (Overcoat)
 
-- (id)ovc_objectForKeyPath:(NSString *)keyPath;
+- (nullable id)ovc_objectForKeyPath:(NSString *)keyPath;
 
 @end
+
+NS_ASSUME_NONNULL_END
