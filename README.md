@@ -55,15 +55,18 @@ You can find the sample code [here](https://github.com/gonzalezreal/Overcoat/tre
 ## Usage
 
 ### Creating a Client Class
-Overcoat provides two different classes to subclass when creating your own clients:
+Overcoat provides 4 different classes to subclass when creating your own clients:
 
-* `OVCHTTPRequestOperationManager` based on `NSURLConnection`
-  (or `OVCManagedHTTPRequestOperationManager` for CoreData Support)
-* `OVCHTTPSessionManager` based on `NSURLSession` (or `OVCManagedSessionManager` for CoreData Support)
+Class                                   | Usage
+----------------------------------------|---------------------------------------------------
+`OVCHTTPRequestOperationManager`        | Using with NSURLConnection and Mantle
+`OVCHTTPSessionManager`                 | Using with NSURLSession and Mantle
+`OVCManagedHTTPRequestOperationManager` | Using with NSURLConnection, Mantle, and CoreData. This is also a subclass of `OVCHTTPRequestOperationManager`
+`OVCManagedHTTPSessionManager`          | Using with NSURLSession, Mantle, and CoreData. This is also a subclass of `OVCHTTPSessionManager`
 
 Both classes have identical APIs, but developers targeting OS X 10.9+ or iOS 7.0+ are
-encouraged to subclass `OVCHTTPSessionManager`.
-Developers targeting OS X 10.8 or iOS 6.0 must subclass `OVCHTTPRequestOperationManager`.
+encouraged to subclass `OVCHTTPSessionManager` (or `OVCManagedHTTPSessionManager` if you want CoreData support).
+Developers targeting OS X 10.8 or iOS 6.0 must subclass `OVCHTTPRequestOperationManager` (or `OVCManagedHTTPRequestManager` if you want CoreData support).
 
 ```objc
 #import <Overcoat/Overcoat.h>
@@ -80,10 +83,10 @@ and return a dictionary mapping resource paths to model classes.
 ```objc
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-               @"statuses/*": [Tweet class],
-               @"users/*": [TwitterUser class],
-               @"friends/ids.json": [UserIdentifierCollection class],
-               @"followers/ids.json": [UserIdentifierCollection class]
+        @"statuses/*": [Tweet class],
+        @"users/*": [TwitterUser class],
+        @"friends/ids.json": [UserIdentifierCollection class],
+        @"followers/ids.json": [UserIdentifierCollection class]
     };
 }
 ```
