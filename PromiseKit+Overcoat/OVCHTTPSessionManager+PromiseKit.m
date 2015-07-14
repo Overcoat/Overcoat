@@ -21,10 +21,9 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager+PromiseKit.h"
-
 #import <PromiseKit/PromiseKit.h>
 
-#if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
+#if OVERCOAT_SUPPORT_URLSESSION
 
 @implementation OVCHTTPSessionManager (PromiseKit)
 
@@ -66,10 +65,12 @@
 
 - (PMKPromise *)POST:(NSString *)URLString
        parameters:(id)parameters
-constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
-{
+constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
-        [self POST:URLString parameters:parameters constructingBodyWithBlock:block completion:^(id response, NSError *error) {
+        [self POST:URLString
+        parameters:parameters
+constructingBodyWithBlock:block
+        completion:^(id response, NSError *error) {
             if (error) {
                 rejecter(error);
             } else {

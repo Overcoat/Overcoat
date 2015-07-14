@@ -60,7 +60,6 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
         _type = OVCURLMatcherTypeNone;
         _children = [NSMutableArray array];
     }
-    
     return self;
 }
 
@@ -72,7 +71,6 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
             [self addModelClass:class forPath:path];
         }];
     }
-    
     return self;
 }
 
@@ -84,7 +82,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     NSString *path = [url path];
 
     if (self.basePath && [path hasPrefix:self.basePath]) {
-        path = [path substringFromIndex:[self.basePath length]];
+        path = [path substringFromIndex:self.basePath.length];
     }
 
     path = [path stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/"]];
@@ -100,37 +98,42 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     for (NSString *u in pathComponents) {
         NSArray *list = node.children;
 
-        if (!list) break;
+        if (!list) {
+            break;
+        }
 
         node = nil;
 
         for (OVCURLMatcher *n in list) {
             switch (n.type) {
-                case OVCURLMatcherTypeExact:
+                case OVCURLMatcherTypeExact: {
                     if ([n.text isEqualToString:u]) {
                         node = n;
                     }
                     break;
-
-                case OVCURLMatcherTypeNumber:
+                }
+                case OVCURLMatcherTypeNumber: {
                     if (OVCTextOnlyContainsDigits(u)) {
                         node = n;
                     }
                     break;
-
-                case OVCURLMatcherTypeText:
+                }
+                case OVCURLMatcherTypeText: {
                     node = n;
                     break;
-
-                case OVCURLMatcherTypeNone:
+                }
+                case OVCURLMatcherTypeNone: {
                     // Do nothing
                     break;
+                }
             }
-
-            if (node) break;
+            if (node) {
+                break;
+            }
         }
-
-        if (!node) return nil;
+        if (!node) {
+            return nil;
+        }
     }
 
     return node.modelClass;
@@ -151,7 +154,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     
     NSArray *tokens = nil;
     
-	if ([path length]) {
+	if (path.length) {
 		NSString *newPath = path;
 		if ([path hasPrefix:@"/"]) {
 			newPath = [path substringFromIndex:1];
@@ -161,7 +164,6 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 	}
     
     OVCURLMatcher *node = self;
-    
     for (NSString *token in tokens) {
         NSMutableArray *children = node.children;
 		OVCURLMatcher *existingChild = nil;

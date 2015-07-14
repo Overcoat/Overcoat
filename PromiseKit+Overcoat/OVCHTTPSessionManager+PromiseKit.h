@@ -21,8 +21,11 @@
 // THE SOFTWARE.
 
 #import <Overcoat/OVCHTTPSessionManager.h>
+#import <Overcoat/OVCUtilities.h>
 
 @class PMKPromise;
+
+#if OVERCOAT_SUPPORT_URLSESSION
 
 @interface OVCHTTPSessionManager (PromiseKit)
 
@@ -104,3 +107,5 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 - (PMKPromise *)DELETE:(NSString *)URLString parameters:(id)parameters;
 
 @end
+
+#endif

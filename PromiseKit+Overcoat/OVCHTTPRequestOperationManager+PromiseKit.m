@@ -64,10 +64,12 @@
 
 - (PMKPromise *)POST:(NSString *)URLString
        parameters:(id)parameters
-constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
-{
+constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block {
     return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
-        [self POST:URLString parameters:parameters constructingBodyWithBlock:block completion:^(id response, NSError *error) {
+        [self POST:URLString
+        parameters:parameters
+constructingBodyWithBlock:block
+        completion:^(id response, NSError *error) {
             if (error) {
                 rejecter(error);
             } else {

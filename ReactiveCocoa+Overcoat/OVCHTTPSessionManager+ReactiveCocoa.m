@@ -22,25 +22,25 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager+ReactiveCocoa.h"
-
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-#if (defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090)
+#if OVERCOAT_SUPPORT_URLSESSION
 
 @implementation OVCHTTPSessionManager (ReactiveCocoa)
 
-- (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters
-{
+- (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self GET:URLString
+                                            parameters:parameters
+                                            completion:^(id response, NSError *error) {
+                                                if (!error) {
+                                                    [subscriber sendNext:response];
+                                                    [subscriber sendCompleted];
+                                                } else {
+                                                    [subscriber sendError:error];
+                                                }
+                                            }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
@@ -50,105 +50,116 @@
 - (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(NSDictionary *)parameters
 {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self HEAD:URLString
+                                             parameters:parameters
+                                             completion:^(id response, NSError *error) {
+                                                 if (!error) {
+                                                     [subscriber sendNext:response];
+                                                     [subscriber sendCompleted];
+                                                 } else {
+                                                     [subscriber sendError:error];
+                                                 }
+                                             }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
     }] setNameWithFormat:@"%@ -rac_HEAD: %@, parameters: %@", self.class, URLString, parameters];
 }
 
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters
-{
+- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self POST:URLString
+                                             parameters:parameters
+                                             completion:^(id response, NSError *error) {
+                                                 if (!error) {
+                                                     [subscriber sendNext:response];
+                                                     [subscriber sendCompleted];
+                                                 } else {
+                                                     [subscriber sendError:error];
+                                                 }
+                                             }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
     }] setNameWithFormat:@"%@ -rac_POST: %@, parameters: %@", self.class, URLString, parameters];
 }
 
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
-{
+- (RACSignal *)rac_POST:(NSString *)URLString
+             parameters:(NSDictionary *)parameters
+constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self POST:URLString parameters:parameters constructingBodyWithBlock:block completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self POST:URLString
+                                             parameters:parameters
+                              constructingBodyWithBlock:block
+                                             completion:^(id response, NSError *error) {
+                                                 if (!error) {
+                                                     [subscriber sendNext:response];
+                                                     [subscriber sendCompleted];
+                                                 } else {
+                                                     [subscriber sendError:error];
+                                                 }
+                                             }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
-    }] setNameWithFormat:@"%@ -rac_POST: %@, parameters: %@, constructingBodyWithBlock", self.class, URLString, parameters];
+    }] setNameWithFormat:@"%@ -rac_POST: %@, parameters: %@, constructingBodyWithBlock",
+            self.class, URLString, parameters];
 }
 
-- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters
-{
+- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self PUT:URLString
+                                            parameters:parameters
+                                            completion:^(id response, NSError *error) {
+                                                if (!error) {
+                                                    [subscriber sendNext:response];
+                                                    [subscriber sendCompleted];
+                                                } else {
+                                                    [subscriber sendError:error];
+                                                }
+                                            }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
     }] setNameWithFormat:@"%@ -rac_PUT: %@, parameters: %@", self.class, URLString, parameters];
 }
 
-- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters
-{
+- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self PATCH:URLString
+                                              parameters:parameters
+                                              completion:^(id response, NSError *error) {
+                                                  if (!error) {
+                                                      [subscriber sendNext:response];
+                                                      [subscriber sendCompleted];
+                                                  } else {
+                                                      [subscriber sendError:error];
+                                                  }
+                                              }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];
     }] setNameWithFormat:@"%@ -rac_PATCH: %@, parameters: %@", self.class, URLString, parameters];
 }
 
-- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters
-{
+- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
-        __block NSURLSessionDataTask *task = [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (!error) {
-                [subscriber sendNext:response];
-                [subscriber sendCompleted];
-            } else {
-                [subscriber sendError:error];
-            }
-        }];
-        
+        __block NSURLSessionDataTask *task = [self DELETE:URLString
+                                               parameters:parameters
+                                               completion:^(id response, NSError *error) {
+                                                   if (!error) {
+                                                       [subscriber sendNext:response];
+                                                       [subscriber sendCompleted];
+                                                   } else {
+                                                       [subscriber sendError:error];
+                                                   }
+                                               }];
+
         return [RACDisposable disposableWithBlock:^{
             [task cancel];
         }];

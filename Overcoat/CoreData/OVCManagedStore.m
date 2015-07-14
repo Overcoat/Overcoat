@@ -27,8 +27,8 @@ static NSString *OVCApplicationCachePath() {
     static NSString *path;
 
     dispatch_once(&onceToken, ^{
-        path = [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) lastObject];
-        path = [path stringByAppendingPathComponent:[[NSBundle mainBundle] bundleIdentifier]];
+        path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
+        path = [path stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
 
         NSError *error = nil;
         BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:path
@@ -59,7 +59,8 @@ static NSString *OVCApplicationCachePath() {
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
     if (!_persistentStoreCoordinator) {
-        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:self.managedObjectModel];
+        _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc]
+                                       initWithManagedObjectModel:self.managedObjectModel];
 
         NSString *storeType = self.path ? NSSQLiteStoreType : NSInMemoryStoreType;
         NSURL *storeURL = self.path ? [NSURL fileURLWithPath:self.path] : nil;
@@ -98,7 +99,7 @@ static NSString *OVCApplicationCachePath() {
 }
 
 + (instancetype)temporaryManagedStore {
-    NSString *fileName = [[NSProcessInfo processInfo] globallyUniqueString];
+    NSString *fileName = [NSProcessInfo processInfo].globallyUniqueString;
     NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:fileName];
 
     return [[self alloc] initWithPath:path managedObjectModel:nil];
@@ -116,13 +117,10 @@ static NSString *OVCApplicationCachePath() {
 }
 
 - (instancetype)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel {
-    self = [super init];
-
-    if (self) {
+    if (self = [super init]) {
         _path = [path copy];
         _managedObjectModel = managedObjectModel;
     }
-
     return self;
 }
 

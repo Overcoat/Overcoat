@@ -25,11 +25,15 @@
 @class OVCModelResponseSerializer, OVCURLMatcher;
 @protocol OVCHTTPManager;
 
+NS_ASSUME_NONNULL_BEGIN
+
 OVC_EXTERN
 OVCModelResponseSerializer *OVCHTTPManagerCreateModelResponseSerializer(id<OVCHTTPManager> httpManager);
 
 OVC_EXTERN
 OVCURLMatcher *OVCHTTPManagerCreateURLMatcher(id<OVCHTTPManager> httpManager);
 
-OVC_EXTERN  // nullable
-OVCURLMatcher *OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager);
+OVC_EXTERN
+OVCURLMatcher *__nullable OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager);
+
+NS_ASSUME_NONNULL_END

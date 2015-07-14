@@ -28,7 +28,7 @@
 
 OVC_EXTERN
 OVCURLMatcher *OVCHTTPManagerCreateURLMatcher(id<OVCHTTPManager> httpManager) {
-    return [[OVCURLMatcher alloc] initWithBasePath:[httpManager.baseURL path]
+    return [[OVCURLMatcher alloc] initWithBasePath:httpManager.baseURL.path
                                 modelClassesByPath:[[httpManager class] modelClassesByResourcePath]];
 }
 
@@ -48,7 +48,7 @@ OVCURLMatcher *OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> ht
              }
          }];
 #endif
-        responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:[httpManager.baseURL path]
+        responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:httpManager.baseURL.path
                                                     modelClassesByPath:[[httpManager class]
                                                                         responseClassesByResourcePath]];
     }

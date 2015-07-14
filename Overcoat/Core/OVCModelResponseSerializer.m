@@ -40,8 +40,7 @@
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                            responseClass:(Class)responseClass
-                         errorModelClass:(Class)errorModelClass
-{
+                         errorModelClass:(Class)errorModelClass {
     NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
 
     if (errorModelClass != Nil) {
@@ -61,8 +60,7 @@
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
-{
+                          error:(NSError *__autoreleasing *)error {
     NSError *serializationError = nil;
     id JSONObject = [super responseObjectForResponse:response data:data error:&serializationError];
     
@@ -70,7 +68,7 @@
         *error = serializationError;
     }
     
-    if (serializationError && [serializationError code] != NSURLErrorBadServerResponse) {
+    if (serializationError && serializationError.code != NSURLErrorBadServerResponse) {
         return nil;
     }
     

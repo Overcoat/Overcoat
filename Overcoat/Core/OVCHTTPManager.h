@@ -24,6 +24,7 @@
 
 @protocol OVCHTTPManager <NSObject>
 
+// TODO: Annotate `nullable` when AFNetworkign added so (they've added in dev commit)
 @property (readonly) NSURL *baseURL;
 
 /**
@@ -53,10 +54,10 @@
  classes. Consider the following example for a GitHub client:
 
  + (NSDictionary *)modelClassesByResourcePath {
- return @{
- @"/users/*": [GTHUser class],
- @"/orgs/*": [GTHOrganization class]
- }
+     return @{
+         @"/users/*": [GTHUser class],
+         @"/orgs/*": [GTHOrganization class]
+     };
  }
 
  Note that you can use `*` to match any text or `#` to match only digits.
@@ -76,10 +77,10 @@
  classes. Consider the following example for a GitHub client:
 
  + (NSDictionary *)responseClassesByResourcePath {
- return @{
- @"/users/*": [GTHUserResponse class],
- @"/orgs/*": [GTHOrganizationResponse class]
- }
+     return @{
+         @"/users/*": [GTHUserResponse class],
+         @"/orgs/*": [GTHOrganizationResponse class]
+     };
  }
 
  Note that you can use `*` to match any text or `#` to match only digits.

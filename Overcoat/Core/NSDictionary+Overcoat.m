@@ -30,9 +30,8 @@
     
     for (NSString *key in keys) {
         if ([object isKindOfClass:[NSDictionary class]]) {
-            object = [object objectForKey:key];
-        }
-        else {
+            object = object[key];
+        } else {
             object = nil;
             break;
         }

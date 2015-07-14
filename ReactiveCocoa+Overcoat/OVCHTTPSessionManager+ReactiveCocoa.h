@@ -22,8 +22,11 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager.h"
+#import <Overcoat/OVCUtilities.h>
 
 @class RACSignal;
+
+#if OVERCOAT_SUPPORT_URLSESSION
 
 @interface OVCHTTPSessionManager (ReactiveCocoa)
 
@@ -67,7 +70,9 @@
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
+- (RACSignal *)rac_POST:(NSString *)URLString
+             parameters:(NSDictionary *)parameters
+constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
  Enqueues a `PUT` request.
@@ -100,3 +105,5 @@
 - (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
 
 @end
+
+#endif

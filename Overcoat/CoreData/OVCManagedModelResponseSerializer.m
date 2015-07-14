@@ -36,8 +36,7 @@
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                     managedObjectContext:(NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
-                         errorModelClass:(Class)errorModelClass
-{
+                         errorModelClass:(Class)errorModelClass {
     OVCManagedModelResponseSerializer *serializer = [self serializerWithURLMatcher:URLMatcher
                                                            responseClassURLMatcher:URLResponseClassMatcher
                                                                      responseClass:responseClass
@@ -50,8 +49,7 @@
 
 - (id)responseObjectForResponse:(NSURLResponse *)response
                            data:(NSData *)data
-                          error:(NSError *__autoreleasing *)error
-{
+                          error:(NSError *__autoreleasing *)error {
     OVCResponse *responseObject = [super responseObjectForResponse:response data:data error:error];
     Class resultClass = responseObject.resultClass;
     if (self.managedObjectContext) {
@@ -89,7 +87,7 @@
             NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);
         }
 
-        if ([context hasChanges]) {
+        if (context.hasChanges) {
             NSError *error = nil;
             [context save:&error];
             NSAssert(error == nil, @"%@ saveResult failed with error: %@", self, error);

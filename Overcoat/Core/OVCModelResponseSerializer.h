@@ -37,6 +37,7 @@
 /**
  Matches URLs in HTTP responses with response classes.
  */
+// TODO: Annotate nullable
 @property (strong, nonatomic, readonly) OVCURLMatcher *URLResponseClassMatcher;
 
 /**
@@ -52,6 +53,7 @@
 /**
  Creates and returns model serializer.
  */
+// TODO: Annotate nullable
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                            responseClass:(Class)responseClass

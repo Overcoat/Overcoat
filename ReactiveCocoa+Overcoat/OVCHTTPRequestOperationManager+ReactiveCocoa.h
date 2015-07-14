@@ -67,7 +67,9 @@
  
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(id)parameters constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
+- (RACSignal *)rac_POST:(NSString *)URLString
+             parameters:(id)parameters
+constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
 /**
  Enqueues a `PUT` request.

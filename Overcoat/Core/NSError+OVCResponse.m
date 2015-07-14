@@ -34,13 +34,13 @@ NSString * const OVCResponseKey = @"OVCResponse";
     }
     
     NSDictionary *userInfo = @{ OVCResponseKey: response };
-    userInfo = [userInfo mtl_dictionaryByAddingEntriesFromDictionary:[self userInfo]];
+    userInfo = [userInfo mtl_dictionaryByAddingEntriesFromDictionary:self.userInfo];
     
-    return [[self class] errorWithDomain:[self domain] code:[self code] userInfo:userInfo];
+    return [self.class errorWithDomain:self.domain code:self.code userInfo:userInfo];
 }
 
 - (OVCResponse *)ovc_response {
-    return [[self userInfo] objectForKey:OVCResponseKey];
+    return self.userInfo[OVCResponseKey];
 }
 
 @end

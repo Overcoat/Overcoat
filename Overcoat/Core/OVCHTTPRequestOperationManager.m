@@ -66,93 +66,114 @@
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                     completion:(void (^)(id, NSError *))completion
-{
+                     completion:(void (^)(id, NSError *))completion {
     return [self GET:URLString parameters:parameters
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 if (completion) completion(responseObject, nil);
+                 if (completion) {
+                     completion(responseObject, nil);
+                 }
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 if (completion) completion(operation.responseObject, error);
+                 if (completion) {
+                     completion(operation.responseObject, error);
+                 }
              }];
 }
 
 - (AFHTTPRequestOperation *)HEAD:(NSString *)URLString
                       parameters:(id)parameters
-                      completion:(void (^)(id, NSError *))completion
-{
+                      completion:(void (^)(id, NSError *))completion {
     return [self HEAD:URLString parameters:parameters
               success:^(AFHTTPRequestOperation *operation) {
-                  if (completion) completion(operation.responseObject, nil);
+                  if (completion) {
+                      completion(operation.responseObject, nil);
+                  }
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(operation.responseObject, error);
+                  if (completion) {
+                      completion(operation.responseObject, error);
+                  }
               }];
 }
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
-                      completion:(void (^)(id, NSError *))completion
-{
+                      completion:(void (^)(id, NSError *))completion {
     return [self POST:URLString parameters:parameters
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  if (completion) completion(responseObject, nil);
+                  if (completion) {
+                      completion(responseObject, nil);
+                  }
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(operation.responseObject, error);
+                  if (completion) {
+                      completion(operation.responseObject, error);
+                  }
               }];
 }
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
        constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
-                      completion:(void (^)(id, NSError *))completion
-{
+                      completion:(void (^)(id, NSError *))completion {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                  if (completion) completion(responseObject, nil);
+                  if (completion) {
+                      completion(responseObject, nil);
+                  }
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                  if (completion) completion(operation.responseObject, error);
+                  if (completion) {
+                      completion(operation.responseObject, error);
+                  }
               }];
 }
 
 - (AFHTTPRequestOperation *)PUT:(NSString *)URLString
                      parameters:(id)parameters
-                     completion:(void (^)(id, NSError *))completion
-{
+                     completion:(void (^)(id, NSError *))completion {
     return [self PUT:URLString parameters:parameters
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                 if (completion) completion(responseObject, nil);
+                 if (completion) {
+                     completion(responseObject, nil);
+                 }
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                 if (completion) completion(operation.responseObject, error);
+                 if (completion) {
+                     completion(operation.responseObject, error);
+                 }
              }];
 }
 
 - (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
                        parameters:(id)parameters
-                       completion:(void (^)(id, NSError *))completion
-{
+                       completion:(void (^)(id, NSError *))completion {
     return [self PATCH:URLString parameters:parameters
                success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                   if (completion) completion(responseObject, nil);
+                   if (completion) {
+                       completion(responseObject, nil);
+                   }
                }
                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                   if (completion) completion(operation.responseObject, error);
+                   if (completion) {
+                       completion(operation.responseObject, error);
+                   }
                }];
 }
 
 - (AFHTTPRequestOperation *)DELETE:(NSString *)URLString
                         parameters:(id)parameters
-                        completion:(void (^)(id, NSError *))completion
-{
+                        completion:(void (^)(id, NSError *))completion {
     return [self DELETE:URLString parameters:parameters
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                    if (completion) completion(responseObject, nil);
+                    if (completion) {
+                        completion(responseObject, nil);
+                    }
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                    if (completion) completion(operation.responseObject, error);
+                    if (completion) {
+                        completion(operation.responseObject, error);
+                    }
                 }];
 }
 

@@ -30,7 +30,7 @@ extern NSString * const OVCResponseKey;
 
 @interface NSError (OVCResponse)
 
-- (instancetype)ovc_errorWithUnderlyingResponse:(OVCResponse *)response;
+- (instancetype)ovc_errorWithUnderlyingResponse:(OVCResponse * __nullable)response;
 
 @property (nonatomic, readonly, nullable) OVCResponse *ovc_response;
 
