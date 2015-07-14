@@ -65,14 +65,10 @@ static NSString * const kIdentifierKey = @"identifier";
 
 - (id)initWithAccount:(ACAccount *)account type:(TimelineType)type {
     NSParameterAssert(account);
-    
-    self = [super init];
-    
-    if (self) {
+    if ([super init]) {
         self.account = account;
         self.type = type;
     }
-    
     return self;
 }
 

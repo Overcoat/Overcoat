@@ -28,8 +28,7 @@
 
 - (id)initWithTimeline:(Timeline *)timeline
    cellReuseIdentifier:(NSString *)reuseIdentifier
-    configureCellBlock:(TGRDataSourceCellBlock)configureCellBlock
-{
+    configureCellBlock:(TGRDataSourceCellBlock)configureCellBlock {
     NSFetchRequest *fetchRequest = [Timeline fetchRequest];
     NSManagedObjectContext *context = timeline.managedObjectContext;
     NSFetchedResultsController *frc = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest

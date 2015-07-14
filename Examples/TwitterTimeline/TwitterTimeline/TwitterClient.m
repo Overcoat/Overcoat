@@ -42,11 +42,9 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 #pragma mark - Lifecycle
 
 - (id)initWithAccount:(ACAccount *)account managedObjectContext:(NSManagedObjectContext *)context {
-    self = [super initWithBaseURL:[NSURL URLWithString:kBaseURL]
-             managedObjectContext:context
-             sessionConfiguration:nil];
-    
-    if (self) {
+    if (self = [super initWithBaseURL:[NSURL URLWithString:kBaseURL]
+                 managedObjectContext:context
+                 sessionConfiguration:nil]) {
         self.requestSerializer = [OVCSocialRequestSerializer serializerWithAccount:account];
     }
     
@@ -106,10 +104,10 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-               @"statuses/*": [Tweet class],
-               @"users/*": [TwitterUser class],
-               @"friends/ids.json": [UserIdentifierCollection class],
-               @"followers/ids.json": [UserIdentifierCollection class]
+        @"statuses/*": [Tweet class],
+        @"users/*": [TwitterUser class],
+        @"friends/ids.json": [UserIdentifierCollection class],
+        @"followers/ids.json": [UserIdentifierCollection class]
     };
 }
 

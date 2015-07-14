@@ -26,9 +26,9 @@
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{
-               @"previousCursor": @"previous_cursor",
-               @"nextCursor": @"next_cursor",
-               @"identifiers": @"ids"
+        @"previousCursor": @"previous_cursor",
+        @"nextCursor": @"next_cursor",
+        @"identifiers": @"ids"
     };
 }
 
