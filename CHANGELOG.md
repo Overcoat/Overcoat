@@ -7,6 +7,7 @@
   [Pull Request #91](https://github.com/Overcoat/Overcoat/pull/91) (commits) (@sodastsai, @ryanmaxwell)
 * Refine the dependency to PromiseKit. [Pull Request #85](https://github.com/Overcoat/Overcoat/pull/85) (@mxcl)
 * Fix Core Data threading issue when saving objects [Pull Request #76](https://github.com/Overcoat/Overcoat/pull/76) (@nunofgs)
+* Fix URL pattern matching for higher level paths [Pull Request #94](https://github.com/Overcoat/Overcoat/pull/94) (@brandons)
 
 ### Summary of 3.0 release
 
