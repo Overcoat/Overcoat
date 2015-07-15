@@ -89,7 +89,8 @@
 
 - (void)testWildcardMatcher {
     NSDictionary *modelClassesByPath = @{
-        @"test/*": [OVCTestModel class]
+        @"test/*": [OVCTestModel class],
+        @"test2/**": [OVCAlternativeModel class],
     };
     
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:@"/api/v1"
@@ -97,6 +98,15 @@
     
     Class modelClass = [matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/whatever42"]];
     XCTAssertEqualObjects([OVCTestModel class], modelClass, @"should return OVCTestModel class");
+
+    modelClass = [matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/whatever/42"]];
+    XCTAssertNil(modelClass, @"should not find a matching model");
+
+    modelClass = [matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test2/whatever42"]];
+    XCTAssertEqualObjects([OVCAlternativeModel class], modelClass, @"should return OVCTestModel class");
+
+    modelClass = [matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test2/whatever/42"]];
+    XCTAssertEqualObjects([OVCAlternativeModel class], modelClass, @"should return OVCTestModel class");
 }
 
 @end
