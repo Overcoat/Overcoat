@@ -91,8 +91,21 @@ and return a dictionary mapping resource paths to model classes.
 }
 ```
 
-You don't need to specify the full path, and you can use `*` to match any text or `#` to match only digits.
-However, **path matching is strict and the number of path components must be equal**.
+You don't need to specify the full path, and you can use `*` and `**` to match any text or `#` to match only digits.
+
+If you use `*` and `#`, they are **strict path matchings**, so **the number of path components must be equal**. The `**` just matches any text and has no path components number limitation.
+
+Match String          | Path                           | Result
+--------------------- | ------------------------------ | --------
+`statuses/*`          | `statues/user_timeline`        | Matched
+`statuses/#`          | `statues/user_timeline`        | Missed (wrong type, the path component after `statuses` should be dights only)
+`statuses/*`          | `statues/retweets/12345`       | Missed (wrong number of path components, there should be only one  path component after `statuses`)
+`statuses/*/*`        | `statues/retweets/12345`       | Matched
+`statuses/**`         | `statues/retweets/12345`       | Matched
+`statuses/**`         | `statues/retweets/12345/extra` | Matched (the number of path components doesn't matter)
+`statuses/retweets/*` | `statues/retweets/12345`       | Matched
+`statuses/retweets/#` | `statues/retweets/12345`       | Matched
+
 
 ### Envelop and Error Responses
 Different REST APIs have different ways of dealing with status and other metadata.
