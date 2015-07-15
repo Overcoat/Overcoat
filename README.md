@@ -33,6 +33,8 @@ pod 'Overcoat', '~>3.0'
 
 If you don't have CocoaPods installed or integrated into your project,
  you can learn how to do so [here](http://cocoapods.org).
+ 
+If you are upgraded from Overcoat 2.x, check [the migration note]( https://github.com/Overcoat/Overcoat/blob/master/CHANGELOG.md#migrate-from-2x)
 
 #### NOTE
 
