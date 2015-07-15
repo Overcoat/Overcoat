@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'CoreData' do |ss|
-    ss.subspec 'Core' do |sss|
+    ss.subspec 'Mantle2' do |sss|
       sss.dependency 'Overcoat/Core'
       sss.public_header_files = 'Overcoat/CoreData/*.h'
       sss.private_header_files = 'Overcoat/CoreData/*_Internal.h'
@@ -33,15 +33,21 @@ Pod::Spec.new do |s|
       sss.xcconfig = {
         'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1'
       }
-    end
-
-    ss.subspec 'Mantle2' do |sss|
-      sss.dependency 'Overcoat/CoreData/Core'
+      sss.dependency 'Mantle', '~> 2'
       sss.dependency 'MTLManagedObjectAdapter'
+      sss.dependency 'MTLManagedObjectAdapter/extobjc'
     end
 
     ss.subspec 'Mantle1' do |sss|
-      sss.dependency 'Overcoat/CoreData/Core'
+      sss.dependency 'Overcoat/Core'
+      sss.public_header_files = 'Overcoat/CoreData/*.h'
+      sss.private_header_files = 'Overcoat/CoreData/*_Internal.h'
+      sss.source_files = 'Overcoat/CoreData/*.{h,m}'
+      sss.frameworks = 'CoreData'
+      sss.xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1'
+      }
+      sss.dependency 'Mantle', '~> 1'
     end
 
     ss.default_subspec = 'Mantle2'
