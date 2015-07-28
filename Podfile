@@ -1,23 +1,29 @@
+require 'xcodeproj'
+
 source 'https://github.com/CocoaPods/Specs.git'
 
-# Workspace and Project file
+# Workspace and Project file -------------------------------------------------------------------------------------------
 workspace 'OvercoatApp'
 xcodeproj 'OvercoatApp/OvercoatApp.xcodeproj'
+link_with 'Overcoat-iOS', 'Overcoat-OSX'
 
-# Environments and Variables
+# Environments and Variables -------------------------------------------------------------------------------------------
 overcoat_podspec_path = 'Overcoat.podspec'
 
 os_type = ENV['OS_TYPE'] || 'iOS'
 platform_type = os_type.downcase.to_sym
 
+overcoat_subspecs = ['ReactiveCocoa', 'PromiseKit']
 mantle_version = ENV['MANTLE'] || '2.0'
 if mantle_version == '1.5'
+  overcoat_subspecs << 'CoreData/Mantle1'
   if os_type == 'iOS'
     os_version = '6.0'
   else
     os_version = '10.8'
   end
 else
+  overcoat_subspecs << 'CoreData'
   if os_type == 'iOS'
     os_version = '8.0'
   else
@@ -25,40 +31,24 @@ else
   end
 end
 
+# Dependencies ---------------------------------------------------------------------------------------------------------
+platform platform_type, os_version
+
 pod 'AFNetworking', :inhibit_warnings => true
-pod 'OHHTTPStubs', :inhibit_warnings => true
-
-# Targets
-target "Overcoat-#{os_type}-Tests" do
-  platform platform_type, os_version
-  pod 'OHHTTPStubs'
-  pod 'Overcoat', :path => overcoat_podspec_path
-  pod 'Mantle', "~> #{mantle_version}"
+pod 'Mantle', "~> #{mantle_version}", :inhibit_warnings => true
+if mantle_version == '2.0'
+  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
 end
+pod 'Overcoat', :subspecs => overcoat_subspecs, :path => overcoat_podspec_path
 
-target "Overcoat-#{os_type}-RC-Tests" do
-  platform platform_type, os_version
-  pod 'OHHTTPStubs'
-  pod 'Overcoat/ReactiveCocoa', :path => overcoat_podspec_path
-  pod 'Mantle', "~> #{mantle_version}"
-end
+# Test target ---------------------------------------------------------------------------------------------------------
+target :test, :exclusive => true do
+  # Link with Tests targets
+  link_with Xcodeproj::Project.open('OvercoatApp/OvercoatApp.xcodeproj').root_object.targets.keep_if { |target|
+    target.name.end_with?('Tests')
+  }.map { |target|
+    target.name
+  }
 
-target "Overcoat-#{os_type}-PK-Tests" do
-  platform platform_type, os_version
-  pod 'OHHTTPStubs'
-  pod 'Overcoat/PromiseKit', :path => overcoat_podspec_path
-  pod 'Mantle', "~> #{mantle_version}"
-end
-
-target "Overcoat-#{os_type}-CoreData-Tests" do
-  platform platform_type, os_version
-  pod 'OHHTTPStubs'
-  pod 'Mantle', "~> #{mantle_version}"
-
-  if mantle_version == '2.0'
-    pod 'Overcoat/CoreData', :path => overcoat_podspec_path
-    pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
-  else
-    pod 'Overcoat/CoreData/Mantle1', :path => overcoat_podspec_path
-  end
+  pod 'OHHTTPStubs', :inhibit_warnings => true
 end

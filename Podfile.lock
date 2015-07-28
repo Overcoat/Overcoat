@@ -29,8 +29,6 @@ PODS:
   - MTLManagedObjectAdapter/extobjc (1.0):
     - Mantle (~> 2.0)
   - OHHTTPStubs (4.0.2)
-  - Overcoat (3.0.0):
-    - Overcoat/Core (= 3.0.0)
   - Overcoat/Core (3.0.0):
     - AFNetworking (~> 2.5)
     - Mantle (<= 3.0)
@@ -61,7 +59,6 @@ DEPENDENCIES:
   - Mantle (~> 2.0)
   - MTLManagedObjectAdapter
   - OHHTTPStubs
-  - Overcoat (from `Overcoat.podspec`)
   - Overcoat/CoreData (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
   - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
@@ -79,4 +76,4 @@ SPEC CHECKSUMS:
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

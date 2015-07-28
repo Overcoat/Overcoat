@@ -21,10 +21,11 @@
 // THE SOFTWARE.
 
 #import "OVCModelResponseSerializer.h"
+#import <Mantle/Mantle.h>
+#import "OVCUtilities.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
 #import "NSError+OVCResponse.h"
-#import <Mantle/Mantle.h>
 
 @interface OVCModelResponseSerializer ()
 
@@ -44,7 +45,11 @@
     NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
 
     if (errorModelClass != Nil) {
+#if OVERCOAT_USING_MANTLE_2
+        NSParameterAssert([errorModelClass conformsToProtocol:@protocol(MTLModel)]);
+#else
         NSParameterAssert([errorModelClass isSubclassOfClass:[MTLModel class]]);
+#endif
     }
 
     OVCModelResponseSerializer *serializer = [self serializerWithReadingOptions:0];

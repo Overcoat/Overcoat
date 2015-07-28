@@ -22,6 +22,7 @@
 
 #import "OVCURLMatcher.h"
 #import <Mantle/Mantle.h>
+#import "OVCUtilities.h"
 
 typedef NS_ENUM(NSInteger, OVCURLMatcherType) {
     OVCURLMatcherTypeNone   = -1,
@@ -150,7 +151,11 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 #pragma mark - Private
 
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path {
+#if OVERCOAT_USING_MANTLE_2
+    NSParameterAssert([modelClass conformsToProtocol:@protocol(MTLModel)]);
+#else
     NSParameterAssert([modelClass isSubclassOfClass:[MTLModel class]]);
+#endif
     NSParameterAssert(path);
 
     NSArray *tokens = nil;
