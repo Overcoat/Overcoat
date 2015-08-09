@@ -8,7 +8,7 @@ target 'TwitterTimeline' do
   pod 'AFNetworking', :inhibit_warnings => true
 
   # == Using Mantle 2.x ==========
-  pod 'Mantle', '~> 2.0'
+  pod 'Mantle', '2.0.2'
   pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
   # ==============================
 

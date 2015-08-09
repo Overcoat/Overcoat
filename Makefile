@@ -1,4 +1,11 @@
-.PHONY: test
+test:
+	# Call `make` directly to force `clean-pod`
+	make test-ios-mantle1
+	make test-ios-mantle2
+	make test-osx-mantle1
+	make test-osx-mantle2
+
+# Command check
 
 check-pod-install:
 	which pod 1>/dev/null 2>&1 || (echo "\n\n>>> Please install cocoapods first. (https://cocoapods.org)\n" && exit 1)
@@ -65,10 +72,3 @@ test-osx-mantle2: install-osx-mantle2-pod execute-osx-tests
 test-ios: test-ios-mantle2
 
 test-osx: test-osx-mantle2
-
-test:
-	# Call `make` directly to force `clean-pod`
-	make test-ios-mantle1
-	make test-ios-mantle2
-	make test-osx-mantle1
-	make test-osx-mantle2

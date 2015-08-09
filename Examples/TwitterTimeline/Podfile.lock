@@ -88,7 +88,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - libextobjc
-  - Mantle (~> 2.0)
+  - Mantle (= 2.0.2)
   - MTLManagedObjectAdapter
   - Overcoat/CoreData (from `../../Overcoat.podspec`)
   - Overcoat/PromiseKit (from `../../Overcoat.podspec`)
@@ -105,8 +105,8 @@ SPEC CHECKSUMS:
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
   Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
-  Overcoat: 7d1351d01d762fd3618cbeca76d18e53e522f365
+  Overcoat: ed7de0ab672f7f800208b0b008220c6a4232a615
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 
-COCOAPODS: 0.37.2
+COCOAPODS: 0.38.2

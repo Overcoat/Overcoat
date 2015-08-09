@@ -30,8 +30,8 @@ Pod::Spec.new do |s|
       sss.private_header_files = 'Overcoat/CoreData/*_Internal.h'
       sss.source_files = 'Overcoat/CoreData/*.{h,m}'
       sss.frameworks = 'CoreData'
-      sss.xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1'
+      sss.user_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
       }
       sss.dependency 'Mantle', '~> 2'
       sss.dependency 'MTLManagedObjectAdapter'
@@ -44,8 +44,8 @@ Pod::Spec.new do |s|
       sss.private_header_files = 'Overcoat/CoreData/*_Internal.h'
       sss.source_files = 'Overcoat/CoreData/*.{h,m}'
       sss.frameworks = 'CoreData'
-      sss.xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1'
+      sss.user_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
       }
       sss.dependency 'Mantle', '~> 1'
     end
@@ -58,8 +58,8 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'Overcoat/Social/*.h'
     ss.source_files = 'Overcoat/Social/*.{h,m}'
     ss.frameworks = 'Accounts', 'Social'
-    ss.xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1'
+    ss.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',  # Used for shortcuts in umbrella header
     }
   end
 
@@ -68,8 +68,8 @@ Pod::Spec.new do |s|
     ss.dependency 'PromiseKit/Promise', '~>1.2'
     ss.public_header_files = 'PromiseKit+Overcoat/*.h'
     ss.source_files = 'PromiseKit+Overcoat'
-    ss.xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1'
+    ss.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
     }
   end
 
@@ -78,8 +78,8 @@ Pod::Spec.new do |s|
     ss.dependency 'ReactiveCocoa', '~>2.4'
     ss.public_header_files = 'ReactiveCocoa+Overcoat/*.h'
     ss.source_files = 'ReactiveCocoa+Overcoat'
-    ss.xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1'
+    ss.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
     }
   end
 

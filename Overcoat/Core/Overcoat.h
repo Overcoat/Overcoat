@@ -29,6 +29,7 @@
 #import <Overcoat/OVCHTTPRequestOperationManager.h>
 #import <Overcoat/OVCHTTPSessionManager.h>
 
+// Shortcuts for subspec headers
 #if OVERCOAT_SUPPORT_COREDATA
 #import <Overcoat/CoreData+Overcoat.h>
 #endif
