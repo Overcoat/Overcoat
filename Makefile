@@ -1,9 +1,9 @@
 test:
 	# Call `make` directly to force `clean-pod`
-	make test-ios-mantle1
-	make test-ios-mantle2
 	make test-osx-mantle1
 	make test-osx-mantle2
+	make test-ios-mantle1
+	make test-ios-mantle2
 
 # Command check
 

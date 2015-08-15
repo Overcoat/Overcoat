@@ -17,9 +17,12 @@ PODS:
   - AFNetworking/Reachability (2.5.4)
   - AFNetworking/Security (2.5.4)
   - AFNetworking/Serialization (2.5.4)
-  - Mantle (2.0.3):
-    - Mantle/extobjc (= 2.0.3)
-  - Mantle/extobjc (2.0.3)
+  - AFNetworking/UIKit (2.5.4):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - Mantle (2.0.4):
+    - Mantle/extobjc (= 2.0.4)
+  - Mantle/extobjc (2.0.4)
   - MTLManagedObjectAdapter (1.0):
     - Mantle (~> 2.0)
     - MTLManagedObjectAdapter/extobjc (= 1.0)
@@ -66,10 +69,10 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
-  Mantle: 8d6b14979a082a9ed4994463eb7a4ff576c94632
+  Mantle: 6bee68168423948be0c0c5924832bf3af188e099
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OHHTTPStubs: f3473ab21dbf0815253ac96b977d5c36f1daad09
-  Overcoat: ed7de0ab672f7f800208b0b008220c6a4232a615
+  Overcoat: 8664dade0870a3a320f4c7281d28e638c03adc52
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
