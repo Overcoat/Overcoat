@@ -1,5 +1,7 @@
+XC_WORKSPACE=Overcoat.xcworkspace
+
 test:
-	# Call `make` directly to force `clean-pod`
+	# Call `make` directly to force `clean`
 	make test-osx-mantle1
 	make test-osx-mantle2
 	make test-ios-mantle1
@@ -15,10 +17,10 @@ check-xctool-install:
 
 # Cocoapods, including Mantle setup
 
-clean-pod:
+clean:
 	rm -rf Pods
 
-install-osx-mantle1-pod install-ios-mantle1-pod install-osx-mantle2-pod install-ios-mantle2-pod: check-pod-install clean-pod
+install-osx-mantle1-pod install-ios-mantle1-pod install-osx-mantle2-pod install-ios-mantle2-pod: check-pod-install clean
 
 install-osx-mantle1-pod:
 	OS_TYPE=OSX MANTLE=1.5 pod install 1>/dev/null
@@ -38,20 +40,20 @@ install-ios-mantle2-pod:
 build-osx-tests build-ios-tests: check-xctool-install
 
 build-osx-tests:
-	xctool -workspace OvercoatApp.xcworkspace -scheme Overcoat-OSX build-tests 1>/dev/null
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX build-tests 1>/dev/null
 
 build-ios-tests:
-	xctool -workspace OvercoatApp.xcworkspace -scheme Overcoat-iOS -sdk iphonesimulator build-tests 1>/dev/null
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator build-tests 1>/dev/null
 
 # Run tests
 
 run-ios-tests run-osx-tests: check-xctool-install
 
 run-ios-tests:
-	xctool -workspace OvercoatApp.xcworkspace -scheme Overcoat-iOS -sdk iphonesimulator run-tests -test-sdk iphonesimulator
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator run-tests -test-sdk iphonesimulator
 
 run-osx-tests:
-	xctool -workspace OvercoatApp.xcworkspace -scheme Overcoat-OSX run-tests
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX run-tests
 
 # Tests
 

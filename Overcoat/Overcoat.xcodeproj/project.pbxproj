@@ -172,24 +172,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		16A3A105DBFE32FA3E57BE81 /* libPods-Overcoat-iOS-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		23E264AC1358C075B1C3DF64 /* libPods-Overcoat-iOS-Mantle2-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-Mantle2-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		24EAE765E455C1158C5760F6 /* libPods-Overcoat-iOS-RC-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-RC-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		37DC9ADF58440FA4E143A4A5 /* libPods-Overcoat-OSX-Mantle1-PK-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-Mantle1-PK-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		677F4048FA88CEA9EB72FA7D /* libPods-Overcoat-iOS-Mantle1-PK-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-Mantle1-PK-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6DC67C0CA0257C0F3BDB30D1 /* libPods-Overcoat-iOS-CoreData-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-CoreData-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		75A6726D5F69E65A4F8388E8 /* libPods-Overcoat-OSX-Mantle1-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-Mantle1-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F51190A577B8081362EBBDA /* libPods-test.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-test.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		85D5A278E6DB7306888464D4 /* libPods-Overcoat-OSX-Mantle1-RC-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-Mantle1-RC-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		867BB425DD2D15AA5D4A9F91 /* libPods-Overcoat-iOS-PK-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-PK-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		86FE4BBED6A63CB2347EA98F /* libPods-Overcoat-OSX-CoreData-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-CoreData-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A38159DBBB967157CE4FF08 /* libPods-Overcoat-OSX-RC-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-RC-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		A651BF5FC2329D87077E4D6B /* libPods-Overcoat-OSX-PK-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-PK-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ADEBF71708921A119F584BE5 /* libPods-Overcoat-iOS-Mantle1-RC-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-Mantle1-RC-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1265D77683FF9141419DA3A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB148E81752E94CB468DC73F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA98582A500A0BAC1531D366 /* libPods-Overcoat-iOS-Mantle1-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-iOS-Mantle1-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		EACDBEE75D054F18F7D05A3F /* libPods-Overcoat-OSX-Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Overcoat-OSX-Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB58E11F75F463FECBAB33F1 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "../Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FE025E161B2EAE4000B0A48E /* Overcoat-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Overcoat-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE025E1A1B2EAE4000B0A48E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -240,6 +225,51 @@
 		FEAC07E51B6706860012F823 /* Pods-test.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-test.release.xcconfig"; path = "../Pods/Target Support Files/Pods-test/Pods-test.release.xcconfig"; sourceTree = "<group>"; };
 		FEBF002B1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManagerCoreDataTests.m; sourceTree = "<group>"; };
 		FEBF002E1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerCoreDataTests.m; sourceTree = "<group>"; };
+		FED724431B7FA9C400D6EA72 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
+		FED724441B7FA9C400D6EA72 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
+		FED724451B7FA9C400D6EA72 /* NSError+OVCResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+OVCResponse.h"; sourceTree = "<group>"; };
+		FED724461B7FA9C400D6EA72 /* NSError+OVCResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+OVCResponse.m"; sourceTree = "<group>"; };
+		FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager_Internal.h; sourceTree = "<group>"; };
+		FED724481B7FA9C400D6EA72 /* OVCHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager.h; sourceTree = "<group>"; };
+		FED724491B7FA9C400D6EA72 /* OVCHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPManager.m; sourceTree = "<group>"; };
+		FED7244A1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		FED7244B1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		FED7244C1B7FA9C400D6EA72 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
+		FED7244D1B7FA9C400D6EA72 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
+		FED7244E1B7FA9C400D6EA72 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
+		FED7244F1B7FA9C400D6EA72 /* OVCModelResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializer.m; sourceTree = "<group>"; };
+		FED724501B7FA9C400D6EA72 /* OVCResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
+		FED724511B7FA9C400D6EA72 /* OVCResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
+		FED724521B7FA9C400D6EA72 /* OVCURLMatcher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCURLMatcher.h; sourceTree = "<group>"; };
+		FED724531B7FA9C400D6EA72 /* OVCURLMatcher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCURLMatcher.m; sourceTree = "<group>"; };
+		FED724541B7FA9C400D6EA72 /* OVCUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCUtilities.h; sourceTree = "<group>"; };
+		FED724551B7FA9C400D6EA72 /* Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
+		FED724561B7FA9D300D6EA72 /* CoreData+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CoreData+Overcoat.h"; sourceTree = "<group>"; };
+		FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager_Internal.h; sourceTree = "<group>"; };
+		FED724581B7FA9D300D6EA72 /* OVCManagedHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager.h; sourceTree = "<group>"; };
+		FED724591B7FA9D300D6EA72 /* OVCManagedHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPManager.m; sourceTree = "<group>"; };
+		FED7245A1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		FED7245B1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		FED7245C1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPSessionManager.h; sourceTree = "<group>"; };
+		FED7245D1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPSessionManager.m; sourceTree = "<group>"; };
+		FED7245E1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer_Internal.h; sourceTree = "<group>"; };
+		FED7245F1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer.h; sourceTree = "<group>"; };
+		FED724601B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedModelResponseSerializer.m; sourceTree = "<group>"; };
+		FED724611B7FA9D300D6EA72 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
+		FED724621B7FA9D300D6EA72 /* OVCManagedStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedStore.h; sourceTree = "<group>"; };
+		FED724631B7FA9D300D6EA72 /* OVCManagedStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedStore.m; sourceTree = "<group>"; };
+		FED724641B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCSocialRequestSerializer.h; sourceTree = "<group>"; };
+		FED724651B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCSocialRequestSerializer.m; sourceTree = "<group>"; };
+		FED724661B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		FED724671B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		FED724681B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		FED724691B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		FED7246A1B7FA9E700D6EA72 /* ReactiveCocoa+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveCocoa+Overcoat.h"; sourceTree = "<group>"; };
+		FED7246B1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+PromiseKit.h"; sourceTree = "<group>"; };
+		FED7246C1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+PromiseKit.m"; sourceTree = "<group>"; };
+		FED7246D1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+PromiseKit.h"; sourceTree = "<group>"; };
+		FED7246E1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+PromiseKit.m"; sourceTree = "<group>"; };
+		FED7246F1B7FA9F600D6EA72 /* PromiseKit+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PromiseKit+Overcoat.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,21 +359,6 @@
 		0318A4F2ED9CC46F2BA8E74C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				75A6726D5F69E65A4F8388E8 /* libPods-Overcoat-OSX-Mantle1-Tests.a */,
-				EA98582A500A0BAC1531D366 /* libPods-Overcoat-iOS-Mantle1-Tests.a */,
-				677F4048FA88CEA9EB72FA7D /* libPods-Overcoat-iOS-Mantle1-PK-Tests.a */,
-				ADEBF71708921A119F584BE5 /* libPods-Overcoat-iOS-Mantle1-RC-Tests.a */,
-				37DC9ADF58440FA4E143A4A5 /* libPods-Overcoat-OSX-Mantle1-PK-Tests.a */,
-				85D5A278E6DB7306888464D4 /* libPods-Overcoat-OSX-Mantle1-RC-Tests.a */,
-				23E264AC1358C075B1C3DF64 /* libPods-Overcoat-iOS-Mantle2-Tests.a */,
-				867BB425DD2D15AA5D4A9F91 /* libPods-Overcoat-iOS-PK-Tests.a */,
-				24EAE765E455C1158C5760F6 /* libPods-Overcoat-iOS-RC-Tests.a */,
-				16A3A105DBFE32FA3E57BE81 /* libPods-Overcoat-iOS-Tests.a */,
-				A651BF5FC2329D87077E4D6B /* libPods-Overcoat-OSX-PK-Tests.a */,
-				8A38159DBBB967157CE4FF08 /* libPods-Overcoat-OSX-RC-Tests.a */,
-				EACDBEE75D054F18F7D05A3F /* libPods-Overcoat-OSX-Tests.a */,
-				6DC67C0CA0257C0F3BDB30D1 /* libPods-Overcoat-iOS-CoreData-Tests.a */,
-				86FE4BBED6A63CB2347EA98F /* libPods-Overcoat-OSX-CoreData-Tests.a */,
 				CB148E81752E94CB468DC73F /* libPods.a */,
 				7F51190A577B8081362EBBDA /* libPods-test.a */,
 			);
@@ -364,7 +379,8 @@
 		FE025E0B1B2EAE2C00B0A48E = {
 			isa = PBXGroup;
 			children = (
-				FE025E821B2EAF3200B0A48E /* OvercoatTests */,
+				FED724161B7FA85800D6EA72 /* Overcoat Sources */,
+				FE025E821B2EAF3200B0A48E /* Overcoat Tests */,
 				FE025E181B2EAE4000B0A48E /* Overcoat-iOS */,
 				FE025E421B2EAE7100B0A48E /* Overcoat-OSX */,
 				FE025E171B2EAE4000B0A48E /* Products */,
@@ -433,7 +449,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FE025E821B2EAF3200B0A48E /* OvercoatTests */ = {
+		FE025E821B2EAF3200B0A48E /* Overcoat Tests */ = {
 			isa = PBXGroup;
 			children = (
 				FE025E831B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.h */,
@@ -457,8 +473,8 @@
 				FE025E931B2EAF4A00B0A48E /* Stubs */,
 				FE025E991B2EAF4A00B0A48E /* Test.xcdatamodeld */,
 			);
-			name = OvercoatTests;
-			path = ../OvercoatTests;
+			name = "Overcoat Tests";
+			path = ../tests;
 			sourceTree = "<group>";
 		};
 		FE025E931B2EAF4A00B0A48E /* Stubs */ = {
@@ -471,6 +487,99 @@
 				FE025E981B2EAF4A00B0A48E /* models.json */,
 			);
 			path = Stubs;
+			sourceTree = "<group>";
+		};
+		FED724161B7FA85800D6EA72 /* Overcoat Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FED7243E1B7FA96000D6EA72 /* Core */,
+				FED7243F1B7FA96400D6EA72 /* CoreData */,
+				FED724401B7FA97800D6EA72 /* Social */,
+				FED724411B7FA97F00D6EA72 /* PromiseKit */,
+				FED724421B7FA98800D6EA72 /* ReactiveCocoa */,
+			);
+			name = "Overcoat Sources";
+			path = ../sources;
+			sourceTree = "<group>";
+		};
+		FED7243E1B7FA96000D6EA72 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FED724431B7FA9C400D6EA72 /* NSDictionary+Overcoat.h */,
+				FED724441B7FA9C400D6EA72 /* NSDictionary+Overcoat.m */,
+				FED724451B7FA9C400D6EA72 /* NSError+OVCResponse.h */,
+				FED724461B7FA9C400D6EA72 /* NSError+OVCResponse.m */,
+				FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */,
+				FED724481B7FA9C400D6EA72 /* OVCHTTPManager.h */,
+				FED724491B7FA9C400D6EA72 /* OVCHTTPManager.m */,
+				FED7244A1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.h */,
+				FED7244B1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.m */,
+				FED7244C1B7FA9C400D6EA72 /* OVCHTTPSessionManager.h */,
+				FED7244D1B7FA9C400D6EA72 /* OVCHTTPSessionManager.m */,
+				FED7244E1B7FA9C400D6EA72 /* OVCModelResponseSerializer.h */,
+				FED7244F1B7FA9C400D6EA72 /* OVCModelResponseSerializer.m */,
+				FED724501B7FA9C400D6EA72 /* OVCResponse.h */,
+				FED724511B7FA9C400D6EA72 /* OVCResponse.m */,
+				FED724521B7FA9C400D6EA72 /* OVCURLMatcher.h */,
+				FED724531B7FA9C400D6EA72 /* OVCURLMatcher.m */,
+				FED724541B7FA9C400D6EA72 /* OVCUtilities.h */,
+				FED724551B7FA9C400D6EA72 /* Overcoat.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FED7243F1B7FA96400D6EA72 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FED724561B7FA9D300D6EA72 /* CoreData+Overcoat.h */,
+				FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */,
+				FED724581B7FA9D300D6EA72 /* OVCManagedHTTPManager.h */,
+				FED724591B7FA9D300D6EA72 /* OVCManagedHTTPManager.m */,
+				FED7245A1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.h */,
+				FED7245B1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.m */,
+				FED7245C1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.h */,
+				FED7245D1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.m */,
+				FED7245E1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer_Internal.h */,
+				FED7245F1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.h */,
+				FED724601B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.m */,
+				FED724611B7FA9D300D6EA72 /* OVCManagedObjectSerializingContainer.h */,
+				FED724621B7FA9D300D6EA72 /* OVCManagedStore.h */,
+				FED724631B7FA9D300D6EA72 /* OVCManagedStore.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FED724401B7FA97800D6EA72 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				FED724641B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.h */,
+				FED724651B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.m */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		FED724411B7FA97F00D6EA72 /* PromiseKit */ = {
+			isa = PBXGroup;
+			children = (
+				FED7246B1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.h */,
+				FED7246C1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.m */,
+				FED7246D1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.h */,
+				FED7246E1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.m */,
+				FED7246F1B7FA9F600D6EA72 /* PromiseKit+Overcoat.h */,
+			);
+			path = PromiseKit;
+			sourceTree = "<group>";
+		};
+		FED724421B7FA98800D6EA72 /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				FED724661B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */,
+				FED724671B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */,
+				FED724681B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.h */,
+				FED724691B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.m */,
+				FED7246A1B7FA9E700D6EA72 /* ReactiveCocoa+Overcoat.h */,
+			);
+			path = ReactiveCocoa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -722,7 +831,7 @@
 					};
 				};
 			};
-			buildConfigurationList = FE025E0F1B2EAE2C00B0A48E /* Build configuration list for PBXProject "OvercoatApp" */;
+			buildConfigurationList = FE025E0F1B2EAE2C00B0A48E /* Build configuration list for PBXProject "Overcoat" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -2335,7 +2444,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FE025E0F1B2EAE2C00B0A48E /* Build configuration list for PBXProject "OvercoatApp" */ = {
+		FE025E0F1B2EAE2C00B0A48E /* Build configuration list for PBXProject "Overcoat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FE025E101B2EAE2C00B0A48E /* Debug */,

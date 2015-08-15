@@ -3,8 +3,8 @@ require 'xcodeproj'
 source 'https://github.com/CocoaPods/Specs.git'
 
 # Workspace and Project file -------------------------------------------------------------------------------------------
-workspace 'OvercoatApp'
-xcodeproj 'OvercoatApp/OvercoatApp.xcodeproj'
+workspace 'Overcoat'
+xcodeproj 'Overcoat/Overcoat.xcodeproj'
 link_with 'Overcoat-iOS', 'Overcoat-OSX'
 
 # Environments and Variables -------------------------------------------------------------------------------------------
@@ -44,7 +44,7 @@ pod 'Overcoat', :subspecs => overcoat_subspecs, :path => overcoat_podspec_path
 # Test target ---------------------------------------------------------------------------------------------------------
 target :test, :exclusive => true do
   # Link with Tests targets
-  link_with Xcodeproj::Project.open('OvercoatApp/OvercoatApp.xcodeproj').root_object.targets.keep_if { |target|
+  link_with Xcodeproj::Project.open('Overcoat/Overcoat.xcodeproj').root_object.targets.keep_if { |target|
     target.name.end_with?('Tests')
   }.map { |target|
     target.name
