@@ -67,7 +67,7 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.6)
   - Mantle (~> 2.0)
   - MTLManagedObjectAdapter
   - OHHTTPStubs
@@ -84,7 +84,7 @@ SPEC CHECKSUMS:
   Mantle: 6bee68168423948be0c0c5924832bf3af188e099
   MTLManagedObjectAdapter: cd1bf9562f205407d584ab7a577bd112ec140095
   OHHTTPStubs: f639130b83fb5f4f022d38f841141b0a6fa77249
-  Overcoat: 8664dade0870a3a320f4c7281d28e638c03adc52
+  Overcoat: 8466f0a3f70192d2afcafafc99fc15ca6d74d7d2
   PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 

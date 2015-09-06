@@ -18,9 +18,9 @@ mantle_version = ENV['MANTLE'] || '2.0'
 if mantle_version == '1.5'
   overcoat_subspecs << 'CoreData/Mantle1'
   if os_type == 'iOS'
-    os_version = '6.0'
+    os_version = '7.0'
   else
-    os_version = '10.8'
+    os_version = '10.9'
   end
 else
   overcoat_subspecs << 'CoreData'
