@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'Overcoat/Core'
-    ss.dependency 'PromiseKit/Promise', '~>1.2'
+    ss.dependency 'PromiseKit/Promise', '~> 1.2'
     ss.public_header_files = 'sources/PromiseKit/*.h'
     ss.source_files = 'sources/PromiseKit/*.{h,m}'
     ss.user_target_xcconfig = {
@@ -75,7 +75,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'ReactiveCocoa' do |ss|
     ss.dependency 'Overcoat/Core'
-    ss.dependency 'ReactiveCocoa', '~>2.4'
+    ss.dependency 'ReactiveCocoa', '~> 2.4'
     ss.public_header_files = 'sources/ReactiveCocoa/*.h'
     ss.source_files = 'sources/ReactiveCocoa/*.{h,m}'
     ss.user_target_xcconfig = {
