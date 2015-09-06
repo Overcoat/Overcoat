@@ -15,6 +15,9 @@ build/*
 xcuserdata
 profile
 *.moved-aside
+*.xccheckout
+*.moved-aside
+*.xcuserstate
 # AppCode
 .idea
 #Cocoapods
