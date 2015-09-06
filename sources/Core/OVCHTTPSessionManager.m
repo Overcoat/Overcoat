@@ -64,23 +64,50 @@
 
 #pragma mark - Making requests
 
+- (NSURLSessionDataTask *)_dataTaskWithHTTPMethod:(NSString *)method
+                                        URLString:(NSString *)URLString
+                                       parameters:(id)parameters
+                                       completion:(void (^)(OVCResponse *, NSError *))completion {
+    // The implementation is copied from AFNetworking ... (Since we want to pass `responseObject`)
+    // (Superclass implemenration doesn't return response object.)
+
+    NSError *serializationError = nil;
+    NSMutableURLRequest *request = [self.requestSerializer
+                                    requestWithMethod:method
+                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
+                                    parameters:parameters
+                                    error:&serializationError];
+    if (serializationError) {
+        if (completion) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
+                completion(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        return nil;
+    }
+
+    return [self dataTaskWithRequest:request
+                   completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+                       if (completion) {
+                           if (!error) {
+                               completion(responseObject, nil);
+                           } else {
+                               completion(responseObject, error);
+                           }
+                       }
+                   }];
+}
+
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:(id)parameters
                    completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"GET"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"GET"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
@@ -88,20 +115,10 @@
 - (NSURLSessionDataTask *)HEAD:(NSString *)URLString
                     parameters:(id)parameters
                     completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"HEAD"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id __unused responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"HEAD"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
@@ -109,20 +126,10 @@
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
                     completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"POST"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"POST"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
@@ -131,43 +138,47 @@
                     parameters:(id)parameters
      constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
                     completion:(void (^)(id, NSError *))completion {
+    // The implementation is copied from AFNetworking ... (Since we want to pass `responseObject`)
+    // (Superclass implemenration doesn't return response object.)
+
+    NSError *serializationError = nil;
     NSMutableURLRequest *request = [self.requestSerializer
                                     multipartFormRequestWithMethod:@"POST"
                                     URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
                                     parameters:parameters
                                     constructingBodyWithBlock:block
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self uploadTaskWithStreamedRequest:request
-                                                            progress:nil
-                                                   completionHandler:^(NSURLResponse * __unused response,
-                                                                       id responseObject,
-                                                                       NSError *error) {
-                                                       if (completion) {
-                                                           completion(responseObject, error);
-                                                       }
-                                                   }];
-    [task resume];
-    return task;
+                                    error:&serializationError];
+    if (serializationError) {
+        if (completion) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wgnu"
+            dispatch_async(self.completionQueue ?: dispatch_get_main_queue(), ^{
+                completion(nil, serializationError);
+            });
+#pragma clang diagnostic pop
+        }
+        return nil;
+    }
+
+    return [self dataTaskWithRequest:request
+                   completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+                       if (completion) {
+                           if (!error) {
+                               completion(responseObject, nil);
+                           } else {
+                               completion(responseObject, error);
+                           }
+                       }
+                   }];
 }
 
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
                    parameters:(id)parameters
                    completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"PUT"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"PUT"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
@@ -175,20 +186,10 @@
 - (NSURLSessionDataTask *)PATCH:(NSString *)URLString
                      parameters:(id)parameters
                      completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"PATCH"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"PATCH"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
@@ -196,20 +197,10 @@
 - (NSURLSessionDataTask *)DELETE:(NSString *)URLString
                       parameters:(id)parameters
                       completion:(void (^)(id, NSError *))completion {
-    NSMutableURLRequest *request = [self.requestSerializer
-                                    requestWithMethod:@"DELETE"
-                                    URLString:[NSURL URLWithString:URLString relativeToURL:self.baseURL].absoluteString
-                                    parameters:parameters
-                                    error:nil];
-    
-    NSURLSessionDataTask *task = [self dataTaskWithRequest:request
-                                         completionHandler:^(NSURLResponse * __unused response,
-                                                             id responseObject,
-                                                             NSError *error) {
-                                             if (completion) {
-                                                 completion(responseObject, error);
-                                             }
-                                         }];
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"DELETE"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                    completion:completion];
     [task resume];
     return task;
 }
