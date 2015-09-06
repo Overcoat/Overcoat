@@ -1,6 +1,7 @@
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
   s.version  = '3.0.0'
+  s.cocoapods_version = '>= 0.38'
   s.license  = 'MIT'
   s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
   s.homepage = 'https://github.com/overcoat/Overcoat'
@@ -10,6 +11,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.9'
+  s.watchos.deployment_target = '2.0'
 
   s.default_subspec = 'Core'
 
@@ -61,6 +63,10 @@ Pod::Spec.new do |s|
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',  # Used for shortcuts in umbrella header
     }
+
+    # watchOS doesn't support `Accounts` and `Social` frameworks.
+    ss.platform = :osx
+    ss.platform = :ios
   end
 
   s.subspec 'PromiseKit' do |ss|
