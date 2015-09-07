@@ -1,5 +1,10 @@
 # Overcoat Changelog
 
+## 3.1
+
+* Annotate nullability and lighweight generics of Objective-C [Issue #90](https://github.com/Overcoat/Overcoat/issues/90) (@sodastsai)
+* Change podspec to support `watchOS 2.0` and drop support of `iOS 6.0` and `OS X 10.8`. (so now we support iOS 7.0+ and OS X 10.9+) (@sodastsai)
+
 ## 3.0
 
 * Support Mantle 2.0. [Pull Request #87](https://github.com/Overcoat/Overcoat/pull/87) (@sodastsai)
@@ -19,7 +24,7 @@
 
 #### 1. Mantle 2.x Support
 
-By default, Overcoat 3.x installs **Mantle 2.x** as dependency. 
+By default, Overcoat 3.x installs **Mantle 2.x** as dependency.
 If you still have to stick with **Mantle 1.x**, then besides adding Overcoat, you have to specify this explicitly by:
 ```ruby
 pod 'Mantle', '~> 1.5'
@@ -77,7 +82,7 @@ Original class                   | CoreData support subclass
 In most cases, you could just switch your class name from orginial one to CoreData-supported one
 if you are using CoreData support.
 
-Also there are two base procotols: 
+Also there are two base procotols:
 
 * `OVCHTTPManager` defines common interfaces of `OVCHTTPSessionManager` and `OVCHTTPRequestOperationManager`.
 * `OVCManagedHTTPManager` extends the `OVCHTTPManager` protocl and defines common interfaces for CoreData support.
