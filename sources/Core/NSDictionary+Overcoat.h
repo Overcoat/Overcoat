@@ -21,12 +21,31 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Overcoat/OVCUtilities.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface NSDictionary (Overcoat)
+@interface NSDictionary OVCGenerics(KeyType, ObjectType) (Overcoat)
 
-- (nullable id)ovc_objectForKeyPath:(NSString *)keyPath;
+/**
+ *  Returns the value associated with a given key path.
+ *
+ *  For example, a dictionary like
+ *
+ *    NSDictionary *someDict = @{
+ *        @"dict": @{
+ *            @"answer": @42,
+ *        },
+ *    };
+ *    id answer = [someDict ovc_objectForKeyPath:@"dict.answer"];
+ *
+ *  The value of answer variable would be 42.
+ *
+ *  @param keyPath The key path for which to return the corresponding value.
+ *
+ *  @return The value associated with keyPath, or nil if no value is associated with keyPath.
+ */
+- (OVC_NULLABLE OVCGenericType(ObjectType, id))ovc_objectForKeyPath:(NSString *)keyPath;
 
 @end
 

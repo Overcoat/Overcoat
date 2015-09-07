@@ -24,8 +24,6 @@
 #import "OVCHTTPSessionManager+ReactiveCocoa.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-#if OVERCOAT_SUPPORT_URLSESSION
-
 @implementation OVCHTTPSessionManager (ReactiveCocoa)
 
 - (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters {
@@ -167,5 +165,3 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block {
 }
 
 @end
-
-#endif

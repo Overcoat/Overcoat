@@ -23,8 +23,6 @@
 #import "OVCHTTPSessionManager+PromiseKit.h"
 #import <PromiseKit/PromiseKit.h>
 
-#if OVERCOAT_SUPPORT_URLSESSION
-
 @implementation OVCHTTPSessionManager (PromiseKit)
 
 - (PMKPromise *)GET:(NSString *)URLString parameters:(id)parameters {
@@ -117,5 +115,3 @@ constructingBodyWithBlock:block
 }
 
 @end
-
-#endif

@@ -42,6 +42,23 @@
                  responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass {
+    return [[self alloc] initWithURLMatcher:URLMatcher
+                    responseClassURLMatcher:URLResponseClassMatcher
+                              responseClass:responseClass
+                            errorModelClass:errorModelClass];
+}
+
+- (instancetype)init {
+    return [self initWithURLMatcher:[[OVCURLMatcher alloc] initWithBasePath:nil modelClassesByPath:nil]
+            responseClassURLMatcher:nil
+                      responseClass:[OVCResponse class]
+                    errorModelClass:nil];
+}
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
+           responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
+                     responseClass:(Class)responseClass
+                   errorModelClass:(Class)errorModelClass {
     NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
 
     if (errorModelClass != Nil) {
@@ -52,13 +69,15 @@
 #endif
     }
 
-    OVCModelResponseSerializer *serializer = [self serializerWithReadingOptions:0];
-    serializer.URLMatcher = URLMatcher;
-    serializer.URLResponseClassMatcher = URLResponseClassMatcher;
-    serializer.responseClass = responseClass;
-    serializer.errorModelClass = errorModelClass;
+    if (self = [super init]) {
+        self.readingOptions = 0;
 
-    return serializer;
+        self.URLMatcher = URLMatcher;
+        self.URLResponseClassMatcher = URLResponseClassMatcher;
+        self.responseClass = responseClass;
+        self.errorModelClass = errorModelClass;
+    }
+    return self;
 }
 
 #pragma mark - AFURLRequestSerialization
@@ -67,7 +86,7 @@
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error {
     NSError *serializationError = nil;
-    id JSONObject = [super responseObjectForResponse:response data:data error:&serializationError];
+    id OVC__NULLABLE JSONObject = [super responseObjectForResponse:response data:data error:&serializationError];
     
     if (error) {
         *error = serializationError;

@@ -23,8 +23,12 @@
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCManagedModelResponseSerializer.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface OVCManagedModelResponseSerializer ()
 
-@property (strong, nonatomic, readwrite) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic, readwrite, OVC_NULLABLE) NSManagedObjectContext *managedObjectContext;
 
 @end
+
+NS_ASSUME_NONNULL_END

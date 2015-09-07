@@ -24,13 +24,15 @@
 #import <Overcoat/OVCUtilities.h>
 #import <Overcoat/OVCHTTPManager.h>
 
-#if OVERCOAT_SUPPORT_URLSESSION
+@class OVCResponse;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  `OVCHTTPSessionManager` provides methods to communicate with a web application over HTTP, mapping
  responses into native model objects which can optionally be persisted in a Core Data store.
  */
-@interface OVCHTTPSessionManager : AFHTTPSessionManager <OVCHTTPManager>
+@interface OVCHTTPSessionManager OVCGenerics(ResponseType: OVCResponse *) : AFHTTPSessionManager <OVCHTTPManager>
 
 ///---------------------------
 /// @name Making HTTP Requests
@@ -47,9 +49,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)GET:(NSString *)URLString
-                   parameters:(id)parameters
-                   completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)GET:(NSString *)URLString
+                                parameters:(OVC_NULLABLE id)parameters
+                                completion:(OVC_NULLABLE void(^)
+                                            (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                             NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `GET` request.
@@ -62,9 +66,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)HEAD:(NSString *)URLString
-                    parameters:(id)parameters
-                    completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)HEAD:(NSString *)URLString
+                                 parameters:(OVC_NULLABLE id)parameters
+                                 completion:(OVC_NULLABLE void(^)
+                                             (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                              NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `POST` request.
@@ -77,9 +83,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(id)parameters
-                    completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)POST:(NSString *)URLString
+                                 parameters:(OVC_NULLABLE id)parameters
+                                 completion:(OVC_NULLABLE void(^)
+                                             (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                              NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a multipart `POST` request.
@@ -94,10 +102,12 @@
  argument is an object adopting the `AFMultipartFormData` protocol.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)POST:(NSString *)URLString
-                    parameters:(id)parameters
-     constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
-                    completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)POST:(NSString *)URLString
+                                 parameters:(OVC_NULLABLE id)parameters
+                  constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block
+                                 completion:(OVC_NULLABLE void(^)
+                                             (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                              NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `PUT` request.
@@ -110,9 +120,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)PUT:(NSString *)URLString
-                   parameters:(id)parameters
-                   completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)PUT:(NSString *)URLString
+                                parameters:(OVC_NULLABLE id)parameters
+                                completion:(OVC_NULLABLE void(^)
+                                            (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                             NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `PATCH` request.
@@ -125,9 +137,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)PATCH:(NSString *)URLString
-                     parameters:(id)parameters
-                     completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)PATCH:(NSString *)URLString
+                                  parameters:(OVC_NULLABLE id)parameters
+                                  completion:(OVC_NULLABLE void(^)
+                                              (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                               NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `DELETE` request.
@@ -140,10 +154,12 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (NSURLSessionDataTask *)DELETE:(NSString *)URLString
-                      parameters:(id)parameters
-                      completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE NSURLSessionDataTask *)DELETE:(NSString *)URLString
+                                   parameters:(OVC_NULLABLE id)parameters
+                                   completion:(OVC_NULLABLE void(^)
+                                               (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                NSError * OVC__NULLABLE error))completion;
 
 @end
 
-#endif
+NS_ASSUME_NONNULL_END

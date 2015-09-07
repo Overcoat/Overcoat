@@ -34,6 +34,6 @@ OVC_EXTERN
 OVCURLMatcher *OVCHTTPManagerCreateURLMatcher(id<OVCHTTPManager> httpManager);
 
 OVC_EXTERN
-OVCURLMatcher *__nullable OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager);
+OVCURLMatcher * OVC__NULLABLE OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager);
 
 NS_ASSUME_NONNULL_END

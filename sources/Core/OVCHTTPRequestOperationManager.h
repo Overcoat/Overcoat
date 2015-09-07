@@ -22,12 +22,18 @@
 
 #import <AFNetworking/AFNetworking.h>
 #import <Overcoat/OVCHTTPManager.h>
+#import <Overcoat/OVCUtilities.h>
+
+@class OVCResponse;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  `OVCHTTPRequestOperationManager` provides methods to communicate with a web application over HTTP,
  mapping responses into native model objects via Mantle
  */
-@interface OVCHTTPRequestOperationManager : AFHTTPRequestOperationManager <OVCHTTPManager>
+@interface OVCHTTPRequestOperationManager OVCGenerics(ResponseType: OVCResponse *) :
+    AFHTTPRequestOperationManager <OVCHTTPManager>
 
 /**
  Cancels all outstanding requests.
@@ -49,9 +55,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)GET:(NSString *)URLString
-                     parameters:(id)parameters
-                     completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)GET:(NSString *)URLString
+                                  parameters:(OVC_NULLABLE id)parameters
+                                  completion:(OVC_NULLABLE void(^)
+                                              (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                               NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a `HEAD` request and executes a block when the request completes or fails.
@@ -64,9 +72,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)HEAD:(NSString *)URLString
-                      parameters:(id)parameters
-                      completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)HEAD:(NSString *)URLString
+                                   parameters:(OVC_NULLABLE id)parameters
+                                   completion:(OVC_NULLABLE void(^)
+                                               (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a `POST` request and executes a block when the request completes or fails.
@@ -79,9 +89,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(id)parameters
-                      completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)POST:(NSString *)URLString
+                                   parameters:(OVC_NULLABLE id)parameters
+                                   completion:(OVC_NULLABLE void(^)
+                                               (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a multipart `POST` request and executes a block when the request completes or fails.
@@ -96,10 +108,12 @@
               argument is an object adopting the `AFMultipartFormData` protocol.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)POST:(NSString *)URLString
-                      parameters:(id)parameters
-       constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
-                      completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)POST:(NSString *)URLString
+                                   parameters:(OVC_NULLABLE id)parameters
+                    constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block
+                                   completion:(OVC_NULLABLE void(^)
+                                               (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a `PUT` request and executes a block when the request completes or fails.
@@ -112,9 +126,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)PUT:(NSString *)URLString
-                     parameters:(id)parameters
-                     completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)PUT:(NSString *)URLString
+                                  parameters:(OVC_NULLABLE id)parameters
+                                  completion:(OVC_NULLABLE void(^)
+                                              (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                               NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a `PATCH` request and executes a block when the request completes or fails.
@@ -127,9 +143,11 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
-                       parameters:(id)parameters
-                       completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)PATCH:(NSString *)URLString
+                                    parameters:(OVC_NULLABLE id)parameters
+                                    completion:(OVC_NULLABLE void(^)
+                                                (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                 NSError * OVC__NULLABLE error))completion;
 
 /**
  Enqueues a `DELETE` request and executes a block when the request completes or fails.
@@ -142,8 +160,12 @@
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
  */
-- (AFHTTPRequestOperation *)DELETE:(NSString *)URLString
-                        parameters:(id)parameters
-                        completion:(void (^)(id response, NSError *error))completion;
+- (OVC_NULLABLE AFHTTPRequestOperation *)DELETE:(NSString *)URLString
+                                     parameters:(OVC_NULLABLE id)parameters
+                                     completion:(OVC_NULLABLE void(^)
+                                                 (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                                  NSError *OVC__NULLABLE error))completion;
 
 @end
+
+NS_ASSUME_NONNULL_END

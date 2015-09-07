@@ -48,7 +48,7 @@
 }
 
 + (Class)errorModelClass {
-    return Nil;
+    return nil;
 }
 
 + (NSDictionary *)modelClassesByResourcePath {
@@ -66,7 +66,7 @@
 
 - (AFHTTPRequestOperation *)GET:(NSString *)URLString
                      parameters:(id)parameters
-                     completion:(void (^)(id, NSError *))completion {
+                     completion:(void (^)(OVCResponse *response, NSError *error))completion {
     return [self GET:URLString parameters:parameters
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  if (completion) {
@@ -82,7 +82,7 @@
 
 - (AFHTTPRequestOperation *)HEAD:(NSString *)URLString
                       parameters:(id)parameters
-                      completion:(void (^)(id, NSError *))completion {
+                      completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self HEAD:URLString parameters:parameters
               success:^(AFHTTPRequestOperation *operation) {
                   if (completion) {
@@ -98,7 +98,7 @@
 
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
-                      completion:(void (^)(id, NSError *))completion {
+                      completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self POST:URLString parameters:parameters
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                   if (completion) {
@@ -115,7 +115,7 @@
 - (AFHTTPRequestOperation *)POST:(NSString *)URLString
                       parameters:(id)parameters
        constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block
-                      completion:(void (^)(id, NSError *))completion {
+                      completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self POST:URLString parameters:parameters constructingBodyWithBlock:block
               success:^(AFHTTPRequestOperation *operation, id responseObject) {
                   if (completion) {
@@ -131,7 +131,7 @@
 
 - (AFHTTPRequestOperation *)PUT:(NSString *)URLString
                      parameters:(id)parameters
-                     completion:(void (^)(id, NSError *))completion {
+                     completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self PUT:URLString parameters:parameters
              success:^(AFHTTPRequestOperation *operation, id responseObject) {
                  if (completion) {
@@ -147,7 +147,7 @@
 
 - (AFHTTPRequestOperation *)PATCH:(NSString *)URLString
                        parameters:(id)parameters
-                       completion:(void (^)(id, NSError *))completion {
+                       completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self PATCH:URLString parameters:parameters
                success:^(AFHTTPRequestOperation *operation, id responseObject) {
                    if (completion) {
@@ -163,7 +163,7 @@
 
 - (AFHTTPRequestOperation *)DELETE:(NSString *)URLString
                         parameters:(id)parameters
-                        completion:(void (^)(id, NSError *))completion {
+                        completion:(void (^)(OVCResponse *, NSError *))completion {
     return [self DELETE:URLString parameters:parameters
                 success:^(AFHTTPRequestOperation *operation, id responseObject) {
                     if (completion) {

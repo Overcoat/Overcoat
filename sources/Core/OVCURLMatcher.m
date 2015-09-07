@@ -58,15 +58,15 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 #pragma mark - Lifecycle
 
 - (instancetype)init {
+    return [self initWithBasePath:nil modelClassesByPath:nil];
+}
+
+- (id)initWithBasePath:(NSString *)basePath
+    modelClassesByPath:(NSDictionary OVCGenerics(NSString *, Class) *)modelClassesByPath {
     if (self = [super init]) {
         _type = OVCURLMatcherTypeNone;
         _children = [NSMutableArray array];
-    }
-    return self;
-}
 
-- (instancetype)initWithBasePath:(NSString *)basePath modelClassesByPath:(NSDictionary *)modelClassesByPath {
-    if (self = [self init]) {
         _basePath = [basePath copy];
 
         [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class class, BOOL *stop) {

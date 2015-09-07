@@ -509,8 +509,8 @@
 				FED724441B7FA9C400D6EA72 /* NSDictionary+Overcoat.m */,
 				FED724451B7FA9C400D6EA72 /* NSError+OVCResponse.h */,
 				FED724461B7FA9C400D6EA72 /* NSError+OVCResponse.m */,
-				FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */,
 				FED724481B7FA9C400D6EA72 /* OVCHTTPManager.h */,
+				FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */,
 				FED724491B7FA9C400D6EA72 /* OVCHTTPManager.m */,
 				FED7244A1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.h */,
 				FED7244B1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.m */,
@@ -532,15 +532,15 @@
 			isa = PBXGroup;
 			children = (
 				FED724561B7FA9D300D6EA72 /* CoreData+Overcoat.h */,
-				FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */,
 				FED724581B7FA9D300D6EA72 /* OVCManagedHTTPManager.h */,
+				FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */,
 				FED724591B7FA9D300D6EA72 /* OVCManagedHTTPManager.m */,
 				FED7245A1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.h */,
 				FED7245B1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.m */,
 				FED7245C1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.h */,
 				FED7245D1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.m */,
-				FED7245E1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer_Internal.h */,
 				FED7245F1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.h */,
+				FED7245E1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer_Internal.h */,
 				FED724601B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.m */,
 				FED724611B7FA9D300D6EA72 /* OVCManagedObjectSerializingContainer.h */,
 				FED724621B7FA9D300D6EA72 /* OVCManagedStore.h */,
@@ -1475,6 +1475,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
@@ -1482,6 +1484,8 @@
 		FE025E111B2EAE2C00B0A48E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 			};
 			name = Release;
 		};

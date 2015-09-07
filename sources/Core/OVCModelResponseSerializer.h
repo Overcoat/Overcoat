@@ -21,8 +21,11 @@
 // THE SOFTWARE.
 
 #import <AFNetworking/AFNetworking.h>
+#import <Overcoat/OVCUtilities.h>
 
 @class OVCURLMatcher;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  AFJSONResponseSerializer subclass that validates and transforms a JSON response into a
@@ -37,8 +40,7 @@
 /**
  Matches URLs in HTTP responses with response classes.
  */
-// TODO: Annotate nullable
-@property (strong, nonatomic, readonly) OVCURLMatcher *URLResponseClassMatcher;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) OVCURLMatcher *URLResponseClassMatcher;
 
 /**
  The class used to create responses. Must be `OVCResponse` or a subclass.
@@ -48,15 +50,21 @@
 /**
  The model class for server error responses.
  */
-@property (nonatomic, readonly) Class errorModelClass;
+@property (nonatomic, readonly, OVC_NULLABLE) Class errorModelClass;
 
 /**
  Creates and returns model serializer.
  */
-// TODO: Annotate nullable
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
+                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
                            responseClass:(Class)responseClass
-                         errorModelClass:(Class)errorModelClass;
+                         errorModelClass:(OVC_NULLABLE Class)errorModelClass;
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
+           responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
+                     responseClass:(Class)responseClass
+                   errorModelClass:(OVC_NULLABLE Class)errorModelClass NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

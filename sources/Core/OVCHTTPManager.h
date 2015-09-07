@@ -21,11 +21,13 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Overcoat/OVCUtilities.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 @protocol OVCHTTPManager <NSObject>
 
-// TODO: Annotate `nullable` when AFNetworkign added so (they've added in dev commit)
-@property (readonly) NSURL *baseURL;
+@property (readonly, OVC_NULLABLE) NSURL *baseURL;
 
 /**
  Returns the class used to create responses.
@@ -40,35 +42,24 @@
 /**
  Specifies a model class for server error responses.
 
- This method returns `Nil` by default. Subclasses can override this method and return an `MTLModel`
+ This method returns `nil` by default. Subclasses can override this method and return an `MTLModel`
  subclass that will be used to parse the JSON in an error response.
  */
-+ (Class)errorModelClass;
++ (OVC_NULLABLE Class)errorModelClass;
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wcomment"
 /**
  Specifies how to map responses to different model classes.
-
+ 
  Subclasses must override this method and return a dictionary mapping resource paths to model
- classes. Consider the following example for a GitHub client:
+ classes. 
+ Note that you can use `*` and `**` to match any text or `#` to match only digits.
 
- + (NSDictionary *)modelClassesByResourcePath {
-     return @{
-         @"/users/*": [GTHUser class],
-         @"/orgs/*": [GTHOrganization class]
-     };
- }
-
- Note that you can use `*` to match any text or `#` to match only digits.
-
+ @see https://github.com/Overcoat/Overcoat#specifying-model-classes
+ 
  @return A dictionary mapping resource paths to model classes.
  */
-#pragma clang diagnostic pop
-+ (NSDictionary *)modelClassesByResourcePath;
++ (NSDictionary OVCGenerics(NSString *, Class) *)modelClassesByResourcePath;
 
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wcomment"
 /**
  Specifies how to map responses to different response classes. Not mandatory.
  It's intended to address the following case: https://github.com/gonzalezreal/Overcoat/issues/50
@@ -78,8 +69,8 @@
 
  + (NSDictionary *)responseClassesByResourcePath {
      return @{
-         @"/users/*": [GTHUserResponse class],
-         @"/orgs/*": [GTHOrganizationResponse class]
+         @"/users": [GTHUserResponse class],
+         @"/orgs": [GTHOrganizationResponse class]
      };
  }
 
@@ -88,7 +79,8 @@
 
  @return A dictionary mapping resource paths to response classes.
  */
-#pragma clang diagnostic pop
-+ (NSDictionary *)responseClassesByResourcePath;
++ (OVC_NULLABLE NSDictionary OVCGenerics(NSString *, Class) *)responseClassesByResourcePath;
 
 @end
+
+NS_ASSUME_NONNULL_END

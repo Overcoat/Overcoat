@@ -24,10 +24,10 @@
 #import "OVCUtilities.h"
 #import "NSDictionary+Overcoat.h"
 
-@interface OVCResponse ()
+@interface OVCResponse OVCGenerics(ResultType) ()
 
 @property (strong, nonatomic, readwrite) NSHTTPURLResponse *HTTPResponse;
-@property (strong, nonatomic, readwrite) id result;
+@property (strong, nonatomic, readwrite) OVCGenericType(ResultType, id) result;
 @property (strong, nonatomic, readwrite) Class resultClass;
 
 @end

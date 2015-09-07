@@ -23,6 +23,8 @@
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCUtilities.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  A parent `MTLModel` with a property containing `MTLManagedObjectSerializing` value(s).
  */
@@ -34,3 +36,5 @@
 + (NSString *)managedObjectSerializingKeyPath;
 
 @end
+
+NS_ASSUME_NONNULL_END

@@ -21,10 +21,9 @@
 // THE SOFTWARE.
 
 #import "NSError+OVCResponse.h"
-
 #import <Mantle/NSDictionary+MTLManipulationAdditions.h>
 
-NSString * const OVCResponseKey = @"OVCResponse";
+NSString *const OVCResponseKey = @"OVCResponse";
 
 @implementation NSError (OVCResponse)
 
@@ -33,7 +32,7 @@ NSString * const OVCResponseKey = @"OVCResponse";
         return self;
     }
     
-    NSDictionary *userInfo = @{ OVCResponseKey: response };
+    NSDictionary *userInfo = @{OVCResponseKey: response};
     userInfo = [userInfo mtl_dictionaryByAddingEntriesFromDictionary:self.userInfo];
     
     return [self.class errorWithDomain:self.domain code:self.code userInfo:userInfo];

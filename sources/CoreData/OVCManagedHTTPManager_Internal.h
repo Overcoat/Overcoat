@@ -26,17 +26,19 @@
 
 @class OVCManagedModelResponseSerializer;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol OVCManagedHTTPManager_Internal <OVCManagedHTTPManager>
 
 /**
  The managed object context at background used to save results
  */
-@property (strong, nonatomic) NSManagedObjectContext *backgroundContext;
+@property (strong, nonatomic, OVC_NULLABLE) NSManagedObjectContext *backgroundContext;
 
 /**
  NSNotification Observer of the background context
  */
-@property (strong, nonatomic) id contextObserver;
+@property (strong, nonatomic, OVC_NULLABLE) id contextObserver;
 
 @end
 
@@ -46,3 +48,5 @@ OVCManagedHTTPManagerCreateManagedModelResponseSerializer(id<OVCManagedHTTPManag
 
 OVC_EXTERN
 void OVCManagedHTTPManagerSetupBackgroundContext(id<OVCManagedHTTPManager_Internal> httpManager);
+
+NS_ASSUME_NONNULL_END

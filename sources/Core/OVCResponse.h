@@ -21,16 +21,19 @@
 // THE SOFTWARE.
 
 #import <Mantle/Mantle.h>
+#import <Overcoat/OVCUtilities.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  Represents a parsed response.
  */
-@interface OVCResponse : MTLModel<MTLJSONSerializing>
+@interface OVCResponse OVCGenerics(ResultType) : MTLModel<MTLJSONSerializing>
 
 /**
  The HTTP response.
  */
-@property (strong, nonatomic, readonly) NSHTTPURLResponse *HTTPResponse;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) NSHTTPURLResponse *HTTPResponse;
 
 /**
  The parsed result.
@@ -38,12 +41,12 @@
  Depending on the response JSON, this can contain a single `MTLModel` object or an array of
  `MTLModel` objects.
  */
-@property (strong, nonatomic, readonly) id result;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) OVCGenericType(ResultType, id) result;
 
 /**
  Class of used to parsed result
  */
-@property (strong, nonatomic, readonly) Class resultClass;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) Class resultClass;
 
 /**
  Returns the result key path in the JSON.
@@ -51,7 +54,7 @@
  This method returns `nil` by default. For JSON responses with additional metadata, subclasses
  should override this method and return the key path of the result.
  */
-+ (NSString *)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary;
++ (OVC_NULLABLE NSString *)resultKeyPathForJSONDictionary:(NSDictionary *)JSONDictionary;
 
 /**
  Attempts to parse a JSON dictionary into an `OVCResponse` object.
@@ -62,8 +65,10 @@
  
  @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
  */
-+ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
-                              JSONObject:(id)JSONObject
-                             resultClass:(Class)resultClass;
++ (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
+                                           JSONObject:(OVC_NULLABLE id)JSONObject
+                                          resultClass:(OVC_NULLABLE Class)resultClass;
 
 @end
+
+NS_ASSUME_NONNULL_END

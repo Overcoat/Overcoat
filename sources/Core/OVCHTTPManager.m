@@ -33,12 +33,15 @@ OVCURLMatcher *OVCHTTPManagerCreateURLMatcher(id<OVCHTTPManager> httpManager) {
 }
 
 OVC_EXTERN
-OVCURLMatcher *OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager) {
+OVCURLMatcher * OVC__NULLABLE OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> httpManager) {
     OVCURLMatcher *responseClassMatcher = nil;
-    if ([[httpManager class] responseClassesByResourcePath]) {
+
+    NSDictionary OVCGenerics(NSString *, Class) *responseClassesByResourcePath = [[httpManager class]
+                                                                                  responseClassesByResourcePath];
+    if (responseClassesByResourcePath) {
 #if DEBUG
         // Check if all the classes used in responseClassesByResourcePath are subclasses of OVCResponse
-        [[[httpManager class] responseClassesByResourcePath]
+        [responseClassesByResourcePath
          enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class responseClass, BOOL *stop) {
              if (![responseClass isSubclassOfClass:[OVCResponse class]]) {
                  [NSException
@@ -49,8 +52,7 @@ OVCURLMatcher *OVCHTTPManagerCreateResponseClassURLMatcher(id<OVCHTTPManager> ht
          }];
 #endif
         responseClassMatcher = [[OVCURLMatcher alloc] initWithBasePath:httpManager.baseURL.path
-                                                    modelClassesByPath:[[httpManager class]
-                                                                        responseClassesByResourcePath]];
+                                                    modelClassesByPath:responseClassesByResourcePath];
     }
     return responseClassMatcher;
 }

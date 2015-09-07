@@ -23,6 +23,8 @@
 #import <Overcoat/OVCHTTPRequestOperationManager.h>
 #import <Overcoat/OVCManagedHTTPManager.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `OVCHTTPRequestOperationManager` provides methods to communicate with a web application over HTTP,
  mapping responses into native model objects which can optionally be persisted in a Core Data store.
@@ -42,6 +44,9 @@
 
  @return An initialized client.
  */
-- (instancetype)initWithBaseURL:(NSURL *)url managedObjectContext:(NSManagedObjectContext *)context;
+- (instancetype)initWithBaseURL:(OVC_NULLABLE NSURL *)url
+           managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)context NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

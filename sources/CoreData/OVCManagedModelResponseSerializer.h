@@ -25,6 +25,8 @@
 
 @class NSManagedObjectContext;
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  AFJSONResponseSerializer subclass that validates and transforms a JSON response into a
  `OVCResponse` object.
@@ -34,15 +36,17 @@
 /**
  The managed object context used to insert model objects.
  */
-@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) NSManagedObjectContext *managedObjectContext;
 
 /**
  Creates and returns model serializer.
  */
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
-                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
+                    managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)managedObjectContext
                            responseClass:(Class)responseClass
-                         errorModelClass:(Class)errorModelClass;
+                         errorModelClass:(OVC_NULLABLE Class)errorModelClass;
 
 @end
+
+NS_ASSUME_NONNULL_END

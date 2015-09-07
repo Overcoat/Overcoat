@@ -23,6 +23,8 @@
 #import <Overcoat/OVCHTTPSessionManager.h>
 #import <Overcoat/OVCManagedHTTPManager.h>
 
+NS_ASSUME_NONNULL_BEGIN
+
 /**
  `OVCManagedHTTPSessionManager` provides methods to communicate with a web application over HTTP,
  mapping responses into native model objects which can optionally be persisted in a Core Data store.
@@ -43,8 +45,10 @@
 
  @return An initialized client.
  */
-- (instancetype)initWithBaseURL:(NSURL *)url
-           managedObjectContext:(NSManagedObjectContext *)context
-           sessionConfiguration:(NSURLSessionConfiguration *)configuration;
+- (instancetype)initWithBaseURL:(OVC_NULLABLE NSURL *)url
+           managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)context
+           sessionConfiguration:(OVC_NULLABLE NSURLSessionConfiguration *)configuration NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

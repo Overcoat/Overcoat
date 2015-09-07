@@ -21,12 +21,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OVCHTTPSessionManager.h"
+#import <Overcoat/OVCHTTPSessionManager.h>
 #import <Overcoat/OVCUtilities.h>
 
 @class RACSignal;
 
-#if OVERCOAT_SUPPORT_URLSESSION
+NS_ASSUME_NONNULL_BEGIN
 
 @interface OVCHTTPSessionManager (ReactiveCocoa)
 
@@ -38,7 +38,7 @@
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_GET:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_GET:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `HEAD` request.
@@ -48,7 +48,7 @@
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_HEAD:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `POST` request.
@@ -58,7 +58,7 @@
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_POST:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a multipart `POST` request.
@@ -71,8 +71,8 @@
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_POST:(NSString *)URLString
-             parameters:(NSDictionary *)parameters
-constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
+             parameters:(OVC_NULLABLE id)parameters
+constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block;
 
 /**
  Enqueues a `PUT` request.
@@ -82,7 +82,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_PUT:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `PATCH` request.
@@ -92,7 +92,7 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_PATCH:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `DELETE` request.
@@ -102,8 +102,8 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block;
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(NSDictionary *)parameters;
+- (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 @end
 
-#endif
+NS_ASSUME_NONNULL_END

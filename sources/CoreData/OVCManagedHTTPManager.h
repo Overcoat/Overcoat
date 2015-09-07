@@ -25,11 +25,15 @@
 
 @class NSManagedObjectContext;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @protocol OVCManagedHTTPManager <OVCHTTPManager>
 
 /**
  The managed object context that will be used to persist model objects parsed from a response.
  */
-@property (strong, nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) NSManagedObjectContext *managedObjectContext;
 
 @end
+
+NS_ASSUME_NONNULL_END

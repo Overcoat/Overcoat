@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Overcoat/OVCUtilities.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -30,9 +31,9 @@ extern NSString * const OVCResponseKey;
 
 @interface NSError (OVCResponse)
 
-- (instancetype)ovc_errorWithUnderlyingResponse:(OVCResponse * __nullable)response;
+- (instancetype)ovc_errorWithUnderlyingResponse:(OVC_NULLABLE OVCResponse *)response;
 
-@property (nonatomic, readonly, nullable) OVCResponse *ovc_response;
+@property (nonatomic, readonly, OVC_NULLABLE) OVCResponse *ovc_response;
 
 @end
 

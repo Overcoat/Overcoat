@@ -23,6 +23,4 @@
 #import <PromiseKit/Promise.h>
 #import <Overcoat/OVCUtilities.h>
 #import <Overcoat/OVCHTTPRequestOperationManager+PromiseKit.h>
-#if OVERCOAT_SUPPORT_URLSESSION
 #import <Overcoat/OVCHTTPSessionManager+PromiseKit.h>
-#endif

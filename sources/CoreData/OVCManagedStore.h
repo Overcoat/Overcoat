@@ -21,26 +21,29 @@
 // THE SOFTWARE.
 
 #import <CoreData/CoreData.h>
+#import <Overcoat/OVCUtilities.h>
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  Manages a Core Data stack.
  */
 @interface OVCManagedStore : NSObject
 
-/**
- The persistent store coordinator.
+/** 
+ The persistent store coordinator. 
  */
 @property (strong, nonatomic, readonly) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 /**
  The managed object model.
  */
-@property (strong, nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) NSManagedObjectModel *managedObjectModel;
 
 /**
  Creates and returns a `OVCManagedStore` that will persist its data in memory.
  */
-+ (instancetype)managedStoreWithModel:(NSManagedObjectModel *)managedObjectModel;
++ (instancetype)managedStoreWithModel:(OVC_NULLABLE NSManagedObjectModel *)managedObjectModel;
 
 /**
  Creates and returns a `OVCManagedStore` that will persist its data in a temporary file.
@@ -62,6 +65,9 @@
  @param path The persistent store path. If `nil` the persistent store will be created in memory.
  @param managedObjectModel The managed object model. If `nil` all models in the current bundle will be used.
  */
-- (instancetype)initWithPath:(NSString *)path managedObjectModel:(NSManagedObjectModel *)managedObjectModel;
+- (instancetype)initWithPath:(OVC_NULLABLE NSString *)path
+          managedObjectModel:(OVC_NULLABLE NSManagedObjectModel *)managedObjectModel NS_DESIGNATED_INITIALIZER;
 
 @end
+
+NS_ASSUME_NONNULL_END

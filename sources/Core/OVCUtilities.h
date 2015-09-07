@@ -23,21 +23,79 @@
 #import <Foundation/Foundation.h>
 #import <Mantle/Mantle.h>
 
-#if __has_include("MTLTransformerErrorHandling.h")  // This is a new header comes with Mantle 2.0
-#define OVERCOAT_USING_MANTLE_2 1
-#else
-#define OVERCOAT_USING_MANTLE_2 0
-#endif
+#define USING_XCODE_7 __has_feature(objc_generics)
 
-#if ((defined(__IPHONE_OS_VERSION_MAX_ALLOWED) && __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000) || \
-     (defined(__MAC_OS_X_VERSION_MAX_ALLOWED) && __MAC_OS_X_VERSION_MAX_ALLOWED >= 1090))
-#define OVERCOAT_SUPPORT_URLSESSION 1
-#else
-#define OVERCOAT_SUPPORT_URLSESSION 0
-#endif
+#pragma mark - C++ Support
 
 #ifdef __cplusplus
-#define OVC_EXTERN extern "C"
+    #define OVC_EXTERN extern "C"
 #else
-#define OVC_EXTERN extern
+    #define OVC_EXTERN extern
+#endif
+
+#pragma mark - Mantle 2.0 Support
+
+// `MTLTransformerErrorHandling.h` is a new header comes with Mantle 2.0
+#if __has_include("MTLTransformerErrorHandling.h")
+    #define OVERCOAT_USING_MANTLE_2 1
+    #define OVC_MANTLE_MODEL_TYPE id<MTLModel>
+#else
+    #define OVERCOAT_USING_MANTLE_2 0
+    #define OVC_MANTLE_MODEL_TYPE MTLModel *
+#endif
+
+#pragma mark - Objective-C Nullability Support
+
+#if __has_feature(nullability)
+    #define OVC_NONNULL nonnull
+    #define OVC_NULLABLE nullable
+    #define OVC_NULL_RESETTABLE null_resettable
+    #if USING_XCODE_7
+        #define OVC__NONNULL _Nonnull
+        #define OVC__NULLABLE _Nullable
+        #define OVC__NULL_RESETTABLE _Null_resettable
+    #else
+        #define OVC__NONNULL __nonnull
+        #define OVC__NULLABLE __nullable
+        #define OVC__NULL_RESETTABLE __null_resettable
+    #endif
+#else
+    #define OVC_NONNULL
+    #define OVC__NONNULL
+    #define OVC_NULLABLE
+    #define OVC__NULLABLE
+    #define OVC_NULL_RESETTABLE
+    #define OVC__NULL_RESETTABLE
+#endif
+
+#if __has_feature(assume_nonnull)
+    #ifndef NS_ASSUME_NONNULL_BEGIN
+        #define NS_ASSUME_NONNULL_BEGIN _Pragma("clang assume_nonnull begin")
+    #endif
+    #ifndef NS_ASSUME_NONNULL_END
+        #define NS_ASSUME_NONNULL_END _Pragma("clang assume_nonnull end")
+    #endif
+#else
+    #define NS_ASSUME_NONNULL_BEGIN
+    #define NS_ASSUME_NONNULL_END
+#endif
+
+#pragma mark - Objective-C Lightweight Generics Support
+
+#if __has_feature(objc_generics)
+    #define OVCGenerics(...) <__VA_ARGS__>
+    #define OVCGenericType(TYPE, FALLBACK) TYPE
+#else
+    #define OVCGenerics(...)
+    #define OVCGenericType(TYPE, FALLBACK) FALLBACK
+#endif
+
+#pragma mark - Designated Initailizer Support
+
+#ifndef NS_DESIGNATED_INITIALIZER
+    #if __has_attribute(objc_designated_initializer)
+        #define NS_DESIGNATED_INITIALIZER __attribute__((objc_designated_initializer))
+    #else
+        #define NS_DESIGNATED_INITIALIZER
+    #endif
 #endif

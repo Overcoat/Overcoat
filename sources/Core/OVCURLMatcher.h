@@ -21,6 +21,11 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
+#import <Overcoat/OVCUtilities.h>
+
+@protocol MTLModel;
+
+NS_ASSUME_NONNULL_BEGIN
 
 /**
  Helper class to aid in matching URLs to model classes.
@@ -30,8 +35,12 @@
  */
 @interface OVCURLMatcher : NSObject
 
-- (id)initWithBasePath:(NSString *)basePath modelClassesByPath:(NSDictionary *)modelClassesByPath;
+- (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
+              modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, Class) *)modelClassesByPath
+NS_DESIGNATED_INITIALIZER;
 
-- (Class)modelClassForURL:(NSURL *)url;
+- (OVC_NULLABLE Class)modelClassForURL:(NSURL *)url;
 
 @end
+
+NS_ASSUME_NONNULL_END
