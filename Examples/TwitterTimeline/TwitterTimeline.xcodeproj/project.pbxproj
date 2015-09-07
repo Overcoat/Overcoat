@@ -40,6 +40,7 @@
 		9996A8081934D23C00B083A0 /* TimelineType.m in Sources */ = {isa = PBXBuildFile; fileRef = 9996A8071934D23C00B083A0 /* TimelineType.m */; };
 		99ACC6F519376DEC0016447E /* TimelineDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 99ACC6F419376DEC0016447E /* TimelineDataSource.m */; };
 		DBDEB97DA5AD43F083454373 /* libPods-TwitterTimeline.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41F64D9E6B9A4EC3AE8FF8DD /* libPods-TwitterTimeline.a */; };
+		FED20BFB1B9DD88F00AB1855 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FED20BFA1B9DD88F00AB1855 /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,7 @@
 		9996A8071934D23C00B083A0 /* TimelineType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineType.m; sourceTree = "<group>"; };
 		99ACC6F319376DEC0016447E /* TimelineDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineDataSource.h; sourceTree = "<group>"; };
 		99ACC6F419376DEC0016447E /* TimelineDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimelineDataSource.m; sourceTree = "<group>"; };
+		FED20BFA1B9DD88F00AB1855 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 				991DCAEA193464C40055BD38 /* AppDelegate.h */,
 				991DCAEB193464C40055BD38 /* AppDelegate.m */,
 				991DCAED193464C40055BD38 /* Main.storyboard */,
+				FED20BFA1B9DD88F00AB1855 /* Launch Screen.storyboard */,
 				991DCAF6193464C40055BD38 /* Images.xcassets */,
 				991DCAE2193464C40055BD38 /* Supporting Files */,
 			);
@@ -370,6 +373,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED20BFB1B9DD88F00AB1855 /* Launch Screen.storyboard in Resources */,
 				991DCAF7193464C40055BD38 /* Images.xcassets in Resources */,
 				991DCAE6193464C40055BD38 /* InfoPlist.strings in Resources */,
 				991DCAEF193464C40055BD38 /* Main.storyboard in Resources */,
