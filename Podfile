@@ -15,21 +15,8 @@ platform_type = os_type.downcase.to_sym
 
 overcoat_subspecs = ['ReactiveCocoa', 'PromiseKit']
 mantle_version = ENV['MANTLE'] || '2.0'
-if mantle_version == '1.5'
-  overcoat_subspecs << 'CoreData/Mantle1'
-  if os_type == 'iOS'
-    os_version = '7.0'
-  else
-    os_version = '10.9'
-  end
-else
-  overcoat_subspecs << 'CoreData'
-  if os_type == 'iOS'
-    os_version = '8.0'
-  else
-    os_version = '10.9'
-  end
-end
+os_version = os_type == 'iOS' ? '7.0' : '10.9'
+overcoat_subspecs << (mantle_version == '1.5' ? 'CoreData/Mantle1' : 'CoreData')
 
 # Dependencies ---------------------------------------------------------------------------------------------------------
 platform platform_type, os_version

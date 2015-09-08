@@ -39,7 +39,7 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.9'
-  s.watchos.deployment_target = '2.0'
+  # s.watchos.deployment_target = '2.0'
 
   s.default_subspec = 'Core'
 
@@ -55,15 +55,18 @@ Pod::Spec.new do |s|
 
     ss.default_subspec = 'NSURLConnection', 'NSURLSession'
     ss.subspec 'NSURLConnection' do |sss|
-      sss.dependency 'AFNetworking/NSURLConnection', '~> 2.5'
+      sss.dependency 'AFNetworking/NSURLConnection'
       sss.source_files = 'sources/Core/OVCHTTPRequestOperationManager.{h,m}'
-      # AFNetworking/NSURLConnection doesn't support watchOS
-      sss.platform = :ios
-      sss.platform = :osx
+      sss.user_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_CONNECTION=1',  # Used for shortcuts in umbrella header
+      }
     end
     ss.subspec 'NSURLSession' do |sss|
-      sss.dependency 'AFNetworking/NSURLSession', '~> 2.5'
+      sss.dependency 'AFNetworking/NSURLSession'
       sss.source_files = 'sources/Core/OVCHTTPSessionManager.{h,m}'
+      sss.user_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_SESSION=1',  # Used for shortcuts in umbrella header
+      }
     end
   end
 
@@ -77,10 +80,6 @@ Pod::Spec.new do |s|
     ss.subspec 'Mantle1' do |sss|
       Overcoat::coredata_subspec sss
       sss.dependency 'Mantle', '~> 1'
-
-      # Mantle 1.x doesn't support watchOS
-      sss.platform = :osx
-      sss.platform = :ios
     end
 
     ss.default_subspec = 'Mantle2'
@@ -94,38 +93,44 @@ Pod::Spec.new do |s|
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',  # Used for shortcuts in umbrella header
     }
-
-    # watchOS doesn't support `Accounts` and `Social` frameworks.
-    ss.platform = :osx
-    ss.platform = :ios
   end
 
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'PromiseKit/Promise', '~> 1.2'
-    ss.public_header_files = 'sources/PromiseKit/*.h'
-    ss.source_files = 'sources/PromiseKit/*.{h,m}'
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
     }
-
-    # PromiseKit 1.x doesn't support watchOS
-    ss.platform = :osx
-    ss.platform = :ios
+    ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+    ss.subspec 'NSURLConnection' do |sss|
+      sss.dependency 'Overcoat/Core/NSURLConnection'
+      sss.public_header_files = 'sources/PromiseKit/OVCHTTPRequestOperationManager+PromiseKit.h'
+      sss.source_files = 'sources/PromiseKit/OVCHTTPRequestOperationManager+PromiseKit.{h,m}'
+    end
+    ss.subspec 'NSURLSession' do |sss|
+      sss.dependency 'Overcoat/Core/NSURLSession'
+      sss.public_header_files = 'sources/PromiseKit/OVCHTTPSessionManager+PromiseKit.h'
+      sss.source_files = 'sources/PromiseKit/OVCHTTPSessionManager+PromiseKit.{h,m}'
+    end
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'ReactiveCocoa', '~> 2.4'
-    ss.public_header_files = 'sources/ReactiveCocoa/*.h'
-    ss.source_files = 'sources/ReactiveCocoa/*.{h,m}'
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
     }
-
-    # ReactiveCocoa doesn't support watchOS
-    ss.platform = :osx
-    ss.platform = :ios
+    ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+    ss.subspec 'NSURLConnection' do |sss|
+      sss.dependency 'Overcoat/Core/NSURLConnection'
+      sss.public_header_files = 'sources/ReactiveCocoa/OVCHTTPRequestOperationManager+ReactiveCocoa.h'
+      sss.source_files = 'sources/ReactiveCocoa/OVCHTTPRequestOperationManager+ReactiveCocoa.{h,m}'
+    end
+    ss.subspec 'NSURLSession' do |sss|
+      sss.dependency 'Overcoat/Core/NSURLSession'
+      sss.public_header_files = 'sources/ReactiveCocoa/OVCHTTPSessionManager+ReactiveCocoa.h'
+      sss.source_files = 'sources/ReactiveCocoa/OVCHTTPSessionManager+ReactiveCocoa.{h,m}'
+    end
   end
 
 end

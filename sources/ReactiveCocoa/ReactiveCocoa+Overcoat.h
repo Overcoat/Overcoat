@@ -23,5 +23,9 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Overcoat/OVCUtilities.h>
+#if OVERCOAT_SUPPORT_URL_CONNECTION
 #import <Overcoat/OVCHTTPRequestOperationManager+ReactiveCocoa.h>
+#endif
+#if OVERCOAT_SUPPORT_URL_SESSION
 #import <Overcoat/OVCHTTPSessionManager+ReactiveCocoa.h>
+#endif

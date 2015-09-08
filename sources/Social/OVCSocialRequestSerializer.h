@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <AFNetworking/AFNetworking.h>
+#import <AFNetworking/AFHTTPRequestSerializer.h>
 #import <Accounts/Accounts.h>
 #import <Social/Social.h>
 
