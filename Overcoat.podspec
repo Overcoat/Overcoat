@@ -1,3 +1,31 @@
+module Overcoat
+  def Overcoat.coredata_subspec(s)  # TODO: Move back to CoreData section when dropping off Mantle 1.x support
+    s.dependency 'Overcoat/Core'
+    s.public_header_files = 'sources/CoreData/*.h'
+    s.private_header_files = 'sources/CoreData/*_Internal.h'
+    s.source_files = 'sources/CoreData/*.{h,m}'
+    s.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
+    s.frameworks = 'CoreData'
+    s.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
+    }
+
+    s.default_subspec = 'NSURLConnection', 'NSURLSession'
+    s.subspec 'NSURLConnection' do |ss|
+      ss.dependency 'Overcoat/Core/NSURLConnection'
+      ss.source_files = 'sources/CoreData/OVCManagedHTTPRequestOperationManager.{h,m}'
+
+      # AFNetworking/NSURLConnection doesn't support watchOS
+      ss.platform = :ios
+      ss.platform = :osx
+    end
+    s.subspec 'NSURLSession' do |ss|
+      ss.dependency 'Overcoat/Core/NSURLSession'
+      ss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
+    end
+  end
+end
+
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
   s.version  = '3.1.0'
@@ -16,40 +44,43 @@ Pod::Spec.new do |s|
   s.default_subspec = 'Core'
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'AFNetworking', '~> 2.5'
+    ss.dependency 'AFNetworking/Serialization', '~> 2.5'
     ss.dependency 'Mantle', '<= 3.0'
 
     ss.public_header_files = 'sources/Core/*.h'
     ss.private_header_files = 'sources/Core/*_Internal.h'
     ss.source_files = 'sources/Core/*.{h,m}'
+    ss.exclude_files = 'sources/Core/OVCHTTP{RequestOperation,Session}Manager.{h,m}'
     ss.frameworks = 'Foundation'
+
+    ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+    ss.subspec 'NSURLConnection' do |sss|
+      sss.dependency 'AFNetworking/NSURLConnection', '~> 2.5'
+      sss.source_files = 'sources/Core/OVCHTTPRequestOperationManager.{h,m}'
+      # AFNetworking/NSURLConnection doesn't support watchOS
+      sss.platform = :ios
+      sss.platform = :osx
+    end
+    ss.subspec 'NSURLSession' do |sss|
+      sss.dependency 'AFNetworking/NSURLSession', '~> 2.5'
+      sss.source_files = 'sources/Core/OVCHTTPSessionManager.{h,m}'
+    end
   end
 
   s.subspec 'CoreData' do |ss|
     ss.subspec 'Mantle2' do |sss|
-      sss.dependency 'Overcoat/Core'
-      sss.public_header_files = 'sources/CoreData/*.h'
-      sss.private_header_files = 'sources/CoreData/*_Internal.h'
-      sss.source_files = 'sources/CoreData/*.{h,m}'
-      sss.frameworks = 'CoreData'
-      sss.user_target_xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
-      }
+      Overcoat::coredata_subspec sss
       sss.dependency 'Mantle', '~> 2'
-      sss.dependency 'MTLManagedObjectAdapter'
-      sss.dependency 'MTLManagedObjectAdapter/extobjc'
+      sss.dependency 'MTLManagedObjectAdapter', '> 1.0'
     end
 
     ss.subspec 'Mantle1' do |sss|
-      sss.dependency 'Overcoat/Core'
-      sss.public_header_files = 'sources/CoreData/*.h'
-      sss.private_header_files = 'sources/CoreData/*_Internal.h'
-      sss.source_files = 'sources/CoreData/*.{h,m}'
-      sss.frameworks = 'CoreData'
-      sss.user_target_xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
-      }
+      Overcoat::coredata_subspec sss
       sss.dependency 'Mantle', '~> 1'
+
+      # Mantle 1.x doesn't support watchOS
+      sss.platform = :osx
+      sss.platform = :ios
     end
 
     ss.default_subspec = 'Mantle2'
@@ -77,6 +108,10 @@ Pod::Spec.new do |s|
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
     }
+
+    # PromiseKit 1.x doesn't support watchOS
+    ss.platform = :osx
+    ss.platform = :ios
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
@@ -87,6 +122,10 @@ Pod::Spec.new do |s|
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
     }
+
+    # ReactiveCocoa doesn't support watchOS
+    ss.platform = :osx
+    ss.platform = :ios
   end
 
 end
