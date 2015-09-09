@@ -3,7 +3,7 @@
 ## 3.1
 
 * Annotate nullability and lighweight generics of Objective-C [Issue #90](https://github.com/Overcoat/Overcoat/issues/90) (@sodastsai)
-* Change podspec to support `watchOS 2.0` and drop support of `iOS 6.0` and `OS X 10.8`. (so now we support iOS 7.0+ and OS X 10.9+) (@sodastsai)
+* Change podspec to drop support of `iOS 6.0` and `OS X 10.8`. (so now we support iOS 7.0+ and OS X 10.9+) (@sodastsai)
 
 ## 3.0
 
