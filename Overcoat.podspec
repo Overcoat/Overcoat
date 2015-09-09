@@ -1,30 +1,46 @@
+# Workaround to support both Mantle 1.x and 2.x
 module Overcoat
-  def Overcoat.coredata_subspec(s)  # TODO: Move back to CoreData section when dropping off Mantle 1.x support
-    s.dependency 'Overcoat/Core'
-    s.public_header_files = 'sources/CoreData/*.h'
-    s.private_header_files = 'sources/CoreData/*_Internal.h'
-    s.source_files = 'sources/CoreData/*.{h,m}'
-    s.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
-    s.frameworks = 'CoreData'
-    s.user_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
-    }
+  module CoreData
 
-    s.default_subspec = 'NSURLConnection', 'NSURLSession'
-    s.subspec 'NSURLConnection' do |ss|
-      ss.dependency 'Overcoat/Core/NSURLConnection'
-      ss.source_files = 'sources/CoreData/OVCManagedHTTPRequestOperationManager.{h,m}'
+    def self.spec(s)
+      mantle_version = s.name.split('/')[-1][-1].to_i
 
-      # AFNetworking/NSURLConnection doesn't support watchOS
-      ss.platform = :ios
-      ss.platform = :osx
+      s.default_subspec = 'NSURLConnection', 'NSURLSession'
+
+      s.subspec 'Core' do |ss|
+        ss.dependency 'Overcoat/Core'
+        ss.frameworks = 'CoreData'
+        ss.source_files = 'sources/CoreData/*.{h,m}'
+        ss.private_header_files = 'sources/CoreData/*_Internal.h'
+        ss.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
+        ss.user_target_xcconfig = {
+          'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
+        }
+
+        ss.dependency 'Mantle', "~> #{mantle_version}"
+        if mantle_version == 2
+          ss.dependency 'MTLManagedObjectAdapter', '> 1.0'
+        end
+      end
+
+      s.subspec 'NSURLConnection' do |ss|
+        ss.dependency 'Overcoat/NSURLConnection'
+        ss.dependency "Overcoat/CoreData/Mantle#{mantle_version}/Core"
+        ss.source_files = 'sources/CoreData/OVCManagedHTTPRequestOperationManager.{h,m}'
+      end
+
+      s.subspec 'NSURLSession' do |ss|
+        ss.dependency 'Overcoat/NSURLSession'
+        ss.dependency "Overcoat/CoreData/Mantle#{mantle_version}/Core"
+        ss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
+      end
     end
-    s.subspec 'NSURLSession' do |ss|
-      ss.dependency 'Overcoat/Core/NSURLSession'
-      ss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
-    end
+
   end
 end
+
+
+# == Main ==============================================================================================================
 
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
@@ -39,54 +55,55 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '7.0'
   s.osx.deployment_target = '10.9'
-  # s.watchos.deployment_target = '2.0'
 
-  s.default_subspec = 'Core'
+  s.default_subspec = 'NSURLConnection', 'NSURLSession'
+
+  # -- Core Subspecs ---------------------------------------------------------------------------------------------------
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'AFNetworking/Serialization', '~> 2.5'
-    ss.dependency 'Mantle', '<= 3.0'
-
-    ss.public_header_files = 'sources/Core/*.h'
-    ss.private_header_files = 'sources/Core/*_Internal.h'
+    ss.dependency 'Mantle'
+    ss.dependency 'AFNetworking/Serialization'
     ss.source_files = 'sources/Core/*.{h,m}'
+    ss.private_header_files = 'sources/Core/*_Internal.h'
     ss.exclude_files = 'sources/Core/OVCHTTP{RequestOperation,Session}Manager.{h,m}'
-    ss.frameworks = 'Foundation'
-
-    ss.default_subspec = 'NSURLConnection', 'NSURLSession'
-    ss.subspec 'NSURLConnection' do |sss|
-      sss.dependency 'AFNetworking/NSURLConnection'
-      sss.source_files = 'sources/Core/OVCHTTPRequestOperationManager.{h,m}'
-      sss.user_target_xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_CONNECTION=1',  # Used for shortcuts in umbrella header
-      }
-    end
-    ss.subspec 'NSURLSession' do |sss|
-      sss.dependency 'AFNetworking/NSURLSession'
-      sss.source_files = 'sources/Core/OVCHTTPSessionManager.{h,m}'
-      sss.user_target_xcconfig = {
-        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_SESSION=1',  # Used for shortcuts in umbrella header
-      }
-    end
   end
+
+  s.subspec 'NSURLConnection' do |ss|
+    ss.dependency 'Overcoat/Core'
+    ss.dependency 'AFNetworking/NSURLConnection'
+    ss.source_files = 'sources/Core/OVCHTTPRequestOperationManager.{h,m}'
+    ss.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_CONNECTION=1',  # Used for shortcuts in umbrella header
+    }
+  end
+
+  s.subspec 'NSURLSession' do |ss|
+    ss.dependency 'Overcoat/Core'
+    ss.dependency 'AFNetworking/NSURLSession'
+    ss.source_files = 'sources/Core/OVCHTTPSessionManager.{h,m}'
+    ss.user_target_xcconfig = {
+      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_SESSION=1',  # Used for shortcuts in umbrella header
+    }
+  end
+
+  # -- CoreData Subspecs -----------------------------------------------------------------------------------------------
 
   s.subspec 'CoreData' do |ss|
     ss.subspec 'Mantle2' do |sss|
-      Overcoat::coredata_subspec sss
-      sss.dependency 'Mantle', '~> 2'
-      sss.dependency 'MTLManagedObjectAdapter', '> 1.0'
+      Overcoat::CoreData::spec sss
     end
 
     ss.subspec 'Mantle1' do |sss|
-      Overcoat::coredata_subspec sss
-      sss.dependency 'Mantle', '~> 1'
+      Overcoat::CoreData::spec sss
     end
 
     ss.default_subspec = 'Mantle2'
   end
 
+  # -- Misc Subspecs ---------------------------------------------------------------------------------------------------
+
   s.subspec 'Social' do |ss|
-    ss.dependency 'Overcoat/Core'
+    ss.dependency 'AFNetworking/Serialization'
     ss.public_header_files = 'sources/Social/*.h'
     ss.source_files = 'sources/Social/*.{h,m}'
     ss.frameworks = 'Accounts', 'Social'
@@ -96,39 +113,37 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'PromiseKit' do |ss|
-    ss.dependency 'Overcoat/Core'
     ss.dependency 'PromiseKit/Promise', '~> 1.2'
+    ss.source_files = 'sources/PromiseKit/PromiseKit+Overcoat.h'
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
     }
     ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+
     ss.subspec 'NSURLConnection' do |sss|
-      sss.dependency 'Overcoat/Core/NSURLConnection'
-      sss.public_header_files = 'sources/PromiseKit/OVCHTTPRequestOperationManager+PromiseKit.h'
+      sss.dependency 'Overcoat/NSURLConnection'
       sss.source_files = 'sources/PromiseKit/OVCHTTPRequestOperationManager+PromiseKit.{h,m}'
     end
     ss.subspec 'NSURLSession' do |sss|
-      sss.dependency 'Overcoat/Core/NSURLSession'
-      sss.public_header_files = 'sources/PromiseKit/OVCHTTPSessionManager+PromiseKit.h'
+      sss.dependency 'Overcoat/NSURLSession'
       sss.source_files = 'sources/PromiseKit/OVCHTTPSessionManager+PromiseKit.{h,m}'
     end
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
-    ss.dependency 'Overcoat/Core'
     ss.dependency 'ReactiveCocoa', '~> 2.4'
+    ss.source_files = 'sources/ReactiveCocoa/ReactiveCocoa+Overcoat.h'
     ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
     }
     ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+
     ss.subspec 'NSURLConnection' do |sss|
-      sss.dependency 'Overcoat/Core/NSURLConnection'
-      sss.public_header_files = 'sources/ReactiveCocoa/OVCHTTPRequestOperationManager+ReactiveCocoa.h'
+      sss.dependency 'Overcoat/NSURLConnection'
       sss.source_files = 'sources/ReactiveCocoa/OVCHTTPRequestOperationManager+ReactiveCocoa.{h,m}'
     end
     ss.subspec 'NSURLSession' do |sss|
-      sss.dependency 'Overcoat/Core/NSURLSession'
-      sss.public_header_files = 'sources/ReactiveCocoa/OVCHTTPSessionManager+ReactiveCocoa.h'
+      sss.dependency 'Overcoat/NSURLSession'
       sss.source_files = 'sources/ReactiveCocoa/OVCHTTPSessionManager+ReactiveCocoa.{h,m}'
     end
   end
