@@ -157,17 +157,21 @@
         }
         return nil;
     }
+    
+    // `dataTaskWithRequest:completionHandler:` creates a new NSURLSessionDataTask
+    NSURLSessionDataTask *dataTask = [self dataTaskWithRequest:request
+                                             completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+                                                 if (completion) {
+                                                     if (!error) {
+                                                         completion(responseObject, nil);
+                                                     } else {
+                                                         completion(responseObject, error);
+                                                     }
+                                                 }
+                                             }];
 
-    return [self dataTaskWithRequest:request
-                   completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
-                       if (completion) {
-                           if (!error) {
-                               completion(responseObject, nil);
-                           } else {
-                               completion(responseObject, error);
-                           }
-                       }
-                   }];
+    [dataTask resume];
+    return dataTask; 
 }
 
 - (NSURLSessionDataTask *)PUT:(NSString *)URLString
