@@ -6,6 +6,7 @@ source 'https://github.com/CocoaPods/Specs.git'
 workspace 'Overcoat'
 xcodeproj 'Overcoat/Overcoat.xcodeproj'
 link_with 'Overcoat-iOS', 'Overcoat-OSX'
+use_frameworks!
 
 # Environments and Variables -------------------------------------------------------------------------------------------
 overcoat_podspec_path = 'Overcoat.podspec'
@@ -15,7 +16,7 @@ platform_type = os_type.downcase.to_sym
 
 overcoat_subspecs = ['ReactiveCocoa', 'PromiseKit']
 mantle_version = ENV['MANTLE'] || '2.0'
-os_version = os_type == 'iOS' ? '7.0' : '10.9'
+os_version = os_type == 'iOS' ? '8.0' : '10.9'
 overcoat_subspecs << (mantle_version == '1.5' ? 'CoreData/Mantle1' : 'CoreData')
 
 # Dependencies ---------------------------------------------------------------------------------------------------------

@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
+#import <OHHTTPStubs/OHPathHelpers.h>
 #import <OVercoat/Overcoat.h>
 
 #import "OVCTestModel.h"

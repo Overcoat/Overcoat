@@ -9,7 +9,11 @@
 #import <Mantle/Mantle.h>
 #import <Overcoat/Overcoat.h>
 #if OVERCOAT_SUPPORT_COREDATA
-#import "MTLManagedObjectAdapter.h"
+    #if OVERCOAT_USING_MANTLE_2
+        #import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
+    #else
+        #import <Mantle/MTLManagedObjectAdapter.h>
+    #endif
 #endif
 
 #if OVERCOAT_SUPPORT_COREDATA
