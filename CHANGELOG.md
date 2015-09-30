@@ -1,5 +1,10 @@
 # Overcoat Changelog
 
+## 3.1.1
+
+* Make sure the NSURLSessionDataTask isn't suspended [Pull Request #102](https://github.com/Overcoat/Overcoat/pull/102) (@zinthemoney)
+* Add `pod_target_xcconfig` settings to make Overcoat able to build while using as a dependency of another pod package. [Issue #99](https://github.com/Overcoat/Overcoat/issues/99) (@NorbertSzydlowski)
+
 ## 3.1
 
 * Annotate nullability and lighweight generics of Objective-C [Issue #90](https://github.com/Overcoat/Overcoat/issues/90) (@sodastsai)
