@@ -21,95 +21,66 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager+PromiseKit.h"
-#import <PromiseKit/PromiseKit.h>
 
 @implementation OVCHTTPSessionManager (PromiseKit)
 
-- (PMKPromise *)GET:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)GET:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)HEAD:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)HEAD:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)POST:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)POST:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)POST:(NSString *)URLString
+- (AnyPromise *)POST:(NSString *)URLString
        parameters:(id)parameters
 constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self POST:URLString
         parameters:parameters
 constructingBodyWithBlock:block
         completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)PUT:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)PUT:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)PATCH:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)PATCH:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }
 
-- (PMKPromise *)DELETE:(NSString *)URLString parameters:(id)parameters {
-    return [PMKPromise new:^(PMKPromiseFulfiller fulfiller, PMKPromiseRejecter rejecter) {
+- (AnyPromise *)DELETE:(NSString *)URLString parameters:(id)parameters {
+    return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
-            if (error) {
-                rejecter(error);
-            } else {
-                fulfiller(response);
-            }
+            adapter(response, error);
         }];
     }];
 }

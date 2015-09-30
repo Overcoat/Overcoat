@@ -68,13 +68,13 @@ PODS:
   - Overcoat/PromiseKit (3.1.1):
     - Overcoat/PromiseKit/NSURLConnection (= 3.1.1)
     - Overcoat/PromiseKit/NSURLSession (= 3.1.1)
-    - PromiseKit/Promise (~> 1.2)
+    - PromiseKit/CorePromise (> 2.0)
   - Overcoat/PromiseKit/NSURLConnection (3.1.1):
     - Overcoat/NSURLConnection
-    - PromiseKit/Promise (~> 1.2)
+    - PromiseKit/CorePromise (> 2.0)
   - Overcoat/PromiseKit/NSURLSession (3.1.1):
     - Overcoat/NSURLSession
-    - PromiseKit/Promise (~> 1.2)
+    - PromiseKit/CorePromise (> 2.0)
   - Overcoat/ReactiveCocoa (3.1.1):
     - Overcoat/ReactiveCocoa/NSURLConnection (= 3.1.1)
     - Overcoat/ReactiveCocoa/NSURLSession (= 3.1.1)
@@ -85,7 +85,7 @@ PODS:
   - Overcoat/ReactiveCocoa/NSURLSession (3.1.1):
     - Overcoat/NSURLSession
     - ReactiveCocoa (~> 2.4)
-  - PromiseKit/Promise (1.6.0)
+  - PromiseKit/CorePromise (3.0.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -102,18 +102,28 @@ DEPENDENCIES:
   - Overcoat/CoreData (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
   - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
+  - PromiseKit/CorePromise (from `https://github.com/mxcl/PromiseKit.git`, branch
+    `swift-2.0-beta5`)
 
 EXTERNAL SOURCES:
   Overcoat:
     :path: Overcoat.podspec
+  PromiseKit:
+    :branch: swift-2.0-beta5
+    :git: https://github.com/mxcl/PromiseKit.git
+
+CHECKOUT OPTIONS:
+  PromiseKit:
+    :commit: 69ac5b07d92396108597da82f8c144e80a0f7f77
+    :git: https://github.com/mxcl/PromiseKit.git
 
 SPEC CHECKSUMS:
   AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
   OHHTTPStubs: 0aec5755528693a165bd616cb79f69387de306a8
-  Overcoat: c8eb8020c29bed8a0efe4c0052dc7f5fa2835ffa
-  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
+  Overcoat: 492231450acac3b79de0792ea3ab1e591e82269e
+  PromiseKit: ca8e463ed27e3ab5d05ebeb237e4d50447822e4d
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.38.2

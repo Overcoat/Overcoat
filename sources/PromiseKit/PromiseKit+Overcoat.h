@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <PromiseKit/Promise.h>
+#import <PromiseKit/PromiseKit.h>
 #import <Overcoat/OVCUtilities.h>
 #if OVERCOAT_SUPPORT_URL_CONNECTION
 #import <Overcoat/OVCHTTPRequestOperationManager+PromiseKit.h>
