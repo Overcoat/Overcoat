@@ -13,7 +13,7 @@ module Overcoat
         ss.source_files = 'sources/CoreData/*.{h,m}'
         ss.private_header_files = 'sources/CoreData/*_Internal.h'
         ss.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
-        ss.user_target_xcconfig = {
+        ss.pod_target_xcconfig = ss.user_target_xcconfig = {
           'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
         }
 
@@ -72,7 +72,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'AFNetworking/NSURLConnection'
     ss.source_files = 'sources/Core/OVCHTTPRequestOperationManager.{h,m}'
-    ss.user_target_xcconfig = {
+    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_CONNECTION=1',  # Used for shortcuts in umbrella header
     }
   end
@@ -81,7 +81,7 @@ Pod::Spec.new do |s|
     ss.dependency 'Overcoat/Core'
     ss.dependency 'AFNetworking/NSURLSession'
     ss.source_files = 'sources/Core/OVCHTTPSessionManager.{h,m}'
-    ss.user_target_xcconfig = {
+    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_URL_SESSION=1',  # Used for shortcuts in umbrella header
     }
   end
@@ -107,7 +107,7 @@ Pod::Spec.new do |s|
     ss.public_header_files = 'sources/Social/*.h'
     ss.source_files = 'sources/Social/*.{h,m}'
     ss.frameworks = 'Accounts', 'Social'
-    ss.user_target_xcconfig = {
+    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',  # Used for shortcuts in umbrella header
     }
   end
@@ -115,7 +115,7 @@ Pod::Spec.new do |s|
   s.subspec 'PromiseKit' do |ss|
     ss.dependency 'PromiseKit/Promise', '~> 1.2'
     ss.source_files = 'sources/PromiseKit/PromiseKit+Overcoat.h'
-    ss.user_target_xcconfig = {
+    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
     }
     ss.default_subspec = 'NSURLConnection', 'NSURLSession'
@@ -133,7 +133,7 @@ Pod::Spec.new do |s|
   s.subspec 'ReactiveCocoa' do |ss|
     ss.dependency 'ReactiveCocoa', '~> 2.4'
     ss.source_files = 'sources/ReactiveCocoa/ReactiveCocoa+Overcoat.h'
-    ss.user_target_xcconfig = {
+    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
     }
     ss.default_subspec = 'NSURLConnection', 'NSURLSession'
