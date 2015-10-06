@@ -126,4 +126,19 @@
     return responseObject;
 }
 
+- (NSSet *)acceptableContentTypes
+{
+    return self.jsonSerializer.acceptableContentTypes;
+}
+
+- (NSIndexSet *)acceptableStatusCodes
+{
+    return self.jsonSerializer.acceptableStatusCodes;
+}
+
+- (NSStringEncoding)stringEncoding
+{
+    return self.jsonSerializer.stringEncoding;
+}
+
 @end
