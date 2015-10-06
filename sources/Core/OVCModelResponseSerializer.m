@@ -70,7 +70,7 @@
     }
 
     if (self = [super init]) {
-        self.readingOptions = 0;
+        self.jsonSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:0];
 
         self.URLMatcher = URLMatcher;
         self.URLResponseClassMatcher = URLResponseClassMatcher;
@@ -86,7 +86,7 @@
                            data:(NSData *)data
                           error:(NSError *__autoreleasing *)error {
     NSError *serializationError = nil;
-    id OVC__NULLABLE JSONObject = [super responseObjectForResponse:response data:data error:&serializationError];
+    id OVC__NULLABLE JSONObject = [self.jsonSerializer responseObjectForResponse:response data:data error:&serializationError];
     
     if (error) {
         *error = serializationError;

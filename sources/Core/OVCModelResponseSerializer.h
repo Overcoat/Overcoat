@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
  AFJSONResponseSerializer subclass that validates and transforms a JSON response into a
  `OVCResponse` object.
  */
-@interface OVCModelResponseSerializer : AFJSONResponseSerializer
+@interface OVCModelResponseSerializer : AFHTTPResponseSerializer
 
 /**
  Matches URLs in HTTP responses with model classes.
@@ -51,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
  The model class for server error responses.
  */
 @property (nonatomic, readonly, OVC_NULLABLE) Class errorModelClass;
+
+@property(nonatomic, strong) AFJSONResponseSerializer *jsonSerializer;
 
 /**
  Creates and returns model serializer.
