@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0607A037F3E1688522ED0371 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		0822D2343DAB8EF6FD256860 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0607A037F3E1688522ED0371 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
+		0822D2343DAB8EF6FD256860 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
 		1749D52743649B2BA474A65D /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		31412C5AF95B9FAFFAFD851F /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4A946633EC259B79941A8601 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		595ABDA1770E9B2600927014 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		5AE479DE971226D19832A0BD /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		31412C5AF95B9FAFFAFD851F /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
+		4A946633EC259B79941A8601 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
+		595ABDA1770E9B2600927014 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
+		5AE479DE971226D19832A0BD /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
 		6BAF54B84B70ABC5A88940D9 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		6D4E5B4111756CD06D3F6C4B /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		6FEBD439C13D9F2D9BA6F097 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6FEBD439C13D9F2D9BA6F097 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
 		730D3AC57FAA88952D908085 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		91EA656A20E9C5B7D5EA8396 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		920DB28B86430BD3EE5E3AF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34E7297E22C7A28D91174B1 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		920DB28B86430BD3EE5E3AF4 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34E7297E22C7A28D91174B1 /* Pods.framework */; };
 		9ABA078E05849203BE72171C /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		A94C30A85C80F7B78472D7E8 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A94C30A85C80F7B78472D7E8 /* Pods_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A6FC059199E8BD8B5B59558 /* Pods_test.framework */; };
 		BDAB8DBE8C6325DB71C3D251 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
-		C785DFF6FC0F698F7538B5FD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34E7297E22C7A28D91174B1 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		C785DFF6FC0F698F7538B5FD /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A34E7297E22C7A28D91174B1 /* Pods.framework */; };
 		EFDD5FE3701178430F24C9D4 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		FE025E1C1B2EAE4000B0A48E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E1B1B2EAE4000B0A48E /* main.m */; };
 		FE025E1F1B2EAE4000B0A48E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E1E1B2EAE4000B0A48E /* AppDelegate.m */; };
@@ -1151,21 +1151,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		51B00E4561D3D9EA41EE19FC /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-test/Pods-test-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		551A0995D656B138AA576A64 /* Check Pods Manifest.lock */ = {
