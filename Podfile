@@ -27,7 +27,7 @@ pod 'Mantle', "~> #{mantle_version}", :inhibit_warnings => true
 if mantle_version == '2.0'
   pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
 end
-pod 'PromiseKit/CorePromise', :git => 'https://github.com/mxcl/PromiseKit.git', :branch => 'swift-2.0-beta5'
+pod 'PromiseKit/CorePromise', :git => 'https://github.com/mxcl/PromiseKit.git', :tag => '3.0.0'
 pod 'Overcoat', :subspecs => overcoat_subspecs, :path => overcoat_podspec_path
 
 # Test target ---------------------------------------------------------------------------------------------------------

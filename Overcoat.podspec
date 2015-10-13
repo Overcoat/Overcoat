@@ -1,7 +1,6 @@
-# Workaround to support both Mantle 1.x and 2.x
 module Overcoat
   module CoreData
-
+    # Workaround to support both Mantle 1.x and 2.x
     def self.spec(s)
       mantle_version = s.name.split('/')[-1][-1].to_i
 
@@ -35,7 +34,16 @@ module Overcoat
         ss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
       end
     end
-
+  end
+  module PromiseKit
+    # Workaround for PromiseKit and Xcode 7
+    # (For Xcode 7 which comes with Swift 2.0, you have to use PromiseKit 3.x)
+    # (PromiseKit 2.x supports only Swift 1.x which is only available to Xcode 6.x)
+    def self.promise_kit_version
+      xcode_version = `xcodebuild -version | head -n 1 | awk '{print $2}'`
+      use_promise_kit_3 = Gem::Version.new(xcode_version) >= Gem::Version.new('7.0')
+      use_promise_kit_3 ? '~> 3.0' : '~> 2.0'
+    end
   end
 end
 
@@ -116,7 +124,7 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '8.0'
     ss.osx.deployment_target = '10.9'
 
-    ss.dependency 'PromiseKit/CorePromise', '> 2.0'
+    ss.dependency 'PromiseKit/CorePromise', Overcoat::PromiseKit::promise_kit_version
     ss.source_files = 'sources/PromiseKit/PromiseKit+Overcoat.h'
     ss.pod_target_xcconfig = ss.user_target_xcconfig = {
       'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
