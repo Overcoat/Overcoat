@@ -1,8 +1,13 @@
 # Overcoat Changelog
 
+## 3.2
+
+* PromiseKit 2.x support. [Commit f444f00 ](https://github.com/Overcoat/Overcoat/commit/f444f00a726967f7bcb76585da47fa1a4cd8aa5d)
+* Replace inheritance of OVCModelResponseSerializer with composite a json serializer. [Pull Request #104](https://github.com/Overcoat/Overcoat/pull/104) (@melbic)
+
 ## 3.1.1
 
-* Make sure the NSURLSessionDataTask isn't suspended [Pull Request #102](https://github.com/Overcoat/Overcoat/pull/102) (@zinthemoney)
+* Make sure the NSURLSessionDataTask isn't suspended. [Pull Request #102](https://github.com/Overcoat/Overcoat/pull/102) (@zinthemoney)
 * Add `pod_target_xcconfig` settings to make Overcoat able to build while using as a dependency of another pod package. [Issue #99](https://github.com/Overcoat/Overcoat/issues/99) (@NorbertSzydlowski)
 
 ## 3.1
