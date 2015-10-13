@@ -44,7 +44,7 @@ end
 
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
-  s.version  = '3.1.1'
+  s.version  = '3.2.0'
   s.cocoapods_version = '>= 0.38'
   s.license  = 'MIT'
   s.summary  = 'Overcoat is a small but powerful library that makes creating REST clients simple and fun.'
