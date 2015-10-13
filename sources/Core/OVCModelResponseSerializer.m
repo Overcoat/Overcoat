@@ -87,22 +87,22 @@
                           error:(NSError *__autoreleasing *)error {
     NSError *serializationError = nil;
     id OVC__NULLABLE JSONObject = [self.jsonSerializer responseObjectForResponse:response data:data error:&serializationError];
-    
+
     if (error) {
         *error = serializationError;
     }
-    
+
     if (serializationError && serializationError.code != NSURLErrorBadServerResponse) {
         return nil;
     }
-    
+
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
     Class resultClass = Nil;
     Class responseClass = Nil;
-    
+
     if (!serializationError) {
         resultClass = [self.URLMatcher modelClassForURL:HTTPResponse.URL];
-        
+
         if (self.URLResponseClassMatcher) {
             responseClass = [self.URLResponseClassMatcher modelClassForURL:HTTPResponse.URL];
         }
@@ -114,7 +114,7 @@
         resultClass = self.errorModelClass;
         responseClass = self.responseClass;
     }
-    
+
     OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
                                                                JSONObject:JSONObject
                                                               resultClass:resultClass];
@@ -122,22 +122,19 @@
     if (serializationError && error) {
         *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
     }
-    
+
     return responseObject;
 }
 
-- (NSSet *)acceptableContentTypes
-{
+- (NSSet *)acceptableContentTypes {
     return self.jsonSerializer.acceptableContentTypes;
 }
 
-- (NSIndexSet *)acceptableStatusCodes
-{
+- (NSIndexSet *)acceptableStatusCodes {
     return self.jsonSerializer.acceptableStatusCodes;
 }
 
-- (NSStringEncoding)stringEncoding
-{
+- (NSStringEncoding)stringEncoding {
     return self.jsonSerializer.stringEncoding;
 }
 
