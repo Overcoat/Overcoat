@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+#import <objc/objc.h>
 #import "OVCResponse.h"
 #import "OVCUtilities.h"
 #import "NSDictionary+Overcoat.h"
@@ -40,12 +41,14 @@
 
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
                               JSONObject:(id)JSONObject
-                             resultClass:(Class)resultClass {
+                             resultClass:(Class)resultClass
+                                   error:(NSError *__autoreleasing *)error
+{
     OVCResponse *response = nil;
     id result = JSONObject;
 
     if ([JSONObject isKindOfClass:[NSDictionary class]]) {
-        response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:NULL];
+        response = [MTLJSONAdapter modelOfClass:self fromJSONDictionary:JSONObject error:error];
         NSString *resultKeyPath = [[response class] resultKeyPathForJSONDictionary:JSONObject];
         if (resultKeyPath) {
             result = [(NSDictionary *)JSONObject ovc_objectForKeyPath:resultKeyPath];
@@ -101,6 +104,13 @@
         @"resultClass": [NSNull null],
     };
 #endif
+}
+
+#pragma mark - deprecated
+
++ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse JSONObject:(id)JSONObject resultClass:(Class)resultClass
+{
+    return [self responseWithHTTPResponse:HTTPResponse JSONObject:JSONObject resultClass:resultClass error:NULL];
 }
 
 @end

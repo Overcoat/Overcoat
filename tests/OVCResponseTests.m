@@ -38,7 +38,8 @@
 - (void)testNilJSONDictionary {
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:nil
-                                                      resultClass:[OVCTestModel class]];
+                                                      resultClass:[OVCTestModel class]
+                                                            error:NULL];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     XCTAssertNil(response.result, @"result should be nil");
@@ -51,8 +52,9 @@
     };
     
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
-                                                   JSONObject:JSONObject
-                                                      resultClass:nil];
+                                                       JSONObject:JSONObject
+                                                      resultClass:nil
+                                                            error:NULL];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     XCTAssertEqualObjects(JSONObject, response.result, @"should initialize result to JSON object");
@@ -66,7 +68,8 @@
     
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:JSONObject
-                                                      resultClass:[OVCTestModel class]];
+                                                      resultClass:[OVCTestModel class]
+                                                            error:NULL];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     
@@ -91,7 +94,8 @@
     
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:JSONObject
-                                                      resultClass:[OVCTestModel class]];
+                                                      resultClass:[OVCTestModel class]
+                                                            error:NULL];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     
@@ -124,9 +128,10 @@
         ]
     };
     
-    OVCTestResponse *response = [OVCTestResponse responseWithHTTPResponse:self.HTTPResponse
+    OVCTestResponse *response = [OVCTestResponse responseWithHTTPResponse:self.HTTPResponse 
                                                                JSONObject:JSONObject
-                                                              resultClass:[OVCTestModel class]];
+                                                              resultClass:[OVCTestModel class]
+                                                                    error:NULL];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     

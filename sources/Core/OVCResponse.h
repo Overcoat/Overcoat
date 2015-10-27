@@ -22,6 +22,7 @@
 
 #import <Mantle/Mantle.h>
 #import <Overcoat/OVCUtilities.h>
+#import <objc/objc.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -65,9 +66,12 @@ NS_ASSUME_NONNULL_BEGIN
  
  @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
  */
-+ (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
-                                           JSONObject:(OVC_NULLABLE id)JSONObject
-                                          resultClass:(OVC_NULLABLE Class)resultClass;
++ (OVC__NULLABLE instancetype)responseWithHTTPResponse:(OVC__NULLABLE NSHTTPURLResponse *)HTTPResponse
+                                            JSONObject:(OVC__NULLABLE id)JSONObject
+                                           resultClass:(OVC__NULLABLE Class)resultClass
+                                                 error:(NSError *__autoreleasing *)error;
+
++ (OVC__NULLABLE instancetype)responseWithHTTPResponse:(OVC__NULLABLE NSHTTPURLResponse *)HTTPResponse JSONObject:(OVC__NULLABLE id)JSONObject resultClass:(OVC__NULLABLE Class)resultClass __attribute__((deprecated("Replaced by +responseWithHTTPResponse:JSONObject:resultClass:error:")));
 
 @end
 

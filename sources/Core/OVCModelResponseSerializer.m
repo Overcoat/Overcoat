@@ -117,8 +117,8 @@
 
     OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
                                                                JSONObject:JSONObject
-                                                              resultClass:resultClass];
-
+                                                              resultClass:resultClass
+                                                                    error:&serializationError];
     if (serializationError && error) {
         *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
     }
