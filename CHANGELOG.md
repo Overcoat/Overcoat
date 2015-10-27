@@ -1,5 +1,9 @@
 # Overcoat Changelog
 
+## Upcoming
+
+* Adding error pointer to the initializer of OVCResponse. [Pull Request #108](https://github.com/Overcoat/Overcoat/pull/108) (@melbic)
+
 ## 3.2
 
 * PromiseKit 2.x support. [Commit f444f00 ](https://github.com/Overcoat/Overcoat/commit/f444f00a726967f7bcb76585da47fa1a4cd8aa5d)
