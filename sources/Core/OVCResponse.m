@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <objc/objc.h>
 #import "OVCResponse.h"
 #import "OVCUtilities.h"
 #import "NSDictionary+Overcoat.h"
@@ -108,9 +107,10 @@
 
 #pragma mark - deprecated
 
-+ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse JSONObject:(id)JSONObject resultClass:(Class)resultClass
-{
-    return [self responseWithHTTPResponse:HTTPResponse JSONObject:JSONObject resultClass:resultClass error:NULL];
++ (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
+                              JSONObject:(id)JSONObject
+                             resultClass:(Class)resultClass {
+    return [self responseWithHTTPResponse:HTTPResponse JSONObject:JSONObject resultClass:resultClass error:nil];
 }
 
 @end

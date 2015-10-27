@@ -22,7 +22,6 @@
 
 #import <Mantle/Mantle.h>
 #import <Overcoat/OVCUtilities.h>
-#import <objc/objc.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -63,15 +62,20 @@ NS_ASSUME_NONNULL_BEGIN
  @param HTTPResponse The HTTP response.
  @param JSONObject A foundation object with JSON data.
  @param resultClass The `MTLModel` subclass in which `result` will be transformed.
+ @param error The error occurred if parsing fails.
  
  @return A new `OVCResponse` object upon success, or nil if a parsing error occurred.
  */
-+ (OVC__NULLABLE instancetype)responseWithHTTPResponse:(OVC__NULLABLE NSHTTPURLResponse *)HTTPResponse
-                                            JSONObject:(OVC__NULLABLE id)JSONObject
-                                           resultClass:(OVC__NULLABLE Class)resultClass
-                                                 error:(NSError *__autoreleasing *)error;
++ (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
+                                           JSONObject:(OVC_NULLABLE id)JSONObject
+                                          resultClass:(OVC_NULLABLE Class)resultClass
+                                                error:(NSError *OVC__NULLABLE __autoreleasing *OVC__NULLABLE)error;
 
-+ (OVC__NULLABLE instancetype)responseWithHTTPResponse:(OVC__NULLABLE NSHTTPURLResponse *)HTTPResponse JSONObject:(OVC__NULLABLE id)JSONObject resultClass:(OVC__NULLABLE Class)resultClass __attribute__((deprecated("Replaced by +responseWithHTTPResponse:JSONObject:resultClass:error:")));
++ (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
+                                           JSONObject:(OVC_NULLABLE id)JSONObject
+                                          resultClass:(OVC_NULLABLE Class)resultClass
+__attribute__((deprecated("Replaced by +responseWithHTTPResponse:JSONObject:resultClass:error:")))
+NS_SWIFT_UNAVAILABLE("Deprecated. use `init(HTTPResponse:JSONObject:resultClass:) throws`");
 
 @end
 

@@ -39,7 +39,7 @@
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:nil
                                                       resultClass:[OVCTestModel class]
-                                                            error:NULL];
+                                                            error:nil];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     XCTAssertNil(response.result, @"result should be nil");
@@ -54,7 +54,7 @@
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:JSONObject
                                                       resultClass:nil
-                                                            error:NULL];
+                                                            error:nil];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     XCTAssertEqualObjects(JSONObject, response.result, @"should initialize result to JSON object");
@@ -69,14 +69,14 @@
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:JSONObject
                                                       resultClass:[OVCTestModel class]
-                                                            error:NULL];
+                                                            error:nil];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     
     OVCTestModel *expectedModel = [OVCTestModel modelWithDictionary:@{
                                        @"name": @"Iron Man",
                                        @"realName": @"Anthony Stark"
-                                   } error:NULL];
+                                   } error:nil];
     XCTAssertEqualObjects(expectedModel, response.result, @"should transform JSON into a single model");
 }
 
@@ -95,7 +95,7 @@
     OVCResponse *response = [OVCResponse responseWithHTTPResponse:self.HTTPResponse
                                                        JSONObject:JSONObject
                                                       resultClass:[OVCTestModel class]
-                                                            error:NULL];
+                                                            error:nil];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     
@@ -103,11 +103,11 @@
         [OVCTestModel modelWithDictionary:@{
              @"name": @"Iron Man",
              @"realName": @"Anthony Stark"
-         } error:NULL],
+         } error:nil],
         [OVCTestModel modelWithDictionary:@{
              @"name": @"Batman",
              @"realName": @"Bruce Wayne"
-         } error:NULL]
+         } error:nil]
     ];
     
     XCTAssertEqualObjects(expectedModels, response.result, @"should transform JSON into an array of models");
@@ -131,7 +131,7 @@
     OVCTestResponse *response = [OVCTestResponse responseWithHTTPResponse:self.HTTPResponse 
                                                                JSONObject:JSONObject
                                                               resultClass:[OVCTestModel class]
-                                                                    error:NULL];
+                                                                    error:nil];
     
     XCTAssertEqualObjects(self.HTTPResponse, response.HTTPResponse, @"should initialize HTTP response");
     
@@ -139,11 +139,11 @@
         [OVCTestModel modelWithDictionary:@{
              @"name": @"Iron Man",
              @"realName": @"Anthony Stark"
-         } error:NULL],
+         } error:nil],
         [OVCTestModel modelWithDictionary:@{
              @"name": @"Batman",
              @"realName": @"Bruce Wayne"
-         } error:NULL]
+         } error:nil]
     ];
     
     XCTAssertEqualObjects(expectedModels, response.result,
