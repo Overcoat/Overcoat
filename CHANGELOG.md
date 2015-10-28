@@ -3,6 +3,7 @@
 ## Upcoming
 
 * Adding error pointer to the initializer of OVCResponse. [Pull Request #108](https://github.com/Overcoat/Overcoat/pull/108) (@melbic)
+* Adopt `MTLTransformerErrorHandling`. [Pull Request #109](https://github.com/Overcoat/Overcoat/pull/109) (@melbic)
 
 ## 3.2
 
