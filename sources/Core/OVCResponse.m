@@ -74,14 +74,23 @@
             } else if ([result isKindOfClass:[NSArray class]]) {
                 valueTransformer = [MTLJSONAdapter arrayTransformerWithModelClass:resultClass];
             }
+
+            if ([valueTransformer conformsToProtocol:@protocol(MTLTransformerErrorHandling)]) {
+                result = [(NSValueTransformer <MTLTransformerErrorHandling> *) valueTransformer transformedValue:result
+                                                                                                         success:NULL
+                                                                                                           error:error];
+            } else {
+                result = [valueTransformer transformedValue:result];
+            }
 #else
             if ([result isKindOfClass:[NSDictionary class]]) {
                 valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:resultClass];
             } else if ([result isKindOfClass:[NSArray class]]) {
                 valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:resultClass];
             }
-#endif
+
             result = [valueTransformer transformedValue:result];
+#endif
         }
 
         response.result = result;
