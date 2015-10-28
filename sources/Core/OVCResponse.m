@@ -76,9 +76,13 @@
             }
 
             if ([valueTransformer conformsToProtocol:@protocol(MTLTransformerErrorHandling)]) {
-                result = [(NSValueTransformer <MTLTransformerErrorHandling> *) valueTransformer transformedValue:result
-                                                                                                         success:NULL
-                                                                                                           error:error];
+                BOOL success = NO;
+                result = [(NSValueTransformer<MTLTransformerErrorHandling> *)valueTransformer transformedValue:result
+                                                                                                       success:&success
+                                                                                                         error:error];
+                if (!success) {
+                    result = nil;
+                }
             } else {
                 result = [valueTransformer transformedValue:result];
             }
