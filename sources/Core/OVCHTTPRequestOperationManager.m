@@ -25,6 +25,7 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
 #import "OVCHTTPManager_Internal.h"
+#import "NSError+OVCResponse.h"
 
 @implementation OVCHTTPRequestOperationManager
 
@@ -75,6 +76,7 @@
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  if (completion) {
+                     error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                      completion(operation.responseObject, error);
                  }
              }];
@@ -91,6 +93,7 @@
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                   if (completion) {
+                      error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                       completion(operation.responseObject, error);
                   }
               }];
@@ -107,6 +110,7 @@
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                   if (completion) {
+                      error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                       completion(operation.responseObject, error);
                   }
               }];
@@ -124,6 +128,7 @@
               }
               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                   if (completion) {
+                      error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                       completion(operation.responseObject, error);
                   }
               }];
@@ -140,6 +145,7 @@
              }
              failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                  if (completion) {
+                     error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                      completion(operation.responseObject, error);
                  }
              }];
@@ -156,6 +162,7 @@
                }
                failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                    if (completion) {
+                       error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                        completion(operation.responseObject, error);
                    }
                }];
@@ -172,6 +179,7 @@
                 }
                 failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                     if (completion) {
+                        error = [error ovc_errorWithUnderlyingResponse:operation.responseObject];
                         completion(operation.responseObject, error);
                     }
                 }];

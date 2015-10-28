@@ -25,6 +25,7 @@
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
 #import "OVCHTTPManager_Internal.h"
+#import "NSError+OVCResponse.h"
 
 @interface OVCHTTPSessionManager ()
 
@@ -93,6 +94,7 @@
                            if (!error) {
                                completion(responseObject, nil);
                            } else {
+                               error = [error ovc_errorWithUnderlyingResponse:responseObject];
                                completion(responseObject, error);
                            }
                        }

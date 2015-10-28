@@ -122,7 +122,7 @@
                                                               resultClass:resultClass
                                                                     error:&serializationError];
     if (serializationError && error) {
-        *error = [serializationError ovc_errorWithUnderlyingResponse:responseObject];
+        *error = serializationError;
     }
 
     return responseObject;
