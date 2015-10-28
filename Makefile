@@ -18,6 +18,8 @@ check-xctool-install:
 # Cocoapods, including Mantle setup
 
 clean:
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX clean 1>/dev/null
+	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS clean 1>/dev/null
 	rm -rf Pods
 
 install-osx-mantle1-pod install-ios-mantle1-pod install-osx-mantle2-pod install-ios-mantle2-pod: check-pod-install clean
