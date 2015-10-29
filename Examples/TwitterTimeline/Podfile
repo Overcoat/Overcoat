@@ -1,24 +1,11 @@
 platform :ios, '8.0'
 
-target 'TwitterTimeline' do
-  pod 'Overcoat', :subspecs => ['PromiseKit', 'Social', 'CoreData'], :path => '../../Overcoat.podspec'
-  pod 'PromiseKit/Accounts'
-  pod 'TGRDataSource'
-  pod 'libextobjc'
-  pod 'AFNetworking', :inhibit_warnings => true
+use_frameworks!
+inhibit_all_warnings!
 
-  # == Using Mantle 2.x ==========
-  pod 'Mantle', '2.0.2'
-  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
-  # ==============================
-
-  # == Using Mantle 1.x ==========
-  #pod 'Mantle', '~> 1.0'
-  # ==============================
-
-end
-
-target 'TwitterTimelineTests' do
-
-end
-
+pod 'Overcoat', :subspecs => ['PromiseKit', 'Social', 'CoreData'], :path => '../../Overcoat.podspec'
+pod 'PromiseKit/Accounts'
+pod 'TGRDataSource'
+pod 'libextobjc'
+pod 'AFNetworking'
+pod 'Mantle', '~> 2.0'

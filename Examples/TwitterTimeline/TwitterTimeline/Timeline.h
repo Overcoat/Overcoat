@@ -21,11 +21,9 @@
 // THE SOFTWARE.
 
 #import <CoreData/CoreData.h>
-
+#import <Accounts/Accounts.h>
+#import <PromiseKit/PromiseKit.h>
 #import "TimelineType.h"
-
-@class ACAccount;
-@class PMKPromise;
 
 @interface Timeline : NSObject
 
@@ -39,9 +37,9 @@
 
 - (id)initWithAccount:(ACAccount *)account type:(TimelineType)type;
 
-- (PMKPromise *)refresh;
+- (AnyPromise *)refresh;
 
-- (PMKPromise *)loadMoreTweets;
+- (AnyPromise *)loadMoreTweets;
 
 - (void)cancelAllRequests;
 

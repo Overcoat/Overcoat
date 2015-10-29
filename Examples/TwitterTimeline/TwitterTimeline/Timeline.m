@@ -22,6 +22,7 @@
 
 #import "Timeline.h"
 #import "TwitterClient.h"
+#import <Overcoat/OVCManagedStore.h>
 
 static NSString * const kIdentifierKey = @"identifier";
 
@@ -65,7 +66,7 @@ static NSString * const kIdentifierKey = @"identifier";
 
 - (id)initWithAccount:(ACAccount *)account type:(TimelineType)type {
     NSParameterAssert(account);
-    if ([super init]) {
+    if (self = [super init]) {
         self.account = account;
         self.type = type;
     }
@@ -74,7 +75,7 @@ static NSString * const kIdentifierKey = @"identifier";
 
 #pragma mark - Fetching tweets
 
-- (PMKPromise *)refresh {
+- (AnyPromise *)refresh {
     NSDictionary *parameters = @{
         @"include_rts": @"true"
     };
@@ -90,7 +91,7 @@ static NSString * const kIdentifierKey = @"identifier";
     return [self.client fetchTimeline:self.type parameters:parameters];
 }
 
-- (PMKPromise *)loadMoreTweets {
+- (AnyPromise *)loadMoreTweets {
     NSNumber *identifier = [self firstTweetIdentifier];
     NSAssert(identifier, @"loadMoreTweets should not be called when the cache is empty");
     

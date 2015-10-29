@@ -1,23 +1,23 @@
 PODS:
-  - AFNetworking (2.6.0):
-    - AFNetworking/NSURLConnection (= 2.6.0)
-    - AFNetworking/NSURLSession (= 2.6.0)
-    - AFNetworking/Reachability (= 2.6.0)
-    - AFNetworking/Security (= 2.6.0)
-    - AFNetworking/Serialization (= 2.6.0)
-    - AFNetworking/UIKit (= 2.6.0)
-  - AFNetworking/NSURLConnection (2.6.0):
+  - AFNetworking (2.6.1):
+    - AFNetworking/NSURLConnection (= 2.6.1)
+    - AFNetworking/NSURLSession (= 2.6.1)
+    - AFNetworking/Reachability (= 2.6.1)
+    - AFNetworking/Security (= 2.6.1)
+    - AFNetworking/Serialization (= 2.6.1)
+    - AFNetworking/UIKit (= 2.6.1)
+  - AFNetworking/NSURLConnection (2.6.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.0):
+  - AFNetworking/NSURLSession (2.6.1):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.0)
-  - AFNetworking/Security (2.6.0)
-  - AFNetworking/Serialization (2.6.0)
-  - AFNetworking/UIKit (2.6.0):
+  - AFNetworking/Reachability (2.6.1)
+  - AFNetworking/Security (2.6.1)
+  - AFNetworking/Serialization (2.6.1)
+  - AFNetworking/UIKit (2.6.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - libextobjc (0.4.1):
@@ -55,62 +55,59 @@ PODS:
     - libextobjc/RuntimeExtensions
   - libextobjc/RuntimeExtensions (0.4.1)
   - libextobjc/UmbrellaHeader (0.4.1)
-  - Mantle (2.0.2):
-    - Mantle/extobjc (= 2.0.2)
-  - Mantle/extobjc (2.0.2)
+  - Mantle (2.0.5):
+    - Mantle/extobjc (= 2.0.5)
+  - Mantle/extobjc (2.0.5)
   - MTLManagedObjectAdapter (1.0.0.1):
     - Mantle (~> 2.0)
     - MTLManagedObjectAdapter/extobjc (= 1.0.0.1)
   - MTLManagedObjectAdapter/extobjc (1.0.0.1):
     - Mantle (~> 2.0)
-  - Overcoat/Core (3.1.0):
+  - Overcoat/Core (3.2.0):
     - AFNetworking/Serialization
     - Mantle
-  - Overcoat/CoreData (3.1.0):
-    - Overcoat/CoreData/Mantle2 (= 3.1.0)
-  - Overcoat/CoreData/Mantle2 (3.1.0):
-    - Overcoat/CoreData/Mantle2/NSURLConnection (= 3.1.0)
-    - Overcoat/CoreData/Mantle2/NSURLSession (= 3.1.0)
-  - Overcoat/CoreData/Mantle2/Core (3.1.0):
+  - Overcoat/CoreData (3.2.0):
+    - Overcoat/CoreData/Mantle2 (= 3.2.0)
+  - Overcoat/CoreData/Mantle2 (3.2.0):
+    - Overcoat/CoreData/Mantle2/NSURLConnection (= 3.2.0)
+    - Overcoat/CoreData/Mantle2/NSURLSession (= 3.2.0)
+  - Overcoat/CoreData/Mantle2/Core (3.2.0):
     - Mantle (~> 2)
     - MTLManagedObjectAdapter (> 1.0)
     - Overcoat/Core
-  - Overcoat/CoreData/Mantle2/NSURLConnection (3.1.0):
+  - Overcoat/CoreData/Mantle2/NSURLConnection (3.2.0):
     - Overcoat/CoreData/Mantle2/Core
     - Overcoat/NSURLConnection
-  - Overcoat/CoreData/Mantle2/NSURLSession (3.1.0):
+  - Overcoat/CoreData/Mantle2/NSURLSession (3.2.0):
     - Overcoat/CoreData/Mantle2/Core
     - Overcoat/NSURLSession
-  - Overcoat/NSURLConnection (3.1.0):
+  - Overcoat/NSURLConnection (3.2.0):
     - AFNetworking/NSURLConnection
     - Overcoat/Core
-  - Overcoat/NSURLSession (3.1.0):
+  - Overcoat/NSURLSession (3.2.0):
     - AFNetworking/NSURLSession
     - Overcoat/Core
-  - Overcoat/PromiseKit (3.1.0):
-    - Overcoat/PromiseKit/NSURLConnection (= 3.1.0)
-    - Overcoat/PromiseKit/NSURLSession (= 3.1.0)
-    - PromiseKit/Promise (~> 1.2)
-  - Overcoat/PromiseKit/NSURLConnection (3.1.0):
+  - Overcoat/PromiseKit (3.2.0):
+    - Overcoat/PromiseKit/NSURLConnection (= 3.2.0)
+    - Overcoat/PromiseKit/NSURLSession (= 3.2.0)
+    - PromiseKit/CorePromise (> 2)
+  - Overcoat/PromiseKit/NSURLConnection (3.2.0):
     - Overcoat/NSURLConnection
-    - PromiseKit/Promise (~> 1.2)
-  - Overcoat/PromiseKit/NSURLSession (3.1.0):
+    - PromiseKit/CorePromise (> 2)
+  - Overcoat/PromiseKit/NSURLSession (3.2.0):
     - Overcoat/NSURLSession
-    - PromiseKit/Promise (~> 1.2)
-  - Overcoat/Social (3.1.0):
+    - PromiseKit/CorePromise (> 2)
+  - Overcoat/Social (3.2.0):
     - AFNetworking/Serialization
-  - PromiseKit/ACAccountStore (1.6.0):
-    - PromiseKit/Promise
-  - PromiseKit/Accounts (1.6.0):
-    - PromiseKit/ACAccountStore
-  - PromiseKit/Promise (1.6.0)
+  - PromiseKit/Accounts (3.0.0):
+    - PromiseKit/CorePromise
+  - PromiseKit/CorePromise (3.0.0)
   - TGRDataSource (0.2)
 
 DEPENDENCIES:
   - AFNetworking
   - libextobjc
-  - Mantle (= 2.0.2)
-  - MTLManagedObjectAdapter
+  - Mantle (~> 2.0)
   - Overcoat/CoreData (from `../../Overcoat.podspec`)
   - Overcoat/PromiseKit (from `../../Overcoat.podspec`)
   - Overcoat/Social (from `../../Overcoat.podspec`)
@@ -122,12 +119,12 @@ EXTERNAL SOURCES:
     :path: "../../Overcoat.podspec"
 
 SPEC CHECKSUMS:
-  AFNetworking: 79f7eb1a0fcfa7beb409332b2ca49afe9ce53b05
+  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
   libextobjc: a650fc1bf489a3d3a9bc2e621efa3e1006fc5471
-  Mantle: 967fd31ea0220890b2e76589198996b534bb3fb1
+  Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
-  Overcoat: c55d430fc13529780b6defbffd392e556740842e
-  PromiseKit: 6be651503d4af22830b5313be993c5a0ef77bf77
+  Overcoat: 16f4a7b17c5189bc270466eef03a7b1c01ebfbd4
+  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
   TGRDataSource: 9ab4ed589fae145f94b234a0ca1094aba35af473
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

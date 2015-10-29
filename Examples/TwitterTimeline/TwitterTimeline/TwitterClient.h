@@ -20,11 +20,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/Overcoat.h>
+#import <Overcoat/OVCManagedHTTPSessionManager.h>
 #import "TimelineType.h"
 
-@class ACAccount;
-@class PMKPromise;
+@import PromiseKit;
+@import Accounts;
 
 @interface TwitterClient : OVCManagedHTTPSessionManager
 
@@ -40,27 +40,27 @@
  
  @return A `Promise` that will `then` an array of `Tweet` objects.
  */
-- (PMKPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
+- (AnyPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters;
 
 /**
  Fetches a cursored collection of user IDs for every user the specified user is following.
  
  @return A `Promise` that will `then` a `UserIdentifierCollection` object.
  */
-- (PMKPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor;
+- (AnyPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor;
 
 /**
  Fetches a cursored collection of user IDs for every user following the specified user.
  
  @return A `Promise` that will `then` a `UserIdentifierCollection` object.
  */
-- (PMKPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor;
+- (AnyPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor;
 
 /**
  Fetches fully-hydrated user objects for up to 100 users per request.
  
  @return A `Promise` that will `then` an array of `TwitterUser` objects.
  */
-- (PMKPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers;
+- (AnyPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers;
 
 @end

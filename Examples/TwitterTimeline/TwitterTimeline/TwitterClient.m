@@ -25,9 +25,8 @@
 #import "Tweet.h"
 #import "TwitterUser.h"
 #import "UserIdentifierCollection.h"
-
-#import <Accounts/Accounts.h>
-#import <Overcoat/PromiseKit+Overcoat.h>
+#import <Overcoat/Overcoat.h>
+#import <PromiseKit/PromiseKit.h>
 
 static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
@@ -53,7 +52,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
 
 #pragma mark - Requests
 
-- (PMKPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters {
+- (AnyPromise *)fetchTimeline:(TimelineType)timelineType parameters:(NSDictionary *)parameters {
     NSString *path = [NSString stringWithFormat:@"statuses/%@.json", timeline_name(timelineType)];
     
     return [self GET:path parameters:parameters].then(^(OVCResponse *response) {
@@ -61,7 +60,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (PMKPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor {
+- (AnyPromise *)fetchFriendIdentifiersWithCursor:(NSNumber *)cursor {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"cursor": cursor ? [cursor stringValue] : @"-1",
@@ -73,7 +72,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (PMKPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor {
+- (AnyPromise *)fetchFollowerIdentifiersWithCursor:(NSNumber *)cursor {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"cursor": cursor ? [cursor stringValue] : @"-1",
@@ -85,7 +84,7 @@ static NSString * const kBaseURL = @"https://api.twitter.com/1.1/";
     });
 }
 
-- (PMKPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers {
+- (AnyPromise *)lookupUsersWithIdentifiers:(NSArray *)identifiers {
     NSDictionary *parameters = @{
         @"screen_name": self.account.username,
         @"user_id": [identifiers componentsJoinedByString:@","]
