@@ -22,7 +22,8 @@
 
 #import <Overcoat/OVCHTTPSessionManager.h>
 #import <Overcoat/OVCUtilities.h>
-#import <PromiseKit/PromiseKit.h>
+
+@class AnyPromise;
 
 NS_ASSUME_NONNULL_BEGIN
 

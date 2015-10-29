@@ -21,6 +21,8 @@
 // THE SOFTWARE.
 
 #import "OVCSocialRequestSerializer.h"
+#import <Accounts/Accounts.h>
+#import <Social/Social.h>
 
 #pragma mark -
 

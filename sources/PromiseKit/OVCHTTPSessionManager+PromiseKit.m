@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager+PromiseKit.h"
+#import <PromiseKit/AnyPromise.h>
 
 @implementation OVCHTTPSessionManager (PromiseKit)
 

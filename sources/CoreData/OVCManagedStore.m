@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "OVCManagedStore.h"
+#import <CoreData/CoreData.h>
 
 static NSString *OVCApplicationCachePath() {
     static dispatch_once_t onceToken;

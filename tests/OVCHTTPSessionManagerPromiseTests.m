@@ -11,6 +11,7 @@
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
 #import <Overcoat/PromiseKit+Overcoat.h>
+#import <PromiseKit/PromiseKit.h>
 
 #import "OVCTestModel.h"
 

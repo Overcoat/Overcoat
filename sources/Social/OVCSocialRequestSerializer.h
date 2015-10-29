@@ -21,8 +21,8 @@
 // THE SOFTWARE.
 
 #import <AFNetworking/AFURLRequestSerialization.h>
-#import <Accounts/Accounts.h>
-#import <Social/Social.h>
+
+@class ACAccount;
 
 /**
  Serializes requests for supported Social networking services and signs them using the user's social media accounts.

@@ -21,7 +21,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <ReactiveCocoa/ReactiveCocoa.h>
 #import <Overcoat/OVCUtilities.h>
 #if OVERCOAT_SUPPORT_URL_CONNECTION
 #import <Overcoat/OVCHTTPRequestOperationManager+ReactiveCocoa.h>

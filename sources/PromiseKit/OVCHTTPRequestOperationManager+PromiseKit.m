@@ -21,6 +21,7 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPRequestOperationManager+PromiseKit.h"
+#import <PromiseKit/AnyPromise.h>
 
 @implementation OVCHTTPRequestOperationManager (PromiseKit)
 
