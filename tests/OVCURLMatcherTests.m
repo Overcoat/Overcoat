@@ -109,4 +109,23 @@
     XCTAssertEqualObjects([OVCAlternativeModel class], modelClass, @"should return OVCTestModel class");
 }
 
+- (void)testWildcardAsFallback {
+    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:@"/api/v1"
+                                                  modelClassesByPath:nil];
+    [matcher addModelClass:[OVCAlternativeModel class] forPath:@"test/*"];
+    [matcher addModelClass:[OVCTestModel class] forPath:@"test/path/sub"];
+    [matcher addModelClass:[OVCTestModel2 class] forPath:@"test/path/under"];
+    [matcher addModelClass:[MTLModel class] forPath:@"test"];
+
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/path/sub"]],
+                          [OVCTestModel class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/path/under"]],
+                          [OVCTestModel2 class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/apple"]],
+                          [OVCAlternativeModel class]);
+    XCTAssertNil([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/apple/osx"]]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test"]],
+                          [MTLModel class]);
+}
+
 @end

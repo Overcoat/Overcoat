@@ -38,6 +38,21 @@
 
 @end
 
+@implementation OVCTestModel2
+
++ (NSDictionary *)JSONKeyPathsByPropertyKey {
+#if OVERCOAT_USING_MANTLE_2
+    return @{
+        @"name": @"name",
+        @"realName": @"realName",
+    };
+#else
+    return @{};
+#endif
+}
+
+@end
+
 @implementation OVCErrorModel
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {

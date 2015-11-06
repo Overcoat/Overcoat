@@ -27,6 +27,13 @@
 
 @end
 
+@interface OVCTestModel2 : MTLModel <MTLJSONSerializing>
+
+@property (copy, nonatomic, readonly) NSString *name;
+@property (copy, nonatomic, readonly) NSString *realName;
+
+@end
+
 @interface OVCErrorModel : MTLModel <MTLJSONSerializing>
 
 @property (copy, nonatomic, readonly) NSString *status;
