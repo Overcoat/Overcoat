@@ -24,7 +24,7 @@
 #import <Mantle/Mantle.h>
 #import "OVCUtilities.h"
 
-typedef NS_ENUM(NSInteger, OVCURLMatcherType) {
+typedef NS_ENUM(NSInteger, OVCURLMatcherType) {  // The integer value is related to search order
     OVCURLMatcherTypeNone   = -1,
     OVCURLMatcherTypeExact  = 0,
     OVCURLMatcherTypeNumber = 1,
@@ -49,7 +49,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 @property (nonatomic) OVCURLMatcherType type;
 @property (copy, nonatomic) NSString *text;
 @property (nonatomic) Class modelClass;
-@property (strong, nonatomic) NSMutableArray *children;
+@property (strong, nonatomic) NSMutableArray OVCGenerics(OVCURLMatcher *) *children;
 
 @end
 
@@ -70,8 +70,9 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
         _basePath = [basePath copy];
 
         [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class class, BOOL *stop) {
-            [self addModelClass:class forPath:path];
+            [self addModelClass:class forPath:path sortChildren:NO];
         }];
+        [self sortChildren];
     }
     return self;
 }
@@ -95,7 +96,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     // Go through tokens
     OVCURLMatcher *node = self;
     for (NSString *token in tokens) {
-        NSArray *childrenNodes = node.children;
+        NSArray OVCGenerics(OVCURLMatcher *) *childrenNodes = node.children;
         if (!childrenNodes) {
             break;
         }
@@ -148,9 +149,14 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
             self.class, self, @(self.type), self.text, NSStringFromClass(self.modelClass), self.children];
 }
 
-#pragma mark - Private
+
+#pragma mark - Setup
 
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path {
+    [self addModelClass:modelClass forPath:path sortChildren:YES];
+}
+
+- (void)addModelClass:(Class)modelClass forPath:(NSString *)path sortChildren:(BOOL)sortChildren {
 #if OVERCOAT_USING_MANTLE_2
     NSParameterAssert([modelClass conformsToProtocol:@protocol(MTLModel)]);
 #else
@@ -202,6 +208,19 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     }
 
     node.modelClass = modelClass;
+
+    if (sortChildren) {
+        [self sortChildren];
+    }
+}
+
+- (void)sortChildren {
+    NSSortDescriptor *sd = [NSSortDescriptor sortDescriptorWithKey:@"type" ascending:YES];
+    [self.children sortUsingDescriptors:@[sd]];
+
+    for (OVCURLMatcher *child in self.children) {
+        [child sortChildren];
+    }
 }
 
 @end
