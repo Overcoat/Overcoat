@@ -32,6 +32,23 @@ typedef NS_ENUM(NSInteger, OVCURLMatcherType) {  // The integer value is related
     OVCURLMatcherTypeAny    = 3,
 };
 
+static NSString *_Nullable NSStringFromOVCURLMatcherType(OVCURLMatcherType type) {
+    switch (type) {
+        case OVCURLMatcherTypeNone:
+            return @"None";
+        case OVCURLMatcherTypeExact:
+            return @"Exact";
+        case OVCURLMatcherTypeNumber:
+            return @"Number";
+        case OVCURLMatcherTypeText:
+            return @"Text";
+        case OVCURLMatcherTypeAny:
+            return @"Any";
+        default:
+            return nil;
+    }
+}
+
 static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     static dispatch_once_t onceToken;
     static NSCharacterSet *notDigits;
@@ -149,6 +166,32 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
             self.class, self, @(self.type), self.text, NSStringFromClass(self.modelClass), self.children];
 }
 
+- (NSString *)debugDescription {
+    @autoreleasepool {
+        NSMutableString *result = [NSMutableString string];
+        [result appendFormat:@"<%@>", NSStringFromOVCURLMatcherType(self.type)];
+        if (self.basePath) {
+            [result appendFormat:@" basePath: %@", self.basePath];
+        }
+        if (self.text) {
+            [result appendFormat:@" text: %@", self.text];
+        }
+
+        if (self.children.count) {
+            [result appendString:@"\n"];
+            for (OVCURLMatcher *matcher in self.children) {
+                NSArray OVCGenerics(NSString *) *lines = [matcher.debugDescription componentsSeparatedByString:@"\n"];
+                [lines enumerateObjectsUsingBlock:^(NSString *line, NSUInteger idx, BOOL *stop) {
+                    [result appendFormat:@"    %@\n", line];
+                }];
+            }
+        }
+
+        return [NSString stringWithString:[result
+                                           stringByTrimmingCharactersInSet:[NSCharacterSet
+                                                                            whitespaceAndNewlineCharacterSet]]];
+    }
+}
 
 #pragma mark - Setup
 
