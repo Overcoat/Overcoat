@@ -1,5 +1,9 @@
 # Overcoat Changelog
 
+## 3.2.2
+
+* Sort URL matchers. So while finding matched response class, it would find `exact` type first. (before `*`, `**`, and `#`). [Issue #112](https://github.com/Overcoat/Overcoat/issues/112) [Commit 28aa171](https://github.com/Overcoat/Overcoat/commit/28aa1715f83a328e22ba9696f2dd0a292c0eb563) (@sodastsai)
+
 ## 3.2.1
 
 * Adding error pointer to the initializer of OVCResponse. [Pull Request #108](https://github.com/Overcoat/Overcoat/pull/108) (@melbic)
