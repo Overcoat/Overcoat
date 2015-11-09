@@ -2,10 +2,8 @@ XC_WORKSPACE=Overcoat.xcworkspace
 
 test:
 	# Call `make` directly to force `clean`
-	make test-osx-mantle1
-	make test-osx-mantle2
-	make test-ios-mantle1
-	make test-ios-mantle2
+	make test-osx
+	make test-ios
 
 # Command check
 
@@ -22,19 +20,13 @@ clean:
 	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS clean 1>/dev/null
 	rm -rf Pods
 
-install-osx-mantle1-pod install-ios-mantle1-pod install-osx-mantle2-pod install-ios-mantle2-pod: check-pod-install clean
+install-osx-pod install-ios-pod: check-pod-install clean
 
-install-osx-mantle1-pod:
-	OS_TYPE=OSX MANTLE=1.5 pod install 1>/dev/null
+install-osx-pod:
+	OS_TYPE=OSX pod install 1>/dev/null
 
-install-ios-mantle1-pod:
-	OS_TYPE=iOS MANTLE=1.5 pod install 1>/dev/null
-
-install-osx-mantle2-pod:
-	OS_TYPE=OSX MANTLE=2.0 pod install 1>/dev/null
-
-install-ios-mantle2-pod:
-	OS_TYPE=iOS MANTLE=2.0 pod install 1>/dev/null
+install-ios-pod:
+	OS_TYPE=iOS pod install 1>/dev/null
 
 
 # Build tests
@@ -65,14 +57,6 @@ execute-osx-tests: build-osx-tests run-osx-tests
 
 # Interfaces
 
-test-ios-mantle1: install-ios-mantle1-pod execute-ios-tests
+test-ios: install-ios-pod execute-ios-tests
 
-test-osx-mantle1: install-osx-mantle1-pod execute-osx-tests
-
-test-ios-mantle2: install-ios-mantle2-pod execute-ios-tests
-
-test-osx-mantle2: install-osx-mantle2-pod execute-osx-tests
-
-test-ios: test-ios-mantle2
-
-test-osx: test-osx-mantle2
+test-osx: install-osx-pod execute-osx-tests

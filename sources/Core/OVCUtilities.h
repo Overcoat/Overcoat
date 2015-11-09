@@ -33,17 +33,6 @@
     #define OVC_EXTERN extern
 #endif
 
-#pragma mark - Mantle 2.0 Support
-
-// `MTLTransformerErrorHandling.h` is a new header comes with Mantle 2.0
-#if __has_include("MTLTransformerErrorHandling.h") || __has_include(<Mantle/MTLTransformerErrorHandling.h>)
-    #define OVERCOAT_USING_MANTLE_2 1
-    #define OVC_MANTLE_MODEL_TYPE id<MTLModel>
-#else
-    #define OVERCOAT_USING_MANTLE_2 0
-    #define OVC_MANTLE_MODEL_TYPE MTLModel *
-#endif
-
 #pragma mark - Objective-C Nullability Support
 
 #if __has_feature(nullability)

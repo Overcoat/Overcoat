@@ -14,14 +14,10 @@
     return @"data";
 }
 
-#if OVERCOAT_USING_MANTLE_2
-
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     NSMutableDictionary *keyPaths = [[super JSONKeyPathsByPropertyKey] mutableCopy];
     keyPaths[@"status"] = @"status";
     return [NSDictionary dictionaryWithDictionary:keyPaths];
 }
-
-#endif
 
 @end

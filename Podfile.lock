@@ -18,36 +18,36 @@ PODS:
     - MTLManagedObjectAdapter/extobjc (= 1.0.0.1)
   - MTLManagedObjectAdapter/extobjc (1.0.0.1):
     - Mantle (~> 2.0)
-  - OHHTTPStubs (4.4.0):
-    - OHHTTPStubs/Default (= 4.4.0)
-  - OHHTTPStubs/Core (4.4.0)
-  - OHHTTPStubs/Default (4.4.0):
+  - OHHTTPStubs (4.6.0):
+    - OHHTTPStubs/Default (= 4.6.0)
+  - OHHTTPStubs/Core (4.6.0)
+  - OHHTTPStubs/Default (4.6.0):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (4.4.0):
+  - OHHTTPStubs/JSON (4.6.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (4.4.0):
+  - OHHTTPStubs/NSURLSession (4.6.0):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (4.4.0)
+  - OHHTTPStubs/OHPathHelpers (4.6.0)
   - Overcoat/Core (3.2.2):
     - AFNetworking/Serialization
-    - Mantle
+    - Mantle (~> 2.0)
   - Overcoat/CoreData (3.2.2):
-    - Overcoat/CoreData/Mantle2 (= 3.2.2)
-  - Overcoat/CoreData/Mantle2 (3.2.2):
-    - Overcoat/CoreData/Mantle2/NSURLConnection (= 3.2.2)
-    - Overcoat/CoreData/Mantle2/NSURLSession (= 3.2.2)
-  - Overcoat/CoreData/Mantle2/Core (3.2.2):
-    - Mantle (~> 2)
+    - MTLManagedObjectAdapter (> 1.0)
+    - Overcoat/CoreData/NSURLConnection (= 3.2.2)
+    - Overcoat/CoreData/NSURLSession (= 3.2.2)
+  - Overcoat/CoreData/Core (3.2.2):
     - MTLManagedObjectAdapter (> 1.0)
     - Overcoat/Core
-  - Overcoat/CoreData/Mantle2/NSURLConnection (3.2.2):
-    - Overcoat/CoreData/Mantle2/Core
+  - Overcoat/CoreData/NSURLConnection (3.2.2):
+    - MTLManagedObjectAdapter (> 1.0)
+    - Overcoat/CoreData/Core
     - Overcoat/NSURLConnection
-  - Overcoat/CoreData/Mantle2/NSURLSession (3.2.2):
-    - Overcoat/CoreData/Mantle2/Core
+  - Overcoat/CoreData/NSURLSession (3.2.2):
+    - MTLManagedObjectAdapter (> 1.0)
+    - Overcoat/CoreData/Core
     - Overcoat/NSURLSession
   - Overcoat/NSURLConnection (3.2.2):
     - AFNetworking/NSURLConnection
@@ -85,7 +85,6 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
-  - Mantle (~> 2.0)
   - OHHTTPStubs
   - Overcoat/CoreData (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
@@ -99,8 +98,8 @@ SPEC CHECKSUMS:
   AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
-  OHHTTPStubs: 1a95a653b78287a1fdb44eb38364b43257ac3550
-  Overcoat: 7e43e62a4727ae157eb142d4ee478dc767a0b9d9
+  OHHTTPStubs: cb1aefbbeb4de4e741644455d4b945538e5248a2
+  Overcoat: 5f89e0df33801d77167568ea5f672ce1ebe9db53
   PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 

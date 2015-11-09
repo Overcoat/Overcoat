@@ -62,11 +62,7 @@
     NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
 
     if (errorModelClass != Nil) {
-#if OVERCOAT_USING_MANTLE_2
         NSParameterAssert([errorModelClass conformsToProtocol:@protocol(MTLModel)]);
-#else
-        NSParameterAssert([errorModelClass isSubclassOfClass:[MTLModel class]]);
-#endif
     }
 
     if (self = [super init]) {

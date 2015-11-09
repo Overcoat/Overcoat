@@ -23,11 +23,7 @@
 #import "OVCManagedModelResponseSerializer_Internal.h"
 #import "OVCResponse.h"
 #import <CoreData/CoreData.h>
-#if OVERCOAT_USING_MANTLE_2
-    #import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
-#else
-    #import <Mantle/MTLManagedObjectAdapter.h>
-#endif
+#import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
 #import "OVCManagedObjectSerializingContainer.h"
 
 @interface OVCManagedModelResponseSerializer ()

@@ -200,11 +200,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 }
 
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path sortChildren:(BOOL)sortChildren {
-#if OVERCOAT_USING_MANTLE_2
     NSParameterAssert([modelClass conformsToProtocol:@protocol(MTLModel)]);
-#else
-    NSParameterAssert([modelClass isSubclassOfClass:[MTLModel class]]);
-#endif
     NSParameterAssert(path);
 
     NSArray *tokens = nil;

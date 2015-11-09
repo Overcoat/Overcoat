@@ -68,7 +68,6 @@
         if (resultClass != Nil) {
             NSValueTransformer *valueTransformer = nil;
 
-#if OVERCOAT_USING_MANTLE_2
             if ([result isKindOfClass:[NSDictionary class]]) {
                 valueTransformer = [MTLJSONAdapter dictionaryTransformerWithModelClass:resultClass];
             } else if ([result isKindOfClass:[NSArray class]]) {
@@ -86,15 +85,6 @@
             } else {
                 result = [valueTransformer transformedValue:result];
             }
-#else
-            if ([result isKindOfClass:[NSDictionary class]]) {
-                valueTransformer = [NSValueTransformer mtl_JSONDictionaryTransformerWithModelClass:resultClass];
-            } else if ([result isKindOfClass:[NSArray class]]) {
-                valueTransformer = [NSValueTransformer mtl_JSONArrayTransformerWithModelClass:resultClass];
-            }
-
-            result = [valueTransformer transformedValue:result];
-#endif
         }
 
         response.result = result;
@@ -107,15 +97,7 @@
 #pragma mark - MTLJSONSerializing
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
-#if OVERCOAT_USING_MANTLE_2
     return @{};
-#else
-    return @{
-        @"HTTPResponse": [NSNull null],
-        @"result": [NSNull null],
-        @"resultClass": [NSNull null],
-    };
-#endif
 }
 
 #pragma mark - deprecated

@@ -1,45 +1,3 @@
-module Overcoat
-  module CoreData
-    # Workaround to support both Mantle 1.x and 2.x
-    def self.spec(s)
-      mantle_version = s.name.split('/')[-1][-1].to_i
-
-      s.default_subspec = 'NSURLConnection', 'NSURLSession'
-
-      s.subspec 'Core' do |ss|
-        ss.dependency 'Overcoat/Core'
-        ss.frameworks = 'CoreData'
-        ss.source_files = 'sources/CoreData/*.{h,m}'
-        ss.private_header_files = 'sources/CoreData/*_Internal.h'
-        ss.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
-        ss.pod_target_xcconfig = ss.user_target_xcconfig = {
-          'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
-        }
-
-        ss.dependency 'Mantle', "~> #{mantle_version}"
-        if mantle_version == 2
-          ss.dependency 'MTLManagedObjectAdapter', '> 1.0'
-        end
-      end
-
-      s.subspec 'NSURLConnection' do |ss|
-        ss.dependency 'Overcoat/NSURLConnection'
-        ss.dependency "Overcoat/CoreData/Mantle#{mantle_version}/Core"
-        ss.source_files = 'sources/CoreData/OVCManagedHTTPRequestOperationManager.{h,m}'
-      end
-
-      s.subspec 'NSURLSession' do |ss|
-        ss.dependency 'Overcoat/NSURLSession'
-        ss.dependency "Overcoat/CoreData/Mantle#{mantle_version}/Core"
-        ss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
-      end
-    end
-  end
-end
-
-
-# == Main ==============================================================================================================
-
 Pod::Spec.new do |s|
   s.name     = 'Overcoat'
   s.version  = '3.2.2'
@@ -59,7 +17,7 @@ Pod::Spec.new do |s|
   # -- Core Subspecs ---------------------------------------------------------------------------------------------------
 
   s.subspec 'Core' do |ss|
-    ss.dependency 'Mantle'
+    ss.dependency 'Mantle', '~> 2.0'
     ss.dependency 'AFNetworking/Serialization'
     ss.source_files = 'sources/Core/*.{h,m}'
     ss.private_header_files = 'sources/Core/*_Internal.h'
@@ -87,15 +45,32 @@ Pod::Spec.new do |s|
   # -- CoreData Subspecs -----------------------------------------------------------------------------------------------
 
   s.subspec 'CoreData' do |ss|
-    ss.subspec 'Mantle2' do |sss|
-      Overcoat::CoreData::spec sss
+    ss.default_subspec = 'NSURLConnection', 'NSURLSession'
+
+    ss.subspec 'Core' do |sss|
+      sss.dependency 'Overcoat/Core'
+      sss.frameworks = 'CoreData'
+      sss.source_files = 'sources/CoreData/*.{h,m}'
+      sss.private_header_files = 'sources/CoreData/*_Internal.h'
+      sss.exclude_files = 'sources/CoreData/OVCManagedHTTP{RequestOperation,Session}Manager.{h,m}'
+      sss.pod_target_xcconfig = ss.user_target_xcconfig = {
+        'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
+      }
+
+      ss.dependency 'MTLManagedObjectAdapter', '> 1.0'
     end
 
-    ss.subspec 'Mantle1' do |sss|
-      Overcoat::CoreData::spec sss
+    ss.subspec 'NSURLConnection' do |sss|
+      sss.dependency 'Overcoat/NSURLConnection'
+      sss.dependency "Overcoat/CoreData/Core"
+      sss.source_files = 'sources/CoreData/OVCManagedHTTPRequestOperationManager.{h,m}'
     end
 
-    ss.default_subspec = 'Mantle2'
+    ss.subspec 'NSURLSession' do |sss|
+      sss.dependency 'Overcoat/NSURLSession'
+      sss.dependency "Overcoat/CoreData/Core"
+      sss.source_files = 'sources/CoreData/OVCManagedHTTPSessionManager.{h,m}'
+    end
   end
 
   # -- Misc Subspecs ---------------------------------------------------------------------------------------------------
