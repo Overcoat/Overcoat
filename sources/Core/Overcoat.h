@@ -27,13 +27,7 @@
 #import <Overcoat/NSError+OVCResponse.h>
 #import <Overcoat/NSDictionary+Overcoat.h>
 #import <Overcoat/OVCHTTPManager.h>
-
-#if OVERCOAT_SUPPORT_URL_CONNECTION
-#import <Overcoat/OVCHTTPRequestOperationManager.h>
-#endif
-#if OVERCOAT_SUPPORT_URL_SESSION
 #import <Overcoat/OVCHTTPSessionManager.h>
-#endif
 
 // Shortcuts for subspec headers
 #if OVERCOAT_SUPPORT_COREDATA

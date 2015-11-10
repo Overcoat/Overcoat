@@ -28,8 +28,6 @@
 		FE025E511B2EAE7100B0A48E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE025E4F1B2EAE7100B0A48E /* Main.storyboard */; };
 		FE025E9B1B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E841B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m */; };
 		FE025E9C1B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E841B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m */; };
-		FE025EA11B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E871B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m */; };
-		FE025EA21B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E871B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m */; };
 		FE025EA71B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8A1B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m */; };
 		FE025EA81B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8A1B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m */; };
 		FE025EA91B2EAF4A00B0A48E /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8B1B2EAF4A00B0A48E /* OVCModelResponseSerializerTests.m */; };
@@ -55,9 +53,7 @@
 		FE025EBD1B2EAF4A00B0A48E /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E981B2EAF4A00B0A48E /* models.json */; };
 		FE025EBE1B2EAF4A00B0A48E /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E981B2EAF4A00B0A48E /* models.json */; };
 		FE025EC01B2EAF4A00B0A48E /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE025E991B2EAF4A00B0A48E /* Test.xcdatamodeld */; };
-		FE025ED01B2EB4B000B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E861B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m */; };
 		FE025ED11B2EB4B000B0A48E /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E891B2EAF4A00B0A48E /* OVCHTTPSessionManagerReactiveTests.m */; };
-		FE025EF01B2EB4ED00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E851B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m */; };
 		FE025EF11B2EB4ED00B0A48E /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E881B2EAF4A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m */; };
 		FE025EF21B2EB57F00B0A48E /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8F1B2EAF4A00B0A48E /* OVCTestModel.m */; };
 		FE025EF31B2EB57F00B0A48E /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8F1B2EAF4A00B0A48E /* OVCTestModel.m */; };
@@ -71,9 +67,7 @@
 		FE025EFB1B2EB61F00B0A48E /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E961B2EAF4A00B0A48E /* error.json */; };
 		FE025EFC1B2EB61F00B0A48E /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E971B2EAF4A00B0A48E /* model.json */; };
 		FE025EFD1B2EB61F00B0A48E /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E981B2EAF4A00B0A48E /* models.json */; };
-		FE025F4B1B2EB74A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E851B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m */; };
 		FE025F4C1B2EB74A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E881B2EAF4A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m */; };
-		FE025F4D1B2EB74F00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E861B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m */; };
 		FE025F4E1B2EB74F00B0A48E /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E891B2EAF4A00B0A48E /* OVCHTTPSessionManagerReactiveTests.m */; };
 		FE025F4F1B2EB75C00B0A48E /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8F1B2EAF4A00B0A48E /* OVCTestModel.m */; };
 		FE025F501B2EB75C00B0A48E /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE025E8F1B2EAF4A00B0A48E /* OVCTestModel.m */; };
@@ -106,8 +100,6 @@
 		FE02601F1B2EE4F400B0A48E /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E971B2EAF4A00B0A48E /* model.json */; };
 		FE0260201B2EE4F400B0A48E /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE025E981B2EAF4A00B0A48E /* models.json */; };
 		FEAC07E61B6707200012F823 /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE025E991B2EAF4A00B0A48E /* Test.xcdatamodeld */; };
-		FEBF002C1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF002B1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m */; };
-		FEBF002D1B2F1C660021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF002B1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m */; };
 		FEBF002F1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF002E1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m */; };
 		FEBF00301B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEBF002E1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m */; };
 /* End PBXBuildFile section */
@@ -195,9 +187,6 @@
 		FE025E771B2EAF1600B0A48E /* Overcoat-OSX-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Overcoat-OSX-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE025E831B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCCustomEnvelopTestResponse.h; sourceTree = "<group>"; };
 		FE025E841B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCCustomEnvelopTestResponse.m; sourceTree = "<group>"; };
-		FE025E851B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OVCHTTPRequestOperationManagerPromiseTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FE025E861B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OVCHTTPRequestOperationManagerReactiveTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		FE025E871B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OVCHTTPRequestOperationManagerTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FE025E881B2EAF4A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		FE025E891B2EAF4A00B0A48E /* OVCHTTPSessionManagerReactiveTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerReactiveTests.m; sourceTree = "<group>"; };
 		FE025E8A1B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerTests.m; sourceTree = "<group>"; };
@@ -229,7 +218,6 @@
 		FE15F60B1BF1F4F30021804B /* Pods-ios-tests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-ios-tests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ios-tests/Pods-ios-tests.release.xcconfig"; sourceTree = "<group>"; };
 		FE15F60C1BF1F4FA0021804B /* Pods-osx-tests.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-osx-tests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-osx-tests/Pods-osx-tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE15F60D1BF1F4FA0021804B /* Pods-osx-tests.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-osx-tests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-osx-tests/Pods-osx-tests.release.xcconfig"; sourceTree = "<group>"; };
-		FEBF002B1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManagerCoreDataTests.m; sourceTree = "<group>"; };
 		FEBF002E1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerCoreDataTests.m; sourceTree = "<group>"; };
 		FED724431B7FA9C400D6EA72 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
 		FED724441B7FA9C400D6EA72 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
@@ -238,8 +226,6 @@
 		FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager_Internal.h; sourceTree = "<group>"; };
 		FED724481B7FA9C400D6EA72 /* OVCHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager.h; sourceTree = "<group>"; };
 		FED724491B7FA9C400D6EA72 /* OVCHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPManager.m; sourceTree = "<group>"; };
-		FED7244A1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		FED7244B1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		FED7244C1B7FA9C400D6EA72 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
 		FED7244D1B7FA9C400D6EA72 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
 		FED7244E1B7FA9C400D6EA72 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
@@ -254,8 +240,6 @@
 		FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager_Internal.h; sourceTree = "<group>"; };
 		FED724581B7FA9D300D6EA72 /* OVCManagedHTTPManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager.h; sourceTree = "<group>"; };
 		FED724591B7FA9D300D6EA72 /* OVCManagedHTTPManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPManager.m; sourceTree = "<group>"; };
-		FED7245A1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPRequestOperationManager.h; sourceTree = "<group>"; };
-		FED7245B1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPRequestOperationManager.m; sourceTree = "<group>"; };
 		FED7245C1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPSessionManager.h; sourceTree = "<group>"; };
 		FED7245D1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPSessionManager.m; sourceTree = "<group>"; };
 		FED7245E1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer_Internal.h; sourceTree = "<group>"; };
@@ -266,13 +250,9 @@
 		FED724631B7FA9D300D6EA72 /* OVCManagedStore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCManagedStore.m; sourceTree = "<group>"; };
 		FED724641B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCSocialRequestSerializer.h; sourceTree = "<group>"; };
 		FED724651B7FA9DC00D6EA72 /* OVCSocialRequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCSocialRequestSerializer.m; sourceTree = "<group>"; };
-		FED724661B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
-		FED724671B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
 		FED724681B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
 		FED724691B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
 		FED7246A1B7FA9E700D6EA72 /* ReactiveCocoa+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ReactiveCocoa+Overcoat.h"; sourceTree = "<group>"; };
-		FED7246B1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPRequestOperationManager+PromiseKit.h"; sourceTree = "<group>"; };
-		FED7246C1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPRequestOperationManager+PromiseKit.m"; sourceTree = "<group>"; };
 		FED7246D1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+PromiseKit.h"; sourceTree = "<group>"; };
 		FED7246E1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+PromiseKit.m"; sourceTree = "<group>"; };
 		FED7246F1B7FA9F600D6EA72 /* PromiseKit+Overcoat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PromiseKit+Overcoat.h"; sourceTree = "<group>"; };
@@ -466,10 +446,6 @@
 			children = (
 				FE025E831B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.h */,
 				FE025E841B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m */,
-				FE025E851B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m */,
-				FE025E861B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m */,
-				FEBF002B1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m */,
-				FE025E871B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m */,
 				FE025E881B2EAF4A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m */,
 				FE025E891B2EAF4A00B0A48E /* OVCHTTPSessionManagerReactiveTests.m */,
 				FEBF002E1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m */,
@@ -524,8 +500,6 @@
 				FED724481B7FA9C400D6EA72 /* OVCHTTPManager.h */,
 				FED724471B7FA9C400D6EA72 /* OVCHTTPManager_Internal.h */,
 				FED724491B7FA9C400D6EA72 /* OVCHTTPManager.m */,
-				FED7244A1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.h */,
-				FED7244B1B7FA9C400D6EA72 /* OVCHTTPRequestOperationManager.m */,
 				FED7244C1B7FA9C400D6EA72 /* OVCHTTPSessionManager.h */,
 				FED7244D1B7FA9C400D6EA72 /* OVCHTTPSessionManager.m */,
 				FED7244E1B7FA9C400D6EA72 /* OVCModelResponseSerializer.h */,
@@ -547,8 +521,6 @@
 				FED724581B7FA9D300D6EA72 /* OVCManagedHTTPManager.h */,
 				FED724571B7FA9D300D6EA72 /* OVCManagedHTTPManager_Internal.h */,
 				FED724591B7FA9D300D6EA72 /* OVCManagedHTTPManager.m */,
-				FED7245A1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.h */,
-				FED7245B1B7FA9D300D6EA72 /* OVCManagedHTTPRequestOperationManager.m */,
 				FED7245C1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.h */,
 				FED7245D1B7FA9D300D6EA72 /* OVCManagedHTTPSessionManager.m */,
 				FED7245F1B7FA9D300D6EA72 /* OVCManagedModelResponseSerializer.h */,
@@ -573,8 +545,6 @@
 		FED724411B7FA97F00D6EA72 /* PromiseKit */ = {
 			isa = PBXGroup;
 			children = (
-				FED7246B1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.h */,
-				FED7246C1B7FA9F600D6EA72 /* OVCHTTPRequestOperationManager+PromiseKit.m */,
 				FED7246D1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.h */,
 				FED7246E1B7FA9F600D6EA72 /* OVCHTTPSessionManager+PromiseKit.m */,
 				FED7246F1B7FA9F600D6EA72 /* PromiseKit+Overcoat.h */,
@@ -585,8 +555,6 @@
 		FED724421B7FA98800D6EA72 /* ReactiveCocoa */ = {
 			isa = PBXGroup;
 			children = (
-				FED724661B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.h */,
-				FED724671B7FA9E700D6EA72 /* OVCHTTPRequestOperationManager+ReactiveCocoa.m */,
 				FED724681B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.h */,
 				FED724691B7FA9E700D6EA72 /* OVCHTTPSessionManager+ReactiveCocoa.m */,
 				FED7246A1B7FA9E700D6EA72 /* ReactiveCocoa+Overcoat.h */,
@@ -1480,7 +1448,6 @@
 				FE025EB31B2EAF4A00B0A48E /* OVCURLMatcherTests.m in Sources */,
 				FE025EB11B2EAF4A00B0A48E /* OVCTestResponse.m in Sources */,
 				FE025EA71B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m in Sources */,
-				FE025EA11B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				FE025EA91B2EAF4A00B0A48E /* OVCModelResponseSerializerTests.m in Sources */,
 				FE025EAD1B2EAF4A00B0A48E /* OVCResponseTests.m in Sources */,
 				FE025E9B1B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m in Sources */,
@@ -1497,7 +1464,6 @@
 				FE025EB41B2EAF4A00B0A48E /* OVCURLMatcherTests.m in Sources */,
 				FE025EB21B2EAF4A00B0A48E /* OVCTestResponse.m in Sources */,
 				FE025EA81B2EAF4A00B0A48E /* OVCHTTPSessionManagerTests.m in Sources */,
-				FE025EA21B2EAF4A00B0A48E /* OVCHTTPRequestOperationManagerTests.m in Sources */,
 				FE025EAA1B2EAF4A00B0A48E /* OVCModelResponseSerializerTests.m in Sources */,
 				FE025EAE1B2EAF4A00B0A48E /* OVCResponseTests.m in Sources */,
 				FE025E9C1B2EAF4A00B0A48E /* OVCCustomEnvelopTestResponse.m in Sources */,
@@ -1509,7 +1475,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE025ED11B2EB4B000B0A48E /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
-				FE025ED01B2EB4B000B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				FE025EF21B2EB57F00B0A48E /* OVCTestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1518,7 +1483,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE025EF01B2EB4ED00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
 				FE025EF11B2EB4ED00B0A48E /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
 				FE025EF31B2EB57F00B0A48E /* OVCTestModel.m in Sources */,
 			);
@@ -1529,7 +1493,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE025F4E1B2EB74F00B0A48E /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
-				FE025F4D1B2EB74F00B0A48E /* OVCHTTPRequestOperationManagerReactiveTests.m in Sources */,
 				FE025F4F1B2EB75C00B0A48E /* OVCTestModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1538,7 +1501,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE025F4B1B2EB74A00B0A48E /* OVCHTTPRequestOperationManagerPromiseTests.m in Sources */,
 				FE025F4C1B2EB74A00B0A48E /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
 				FE025F501B2EB75C00B0A48E /* OVCTestModel.m in Sources */,
 			);
@@ -1552,7 +1514,6 @@
 				FE02600D1B2EE1E900B0A48E /* OVCModelResponseSerializerTests.m in Sources */,
 				FEBF002F1B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m in Sources */,
 				FE02600F1B2EE20E00B0A48E /* OVCTestResponse.m in Sources */,
-				FEBF002C1B2F1C4F0021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m in Sources */,
 				FE0260151B2EE3D300B0A48E /* Test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1565,7 +1526,6 @@
 				FE0260101B2EE20F00B0A48E /* OVCTestResponse.m in Sources */,
 				FEBF00301B2F1E260021D5E8 /* OVCHTTPSessionManagerCoreDataTests.m in Sources */,
 				FE0260121B2EE22100B0A48E /* OVCModelResponseSerializerTests.m in Sources */,
-				FEBF002D1B2F1C660021D5E8 /* OVCHTTPRequestOperationManagerCoreDataTests.m in Sources */,
 				FE0260161B2EE3D500B0A48E /* Test.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

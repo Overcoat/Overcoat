@@ -18,6 +18,7 @@ def main_dependency
       :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
       :path => 'Overcoat.podspec',
       :inhibit_warnings => true
+    pod 'AFNetworking', '3.0.0-beta.1'
 end
 
 def test_dependency

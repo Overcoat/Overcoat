@@ -24,10 +24,4 @@
 #import <Overcoat/OVCManagedModelResponseSerializer.h>
 #import <Overcoat/OVCManagedObjectSerializingContainer.h>
 #import <Overcoat/OVCManagedStore.h>
-
-#if OVERCOAT_SUPPORT_URL_CONNECTION
-#import <Overcoat/OVCManagedHTTPRequestOperationManager.h>
-#endif
-#if OVERCOAT_SUPPORT_URL_SESSION
 #import <Overcoat/OVCManagedHTTPSessionManager.h>
-#endif
