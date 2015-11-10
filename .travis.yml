@@ -1,3 +1,20 @@
 language: objective-c
-osx_image: xcode7
-script: make
+osx_image: xcode7.1
+
+env:
+  - COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES
+
+xcode_workspace: Overcoat.xcworkspace
+xcode_scheme:
+  - Overcoat-iOS
+  - Overcoat-OSX
+xcode_sdk:
+  - iphonesimulator9.1
+  - macosx10.11
+
+matrix:
+  exclude:
+    - xcode_scheme: Overcoat-iOS
+      xcode_sdk: macosx10.11
+    - xcode_scheme: Overcoat-OSX
+      xcode_sdk: iphonesimulator9.1

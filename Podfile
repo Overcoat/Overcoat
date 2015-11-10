@@ -4,28 +4,44 @@ source 'https://github.com/CocoaPods/Specs.git'
 
 workspace 'Overcoat'
 xcodeproj 'Overcoat/Overcoat.xcodeproj'
-link_with 'Overcoat-iOS', 'Overcoat-OSX'
 use_frameworks!
 inhibit_all_warnings!
 
-os_type = ENV['OS_TYPE'] || 'iOS'
-platform_type = os_type.downcase.to_sym
-os_version = os_type == 'iOS' ? '8.0' : '10.9'
-platform platform_type, os_version
+def test_targets(platform)
+  Xcodeproj::Project.open('Overcoat/Overcoat.xcodeproj').root_object.targets.keep_if { |target|
+    target.name.start_with?("Overcoat-#{platform}") && target.name.end_with?('Tests')
+  }.map { |target| target.name }
+end
 
-pod 'Overcoat',
-  :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
-  :path => 'Overcoat.podspec',
-  :inhibit_warnings => true
+def main_dependency
+    pod 'Overcoat',
+      :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
+      :path => 'Overcoat.podspec',
+      :inhibit_warnings => true
+end
 
-target :test do
-  # Link with Tests targets
-  targets = Array.new(Xcodeproj::Project.open('Overcoat/Overcoat.xcodeproj').root_object.targets)
-  link_with targets.keep_if { |target|
-    target.name.end_with?('Tests')
-  }.map { |target|
-    target.name
-  }
+def test_dependency
+    pod 'OHHTTPStubs'
+end
 
-  pod 'OHHTTPStubs', :inhibit_warnings => true
+target :ios, :exclusive => true do
+  link_with 'Overcoat-iOS'
+  platform :ios, '8.0'
+  main_dependency
+
+  target :tests do
+    link_with test_targets('iOS')
+    test_dependency
+  end
+end
+
+target :osx, :exclusive => true do
+  link_with 'Overcoat-OSX'
+  platform :osx, '10.9'
+  main_dependency
+
+  target :tests do
+    link_with test_targets('OSX')
+    test_dependency
+  end
 end

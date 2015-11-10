@@ -1,62 +1,36 @@
 XC_WORKSPACE=Overcoat.xcworkspace
+OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme Overcoat-OSX
+IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator
 
-test:
-	# Call `make` directly to force `clean`
-	make test-osx
-	make test-ios
+test: test-osx test-ios
 
-# Command check
+# Build Tests
 
-check-pod-install:
-	which pod 1>/dev/null 2>&1 || (echo "\n\n>>> Please install cocoapods first. (https://cocoapods.org)\n" && exit 1)
+install-pod:
+	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install
 
-check-xctool-install:
-	which xctool 1>/dev/null 2>&1 || (echo "\n\n>>> Please install xctool first. (https://github.com/facebook/xctool)\n" && exit 1)
+clean-osx:
+	xctool $(OSX_SCHEME_XCTOOL_FLAGS) clean
 
-# Cocoapods, including Mantle setup
-
-clean:
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX clean 1>/dev/null
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS clean 1>/dev/null
-	rm -rf Pods
-
-install-osx-pod install-ios-pod: check-pod-install clean
-
-install-osx-pod:
-	OS_TYPE=OSX pod install 1>/dev/null
-
-install-ios-pod:
-	OS_TYPE=iOS pod install 1>/dev/null
-
-
-# Build tests
-
-build-osx-tests build-ios-tests: check-xctool-install
+clean-ios:
+	xctool $(IOS_SCHEME_XCTOOL_FLAGS) clean
 
 build-osx-tests:
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX build-tests 1>/dev/null
+	xctool $(OSX_SCHEME_XCTOOL_FLAGS) build-tests
 
 build-ios-tests:
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator build-tests 1>/dev/null
+	xctool $(IOS_SCHEME_XCTOOL_FLAGS) build-tests
 
-# Run tests
-
-run-ios-tests run-osx-tests: check-xctool-install
-
-run-ios-tests:
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator run-tests -test-sdk iphonesimulator
+# Run Tests
 
 run-osx-tests:
-	xctool -workspace $(XC_WORKSPACE) -scheme Overcoat-OSX run-tests
+	xctool $(OSX_SCHEME_XCTOOL_FLAGS) run-tests
 
-# Tests
+run-ios-tests:
+	xctool $(IOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk iphonesimulator
 
-execute-ios-tests: build-ios-tests run-ios-tests
+# Intetfaces
 
-execute-osx-tests: build-osx-tests run-osx-tests
+test-osx: install-pod clean-osx build-osx-tests run-osx-tests
 
-# Interfaces
-
-test-ios: install-ios-pod execute-ios-tests
-
-test-osx: install-osx-pod execute-osx-tests
+test-ios: install-pod clean-ios build-ios-tests run-ios-tests
