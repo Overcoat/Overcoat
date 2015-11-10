@@ -1,4 +1,4 @@
-# Overcoat
+# Overcoat [![Build Status](https://travis-ci.org/Overcoat/Overcoat.svg)](https://travis-ci.org/Overcoat/Overcoat)
 
 Overcoat is a small but powerful library that makes creating REST clients simple and fun.
 It provides a simple API for making requests and mapping responses to model objects.
