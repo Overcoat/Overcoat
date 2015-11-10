@@ -9,8 +9,8 @@ xcode_scheme:
   - Overcoat-iOS
   - Overcoat-OSX
 xcode_sdk:
-  - iphonesimulator9.1
-  - macosx10.11
+  - iphonesimulator
+  - macosx
 
 matrix:
   exclude:
