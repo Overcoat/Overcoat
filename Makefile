@@ -1,5 +1,5 @@
 XC_WORKSPACE=Overcoat.xcworkspace
-OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme Overcoat-OSX
+OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme Overcoat-OSX -sdk macosx
 IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme Overcoat-iOS -sdk iphonesimulator
 
 test: test-osx test-ios

@@ -15,6 +15,6 @@ xcode_sdk:
 matrix:
   exclude:
     - xcode_scheme: Overcoat-iOS
-      xcode_sdk: macosx10.11
+      xcode_sdk: macosx
     - xcode_scheme: Overcoat-OSX
-      xcode_sdk: iphonesimulator9.1
+      xcode_sdk: iphonesimulator
