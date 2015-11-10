@@ -1,4 +1,7 @@
-# Overcoat [![Build Status](https://travis-ci.org/Overcoat/Overcoat.svg)](https://travis-ci.org/Overcoat/Overcoat)
+# Overcoat
+
+[![Build Status](https://travis-ci.org/Overcoat/Overcoat.svg)](https://travis-ci.org/Overcoat/Overcoat)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Overcoat.svg)](https://img.shields.io/cocoapods/v/Overcoat.svg)
 
 Overcoat is a small but powerful library that makes creating REST clients simple and fun.
 It provides a simple API for making requests and mapping responses to model objects.
@@ -33,7 +36,7 @@ pod 'Overcoat', '~>3.0'
 
 If you don't have CocoaPods installed or integrated into your project,
  you can learn how to do so [here](http://cocoapods.org).
- 
+
 If you are upgraded from Overcoat 2.x, check [the migration note]( https://github.com/Overcoat/Overcoat/blob/master/CHANGELOG.md#migrate-from-2x)
 
 #### NOTE
