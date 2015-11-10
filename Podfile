@@ -6,11 +6,10 @@ source 'https://github.com/CocoaPods/Specs.git'
 workspace 'Overcoat'
 xcodeproj 'Overcoat/Overcoat.xcodeproj'
 link_with 'Overcoat-iOS', 'Overcoat-OSX'
+inhibit_all_warnings!
 use_frameworks!
 
 # Environments and Variables -------------------------------------------------------------------------------------------
-overcoat_podspec_path = 'Overcoat.podspec'
-
 os_type = ENV['OS_TYPE'] || 'iOS'
 platform_type = os_type.downcase.to_sym
 
@@ -22,13 +21,8 @@ overcoat_subspecs << (mantle_version == '1.5' ? 'CoreData/Mantle1' : 'CoreData')
 # Dependencies ---------------------------------------------------------------------------------------------------------
 platform platform_type, os_version
 
-pod 'AFNetworking', :inhibit_warnings => true
-pod 'Mantle', "~> #{mantle_version}", :inhibit_warnings => true
-if mantle_version == '2.0'
-  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
-end
-pod 'PromiseKit/CorePromise', :git => 'https://github.com/mxcl/PromiseKit.git', :tag => '3.0.0'
-pod 'Overcoat', :subspecs => overcoat_subspecs, :path => overcoat_podspec_path
+pod 'Mantle', "~> #{mantle_version}"
+pod 'Overcoat', :subspecs => overcoat_subspecs, :path => 'Overcoat.podspec', :inhibit_warnings => true
 
 # Test target ---------------------------------------------------------------------------------------------------------
 target :test do

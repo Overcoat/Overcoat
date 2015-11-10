@@ -1,25 +1,15 @@
 PODS:
-  - AFNetworking (2.6.1):
-    - AFNetworking/NSURLConnection (= 2.6.1)
-    - AFNetworking/NSURLSession (= 2.6.1)
-    - AFNetworking/Reachability (= 2.6.1)
-    - AFNetworking/Security (= 2.6.1)
-    - AFNetworking/Serialization (= 2.6.1)
-    - AFNetworking/UIKit (= 2.6.1)
-  - AFNetworking/NSURLConnection (2.6.1):
+  - AFNetworking/NSURLConnection (2.6.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/NSURLSession (2.6.1):
+  - AFNetworking/NSURLSession (2.6.2):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (2.6.1)
-  - AFNetworking/Security (2.6.1)
-  - AFNetworking/Serialization (2.6.1)
-  - AFNetworking/UIKit (2.6.1):
-    - AFNetworking/NSURLConnection
-    - AFNetworking/NSURLSession
+  - AFNetworking/Reachability (2.6.2)
+  - AFNetworking/Security (2.6.2)
+  - AFNetworking/Serialization (2.6.2)
   - Mantle (2.0.5):
     - Mantle/extobjc (= 2.0.5)
   - Mantle/extobjc (2.0.5)
@@ -41,48 +31,48 @@ PODS:
   - OHHTTPStubs/NSURLSession (4.4.0):
     - OHHTTPStubs/Core
   - OHHTTPStubs/OHPathHelpers (4.4.0)
-  - Overcoat/Core (3.2.1):
+  - Overcoat/Core (3.2.2):
     - AFNetworking/Serialization
     - Mantle
-  - Overcoat/CoreData (3.2.1):
-    - Overcoat/CoreData/Mantle2 (= 3.2.1)
-  - Overcoat/CoreData/Mantle2 (3.2.1):
-    - Overcoat/CoreData/Mantle2/NSURLConnection (= 3.2.1)
-    - Overcoat/CoreData/Mantle2/NSURLSession (= 3.2.1)
-  - Overcoat/CoreData/Mantle2/Core (3.2.1):
+  - Overcoat/CoreData (3.2.2):
+    - Overcoat/CoreData/Mantle2 (= 3.2.2)
+  - Overcoat/CoreData/Mantle2 (3.2.2):
+    - Overcoat/CoreData/Mantle2/NSURLConnection (= 3.2.2)
+    - Overcoat/CoreData/Mantle2/NSURLSession (= 3.2.2)
+  - Overcoat/CoreData/Mantle2/Core (3.2.2):
     - Mantle (~> 2)
     - MTLManagedObjectAdapter (> 1.0)
     - Overcoat/Core
-  - Overcoat/CoreData/Mantle2/NSURLConnection (3.2.1):
+  - Overcoat/CoreData/Mantle2/NSURLConnection (3.2.2):
     - Overcoat/CoreData/Mantle2/Core
     - Overcoat/NSURLConnection
-  - Overcoat/CoreData/Mantle2/NSURLSession (3.2.1):
+  - Overcoat/CoreData/Mantle2/NSURLSession (3.2.2):
     - Overcoat/CoreData/Mantle2/Core
     - Overcoat/NSURLSession
-  - Overcoat/NSURLConnection (3.2.1):
+  - Overcoat/NSURLConnection (3.2.2):
     - AFNetworking/NSURLConnection
     - Overcoat/Core
-  - Overcoat/NSURLSession (3.2.1):
+  - Overcoat/NSURLSession (3.2.2):
     - AFNetworking/NSURLSession
     - Overcoat/Core
-  - Overcoat/PromiseKit (3.2.1):
-    - Overcoat/PromiseKit/NSURLConnection (= 3.2.1)
-    - Overcoat/PromiseKit/NSURLSession (= 3.2.1)
+  - Overcoat/PromiseKit (3.2.2):
+    - Overcoat/PromiseKit/NSURLConnection (= 3.2.2)
+    - Overcoat/PromiseKit/NSURLSession (= 3.2.2)
     - PromiseKit/CorePromise (> 2)
-  - Overcoat/PromiseKit/NSURLConnection (3.2.1):
+  - Overcoat/PromiseKit/NSURLConnection (3.2.2):
     - Overcoat/NSURLConnection
     - PromiseKit/CorePromise (> 2)
-  - Overcoat/PromiseKit/NSURLSession (3.2.1):
+  - Overcoat/PromiseKit/NSURLSession (3.2.2):
     - Overcoat/NSURLSession
     - PromiseKit/CorePromise (> 2)
-  - Overcoat/ReactiveCocoa (3.2.1):
-    - Overcoat/ReactiveCocoa/NSURLConnection (= 3.2.1)
-    - Overcoat/ReactiveCocoa/NSURLSession (= 3.2.1)
+  - Overcoat/ReactiveCocoa (3.2.2):
+    - Overcoat/ReactiveCocoa/NSURLConnection (= 3.2.2)
+    - Overcoat/ReactiveCocoa/NSURLSession (= 3.2.2)
     - ReactiveCocoa (~> 2.4)
-  - Overcoat/ReactiveCocoa/NSURLConnection (3.2.1):
+  - Overcoat/ReactiveCocoa/NSURLConnection (3.2.2):
     - Overcoat/NSURLConnection
     - ReactiveCocoa (~> 2.4)
-  - Overcoat/ReactiveCocoa/NSURLSession (3.2.1):
+  - Overcoat/ReactiveCocoa/NSURLSession (3.2.2):
     - Overcoat/NSURLSession
     - ReactiveCocoa (~> 2.4)
   - PromiseKit/CorePromise (3.0.0)
@@ -95,34 +85,23 @@ PODS:
     - ReactiveCocoa/Core
 
 DEPENDENCIES:
-  - AFNetworking
   - Mantle (~> 2.0)
-  - MTLManagedObjectAdapter
   - OHHTTPStubs
   - Overcoat/CoreData (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
   - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
-  - PromiseKit/CorePromise (from `https://github.com/mxcl/PromiseKit.git`, tag `3.0.0`)
 
 EXTERNAL SOURCES:
   Overcoat:
     :path: Overcoat.podspec
-  PromiseKit:
-    :git: https://github.com/mxcl/PromiseKit.git
-    :tag: 3.0.0
-
-CHECKOUT OPTIONS:
-  PromiseKit:
-    :git: https://github.com/mxcl/PromiseKit.git
-    :tag: 3.0.0
 
 SPEC CHECKSUMS:
-  AFNetworking: 8e4e60500beb8bec644cf575beee72990a76d399
+  AFNetworking: 7f317038a9710cabfa43ec56396b307b45df72ab
   Mantle: 1912395033f601de5adc8ee91e48f46e4c7051ad
   MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
   OHHTTPStubs: 1a95a653b78287a1fdb44eb38364b43257ac3550
-  Overcoat: ce2bd0bfee6e300839cb244799c9e1e1aa70c06a
-  PromiseKit: 6810c48ec19990d3253dc8caf0e05519e7cd39ba
+  Overcoat: 7e43e62a4727ae157eb142d4ee478dc767a0b9d9
+  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 COCOAPODS: 0.39.0
