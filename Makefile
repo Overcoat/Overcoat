@@ -15,22 +15,28 @@ clean-osx:
 clean-ios:
 	xctool $(IOS_SCHEME_XCTOOL_FLAGS) clean
 
-build-osx-tests:
+build-tests-osx:
 	xctool $(OSX_SCHEME_XCTOOL_FLAGS) build-tests
 
-build-ios-tests:
+build-tests-ios:
 	xctool $(IOS_SCHEME_XCTOOL_FLAGS) build-tests
 
 # Run Tests
 
-run-osx-tests:
+run-tests-osx:
 	xctool $(OSX_SCHEME_XCTOOL_FLAGS) run-tests
 
-run-ios-tests:
+run-tests-ios:
 	xctool $(IOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk iphonesimulator
 
 # Intetfaces
 
-test-osx: install-pod clean-osx build-osx-tests run-osx-tests
+test-osx: install-pod clean-osx build-tests-osx run-tests-osx
 
-test-ios: install-pod clean-ios build-ios-tests run-ios-tests
+test-ios: install-pod clean-ios build-tests-ios run-tests-ios
+
+clean: clean-osx clean-ios
+
+build-tests: build-tests-osx build-tests-ios
+
+run-tests: run-tests-osx run-tests-ios
