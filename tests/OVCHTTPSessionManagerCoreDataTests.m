@@ -7,10 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import <CoreData/CoreData.h>
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
-#import "OVCTestModel.h"
+#import "OVCCoreDataTestModel.h"
 
 #pragma mark - TestClient
 
@@ -26,8 +27,8 @@
 
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
-        @"model/#": [OVCTestModel class],
-        @"models": [OVCTestModel class]
+        @"model/#": [OVCManagedTestModel class],
+        @"models": [OVCManagedTestModel class]
     };
 }
 
@@ -99,7 +100,7 @@
 
     XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response.result isKindOfClass:[NSArray class]], @"should return an array of test models");
-    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCTestModel class]],
+    XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCManagedTestModel class]],
                   @"should return an array of test models");
 
     NSDictionary *userInfo = [notification userInfo];

@@ -8,15 +8,8 @@
 
 #import <Mantle/Mantle.h>
 #import <Overcoat/Overcoat.h>
-#if OVERCOAT_SUPPORT_COREDATA
-    #import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
-#endif
 
-#if OVERCOAT_SUPPORT_COREDATA
-@interface OVCTestModel : MTLModel <MTLJSONSerializing, MTLManagedObjectSerializing>
-#else
 @interface OVCTestModel : MTLModel <MTLJSONSerializing>
-#endif
 
 @property (copy, nonatomic, readonly) NSString *name;
 @property (copy, nonatomic, readonly) NSString *realName;
@@ -38,14 +31,10 @@
 
 @end
 
-#if OVERCOAT_SUPPORT_COREDATA
-@interface OVCAlternativeModel : MTLModel <MTLJSONSerializing, OVCManagedObjectSerializingContainer>
-#else
 @interface OVCAlternativeModel : MTLModel <MTLJSONSerializing>
-#endif
 
 @property (copy, nonatomic, readonly) NSNumber *offset;
 @property (copy, nonatomic, readonly) NSNumber *limit;
-@property (copy, nonatomic, readonly) NSArray *objects;
+@property (copy, nonatomic, readonly) NSArray<OVCTestModel *> *objects;
 
 @end

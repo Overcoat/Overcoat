@@ -17,17 +17,6 @@
     };
 }
 
-+ (NSString *)managedObjectEntityName {
-    return @"TestModel";
-}
-
-+ (NSDictionary *)managedObjectKeysByPropertyKey {
-    return @{
-        @"name": @"name",
-        @"realName": @"realName",
-    };
-}
-
 @end
 
 @implementation OVCTestModel2
@@ -65,10 +54,6 @@
 
 + (NSValueTransformer *)objectsJSONTransformer {
     return [MTLJSONAdapter arrayTransformerWithModelClass:[OVCTestModel class]];
-}
-
-+ (NSString *)managedObjectSerializingKeyPath {
-    return @"objects";
 }
 
 @end
