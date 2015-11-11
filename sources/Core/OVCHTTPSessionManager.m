@@ -162,7 +162,9 @@
     
     // `dataTaskWithRequest:completionHandler:` creates a new NSURLSessionDataTask
     NSURLSessionDataTask *dataTask = [self dataTaskWithRequest:request
-                                             completionHandler:^(NSURLResponse * __unused response, id responseObject, NSError *error) {
+                                             completionHandler:^(NSURLResponse * __unused response,
+                                                                 id responseObject,
+                                                                 NSError *error) {
                                                  if (completion) {
                                                      if (!error) {
                                                          completion(responseObject, nil);

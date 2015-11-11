@@ -50,8 +50,9 @@
     NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
     OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
 
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
+    NSManagedObjectContext *context = [[NSManagedObjectContext alloc]
+                                       initWithConcurrencyType:NSMainQueueConcurrencyType];
+    context.persistentStoreCoordinator = store.persistentStoreCoordinator;
 
     // Setup the serializer
 
@@ -92,7 +93,7 @@
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TestModel"];
     NSArray *objects = [context executeFetchRequest:fetchRequest error:nil];
 
-    XCTAssertEqual(2U, [objects count], @"should return two objects");
+    XCTAssertEqual(2U, objects.count, @"should return two objects");
 
     // Serialize error response (should not be persisted)
 

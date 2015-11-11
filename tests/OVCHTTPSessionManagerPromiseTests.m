@@ -108,7 +108,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    OVCResponse *response = [error ovc_response];
+    OVCResponse *response = error.ovc_response;
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -187,7 +187,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    OVCResponse *response = [error ovc_response];
+    OVCResponse *response = error.ovc_response;
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -239,7 +239,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    OVCResponse *response = [error ovc_response];
+    OVCResponse *response = error.ovc_response;
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -291,7 +291,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    OVCResponse *response = [error ovc_response];
+    OVCResponse *response = error.ovc_response;
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 
@@ -343,7 +343,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    OVCResponse *response = [error ovc_response];
+    OVCResponse *response = error.ovc_response;
     XCTAssertTrue([response.result isKindOfClass:[OVCErrorModel class]], @"should return an error model");
 }
 

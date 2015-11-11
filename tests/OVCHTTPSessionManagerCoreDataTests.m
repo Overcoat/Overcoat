@@ -53,7 +53,7 @@
 
     NSManagedObjectContext *context = [[NSManagedObjectContext alloc]
                                        initWithConcurrencyType:NSMainQueueConcurrencyType];
-    [context setPersistentStoreCoordinator:store.persistentStoreCoordinator];
+    context.persistentStoreCoordinator = store.persistentStoreCoordinator;
 
     // Observe changes in Core Data
 
@@ -87,7 +87,7 @@
     // Get models
 
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
-    OVCResponse * __block response = nil;
+    OVCResponse OVCGenerics(NSArray<OVCManagedTestModel *> *) * __block response = nil;
     NSError * __block error = nil;
 
     [self.client GET:@"models" parameters:nil completion:^(OVCResponse *r, NSError *e) {
@@ -103,13 +103,13 @@
     XCTAssertTrue([[response.result firstObject] isKindOfClass:[OVCManagedTestModel class]],
                   @"should return an array of test models");
 
-    NSDictionary *userInfo = [notification userInfo];
-    NSSet *objects = userInfo[NSInsertedObjectsKey];
+    NSDictionary *userInfo = notification.userInfo;
+    NSSet OVCGenerics(NSManagedObject *) *objects = userInfo[NSInsertedObjectsKey];
 
-    XCTAssertEqual(2U, [objects count], @"should insert two objects");
+    XCTAssertEqual(2U, objects.count, @"should insert two objects");
 
     for (NSManagedObject *object in objects) {
-        XCTAssertEqualObjects(@"TestModel", [[object entity] name], @"should insert TestModel objects");
+        XCTAssertEqualObjects(@"TestModel", object.entity.name, @"should insert TestModel objects");
     }
     [[NSNotificationCenter defaultCenter] removeObserver:observer];
 }
