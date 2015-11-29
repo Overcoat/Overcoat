@@ -54,8 +54,8 @@ Overcoat includes a simple [Twitter](https://dev.twitter.com/docs/api/1.1) clien
 * Core Data serialization.
 * Promises.
 
-You can find the sample code [here](https://github.com/gonzalezreal/Overcoat/tree/master/Examples/TwitterTimeline).
- Note that you'll need to run `pod install` to install all the dependencies.
+You can find the sample code [here](https://github.com/Overcoat/TwitterTimelineExample).
+Note that you'll need to run `pod install` to install all the dependencies.
 
 ## Usage
 
@@ -170,8 +170,7 @@ if the model supports Core Data serialization (that is, implements `MTLManagedOb
 Note that, if you provide a context with an `NSMainQueueConcurrencyType`,
 a private context will be created to perform insertions in the background.
 
-You can see Core Data Serialization in action in the
-[provided example](https://github.com/gonzalezreal/Overcoat/tree/master/Examples/TwitterTimeline).
+You can see Core Data Serialization in action in the [provided example](https://github.com/Overcoat/TwitterTimelineExample).
 
 ### Making HTTP Requests
 
