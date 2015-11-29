@@ -29,7 +29,7 @@ static NSString *OVCApplicationCachePath() {
 
     dispatch_once(&onceToken, ^{
         path = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES).lastObject;
-        path = [path stringByAppendingPathComponent:[NSBundle mainBundle].bundleIdentifier];
+        path = [path stringByAppendingPathComponent:@"com.overcoat.overcoat"];
 
         NSError *error = nil;
         BOOL success = [[NSFileManager defaultManager] createDirectoryAtPath:path
