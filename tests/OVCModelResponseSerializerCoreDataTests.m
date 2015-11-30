@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import <Overcoat/Overcoat.h>
+#import <OvercoatCoreData/OvercoatCoreData.h>
 #import "OVCCoreDataTestModel.h"
 
 @interface OVCModelResponseSerializerCoreDataTests : XCTestCase

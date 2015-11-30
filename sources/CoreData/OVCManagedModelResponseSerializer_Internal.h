@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
-#import <Overcoat/OVCManagedModelResponseSerializer.h>
+#import <OvercoatCoreData/OVCManagedModelResponseSerializer.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

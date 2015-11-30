@@ -10,7 +10,7 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
+#import <OvercoatReactiveCocoa/OvercoatReactiveCocoa.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 #import "OVCTestModel.h"

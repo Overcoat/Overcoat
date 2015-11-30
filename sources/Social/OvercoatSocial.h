@@ -1,6 +1,7 @@
-// Overcoat.h
+// OvercoatSocial.h
 //
-// Copyright (c) 2013 Guillermo Gonzalez
+// Created by sodastsai on 30/11/15.
+// Copyright (c) 2014 sodas tsai
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,25 +21,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCResponse.h>
-#import <Overcoat/OVCURLMatcher.h>
-#import <Overcoat/OVCModelResponseSerializer.h>
-#import <Overcoat/NSError+OVCResponse.h>
-#import <Overcoat/NSDictionary+Overcoat.h>
-#import <Overcoat/OVCHTTPManager.h>
-#import <Overcoat/OVCHTTPSessionManager.h>
-
-// Shortcuts for subspec headers
-#if OVERCOAT_SUPPORT_COREDATA
-#import <Overcoat/CoreData+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_SOCIAL
-#import <Overcoat/OVCSocialRequestSerializer.h>
-#endif
-#if OVERCOAT_SUPPORT_PROMISE_KIT
-#import <Overcoat/OvercoatPromiseKit.h>
-#endif
-#if OVERCOAT_SUPPORT_REACTIVE_COCOA
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
-#endif
+#import <OvercoatSocial/OVCSocialRequestSerializer.h>

@@ -6,15 +6,15 @@ env:
 
 xcode_workspace: Overcoat.xcworkspace
 xcode_scheme:
-  - Overcoat-iOS
-  - Overcoat-OSX
+  - OvercoatTests-iOS
+  - OvercoatTests-OSX
 xcode_sdk:
   - iphonesimulator
   - macosx
 
 matrix:
   exclude:
-    - xcode_scheme: Overcoat-iOS
+    - xcode_scheme: OvercoatTests-iOS
       xcode_sdk: macosx
-    - xcode_scheme: Overcoat-OSX
+    - xcode_scheme: OvercoatTests-OSX
       xcode_sdk: iphonesimulator

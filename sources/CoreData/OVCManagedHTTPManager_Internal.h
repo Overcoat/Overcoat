@@ -22,7 +22,7 @@
 
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCManagedHTTPManager.h>
+#import <OvercoatCoreData/OVCManagedHTTPManager.h>
 
 @class OVCManagedModelResponseSerializer;
 

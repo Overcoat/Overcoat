@@ -10,7 +10,7 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
-#import <Overcoat/PromiseKit+Overcoat.h>
+#import <OvercoatPromiseKit/OvercoatPromiseKit.h>
 #import <PromiseKit/PromiseKit.h>
 
 #import "OVCTestModel.h"

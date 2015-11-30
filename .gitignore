@@ -20,5 +20,7 @@ profile
 *.xcuserstate
 # AppCode
 .idea
-#Cocoapods
+# Cocoapods
 Pods
+# Carthage
+Carthage

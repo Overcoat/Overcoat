@@ -21,7 +21,7 @@
 // THE SOFTWARE.
 
 #import <Overcoat/OVCHTTPSessionManager.h>
-#import <Overcoat/OVCManagedHTTPManager.h>
+#import <OvercoatCoreData/OVCManagedHTTPManager.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

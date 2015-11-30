@@ -1,0 +1,3137 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		FEE173F71C0C8FB900049027 /* AllFrameworks */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = FEE173F81C0C8FB900049027 /* Build configuration list for PBXAggregateTarget "AllFrameworks" */;
+			buildPhases = (
+			);
+			dependencies = (
+				FEE173FC1C0C8FC100049027 /* PBXTargetDependency */,
+				FE8A2C721C0C951500B3406D /* PBXTargetDependency */,
+				FEE1741A1C0C910200049027 /* PBXTargetDependency */,
+				FE8A2BDA1C0C92F600B3406D /* PBXTargetDependency */,
+				FE8A2BDC1C0C92F600B3406D /* PBXTargetDependency */,
+				FEE173FE1C0C8FC100049027 /* PBXTargetDependency */,
+				FE8A2C741C0C951900B3406D /* PBXTargetDependency */,
+				FEE174001C0C8FC100049027 /* PBXTargetDependency */,
+				FEE174021C0C8FC100049027 /* PBXTargetDependency */,
+				FEE174041C0C8FC100049027 /* PBXTargetDependency */,
+			);
+			name = AllFrameworks;
+			productName = AllFrameworks;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		39DB74315F3478AFD9E7DB02 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */; };
+		624E93D682948685DD8C69D7 /* Pods_osx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */; };
+		FE8A2BD11C0C92A500B3406D /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173561C0B6A9B00049027 /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2BD21C0C92A500B3406D /* OvercoatSocial.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2BD31C0C92AA00B3406D /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173571C0B6A9B00049027 /* OVCSocialRequestSerializer.m */; };
+		FE8A2BD51C0C92B400B3406D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2BD41C0C92B400B3406D /* Accounts.framework */; };
+		FE8A2BD71C0C92B900B3406D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2BD61C0C92B900B3406D /* Social.framework */; };
+		FE8A2BD81C0C92C500B3406D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
+		FE8A2C4A1C0C93BE00B3406D /* OVCManagedHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C4B1C0C93BE00B3406D /* OVCManagedHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */; };
+		FE8A2C4C1C0C93BE00B3406D /* OVCManagedHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C4D1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C4E1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */; };
+		FE8A2C4F1C0C93BE00B3406D /* OVCManagedModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C501C0C93BE00B3406D /* OVCManagedModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */; };
+		FE8A2C511C0C93BE00B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FE8A2C521C0C93BE00B3406D /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C531C0C93BE00B3406D /* OVCManagedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C541C0C93BE00B3406D /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */; };
+		FE8A2C551C0C93D200B3406D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A31C0B6B8200049027 /* AFNetworking.framework */; };
+		FE8A2C561C0C93D400B3406D /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A41C0B6B8200049027 /* Mantle.framework */; };
+		FE8A2C571C0C93DF00B3406D /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173891C0B6B4E00049027 /* Overcoat.framework */; };
+		FE8A2C581C0C944F00B3406D /* OvercoatCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C5A1C0C94A300B3406D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2C591C0C94A300B3406D /* CoreData.framework */; };
+		FE8A2C6C1C0C94D900B3406D /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173221C0B6A8300049027 /* Overcoat.framework */; };
+		FE8A2C6D1C0C94DE00B3406D /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173811C0B6B0900049027 /* Mantle.framework */; };
+		FE8A2C6E1C0C94E000B3406D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
+		FE8A2C701C0C94E500B3406D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2C6F1C0C94E500B3406D /* CoreData.framework */; };
+		FE8A2C751C0C952500B3406D /* OvercoatCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C761C0C952500B3406D /* OVCManagedHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C771C0C952500B3406D /* OVCManagedHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */; };
+		FE8A2C781C0C952500B3406D /* OVCManagedHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C791C0C952500B3406D /* OVCManagedHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C7A1C0C952500B3406D /* OVCManagedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */; };
+		FE8A2C7B1C0C952500B3406D /* OVCManagedModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C7C1C0C952500B3406D /* OVCManagedModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */; };
+		FE8A2C7D1C0C952500B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FE8A2C7E1C0C952500B3406D /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C7F1C0C952500B3406D /* OVCManagedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FE8A2C801C0C952500B3406D /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */; };
+		FE8A2CD11C0C991F00B3406D /* MTLManagedObjectAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2CD01C0C991A00B3406D /* MTLManagedObjectAdapter.framework */; };
+		FE8A2CDD1C0C9A1E00B3406D /* MTLManagedObjectAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2CDC1C0C9A1E00B3406D /* MTLManagedObjectAdapter.framework */; };
+		FE8A2D171C0CA94900B3406D /* OVCCoreDataTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */; };
+		FE8A2D181C0CA94900B3406D /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */; };
+		FE8A2D191C0CA94900B3406D /* OVCHTTPSessionManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE41C0CA79700B3406D /* OVCHTTPSessionManagerCoreDataTests.m */; };
+		FE8A2D1A1C0CA94900B3406D /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE51C0CA79700B3406D /* OVCHTTPSessionManagerPromiseTests.m */; };
+		FE8A2D1B1C0CA94900B3406D /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE61C0CA79700B3406D /* OVCHTTPSessionManagerReactiveTests.m */; };
+		FE8A2D1C1C0CA94900B3406D /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE71C0CA79700B3406D /* OVCHTTPSessionManagerTests.m */; };
+		FE8A2D1D1C0CA94900B3406D /* OVCModelResponseSerializerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE81C0CA79700B3406D /* OVCModelResponseSerializerCoreDataTests.m */; };
+		FE8A2D1E1C0CA94900B3406D /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE91C0CA79700B3406D /* OVCModelResponseSerializerTests.m */; };
+		FE8A2D1F1C0CA94900B3406D /* OVCResponseClassPerPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEA1C0CA79700B3406D /* OVCResponseClassPerPathTest.m */; };
+		FE8A2D201C0CA94900B3406D /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEB1C0CA79700B3406D /* OVCResponseTests.m */; };
+		FE8A2D211C0CA94900B3406D /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */; };
+		FE8A2D221C0CA94900B3406D /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */; };
+		FE8A2D231C0CA94900B3406D /* OVCURLMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CF01C0CA79700B3406D /* OVCURLMatcherTests.m */; };
+		FE8A2D241C0CA94B00B3406D /* OVCCoreDataTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */; };
+		FE8A2D251C0CA94B00B3406D /* OVCCustomEnvelopTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */; };
+		FE8A2D261C0CA94B00B3406D /* OVCHTTPSessionManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE41C0CA79700B3406D /* OVCHTTPSessionManagerCoreDataTests.m */; };
+		FE8A2D271C0CA94B00B3406D /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE51C0CA79700B3406D /* OVCHTTPSessionManagerPromiseTests.m */; };
+		FE8A2D281C0CA94B00B3406D /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE61C0CA79700B3406D /* OVCHTTPSessionManagerReactiveTests.m */; };
+		FE8A2D291C0CA94B00B3406D /* OVCHTTPSessionManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE71C0CA79700B3406D /* OVCHTTPSessionManagerTests.m */; };
+		FE8A2D2A1C0CA94B00B3406D /* OVCModelResponseSerializerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE81C0CA79700B3406D /* OVCModelResponseSerializerCoreDataTests.m */; };
+		FE8A2D2B1C0CA94B00B3406D /* OVCModelResponseSerializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CE91C0CA79700B3406D /* OVCModelResponseSerializerTests.m */; };
+		FE8A2D2C1C0CA94B00B3406D /* OVCResponseClassPerPathTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEA1C0CA79700B3406D /* OVCResponseClassPerPathTest.m */; };
+		FE8A2D2D1C0CA94B00B3406D /* OVCResponseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEB1C0CA79700B3406D /* OVCResponseTests.m */; };
+		FE8A2D2E1C0CA94B00B3406D /* OVCTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */; };
+		FE8A2D2F1C0CA94B00B3406D /* OVCTestResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */; };
+		FE8A2D301C0CA94B00B3406D /* OVCURLMatcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CF01C0CA79700B3406D /* OVCURLMatcherTests.m */; };
+		FE8A2D311C0CA95200B3406D /* envelop1_model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF21C0CA79700B3406D /* envelop1_model.json */; };
+		FE8A2D321C0CA95200B3406D /* envelop2_model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF31C0CA79700B3406D /* envelop2_model.json */; };
+		FE8A2D331C0CA95200B3406D /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF41C0CA79700B3406D /* error.json */; };
+		FE8A2D341C0CA95200B3406D /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF51C0CA79700B3406D /* model.json */; };
+		FE8A2D351C0CA95200B3406D /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF61C0CA79700B3406D /* models.json */; };
+		FE8A2D361C0CA95200B3406D /* envelop1_model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF21C0CA79700B3406D /* envelop1_model.json */; };
+		FE8A2D371C0CA95200B3406D /* envelop2_model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF31C0CA79700B3406D /* envelop2_model.json */; };
+		FE8A2D381C0CA95200B3406D /* error.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF41C0CA79700B3406D /* error.json */; };
+		FE8A2D391C0CA95200B3406D /* model.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF51C0CA79700B3406D /* model.json */; };
+		FE8A2D3A1C0CA95200B3406D /* models.json in Resources */ = {isa = PBXBuildFile; fileRef = FE8A2CF61C0CA79700B3406D /* models.json */; };
+		FE8A2D3B1C0CA95600B3406D /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */; };
+		FE8A2D3C1C0CA95600B3406D /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */; };
+		FEE173581C0B6A9B00049027 /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173591C0B6A9B00049027 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */; };
+		FEE1735A1C0B6A9B00049027 /* NSError+OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1735B1C0B6A9B00049027 /* NSError+OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */; };
+		FEE1735C1C0B6A9B00049027 /* OVCHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1735D1C0B6A9B00049027 /* OVCHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */; };
+		FEE1735E1C0B6A9B00049027 /* OVCHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FEE1735F1C0B6A9B00049027 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173601C0B6A9B00049027 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */; };
+		FEE173611C0B6A9B00049027 /* OVCModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173621C0B6A9B00049027 /* OVCModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173381C0B6A9B00049027 /* OVCModelResponseSerializer.m */; };
+		FEE173631C0B6A9B00049027 /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173391C0B6A9B00049027 /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173641C0B6A9B00049027 /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1733A1C0B6A9B00049027 /* OVCResponse.m */; };
+		FEE173651C0B6A9B00049027 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733B1C0B6A9B00049027 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173661C0B6A9B00049027 /* OVCURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1733C1C0B6A9B00049027 /* OVCURLMatcher.m */; };
+		FEE173671C0B6A9B00049027 /* OVCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173681C0B6A9B00049027 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733E1C0B6A9B00049027 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173911C0B6B6600049027 /* NSDictionary+Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173921C0B6B6600049027 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */; };
+		FEE173931C0B6B6600049027 /* NSError+OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173941C0B6B6600049027 /* NSError+OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */; };
+		FEE173951C0B6B6600049027 /* OVCHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173961C0B6B6600049027 /* OVCHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */; };
+		FEE173971C0B6B6600049027 /* OVCHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		FEE173981C0B6B6600049027 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173991C0B6B6600049027 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */; };
+		FEE1739A1C0B6B6600049027 /* OVCModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1739B1C0B6B6600049027 /* OVCModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173381C0B6A9B00049027 /* OVCModelResponseSerializer.m */; };
+		FEE1739C1C0B6B6600049027 /* OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173391C0B6A9B00049027 /* OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1739D1C0B6B6600049027 /* OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1733A1C0B6A9B00049027 /* OVCResponse.m */; };
+		FEE1739E1C0B6B6600049027 /* OVCURLMatcher.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733B1C0B6A9B00049027 /* OVCURLMatcher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1739F1C0B6B6600049027 /* OVCURLMatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1733C1C0B6A9B00049027 /* OVCURLMatcher.m */; };
+		FEE173A01C0B6B6600049027 /* OVCUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173A11C0B6B6600049027 /* Overcoat.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1733E1C0B6A9B00049027 /* Overcoat.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173C21C0C8B4500049027 /* OVCHTTPSessionManager+PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734E1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173C31C0C8B4500049027 /* OVCHTTPSessionManager+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734F1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.m */; };
+		FEE173C41C0C8B4500049027 /* OvercoatPromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173501C0B6A9B00049027 /* OvercoatPromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173C51C0C8B8A00049027 /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173891C0B6B4E00049027 /* Overcoat.framework */; };
+		FEE173D91C0C8D4F00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173521C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173DA1C0C8D4F00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173531C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
+		FEE173DB1C0C8D4F00049027 /* OvercoatReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173541C0B6A9B00049027 /* OvercoatReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173DE1C0C8D6800049027 /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173891C0B6B4E00049027 /* Overcoat.framework */; };
+		FEE173EF1C0C8F3F00049027 /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173561C0B6A9B00049027 /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173F01C0C8F3F00049027 /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173571C0B6A9B00049027 /* OVCSocialRequestSerializer.m */; };
+		FEE173F11C0C8F3F00049027 /* OvercoatSocial.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE173F21C0C8F6600049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A31C0B6B8200049027 /* AFNetworking.framework */; };
+		FEE173F41C0C8F6B00049027 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173F31C0C8F6B00049027 /* Accounts.framework */; };
+		FEE173F61C0C8F7000049027 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173F51C0C8F7000049027 /* Social.framework */; };
+		FEE174141C0C90A300049027 /* OVCHTTPSessionManager+PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734E1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE174151C0C90A300049027 /* OVCHTTPSessionManager+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734F1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.m */; };
+		FEE174161C0C90A300049027 /* OvercoatPromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173501C0B6A9B00049027 /* OvercoatPromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE1741B1C0C914600049027 /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173221C0B6A8300049027 /* Overcoat.framework */; };
+		FEE174311C0C91AB00049027 /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173221C0B6A8300049027 /* Overcoat.framework */; };
+		FEE174321C0C91B600049027 /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173521C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE174331C0C91B600049027 /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173531C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
+		FEE174341C0C91B600049027 /* OvercoatReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173541C0B6A9B00049027 /* OvercoatReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FEE174351C0C923100049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173811C0B6B0900049027 /* Mantle.framework */; };
+		FEE174361C0C923500049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
+		FEE174371C0C923800049027 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE174061C0C907D00049027 /* ReactiveCocoa.framework */; };
+		FEE174381C0C923D00049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173811C0B6B0900049027 /* Mantle.framework */; };
+		FEE174391C0C923F00049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
+		FEE1743A1C0C924000049027 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE174051C0C907D00049027 /* PromiseKit.framework */; };
+		FEE1743B1C0C924900049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
+		FEE1743C1C0C924C00049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173811C0B6B0900049027 /* Mantle.framework */; };
+		FEE1743D1C0C925C00049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A31C0B6B8200049027 /* AFNetworking.framework */; };
+		FEE1743E1C0C925E00049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A41C0B6B8200049027 /* Mantle.framework */; };
+		FEE1743F1C0C926100049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A41C0B6B8200049027 /* Mantle.framework */; };
+		FEE174401C0C926300049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A31C0B6B8200049027 /* AFNetworking.framework */; };
+		FEE174411C0C926800049027 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173C91C0C8C9A00049027 /* PromiseKit.framework */; };
+		FEE174421C0C926B00049027 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A31C0B6B8200049027 /* AFNetworking.framework */; };
+		FEE174431C0C926D00049027 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173A41C0B6B8200049027 /* Mantle.framework */; };
+		FEE174441C0C927100049027 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173DF1C0C8EA300049027 /* ReactiveCocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FE8A2BD91C0C92F600B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE174261C0C919E00049027;
+			remoteInfo = "Overcoat+ReactiveCocoa-iOS";
+		};
+		FE8A2BDB1C0C92F600B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8A2BC51C0C928900B3406D;
+			remoteInfo = "OvercoatSocial-iOS";
+		};
+		FE8A2C5B1C0C94AA00B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173881C0B6B4E00049027;
+			remoteInfo = "Overcoat-OSX";
+		};
+		FE8A2C6A1C0C94D500B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173211C0B6A8300049027;
+			remoteInfo = "Overcoat-iOS";
+		};
+		FE8A2C711C0C951500B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8A2C611C0C94C500B3406D;
+			remoteInfo = "Overcoat+CoreData-iOS";
+		};
+		FE8A2C731C0C951900B3406D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE8A2C411C0C939C00B3406D;
+			remoteInfo = "Overcoat+CoreData-OSX";
+		};
+		FEE173FB1C0C8FC100049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173211C0B6A8300049027;
+			remoteInfo = "Overcoat-iOS";
+		};
+		FEE173FD1C0C8FC100049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173881C0B6B4E00049027;
+			remoteInfo = "Overcoat-OSX";
+		};
+		FEE173FF1C0C8FC100049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173B91C0C8AF000049027;
+			remoteInfo = "Overcoat+PromiseKit-OSX";
+		};
+		FEE174011C0C8FC100049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173D01C0C8D1F00049027;
+			remoteInfo = "Overcoat+ReactiveCocoa-OSX";
+		};
+		FEE174031C0C8FC100049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173E61C0C8F3600049027;
+			remoteInfo = "OvercoatSocial-OSX";
+		};
+		FEE174191C0C910200049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE1740B1C0C909500049027;
+			remoteInfo = "Overcoat+PromiseKit-iOS";
+		};
+		FEE1741C1C0C917400049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173211C0B6A8300049027;
+			remoteInfo = "Overcoat-iOS";
+		};
+		FEE1741E1C0C917B00049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173881C0B6B4E00049027;
+			remoteInfo = "Overcoat-OSX";
+		};
+		FEE174201C0C918300049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173881C0B6B4E00049027;
+			remoteInfo = "Overcoat-OSX";
+		};
+		FEE1742F1C0C91A600049027 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FEE173171C0B6A5E00049027 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEE173211C0B6A8300049027;
+			remoteInfo = "Overcoat-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
+		23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_osx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
+		D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		FE8A2BC61C0C928900B3406D /* OvercoatSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8A2BD41C0C92B400B3406D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
+		FE8A2BD61C0C92B900B3406D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
+		FE8A2C421C0C939C00B3406D /* OvercoatCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8A2C591C0C94A300B3406D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FE8A2C621C0C94C500B3406D /* OvercoatCoreData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatCoreData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8A2C6F1C0C94E500B3406D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		FE8A2CD01C0C991A00B3406D /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/Mac/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
+		FE8A2CDC1C0C9A1E00B3406D /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/iOS/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
+		FE8A2CDF1C0CA79700B3406D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE8A2CE01C0CA79700B3406D /* OVCCoreDataTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCCoreDataTestModel.h; sourceTree = "<group>"; };
+		FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCCoreDataTestModel.m; sourceTree = "<group>"; };
+		FE8A2CE21C0CA79700B3406D /* OVCCustomEnvelopTestResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCCustomEnvelopTestResponse.h; sourceTree = "<group>"; };
+		FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCCustomEnvelopTestResponse.m; sourceTree = "<group>"; };
+		FE8A2CE41C0CA79700B3406D /* OVCHTTPSessionManagerCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerCoreDataTests.m; sourceTree = "<group>"; };
+		FE8A2CE51C0CA79700B3406D /* OVCHTTPSessionManagerPromiseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerPromiseTests.m; sourceTree = "<group>"; };
+		FE8A2CE61C0CA79700B3406D /* OVCHTTPSessionManagerReactiveTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerReactiveTests.m; sourceTree = "<group>"; };
+		FE8A2CE71C0CA79700B3406D /* OVCHTTPSessionManagerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManagerTests.m; sourceTree = "<group>"; };
+		FE8A2CE81C0CA79700B3406D /* OVCModelResponseSerializerCoreDataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerCoreDataTests.m; sourceTree = "<group>"; };
+		FE8A2CE91C0CA79700B3406D /* OVCModelResponseSerializerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializerTests.m; sourceTree = "<group>"; };
+		FE8A2CEA1C0CA79700B3406D /* OVCResponseClassPerPathTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCResponseClassPerPathTest.m; sourceTree = "<group>"; };
+		FE8A2CEB1C0CA79700B3406D /* OVCResponseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCResponseTests.m; sourceTree = "<group>"; };
+		FE8A2CEC1C0CA79700B3406D /* OVCTestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCTestModel.h; sourceTree = "<group>"; };
+		FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCTestModel.m; sourceTree = "<group>"; };
+		FE8A2CEE1C0CA79700B3406D /* OVCTestResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OVCTestResponse.h; sourceTree = "<group>"; };
+		FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCTestResponse.m; sourceTree = "<group>"; };
+		FE8A2CF01C0CA79700B3406D /* OVCURLMatcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OVCURLMatcherTests.m; sourceTree = "<group>"; };
+		FE8A2CF21C0CA79700B3406D /* envelop1_model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = envelop1_model.json; sourceTree = "<group>"; };
+		FE8A2CF31C0CA79700B3406D /* envelop2_model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = envelop2_model.json; sourceTree = "<group>"; };
+		FE8A2CF41C0CA79700B3406D /* error.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = error.json; sourceTree = "<group>"; };
+		FE8A2CF51C0CA79700B3406D /* model.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = model.json; sourceTree = "<group>"; };
+		FE8A2CF61C0CA79700B3406D /* models.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = models.json; sourceTree = "<group>"; };
+		FE8A2CF81C0CA79700B3406D /* Test.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Test.xcdatamodel; sourceTree = "<group>"; };
+		FE8A2CFD1C0CA7AA00B3406D /* OvercoatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvercoatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE8A2D0C1C0CA84D00B3406D /* OvercoatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OvercoatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE173221C0B6A8300049027 /* Overcoat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overcoat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
+		FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
+		FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+OVCResponse.h"; sourceTree = "<group>"; };
+		FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+OVCResponse.m"; sourceTree = "<group>"; };
+		FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager.h; sourceTree = "<group>"; };
+		FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPManager.m; sourceTree = "<group>"; };
+		FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager_Internal.h; sourceTree = "<group>"; };
+		FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
+		FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
+		FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
+		FEE173381C0B6A9B00049027 /* OVCModelResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCModelResponseSerializer.m; sourceTree = "<group>"; };
+		FEE173391C0B6A9B00049027 /* OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCResponse.h; sourceTree = "<group>"; };
+		FEE1733A1C0B6A9B00049027 /* OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCResponse.m; sourceTree = "<group>"; };
+		FEE1733B1C0B6A9B00049027 /* OVCURLMatcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCURLMatcher.h; sourceTree = "<group>"; };
+		FEE1733C1C0B6A9B00049027 /* OVCURLMatcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCURLMatcher.m; sourceTree = "<group>"; };
+		FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCUtilities.h; sourceTree = "<group>"; };
+		FEE1733E1C0B6A9B00049027 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
+		FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvercoatCoreData.h; sourceTree = "<group>"; };
+		FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager.h; sourceTree = "<group>"; };
+		FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPManager.m; sourceTree = "<group>"; };
+		FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager_Internal.h; sourceTree = "<group>"; };
+		FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPSessionManager.h; sourceTree = "<group>"; };
+		FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPSessionManager.m; sourceTree = "<group>"; };
+		FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer.h; sourceTree = "<group>"; };
+		FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedModelResponseSerializer.m; sourceTree = "<group>"; };
+		FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer_Internal.h; sourceTree = "<group>"; };
+		FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
+		FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedStore.h; sourceTree = "<group>"; };
+		FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedStore.m; sourceTree = "<group>"; };
+		FEE1734C1C0B6A9B00049027 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE1734E1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+PromiseKit.h"; sourceTree = "<group>"; };
+		FEE1734F1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+PromiseKit.m"; sourceTree = "<group>"; };
+		FEE173501C0B6A9B00049027 /* OvercoatPromiseKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvercoatPromiseKit.h; sourceTree = "<group>"; };
+		FEE173521C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OVCHTTPSessionManager+ReactiveCocoa.h"; sourceTree = "<group>"; };
+		FEE173531C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OVCHTTPSessionManager+ReactiveCocoa.m"; sourceTree = "<group>"; };
+		FEE173541C0B6A9B00049027 /* OvercoatReactiveCocoa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvercoatReactiveCocoa.h; sourceTree = "<group>"; };
+		FEE173561C0B6A9B00049027 /* OVCSocialRequestSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCSocialRequestSerializer.h; sourceTree = "<group>"; };
+		FEE173571C0B6A9B00049027 /* OVCSocialRequestSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCSocialRequestSerializer.m; sourceTree = "<group>"; };
+		FEE173801C0B6B0900049027 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/iOS/AFNetworking.framework; sourceTree = "<group>"; };
+		FEE173811C0B6B0900049027 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/iOS/Mantle.framework; sourceTree = "<group>"; };
+		FEE173891C0B6B4E00049027 /* Overcoat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overcoat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE173A31C0B6B8200049027 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/Mac/AFNetworking.framework; sourceTree = "<group>"; };
+		FEE173A41C0B6B8200049027 /* Mantle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mantle.framework; path = Carthage/Build/Mac/Mantle.framework; sourceTree = "<group>"; };
+		FEE173BA1C0C8AF000049027 /* OvercoatPromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatPromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE173C91C0C8C9A00049027 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
+		FEE173D11C0C8D1F00049027 /* OvercoatReactiveCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE173DF1C0C8EA300049027 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OvercoatSocial.h; sourceTree = "<group>"; };
+		FEE173E71C0C8F3600049027 /* OvercoatSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE173F31C0C8F6B00049027 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		FEE173F51C0C8F7000049027 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		FEE174051C0C907D00049027 /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		FEE174061C0C907D00049027 /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
+		FEE1740C1C0C909500049027 /* OvercoatPromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatPromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEE174271C0C919E00049027 /* OvercoatReactiveCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatReactiveCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE8A2BC21C0C928900B3406D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2BD71C0C92B900B3406D /* Social.framework in Frameworks */,
+				FE8A2BD51C0C92B400B3406D /* Accounts.framework in Frameworks */,
+				FE8A2BD81C0C92C500B3406D /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C3E1C0C939C00B3406D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C5A1C0C94A300B3406D /* CoreData.framework in Frameworks */,
+				FE8A2C571C0C93DF00B3406D /* Overcoat.framework in Frameworks */,
+				FE8A2C551C0C93D200B3406D /* AFNetworking.framework in Frameworks */,
+				FE8A2CD11C0C991F00B3406D /* MTLManagedObjectAdapter.framework in Frameworks */,
+				FE8A2C561C0C93D400B3406D /* Mantle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C5E1C0C94C500B3406D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C701C0C94E500B3406D /* CoreData.framework in Frameworks */,
+				FE8A2C6C1C0C94D900B3406D /* Overcoat.framework in Frameworks */,
+				FE8A2C6D1C0C94DE00B3406D /* Mantle.framework in Frameworks */,
+				FE8A2CDD1C0C9A1E00B3406D /* MTLManagedObjectAdapter.framework in Frameworks */,
+				FE8A2C6E1C0C94E000B3406D /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2CFA1C0CA7AA00B3406D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				624E93D682948685DD8C69D7 /* Pods_osx.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2D091C0CA84D00B3406D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39DB74315F3478AFD9E7DB02 /* Pods_ios.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE1731E1C0B6A8300049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE1743B1C0C924900049027 /* AFNetworking.framework in Frameworks */,
+				FEE1743C1C0C924C00049027 /* Mantle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173851C0B6B4E00049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE1743D1C0C925C00049027 /* AFNetworking.framework in Frameworks */,
+				FEE1743E1C0C925E00049027 /* Mantle.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173B61C0C8AF000049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173C51C0C8B8A00049027 /* Overcoat.framework in Frameworks */,
+				FEE1743F1C0C926100049027 /* Mantle.framework in Frameworks */,
+				FEE174401C0C926300049027 /* AFNetworking.framework in Frameworks */,
+				FEE174411C0C926800049027 /* PromiseKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173CD1C0C8D1F00049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173DE1C0C8D6800049027 /* Overcoat.framework in Frameworks */,
+				FEE174421C0C926B00049027 /* AFNetworking.framework in Frameworks */,
+				FEE174431C0C926D00049027 /* Mantle.framework in Frameworks */,
+				FEE174441C0C927100049027 /* ReactiveCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173E31C0C8F3600049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173F61C0C8F7000049027 /* Social.framework in Frameworks */,
+				FEE173F41C0C8F6B00049027 /* Accounts.framework in Frameworks */,
+				FEE173F21C0C8F6600049027 /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174081C0C909500049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE1741B1C0C914600049027 /* Overcoat.framework in Frameworks */,
+				FEE174381C0C923D00049027 /* Mantle.framework in Frameworks */,
+				FEE1743A1C0C924000049027 /* PromiseKit.framework in Frameworks */,
+				FEE174391C0C923F00049027 /* AFNetworking.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174231C0C919E00049027 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE174311C0C91AB00049027 /* Overcoat.framework in Frameworks */,
+				FEE174351C0C923100049027 /* Mantle.framework in Frameworks */,
+				FEE174361C0C923500049027 /* AFNetworking.framework in Frameworks */,
+				FEE174371C0C923800049027 /* ReactiveCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4144F42D6FD56FD407EBBCD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */,
+				255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5619349767D708A6098B7D60 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */,
+				D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */,
+				119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */,
+				C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FE8A2CDE1C0CA79700B3406D /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A2CDF1C0CA79700B3406D /* Info.plist */,
+				FE8A2CE01C0CA79700B3406D /* OVCCoreDataTestModel.h */,
+				FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */,
+				FE8A2CE21C0CA79700B3406D /* OVCCustomEnvelopTestResponse.h */,
+				FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */,
+				FE8A2CE41C0CA79700B3406D /* OVCHTTPSessionManagerCoreDataTests.m */,
+				FE8A2CE51C0CA79700B3406D /* OVCHTTPSessionManagerPromiseTests.m */,
+				FE8A2CE61C0CA79700B3406D /* OVCHTTPSessionManagerReactiveTests.m */,
+				FE8A2CE71C0CA79700B3406D /* OVCHTTPSessionManagerTests.m */,
+				FE8A2CE81C0CA79700B3406D /* OVCModelResponseSerializerCoreDataTests.m */,
+				FE8A2CE91C0CA79700B3406D /* OVCModelResponseSerializerTests.m */,
+				FE8A2CEA1C0CA79700B3406D /* OVCResponseClassPerPathTest.m */,
+				FE8A2CEB1C0CA79700B3406D /* OVCResponseTests.m */,
+				FE8A2CEC1C0CA79700B3406D /* OVCTestModel.h */,
+				FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */,
+				FE8A2CEE1C0CA79700B3406D /* OVCTestResponse.h */,
+				FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */,
+				FE8A2CF01C0CA79700B3406D /* OVCURLMatcherTests.m */,
+				FE8A2CF11C0CA79700B3406D /* Stubs */,
+				FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */,
+			);
+			name = Tests;
+			path = tests;
+			sourceTree = "<group>";
+		};
+		FE8A2CF11C0CA79700B3406D /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A2CF21C0CA79700B3406D /* envelop1_model.json */,
+				FE8A2CF31C0CA79700B3406D /* envelop2_model.json */,
+				FE8A2CF41C0CA79700B3406D /* error.json */,
+				FE8A2CF51C0CA79700B3406D /* model.json */,
+				FE8A2CF61C0CA79700B3406D /* models.json */,
+			);
+			path = Stubs;
+			sourceTree = "<group>";
+		};
+		FEE173161C0B6A5E00049027 = {
+			isa = PBXGroup;
+			children = (
+				FEE1732C1C0B6A9B00049027 /* Sources */,
+				FE8A2CDE1C0CA79700B3406D /* Tests */,
+				FEE1737E1C0B6AEF00049027 /* Framework */,
+				FEE173231C0B6A8300049027 /* Products */,
+				5619349767D708A6098B7D60 /* Pods */,
+				4144F42D6FD56FD407EBBCD1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FEE173231C0B6A8300049027 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEE173221C0B6A8300049027 /* Overcoat.framework */,
+				FEE173891C0B6B4E00049027 /* Overcoat.framework */,
+				FEE173BA1C0C8AF000049027 /* OvercoatPromiseKit.framework */,
+				FEE173D11C0C8D1F00049027 /* OvercoatReactiveCocoa.framework */,
+				FEE173E71C0C8F3600049027 /* OvercoatSocial.framework */,
+				FEE1740C1C0C909500049027 /* OvercoatPromiseKit.framework */,
+				FEE174271C0C919E00049027 /* OvercoatReactiveCocoa.framework */,
+				FE8A2BC61C0C928900B3406D /* OvercoatSocial.framework */,
+				FE8A2C421C0C939C00B3406D /* OvercoatCoreData.framework */,
+				FE8A2C621C0C94C500B3406D /* OvercoatCoreData.framework */,
+				FE8A2CFD1C0CA7AA00B3406D /* OvercoatTests.xctest */,
+				FE8A2D0C1C0CA84D00B3406D /* OvercoatTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEE1732C1C0B6A9B00049027 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FEE1734C1C0B6A9B00049027 /* Info.plist */,
+				FEE1732D1C0B6A9B00049027 /* Core */,
+				FEE1733F1C0B6A9B00049027 /* CoreData */,
+				FEE1734D1C0B6A9B00049027 /* PromiseKit */,
+				FEE173511C0B6A9B00049027 /* ReactiveCocoa */,
+				FEE173551C0B6A9B00049027 /* Social */,
+			);
+			name = Sources;
+			path = sources;
+			sourceTree = "<group>";
+		};
+		FEE1732D1C0B6A9B00049027 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */,
+				FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */,
+				FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */,
+				FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */,
+				FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */,
+				FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */,
+				FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */,
+				FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */,
+				FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */,
+				FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */,
+				FEE173381C0B6A9B00049027 /* OVCModelResponseSerializer.m */,
+				FEE173391C0B6A9B00049027 /* OVCResponse.h */,
+				FEE1733A1C0B6A9B00049027 /* OVCResponse.m */,
+				FEE1733B1C0B6A9B00049027 /* OVCURLMatcher.h */,
+				FEE1733C1C0B6A9B00049027 /* OVCURLMatcher.m */,
+				FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */,
+				FEE1733E1C0B6A9B00049027 /* Overcoat.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FEE1733F1C0B6A9B00049027 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */,
+				FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */,
+				FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */,
+				FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */,
+				FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */,
+				FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */,
+				FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */,
+				FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */,
+				FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */,
+				FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */,
+				FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */,
+				FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FEE1734D1C0B6A9B00049027 /* PromiseKit */ = {
+			isa = PBXGroup;
+			children = (
+				FEE1734E1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.h */,
+				FEE1734F1C0B6A9B00049027 /* OVCHTTPSessionManager+PromiseKit.m */,
+				FEE173501C0B6A9B00049027 /* OvercoatPromiseKit.h */,
+			);
+			path = PromiseKit;
+			sourceTree = "<group>";
+		};
+		FEE173511C0B6A9B00049027 /* ReactiveCocoa */ = {
+			isa = PBXGroup;
+			children = (
+				FEE173521C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h */,
+				FEE173531C0B6A9B00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m */,
+				FEE173541C0B6A9B00049027 /* OvercoatReactiveCocoa.h */,
+			);
+			path = ReactiveCocoa;
+			sourceTree = "<group>";
+		};
+		FEE173551C0B6A9B00049027 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				FEE173561C0B6A9B00049027 /* OVCSocialRequestSerializer.h */,
+				FEE173571C0B6A9B00049027 /* OVCSocialRequestSerializer.m */,
+				FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
+		FEE1737E1C0B6AEF00049027 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				FEE1737F1C0B6AF900049027 /* iOS */,
+				FEE173A21C0B6B7500049027 /* OS X */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		FEE1737F1C0B6AF900049027 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A2CDC1C0C9A1E00B3406D /* MTLManagedObjectAdapter.framework */,
+				FE8A2C6F1C0C94E500B3406D /* CoreData.framework */,
+				FE8A2BD61C0C92B900B3406D /* Social.framework */,
+				FE8A2BD41C0C92B400B3406D /* Accounts.framework */,
+				FEE174051C0C907D00049027 /* PromiseKit.framework */,
+				FEE174061C0C907D00049027 /* ReactiveCocoa.framework */,
+				FEE173801C0B6B0900049027 /* AFNetworking.framework */,
+				FEE173811C0B6B0900049027 /* Mantle.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		FEE173A21C0B6B7500049027 /* OS X */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A2CD01C0C991A00B3406D /* MTLManagedObjectAdapter.framework */,
+				FE8A2C591C0C94A300B3406D /* CoreData.framework */,
+				FEE173F51C0C8F7000049027 /* Social.framework */,
+				FEE173F31C0C8F6B00049027 /* Accounts.framework */,
+				FEE173DF1C0C8EA300049027 /* ReactiveCocoa.framework */,
+				FEE173C91C0C8C9A00049027 /* PromiseKit.framework */,
+				FEE173A31C0B6B8200049027 /* AFNetworking.framework */,
+				FEE173A41C0B6B8200049027 /* Mantle.framework */,
+			);
+			name = "OS X";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		FE8A2BC31C0C928900B3406D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2BD21C0C92A500B3406D /* OvercoatSocial.h in Headers */,
+				FE8A2BD11C0C92A500B3406D /* OVCSocialRequestSerializer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C3F1C0C939C00B3406D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C531C0C93BE00B3406D /* OVCManagedStore.h in Headers */,
+				FE8A2C521C0C93BE00B3406D /* OVCManagedObjectSerializingContainer.h in Headers */,
+				FE8A2C4F1C0C93BE00B3406D /* OVCManagedModelResponseSerializer.h in Headers */,
+				FE8A2C4C1C0C93BE00B3406D /* OVCManagedHTTPManager_Internal.h in Headers */,
+				FE8A2C4A1C0C93BE00B3406D /* OVCManagedHTTPManager.h in Headers */,
+				FE8A2C581C0C944F00B3406D /* OvercoatCoreData.h in Headers */,
+				FE8A2C4D1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.h in Headers */,
+				FE8A2C511C0C93BE00B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C5F1C0C94C500B3406D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C7E1C0C952500B3406D /* OVCManagedObjectSerializingContainer.h in Headers */,
+				FE8A2C7F1C0C952500B3406D /* OVCManagedStore.h in Headers */,
+				FE8A2C791C0C952500B3406D /* OVCManagedHTTPSessionManager.h in Headers */,
+				FE8A2C751C0C952500B3406D /* OvercoatCoreData.h in Headers */,
+				FE8A2C781C0C952500B3406D /* OVCManagedHTTPManager_Internal.h in Headers */,
+				FE8A2C7B1C0C952500B3406D /* OVCManagedModelResponseSerializer.h in Headers */,
+				FE8A2C761C0C952500B3406D /* OVCManagedHTTPManager.h in Headers */,
+				FE8A2C7D1C0C952500B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE1731F1C0B6A8300049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE1735F1C0B6A9B00049027 /* OVCHTTPSessionManager.h in Headers */,
+				FEE173681C0B6A9B00049027 /* Overcoat.h in Headers */,
+				FEE1735A1C0B6A9B00049027 /* NSError+OVCResponse.h in Headers */,
+				FEE1735C1C0B6A9B00049027 /* OVCHTTPManager.h in Headers */,
+				FEE173671C0B6A9B00049027 /* OVCUtilities.h in Headers */,
+				FEE173651C0B6A9B00049027 /* OVCURLMatcher.h in Headers */,
+				FEE173611C0B6A9B00049027 /* OVCModelResponseSerializer.h in Headers */,
+				FEE173631C0B6A9B00049027 /* OVCResponse.h in Headers */,
+				FEE173581C0B6A9B00049027 /* NSDictionary+Overcoat.h in Headers */,
+				FEE1735E1C0B6A9B00049027 /* OVCHTTPManager_Internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173861C0B6B4E00049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173981C0B6B6600049027 /* OVCHTTPSessionManager.h in Headers */,
+				FEE173A11C0B6B6600049027 /* Overcoat.h in Headers */,
+				FEE173931C0B6B6600049027 /* NSError+OVCResponse.h in Headers */,
+				FEE173951C0B6B6600049027 /* OVCHTTPManager.h in Headers */,
+				FEE173A01C0B6B6600049027 /* OVCUtilities.h in Headers */,
+				FEE1739E1C0B6B6600049027 /* OVCURLMatcher.h in Headers */,
+				FEE1739A1C0B6B6600049027 /* OVCModelResponseSerializer.h in Headers */,
+				FEE1739C1C0B6B6600049027 /* OVCResponse.h in Headers */,
+				FEE173911C0B6B6600049027 /* NSDictionary+Overcoat.h in Headers */,
+				FEE173971C0B6B6600049027 /* OVCHTTPManager_Internal.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173B71C0C8AF000049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173C21C0C8B4500049027 /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
+				FEE173C41C0C8B4500049027 /* OvercoatPromiseKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173CE1C0C8D1F00049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173DB1C0C8D4F00049027 /* OvercoatReactiveCocoa.h in Headers */,
+				FEE173D91C0C8D4F00049027 /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173E41C0C8F3600049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173F11C0C8F3F00049027 /* OvercoatSocial.h in Headers */,
+				FEE173EF1C0C8F3F00049027 /* OVCSocialRequestSerializer.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174091C0C909500049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE174161C0C90A300049027 /* OvercoatPromiseKit.h in Headers */,
+				FEE174141C0C90A300049027 /* OVCHTTPSessionManager+PromiseKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174241C0C919E00049027 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE174341C0C91B600049027 /* OvercoatReactiveCocoa.h in Headers */,
+				FEE174321C0C91B600049027 /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		FE8A2BC51C0C928900B3406D /* OvercoatSocial-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8A2BCD1C0C928900B3406D /* Build configuration list for PBXNativeTarget "OvercoatSocial-iOS" */;
+			buildPhases = (
+				FE8A2BC11C0C928900B3406D /* Sources */,
+				FE8A2BC21C0C928900B3406D /* Frameworks */,
+				FE8A2BC31C0C928900B3406D /* Headers */,
+				FE8A2BC41C0C928900B3406D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OvercoatSocial-iOS";
+			productName = "OvercoatSocial-iOS";
+			productReference = FE8A2BC61C0C928900B3406D /* OvercoatSocial.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE8A2C411C0C939C00B3406D /* Overcoat+CoreData-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8A2C471C0C939C00B3406D /* Build configuration list for PBXNativeTarget "Overcoat+CoreData-OSX" */;
+			buildPhases = (
+				FE8A2C3D1C0C939C00B3406D /* Sources */,
+				FE8A2C3E1C0C939C00B3406D /* Frameworks */,
+				FE8A2C3F1C0C939C00B3406D /* Headers */,
+				FE8A2C401C0C939C00B3406D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE8A2C5C1C0C94AA00B3406D /* PBXTargetDependency */,
+			);
+			name = "Overcoat+CoreData-OSX";
+			productName = "Overcoat+CoreData-OSX";
+			productReference = FE8A2C421C0C939C00B3406D /* OvercoatCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE8A2C611C0C94C500B3406D /* Overcoat+CoreData-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8A2C671C0C94C500B3406D /* Build configuration list for PBXNativeTarget "Overcoat+CoreData-iOS" */;
+			buildPhases = (
+				FE8A2C5D1C0C94C500B3406D /* Sources */,
+				FE8A2C5E1C0C94C500B3406D /* Frameworks */,
+				FE8A2C5F1C0C94C500B3406D /* Headers */,
+				FE8A2C601C0C94C500B3406D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FE8A2C6B1C0C94D500B3406D /* PBXTargetDependency */,
+			);
+			name = "Overcoat+CoreData-iOS";
+			productName = "Overcoat+CoreData-iOS";
+			productReference = FE8A2C621C0C94C500B3406D /* OvercoatCoreData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FE8A2CFC1C0CA7AA00B3406D /* OvercoatTests-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8A2D051C0CA7AB00B3406D /* Build configuration list for PBXNativeTarget "OvercoatTests-OSX" */;
+			buildPhases = (
+				5B908646FBB2F1AAFAECEA01 /* Check Pods Manifest.lock */,
+				FE8A2D3D1C0CAD6000B3406D /* Clean Carthage Output */,
+				FE8A2CF91C0CA7AA00B3406D /* Sources */,
+				FE8A2CFA1C0CA7AA00B3406D /* Frameworks */,
+				FE8A2CFB1C0CA7AA00B3406D /* Resources */,
+				17A29BD7FC5C6163FD279DBD /* Embed Pods Frameworks */,
+				6A8B93732E9366CE83EEEE12 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OvercoatTests-OSX";
+			productName = OvercoatTests;
+			productReference = FE8A2CFD1C0CA7AA00B3406D /* OvercoatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FE8A2D0B1C0CA84D00B3406D /* OvercoatTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE8A2D161C0CA84D00B3406D /* Build configuration list for PBXNativeTarget "OvercoatTests-iOS" */;
+			buildPhases = (
+				98EBBCF94EC62CF5B30BC0BF /* Check Pods Manifest.lock */,
+				FE8A2D3E1C0CAE2800B3406D /* Clean Carthage Output */,
+				FE8A2D081C0CA84D00B3406D /* Sources */,
+				FE8A2D091C0CA84D00B3406D /* Frameworks */,
+				FE8A2D0A1C0CA84D00B3406D /* Resources */,
+				4739080BE81350B02E6ECB9D /* Embed Pods Frameworks */,
+				ECE22050CA73266B22FCAC46 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OvercoatTests-iOS";
+			productName = OvercoatTests;
+			productReference = FE8A2D0C1C0CA84D00B3406D /* OvercoatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FEE173211C0B6A8300049027 /* Overcoat-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE1732A1C0B6A8300049027 /* Build configuration list for PBXNativeTarget "Overcoat-iOS" */;
+			buildPhases = (
+				FEE1731D1C0B6A8300049027 /* Sources */,
+				FEE1731E1C0B6A8300049027 /* Frameworks */,
+				FEE1731F1C0B6A8300049027 /* Headers */,
+				FEE173201C0B6A8300049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Overcoat-iOS";
+			productName = Overcoat;
+			productReference = FEE173221C0B6A8300049027 /* Overcoat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE173881C0B6B4E00049027 /* Overcoat-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE1738E1C0B6B4E00049027 /* Build configuration list for PBXNativeTarget "Overcoat-OSX" */;
+			buildPhases = (
+				FEE173841C0B6B4E00049027 /* Sources */,
+				FEE173851C0B6B4E00049027 /* Frameworks */,
+				FEE173861C0B6B4E00049027 /* Headers */,
+				FEE173871C0B6B4E00049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Overcoat-OSX";
+			productName = Overcoat;
+			productReference = FEE173891C0B6B4E00049027 /* Overcoat.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE173B91C0C8AF000049027 /* Overcoat+PromiseKit-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE173C11C0C8AF000049027 /* Build configuration list for PBXNativeTarget "Overcoat+PromiseKit-OSX" */;
+			buildPhases = (
+				FEE173B51C0C8AF000049027 /* Sources */,
+				FEE173B61C0C8AF000049027 /* Frameworks */,
+				FEE173B71C0C8AF000049027 /* Headers */,
+				FEE173B81C0C8AF000049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEE1741F1C0C917B00049027 /* PBXTargetDependency */,
+			);
+			name = "Overcoat+PromiseKit-OSX";
+			productName = "Overcoat+PromiseKit";
+			productReference = FEE173BA1C0C8AF000049027 /* OvercoatPromiseKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE173D01C0C8D1F00049027 /* Overcoat+ReactiveCocoa-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE173D61C0C8D1F00049027 /* Build configuration list for PBXNativeTarget "Overcoat+ReactiveCocoa-OSX" */;
+			buildPhases = (
+				FEE173CC1C0C8D1F00049027 /* Sources */,
+				FEE173CD1C0C8D1F00049027 /* Frameworks */,
+				FEE173CE1C0C8D1F00049027 /* Headers */,
+				FEE173CF1C0C8D1F00049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEE174211C0C918300049027 /* PBXTargetDependency */,
+			);
+			name = "Overcoat+ReactiveCocoa-OSX";
+			productName = "Overcoat+ReactiveCocoa-OSX";
+			productReference = FEE173D11C0C8D1F00049027 /* OvercoatReactiveCocoa.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE173E61C0C8F3600049027 /* OvercoatSocial-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE173EC1C0C8F3600049027 /* Build configuration list for PBXNativeTarget "OvercoatSocial-OSX" */;
+			buildPhases = (
+				FEE173E21C0C8F3600049027 /* Sources */,
+				FEE173E31C0C8F3600049027 /* Frameworks */,
+				FEE173E41C0C8F3600049027 /* Headers */,
+				FEE173E51C0C8F3600049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "OvercoatSocial-OSX";
+			productName = OvercoatSocial;
+			productReference = FEE173E71C0C8F3600049027 /* OvercoatSocial.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE1740B1C0C909500049027 /* Overcoat+PromiseKit-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE174111C0C909600049027 /* Build configuration list for PBXNativeTarget "Overcoat+PromiseKit-iOS" */;
+			buildPhases = (
+				FEE174071C0C909500049027 /* Sources */,
+				FEE174081C0C909500049027 /* Frameworks */,
+				FEE174091C0C909500049027 /* Headers */,
+				FEE1740A1C0C909500049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEE1741D1C0C917400049027 /* PBXTargetDependency */,
+			);
+			name = "Overcoat+PromiseKit-iOS";
+			productName = "Overcoat+PromiseKit-iOS";
+			productReference = FEE1740C1C0C909500049027 /* OvercoatPromiseKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FEE174261C0C919E00049027 /* Overcoat+ReactiveCocoa-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEE1742C1C0C919E00049027 /* Build configuration list for PBXNativeTarget "Overcoat+ReactiveCocoa-iOS" */;
+			buildPhases = (
+				FEE174221C0C919E00049027 /* Sources */,
+				FEE174231C0C919E00049027 /* Frameworks */,
+				FEE174241C0C919E00049027 /* Headers */,
+				FEE174251C0C919E00049027 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FEE174301C0C91A600049027 /* PBXTargetDependency */,
+			);
+			name = "Overcoat+ReactiveCocoa-iOS";
+			productName = "Overcoat+ReactiveCocoa-iOS";
+			productReference = FEE174271C0C919E00049027 /* OvercoatReactiveCocoa.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEE173171C0B6A5E00049027 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				TargetAttributes = {
+					FE8A2BC51C0C928900B3406D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FE8A2C411C0C939C00B3406D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FE8A2C611C0C94C500B3406D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FE8A2CFC1C0CA7AA00B3406D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FE8A2D0B1C0CA84D00B3406D = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173211C0B6A8300049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173881C0B6B4E00049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173B91C0C8AF000049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173D01C0C8D1F00049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173E61C0C8F3600049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE173F71C0C8FB900049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE1740B1C0C909500049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+					FEE174261C0C919E00049027 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = FEE1731A1C0B6A5E00049027 /* Build configuration list for PBXProject "Overcoat" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FEE173161C0B6A5E00049027;
+			productRefGroup = FEE173231C0B6A8300049027 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEE173211C0B6A8300049027 /* Overcoat-iOS */,
+				FE8A2C611C0C94C500B3406D /* Overcoat+CoreData-iOS */,
+				FEE1740B1C0C909500049027 /* Overcoat+PromiseKit-iOS */,
+				FEE174261C0C919E00049027 /* Overcoat+ReactiveCocoa-iOS */,
+				FE8A2BC51C0C928900B3406D /* OvercoatSocial-iOS */,
+				FEE173881C0B6B4E00049027 /* Overcoat-OSX */,
+				FE8A2C411C0C939C00B3406D /* Overcoat+CoreData-OSX */,
+				FEE173B91C0C8AF000049027 /* Overcoat+PromiseKit-OSX */,
+				FEE173D01C0C8D1F00049027 /* Overcoat+ReactiveCocoa-OSX */,
+				FEE173E61C0C8F3600049027 /* OvercoatSocial-OSX */,
+				FEE173F71C0C8FB900049027 /* AllFrameworks */,
+				FE8A2CFC1C0CA7AA00B3406D /* OvercoatTests-OSX */,
+				FE8A2D0B1C0CA84D00B3406D /* OvercoatTests-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE8A2BC41C0C928900B3406D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C401C0C939C00B3406D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C601C0C94C500B3406D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2CFB1C0CA7AA00B3406D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2D381C0CA95200B3406D /* error.json in Resources */,
+				FE8A2D371C0CA95200B3406D /* envelop2_model.json in Resources */,
+				FE8A2D361C0CA95200B3406D /* envelop1_model.json in Resources */,
+				FE8A2D3A1C0CA95200B3406D /* models.json in Resources */,
+				FE8A2D391C0CA95200B3406D /* model.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2D0A1C0CA84D00B3406D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2D331C0CA95200B3406D /* error.json in Resources */,
+				FE8A2D321C0CA95200B3406D /* envelop2_model.json in Resources */,
+				FE8A2D311C0CA95200B3406D /* envelop1_model.json in Resources */,
+				FE8A2D351C0CA95200B3406D /* models.json in Resources */,
+				FE8A2D341C0CA95200B3406D /* model.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173201C0B6A8300049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173871C0B6B4E00049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173B81C0C8AF000049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173CF1C0C8D1F00049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173E51C0C8F3600049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE1740A1C0C909500049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174251C0C919E00049027 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		17A29BD7FC5C6163FD279DBD /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4739080BE81350B02E6ECB9D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B908646FBB2F1AAFAECEA01 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A8B93732E9366CE83EEEE12 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98EBBCF94EC62CF5B30BC0BF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE22050CA73266B22FCAC46 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FE8A2D3D1C0CAD6000B3406D /* Clean Carthage Output */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clean Carthage Output";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# `Overcoat.framework` : name conflit with Pods\nrm -rf \"${BUILT_PRODUCTS_DIR}/Overcoat.framework\"";
+			showEnvVarsInLog = 0;
+		};
+		FE8A2D3E1C0CAE2800B3406D /* Clean Carthage Output */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Clean Carthage Output";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# `Overcoat.framework` : name conflit with Pods\nrm -rf \"${BUILT_PRODUCTS_DIR}/Overcoat.framework\"";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE8A2BC11C0C928900B3406D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2BD31C0C92AA00B3406D /* OVCSocialRequestSerializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C3D1C0C939C00B3406D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C501C0C93BE00B3406D /* OVCManagedModelResponseSerializer.m in Sources */,
+				FE8A2C4B1C0C93BE00B3406D /* OVCManagedHTTPManager.m in Sources */,
+				FE8A2C541C0C93BE00B3406D /* OVCManagedStore.m in Sources */,
+				FE8A2C4E1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2C5D1C0C94C500B3406D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2C7C1C0C952500B3406D /* OVCManagedModelResponseSerializer.m in Sources */,
+				FE8A2C771C0C952500B3406D /* OVCManagedHTTPManager.m in Sources */,
+				FE8A2C801C0C952500B3406D /* OVCManagedStore.m in Sources */,
+				FE8A2C7A1C0C952500B3406D /* OVCManagedHTTPSessionManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2CF91C0CA7AA00B3406D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2D2C1C0CA94B00B3406D /* OVCResponseClassPerPathTest.m in Sources */,
+				FE8A2D2E1C0CA94B00B3406D /* OVCTestModel.m in Sources */,
+				FE8A2D251C0CA94B00B3406D /* OVCCustomEnvelopTestResponse.m in Sources */,
+				FE8A2D3C1C0CA95600B3406D /* Test.xcdatamodeld in Sources */,
+				FE8A2D301C0CA94B00B3406D /* OVCURLMatcherTests.m in Sources */,
+				FE8A2D2F1C0CA94B00B3406D /* OVCTestResponse.m in Sources */,
+				FE8A2D291C0CA94B00B3406D /* OVCHTTPSessionManagerTests.m in Sources */,
+				FE8A2D261C0CA94B00B3406D /* OVCHTTPSessionManagerCoreDataTests.m in Sources */,
+				FE8A2D2B1C0CA94B00B3406D /* OVCModelResponseSerializerTests.m in Sources */,
+				FE8A2D281C0CA94B00B3406D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
+				FE8A2D241C0CA94B00B3406D /* OVCCoreDataTestModel.m in Sources */,
+				FE8A2D2D1C0CA94B00B3406D /* OVCResponseTests.m in Sources */,
+				FE8A2D271C0CA94B00B3406D /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
+				FE8A2D2A1C0CA94B00B3406D /* OVCModelResponseSerializerCoreDataTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE8A2D081C0CA84D00B3406D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE8A2D1F1C0CA94900B3406D /* OVCResponseClassPerPathTest.m in Sources */,
+				FE8A2D211C0CA94900B3406D /* OVCTestModel.m in Sources */,
+				FE8A2D181C0CA94900B3406D /* OVCCustomEnvelopTestResponse.m in Sources */,
+				FE8A2D3B1C0CA95600B3406D /* Test.xcdatamodeld in Sources */,
+				FE8A2D231C0CA94900B3406D /* OVCURLMatcherTests.m in Sources */,
+				FE8A2D221C0CA94900B3406D /* OVCTestResponse.m in Sources */,
+				FE8A2D1C1C0CA94900B3406D /* OVCHTTPSessionManagerTests.m in Sources */,
+				FE8A2D191C0CA94900B3406D /* OVCHTTPSessionManagerCoreDataTests.m in Sources */,
+				FE8A2D1E1C0CA94900B3406D /* OVCModelResponseSerializerTests.m in Sources */,
+				FE8A2D1B1C0CA94900B3406D /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
+				FE8A2D171C0CA94900B3406D /* OVCCoreDataTestModel.m in Sources */,
+				FE8A2D201C0CA94900B3406D /* OVCResponseTests.m in Sources */,
+				FE8A2D1A1C0CA94900B3406D /* OVCHTTPSessionManagerPromiseTests.m in Sources */,
+				FE8A2D1D1C0CA94900B3406D /* OVCModelResponseSerializerCoreDataTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE1731D1C0B6A8300049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173591C0B6A9B00049027 /* NSDictionary+Overcoat.m in Sources */,
+				FEE173661C0B6A9B00049027 /* OVCURLMatcher.m in Sources */,
+				FEE173601C0B6A9B00049027 /* OVCHTTPSessionManager.m in Sources */,
+				FEE1735B1C0B6A9B00049027 /* NSError+OVCResponse.m in Sources */,
+				FEE1735D1C0B6A9B00049027 /* OVCHTTPManager.m in Sources */,
+				FEE173621C0B6A9B00049027 /* OVCModelResponseSerializer.m in Sources */,
+				FEE173641C0B6A9B00049027 /* OVCResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173841C0B6B4E00049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173921C0B6B6600049027 /* NSDictionary+Overcoat.m in Sources */,
+				FEE1739F1C0B6B6600049027 /* OVCURLMatcher.m in Sources */,
+				FEE173991C0B6B6600049027 /* OVCHTTPSessionManager.m in Sources */,
+				FEE173941C0B6B6600049027 /* NSError+OVCResponse.m in Sources */,
+				FEE173961C0B6B6600049027 /* OVCHTTPManager.m in Sources */,
+				FEE1739B1C0B6B6600049027 /* OVCModelResponseSerializer.m in Sources */,
+				FEE1739D1C0B6B6600049027 /* OVCResponse.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173B51C0C8AF000049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173C31C0C8B4500049027 /* OVCHTTPSessionManager+PromiseKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173CC1C0C8D1F00049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173DA1C0C8D4F00049027 /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE173E21C0C8F3600049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE173F01C0C8F3F00049027 /* OVCSocialRequestSerializer.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174071C0C909500049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE174151C0C90A300049027 /* OVCHTTPSessionManager+PromiseKit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEE174221C0C919E00049027 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEE174331C0C91B600049027 /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FE8A2BDA1C0C92F600B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE174261C0C919E00049027 /* Overcoat+ReactiveCocoa-iOS */;
+			targetProxy = FE8A2BD91C0C92F600B3406D /* PBXContainerItemProxy */;
+		};
+		FE8A2BDC1C0C92F600B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8A2BC51C0C928900B3406D /* OvercoatSocial-iOS */;
+			targetProxy = FE8A2BDB1C0C92F600B3406D /* PBXContainerItemProxy */;
+		};
+		FE8A2C5C1C0C94AA00B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173881C0B6B4E00049027 /* Overcoat-OSX */;
+			targetProxy = FE8A2C5B1C0C94AA00B3406D /* PBXContainerItemProxy */;
+		};
+		FE8A2C6B1C0C94D500B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173211C0B6A8300049027 /* Overcoat-iOS */;
+			targetProxy = FE8A2C6A1C0C94D500B3406D /* PBXContainerItemProxy */;
+		};
+		FE8A2C721C0C951500B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8A2C611C0C94C500B3406D /* Overcoat+CoreData-iOS */;
+			targetProxy = FE8A2C711C0C951500B3406D /* PBXContainerItemProxy */;
+		};
+		FE8A2C741C0C951900B3406D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE8A2C411C0C939C00B3406D /* Overcoat+CoreData-OSX */;
+			targetProxy = FE8A2C731C0C951900B3406D /* PBXContainerItemProxy */;
+		};
+		FEE173FC1C0C8FC100049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173211C0B6A8300049027 /* Overcoat-iOS */;
+			targetProxy = FEE173FB1C0C8FC100049027 /* PBXContainerItemProxy */;
+		};
+		FEE173FE1C0C8FC100049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173881C0B6B4E00049027 /* Overcoat-OSX */;
+			targetProxy = FEE173FD1C0C8FC100049027 /* PBXContainerItemProxy */;
+		};
+		FEE174001C0C8FC100049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173B91C0C8AF000049027 /* Overcoat+PromiseKit-OSX */;
+			targetProxy = FEE173FF1C0C8FC100049027 /* PBXContainerItemProxy */;
+		};
+		FEE174021C0C8FC100049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173D01C0C8D1F00049027 /* Overcoat+ReactiveCocoa-OSX */;
+			targetProxy = FEE174011C0C8FC100049027 /* PBXContainerItemProxy */;
+		};
+		FEE174041C0C8FC100049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173E61C0C8F3600049027 /* OvercoatSocial-OSX */;
+			targetProxy = FEE174031C0C8FC100049027 /* PBXContainerItemProxy */;
+		};
+		FEE1741A1C0C910200049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE1740B1C0C909500049027 /* Overcoat+PromiseKit-iOS */;
+			targetProxy = FEE174191C0C910200049027 /* PBXContainerItemProxy */;
+		};
+		FEE1741D1C0C917400049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173211C0B6A8300049027 /* Overcoat-iOS */;
+			targetProxy = FEE1741C1C0C917400049027 /* PBXContainerItemProxy */;
+		};
+		FEE1741F1C0C917B00049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173881C0B6B4E00049027 /* Overcoat-OSX */;
+			targetProxy = FEE1741E1C0C917B00049027 /* PBXContainerItemProxy */;
+		};
+		FEE174211C0C918300049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173881C0B6B4E00049027 /* Overcoat-OSX */;
+			targetProxy = FEE174201C0C918300049027 /* PBXContainerItemProxy */;
+		};
+		FEE174301C0C91A600049027 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FEE173211C0B6A8300049027 /* Overcoat-iOS */;
+			targetProxy = FEE1742F1C0C91A600049027 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FE8A2BCB1C0C928900B3406D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatSocial-iOS";
+				PRODUCT_NAME = OvercoatSocial;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE8A2BCC1C0C928900B3406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatSocial-iOS";
+				PRODUCT_NAME = OvercoatSocial;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE8A2C481C0C939C00B3406D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-CoreData-OSX";
+				PRODUCT_NAME = OvercoatCoreData;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE8A2C491C0C939C00B3406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-CoreData-OSX";
+				PRODUCT_NAME = OvercoatCoreData;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE8A2C681C0C94C500B3406D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-CoreData-iOS";
+				PRODUCT_NAME = OvercoatCoreData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FE8A2C691C0C94C500B3406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-CoreData-iOS";
+				PRODUCT_NAME = OvercoatCoreData;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FE8A2D061C0CA7AB00B3406D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
+				PRODUCT_NAME = OvercoatTests;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FE8A2D071C0CA7AB00B3406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
+				PRODUCT_NAME = OvercoatTests;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FE8A2D141C0CA84D00B3406D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
+				PRODUCT_NAME = OvercoatTests;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FE8A2D151C0CA84D00B3406D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
+				PRODUCT_NAME = OvercoatTests;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FEE1731B1C0B6A5E00049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Debug;
+		};
+		FEE1731C1C0B6A5E00049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+			};
+			name = Release;
+		};
+		FEE173281C0B6A8300049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.Overcoat;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE173291C0B6A8300049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.Overcoat;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE1738F1C0B6B4E00049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.Overcoat;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE173901C0B6B4E00049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.Overcoat;
+				PRODUCT_NAME = Overcoat;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE173BF1C0C8AF000049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-PromiseKit";
+				PRODUCT_NAME = OvercoatPromiseKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE173C01C0C8AF000049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-PromiseKit";
+				PRODUCT_NAME = OvercoatPromiseKit;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE173D71C0C8D1F00049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-ReactiveCocoa-OSX";
+				PRODUCT_NAME = OvercoatReactiveCocoa;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE173D81C0C8D1F00049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-ReactiveCocoa-OSX";
+				PRODUCT_NAME = OvercoatReactiveCocoa;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE173ED1C0C8F3600049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatSocial;
+				PRODUCT_NAME = OvercoatSocial;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE173EE1C0C8F3600049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatSocial;
+				PRODUCT_NAME = OvercoatSocial;
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE173F91C0C8FB900049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEE173FA1C0C8FB900049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEE174121C0C909600049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-PromiseKit-iOS";
+				PRODUCT_NAME = OvercoatPromiseKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE174131C0C909600049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-PromiseKit-iOS";
+				PRODUCT_NAME = OvercoatPromiseKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FEE1742D1C0C919E00049027 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-ReactiveCocoa-iOS";
+				PRODUCT_NAME = OvercoatReactiveCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FEE1742E1C0C919E00049027 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = sources/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.Overcoat-ReactiveCocoa-iOS";
+				PRODUCT_NAME = OvercoatReactiveCocoa;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE8A2BCD1C0C928900B3406D /* Build configuration list for PBXNativeTarget "OvercoatSocial-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8A2BCB1C0C928900B3406D /* Debug */,
+				FE8A2BCC1C0C928900B3406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8A2C471C0C939C00B3406D /* Build configuration list for PBXNativeTarget "Overcoat+CoreData-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8A2C481C0C939C00B3406D /* Debug */,
+				FE8A2C491C0C939C00B3406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8A2C671C0C94C500B3406D /* Build configuration list for PBXNativeTarget "Overcoat+CoreData-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8A2C681C0C94C500B3406D /* Debug */,
+				FE8A2C691C0C94C500B3406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8A2D051C0CA7AB00B3406D /* Build configuration list for PBXNativeTarget "OvercoatTests-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8A2D061C0CA7AB00B3406D /* Debug */,
+				FE8A2D071C0CA7AB00B3406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE8A2D161C0CA84D00B3406D /* Build configuration list for PBXNativeTarget "OvercoatTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE8A2D141C0CA84D00B3406D /* Debug */,
+				FE8A2D151C0CA84D00B3406D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE1731A1C0B6A5E00049027 /* Build configuration list for PBXProject "Overcoat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE1731B1C0B6A5E00049027 /* Debug */,
+				FEE1731C1C0B6A5E00049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE1732A1C0B6A8300049027 /* Build configuration list for PBXNativeTarget "Overcoat-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE173281C0B6A8300049027 /* Debug */,
+				FEE173291C0B6A8300049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE1738E1C0B6B4E00049027 /* Build configuration list for PBXNativeTarget "Overcoat-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE1738F1C0B6B4E00049027 /* Debug */,
+				FEE173901C0B6B4E00049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE173C11C0C8AF000049027 /* Build configuration list for PBXNativeTarget "Overcoat+PromiseKit-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE173BF1C0C8AF000049027 /* Debug */,
+				FEE173C01C0C8AF000049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE173D61C0C8D1F00049027 /* Build configuration list for PBXNativeTarget "Overcoat+ReactiveCocoa-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE173D71C0C8D1F00049027 /* Debug */,
+				FEE173D81C0C8D1F00049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE173EC1C0C8F3600049027 /* Build configuration list for PBXNativeTarget "OvercoatSocial-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE173ED1C0C8F3600049027 /* Debug */,
+				FEE173EE1C0C8F3600049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE173F81C0C8FB900049027 /* Build configuration list for PBXAggregateTarget "AllFrameworks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE173F91C0C8FB900049027 /* Debug */,
+				FEE173FA1C0C8FB900049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE174111C0C909600049027 /* Build configuration list for PBXNativeTarget "Overcoat+PromiseKit-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE174121C0C909600049027 /* Debug */,
+				FEE174131C0C909600049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEE1742C1C0C919E00049027 /* Build configuration list for PBXNativeTarget "Overcoat+ReactiveCocoa-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEE1742D1C0C919E00049027 /* Debug */,
+				FEE1742E1C0C919E00049027 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE8A2CF81C0CA79700B3406D /* Test.xcdatamodel */,
+			);
+			currentVersion = FE8A2CF81C0CA79700B3406D /* Test.xcdatamodel */;
+			path = Test.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FEE173171C0B6A5E00049027 /* Project object */;
+}

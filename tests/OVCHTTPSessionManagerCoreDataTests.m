@@ -11,6 +11,7 @@
 #import <OHHTTPStubs/OHHTTPStubs.h>
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
+#import <OvercoatCoreData/OvercoatCoreData.h>
 #import "OVCCoreDataTestModel.h"
 
 #pragma mark - TestClient

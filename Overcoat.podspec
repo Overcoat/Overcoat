@@ -19,8 +19,9 @@ Pod::Spec.new do |s|
     ss.dependency 'AFNetworking/Serialization', '3.0.0-beta.1'
     ss.dependency 'AFNetworking/NSURLSession', '3.0.0-beta.1'
 
-    ss.source_files = 'sources/Core/*.{h,m}'
-    ss.private_header_files = 'sources/Core/*_Internal.h'
+    ss.source_files = 'Sources/Core/*.{h,m}'
+    ss.private_header_files = 'Sources/Core/*_Internal.h'
+    ss.header_dir = 'Overcoat'
   end
 
   s.subspec 'CoreData' do |ss|
@@ -28,24 +29,18 @@ Pod::Spec.new do |s|
     ss.dependency 'MTLManagedObjectAdapter', '> 1.0'
     ss.frameworks = 'CoreData'
 
-    ss.source_files = 'sources/CoreData/*.{h,m}'
-    ss.private_header_files = 'sources/CoreData/*_Internal.h'
-
-    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_COREDATA=1',  # Used for shortcuts in umbrella header
-    }
+    ss.source_files = 'Sources/CoreData/*.{h,m}'
+    ss.private_header_files = 'Sources/CoreData/*_Internal.h'
+    ss.header_dir = 'OvercoatCoreData'
   end
 
   s.subspec 'Social' do |ss|
     ss.dependency 'AFNetworking/Serialization'
     ss.frameworks = 'Accounts', 'Social'
 
-    ss.public_header_files = 'sources/Social/*.h'
-    ss.source_files = 'sources/Social/*.{h,m}'
-
-    ss.pod_target_xcconfig = ss.user_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_SOCIAL=1',  # Used for shortcuts in umbrella header
-    }
+    ss.public_header_files = 'Sources/Social/*.h'
+    ss.source_files = 'Sources/Social/*.{h,m}'
+    ss.header_dir = 'OvercoatSocial'
   end
 
   s.subspec 'PromiseKit' do |ss|
@@ -54,20 +49,23 @@ Pod::Spec.new do |s|
 
     ss.dependency 'PromiseKit/CorePromise', '> 2'  # Swift 2.0 support comes after PromiseKit 3.0
 
-    ss.source_files = 'sources/PromiseKit/*.{h,m}'
+    ss.source_files = 'Sources/PromiseKit/*.{h,m}'
+    ss.header_dir = 'OvercoatPromiseKit'
 
     ss.pod_target_xcconfig = ss.user_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_PROMISE_KIT=1',  # Used for shortcuts in umbrella header
+      'OTHER_LDFLAGS' => '-ObjC',  # Objective-C Categories
     }
+
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
     ss.dependency 'ReactiveCocoa', '~> 2.4'
 
-    ss.source_files = 'sources/ReactiveCocoa/*.{h,m}'
+    ss.source_files = 'Sources/ReactiveCocoa/*.{h,m}'
+    ss.header_dir = 'OvercoatReactiveCocoa'
 
     ss.pod_target_xcconfig = ss.user_target_xcconfig = {
-      'GCC_PREPROCESSOR_DEFINITIONS' => 'OVERCOAT_SUPPORT_REACTIVE_COCOA=1',  # Used for shortcuts in umbrella header
+      'OTHER_LDFLAGS' => '-ObjC',  # Objective-C Categories
     }
   end
 end

@@ -1,6 +1,6 @@
-// PromiseKit+Overcoat.h
+// CoreData+Overcoat.h
 //
-// Copyright (c) 2014 Guillermo Gonzalez
+// Copyright (c) 2013 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,4 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCHTTPSessionManager+PromiseKit.h>
+#import <OvercoatCoreData/OVCManagedHTTPManager.h>
+#import <OvercoatCoreData/OVCManagedModelResponseSerializer.h>
+#import <OvercoatCoreData/OVCManagedObjectSerializingContainer.h>
+#import <OvercoatCoreData/OVCManagedStore.h>
+#import <OvercoatCoreData/OVCManagedHTTPSessionManager.h>

@@ -1,6 +1,5 @@
-// ReactiveCocoa+Overcoat.h
+// PromiseKit+Overcoat.h
 //
-// Created by Joan Romano on 28/05/14.
 // Copyright (c) 2014 Guillermo Gonzalez
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,4 +20,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat/OVCHTTPSessionManager+ReactiveCocoa.h>
+#import <OvercoatPromiseKit/OVCHTTPSessionManager+PromiseKit.h>

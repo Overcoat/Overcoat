@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <OvercoatCoreData/OvercoatCoreData.h>
 #import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
 #import "OVCTestModel.h"
 
