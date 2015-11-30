@@ -1,7 +1,7 @@
 XC_WORKSPACE=Overcoat.xcworkspace
 XCODE_PROJ=Overcoat.xcodeproj
-OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
-IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
+OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatApp-OSX -sdk macosx
+IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatApp-iOS -sdk iphonesimulator
 
 test: install-pod clean build-tests run-tests
 
