@@ -93,6 +93,10 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 
 #pragma mark - Matching
 
+- (Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSURLResponse *)urlResponse {
+    return [self modelClassForURL:urlResponse.URL ?: request.URL];
+}
+
 - (Class)modelClassForURL:(NSURL *)url {
     NSParameterAssert(url);
 

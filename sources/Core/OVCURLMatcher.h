@@ -38,6 +38,9 @@ NS_ASSUME_NONNULL_BEGIN
 NS_DESIGNATED_INITIALIZER;
 
 - (OVC_NULLABLE Class)modelClassForURL:(NSURL *)url;
+- (OVC_NULLABLE Class)modelClassForURLRequest:(OVC_NULLABLE NSURLRequest *)request
+                               andURLResponse:(OVC_NULLABLE NSURLResponse *)urlResponse;
+
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path;
 
 @end

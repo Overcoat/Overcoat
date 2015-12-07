@@ -25,6 +25,7 @@
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
 #import "NSError+OVCResponse.h"
+#import <objc/runtime.h>
 
 @interface OVCModelResponseSerializer ()
 
@@ -34,6 +35,99 @@
 @property (nonatomic) Class errorModelClass;
 
 @end
+
+#pragma mark - Patch AFNetworking
+
+/*
+ * To make the URL Matcher works with request content like http method used,
+ * the response serializer must be able to access its corresponding reqeust.
+ *
+ * Hence we patch AFNetworking to associate responses with its reqeust.
+ * 
+ * 1. `NSAssert`s are added in order that AFNetworking are changing its API.
+ * 2. `-[AFURLSessionManagerTaskDelegate URLSession:task:didCompleteWithError:]` calls response serializer
+ *    asynchronously, so the clean up action could be only called in the completion handler.
+ *
+ */
+
+typedef void (^ovc_AFURLSessionTaskCompletionHandler)(NSURLResponse *response, id responseObject, NSError *error);
+@interface ovc_dummy_AFURLSessionManagerTaskDelegate : NSObject
+@property (nonatomic, copy) ovc_AFURLSessionTaskCompletionHandler completionHandler;
+@end
+
+@implementation OVCModelResponseSerializer (AFNetworkingPatch)
+
+static char OVC_NSURLSessionTask_requestAssociationKey;
+typedef void (*__imp_URLSession_task_didCompleteWithError_)(id, SEL, NSURLSession *, NSURLSessionTask *, NSError *);
+static __imp_URLSession_task_didCompleteWithError_ __af_URLSession_task_didCompleteWithError_;
+void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTaskDelegate *self,
+                                                 SEL _cmd,
+                                                 NSURLSession *session,
+                                                 NSURLSessionTask* task,
+                                                 NSError *error) {
+    Class AFURLSessionManagerTaskDelegate = NSClassFromString(@"AFURLSessionManagerTaskDelegate");
+    NSAssert([self isKindOfClass:AFURLSessionManagerTaskDelegate],
+             @"Check Overcoat update for this issue. "
+             @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
+    NSAssert([NSStringFromSelector(_cmd) isEqualToString:@"URLSession:task:didCompleteWithError:"],
+             @"Check Overcoat update for this issue. "
+             @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
+
+    // Associate the task to its response ... to make the URLMatcher able to access request
+    NSURLResponse *response = task.response;
+    NSURLRequest *request = task.currentRequest;
+    if (response && request) {
+        objc_setAssociatedObject(response,
+                                 &OVC_NSURLSessionTask_requestAssociationKey,
+                                 request,
+                                 OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+
+        // Clean up associated object in completion handler
+        ovc_AFURLSessionTaskCompletionHandler completionHandler = self.completionHandler;
+        self.completionHandler = ^(NSURLResponse *response, id responseObject, NSError *error) {
+            if (response) {
+                objc_setAssociatedObject(response,
+                                         &OVC_NSURLSessionTask_requestAssociationKey,
+                                         nil,
+                                         OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+            }
+
+            if (completionHandler) {
+                completionHandler(response, responseObject, error);
+            }
+        };
+    }
+
+    // Call original implementation
+    __af_URLSession_task_didCompleteWithError_(self, _cmd, session, task, error);
+}
+
++ (void)load {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        Class AFURLSessionManagerTaskDelegate = NSClassFromString(@"AFURLSessionManagerTaskDelegate");
+        NSAssert(AFURLSessionManagerTaskDelegate, @"Cannot find class `AFURLSessionManagerTaskDelegate`. "
+                 @"Check Overcoat update for this issue. "
+                 @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
+        SEL originalSelector = @selector(URLSession:task:didCompleteWithError:);
+        NSAssert([AFURLSessionManagerTaskDelegate instancesRespondToSelector:originalSelector],
+                 @"AFURLSessionManagerTaskDelegate doesn't responds to URLSession:task:didCompleteWithError:. "
+                 @"Check Overcoat update for this issue. "
+                 @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
+
+        Method originalMethod = class_getInstanceMethod(AFURLSessionManagerTaskDelegate, originalSelector);
+        IMP swizzleImp = (IMP)__ovc_URLSession_task_didCompleteWithError_;
+        __af_URLSession_task_didCompleteWithError_ =
+            (__imp_URLSession_task_didCompleteWithError_)method_setImplementation(originalMethod, swizzleImp);
+        NSAssert(__af_URLSession_task_didCompleteWithError_,
+                 @"Check Overcoat update for this issue. "
+                 @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
+    });
+}
+
+@end
+
+#pragma mark - Serializer Implementation
 
 @implementation OVCModelResponseSerializer
 
@@ -94,14 +188,16 @@
     }
 
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
+    NSURLRequest *request = response ? objc_getAssociatedObject(response,
+                                                                &OVC_NSURLSessionTask_requestAssociationKey) : nil;
     Class resultClass = Nil;
     Class responseClass = Nil;
 
     if (!serializationError) {
-        resultClass = [self.URLMatcher modelClassForURL:HTTPResponse.URL];
+        resultClass = [self.URLMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
 
         if (self.URLResponseClassMatcher) {
-            responseClass = [self.URLResponseClassMatcher modelClassForURL:HTTPResponse.URL];
+            responseClass = [self.URLResponseClassMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
         }
 
         if (!responseClass) {
