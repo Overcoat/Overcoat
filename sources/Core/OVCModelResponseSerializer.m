@@ -22,7 +22,6 @@
 
 #import "OVCModelResponseSerializer.h"
 #import <Mantle/Mantle.h>
-#import "OVCUtilities.h"
 #import "OVCResponse.h"
 #import "OVCURLMatcher.h"
 #import "NSError+OVCResponse.h"

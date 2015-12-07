@@ -21,7 +21,6 @@
 // THE SOFTWARE.
 
 #import "OVCResponse.h"
-#import "OVCUtilities.h"
 #import "NSDictionary+Overcoat.h"
 
 @interface OVCResponse OVCGenerics(ResultType) ()

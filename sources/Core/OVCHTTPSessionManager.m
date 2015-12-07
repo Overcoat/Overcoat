@@ -27,10 +27,6 @@
 #import "OVCHTTPManager_Internal.h"
 #import "NSError+OVCResponse.h"
 
-@interface OVCHTTPSessionManager ()
-
-@end
-
 @implementation OVCHTTPSessionManager
 
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {

@@ -22,7 +22,6 @@
 
 #import "OVCURLMatcher.h"
 #import <Mantle/Mantle.h>
-#import "OVCUtilities.h"
 
 typedef NS_ENUM(NSInteger, OVCURLMatcherType) {  // The integer value is related to search order
     OVCURLMatcherTypeNone   = -1,
@@ -71,8 +70,6 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 @end
 
 @implementation OVCURLMatcher
-
-#pragma mark - Lifecycle
 
 - (instancetype)init {
     return [self initWithBasePath:nil modelClassesByPath:nil];

@@ -23,8 +23,6 @@
 #import <Foundation/Foundation.h>
 #import <Overcoat/OVCUtilities.h>
 
-@protocol MTLModel;
-
 NS_ASSUME_NONNULL_BEGIN
 
 /**
