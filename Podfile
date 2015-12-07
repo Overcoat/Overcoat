@@ -1,14 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
-inhibit_all_warnings!
 
 def shared_dependencies
   pod 'Overcoat',
     :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
-    :path => 'Overcoat.podspec',
-    :inhibit_warnings => false
+    :path => 'Overcoat.podspec'
   pod 'AFNetworking', '3.0.0-beta.1'  # Specify for beta
+  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
   pod 'OHHTTPStubs'
 end
 

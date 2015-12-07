@@ -57,6 +57,7 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (= 3.0.0-beta.1)
+  - MTLManagedObjectAdapter
   - OHHTTPStubs
   - Overcoat/CoreData (from `Overcoat.podspec`)
   - Overcoat/PromiseKit (from `Overcoat.podspec`)
