@@ -40,8 +40,7 @@
 + (instancetype)responseWithHTTPResponse:(NSHTTPURLResponse *)HTTPResponse
                               JSONObject:(id)JSONObject
                              resultClass:(Class)resultClass
-                                   error:(NSError *__autoreleasing *)error
-{
+                                   error:(NSError *__autoreleasing *)error {
     OVCResponse *response = nil;
     id result = JSONObject;
 

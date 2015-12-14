@@ -65,8 +65,7 @@ void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTa
                                                  NSURLSession *session,
                                                  NSURLSessionTask* task,
                                                  NSError *error) {
-    Class AFURLSessionManagerTaskDelegate = NSClassFromString(@"AFURLSessionManagerTaskDelegate");
-    NSAssert([self isKindOfClass:AFURLSessionManagerTaskDelegate],
+    NSAssert([self isKindOfClass:NSClassFromString(@"AFURLSessionManagerTaskDelegate")],
              @"Check Overcoat update for this issue. "
              @"Or submit one to https://github.com/Overcoat/Overcoat/issues");
     NSAssert([NSStringFromSelector(_cmd) isEqualToString:@"URLSession:task:didCompleteWithError:"],
