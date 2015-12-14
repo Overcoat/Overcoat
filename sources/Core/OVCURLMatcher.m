@@ -61,30 +61,62 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 
 @interface OVCURLMatcher ()
 
-@property (copy, nonatomic) NSString *basePath;
-@property (nonatomic) OVCURLMatcherType type;
-@property (copy, nonatomic) NSString *text;
-@property (nonatomic) Class modelClass;
-@property (strong, nonatomic) NSMutableArray OVCGenerics(OVCURLMatcher *) *children;
+@property (nonatomic, copy) NSString *basePath;
+@property (nonatomic, assign) OVCURLMatcherType type;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic, strong) OVCURLMatcherNode *matcherNode;
+@property (nonatomic, strong) NSMutableArray OVCGenerics(OVCURLMatcher *) *children;
+
+@end
+
+@interface OVCURLMatcherNode ()
+
+@property (nonatomic, strong, readonly) OVCURLMatcherNodeBlock modelClassBlock;
 
 @end
 
 @implementation OVCURLMatcher
 
-- (instancetype)init {
-    return [self initWithBasePath:nil modelClassesByPath:nil];
++ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
+                 modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath {
+    return [[OVCURLMatcher alloc] initWithBasePath:basePath modelClassesByPath:modelClassesByPath];
 }
 
-- (id)initWithBasePath:(NSString *)basePath
-    modelClassesByPath:(NSDictionary OVCGenerics(NSString *, Class) *)modelClassesByPath {
++ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
+                 matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString*,OVCURLMatcherNode*) *)matcherNodes {
+    return [[OVCURLMatcher alloc] initWithBasePath:basePath matcherNodesByPath:matcherNodes];
+}
+
+- (instancetype)init {
+    return [self initWithBasePath:nil matcherNodesByPath:nil];
+}
+
+- (instancetype)initWithBasePath:(NSString *)basePath
+              modelClassesByPath:(NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath {
+    NSMutableDictionary<NSString *, OVCURLMatcherNode *> *matcherNodes = [[NSMutableDictionary alloc]
+                                                                          initWithCapacity:modelClassesByPath.count];
+    [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, id _ModelClass, BOOL *stop) {
+        OVCURLMatcherNode *matcherNode;
+        if ([_ModelClass isKindOfClass:[NSDictionary class]]) {
+            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClasses:_ModelClass];
+        } else {
+            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClass:_ModelClass];
+        }
+        matcherNodes[path] = matcherNode;
+    }];
+    return self = [self initWithBasePath:basePath matcherNodesByPath:matcherNodes];
+}
+
+- (instancetype)initWithBasePath:(NSString *)basePath
+              matcherNodesByPath:(NSDictionary OVCGenerics(NSString *, OVCURLMatcherNode *) *)matcherNodes {
     if (self = [super init]) {
         _type = OVCURLMatcherTypeNone;
         _children = [NSMutableArray array];
 
         _basePath = [basePath copy];
 
-        [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, Class class, BOOL *stop) {
-            [self addModelClass:class forPath:path sortChildren:NO];
+        [matcherNodes enumerateKeysAndObjectsUsingBlock:^(NSString *path, OVCURLMatcherNode *matcherNode, BOOL *stop) {
+            [self addMatcherNode:matcherNode forPath:path sortChildren:NO];
         }];
         [self sortChildren];
     }
@@ -93,14 +125,16 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 
 #pragma mark - Matching
 
-- (Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSURLResponse *)urlResponse {
-    return [self modelClassForURL:urlResponse.URL ?: request.URL];
+- (Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSHTTPURLResponse *)response {
+    return [[self matcherNodeForPath:(response.URL ?: request.URL).path]
+            modelClassForURLRequest:request andURLResponse:response];
 }
 
 - (Class)modelClassForURL:(NSURL *)url {
-    NSParameterAssert(url);
+    return [[self matcherNodeForPath:url.path] modelClassForURLRequest:nil andURLResponse:nil];
+}
 
-    NSString *path = url.path;
+- (OVCURLMatcherNode *)matcherNodeForPath:(NSString *)path {
     if (self.basePath && [path hasPrefix:self.basePath]) {
         path = [path substringFromIndex:self.basePath.length];
     }
@@ -108,7 +142,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     NSArray *tokens = [path componentsSeparatedByString:@"/"];
 
     if (tokens.count == 0) {
-        return self.modelClass;
+        return self.matcherNode;
     }
 
     // Go through tokens
@@ -141,7 +175,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
                 case OVCURLMatcherTypeAny: {  // `**`
                     // `**` means that we shouldn't check further nodes (path components)
                     // so return directly.
-                    return childNode.modelClass;
+                    return childNode.matcherNode;
                 }
                 case OVCURLMatcherTypeNone: {
                     // Do nothing
@@ -157,14 +191,14 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
         }
     }
 
-    return node.modelClass;
+    return node.matcherNode;
 }
 
 #pragma mark - Debugging
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@: %p, type:%@, text:%@, modelClass:%@, children:%@>",
-            self.class, self, @(self.type), self.text, NSStringFromClass(self.modelClass), self.children];
+    return [NSString stringWithFormat:@"<%@: %p, type:%@, text:%@, matcherNode:%@, children:%@>",
+            self.class, self, @(self.type), self.text, self.matcherNode.description, self.children];
 }
 
 - (NSString *)debugDescription {
@@ -196,12 +230,15 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 
 #pragma mark - Setup
 
-- (void)addModelClass:(Class)modelClass forPath:(NSString *)path {
-    [self addModelClass:modelClass forPath:path sortChildren:YES];
+- (void)addModelClass:(Class)ModelClass forPath:(NSString *)path {
+    [self addMatcherNode:[OVCURLMatcherNode matcherNodeWithModelClass:ModelClass] forPath:path sortChildren:YES];
 }
 
-- (void)addModelClass:(Class)modelClass forPath:(NSString *)path sortChildren:(BOOL)sortChildren {
-    NSParameterAssert([modelClass conformsToProtocol:@protocol(MTLModel)]);
+- (void)addMatcherNode:(OVCURLMatcherNode *)matcherNode forPath:(NSString *)path {
+    return [self addMatcherNode:matcherNode forPath:path sortChildren:YES];
+}
+
+- (void)addMatcherNode:(OVCURLMatcherNode *)matcherNode forPath:(NSString *)path sortChildren:(BOOL)sortChildren {
     NSParameterAssert(path);
 
     NSArray *tokens = nil;
@@ -247,7 +284,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 		}
     }
 
-    node.modelClass = modelClass;
+    node.matcherNode = matcherNode;
 
     if (sortChildren) {
         [self sortChildren];
@@ -261,6 +298,53 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     for (OVCURLMatcher *child in self.children) {
         [child sortChildren];
     }
+}
+
+@end
+
+@implementation OVCURLMatcherNode
+
++ (instancetype)matcherNodeWithModelClass:(Class)ModelClass {
+    return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
+        return ModelClass;
+    }];
+}
+
++ (instancetype)matcherNodeWithResponseCode:(NSDictionary OVCGenerics(NSNumber *, Class) *)modelClasses {
+    return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
+        return res ? modelClasses[@(res.statusCode)] : nil;
+    }];
+}
+
++ (instancetype)matcherNodeWithRequestMethod:(NSDictionary OVCGenerics(NSString *, Class) *)modelClasses {
+    return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
+        return req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil;
+    }];
+}
+
++ (instancetype)matcherNodeWithModelClasses:(NSDictionary OVCGenerics(id, Class) *)modelClasses {
+    return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
+        return (req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil) ?: (res ? modelClasses[@(res.statusCode)] : nil);
+    }];
+}
+
++ (instancetype)matcherNodeWithBlock:(Class OVC__NULLABLE(^)(NSURLRequest *OVC__NULLABLE,
+                                                             NSHTTPURLResponse *OVC__NULLABLE))block {
+    return [[OVCURLMatcherNode alloc] initWithBlock:block];
+}
+
+- (instancetype)initWithBlock:(OVCURLMatcherNodeBlock)block {
+    if (self = [super init]) {
+        _modelClassBlock = block;
+    }
+    return self;
+}
+
+- (Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSHTTPURLResponse *)urlResponse {
+    Class ModelClass = self.modelClassBlock(request, urlResponse);
+    NSAssert(!ModelClass || [ModelClass conformsToProtocol:@protocol(MTLModel)],
+             @"%@ doesn't conform to protocol %@", ModelClass, @protocol(MTLModel));
+    return ModelClass;
 }
 
 @end

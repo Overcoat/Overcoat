@@ -25,6 +25,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class OVCURLMatcherNode;
+
 /**
  Helper class to aid in matching URLs to model classes.
  
@@ -33,15 +35,39 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @interface OVCURLMatcher : NSObject
 
++ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
+                 modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath;
++ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
+                 matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString*,OVCURLMatcherNode*) *)matcherNodes;
 - (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
-              modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, Class) *)modelClassesByPath
+              modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath;
+- (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
+              matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, OVCURLMatcherNode *) *)matcherNodes
 NS_DESIGNATED_INITIALIZER;
 
 - (OVC_NULLABLE Class)modelClassForURL:(NSURL *)url;
 - (OVC_NULLABLE Class)modelClassForURLRequest:(OVC_NULLABLE NSURLRequest *)request
-                               andURLResponse:(OVC_NULLABLE NSURLResponse *)urlResponse;
+                               andURLResponse:(OVC_NULLABLE NSHTTPURLResponse *)urlResponse;
 
 - (void)addModelClass:(Class)modelClass forPath:(NSString *)path;
+- (void)addMatcherNode:(OVCURLMatcherNode *)matcherNode forPath:(NSString *)path;
+
+@end
+
+typedef Class OVC__NULLABLE(^OVCURLMatcherNodeBlock)(NSURLRequest *OVC__NULLABLE, NSHTTPURLResponse *OVC__NULLABLE);
+
+@interface OVCURLMatcherNode : NSObject
+
++ (instancetype)matcherNodeWithModelClass:(Class)ModelClass;
++ (instancetype)matcherNodeWithResponseCode:(NSDictionary OVCGenerics(NSNumber *, Class) *)modelClasses;
++ (instancetype)matcherNodeWithRequestMethod:(NSDictionary OVCGenerics(NSString *, Class) *)modelClasses;
++ (instancetype)matcherNodeWithModelClasses:(NSDictionary OVCGenerics(id, Class) *)modelClasses;
++ (instancetype)matcherNodeWithBlock:(OVCURLMatcherNodeBlock)block;
+- (instancetype)initWithBlock:(OVCURLMatcherNodeBlock)block NS_DESIGNATED_INITIALIZER;
+- (instancetype)init NS_UNAVAILABLE;
+
+- (OVC_NULLABLE Class)modelClassForURLRequest:(OVC_NULLABLE NSURLRequest *)request
+                               andURLResponse:(OVC_NULLABLE NSHTTPURLResponse *)urlResponse;
 
 @end
 
