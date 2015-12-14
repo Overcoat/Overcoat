@@ -1197,7 +1197,7 @@
 		FEE173171C0B6A5E00049027 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0710;
+				LastUpgradeCheck = 0720;
 				TargetAttributes = {
 					FE8A2BC51C0C928900B3406D = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -2493,8 +2493,10 @@
 		FEE1731B1C0B6A5E00049027 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};
