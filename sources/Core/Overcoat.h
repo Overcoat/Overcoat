@@ -28,17 +28,3 @@
 #import <Overcoat/NSDictionary+Overcoat.h>
 #import <Overcoat/OVCHTTPManager.h>
 #import <Overcoat/OVCHTTPSessionManager.h>
-
-// Shortcuts for subspec headers
-#if OVERCOAT_SUPPORT_COREDATA
-#import <Overcoat/CoreData+Overcoat.h>
-#endif
-#if OVERCOAT_SUPPORT_SOCIAL
-#import <Overcoat/OVCSocialRequestSerializer.h>
-#endif
-#if OVERCOAT_SUPPORT_PROMISE_KIT
-#import <Overcoat/OvercoatPromiseKit.h>
-#endif
-#if OVERCOAT_SUPPORT_REACTIVE_COCOA
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
-#endif

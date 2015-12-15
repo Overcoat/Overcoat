@@ -326,6 +326,7 @@
 		BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
+		FE6E09F01C20673D001F92E2 /* OvercoatTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OvercoatTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		FE8A2BC61C0C928900B3406D /* OvercoatSocial.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OvercoatSocial.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE8A2BD41C0C92B400B3406D /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Accounts.framework; sourceTree = DEVELOPER_DIR; };
 		FE8A2BD61C0C92B900B3406D /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.1.sdk/System/Library/Frameworks/Social.framework; sourceTree = DEVELOPER_DIR; };
@@ -571,6 +572,8 @@
 		4144F42D6FD56FD407EBBCD1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FEE173A21C0B6B7500049027 /* OS X */,
+				FEE1737F1C0B6AF900049027 /* iOS */,
 				23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */,
 				255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */,
 			);
@@ -592,6 +595,7 @@
 			isa = PBXGroup;
 			children = (
 				FE8A2CDF1C0CA79700B3406D /* Info.plist */,
+				FE6E09F01C20673D001F92E2 /* OvercoatTests-Bridging-Header.h */,
 				FE8A2CE01C0CA79700B3406D /* OVCCoreDataTestModel.h */,
 				FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */,
 				FE8A2CE21C0CA79700B3406D /* OVCCustomEnvelopTestResponse.h */,
@@ -649,10 +653,9 @@
 				FEE1732C1C0B6A9B00049027 /* Sources */,
 				FE8A2D571C0CB3B000B3406D /* App */,
 				FE8A2CDE1C0CA79700B3406D /* Tests */,
-				FEE1737E1C0B6AEF00049027 /* Framework */,
-				FEE173231C0B6A8300049027 /* Products */,
 				5619349767D708A6098B7D60 /* Pods */,
 				4144F42D6FD56FD407EBBCD1 /* Frameworks */,
+				FEE173231C0B6A8300049027 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -762,15 +765,6 @@
 				FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */,
 			);
 			path = Social;
-			sourceTree = "<group>";
-		};
-		FEE1737E1C0B6AEF00049027 /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				FEE1737F1C0B6AF900049027 /* iOS */,
-				FEE173A21C0B6B7500049027 /* OS X */,
-			);
-			name = Framework;
 			sourceTree = "<group>";
 		};
 		FEE1737F1C0B6AF900049027 /* iOS */ = {
@@ -2165,6 +2159,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
 				PRODUCT_NAME = OvercoatTests;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/OvercoatTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvercoatApp.app/Contents/MacOS/OvercoatApp";
 			};
 			name = Debug;
@@ -2209,6 +2205,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
 				PRODUCT_NAME = OvercoatTests;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/OvercoatTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvercoatApp.app/Contents/MacOS/OvercoatApp";
 			};
 			name = Release;
@@ -2259,6 +2256,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
 				PRODUCT_NAME = OvercoatTests;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/OvercoatTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvercoatApp.app/OvercoatApp";
 			};
 			name = Debug;
@@ -2302,6 +2300,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.overcoat.OvercoatTests;
 				PRODUCT_NAME = OvercoatTests;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "tests/OvercoatTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OvercoatApp.app/OvercoatApp";
 				VALIDATE_PRODUCT = YES;
 			};
