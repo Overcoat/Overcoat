@@ -22,7 +22,9 @@
 // THE SOFTWARE.
 
 #import "OVCHTTPSessionManager+ReactiveCocoa.h"
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACSignal.h>
+#import <ReactiveCocoa/RACSubscriber.h>
+#import <ReactiveCocoa/RACDisposable.h>
 
 @implementation OVCHTTPSessionManager (ReactiveCocoa)
 

@@ -6,9 +6,11 @@ def shared_dependencies
   pod 'Overcoat',
     :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
     :path => 'Overcoat.podspec'
-  pod 'AFNetworking', '3.0.0-beta.1'  # Specify for beta
-  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
   pod 'OHHTTPStubs'
+
+  # Version/Integration settings for implicity dependencies
+  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
+  pod 'ReactiveCocoa', '2.5'
 end
 
 target :osx, :exclusive => true do

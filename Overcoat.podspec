@@ -16,8 +16,8 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.dependency 'Mantle', '~> 2.0'
-    ss.dependency 'AFNetworking/Serialization', '3.0.0-beta.1'
-    ss.dependency 'AFNetworking/NSURLSession', '3.0.0-beta.1'
+    ss.dependency 'AFNetworking/Serialization', '~> 3.0'
+    ss.dependency 'AFNetworking/NSURLSession', '~> 3.0'
 
     ss.source_files = 'Sources/Core/*.{h,m}'
     ss.private_header_files = 'Sources/Core/*_Internal.h'
@@ -59,7 +59,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
-    ss.dependency 'ReactiveCocoa', '~> 2.4'
+    ss.dependency 'ReactiveCocoa/Core', '> 2.4'
 
     ss.source_files = 'Sources/ReactiveCocoa/*.{h,m}'
     ss.header_dir = 'OvercoatReactiveCocoa'

@@ -11,7 +11,7 @@
 #import <OHHTTPStubs/OHPathHelpers.h>
 #import <Overcoat/Overcoat.h>
 #import <OvercoatReactiveCocoa/OvercoatReactiveCocoa.h>
-#import <ReactiveCocoa/ReactiveCocoa.h>
+#import <ReactiveCocoa/RACSignal.h>
 
 #import "OVCTestModel.h"
 
