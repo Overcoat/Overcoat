@@ -15,7 +15,7 @@ end
 
 target :osx, :exclusive => true do
   link_with 'OvercoatTests-OSX'
-  platform :osx, '10.9'
+  platform :osx, '10.10'
   shared_dependencies
 end
 
