@@ -41,7 +41,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)GET:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_GET:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `HEAD` request.
@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)HEAD:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_HEAD:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `POST` request.
@@ -61,7 +61,7 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)POST:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_POST:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a multipart `POST` request.
@@ -72,8 +72,8 @@ NS_ASSUME_NONNULL_BEGIN
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)POST:(NSString *)URLString
-          parameters:(OVC_NULLABLE id)parameters
+- (AnyPromise *)pmk_POST:(NSString *)URLString
+              parameters:(OVC_NULLABLE id)parameters
 constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block;
 
 /**
@@ -84,7 +84,7 @@ constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)PUT:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_PUT:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `PATCH` request.
@@ -94,7 +94,7 @@ constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)PATCH:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_PATCH:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 /**
  Enqueues a `DELETE` request.
@@ -104,7 +104,7 @@ constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData
 
  @return A `Promise` that will return a `OVCResponse` object when the request finishes.
  */
-- (AnyPromise *)DELETE:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (AnyPromise *)pmk_DELETE:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
 
 @end
 

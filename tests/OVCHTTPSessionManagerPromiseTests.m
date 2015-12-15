@@ -76,7 +76,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client GET:@"model/42" parameters:nil].then(^(OVCResponse *r) {
+    [self.client pmk_GET:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -101,7 +101,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [self.client GET:@"model/42" parameters:nil].catch(^(NSError *e) {
+    [self.client pmk_GET:@"model/42" parameters:nil].catch(^(NSError *e) {
         error = e;
         [completed fulfill];
     });
@@ -127,7 +127,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client HEAD:@"models" parameters:@{@"foo": @"bar"}].then(^(OVCResponse *r) {
+    [self.client pmk_HEAD:@"models" parameters:@{@"foo": @"bar"}].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -155,7 +155,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"}].then(^(OVCResponse *r) {
+    [self.client pmk_POST:@"models" parameters:@{@"name": @"Iron Man"}].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -180,7 +180,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [self.client POST:@"models" parameters:@{@"name": @"Iron Man"}].catch(^(NSError *e) {
+    [self.client pmk_POST:@"models" parameters:@{@"name": @"Iron Man"}].catch(^(NSError *e) {
         error = e;
         [completed fulfill];
     });
@@ -207,7 +207,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
+    [self.client pmk_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -232,7 +232,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [self.client PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].catch(^(NSError *e) {
+    [self.client pmk_PUT:@"model/42" parameters:@{@"name": @"Golden Avenger"}].catch(^(NSError *e) {
         error = e;
         [completed fulfill];
     });
@@ -259,7 +259,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
+    [self.client pmk_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -284,7 +284,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [self.client PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].catch(^(NSError *e) {
+    [self.client pmk_PATCH:@"model/42" parameters:@{@"name": @"Golden Avenger"}].catch(^(NSError *e) {
         error = e;
         [completed fulfill];
     });
@@ -311,7 +311,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     
-    [self.client DELETE:@"model/42" parameters:nil].then(^(OVCResponse *r) {
+    [self.client pmk_DELETE:@"model/42" parameters:nil].then(^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     });
@@ -336,7 +336,7 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
     
-    [self.client DELETE:@"model/42" parameters:nil].catch(^(NSError *e) {
+    [self.client pmk_DELETE:@"model/42" parameters:nil].catch(^(NSError *e) {
         error = e;
         [completed fulfill];
     });

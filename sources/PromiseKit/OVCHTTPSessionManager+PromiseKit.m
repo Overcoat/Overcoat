@@ -25,7 +25,7 @@
 
 @implementation OVCHTTPSessionManager (PromiseKit)
 
-- (AnyPromise *)GET:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_GET:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self GET:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
@@ -33,7 +33,7 @@
     }];
 }
 
-- (AnyPromise *)HEAD:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_HEAD:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self HEAD:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
@@ -41,7 +41,7 @@
     }];
 }
 
-- (AnyPromise *)POST:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_POST:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self POST:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
@@ -49,8 +49,8 @@
     }];
 }
 
-- (AnyPromise *)POST:(NSString *)URLString
-       parameters:(id)parameters
+- (AnyPromise *)pmk_POST:(NSString *)URLString
+              parameters:(id)parameters
 constructingBodyWithBlock:(void (^)(id<AFMultipartFormData>))block {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self POST:URLString
@@ -62,7 +62,7 @@ constructingBodyWithBlock:block
     }];
 }
 
-- (AnyPromise *)PUT:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_PUT:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self PUT:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
@@ -70,7 +70,7 @@ constructingBodyWithBlock:block
     }];
 }
 
-- (AnyPromise *)PATCH:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_PATCH:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self PATCH:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
@@ -78,7 +78,7 @@ constructingBodyWithBlock:block
     }];
 }
 
-- (AnyPromise *)DELETE:(NSString *)URLString parameters:(id)parameters {
+- (AnyPromise *)pmk_DELETE:(NSString *)URLString parameters:(id)parameters {
     return [AnyPromise promiseWithAdapterBlock:^(PMKAdapter OVC__NONNULL adapter) {
         [self DELETE:URLString parameters:parameters completion:^(id response, NSError *error) {
             adapter(response, error);
