@@ -52,7 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, OVC_NULLABLE) Class errorModelClass;
 
-@property(nonatomic, strong) AFJSONResponseSerializer *jsonSerializer;
+@property(nonatomic, strong) AFJSONResponseSerializer *jsonSerializer;  // TODO: Doc for why don't inherite it (PR104)
 
 /**
  Creates and returns model serializer.

@@ -218,16 +218,30 @@ void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTa
     return responseObject;
 }
 
+#pragma mark - JSON Serializer
+
 - (NSSet *)acceptableContentTypes {
     return self.jsonSerializer.acceptableContentTypes;
+}
+
+- (void)setAcceptableContentTypes:(NSSet<NSString *> *)acceptableContentTypes {
+    self.jsonSerializer.acceptableContentTypes = acceptableContentTypes;
 }
 
 - (NSIndexSet *)acceptableStatusCodes {
     return self.jsonSerializer.acceptableStatusCodes;
 }
 
+- (void)setAcceptableStatusCodes:(NSIndexSet *)acceptableStatusCodes {
+    self.jsonSerializer.acceptableStatusCodes = acceptableStatusCodes;
+}
+
 - (NSStringEncoding)stringEncoding {
     return self.jsonSerializer.stringEncoding;
+}
+
+- (void)setStringEncoding:(NSStringEncoding)stringEncoding {
+    self.jsonSerializer.stringEncoding = stringEncoding;
 }
 
 @end
