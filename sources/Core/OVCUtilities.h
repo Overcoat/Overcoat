@@ -85,3 +85,11 @@
         #define NS_DESIGNATED_INITIALIZER
     #endif
 #endif
+
+#pragma mark - Deprecation
+
+#define OVC_DEPRECATED(...) __attribute__((deprecated(__VA_ARGS__)))
+
+#pragma mark - Helpers
+
+#define OVC_IS_CLASS(obj) (class_isMetaClass(object_getClass((obj))) != 0)

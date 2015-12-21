@@ -27,15 +27,6 @@
 #import "NSError+OVCResponse.h"
 #import <objc/runtime.h>
 
-@interface OVCModelResponseSerializer ()
-
-@property (strong, nonatomic) OVCURLMatcher *URLMatcher;
-@property (strong, nonatomic) OVCURLMatcher *URLResponseClassMatcher;
-@property (nonatomic) Class responseClass;
-@property (nonatomic) Class errorModelClass;
-
-@end
-
 #pragma mark - Patch AFNetworking
 
 /*
@@ -130,40 +121,49 @@ void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTa
 
 @implementation OVCModelResponseSerializer
 
-+ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
+                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+               errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher {
+    return [[self alloc] initWithURLMatcher:modelClassURLMatcher
+                    responseClassURLMatcher:responseClassURLMatcher
+                  errorModelClassURLMatcher:errorModelClassURLMatcher];
+}
+
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
                            responseClass:(Class)responseClass
                          errorModelClass:(Class)errorModelClass {
-    return [[self alloc] initWithURLMatcher:URLMatcher
-                    responseClassURLMatcher:URLResponseClassMatcher
-                              responseClass:responseClass
-                            errorModelClass:errorModelClass];
+    OVCURLMatcher *responseClassURLMatcher = nil;
+    if (responseClass) {
+        responseClassURLMatcher = [OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:@{
+            @"**": responseClass,
+        }];
+    }
+    OVCURLMatcher *errorModelClassURLMatcher = nil;
+    if (errorModelClass) {
+        errorModelClassURLMatcher = [OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:@{
+            @"**": errorModelClass,
+        }];
+    }
+    return [[self alloc] initWithURLMatcher:modelClassURLMatcher
+                    responseClassURLMatcher:responseClassURLMatcher
+                  errorModelClassURLMatcher:errorModelClassURLMatcher];
 }
 
 - (instancetype)init {
-    return [self initWithURLMatcher:[[OVCURLMatcher alloc] initWithBasePath:nil modelClassesByPath:nil]
+    return [self initWithURLMatcher:[OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:nil]
             responseClassURLMatcher:nil
-                      responseClass:[OVCResponse class]
-                    errorModelClass:nil];
+          errorModelClassURLMatcher:nil];
 }
 
-- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
-           responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
-                     responseClass:(Class)responseClass
-                   errorModelClass:(Class)errorModelClass {
-    NSParameterAssert([responseClass isSubclassOfClass:[OVCResponse class]]);
-
-    if (errorModelClass != Nil) {
-        NSParameterAssert([errorModelClass conformsToProtocol:@protocol(MTLModel)]);
-    }
-
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
+           responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+         errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher {
     if (self = [super init]) {
-        self.jsonSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:0];
+        _jsonSerializer = [AFJSONResponseSerializer serializerWithReadingOptions:0];
 
-        self.URLMatcher = URLMatcher;
-        self.URLResponseClassMatcher = URLResponseClassMatcher;
-        self.responseClass = responseClass;
-        self.errorModelClass = errorModelClass;
+        _modelClassURLMatcher = modelClassURLMatcher;
+        _responseClassURLMatcher = responseClassURLMatcher;
+        _errorModelClassURLMatcher = errorModelClassURLMatcher;
     }
     return self;
 }
@@ -189,22 +189,20 @@ void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTa
     NSHTTPURLResponse *HTTPResponse = (NSHTTPURLResponse *)response;
     NSURLRequest *request = response ? objc_getAssociatedObject(response,
                                                                 &OVC_NSURLSessionTask_requestAssociationKey) : nil;
-    Class resultClass = Nil;
-    Class responseClass = Nil;
 
+    Class resultClass = nil;
     if (!serializationError) {
-        resultClass = [self.URLMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
-
-        if (self.URLResponseClassMatcher) {
-            responseClass = [self.URLResponseClassMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
-        }
-
-        if (!responseClass) {
-            responseClass = self.responseClass;
-        }
+        resultClass = [self.modelClassURLMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
     } else {
-        resultClass = self.errorModelClass;
-        responseClass = self.responseClass;
+        resultClass = [self.errorModelClassURLMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
+    }
+
+    Class responseClass = nil;
+    if (self.responseClassURLMatcher) {
+        responseClass = [self.responseClassURLMatcher modelClassForURLRequest:request andURLResponse:HTTPResponse];
+    }
+    if (!responseClass) {
+        responseClass = [OVCResponse class];
     }
 
     OVCResponse *responseObject = [responseClass responseWithHTTPResponse:HTTPResponse
@@ -242,6 +240,20 @@ void __ovc_URLSession_task_didCompleteWithError_(ovc_dummy_AFURLSessionManagerTa
 
 - (void)setStringEncoding:(NSStringEncoding)stringEncoding {
     self.jsonSerializer.stringEncoding = stringEncoding;
+}
+
+- (BOOL)validateResponse:(NSHTTPURLResponse *)response
+                    data:(NSData *)data
+                   error:(NSError *OVC__NULLABLE __autoreleasing *OVC__NULLABLE)error {
+    return [self.jsonSerializer validateResponse:response data:data error:error];
+}
+
+@end
+
+@implementation OVCModelResponseSerializer (Deprecated)
+
+- (OVCURLMatcher *)URLMatcher {
+    return self.modelClassURLMatcher;
 }
 
 @end

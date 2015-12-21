@@ -29,11 +29,9 @@
         @"paginated": [OVCAlternativeModel class]
     };
     
-    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:nil
-                                                  modelClassesByPath:modelClassesByPath];
+    OVCURLMatcher *matcher = [OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:modelClassesByPath];
 
     self.serializer = [OVCModelResponseSerializer serializerWithURLMatcher:matcher
-                                                   responseClassURLMatcher:nil
                                                              responseClass:[OVCResponse class]
                                                            errorModelClass:[OVCErrorModel class]];
 }

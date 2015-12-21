@@ -21,18 +21,25 @@
 // THE SOFTWARE.
 
 #import "OVCManagedHTTPSessionManager.h"
-#import "OVCManagedModelResponseSerializer_Internal.h"
-#import "OVCManagedHTTPManager_Internal.h"
+#import "OVCManagedModelResponseSerializer.h"
+#import "OVCURLMatcher.h"
 #import <CoreData/CoreData.h>
 
-@interface OVCManagedHTTPSessionManager () <OVCManagedHTTPManager_Internal>
+@interface OVCManagedHTTPSessionManager ()
+
+/**
+ The managed object context at background used to save results
+ */
+@property (strong, nonatomic, readonly, OVC_NULLABLE) NSManagedObjectContext *backgroundContext;
+
+/**
+ NSNotification Observer of the background context
+ */
+@property (strong, nonatomic, OVC_NULLABLE) id contextObserver;
 
 @end
 
 @implementation OVCManagedHTTPSessionManager
-
-@synthesize managedObjectContext = _managedObjectContext, backgroundContext = _backgroundContext;
-@synthesize contextObserver = _contextObserver;
 
 - (instancetype)initWithBaseURL:(NSURL *)url
            sessionConfiguration:(NSURLSessionConfiguration *)configuration {
@@ -44,8 +51,36 @@
            sessionConfiguration:(NSURLSessionConfiguration *)configuration {
     if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
         _managedObjectContext = context;
-        OVCManagedHTTPManagerSetupBackgroundContext(self);
-        self.responseSerializer = OVCManagedHTTPManagerCreateManagedModelResponseSerializer(self);
+        if (_managedObjectContext.concurrencyType == NSPrivateQueueConcurrencyType) {
+            _backgroundContext = _managedObjectContext;
+        } else if (_managedObjectContext) {
+            _backgroundContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
+            _backgroundContext.persistentStoreCoordinator = _managedObjectContext.persistentStoreCoordinator;
+
+            NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+            NSManagedObjectContext *context = _managedObjectContext;
+
+            _contextObserver = [notificationCenter
+                                addObserverForName:NSManagedObjectContextDidSaveNotification
+                                object:_backgroundContext
+                                queue:nil
+                                usingBlock:^(NSNotification *note) {
+                                    [context performBlock:^{
+                                        [context mergeChangesFromContextDidSaveNotification:note];
+                                    }];
+                                }];
+        }
+
+        // Setup response serializer
+        self.responseSerializer =
+        [OVCManagedModelResponseSerializer
+         serializerWithURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                  modelClassesByPath:[[self class] modelClassesByResourcePath]]
+         responseClassURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                 modelClassesByPath:[[self class] responseClassesByResourcePath]]
+         errorModelClassURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                   modelClassesByPath:[[self class] errorModelClassesByResourcePath]]
+         managedObjectContext:self.managedObjectContext];
     }
     return self;
 }

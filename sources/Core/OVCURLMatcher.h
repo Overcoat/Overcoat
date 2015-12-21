@@ -37,10 +37,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
                  modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath;
-+ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
-                 matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString*,OVCURLMatcherNode*) *)matcherNodes;
 - (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
               modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath;
+
++ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
+                 matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, OVCURLMatcherNode *) *)nodes;
 - (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
               matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, OVCURLMatcherNode *) *)matcherNodes
 NS_DESIGNATED_INITIALIZER;

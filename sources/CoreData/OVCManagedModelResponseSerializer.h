@@ -35,16 +35,25 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  The managed object context used to insert model objects.
  */
-@property (strong, nonatomic, readonly, OVC_NULLABLE) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic, OVC_NULLABLE) NSManagedObjectContext *managedObjectContext;
 
 /**
  Creates and returns model serializer.
  */
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
-                    managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)managedObjectContext
-                           responseClass:(Class)responseClass
-                         errorModelClass:(OVC_NULLABLE Class)errorModelClass;
+                           responseClass:(OVC_NULLABLE Class)responseClass
+                         errorModelClass:(OVC_NULLABLE Class)errorModelClass
+                    managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)managedObjectContext;
+
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
+                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+               errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher
+                    managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)managedObjectContext;
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
+           responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+         errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher
+              managedObjectContext:(OVC_NULLABLE NSManagedObjectContext *)context NS_DESIGNATED_INITIALIZER;
 
 @end
 

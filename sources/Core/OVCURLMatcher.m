@@ -22,6 +22,7 @@
 
 #import "OVCURLMatcher.h"
 #import <Mantle/Mantle.h>
+#import <objc/runtime.h>
 
 typedef NS_ENUM(NSInteger, OVCURLMatcherType) {  // The integer value is related to search order
     OVCURLMatcherTypeNone   = -1,
@@ -78,33 +79,45 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 @implementation OVCURLMatcher
 
 + (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
-                 modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath {
-    return [[OVCURLMatcher alloc] initWithBasePath:basePath modelClassesByPath:modelClassesByPath];
+                 modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *,id) *)modelClassesByPath {
+    return [[self alloc] initWithBasePath:basePath modelClassesByPath:modelClassesByPath];
 }
 
-+ (instancetype)matcherWithBasePath:(OVC_NULLABLE NSString *)basePath
-                 matcherNodesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString*,OVCURLMatcherNode*) *)matcherNodes {
-    return [[OVCURLMatcher alloc] initWithBasePath:basePath matcherNodesByPath:matcherNodes];
+- (instancetype)initWithBasePath:(OVC_NULLABLE NSString *)basePath
+              modelClassesByPath:(OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath {
+    NSMutableDictionary<NSString *, OVCURLMatcherNode *> *matcherNodes = [[NSMutableDictionary alloc]
+                                                                          initWithCapacity:modelClassesByPath.count];
+    [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, id _ModelClass, BOOL *stop) {
+        OVCURLMatcherNode *matcherNode;
+        if ([_ModelClass isKindOfClass:[OVCURLMatcherNode class]]) {
+            matcherNode = _ModelClass;
+        } else if (OVC_IS_CLASS(_ModelClass)) {
+            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClass:_ModelClass];
+        } else if ([_ModelClass isKindOfClass:[NSDictionary class]]) {
+            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClasses:_ModelClass];
+        } else if ([_ModelClass isKindOfClass:[NSString class]]) {
+            Class __ModelClass = NSClassFromString(_ModelClass);
+            if (__ModelClass) {
+                matcherNode = [OVCURLMatcherNode matcherNodeWithModelClass:__ModelClass];
+            }
+        }
+        if (matcherNode) {
+            matcherNodes[path] = matcherNode;
+        } else {
+            [NSException raise:NSInternalInconsistencyException
+                        format:@"Got node with unknown type: %@", matcherNode];
+        }
+    }];
+    return self = [self initWithBasePath:basePath matcherNodesByPath:matcherNodes];
 }
 
 - (instancetype)init {
     return [self initWithBasePath:nil matcherNodesByPath:nil];
 }
 
-- (instancetype)initWithBasePath:(NSString *)basePath
-              modelClassesByPath:(NSDictionary OVCGenerics(NSString *, id) *)modelClassesByPath {
-    NSMutableDictionary<NSString *, OVCURLMatcherNode *> *matcherNodes = [[NSMutableDictionary alloc]
-                                                                          initWithCapacity:modelClassesByPath.count];
-    [modelClassesByPath enumerateKeysAndObjectsUsingBlock:^(NSString *path, id _ModelClass, BOOL *stop) {
-        OVCURLMatcherNode *matcherNode;
-        if ([_ModelClass isKindOfClass:[NSDictionary class]]) {
-            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClasses:_ModelClass];
-        } else {
-            matcherNode = [OVCURLMatcherNode matcherNodeWithModelClass:_ModelClass];
-        }
-        matcherNodes[path] = matcherNode;
-    }];
-    return self = [self initWithBasePath:basePath matcherNodesByPath:matcherNodes];
++ (instancetype)matcherWithBasePath:(NSString *)basePath
+                 matcherNodesByPath:(NSDictionary OVCGenerics(NSString *,OVCURLMatcherNode *) *)matcherNodes {
+    return [[self alloc] initWithBasePath:basePath matcherNodesByPath:matcherNodes];
 }
 
 - (instancetype)initWithBasePath:(NSString *)basePath
@@ -305,31 +318,46 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
 @implementation OVCURLMatcherNode
 
 + (instancetype)matcherNodeWithModelClass:(Class)ModelClass {
+    NSParameterAssert([ModelClass conformsToProtocol:@protocol(MTLModel)]);
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
         return ModelClass;
     }];
 }
 
 + (instancetype)matcherNodeWithResponseCode:(NSDictionary OVCGenerics(NSNumber *, Class) *)modelClasses {
+#if DEBUG
+    [modelClasses enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, Class ModelClass, BOOL * _Nonnull stop) {
+        NSParameterAssert([ModelClass conformsToProtocol:@protocol(MTLModel)]);
+    }];
+#endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
         return res ? modelClasses[@(res.statusCode)] : nil;
     }];
 }
 
 + (instancetype)matcherNodeWithRequestMethod:(NSDictionary OVCGenerics(NSString *, Class) *)modelClasses {
+#if DEBUG
+    [modelClasses enumerateKeysAndObjectsUsingBlock:^(NSString *key, Class ModelClass, BOOL * _Nonnull stop) {
+        NSParameterAssert([ModelClass conformsToProtocol:@protocol(MTLModel)]);
+    }];
+#endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
         return req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil;
     }];
 }
 
 + (instancetype)matcherNodeWithModelClasses:(NSDictionary OVCGenerics(id, Class) *)modelClasses {
+#if DEBUG
+    [modelClasses enumerateKeysAndObjectsUsingBlock:^(id key, Class ModelClass, BOOL * _Nonnull stop) {
+        NSParameterAssert([ModelClass conformsToProtocol:@protocol(MTLModel)]);
+    }];
+#endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
         return (req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil) ?: (res ? modelClasses[@(res.statusCode)] : nil);
     }];
 }
 
-+ (instancetype)matcherNodeWithBlock:(Class OVC__NULLABLE(^)(NSURLRequest *OVC__NULLABLE,
-                                                             NSHTTPURLResponse *OVC__NULLABLE))block {
++ (instancetype)matcherNodeWithBlock:(OVCURLMatcherNodeBlock)block {
     return [[OVCURLMatcherNode alloc] initWithBlock:block];
 }
 
@@ -340,8 +368,8 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     return self;
 }
 
-- (Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSHTTPURLResponse *)urlResponse {
-    Class ModelClass = self.modelClassBlock(request, urlResponse);
+- (OVC_NULLABLE Class)modelClassForURLRequest:(NSURLRequest *)request andURLResponse:(NSHTTPURLResponse *)urlResponse {
+    Class OVC__NULLABLE ModelClass = self.modelClassBlock(request, urlResponse);
     NSAssert(!ModelClass || [ModelClass conformsToProtocol:@protocol(MTLModel)],
              @"%@ doesn't conform to protocol %@", ModelClass, @protocol(MTLModel));
     return ModelClass;

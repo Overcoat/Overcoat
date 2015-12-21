@@ -23,8 +23,8 @@
 
 @implementation PromiseSessionManager
 
-+ (Class)errorModelClass {
-    return [OVCErrorModel class];
++ (NSDictionary *)errorModelClassesByResourcePath {
+    return @{@"**": [OVCErrorModel class]};
 }
 
 + (NSDictionary *)modelClassesByResourcePath {

@@ -14,6 +14,7 @@
 @interface OVCModelResponseSerializerCoreDataTests : XCTestCase
 
 @property (strong, nonatomic) OVCModelResponseSerializer *serializer;
+@property (strong, nonatomic) NSManagedObjectContext *context;
 
 @end
 
@@ -31,41 +32,32 @@
     OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:nil
                                                   modelClassesByPath:modelClassesByPath];
 
+    // Setup the Core Data stack
+    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
+    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
+    OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
+
+    self.context = [[NSManagedObjectContext alloc]
+                    initWithConcurrencyType:NSMainQueueConcurrencyType];
+    self.context.persistentStoreCoordinator = store.persistentStoreCoordinator;
+
+    // Setup the serializer
+
     self.serializer = [OVCManagedModelResponseSerializer serializerWithURLMatcher:matcher
-                                                          responseClassURLMatcher:nil
-                                                             managedObjectContext:nil
                                                                     responseClass:[OVCResponse class]
-                                                                  errorModelClass:[OVCErrorModel class]];
+                                                                  errorModelClass:[OVCErrorModel class]
+                                                             managedObjectContext:self.context];
 }
 
 - (void)tearDown {
     self.serializer = nil;
+    self.context = nil;
 
     [super tearDown];
 }
 
 - (void)testManagedObjectModelSerialization {
-    // Setup the Core Data stack
-
-    NSBundle *bundle = [NSBundle bundleForClass:[self class]];
-    NSManagedObjectModel *model = [NSManagedObjectModel mergedModelFromBundles:@[bundle]];
-    OVCManagedStore *store = [OVCManagedStore managedStoreWithModel:model];
-
-    NSManagedObjectContext *context = [[NSManagedObjectContext alloc]
-                                       initWithConcurrencyType:NSMainQueueConcurrencyType];
-    context.persistentStoreCoordinator = store.persistentStoreCoordinator;
-
-    // Setup the serializer
-
-    OVCURLMatcher *matcher = self.serializer.URLMatcher;
-    self.serializer = [OVCManagedModelResponseSerializer serializerWithURLMatcher:matcher
-                                                          responseClassURLMatcher:nil
-                                                             managedObjectContext:context
-                                                                    responseClass:[OVCResponse class]
-                                                                  errorModelClass:[OVCErrorModel class]];
-
     // Serialize successful response
-
     NSData *data = [NSJSONSerialization dataWithJSONObject:@{
                                                              @"offset": @0,
                                                              @"limit": @100,
@@ -92,7 +84,7 @@
     XCTAssertTrue([response isKindOfClass:[OVCResponse class]], @"should return a OVCResponse instance");
 
     NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"TestModel"];
-    NSArray *objects = [context executeFetchRequest:fetchRequest error:nil];
+    NSArray *objects = [self.context executeFetchRequest:fetchRequest error:nil];
 
     XCTAssertEqual(2U, objects.count, @"should return two objects");
 
@@ -100,7 +92,7 @@
 
     id observer = [[NSNotificationCenter defaultCenter]
                    addObserverForName:NSManagedObjectContextObjectsDidChangeNotification
-                   object:context
+                   object:self.context
                    queue:nil
                    usingBlock:^(NSNotification *note) {
                        XCTFail(@"should ignore error responses");

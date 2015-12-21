@@ -26,5 +26,4 @@
 #import <Overcoat/OVCModelResponseSerializer.h>
 #import <Overcoat/NSError+OVCResponse.h>
 #import <Overcoat/NSDictionary+Overcoat.h>
-#import <Overcoat/OVCHTTPManager.h>
 #import <Overcoat/OVCHTTPSessionManager.h>

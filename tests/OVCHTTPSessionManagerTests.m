@@ -21,8 +21,8 @@
 
 @implementation TestSessionManager
 
-+ (Class)errorModelClass {
-    return [OVCErrorModel class];
++ (NSDictionary *)errorModelClassesByResourcePath {
+    return @{@"**": [OVCErrorModel class]};
 }
 
 + (NSDictionary *)modelClassesByResourcePath {
@@ -58,14 +58,6 @@
     [super tearDown];
 }
 
-- (void)testResponseClass {
-    XCTAssertEqualObjects([OVCHTTPSessionManager responseClass], [OVCResponse class], @"should return OVCResponse");
-}
-
-- (void)testErrorResultClass {
-    XCTAssertNil([OVCHTTPSessionManager errorModelClass], @"should be Nil");
-}
-
 - (void)testModelClassesByResourcePathMustBeOverridenBySubclass {
     XCTAssertThrows([OVCHTTPSessionManager modelClassesByResourcePath], @"should throw an exception");
 }
@@ -96,6 +88,7 @@
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNil(error, @"should not return an error");
+    XCTAssertTrue([response isKindOfClass:[OVCResponse class]]);
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"GET", request.HTTPMethod, @"should send a GET request");

@@ -20,7 +20,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "OVCManagedModelResponseSerializer_Internal.h"
+#import "OVCManagedModelResponseSerializer.h"
+#import "OVCURLMatcher.h"
 #import "OVCResponse.h"
 #import <CoreData/CoreData.h>
 #import <MTLManagedObjectAdapter/MTLManagedObjectAdapter.h>
@@ -33,16 +34,56 @@
 @implementation OVCManagedModelResponseSerializer
 
 + (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVCURLMatcher *)URLResponseClassMatcher
-                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext
+                 responseClassURLMatcher:(OVCURLMatcher *)responseClassURLMatcher
+               errorModelClassURLMatcher:(OVCURLMatcher *)errorModelClassURLMatcher
+                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    return [[self alloc] initWithURLMatcher:URLMatcher
+                    responseClassURLMatcher:responseClassURLMatcher
+                  errorModelClassURLMatcher:errorModelClassURLMatcher
+                       managedObjectContext:managedObjectContext];
+}
+
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
                            responseClass:(Class)responseClass
-                         errorModelClass:(Class)errorModelClass {
-    OVCManagedModelResponseSerializer *serializer = [self serializerWithURLMatcher:URLMatcher
-                                                           responseClassURLMatcher:URLResponseClassMatcher
-                                                                     responseClass:responseClass
-                                                                   errorModelClass:errorModelClass];
-    serializer.managedObjectContext = managedObjectContext;
-    return serializer;
+                         errorModelClass:(Class)errorModelClass
+                    managedObjectContext:(NSManagedObjectContext *)managedObjectContext {
+    OVCURLMatcher *responseClassURLMatcher = nil;
+    if (responseClass) {
+        responseClassURLMatcher = [OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:@{
+            @"**": responseClass,
+        }];
+    }
+    OVCURLMatcher *errorModelClassURLMatcher = nil;
+    if (errorModelClass) {
+        errorModelClassURLMatcher = [OVCURLMatcher matcherWithBasePath:nil modelClassesByPath:@{
+            @"**": errorModelClass,
+        }];
+    }
+    return [self serializerWithURLMatcher:URLMatcher
+                  responseClassURLMatcher:responseClassURLMatcher
+                errorModelClassURLMatcher:errorModelClassURLMatcher
+                     managedObjectContext:managedObjectContext];
+}
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
+           responseClassURLMatcher:(OVCURLMatcher *)responseClassURLMatcher
+         errorModelClassURLMatcher:(OVCURLMatcher *)errorModelClassURLMatcher {
+    return [self initWithURLMatcher:URLMatcher
+            responseClassURLMatcher:responseClassURLMatcher
+          errorModelClassURLMatcher:errorModelClassURLMatcher
+               managedObjectContext:nil];
+}
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
+           responseClassURLMatcher:(OVCURLMatcher *)responseClassURLMatcher
+         errorModelClassURLMatcher:(OVCURLMatcher *)errorModelClassURLMatcher
+              managedObjectContext:(NSManagedObjectContext *)context {
+    if (self = [super initWithURLMatcher:URLMatcher
+                 responseClassURLMatcher:responseClassURLMatcher
+               errorModelClassURLMatcher:errorModelClassURLMatcher]) {
+        _managedObjectContext = context;
+    }
+    return self;
 }
 
 #pragma mark - AFURLRequestSerialization

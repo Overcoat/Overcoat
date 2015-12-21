@@ -31,21 +31,20 @@
 
 /* Begin PBXBuildFile section */
 		39DB74315F3478AFD9E7DB02 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */; };
-		624E93D682948685DD8C69D7 /* Pods_osx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */; };
+		9B65F366B2B1433F03AA71D7 /* Pods_osx_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B60FF3C879197811B01D3D9D /* Pods_osx_test.framework */; };
+		B92D858BB5D62B4C471B3BFC /* Pods_osx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */; };
+		E092C826244B28FFF396CE60 /* Pods_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */; };
+		E63FE599BE1524C48D203946 /* Pods_ios_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45FAF3806B767186851C02B8 /* Pods_ios_test.framework */; };
 		FE8A2BD11C0C92A500B3406D /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173561C0B6A9B00049027 /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2BD21C0C92A500B3406D /* OvercoatSocial.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173E11C0C8EDD00049027 /* OvercoatSocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2BD31C0C92AA00B3406D /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173571C0B6A9B00049027 /* OVCSocialRequestSerializer.m */; };
 		FE8A2BD51C0C92B400B3406D /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2BD41C0C92B400B3406D /* Accounts.framework */; };
 		FE8A2BD71C0C92B900B3406D /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2BD61C0C92B900B3406D /* Social.framework */; };
 		FE8A2BD81C0C92C500B3406D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
-		FE8A2C4A1C0C93BE00B3406D /* OVCManagedHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE8A2C4B1C0C93BE00B3406D /* OVCManagedHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */; };
-		FE8A2C4C1C0C93BE00B3406D /* OVCManagedHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C4D1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C4E1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */; };
 		FE8A2C4F1C0C93BE00B3406D /* OVCManagedModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C501C0C93BE00B3406D /* OVCManagedModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */; };
-		FE8A2C511C0C93BE00B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FE8A2C521C0C93BE00B3406D /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C531C0C93BE00B3406D /* OVCManagedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C541C0C93BE00B3406D /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */; };
@@ -59,14 +58,10 @@
 		FE8A2C6E1C0C94E000B3406D /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE173801C0B6B0900049027 /* AFNetworking.framework */; };
 		FE8A2C701C0C94E500B3406D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE8A2C6F1C0C94E500B3406D /* CoreData.framework */; };
 		FE8A2C751C0C952500B3406D /* OvercoatCoreData.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE8A2C761C0C952500B3406D /* OVCManagedHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE8A2C771C0C952500B3406D /* OVCManagedHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */; };
-		FE8A2C781C0C952500B3406D /* OVCManagedHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C791C0C952500B3406D /* OVCManagedHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C7A1C0C952500B3406D /* OVCManagedHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */; };
 		FE8A2C7B1C0C952500B3406D /* OVCManagedModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C7C1C0C952500B3406D /* OVCManagedModelResponseSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */; };
-		FE8A2C7D1C0C952500B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FE8A2C7E1C0C952500B3406D /* OVCManagedObjectSerializingContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C7F1C0C952500B3406D /* OVCManagedStore.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE8A2C801C0C952500B3406D /* OVCManagedStore.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */; };
@@ -120,9 +115,6 @@
 		FEE173591C0B6A9B00049027 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */; };
 		FEE1735A1C0B6A9B00049027 /* NSError+OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEE1735B1C0B6A9B00049027 /* NSError+OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */; };
-		FEE1735C1C0B6A9B00049027 /* OVCHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FEE1735D1C0B6A9B00049027 /* OVCHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */; };
-		FEE1735E1C0B6A9B00049027 /* OVCHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FEE1735F1C0B6A9B00049027 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEE173601C0B6A9B00049027 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */; };
 		FEE173611C0B6A9B00049027 /* OVCModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -137,9 +129,6 @@
 		FEE173921C0B6B6600049027 /* NSDictionary+Overcoat.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */; };
 		FEE173931C0B6B6600049027 /* NSError+OVCResponse.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEE173941C0B6B6600049027 /* NSError+OVCResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */; };
-		FEE173951C0B6B6600049027 /* OVCHTTPManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FEE173961C0B6B6600049027 /* OVCHTTPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */; };
-		FEE173971C0B6B6600049027 /* OVCHTTPManager_Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		FEE173981C0B6B6600049027 /* OVCHTTPSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FEE173991C0B6B6600049027 /* OVCHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */; };
 		FEE1739A1C0B6B6600049027 /* OVCModelResponseSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -323,6 +312,8 @@
 		119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.debug.xcconfig"; sourceTree = "<group>"; };
 		23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_osx.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		45FAF3806B767186851C02B8 /* Pods_ios_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ios_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60FF3C879197811B01D3D9D /* Pods_osx_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_osx_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-osx.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx/Pods-osx.release.xcconfig"; sourceTree = "<group>"; };
 		D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios/Pods-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -371,14 +362,15 @@
 		FE8A2D801C0CB57000B3406D /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		FE8A2D811C0CB57000B3406D /* LaunchScreen-iOS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "LaunchScreen-iOS.storyboard"; sourceTree = "<group>"; };
 		FE8A2D821C0CB57000B3406D /* Main-iOS.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Main-iOS.storyboard"; sourceTree = "<group>"; };
+		FEBABAF11C26EE450022C178 /* Pods-ios-test.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-ios-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ios-test/Pods-ios-test.debug.xcconfig"; sourceTree = "<group>"; };
+		FEBABAF21C26EE450022C178 /* Pods-ios-test.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-ios-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-ios-test/Pods-ios-test.release.xcconfig"; sourceTree = "<group>"; };
+		FEBABAF31C26EE4C0022C178 /* Pods-osx-test.debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-osx-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-osx-test/Pods-osx-test.debug.xcconfig"; sourceTree = "<group>"; };
+		FEBABAF41C26EE4C0022C178 /* Pods-osx-test.release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = "Pods-osx-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-osx-test/Pods-osx-test.release.xcconfig"; sourceTree = "<group>"; };
 		FEE173221C0B6A8300049027 /* Overcoat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Overcoat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Overcoat.h"; sourceTree = "<group>"; };
 		FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Overcoat.m"; sourceTree = "<group>"; };
 		FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSError+OVCResponse.h"; sourceTree = "<group>"; };
 		FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSError+OVCResponse.m"; sourceTree = "<group>"; };
-		FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager.h; sourceTree = "<group>"; };
-		FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPManager.m; sourceTree = "<group>"; };
-		FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPManager_Internal.h; sourceTree = "<group>"; };
 		FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCHTTPSessionManager.h; sourceTree = "<group>"; };
 		FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCHTTPSessionManager.m; sourceTree = "<group>"; };
 		FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCModelResponseSerializer.h; sourceTree = "<group>"; };
@@ -390,14 +382,10 @@
 		FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCUtilities.h; sourceTree = "<group>"; };
 		FEE1733E1C0B6A9B00049027 /* Overcoat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Overcoat.h; sourceTree = "<group>"; };
 		FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OvercoatCoreData.h; sourceTree = "<group>"; };
-		FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager.h; sourceTree = "<group>"; };
-		FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPManager.m; sourceTree = "<group>"; };
-		FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPManager_Internal.h; sourceTree = "<group>"; };
 		FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedHTTPSessionManager.h; sourceTree = "<group>"; };
 		FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedHTTPSessionManager.m; sourceTree = "<group>"; };
 		FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer.h; sourceTree = "<group>"; };
 		FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedModelResponseSerializer.m; sourceTree = "<group>"; };
-		FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedModelResponseSerializer_Internal.h; sourceTree = "<group>"; };
 		FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedObjectSerializingContainer.h; sourceTree = "<group>"; };
 		FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OVCManagedStore.h; sourceTree = "<group>"; };
 		FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OVCManagedStore.m; sourceTree = "<group>"; };
@@ -468,7 +456,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				624E93D682948685DD8C69D7 /* Pods_osx.framework in Frameworks */,
+				9B65F366B2B1433F03AA71D7 /* Pods_osx_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				39DB74315F3478AFD9E7DB02 /* Pods_ios.framework in Frameworks */,
+				E63FE599BE1524C48D203946 /* Pods_ios_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +473,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B92D858BB5D62B4C471B3BFC /* Pods_osx.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +481,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E092C826244B28FFF396CE60 /* Pods_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +567,8 @@
 				FEE1737F1C0B6AF900049027 /* iOS */,
 				23790EB9EFF31148FB6E48D7 /* Pods_ios.framework */,
 				255C4E5EFC5ABF86AD8C229F /* Pods_osx.framework */,
+				45FAF3806B767186851C02B8 /* Pods_ios_test.framework */,
+				B60FF3C879197811B01D3D9D /* Pods_osx_test.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -587,6 +580,10 @@
 				D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */,
 				119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */,
 				C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */,
+				FEBABAF11C26EE450022C178 /* Pods-ios-test.debug.xcconfig */,
+				FEBABAF21C26EE450022C178 /* Pods-ios-test.release.xcconfig */,
+				FEBABAF31C26EE4C0022C178 /* Pods-osx-test.debug.xcconfig */,
+				FEBABAF41C26EE4C0022C178 /* Pods-osx-test.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -596,10 +593,6 @@
 			children = (
 				FE8A2CDF1C0CA79700B3406D /* Info.plist */,
 				FE6E09F01C20673D001F92E2 /* OvercoatTests-Bridging-Header.h */,
-				FE8A2CE01C0CA79700B3406D /* OVCCoreDataTestModel.h */,
-				FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */,
-				FE8A2CE21C0CA79700B3406D /* OVCCustomEnvelopTestResponse.h */,
-				FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */,
 				FE8A2CE41C0CA79700B3406D /* OVCHTTPSessionManagerCoreDataTests.m */,
 				FE8A2CE51C0CA79700B3406D /* OVCHTTPSessionManagerPromiseTests.m */,
 				FE8A2CE61C0CA79700B3406D /* OVCHTTPSessionManagerReactiveTests.m */,
@@ -608,13 +601,8 @@
 				FE8A2CE91C0CA79700B3406D /* OVCModelResponseSerializerTests.m */,
 				FE8A2CEA1C0CA79700B3406D /* OVCResponseClassPerPathTest.m */,
 				FE8A2CEB1C0CA79700B3406D /* OVCResponseTests.m */,
-				FE8A2CEC1C0CA79700B3406D /* OVCTestModel.h */,
-				FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */,
-				FE8A2CEE1C0CA79700B3406D /* OVCTestResponse.h */,
-				FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */,
 				FE8A2CF01C0CA79700B3406D /* OVCURLMatcherTests.m */,
-				FE8A2CF11C0CA79700B3406D /* Stubs */,
-				FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */,
+				FEBABAF61C2706C80022C178 /* Stubs and Models */,
 			);
 			name = Tests;
 			path = tests;
@@ -645,6 +633,35 @@
 			);
 			name = App;
 			path = app;
+			sourceTree = "<group>";
+		};
+		FEBABAF51C2704FB0022C178 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */,
+				FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */,
+				FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */,
+				FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */,
+				FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		FEBABAF61C2706C80022C178 /* Stubs and Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE8A2CE01C0CA79700B3406D /* OVCCoreDataTestModel.h */,
+				FE8A2CE11C0CA79700B3406D /* OVCCoreDataTestModel.m */,
+				FE8A2CEC1C0CA79700B3406D /* OVCTestModel.h */,
+				FE8A2CED1C0CA79700B3406D /* OVCTestModel.m */,
+				FE8A2CEE1C0CA79700B3406D /* OVCTestResponse.h */,
+				FE8A2CEF1C0CA79700B3406D /* OVCTestResponse.m */,
+				FE8A2CE21C0CA79700B3406D /* OVCCustomEnvelopTestResponse.h */,
+				FE8A2CE31C0CA79700B3406D /* OVCCustomEnvelopTestResponse.m */,
+				FE8A2CF11C0CA79700B3406D /* Stubs */,
+				FE8A2CF71C0CA79700B3406D /* Test.xcdatamodeld */,
+			);
+			name = "Stubs and Models";
 			sourceTree = "<group>";
 		};
 		FEE173161C0B6A5E00049027 = {
@@ -697,13 +714,7 @@
 		FEE1732D1C0B6A9B00049027 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				FEE1732E1C0B6A9B00049027 /* NSDictionary+Overcoat.h */,
-				FEE1732F1C0B6A9B00049027 /* NSDictionary+Overcoat.m */,
-				FEE173301C0B6A9B00049027 /* NSError+OVCResponse.h */,
-				FEE173311C0B6A9B00049027 /* NSError+OVCResponse.m */,
-				FEE173321C0B6A9B00049027 /* OVCHTTPManager.h */,
-				FEE173331C0B6A9B00049027 /* OVCHTTPManager.m */,
-				FEE173341C0B6A9B00049027 /* OVCHTTPManager_Internal.h */,
+				FEE1733E1C0B6A9B00049027 /* Overcoat.h */,
 				FEE173351C0B6A9B00049027 /* OVCHTTPSessionManager.h */,
 				FEE173361C0B6A9B00049027 /* OVCHTTPSessionManager.m */,
 				FEE173371C0B6A9B00049027 /* OVCModelResponseSerializer.h */,
@@ -712,8 +723,7 @@
 				FEE1733A1C0B6A9B00049027 /* OVCResponse.m */,
 				FEE1733B1C0B6A9B00049027 /* OVCURLMatcher.h */,
 				FEE1733C1C0B6A9B00049027 /* OVCURLMatcher.m */,
-				FEE1733D1C0B6A9B00049027 /* OVCUtilities.h */,
-				FEE1733E1C0B6A9B00049027 /* Overcoat.h */,
+				FEBABAF51C2704FB0022C178 /* Utilities */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -722,14 +732,10 @@
 			isa = PBXGroup;
 			children = (
 				FEE173401C0B6A9B00049027 /* OvercoatCoreData.h */,
-				FEE173411C0B6A9B00049027 /* OVCManagedHTTPManager.h */,
-				FEE173421C0B6A9B00049027 /* OVCManagedHTTPManager.m */,
-				FEE173431C0B6A9B00049027 /* OVCManagedHTTPManager_Internal.h */,
 				FEE173441C0B6A9B00049027 /* OVCManagedHTTPSessionManager.h */,
 				FEE173451C0B6A9B00049027 /* OVCManagedHTTPSessionManager.m */,
 				FEE173461C0B6A9B00049027 /* OVCManagedModelResponseSerializer.h */,
 				FEE173471C0B6A9B00049027 /* OVCManagedModelResponseSerializer.m */,
-				FEE173481C0B6A9B00049027 /* OVCManagedModelResponseSerializer_Internal.h */,
 				FEE173491C0B6A9B00049027 /* OVCManagedObjectSerializingContainer.h */,
 				FEE1734A1C0B6A9B00049027 /* OVCManagedStore.h */,
 				FEE1734B1C0B6A9B00049027 /* OVCManagedStore.m */,
@@ -816,11 +822,8 @@
 				FE8A2C531C0C93BE00B3406D /* OVCManagedStore.h in Headers */,
 				FE8A2C521C0C93BE00B3406D /* OVCManagedObjectSerializingContainer.h in Headers */,
 				FE8A2C4F1C0C93BE00B3406D /* OVCManagedModelResponseSerializer.h in Headers */,
-				FE8A2C4C1C0C93BE00B3406D /* OVCManagedHTTPManager_Internal.h in Headers */,
-				FE8A2C4A1C0C93BE00B3406D /* OVCManagedHTTPManager.h in Headers */,
 				FE8A2C581C0C944F00B3406D /* OvercoatCoreData.h in Headers */,
 				FE8A2C4D1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.h in Headers */,
-				FE8A2C511C0C93BE00B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -832,10 +835,7 @@
 				FE8A2C7F1C0C952500B3406D /* OVCManagedStore.h in Headers */,
 				FE8A2C791C0C952500B3406D /* OVCManagedHTTPSessionManager.h in Headers */,
 				FE8A2C751C0C952500B3406D /* OvercoatCoreData.h in Headers */,
-				FE8A2C781C0C952500B3406D /* OVCManagedHTTPManager_Internal.h in Headers */,
 				FE8A2C7B1C0C952500B3406D /* OVCManagedModelResponseSerializer.h in Headers */,
-				FE8A2C761C0C952500B3406D /* OVCManagedHTTPManager.h in Headers */,
-				FE8A2C7D1C0C952500B3406D /* OVCManagedModelResponseSerializer_Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -846,13 +846,11 @@
 				FEE1735F1C0B6A9B00049027 /* OVCHTTPSessionManager.h in Headers */,
 				FEE173681C0B6A9B00049027 /* Overcoat.h in Headers */,
 				FEE1735A1C0B6A9B00049027 /* NSError+OVCResponse.h in Headers */,
-				FEE1735C1C0B6A9B00049027 /* OVCHTTPManager.h in Headers */,
 				FEE173671C0B6A9B00049027 /* OVCUtilities.h in Headers */,
 				FEE173651C0B6A9B00049027 /* OVCURLMatcher.h in Headers */,
 				FEE173611C0B6A9B00049027 /* OVCModelResponseSerializer.h in Headers */,
 				FEE173631C0B6A9B00049027 /* OVCResponse.h in Headers */,
 				FEE173581C0B6A9B00049027 /* NSDictionary+Overcoat.h in Headers */,
-				FEE1735E1C0B6A9B00049027 /* OVCHTTPManager_Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -863,13 +861,11 @@
 				FEE173981C0B6B6600049027 /* OVCHTTPSessionManager.h in Headers */,
 				FEE173A11C0B6B6600049027 /* Overcoat.h in Headers */,
 				FEE173931C0B6B6600049027 /* NSError+OVCResponse.h in Headers */,
-				FEE173951C0B6B6600049027 /* OVCHTTPManager.h in Headers */,
 				FEE173A01C0B6B6600049027 /* OVCUtilities.h in Headers */,
 				FEE1739E1C0B6B6600049027 /* OVCURLMatcher.h in Headers */,
 				FEE1739A1C0B6B6600049027 /* OVCModelResponseSerializer.h in Headers */,
 				FEE1739C1C0B6B6600049027 /* OVCResponse.h in Headers */,
 				FEE173911C0B6B6600049027 /* NSDictionary+Overcoat.h in Headers */,
-				FEE173971C0B6B6600049027 /* OVCHTTPManager_Internal.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1025,9 +1021,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE8A2D561C0CB37A00B3406D /* Build configuration list for PBXNativeTarget "OvercoatApp-OSX" */;
 			buildPhases = (
+				1C91CAD5C792DEA8BEB2D63C /* Check Pods Manifest.lock */,
 				FE8A2D3F1C0CB37A00B3406D /* Sources */,
 				FE8A2D401C0CB37A00B3406D /* Frameworks */,
 				FE8A2D411C0CB37A00B3406D /* Resources */,
+				A7A34DA385D16C4516CFECCC /* Embed Pods Frameworks */,
+				51FAFE373610750720D447E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1042,9 +1041,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE8A2D7B1C0CB4F700B3406D /* Build configuration list for PBXNativeTarget "OvercoatApp-iOS" */;
 			buildPhases = (
+				343166534C72DCA33F7AFDC9 /* Check Pods Manifest.lock */,
 				FE8A2D631C0CB4F700B3406D /* Sources */,
 				FE8A2D641C0CB4F700B3406D /* Frameworks */,
 				FE8A2D651C0CB4F700B3406D /* Resources */,
+				B015A5929E6D587EA74A4074 /* Embed Pods Frameworks */,
+				BA3EC512956114D5F816C84C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1400,7 +1402,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx-test/Pods-osx-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C91CAD5C792DEA8BEB2D63C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		343166534C72DCA33F7AFDC9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		4739080BE81350B02E6ECB9D /* Embed Pods Frameworks */ = {
@@ -1415,7 +1447,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-test/Pods-ios-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51FAFE373610750720D447E8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5B908646FBB2F1AAFAECEA01 /* Check Pods Manifest.lock */ = {
@@ -1445,7 +1492,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx-test/Pods-osx-test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		98EBBCF94EC62CF5B30BC0BF /* Check Pods Manifest.lock */ = {
@@ -1463,7 +1510,37 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		ECE22050CA73266B22FCAC46 /* Copy Pods Resources */ = {
+		A7A34DA385D16C4516CFECCC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-osx/Pods-osx-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B015A5929E6D587EA74A4074 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA3EC512956114D5F816C84C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1476,6 +1553,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios/Pods-ios-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECE22050CA73266B22FCAC46 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ios-test/Pods-ios-test-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FE8A2D3D1C0CAD6000B3406D /* Clean Carthage Output */ = {
@@ -1524,7 +1616,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8A2C501C0C93BE00B3406D /* OVCManagedModelResponseSerializer.m in Sources */,
-				FE8A2C4B1C0C93BE00B3406D /* OVCManagedHTTPManager.m in Sources */,
 				FE8A2C541C0C93BE00B3406D /* OVCManagedStore.m in Sources */,
 				FE8A2C4E1C0C93BE00B3406D /* OVCManagedHTTPSessionManager.m in Sources */,
 			);
@@ -1535,7 +1626,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE8A2C7C1C0C952500B3406D /* OVCManagedModelResponseSerializer.m in Sources */,
-				FE8A2C771C0C952500B3406D /* OVCManagedHTTPManager.m in Sources */,
 				FE8A2C801C0C952500B3406D /* OVCManagedStore.m in Sources */,
 				FE8A2C7A1C0C952500B3406D /* OVCManagedHTTPSessionManager.m in Sources */,
 			);
@@ -1607,7 +1697,6 @@
 				FEE173661C0B6A9B00049027 /* OVCURLMatcher.m in Sources */,
 				FEE173601C0B6A9B00049027 /* OVCHTTPSessionManager.m in Sources */,
 				FEE1735B1C0B6A9B00049027 /* NSError+OVCResponse.m in Sources */,
-				FEE1735D1C0B6A9B00049027 /* OVCHTTPManager.m in Sources */,
 				FEE173621C0B6A9B00049027 /* OVCModelResponseSerializer.m in Sources */,
 				FEE173641C0B6A9B00049027 /* OVCResponse.m in Sources */,
 			);
@@ -1621,7 +1710,6 @@
 				FEE1739F1C0B6B6600049027 /* OVCURLMatcher.m in Sources */,
 				FEE173991C0B6B6600049027 /* OVCHTTPSessionManager.m in Sources */,
 				FEE173941C0B6B6600049027 /* NSError+OVCResponse.m in Sources */,
-				FEE173961C0B6B6600049027 /* OVCHTTPManager.m in Sources */,
 				FEE1739B1C0B6B6600049027 /* OVCModelResponseSerializer.m in Sources */,
 				FEE1739D1C0B6B6600049027 /* OVCResponse.m in Sources */,
 			);
@@ -2114,7 +2202,7 @@
 		};
 		FE8A2D061C0CA7AB00B3406D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */;
+			baseConfigurationReference = FEBABAF31C26EE4C0022C178 /* Pods-osx-test.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2167,7 +2255,7 @@
 		};
 		FE8A2D071C0CA7AB00B3406D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */;
+			baseConfigurationReference = FEBABAF41C26EE4C0022C178 /* Pods-osx-test.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2212,7 +2300,7 @@
 		};
 		FE8A2D141C0CA84D00B3406D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */;
+			baseConfigurationReference = FEBABAF11C26EE450022C178 /* Pods-ios-test.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2263,7 +2351,7 @@
 		};
 		FE8A2D151C0CA84D00B3406D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */;
+			baseConfigurationReference = FEBABAF21C26EE450022C178 /* Pods-ios-test.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2308,6 +2396,7 @@
 		};
 		FE8A2D541C0CB37A00B3406D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 119D5818C9E223381FF26EB1 /* Pods-osx.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2356,6 +2445,7 @@
 		};
 		FE8A2D551C0CB37A00B3406D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E356D5E4D75773005C42D4 /* Pods-osx.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2397,6 +2487,7 @@
 		};
 		FE8A2D7C1C0CB4F700B3406D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BB55B1CB646A29A39C9FC52D /* Pods-ios.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -2446,6 +2537,7 @@
 		};
 		FE8A2D7D1C0CB4F700B3406D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D87443F37AB0D47CBF440901 /* Pods-ios.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;

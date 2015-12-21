@@ -22,7 +22,6 @@
 
 #import <AFNetworking/AFHTTPSessionManager.h>
 #import <Overcoat/OVCUtilities.h>
-#import <Overcoat/OVCHTTPManager.h>
 
 @class OVCResponse;
 
@@ -32,7 +31,42 @@ NS_ASSUME_NONNULL_BEGIN
  `OVCHTTPSessionManager` provides methods to communicate with a web application over HTTP, mapping
  responses into native model objects which can optionally be persisted in a Core Data store.
  */
-@interface OVCHTTPSessionManager OVCGenerics(ResponseType: OVCResponse *) : AFHTTPSessionManager <OVCHTTPManager>
+@interface OVCHTTPSessionManager OVCGenerics(ResponseType: OVCResponse *) : AFHTTPSessionManager
+
+/**
+ Specifies how to map responses to different model classes.
+
+ Subclasses must override this method and return a dictionary mapping resource paths to model
+ classes.
+ Note that you can use `*` and `**` to match any text or `#` to match only digits.
+
+ @see https://github.com/Overcoat/Overcoat#specifying-model-classes
+
+ @return A dictionary mapping resource paths to model classes.
+ */
++ (NSDictionary OVCGenerics(NSString *, id) *)modelClassesByResourcePath;
+
+/**
+ Specifies how to map responses to different response classes.
+
+ Subclasses can override this method and return a dictionary mapping resource paths to response
+ classes. Consider the following example for a GitHub client:
+
+ + (NSDictionary *)responseClassesByResourcePath {
+ return @{
+ @"/users": [GTHUserResponse class],
+ @"/orgs": [GTHOrganizationResponse class]
+ };
+ }
+
+ Note that you can use `*` to match any text or `#` to match only digits.
+ If a subclass override this method, the responseClass method will be ignored
+
+ @return A dictionary mapping resource paths to response classes.
+ */
++ (OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)responseClassesByResourcePath;
+
++ (OVC_NULLABLE NSDictionary OVCGenerics(NSString *, id) *)errorModelClassesByResourcePath;
 
 ///---------------------------
 /// @name Making HTTP Requests
@@ -159,6 +193,13 @@ NS_ASSUME_NONNULL_BEGIN
                                    completion:(OVC_NULLABLE void(^)
                                                (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
                                                 NSError * OVC__NULLABLE error))completion;
+
+@end
+
+@interface OVCHTTPSessionManager (Deprecated)
+
++ (Class)responseClass OVC_DEPRECATED("Use `responseClassesByResourcePath` instead.");
++ (OVC_NULLABLE Class)errorModelClass OVC_DEPRECATED("Use `errorModelClassesByResourcePath` instead.");
 
 @end
 

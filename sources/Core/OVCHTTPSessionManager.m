@@ -24,36 +24,52 @@
 #import "OVCResponse.h"
 #import "OVCModelResponseSerializer.h"
 #import "OVCURLMatcher.h"
-#import "OVCHTTPManager_Internal.h"
 #import "NSError+OVCResponse.h"
 
 @implementation OVCHTTPSessionManager
 
+#if DEBUG
++ (void)initialize {
+    // TODO: Add links to releated document.
+    if ([self respondsToSelector:@selector(errorModelClass)]) {
+        NSLog(@"Warning: `+[OVCHTTPSessionManager errorModelClass]` is deprecated. "
+              @"Override `+[OVCHTTPSessionManager errorModelClassesByResourcePath]` instead. (Class: %@)", self);
+    }
+    if ([self respondsToSelector:@selector(responseClass)]) {
+        NSLog(@"Warning: `+[OVCHTTPSessionManager responseClass]` is deprecated. "
+              @"Override `+[OVCHTTPSessionManager responseClassesByResourcePath]` instead. (Class: %@)", self);
+    }
+}
+#endif
+
 - (instancetype)initWithBaseURL:(NSURL *)url sessionConfiguration:(NSURLSessionConfiguration *)configuration {
     if (self = [super initWithBaseURL:url sessionConfiguration:configuration]) {
-        self.responseSerializer = OVCHTTPManagerCreateModelResponseSerializer(self);
+        self.responseSerializer =
+        [OVCModelResponseSerializer
+         serializerWithURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                  modelClassesByPath:[[self class] modelClassesByResourcePath]]
+         responseClassURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                 modelClassesByPath:[[self class] responseClassesByResourcePath]]
+         errorModelClassURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
+                                                   modelClassesByPath:[[self class] errorModelClassesByResourcePath]]];
     }
     return self;
 }
 
 #pragma mark - HTTP Manager Protocol
 
-+ (Class)responseClass {
-    return [OVCResponse class];
-}
-
-+ (Class)errorModelClass {
-    return Nil;
-}
-
 + (NSDictionary *)modelClassesByResourcePath {
     [NSException
-     raise:NSInvalidArgumentException
+     raise:NSInternalInconsistencyException
      format:@"+[%@ %@] should be overridden by subclass", NSStringFromClass(self), NSStringFromSelector(_cmd)];
     return nil;  // Not reached
 }
 
 + (NSDictionary *)responseClassesByResourcePath {
+    return @{@"**": [OVCResponse class]};
+}
+
++ (NSDictionary *)errorModelClassesByResourcePath {
     return nil;
 }
 

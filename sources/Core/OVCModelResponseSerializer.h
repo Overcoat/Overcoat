@@ -36,36 +36,42 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  Matches URLs in HTTP responses with model classes.
  */
-@property (strong, nonatomic, readonly) OVCURLMatcher *URLMatcher;
+@property (strong, nonatomic, readonly) OVCURLMatcher *modelClassURLMatcher;
 /**
  Matches URLs in HTTP responses with response classes.
  */
-@property (strong, nonatomic, readonly, OVC_NULLABLE) OVCURLMatcher *URLResponseClassMatcher;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) OVCURLMatcher *responseClassURLMatcher;
 
 /**
- The class used to create responses. Must be `OVCResponse` or a subclass.
+ Matches URLs in HTTP responses with error model classes.
  */
-@property (nonatomic, readonly) Class responseClass;
+@property (strong, nonatomic, readonly, OVC_NULLABLE) OVCURLMatcher *errorModelClassURLMatcher;
 
 /**
- The model class for server error responses.
+ TODO: Doc for why don't inherite it (PR104)
  */
-@property (nonatomic, readonly, OVC_NULLABLE) Class errorModelClass;
-
-@property(nonatomic, strong) AFJSONResponseSerializer *jsonSerializer;  // TODO: Doc for why don't inherite it (PR104)
+@property(nonatomic, strong) AFJSONResponseSerializer *jsonSerializer;
 
 /**
  Creates and returns model serializer.
  */
-+ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)URLMatcher
-                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
-                           responseClass:(Class)responseClass
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
+                           responseClass:(OVC_NULLABLE Class)responseClass
                          errorModelClass:(OVC_NULLABLE Class)errorModelClass;
 
-- (instancetype)initWithURLMatcher:(OVCURLMatcher *)URLMatcher
-           responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)URLResponseClassMatcher
-                     responseClass:(Class)responseClass
-                   errorModelClass:(OVC_NULLABLE Class)errorModelClass NS_DESIGNATED_INITIALIZER;
++ (instancetype)serializerWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
+                 responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+               errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher;
+
+- (instancetype)initWithURLMatcher:(OVCURLMatcher *)modelClassURLMatcher
+           responseClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)responseClassURLMatcher
+         errorModelClassURLMatcher:(OVC_NULLABLE OVCURLMatcher *)errorModelClassURLMatcher NS_DESIGNATED_INITIALIZER;
+
+@end
+
+@interface OVCModelResponseSerializer (Deprecated)
+
+@property (strong, nonatomic, readonly) OVCURLMatcher *URLMatcher OVC_DEPRECATED("Use `modelClassURLMatcher` property");
 
 @end
 

@@ -22,8 +22,8 @@
 
 @implementation OVCHTTPSessionCoreDataTestSessionManager
 
-+ (Class)errorModelClass {
-    return [OVCErrorModel class];
++ (NSDictionary OVCGenerics(NSString *,id) *)errorModelClassesByResourcePath {
+    return @{@"**": [OVCErrorModel class]};
 }
 
 + (NSDictionary *)modelClassesByResourcePath {

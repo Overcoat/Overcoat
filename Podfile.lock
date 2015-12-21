@@ -1,11 +1,11 @@
 PODS:
-  - AFNetworking/NSURLSession (3.0.2):
+  - AFNetworking/NSURLSession (3.0.4):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.2)
-  - AFNetworking/Security (3.0.2)
-  - AFNetworking/Serialization (3.0.2)
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
@@ -65,7 +65,7 @@ EXTERNAL SOURCES:
     :path: Overcoat.podspec
 
 SPEC CHECKSUMS:
-  AFNetworking: 2f30b7db399a405b12b24e049c654f108fc8c54d
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
   OHHTTPStubs: cb1aefbbeb4de4e741644455d4b945538e5248a2

@@ -20,6 +20,20 @@
                ReferencedContainer = "container:Overcoat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FE8A2D0B1C0CA84D00B3406D"
+               BuildableName = "OvercoatTests.xctest"
+               BlueprintName = "OvercoatTests-iOS"
+               ReferencedContainer = "container:Overcoat.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction

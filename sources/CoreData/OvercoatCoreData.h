@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <OvercoatCoreData/OVCManagedHTTPManager.h>
 #import <OvercoatCoreData/OVCManagedModelResponseSerializer.h>
 #import <OvercoatCoreData/OVCManagedObjectSerializingContainer.h>
 #import <OvercoatCoreData/OVCManagedStore.h>

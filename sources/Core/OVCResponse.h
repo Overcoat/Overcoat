@@ -74,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
                                            JSONObject:(OVC_NULLABLE id)JSONObject
                                           resultClass:(OVC_NULLABLE Class)resultClass
-__attribute__((deprecated("Replaced by +responseWithHTTPResponse:JSONObject:resultClass:error:")))
+OVC_DEPRECATED("Replaced by +responseWithHTTPResponse:JSONObject:resultClass:error:")
 NS_SWIFT_UNAVAILABLE("Deprecated. use `init(HTTPResponse:JSONObject:resultClass:) throws`");
 
 @end
