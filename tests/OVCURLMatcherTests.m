@@ -126,6 +126,28 @@
     XCTAssertNil([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/apple/osx"]]);
     XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test"]],
                           [MTLModel class]);
+    XCTAssertNil([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/"]]);
+}
+
+- (void)testFallback {
+    OVCURLMatcher *matcher = [[OVCURLMatcher alloc] initWithBasePath:@"/api/v1"
+                                                  matcherNodesByPath:@{
+        @"test/*": [OVCURLMatcherNode matcherNodeWithModelClass:[OVCTestModel class]],
+        @"test/#": [OVCURLMatcherNode matcherNodeWithModelClass:[MTLModel class]],
+        @"test/**": [OVCURLMatcherNode matcherNodeWithModelClass:[OVCTestModel2 class]],
+        @"**": [OVCURLMatcherNode matcherNodeWithModelClass:[OVCAlternativeModel class]],
+    }];
+
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/apple"]],
+                          [OVCTestModel class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/42"]],
+                          [MTLModel class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/test/apple/seed"]],
+                          [OVCTestModel2 class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/models"]],
+                          [OVCAlternativeModel class]);
+    XCTAssertEqualObjects([matcher modelClassForURL:[NSURL URLWithString:@"http://example.com/api/v1/"]],
+                          [OVCAlternativeModel class]);
 }
 
 - (void)testModelClassByResponseStatusCode1 {

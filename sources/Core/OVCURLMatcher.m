@@ -129,6 +129,8 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
         _basePath = [basePath copy];
 
         [matcherNodes enumerateKeysAndObjectsUsingBlock:^(NSString *path, OVCURLMatcherNode *matcherNode, BOOL *stop) {
+            NSAssert([matcherNode isKindOfClass:[OVCURLMatcherNode class]],
+                     @"Expect %@, got %@", [OVCURLMatcherNode class], [matcherNode class]);
             [self addMatcherNode:matcherNode forPath:path sortChildren:NO];
         }];
         [self sortChildren];
@@ -152,59 +154,57 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
         path = [path substringFromIndex:self.basePath.length];
     }
     path = [path stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"/"]];
-    NSArray *tokens = [path componentsSeparatedByString:@"/"];
+    return [self _matcherNodeForPath:path];
+}
 
-    if (tokens.count == 0) {
-        return self.matcherNode;
-    }
+- (OVCURLMatcherNode *)_matcherNodeForPath:(NSString *)path {
+    // Split path in to tokens
+    NSArray OVCGenerics(NSString *) *tokens = [path componentsSeparatedByString:@"/"];
+    NSArray OVCGenerics(NSString *) *subTokens = [tokens subarrayWithRange:NSMakeRange(1, tokens.count-1)];
+    NSString *firstToken = tokens.firstObject;
+    NSString *subPath = [subTokens componentsJoinedByString:@"/"];
 
-    // Go through tokens
-    OVCURLMatcher *node = self;
-    for (NSString *token in tokens) {
-        NSArray OVCGenerics(OVCURLMatcher *) *childrenNodes = node.children;
-        if (!childrenNodes) {
-            break;
-        }
-
-        node = nil;
-        for (OVCURLMatcher *childNode in childrenNodes) {
-            switch (childNode.type) {
-                case OVCURLMatcherTypeExact: {  // string like `statuses`
-                    if ([childNode.text isEqualToString:token]) {
-                        node = childNode;
-                    }
-                    break;
+    OVCURLMatcherNode *__block resultMatcherNode = nil;
+    [self.children enumerateObjectsUsingBlock:^(OVCURLMatcher *childMatcher, NSUInteger idx, BOOL *OVC__NONNULL stop) {
+        // Find matched node in this level
+        OVCURLMatcher *matchedMatcher = nil;
+        switch (childMatcher.type) {
+            case OVCURLMatcherTypeExact: {
+                if ([childMatcher.text isEqualToString:firstToken]) {
+                    matchedMatcher = childMatcher;
                 }
-                case OVCURLMatcherTypeNumber: {  // `#`
-                    if (OVCTextOnlyContainsDigits(token)) {
-                        node = childNode;
-                    }
-                    break;
-                }
-                case OVCURLMatcherTypeText: {  // `*`
-                    node = childNode;
-                    break;
-                }
-                case OVCURLMatcherTypeAny: {  // `**`
-                    // `**` means that we shouldn't check further nodes (path components)
-                    // so return directly.
-                    return childNode.matcherNode;
-                }
-                case OVCURLMatcherTypeNone: {
-                    // Do nothing
-                    break;
-                }
+                break;
             }
-            if (node) {
+            case OVCURLMatcherTypeNumber: {
+                if (OVCTextOnlyContainsDigits(firstToken)) {
+                    matchedMatcher = childMatcher;
+                }
+                break;
+            }
+            case OVCURLMatcherTypeText: {
+                matchedMatcher = childMatcher;
+                break;
+            }
+            case OVCURLMatcherTypeAny: {
+                // `**` means that we shouldn't check further nodes (path components), so return directly.
+                // and it should be evaluated at the last.
+                NSAssert(idx == self.children.count - 1,
+                         @"Internal consistency error. `OVCURLMatcherTypeAny` should be tested at last.");
+                resultMatcherNode = childMatcher.matcherNode;
+            }
+            case OVCURLMatcherTypeNone: {
+                // Do nothing
                 break;
             }
         }
-        if (!node) {
-            return nil;
+        // Check children of this matched one
+        if (!resultMatcherNode) {
+            resultMatcherNode = (subTokens.count ?
+                                 [matchedMatcher _matcherNodeForPath:subPath] : matchedMatcher.matcherNode);
         }
-    }
-
-    return node.matcherNode;
+        *stop = resultMatcherNode != nil;
+    }];
+    return resultMatcherNode;
 }
 
 #pragma mark - Debugging
