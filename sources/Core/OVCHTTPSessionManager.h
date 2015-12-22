@@ -196,6 +196,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark - Deprecated Methods
+
 @interface OVCHTTPSessionManager (Deprecated)
 
 + (Class)responseClass OVC_DEPRECATED("Use `responseClassesByResourcePath` instead.");

@@ -73,6 +73,12 @@ NS_ASSUME_NONNULL_BEGIN
                                           resultClass:(OVC_NULLABLE Class)resultClass
                                                 error:(NSError *OVC__NULLABLE __autoreleasing *OVC__NULLABLE)error;
 
+@end
+
+#pragma mark - Deprecated
+
+@interface OVCResponse (Deprecated)
+
 + (OVC_NULLABLE instancetype)responseWithHTTPResponse:(OVC_NULLABLE NSHTTPURLResponse *)HTTPResponse
                                            JSONObject:(OVC_NULLABLE id)JSONObject
                                           resultClass:(OVC_NULLABLE Class)resultClass

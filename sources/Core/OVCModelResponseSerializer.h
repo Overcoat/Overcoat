@@ -69,6 +69,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark - Deprecated
+
 @interface OVCModelResponseSerializer (Deprecated)
 
 @property (strong, nonatomic, readonly) OVCURLMatcher *URLMatcher OVC_DEPRECATED("Use `modelClassURLMatcher` property");
