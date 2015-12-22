@@ -1,7 +1,8 @@
 # Overcoat
 
 [![Build Status](https://travis-ci.org/Overcoat/Overcoat.svg)](https://travis-ci.org/Overcoat/Overcoat)
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Overcoat.svg)](https://img.shields.io/cocoapods/v/Overcoat.svg)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Overcoat.svg)](https://cocoapods.org/pods/Overcoat)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 Overcoat is a small but powerful library that makes creating REST clients simple and fun.
 It provides a simple API for making requests and mapping responses to model objects.
@@ -14,36 +15,45 @@ If you need to learn more about Mantle, we recommend these resources:
 1. [Introduction](https://github.com/Mantle/Mantle/blob/master/README.md).
 2. [Better Web Clients with Mantle and AFNetworking](https://speakerdeck.com/gonzalezreal/better-web-clients-with-mantle-and-afnetworking).
 
-**Overcoat 3.0** is the latest major release and introduces several API-breaking changes to
+**Overcoat 4.0** is the latest major release and introduces several API-breaking changes to
 support envelop and error responses, Core Data serialization, and a new method to specify how to
 map responses to model objects.
+
+If you are upgraded from Overcoat 3.x, check [the migration note]( https://github.com/Overcoat/Overcoat/blob/master/CHANGELOG.md#migrate-from-3x)
 
 Check who's using Overcoat [here](https://github.com/Overcoat/Overcoat/wiki/Who-uses-Overcoat).
 You're welcome to add your project/app into this wiki page.
 
+
 ## Requirements
 
-Overcoat supports OS X 10.8+ and iOS 6.0+. `NSURLSession` support like `OVCHTTPSessionManager` and
-`OVCManagedHTTPSessionManager` requires OS X 10.9+ or iOS 7.0+.
+Overcoat supports OS X 10.9+ and iOS 7.0+.
+
 
 ## Installation
+
+### Using CocoaPods
 
 Add the following to your `Podfile` and run `$ pod install`.
 
 ``` ruby
-pod 'Overcoat', '~>3.0'
+pod 'Overcoat', '~> 4.0.0-beta.1'
 ```
 
 If you don't have CocoaPods installed or integrated into your project,
- you can learn how to do so [here](http://cocoapods.org).
+you can learn how to do so [here](http://cocoapods.org).
 
-If you are upgraded from Overcoat 2.x, check [the migration note]( https://github.com/Overcoat/Overcoat/blob/master/CHANGELOG.md#migrate-from-2x)
+### Using Carthage
 
-#### NOTE
+Add the following to your `Cartfile` and run `$ carthage update`.
 
-Mantle currently supports both Mantle 1.x and 2.x. By default, it will choose **Mantle 2.x** while
-installing with CocoaPods. If you want to keep using _Mantle 1.x_, you also need to add
-```pod 'Mantle', '~> 1.5'``` in your Podfile.
+```
+github "Overcoat/Overcoat" "4.0.0-beta.1"
+```
+
+If you don't have Carthage installed or integrated into your project,
+you can learn how to do so [here](https://github.com/Carthage/Carthage).
+
 
 ## Sample Code
 
@@ -57,21 +67,18 @@ Overcoat includes a simple [Twitter](https://dev.twitter.com/docs/api/1.1) clien
 You can find the sample code [here](https://github.com/Overcoat/TwitterTimelineExample).
 Note that you'll need to run `pod install` to install all the dependencies.
 
+
 ## Usage
 
 ### Creating a Client Class
-Overcoat provides 4 different classes to subclass when creating your own clients:
+Overcoat provides 2 different classes to subclass when creating your own clients:
 
 Class                                   | Usage
 ----------------------------------------|---------------------------------------------------
-`OVCHTTPRequestOperationManager`        | Using with NSURLConnection and Mantle
 `OVCHTTPSessionManager`                 | Using with NSURLSession and Mantle
-`OVCManagedHTTPRequestOperationManager` | Using with NSURLConnection, Mantle, and CoreData. This is also a subclass of `OVCHTTPRequestOperationManager`
 `OVCManagedHTTPSessionManager`          | Using with NSURLSession, Mantle, and CoreData. This is also a subclass of `OVCHTTPSessionManager`
 
-Both classes have identical APIs, but developers targeting OS X 10.9+ or iOS 7.0+ are
-encouraged to subclass `OVCHTTPSessionManager` (or `OVCManagedHTTPSessionManager` if you want CoreData support).
-Developers targeting OS X 10.8 or iOS 6.0 must subclass `OVCHTTPRequestOperationManager` (or `OVCManagedHTTPRequestManager` if you want CoreData support).
+Both classes have identical APIs.
 
 ```objc
 #import <Overcoat/Overcoat.h>
@@ -82,6 +89,7 @@ Developers targeting OS X 10.8 or iOS 6.0 must subclass `OVCHTTPRequestOperation
 ```
 
 ### Specifying Model Classes
+
 To specify how responses should be mapped to model classes you must override `+modelClassesByResourcePath`
 and return a dictionary mapping resource paths to model classes.
 
@@ -112,16 +120,37 @@ Match String          | Path                           | Result
 `statuses/retweets/#` | `statues/retweets/12345`       | Matched
 
 
+Also you can specify different model classes by request method or response status code, like:
+
+```objc
++ (NSDictionary *)modelClassesByResourcePath {
+    return @{
+        @"statuses/*": [Tweet class],
+        @"users/*": @{
+            @"PUT": [UpdatedTwitterUser class],  // For PUT request method,
+            @"201": [NewCreatedTwitterUser class],  // For 201 response status code
+            @"*": [TwitterUser class],  // For all other cases, as fallback
+        },
+        @"friends/ids.json": [UserIdentifierCollection class],
+        @"followers/ids.json": [UserIdentifierCollection class]
+    };
+}
+```
+
+Check the documentation of `OVCURLMatcherNode` for further explaination.
+
+
 ### Envelop and Error Responses
+
 Different REST APIs have different ways of dealing with status and other metadata.
 
 Pure REST services like **Twitter** use HTTP status codes and a specific JSON response to communicate errors;
  and HTTP headers for other metadata like rate limits. For these kind of services, you may want to override
- `+errorModelClass` to map error responses into your own model.
+ `+errorModelClassesByResourcePath` to map error responses into your own model.
 
 ```objc
-+ (Class)errorModelClass {
-    return [TwitterErrorResponse class];
++ (Class)errorModelClassesByResourcePath {
+    return @{@"**": [TwitterErrorResponse class]};
 }
 ```
 
@@ -141,27 +170,27 @@ subclass and specify the data key path.
 @end
 ```
 
-You can then specify which response class to use in your client by overriding `+responseClass`.
+You can then specify which response class to use in your client by overriding `+responseClassesByResourcePath`.
 
 ```objc
-+ (Class)responseClass {
-    return [AppDotNetResponse class];
++ (Class)responseClassesByResourcePath {
+    return @{@"**": [AppDotNetResponse class]};
 }
 ```
 
 ### Core Data Serialization
 
-To support CoreData serialization, you have to use `CoreData` subspec like following line:
+To support CoreData serialization, you have to use `CoreData` subspec if you're using CocoaPods
 
 ``` ruby
-# Work with Mantle 2.x
-pod 'Overcoat/CoreData', '~>3.0'
-# Work with Mantle 1.x
-pod 'Overcoat/CoreData/Mantle1', '~>3.0'
+pod 'Overcoat/CoreData', '~> 4.0'  # Use this,
+pod 'Overcoat', :subspecs => ['CoreData'], '~> 4.0'  # Or this if you want to apply multiple subspecs.
 ```
 
+Or if you are using Carthage, you also have to add `OvercoatCoreData.framework` to your project.
+
 And the main classes would be changed to `OVCManaged` prefixed one. (For instance,
-`OVCHTTPReqeustOperationManager` -> `OVCManagedHTTPRequestOperationManager`)
+`OVCHTTPSessionManager` -> `OVCManagedHTTPSessionManager`)
 
 If you initialize your client with a valid `NSManagedObjectContext`,
 it will automatically persist any model object(s) parsed from a response,
@@ -172,9 +201,8 @@ a private context will be created to perform insertions in the background.
 
 You can see Core Data Serialization in action in the [provided example](https://github.com/Overcoat/TwitterTimelineExample).
 
-### Making HTTP Requests
 
-Both `OVCHTTPRequestOperationManager` and `OVCHTTPSessionManager` provide the same methods for making HTTP requests.
+### Making HTTP Requests
 
 ```objc
 // Lookup Twitter users
@@ -192,18 +220,16 @@ Note that Overcoat automatically parses the JSON into model objects, that is, in
 contains an array of `TwitterUser` objects.
 
 #### ReactiveCocoa
+
 From 2.0, Overcoat adds support for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-Add the following to your `Podfile` to install Overcoat with ReactiveCocoa support:
-
-``` ruby
-pod 'Overcoat/ReactiveCocoa', '~>3.0'
-```
+To add ReactiveCocoa support, you have to use `ReactiveCocoa` subpec if you're using CocoaPods.
+Or if you're using Carthage, add `OvercoatReactiveCocoa.framework`
 
 Now you can make HTTP requests and get cold signals to handle responses:
 
 ```objc
-#import <Overcoat/ReactiveCocoa+Overcoat.h>
+#import <Overcoat/OvercoatReactiveCocoa.h>
 ...
 [[twitterClient rac_GET:@"users/lookup.json" parameters:parameters] subscribeNext:^(OVCResponse *response) {
     ...
@@ -213,21 +239,19 @@ Now you can make HTTP requests and get cold signals to handle responses:
 ```
 
 #### PromiseKit
+
 If you're looking for a better way to handle asynchronous calls but you're not ready to embrace ReactiveCocoa,
- you may try [PromiseKit](http://promisekit.org).
+you may try [PromiseKit](http://promisekit.org).
 
-Add the following to your `Podfile` to install Overcoat with PromiseKit support:
-
-``` ruby
-pod 'Overcoat/PromiseKit', '~>3.0'
-```
+To add ReactiveCocoa support, you have to use `PromiseKit` subpec if you're using CocoaPods.
+Or if you're using Carthage, add `OvercoatPromiseKit.framework`
 
 Now you can get `PMKPromise` objects when making HTTP requests:
 
 ```objc
 #import <Overcoat/PromiseKit+Overcoat.h>
 ...
-[twitterClient GET:@"users/lookup.json" parameters:parameters].then(^(OVCResponse *response) {
+[twitterClient pmk_GET:@"users/lookup.json" parameters:parameters].then(^(OVCResponse *response) {
     return response.result;
 });
 ```
