@@ -20,7 +20,6 @@ Pod::Spec.new do |s|
     ss.dependency 'AFNetworking/NSURLSession', '~> 3.0'
 
     ss.source_files = 'Sources/Core/*.{h,m}'
-    ss.private_header_files = 'Sources/Core/*_Internal.h'
     ss.header_dir = 'Overcoat'
   end
 
@@ -30,7 +29,6 @@ Pod::Spec.new do |s|
     ss.frameworks = 'CoreData'
 
     ss.source_files = 'Sources/CoreData/*.{h,m}'
-    ss.private_header_files = 'Sources/CoreData/*_Internal.h'
     ss.header_dir = 'OvercoatCoreData'
   end
 
