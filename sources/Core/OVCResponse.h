@@ -48,6 +48,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (strong, nonatomic, readonly, OVC_NULLABLE) Class resultClass;
 
+@property (nonatomic, strong, readonly) id rawResult;
+
 /**
  Returns the result key path in the JSON.
  

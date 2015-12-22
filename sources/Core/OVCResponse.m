@@ -25,7 +25,7 @@
 
 @interface OVCResponse OVCGenerics(ResultType) ()
 
-@property (strong, nonatomic, readwrite) NSHTTPURLResponse *HTTPResponse;
+@property (strong, nonatomic, readwrite, OVC_NULLABLE) NSHTTPURLResponse *HTTPResponse;
 @property (strong, nonatomic, readwrite) OVCGenericType(ResultType, id) result;
 @property (strong, nonatomic, readwrite) Class resultClass;
 
@@ -61,6 +61,7 @@
     }
 
     response.HTTPResponse = HTTPResponse;
+    response->_rawResult = JSONObject;
 
     if (result != nil) {
         if (resultClass != Nil) {
@@ -92,7 +93,15 @@
     return response;
 }
 
-#pragma mark - MTLJSONSerializing
+#pragma mark - Mantle
+
++ (MTLPropertyStorage)storageBehaviorForPropertyWithKey:(NSString *)propertyKey {
+    if ([propertyKey isEqualToString:@"rawResult"]) {
+        return MTLPropertyStorageNone;
+    } else {
+        return [super storageBehaviorForPropertyWithKey:propertyKey];
+    }
+}
 
 + (NSDictionary *)JSONKeyPathsByPropertyKey {
     return @{};

@@ -67,15 +67,17 @@
 
 - (void)testGET {
     NSURLRequest * __block request = nil;
-    
+    id __block expectedRawResult = nil;
     [OHHTTPStubs stubRequestsPassingTest:^BOOL(NSURLRequest *r) {
         request = r;
         return YES;
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
-        NSString * path = OHPathForFile(@"model.json", self.class);
-        return [OHHTTPStubsResponse responseWithFileAtPath:path
-                                                statusCode:200
-                                                   headers:@{@"Content-Type": @"application/json"}];
+        NSString *path = OHPathForFile(@"model.json", self.class);
+        NSData *responseData = [NSData dataWithContentsOfFile:path];
+        expectedRawResult = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:nil];
+        return [OHHTTPStubsResponse responseWithData:responseData
+                                          statusCode:200
+                                             headers:@{@"Content-Type": @"application/json"}];
     }];
     
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
@@ -93,6 +95,7 @@
     XCTAssertNil(error, @"should not return an error");
     XCTAssertTrue([response isKindOfClass:[OVCResponse class]]);
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
+    XCTAssertEqualObjects(response.rawResult, expectedRawResult);
     
     XCTAssertEqualObjects(@"GET", request.HTTPMethod, @"should send a GET request");
 }
