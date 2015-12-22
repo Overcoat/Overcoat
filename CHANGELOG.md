@@ -1,5 +1,22 @@
 # Overcoat Changelog
 
+## 4.0
+
+See https://github.com/Overcoat/Overcoat/issues/113
+
+### Migrate from 3.x
+
+1. Support of Mantle 1.x has been dropped. Upgrade your models to Mantle 2.x before migrating to Overcoat 4.0.
+2. Overcoat 4.x only works with AFNetworking 3.x, so you have to upgrade your networking manager to 3.x too.
+3. Support of `NSURLConnection` has been dropped since AFNetwokring 3.x doesn't support it either.
+4. Overcoat 4.x is able to be integrated via Carthage.
+5. Support to ReactiveCocoa 3.x/4.x has been tested. The podspec also accept those versions.
+6. `+[OVCHTTPSessionManager responseClass]` has been deprecated. Use `+[OVCHTTPSessionManager responseClassesByResourcePath]` instead. See default implementation of `OVCHTTPSessionManager` for migration example. There would be a warning message shown via `NSLog` for ths.
+7. `+[OVCHTTPSessionManager errorModelClass]` has been deprecated. Use `+[OVCHTTPSessionManager errorModelClassesByResourcePath]` instead. See `TestSessionManager` in `OVCHTTPSessionManagerTests.m` for migration example. There would be a warning message shown via `NSLog` for ths.
+8. A new property named `rawResult` has been added into `OVCResponse`. It's the raw JSON object/array returned from remote server.
+9. `OVCURLMatcher` accepts not only classes but also blocks for extra matching methods. (Like http request method and response status code)
+10. All methods in `PromiseKit` support has added `pmk_` as prefix.
+
 ## 3.2.2
 
 * Sort URL matchers. So while finding matched response class, it would find `exact` type first. (before `*`, `**`, and `#`). [Issue #112](https://github.com/Overcoat/Overcoat/issues/112) [Commit 28aa171](https://github.com/Overcoat/Overcoat/commit/28aa1715f83a328e22ba9696f2dd0a292c0eb563) (@sodastsai)
