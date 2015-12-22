@@ -30,7 +30,10 @@
 + (NSDictionary *)modelClassesByResourcePath {
     return @{
         @"model/#": [OVCTestModel class],
-        @"models": [OVCTestModel class]
+        @"models": @{
+            @201: [OVCTestModel2 class],
+            @"*": [OVCTestModel class],
+        },
     };
 }
 
@@ -148,7 +151,7 @@
     } withStubResponse:^OHHTTPStubsResponse *(NSURLRequest *request) {
         NSString * path = OHPathForFile(@"model.json", self.class);
         return [OHHTTPStubsResponse responseWithFileAtPath:path
-                                                statusCode:200
+                                                statusCode:201
                                                    headers:@{@"Content-Type": @"application/json"}];
     }];
     
@@ -162,7 +165,7 @@
     
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
-    XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
+    XCTAssertTrue([response.result isKindOfClass:[OVCTestModel2 class]], @"should return a test model");
     
     XCTAssertEqualObjects(@"POST", request.HTTPMethod, @"should send a POST request");
 }

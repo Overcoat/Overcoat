@@ -324,14 +324,14 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     }];
 }
 
-+ (instancetype)matcherNodeWithResponseCode:(NSDictionary OVCGenerics(NSNumber *, Class) *)modelClasses {
++ (instancetype)matcherNodeWithResponseCode:(NSDictionary OVCGenerics(id, Class) *)modelClasses {
 #if DEBUG
-    [modelClasses enumerateKeysAndObjectsUsingBlock:^(NSNumber *key, Class ModelClass, BOOL * _Nonnull stop) {
+    [modelClasses enumerateKeysAndObjectsUsingBlock:^(id key, Class ModelClass, BOOL * _Nonnull stop) {
         NSParameterAssert([ModelClass conformsToProtocol:@protocol(MTLModel)]);
     }];
 #endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
-        return res ? modelClasses[@(res.statusCode)] : nil;
+        return (res ? modelClasses[@(res.statusCode)] : nil) ?: modelClasses[@"*"];
     }];
 }
 
@@ -342,7 +342,7 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     }];
 #endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
-        return req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil;
+        return (req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil) ?: modelClasses[@"*"];
     }];
 }
 
@@ -353,7 +353,9 @@ static BOOL OVCTextOnlyContainsDigits(NSString *text) {
     }];
 #endif
     return [self matcherNodeWithBlock:^Class(NSURLRequest *req, NSHTTPURLResponse *res) {
-        return (req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil) ?: (res ? modelClasses[@(res.statusCode)] : nil);
+        return (((req.HTTPMethod ? modelClasses[req.HTTPMethod] : nil) ?:
+                 (res ? modelClasses[@(res.statusCode)] : nil)) ?:
+                modelClasses[@"*"]);
     }];
 }
 
