@@ -45,6 +45,7 @@ Pod::Spec.new do |s|
     ss.ios.deployment_target = '8.0'
     ss.osx.deployment_target = '10.9'
 
+    ss.dependency 'Overcoat/Core'
     ss.dependency 'PromiseKit/CorePromise', '> 2'  # Swift 2.0 support comes after PromiseKit 3.0
 
     ss.source_files = 'Sources/PromiseKit/*.{h,m}'
@@ -57,6 +58,7 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'ReactiveCocoa' do |ss|
+    ss.dependency 'Overcoat/Core'
     ss.dependency 'ReactiveCocoa/Core', '> 2.4'
 
     ss.source_files = 'Sources/ReactiveCocoa/*.{h,m}'
