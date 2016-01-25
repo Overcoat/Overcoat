@@ -4,6 +4,8 @@
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Overcoat.svg)](https://cocoapods.org/pods/Overcoat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+### We are finding maintainers, contact @sodastsai :)
+
 Overcoat is a small but powerful library that makes creating REST clients simple and fun.
 It provides a simple API for making requests and mapping responses to model objects.
 
