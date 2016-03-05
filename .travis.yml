@@ -7,29 +7,29 @@ install:
 script:
   - make
 
-xcode_workspace: Overcoat.xcworkspace
-xcode_scheme:
-  - OvercoatTests-OSX
-  - OvercoatTests-iOS
-  - OvercoatTests-tvOS
-xcode_sdk:
-  - macosx
-  - iphonesimulator
-  - appletvsimulator
+# xcode_workspace: Overcoat.xcworkspace
+# xcode_scheme:
+#   - OvercoatTests-OSX
+#   - OvercoatTests-iOS
+#   - OvercoatTests-tvOS
+# xcode_sdk:
+#   - macosx
+#   - iphonesimulator
+#   - appletvsimulator
 
-matrix:
-  exclude:
-    - xcode_scheme: OvercoatApp-OSX
-      xcode_sdk: iphonesimulator
-    - xcode_scheme: OvercoatApp-OSX
-      xcode_sdk: appletvsimulator
+# matrix:
+#   exclude:
+#     - xcode_scheme: OvercoatApp-OSX
+#       xcode_sdk: iphonesimulator
+#     - xcode_scheme: OvercoatApp-OSX
+#       xcode_sdk: appletvsimulator
 
-    - xcode_scheme: OvercoatApp-iOS
-      xcode_sdk: macosx
-    - xcode_scheme: OvercoatApp-iOS
-      xcode_sdk: appletvsimulator
+#     - xcode_scheme: OvercoatApp-iOS
+#       xcode_sdk: macosx
+#     - xcode_scheme: OvercoatApp-iOS
+#       xcode_sdk: appletvsimulator
 
-    - xcode_scheme: OvercoatApp-tvOS
-      xcode_sdk: iphonesimulator
-    - xcode_scheme: OvercoatApp-tvOS
-      xcode_sdk: macosx
+#     - xcode_scheme: OvercoatApp-tvOS
+#       xcode_sdk: iphonesimulator
+#     - xcode_scheme: OvercoatApp-tvOS
+#       xcode_sdk: macosx
