@@ -39,20 +39,15 @@ PODS:
     - PromiseKit/CorePromise (> 2)
   - Overcoat+ReactiveCocoa (4.0.0-beta.2):
     - Overcoat (~> 4.0.0-beta.2)
-    - ReactiveCocoa/Core (> 2.4)
+    - ReactiveCocoa (~> 2.4)
   - PromiseKit/CorePromise (3.0.3)
-  - ReactiveCocoa (4.0.1):
-    - ReactiveCocoa/UI (= 4.0.1)
-    - Result (~> 1.0.2)
-  - ReactiveCocoa/Core (4.0.1):
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
     - ReactiveCocoa/no-arc
-    - Result (~> 1.0.2)
-  - ReactiveCocoa/no-arc (4.0.1):
-    - Result (~> 1.0.2)
-  - ReactiveCocoa/UI (4.0.1):
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
     - ReactiveCocoa/Core
-    - Result (~> 1.0.2)
-  - Result (1.0.2)
 
 DEPENDENCIES:
   - OHHTTPStubs
@@ -60,7 +55,6 @@ DEPENDENCIES:
   - Overcoat+CoreData (from `.`)
   - Overcoat+PromiseKit (from `.`)
   - Overcoat+ReactiveCocoa (from `.`)
-  - ReactiveCocoa
 
 EXTERNAL SOURCES:
   Overcoat:
@@ -77,14 +71,13 @@ SPEC CHECKSUMS:
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   MTLManagedObjectAdapter: 7e9bf033525c741129912b1a80bf36fb570b8286
   OHHTTPStubs: f7d1604d04d37d055460c0ef9af01bb249ded0fa
-  Overcoat: 2ddaa6d66edebc375f3e24a37974631d5aff7ebe
+  Overcoat: 034cfff81a23d07c8e71a0c91c91666a70740115
   Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
-  Overcoat+PromiseKit: 5a9a3600ebce18d0babede5b0513c930d27b7047
-  Overcoat+ReactiveCocoa: 5a62e03bb6caf219749e8e1bf5ba42b1e04ac073
+  Overcoat+PromiseKit: 69df0e50a5310fb82b9b36d12744cfee6871b7f2
+  Overcoat+ReactiveCocoa: 5a24bcc11a99ec8251ab1132bd5ca0e112325c4c
   PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
-  ReactiveCocoa: f7011630aee4deeb16352fcb1b50d6bde9db4f90
-  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
-PODFILE CHECKSUM: 6f12e24571be54b2b2c19b0066a5e2745cf13e21
+PODFILE CHECKSUM: 4f2b4bfb8f85e2f6d11834def8b1499c022ed368
 
 COCOAPODS: 1.0.0.beta.4

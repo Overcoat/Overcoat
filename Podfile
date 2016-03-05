@@ -7,19 +7,24 @@ def shared_dependencies
   pod 'Overcoat', :path => '.'
   pod 'Overcoat+CoreData', :path => '.'
   pod 'Overcoat+PromiseKit', :path => '.'
-  pod 'Overcoat+ReactiveCocoa', :path => '.'
 
   pod 'OHHTTPStubs'
+end
+
+def extra_dependencies
+  pod 'Overcoat+ReactiveCocoa', :path => '.'  # doesn't support tvOS
 end
 
 target "OvercoatTests-OSX" do
   platform :osx, '10.10'
   shared_dependencies
+  extra_dependencies
 end
 
 target "OvercoatTests-iOS" do
   platform :ios, '8.0'
   shared_dependencies
+  extra_dependencies
 end
 
 target "OvercoatTests-tvOS" do
