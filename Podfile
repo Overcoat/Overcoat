@@ -37,4 +37,12 @@ post_install do |installer|
   ['EXTRuntimeExtensions', 'EXTScope', 'metamacros'].each do |header|
     `grep -rl '"#{header}\\.h"' #{rca_path} | xargs sed -i '' 's/"#{header}\\.h"/<ReactiveCocoa\\/#{header}.h>/g'`
   end
+
+  installer.pods_project.targets.each do |target|
+    if target.platform_name != :osx then
+      target.build_configurations.each do |config|
+        config.build_settings['ENABLE_BITCODE'] = 'YES'
+      end
+    end
+  end
 end
