@@ -20,4 +20,4 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import <Overcoat+Social/OVCSocialRequestSerializer.h>
+#import <OvercoatSocial/OVCSocialRequestSerializer.h>
