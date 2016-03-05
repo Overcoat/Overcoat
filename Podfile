@@ -1,46 +1,37 @@
 source 'https://github.com/CocoaPods/Specs.git'
 
 use_frameworks!
+inhibit_all_warnings!
 
-def main_dependencies
-  pod 'Overcoat',
-    :subspecs => ['ReactiveCocoa', 'PromiseKit', 'CoreData'],
-    :path => 'Overcoat.podspec'
+def shared_dependencies
+  pod 'Overcoat', :path => '.'
+  pod 'Overcoat+CoreData', :path => '.'
+  pod 'Overcoat+PromiseKit', :path => '.'
+  pod 'Overcoat+ReactiveCocoa', :path => '.'
 
-  # Version/Integration settings for implicity dependencies
-  pod 'MTLManagedObjectAdapter', :inhibit_warnings => true
-  pod 'ReactiveCocoa', '4.0.0-RC.1'
-end
+  pod 'ReactiveCocoa'  # RAC 4 requires to include all podspec in
 
-def test_dependencies
   pod 'OHHTTPStubs'
 end
 
-target :osx, :exclusive => true do
-  link_with 'OvercoatApp-OSX'
+target "OvercoatTests-OSX" do
   platform :osx, '10.10'
-  main_dependencies
-
-  target :test do
-    link_with 'OvercoatTests-OSX'
-    test_dependencies
-  end
+  shared_dependencies
 end
 
-target :ios, :exclusive => true do
-  link_with 'OvercoatApp-iOS'
+target "OvercoatTests-iOS" do
   platform :ios, '8.0'
-  main_dependencies
+  shared_dependencies
+end
 
-  target :test do
-    link_with 'OvercoatTests-iOS'
-    test_dependencies
-  end
+target "OvercoatTests-tvOS" do
+  platform :tvos, '9.0'
+  shared_dependencies
 end
 
 post_install do |installer|
   rca_path = File.join __dir__, 'Pods', 'ReactiveCocoa'
-  ['EXTRuntimeExtensions', 'EXTScope'].each do |header|
+  ['EXTRuntimeExtensions', 'EXTScope', 'metamacros'].each do |header|
     `grep -rl '"#{header}\\.h"' #{rca_path} | xargs sed -i '' 's/"#{header}\\.h"/<ReactiveCocoa\\/#{header}.h>/g'`
   end
 end

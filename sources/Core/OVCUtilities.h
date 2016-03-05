@@ -1,6 +1,6 @@
 // OVCUtilities.h
 //
-// Copyright (c) 2014 Guillermo Gonzalez
+// Copyright (c) 2013-2016 Overcoat Team
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#define USING_XCODE_7 __has_feature(objc_generics)
+#define OVC_USING_XCODE_7 __has_feature(objc_generics)
 
 #pragma mark - C++ Support
 
@@ -36,7 +36,7 @@
     #define OVC_NONNULL nonnull
     #define OVC_NULLABLE nullable
     #define OVC_NULL_RESETTABLE null_resettable
-    #if USING_XCODE_7
+    #if OVC_USING_XCODE_7
         #define OVC__NONNULL _Nonnull
         #define OVC__NULLABLE _Nullable
         #define OVC__NULL_RESETTABLE _Null_resettable

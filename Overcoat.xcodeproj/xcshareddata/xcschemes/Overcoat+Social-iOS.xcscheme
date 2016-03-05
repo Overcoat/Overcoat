@@ -4,7 +4,7 @@
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "NO">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FE8A2BC51C0C928900B3406D"
+               BlueprintIdentifier = "FE10415C1C8AB06C00C3A1FD"
                BuildableName = "OvercoatSocial.framework"
-               BlueprintName = "OvercoatSocial-iOS"
+               BlueprintName = "Overcoat+Social-iOS"
                ReferencedContainer = "container:Overcoat.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE8A2BC51C0C928900B3406D"
+            BlueprintIdentifier = "FE10415C1C8AB06C00C3A1FD"
             BuildableName = "OvercoatSocial.framework"
-            BlueprintName = "OvercoatSocial-iOS"
+            BlueprintName = "Overcoat+Social-iOS"
             ReferencedContainer = "container:Overcoat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FE8A2BC51C0C928900B3406D"
+            BlueprintIdentifier = "FE10415C1C8AB06C00C3A1FD"
             BuildableName = "OvercoatSocial.framework"
-            BlueprintName = "OvercoatSocial-iOS"
+            BlueprintName = "Overcoat+Social-iOS"
             ReferencedContainer = "container:Overcoat.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

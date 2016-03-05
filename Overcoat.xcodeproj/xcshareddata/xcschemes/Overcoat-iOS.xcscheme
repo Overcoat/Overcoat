@@ -4,7 +4,7 @@
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "NO">
+      buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FEE173211C0B6A8300049027"
+               BlueprintIdentifier = "FEEEF5E61C8AAAA8003BB99E"
                BuildableName = "Overcoat.framework"
                BlueprintName = "Overcoat-iOS"
                ReferencedContainer = "container:Overcoat.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEE173211C0B6A8300049027"
+            BlueprintIdentifier = "FEEEF5E61C8AAAA8003BB99E"
             BuildableName = "Overcoat.framework"
             BlueprintName = "Overcoat-iOS"
             ReferencedContainer = "container:Overcoat.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FEE173211C0B6A8300049027"
+            BlueprintIdentifier = "FEEEF5E61C8AAAA8003BB99E"
             BuildableName = "Overcoat.framework"
             BlueprintName = "Overcoat-iOS"
             ReferencedContainer = "container:Overcoat.xcodeproj">

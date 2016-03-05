@@ -9,69 +9,82 @@ PODS:
   - Mantle (2.0.6):
     - Mantle/extobjc (= 2.0.6)
   - Mantle/extobjc (2.0.6)
-  - MTLManagedObjectAdapter (1.0.0.1):
+  - MTLManagedObjectAdapter (1.0.2):
     - Mantle (~> 2.0)
-    - MTLManagedObjectAdapter/extobjc (= 1.0.0.1)
-  - MTLManagedObjectAdapter/extobjc (1.0.0.1):
+    - MTLManagedObjectAdapter/extobjc (= 1.0.2)
+  - MTLManagedObjectAdapter/extobjc (1.0.2):
     - Mantle (~> 2.0)
-  - OHHTTPStubs (4.6.0):
-    - OHHTTPStubs/Default (= 4.6.0)
-  - OHHTTPStubs/Core (4.6.0)
-  - OHHTTPStubs/Default (4.6.0):
+  - OHHTTPStubs (4.7.1):
+    - OHHTTPStubs/Default (= 4.7.1)
+  - OHHTTPStubs/Core (4.7.1)
+  - OHHTTPStubs/Default (4.7.1):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (4.6.0):
+  - OHHTTPStubs/JSON (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (4.6.0):
+  - OHHTTPStubs/NSURLSession (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (4.6.0)
-  - Overcoat/Core (4.0.0-beta.1):
+  - OHHTTPStubs/OHPathHelpers (4.7.1)
+  - Overcoat (4.0.0-beta.2):
     - AFNetworking/NSURLSession (~> 3.0)
     - AFNetworking/Serialization (~> 3.0)
     - Mantle (~> 2.0)
-  - Overcoat/CoreData (4.0.0-beta.1):
+  - Overcoat+CoreData (4.0.0-beta.2):
     - MTLManagedObjectAdapter (> 1.0)
-    - Overcoat/Core
-  - Overcoat/PromiseKit (4.0.0-beta.1):
+    - Overcoat (~> 4.0.0-beta.2)
+  - Overcoat+PromiseKit (4.0.0-beta.2):
+    - Overcoat (~> 4.0.0-beta.2)
     - PromiseKit/CorePromise (> 2)
-  - Overcoat/ReactiveCocoa (4.0.0-beta.1):
+  - Overcoat+ReactiveCocoa (4.0.0-beta.2):
+    - Overcoat (~> 4.0.0-beta.2)
     - ReactiveCocoa/Core (> 2.4)
-  - PromiseKit/CorePromise (3.0.0)
-  - ReactiveCocoa (4.0.0-RC.1):
-    - ReactiveCocoa/UI (= 4.0.0-RC.1)
-    - Result (~> 1.0)
-  - ReactiveCocoa/Core (4.0.0-RC.1):
+  - PromiseKit/CorePromise (3.0.3)
+  - ReactiveCocoa (4.0.1):
+    - ReactiveCocoa/UI (= 4.0.1)
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/Core (4.0.1):
     - ReactiveCocoa/no-arc
-    - Result (~> 1.0)
-  - ReactiveCocoa/no-arc (4.0.0-RC.1):
-    - Result (~> 1.0)
-  - ReactiveCocoa/UI (4.0.0-RC.1):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/no-arc (4.0.1):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/UI (4.0.1):
     - ReactiveCocoa/Core
-    - Result (~> 1.0)
-  - Result (1.0.1)
+    - Result (~> 1.0.2)
+  - Result (1.0.2)
 
 DEPENDENCIES:
-  - MTLManagedObjectAdapter
   - OHHTTPStubs
-  - Overcoat/CoreData (from `Overcoat.podspec`)
-  - Overcoat/PromiseKit (from `Overcoat.podspec`)
-  - Overcoat/ReactiveCocoa (from `Overcoat.podspec`)
-  - ReactiveCocoa (= 4.0.0-RC.1)
+  - Overcoat (from `.`)
+  - Overcoat+CoreData (from `.`)
+  - Overcoat+PromiseKit (from `.`)
+  - Overcoat+ReactiveCocoa (from `.`)
+  - ReactiveCocoa
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: Overcoat.podspec
+    :path: "."
+  Overcoat+CoreData:
+    :path: "."
+  Overcoat+PromiseKit:
+    :path: "."
+  Overcoat+ReactiveCocoa:
+    :path: "."
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
-  MTLManagedObjectAdapter: 2da4b0244ee66f87b43e5fe9e7cd47838dea83ae
-  OHHTTPStubs: cb1aefbbeb4de4e741644455d4b945538e5248a2
-  Overcoat: 2af27994a79368defdd50a5343bd985774abc3d6
-  PromiseKit: 665540a1eb43156446872dcf49ed7dee6ebbe13b
-  ReactiveCocoa: 2b0f654beb7642b82cfd3fdb845205ae9889422c
-  Result: caef80340451e1f07492fa1e89117f83613bce24
+  MTLManagedObjectAdapter: 7e9bf033525c741129912b1a80bf36fb570b8286
+  OHHTTPStubs: f7d1604d04d37d055460c0ef9af01bb249ded0fa
+  Overcoat: 2ddaa6d66edebc375f3e24a37974631d5aff7ebe
+  Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
+  Overcoat+PromiseKit: 5a9a3600ebce18d0babede5b0513c930d27b7047
+  Overcoat+ReactiveCocoa: 5a62e03bb6caf219749e8e1bf5ba42b1e04ac073
+  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
+  ReactiveCocoa: f7011630aee4deeb16352fcb1b50d6bde9db4f90
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 6f12e24571be54b2b2c19b0066a5e2745cf13e21
+
+COCOAPODS: 1.0.0.beta.4

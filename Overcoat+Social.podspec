@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name     = 'Overcoat'
+  s.name     = 'Overcoat+Social'
   s.version  = File.read(File.join __dir__, 'Version').strip
   s.cocoapods_version = '>= 0.39'
   s.license  = 'MIT'
@@ -14,10 +14,9 @@ Pod::Spec.new do |s|
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
 
-  s.frameworks = 'Foundation'
-  s.dependency 'Mantle', '~> 2.0'
+  s.frameworks = 'Accounts', 'Social'
   s.dependency 'AFNetworking/Serialization', '~> 3.0'
-  s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
 
-  s.source_files = 'Sources/Core/*.{h,m}'
+  s.source_files = 'Sources/Social/*.{h,m}'
+  s.header_dir = 'OvercoatSocial'
 end
