@@ -182,11 +182,10 @@ You can then specify which response class to use in your client by overriding `+
 
 ### Core Data Serialization
 
-To support CoreData serialization, you have to use `CoreData` subspec if you're using CocoaPods
+To support CoreData serialization, you have to use `Overcoat+CoreData` extension if you're using CocoaPods
 
 ``` ruby
-pod 'Overcoat/CoreData', '~> 4.0'  # Use this,
-pod 'Overcoat', :subspecs => ['CoreData'], '~> 4.0'  # Or this if you want to apply multiple subspecs.
+pod 'Overcoat+CoreData', '~> 4.0'  # Use this,
 ```
 
 Or if you are using Carthage, you also have to add `OvercoatCoreData.framework` to your project.
@@ -225,13 +224,13 @@ contains an array of `TwitterUser` objects.
 
 From 2.0, Overcoat adds support for [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveCocoa).
 
-To add ReactiveCocoa support, you have to use `ReactiveCocoa` subpec if you're using CocoaPods.
+To add ReactiveCocoa support, you have to use `Overcoat+ReactiveCocoa` podspec if you're using CocoaPods.
 Or if you're using Carthage, add `OvercoatReactiveCocoa.framework`
 
 Now you can make HTTP requests and get cold signals to handle responses:
 
 ```objc
-#import <Overcoat/OvercoatReactiveCocoa.h>
+#import <OvercoatReactiveCocoa/OvercoatReactiveCocoa.h>
 ...
 [[twitterClient rac_GET:@"users/lookup.json" parameters:parameters] subscribeNext:^(OVCResponse *response) {
     ...
@@ -245,13 +244,13 @@ Now you can make HTTP requests and get cold signals to handle responses:
 If you're looking for a better way to handle asynchronous calls but you're not ready to embrace ReactiveCocoa,
 you may try [PromiseKit](http://promisekit.org).
 
-To add ReactiveCocoa support, you have to use `PromiseKit` subpec if you're using CocoaPods.
+To add ReactiveCocoa support, you have to use `Overcoat+PromiseKit` podspec if you're using CocoaPods.
 Or if you're using Carthage, add `OvercoatPromiseKit.framework`
 
 Now you can get `PMKPromise` objects when making HTTP requests:
 
 ```objc
-#import <Overcoat/PromiseKit+Overcoat.h>
+#import <OvercoatPromiseKit/OvercoatPromiseKit.h>
 ...
 [twitterClient pmk_GET:@"users/lookup.json" parameters:parameters].then(^(OVCResponse *response) {
     return response.result;
