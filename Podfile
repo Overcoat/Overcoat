@@ -9,8 +9,6 @@ def shared_dependencies
   pod 'Overcoat+PromiseKit', :path => '.'
   pod 'Overcoat+ReactiveCocoa', :path => '.'
 
-  pod 'ReactiveCocoa'  # RAC 4 requires to include all podspec in
-
   pod 'OHHTTPStubs'
 end
 

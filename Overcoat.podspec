@@ -19,5 +19,5 @@ Pod::Spec.new do |s|
   s.dependency 'AFNetworking/Serialization', '~> 3.0'
   s.dependency 'AFNetworking/NSURLSession', '~> 3.0'
 
-  s.source_files = 'Sources/Core/*.{h,m}'
+  s.source_files = 'sources/Core/*.{h,m}'
 end

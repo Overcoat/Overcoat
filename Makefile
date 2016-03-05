@@ -8,6 +8,8 @@ TVOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS 
 CARTHAGE_PLATFORMS=Mac,iOS
 CARTHAGE_FLAGS:=--platform $(CARTHAGE_PLATFORMS)
 
+POD_TRUNK_PUSH_FLAGS=--verbose
+
 test: install-pod clean build-tests run-tests
 
 test-osx: install-pod clean build-tests-osx run-tests-osx
@@ -58,9 +60,13 @@ test-carthage:
 	carthage build --no-skip-current $(CARTHAGE_FLAGS) --verbose
 
 test-pod:
-	pod spec lint Overcoat.podspec --verbose --allow-warnings --no-clean --fail-fast
+	pod spec lint ./*.podspec --verbose --allow-warnings --no-clean --fail-fast
 
 distribute-pod: test
-	pod trunk push --allow-warnings
+	pod trunk push Overcoat.podspec $(POD_TRUNK_PUSH_FLAGS)
+	pod trunk push Overcoat+CoreData.podspec --allow-warnings $(POD_TRUNK_PUSH_FLAGS)
+	pod trunk push Overcoat+PromiseKit.podspec $(POD_TRUNK_PUSH_FLAGS)
+	pod trunk push Overcoat+ReactiveCocoa.podspec $(POD_TRUNK_PUSH_FLAGS)
+	pod trunk push Overcoat+Social.podspec $(POD_TRUNK_PUSH_FLAGS)
 
 distribute-carthage: test

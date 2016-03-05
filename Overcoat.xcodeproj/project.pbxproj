@@ -114,7 +114,6 @@
 		FEEEF5A41C899E21003BB99E /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5181C898D83003BB99E /* OVCHTTPSessionManagerPromiseTests.m */; };
 		FEEEF5A51C899E21003BB99E /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5191C898D83003BB99E /* OVCHTTPSessionManagerReactiveTests.m */; };
 		FEEEF5A61C899E21003BB99E /* OVCHTTPSessionManagerPromiseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5181C898D83003BB99E /* OVCHTTPSessionManagerPromiseTests.m */; };
-		FEEEF5A71C899E21003BB99E /* OVCHTTPSessionManagerReactiveTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5191C898D83003BB99E /* OVCHTTPSessionManagerReactiveTests.m */; };
 		FEEEF5BD1C89F832003BB99E /* Test.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF52B1C898D83003BB99E /* Test.xcdatamodeld */; };
 		FEEEF5BE1C89F837003BB99E /* OVCCoreDataTestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5141C898D83003BB99E /* OVCCoreDataTestModel.m */; };
 		FEEEF5BF1C89F837003BB99E /* OVCHTTPSessionManagerCoreDataTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5171C898D83003BB99E /* OVCHTTPSessionManagerCoreDataTests.m */; };
@@ -1434,7 +1433,6 @@
 				FEEEF5991C899707003BB99E /* OVCTestResponse.m in Sources */,
 				FEEEF5BE1C89F837003BB99E /* OVCCoreDataTestModel.m in Sources */,
 				FEEEF59A1C899707003BB99E /* OVCURLMatcherTests.m in Sources */,
-				FEEEF5A71C899E21003BB99E /* OVCHTTPSessionManagerReactiveTests.m in Sources */,
 				FEEEF5931C899707003BB99E /* OVCCustomEnvelopTestResponse.m in Sources */,
 				FEEEF5C01C89F837003BB99E /* OVCModelResponseSerializerCoreDataTests.m in Sources */,
 				FEEEF5961C899707003BB99E /* OVCResponseClassPerPathTest.m in Sources */,
