@@ -244,7 +244,7 @@ Now you can make HTTP requests and get cold signals to handle responses:
 If you're looking for a better way to handle asynchronous calls but you're not ready to embrace ReactiveCocoa,
 you may try [PromiseKit](http://promisekit.org).
 
-To add ReactiveCocoa support, you have to use `Overcoat+PromiseKit` podspec if you're using CocoaPods.
+To add PromiseKit support, you have to use `Overcoat+PromiseKit` podspec if you're using CocoaPods.
 Or if you're using Carthage, add `OvercoatPromiseKit.framework`
 
 Now you can get `PMKPromise` objects when making HTTP requests:
