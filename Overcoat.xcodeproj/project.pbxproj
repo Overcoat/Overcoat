@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6061C8AAC7F003BB99E /* Result.framework */; };
+		37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */; };
 		7F04FFD59855694E0C09888F /* Pods_OvercoatTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D771E630FD6E31EBCD6BA7B /* Pods_OvercoatTests_OSX.framework */; };
 		B318DCE7C71E201814131CC5 /* Pods_OvercoatTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F17E5C7426B15896D263941 /* Pods_OvercoatTests_iOS.framework */; };
 		BB55DCD3903B96F4CFC59FC9 /* Pods_OvercoatTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8495121DDC0CBDFF6053EC /* Pods_OvercoatTests_tvOS.framework */; };
@@ -43,8 +45,6 @@
 		FE0A7A321C8AAEF2003DAA0C /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */; };
 		FE0A7A331C8AAEF2003DAA0C /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */; };
 		FE1041321C8AAFA300C3A1FD /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5E71C8AAAA8003BB99E /* Overcoat.framework */; };
-		FE1041331C8AAFA300C3A1FD /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */; };
-		FE1041341C8AAFA300C3A1FD /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */; };
 		FE1041441C8AAFA700C3A1FD /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5C61C8AA9B0003BB99E /* Overcoat.framework */; };
 		FE1041501C8AAFCE00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B61C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE1041511C8AAFCE00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5B71C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
@@ -337,8 +337,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1041321C8AAFA300C3A1FD /* Overcoat.framework in Frameworks */,
-				FE1041331C8AAFA300C3A1FD /* OMGHTTPURLRQ.framework in Frameworks */,
-				FE1041341C8AAFA300C3A1FD /* PromiseKit.framework in Frameworks */,
+				37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */,
+				37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
