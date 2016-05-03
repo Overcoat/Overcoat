@@ -80,7 +80,7 @@
                                                  modelClassesByPath:[[self class] responseClassesByResourcePath]]
          errorModelClassURLMatcher:[OVCURLMatcher matcherWithBasePath:self.baseURL.path
                                                    modelClassesByPath:[[self class] errorModelClassesByResourcePath]]
-         managedObjectContext:self.managedObjectContext];
+         managedObjectContext:self.backgroundContext];
     }
     return self;
 }
