@@ -112,14 +112,14 @@ If you use `*` and `#`, they are **strict path matchings**, so **the number of p
 
 Match String          | Path                           | Result
 --------------------- | ------------------------------ | --------
-`statuses/*`          | `statues/user_timeline`        | Matched
-`statuses/#`          | `statues/user_timeline`        | Missed (wrong type, the path component after `statuses` should be dights only)
-`statuses/*`          | `statues/retweets/12345`       | Missed (wrong number of path components, there should be only one  path component after `statuses`)
-`statuses/*/*`        | `statues/retweets/12345`       | Matched
-`statuses/**`         | `statues/retweets/12345`       | Matched
-`statuses/**`         | `statues/retweets/12345/extra` | Matched (the number of path components doesn't matter)
-`statuses/retweets/*` | `statues/retweets/12345`       | Matched
-`statuses/retweets/#` | `statues/retweets/12345`       | Matched
+`statuses/*`          | `statuses/user_timeline`        | Matched
+`statuses/#`          | `statuses/user_timeline`        | Missed (wrong type, the path component after `statuses` should be dights only)
+`statuses/*`          | `statuses/retweets/12345`       | Missed (wrong number of path components, there should be only one  path component after `statuses`)
+`statuses/*/*`        | `statuses/retweets/12345`       | Matched
+`statuses/**`         | `statuses/retweets/12345`       | Matched
+`statuses/**`         | `statuses/retweets/12345/extra` | Matched (the number of path components doesn't matter)
+`statuses/retweets/*` | `statuses/retweets/12345`       | Matched
+`statuses/retweets/#` | `statuses/retweets/12345`       | Matched
 
 
 Also you can specify different model classes by request method or response status code, like:
