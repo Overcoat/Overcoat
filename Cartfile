@@ -3,5 +3,5 @@ github "Mantle/Mantle" ~> 2.0
 
 github "Mantle/MTLManagedObjectAdapter" "master"
 github "mxcl/PromiseKit" >= 2.0
-github "mxcl/OMGHTTPURLRQ"
+github "mxcl/OMGHTTPURLRQ" ~> 3.2
 github "ReactiveCocoa/ReactiveCocoa" ~> 2.4
