@@ -34,7 +34,6 @@
 		FE0A7A091C8AADCB003DAA0C /* MTLManagedObjectAdapter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6021C8AAC7F003BB99E /* MTLManagedObjectAdapter.framework */; };
 		FE0A7A191C8AAE57003DAA0C /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5C61C8AA9B0003BB99E /* Overcoat.framework */; };
 		FE0A7A1A1C8AAE60003DAA0C /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6091C8AAC94003BB99E /* PromiseKit.framework */; };
-		FE0A7A1B1C8AAE9B003DAA0C /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6081C8AAC94003BB99E /* OMGHTTPURLRQ.framework */; };
 		FE0A7A1C1C8AAEA9003DAA0C /* OVCHTTPSessionManager+PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B21C899E5C003BB99E /* OVCHTTPSessionManager+PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE0A7A1D1C8AAEA9003DAA0C /* OVCHTTPSessionManager+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5B31C899E5C003BB99E /* OVCHTTPSessionManager+PromiseKit.m */; };
 		FE0A7A1E1C8AAEA9003DAA0C /* OvercoatPromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B41C899E5C003BB99E /* OvercoatPromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -42,7 +41,6 @@
 		FE0A7A2D1C8AAEDB003DAA0C /* OVCHTTPSessionManager+PromiseKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5B31C899E5C003BB99E /* OVCHTTPSessionManager+PromiseKit.m */; };
 		FE0A7A2E1C8AAEDB003DAA0C /* OvercoatPromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B41C899E5C003BB99E /* OvercoatPromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE0A7A311C8AAEEE003DAA0C /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5E71C8AAAA8003BB99E /* Overcoat.framework */; };
-		FE0A7A321C8AAEF2003DAA0C /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */; };
 		FE0A7A331C8AAEF2003DAA0C /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */; };
 		FE1041321C8AAFA300C3A1FD /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5E71C8AAAA8003BB99E /* Overcoat.framework */; };
 		FE1041441C8AAFA700C3A1FD /* Overcoat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF5C61C8AA9B0003BB99E /* Overcoat.framework */; };
@@ -318,7 +316,6 @@
 			files = (
 				FE0A7A191C8AAE57003DAA0C /* Overcoat.framework in Frameworks */,
 				FE0A7A1A1C8AAE60003DAA0C /* PromiseKit.framework in Frameworks */,
-				FE0A7A1B1C8AAE9B003DAA0C /* OMGHTTPURLRQ.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +324,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE0A7A311C8AAEEE003DAA0C /* Overcoat.framework in Frameworks */,
-				FE0A7A321C8AAEF2003DAA0C /* OMGHTTPURLRQ.framework in Frameworks */,
 				FE0A7A331C8AAEF2003DAA0C /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
