@@ -44,5 +44,8 @@ post_install do |installer|
         config.build_settings['ENABLE_BITCODE'] = 'YES'
       end
     end
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '3.0'
+    end
   end
 end
