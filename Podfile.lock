@@ -14,19 +14,19 @@ PODS:
     - MTLManagedObjectAdapter/extobjc (= 1.0.2)
   - MTLManagedObjectAdapter/extobjc (1.0.2):
     - Mantle (~> 2.0)
-  - OHHTTPStubs (5.2.1):
-    - OHHTTPStubs/Default (= 5.2.1)
-  - OHHTTPStubs/Core (5.2.1)
-  - OHHTTPStubs/Default (5.2.1):
+  - OHHTTPStubs (4.7.1):
+    - OHHTTPStubs/Default (= 4.7.1)
+  - OHHTTPStubs/Core (4.7.1)
+  - OHHTTPStubs/Default (4.7.1):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (5.2.1):
+  - OHHTTPStubs/JSON (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (5.2.1):
+  - OHHTTPStubs/NSURLSession (4.7.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (5.2.1)
+  - OHHTTPStubs/OHPathHelpers (4.7.1)
   - Overcoat (4.0.0-beta.2):
     - AFNetworking/NSURLSession (~> 3.0)
     - AFNetworking/Serialization (~> 3.0)
@@ -58,19 +58,19 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: "."
+    :path: .
   Overcoat+CoreData:
-    :path: "."
+    :path: .
   Overcoat+PromiseKit:
-    :path: "."
+    :path: .
   Overcoat+ReactiveCocoa:
-    :path: "."
+    :path: .
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
   Mantle: 299966b00759634931699f69cb6a30b9239b944d
   MTLManagedObjectAdapter: 7e9bf033525c741129912b1a80bf36fb570b8286
-  OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
+  OHHTTPStubs: f7d1604d04d37d055460c0ef9af01bb249ded0fa
   Overcoat: 034cfff81a23d07c8e71a0c91c91666a70740115
   Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
   Overcoat+PromiseKit: 69df0e50a5310fb82b9b36d12744cfee6871b7f2
@@ -80,4 +80,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7655d284c8e6cebe08c1cbfd0c95a6955588d9c2
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.0.1
