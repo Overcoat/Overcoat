@@ -5,7 +5,7 @@ install:
   - gem install activesupport -v 4.2.6
   - gem list cocoapods | grep ^cocoapods | awk '{print $1'} | xargs gem uninstall --all
   - gem install cocoapods
-  - pod --version
+  - pod repo update
 
 script: make test-osx test-ios #test-tvos
 
