@@ -4,7 +4,7 @@ osx_image: xcode8.0
 install:
   - gem install activesupport -v 4.2.6
   - gem list cocoapods | grep ^cocoapods | awk '{print $1'} | xargs gem uninstall --all
-  - gem install cocoapods --pre
+  - gem install cocoapods
 
 script: make test-osx test-ios #test-tvos
 

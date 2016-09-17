@@ -58,13 +58,13 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: "."
+    :path: .
   Overcoat+CoreData:
-    :path: "."
+    :path: .
   Overcoat+PromiseKit:
-    :path: "."
+    :path: .
   Overcoat+ReactiveCocoa:
-    :path: "."
+    :path: .
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -80,4 +80,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7655d284c8e6cebe08c1cbfd0c95a6955588d9c2
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.0.1
