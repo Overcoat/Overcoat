@@ -24,7 +24,7 @@ clean:
 	xcodebuild -project $(XCODE_PROJ) -alltargets clean
 
 install-pod:
-	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install
+	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install --repo-update
 
 build-tests-osx:
 	xctool $(OSX_SCHEME_XCTOOL_FLAGS) build-tests
