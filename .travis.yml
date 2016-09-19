@@ -2,9 +2,7 @@ language: objective-c
 osx_image: xcode8
 
 install:
-  - gem list cocoapods | grep ^cocoapods | awk '{print $1'} | xargs gem uninstall --all
-  - gem install activesupport -v 4.2.6
-  - gem install cocoapods
+  - gem install cocoapods --no-rdoc --no-ri --no-document --quiet
 
 script: make test-osx test-ios #test-tvos
 
