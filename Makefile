@@ -1,9 +1,9 @@
 XC_WORKSPACE=Overcoat.xcworkspace
 XCODE_PROJ=Overcoat.xcodeproj
 
-OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
-IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
-TVOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS -sdk appletvsimulator
+OSX_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
+IOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
+TVOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS -sdk appletvsimulator
 
 CARTHAGE_PLATFORMS=Mac,iOS
 CARTHAGE_FLAGS:=--platform $(CARTHAGE_PLATFORMS)
@@ -27,24 +27,24 @@ install-pod:
 	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install --repo-update
 
 build-tests-osx:
-	xctool $(OSX_SCHEME_XCTOOL_FLAGS) build-tests
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) build
 
 build-tests-ios:
-	xctool $(IOS_SCHEME_XCTOOL_FLAGS) build-tests
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) build
 
 build-tests-tvos:
-	xctool $(TVOS_SCHEME_XCTOOL_FLAGS) build-tests
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) build
 
 # Run Tests
 
 run-tests-osx:
-	xctool $(OSX_SCHEME_XCTOOL_FLAGS) run-tests
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test
 
 run-tests-ios:
-	xctool $(IOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk iphonesimulator
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test
 
 run-tests-tvos:
-	xctool $(TVOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk appletvsimulator
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test
 
 # Intetfaces
 
