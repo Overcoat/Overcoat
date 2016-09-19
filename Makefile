@@ -27,24 +27,24 @@ install-pod:
 	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install --repo-update
 
 build-tests-osx:
-	xcodebuild $(OSX_TEST_SCHEME_FLAGS) build
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) build-without-testing
 
 build-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) build
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) build-without-testing
 
 build-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) build
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) build-without-testing
 
 # Run Tests
 
 run-tests-osx:
-	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test-without-building
 
 run-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test-without-building
 
 run-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test-without-building
 
 # Intetfaces
 
