@@ -12,13 +12,11 @@ POD_TRUNK_PUSH_FLAGS=--verbose
 
 test: install-pod clean build-tests run-tests
 
-test-osx: install-pod clean build-tests-osx run-tests-osx
+test-osx: install-pod clean run-tests-osx
 
-test-ios: install-pod clean build-tests-ios run-tests-ios
+test-ios: install-pod clean run-tests-ios
 
-test-tvos: install-pod clean build-tests-tvos run-tests-tvos
-
-# Build Tests
+test-tvos: install-pod clean run-tests-tvos
 
 clean:
 	xcodebuild -project $(XCODE_PROJ) -alltargets clean
@@ -26,29 +24,18 @@ clean:
 install-pod:
 	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install --repo-update
 
-build-tests-osx:
-	xcodebuild $(OSX_TEST_SCHEME_FLAGS) build-without-testing
-
-build-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) build-without-testing
-
-build-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) build-without-testing
-
 # Run Tests
 
 run-tests-osx:
-	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test-without-building
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test
 
 run-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test-without-building
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test
 
 run-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test-without-building
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test
 
 # Intetfaces
-
-build-tests: build-tests-osx build-tests-ios build-tests-tvos
 
 run-tests: run-tests-osx run-tests-ios run-tests-tvos
 

@@ -898,12 +898,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF50E1C898D6C003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-OSX" */;
 			buildPhases = (
-				C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */,
+				C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */,
 				FEEEF5021C898D6C003BB99E /* Sources */,
 				FEEEF5031C898D6C003BB99E /* Frameworks */,
 				FEEEF5041C898D6C003BB99E /* Resources */,
-				7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */,
-				76688393623171FB1B76F628 /* Copy Pods Resources */,
+				7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */,
+				76688393623171FB1B76F628 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -918,12 +918,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF5721C8995DA003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-iOS" */;
 			buildPhases = (
-				9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */,
+				9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */,
 				FEEEF5661C8995DA003BB99E /* Sources */,
 				FEEEF5671C8995DA003BB99E /* Frameworks */,
 				FEEEF5681C8995DA003BB99E /* Resources */,
-				6A6F826A171035064701B804 /* Embed Pods Frameworks */,
-				7AFCDCBC5436155B7B71776D /* Copy Pods Resources */,
+				6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */,
+				7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -938,12 +938,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF58B1C8996F4003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-tvOS" */;
 			buildPhases = (
-				470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */,
+				470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */,
 				FEEEF5821C8996F4003BB99E /* Sources */,
 				FEEEF5831C8996F4003BB99E /* Frameworks */,
 				FEEEF5841C8996F4003BB99E /* Resources */,
-				12BECB6422D178911AD0F95B /* Embed Pods Frameworks */,
-				9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */,
+				12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */,
+				9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1022,6 +1022,7 @@
 					};
 					FEEEF5691C8995DA003BB99E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					FEEEF5851C8996F4003BB99E = {
 						CreatedOnToolsVersion = 7.2;
@@ -1173,14 +1174,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12BECB6422D178911AD0F95B /* Embed Pods Frameworks */ = {
+		12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,14 +1189,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */ = {
+		470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1203,14 +1204,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6A6F826A171035064701B804 /* Embed Pods Frameworks */ = {
+		6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1218,14 +1219,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76688393623171FB1B76F628 /* Copy Pods Resources */ = {
+		76688393623171FB1B76F628 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,14 +1234,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7AFCDCBC5436155B7B71776D /* Copy Pods Resources */ = {
+		7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,14 +1249,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */ = {
+		7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1263,14 +1264,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */ = {
+		9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1278,14 +1279,14 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */ = {
+		9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1293,14 +1294,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */ = {
+		C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2011,6 +2012,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2025,6 +2027,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

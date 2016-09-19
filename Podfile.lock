@@ -40,7 +40,7 @@ PODS:
   - Overcoat+ReactiveCocoa (4.0.0-beta.2):
     - Overcoat (~> 4.0.0-beta.2)
     - ReactiveCocoa (~> 2.4)
-  - PromiseKit/CorePromise (3.0.3)
+  - PromiseKit/CorePromise (4.0.1)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -75,7 +75,7 @@ SPEC CHECKSUMS:
   Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
   Overcoat+PromiseKit: 69df0e50a5310fb82b9b36d12744cfee6871b7f2
   Overcoat+ReactiveCocoa: 5a24bcc11a99ec8251ab1132bd5ca0e112325c4c
-  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
+  PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 PODFILE CHECKSUM: 7655d284c8e6cebe08c1cbfd0c95a6955588d9c2
