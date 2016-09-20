@@ -1,32 +1,32 @@
 PODS:
-  - AFNetworking/NSURLSession (3.0.4):
+  - AFNetworking/NSURLSession (3.1.0):
     - AFNetworking/Reachability
     - AFNetworking/Security
     - AFNetworking/Serialization
-  - AFNetworking/Reachability (3.0.4)
-  - AFNetworking/Security (3.0.4)
-  - AFNetworking/Serialization (3.0.4)
-  - Mantle (2.0.6):
-    - Mantle/extobjc (= 2.0.6)
-  - Mantle/extobjc (2.0.6)
-  - MTLManagedObjectAdapter (1.0.2):
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - Mantle (2.0.7):
+    - Mantle/extobjc (= 2.0.7)
+  - Mantle/extobjc (2.0.7)
+  - MTLManagedObjectAdapter (1.0.3):
     - Mantle (~> 2.0)
-    - MTLManagedObjectAdapter/extobjc (= 1.0.2)
-  - MTLManagedObjectAdapter/extobjc (1.0.2):
+    - MTLManagedObjectAdapter/extobjc (= 1.0.3)
+  - MTLManagedObjectAdapter/extobjc (1.0.3):
     - Mantle (~> 2.0)
-  - OHHTTPStubs (4.7.1):
-    - OHHTTPStubs/Default (= 4.7.1)
-  - OHHTTPStubs/Core (4.7.1)
-  - OHHTTPStubs/Default (4.7.1):
+  - OHHTTPStubs (5.2.1):
+    - OHHTTPStubs/Default (= 5.2.1)
+  - OHHTTPStubs/Core (5.2.1)
+  - OHHTTPStubs/Default (5.2.1):
     - OHHTTPStubs/Core
     - OHHTTPStubs/JSON
     - OHHTTPStubs/NSURLSession
     - OHHTTPStubs/OHPathHelpers
-  - OHHTTPStubs/JSON (4.7.1):
+  - OHHTTPStubs/JSON (5.2.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/NSURLSession (4.7.1):
+  - OHHTTPStubs/NSURLSession (5.2.1):
     - OHHTTPStubs/Core
-  - OHHTTPStubs/OHPathHelpers (4.7.1)
+  - OHHTTPStubs/OHPathHelpers (5.2.1)
   - Overcoat (4.0.0-beta.2):
     - AFNetworking/NSURLSession (~> 3.0)
     - AFNetworking/Serialization (~> 3.0)
@@ -36,11 +36,11 @@ PODS:
     - Overcoat (~> 4.0.0-beta.2)
   - Overcoat+PromiseKit (4.0.0-beta.2):
     - Overcoat (~> 4.0.0-beta.2)
-    - PromiseKit/CorePromise (> 2)
+    - PromiseKit/CorePromise (~> 4.0)
   - Overcoat+ReactiveCocoa (4.0.0-beta.2):
     - Overcoat (~> 4.0.0-beta.2)
     - ReactiveCocoa (~> 2.4)
-  - PromiseKit/CorePromise (3.0.3)
+  - PromiseKit/CorePromise (4.0.1)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -58,26 +58,26 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   Overcoat:
-    :path: "."
+    :path: .
   Overcoat+CoreData:
-    :path: "."
+    :path: .
   Overcoat+PromiseKit:
-    :path: "."
+    :path: .
   Overcoat+ReactiveCocoa:
-    :path: "."
+    :path: .
 
 SPEC CHECKSUMS:
-  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
-  Mantle: 299966b00759634931699f69cb6a30b9239b944d
-  MTLManagedObjectAdapter: 7e9bf033525c741129912b1a80bf36fb570b8286
-  OHHTTPStubs: f7d1604d04d37d055460c0ef9af01bb249ded0fa
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  Mantle: bc40bb061d8c2c6fb48d5083e04d928c3b7f73d9
+  MTLManagedObjectAdapter: 631a53432675dcf03a9d90624afb3cececf54631
+  OHHTTPStubs: 3a42f25c00563b71355ac73112ba2324e9e6cef4
   Overcoat: 034cfff81a23d07c8e71a0c91c91666a70740115
   Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
-  Overcoat+PromiseKit: 69df0e50a5310fb82b9b36d12744cfee6871b7f2
+  Overcoat+PromiseKit: 31e6aaa78e16592acbe06444bf240655fe0e0aa2
   Overcoat+ReactiveCocoa: 5a24bcc11a99ec8251ab1132bd5ca0e112325c4c
-  PromiseKit: 00ec2a219bf5ad2833f95977698e921932b8dfd3
+  PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
 
 PODFILE CHECKSUM: 7655d284c8e6cebe08c1cbfd0c95a6955588d9c2
 
-COCOAPODS: 1.0.0.beta.4
+COCOAPODS: 1.1.0.rc.2

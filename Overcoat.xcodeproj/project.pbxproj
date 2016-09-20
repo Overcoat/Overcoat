@@ -898,12 +898,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF50E1C898D6C003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-OSX" */;
 			buildPhases = (
-				C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */,
+				C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */,
 				FEEEF5021C898D6C003BB99E /* Sources */,
 				FEEEF5031C898D6C003BB99E /* Frameworks */,
 				FEEEF5041C898D6C003BB99E /* Resources */,
-				7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */,
-				76688393623171FB1B76F628 /* Copy Pods Resources */,
+				7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */,
+				76688393623171FB1B76F628 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -918,12 +918,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF5721C8995DA003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-iOS" */;
 			buildPhases = (
-				9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */,
+				9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */,
 				FEEEF5661C8995DA003BB99E /* Sources */,
 				FEEEF5671C8995DA003BB99E /* Frameworks */,
 				FEEEF5681C8995DA003BB99E /* Resources */,
-				6A6F826A171035064701B804 /* Embed Pods Frameworks */,
-				7AFCDCBC5436155B7B71776D /* Copy Pods Resources */,
+				6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */,
+				7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -938,12 +938,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF58B1C8996F4003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-tvOS" */;
 			buildPhases = (
-				470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */,
+				470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */,
 				FEEEF5821C8996F4003BB99E /* Sources */,
 				FEEEF5831C8996F4003BB99E /* Frameworks */,
 				FEEEF5841C8996F4003BB99E /* Resources */,
-				12BECB6422D178911AD0F95B /* Embed Pods Frameworks */,
-				9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */,
+				12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */,
+				9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -996,7 +996,7 @@
 		FEEEF4BD1C898AED003BB99E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = overcoat;
 				TargetAttributes = {
 					FE0A79DA1C8AACEB003DAA0C = {
@@ -1022,6 +1022,7 @@
 					};
 					FEEEF5691C8995DA003BB99E = {
 						CreatedOnToolsVersion = 7.2;
+						LastSwiftMigration = 0800;
 					};
 					FEEEF5851C8996F4003BB99E = {
 						CreatedOnToolsVersion = 7.2;
@@ -1173,14 +1174,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12BECB6422D178911AD0F95B /* Embed Pods Frameworks */ = {
+		12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,29 +1189,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */ = {
+		470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6A6F826A171035064701B804 /* Embed Pods Frameworks */ = {
+		6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1218,14 +1219,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76688393623171FB1B76F628 /* Copy Pods Resources */ = {
+		76688393623171FB1B76F628 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,14 +1234,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7AFCDCBC5436155B7B71776D /* Copy Pods Resources */ = {
+		7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,14 +1249,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */ = {
+		7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1263,29 +1264,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */ = {
+		9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */ = {
+		9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1293,19 +1294,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */ = {
+		C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1506,6 +1507,7 @@
 		FE0A79E01C8AACEB003DAA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1529,6 +1531,7 @@
 		FE0A79E11C8AACEB003DAA0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1552,7 +1555,7 @@
 		FE0A79FC1C8AAD96003DAA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1577,7 +1580,7 @@
 		FE0A79FD1C8AAD96003DAA0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1603,6 +1606,7 @@
 		FE0A7A151C8AADF7003DAA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1626,6 +1630,7 @@
 		FE0A7A161C8AADF7003DAA0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1649,7 +1654,7 @@
 		FE0A7A2A1C8AAED0003DAA0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1674,7 +1679,7 @@
 		FE0A7A2B1C8AAED0003DAA0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1700,7 +1705,7 @@
 		FE10413A1C8AAFA300C3A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1725,7 +1730,7 @@
 		FE10413B1C8AAFA300C3A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1751,6 +1756,7 @@
 		FE10414C1C8AAFA700C3A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1774,6 +1780,7 @@
 		FE10414D1C8AAFA700C3A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1797,7 +1804,7 @@
 		FE1041631C8AB06C00C3A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1822,7 +1829,7 @@
 		FE1041641C8AB06C00C3A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1848,6 +1855,7 @@
 		FE1041741C8AB0EB00C3A1FD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1871,6 +1879,7 @@
 		FE1041751C8AB0EB00C3A1FD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1904,8 +1913,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1950,8 +1961,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -1980,6 +1993,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A22EB654A20787EC45F8246B /* Pods-OvercoatTests-OSX.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -1992,6 +2006,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5993A7DCAE1E1399C3AE925D /* Pods-OvercoatTests-OSX.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -2004,6 +2019,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E874CAE0B0540B38AEE5F63 /* Pods-OvercoatTests-iOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2011,6 +2027,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -2018,6 +2035,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0ECAE52B40F744AF5804C71 /* Pods-OvercoatTests-iOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2025,6 +2043,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -2033,6 +2052,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A02BF32FDE16A406A4CCBA8F /* Pods-OvercoatTests-tvOS.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
@@ -2046,6 +2066,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE7D4B58A080849176995E55 /* Pods-OvercoatTests-tvOS.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
@@ -2059,6 +2080,7 @@
 		FEEEF5CB1C8AA9B0003BB99E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2082,6 +2104,7 @@
 		FEEEF5CC1C8AA9B0003BB99E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -2105,7 +2128,7 @@
 		FEEEF5ED1C8AAAA8003BB99E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -2130,7 +2153,7 @@
 		FEEEF5EE1C8AAAA8003BB99E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;

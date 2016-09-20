@@ -1,9 +1,9 @@
 XC_WORKSPACE=Overcoat.xcworkspace
 XCODE_PROJ=Overcoat.xcodeproj
 
-OSX_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
-IOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
-TVOS_SCHEME_XCTOOL_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS -sdk appletvsimulator
+OSX_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
+IOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
+TVOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS -sdk appletvsimulator
 
 CARTHAGE_PLATFORMS=Mac,iOS
 CARTHAGE_FLAGS:=--platform $(CARTHAGE_PLATFORMS)
@@ -12,43 +12,30 @@ POD_TRUNK_PUSH_FLAGS=--verbose
 
 test: install-pod clean build-tests run-tests
 
-test-osx: install-pod clean build-tests-osx run-tests-osx
+test-osx: install-pod clean run-tests-osx
 
-test-ios: install-pod clean build-tests-ios run-tests-ios
+test-ios: install-pod clean run-tests-ios
 
-test-tvos: install-pod clean build-tests-tvos run-tests-tvos
-
-# Build Tests
+test-tvos: install-pod clean run-tests-tvos
 
 clean:
 	xcodebuild -project $(XCODE_PROJ) -alltargets clean
 
 install-pod:
-	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install
-
-build-tests-osx:
-	xctool $(OSX_SCHEME_XCTOOL_FLAGS) build-tests
-
-build-tests-ios:
-	xctool $(IOS_SCHEME_XCTOOL_FLAGS) build-tests
-
-build-tests-tvos:
-	xctool $(TVOS_SCHEME_XCTOOL_FLAGS) build-tests
+	COCOAPODS_DISABLE_DETERMINISTIC_UUIDS=YES pod install --repo-update
 
 # Run Tests
 
 run-tests-osx:
-	xctool $(OSX_SCHEME_XCTOOL_FLAGS) run-tests
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test | xcpretty
 
 run-tests-ios:
-	xctool $(IOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk iphonesimulator
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test | xcpretty
 
 run-tests-tvos:
-	xctool $(TVOS_SCHEME_XCTOOL_FLAGS) run-tests -test-sdk appletvsimulator
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test | xcpretty
 
 # Intetfaces
-
-build-tests: build-tests-osx build-tests-ios build-tests-tvos
 
 run-tests: run-tests-osx run-tests-ios run-tests-tvos
 
