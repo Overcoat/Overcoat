@@ -2,7 +2,8 @@ language: objective-c
 osx_image: xcode8
 
 install:
-  - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
+  - gem install cocoapods --pre 
+  - gem install xcpretty
 
 script: make test-osx test-ios #test-tvos
 

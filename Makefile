@@ -27,13 +27,13 @@ install-pod:
 # Run Tests
 
 run-tests-osx:
-	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test
+	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test | xcpretty
 
 run-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test | xcpretty
 
 run-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test | xcpretty
 
 # Intetfaces
 
