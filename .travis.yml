@@ -2,8 +2,8 @@ language: objective-c
 osx_image: xcode7.3
 
 install:
-  - gem list cocoapods | grep ^cocoapods | awk '{print $1'} | xargs gem uninstall --all
-  - gem install cocoapods --pre
+  - gem install cocoapods --pre 
+  - gem install xcpretty
 
 script: make test-osx test-ios #test-tvos
 
