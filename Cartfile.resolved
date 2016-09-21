@@ -1,6 +1,5 @@
 github "AFNetworking/AFNetworking" "3.1.0"
 github "Mantle/Mantle" "2.0.7"
 github "mxcl/PromiseKit" "3.4.4"
-github "antitypical/Result" "2.0.0"
-github "Mantle/MTLManagedObjectAdapter" "9629d7c1f6b4710eb2dbcfb6f401e20d7fe8871b"
-github "ReactiveCocoa/ReactiveCocoa" "v4.1.0"
+github "ReactiveCocoa/ReactiveCocoa" "v2.5"
+github "Mantle/MTLManagedObjectAdapter" "1.0"
