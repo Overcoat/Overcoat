@@ -3,6 +3,8 @@
 [![Build Status](https://travis-ci.org/Overcoat/Overcoat.svg)](https://travis-ci.org/Overcoat/Overcoat)
 [![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Overcoat.svg)](https://cocoapods.org/pods/Overcoat)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg) 
+![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X%20-lightgrey.svg)
 
 ### We are finding maintainers, contact @sodastsai :)
 
@@ -42,6 +44,12 @@ Add the following to your `Podfile` and run `$ pod install`.
 pod 'Overcoat', '~> 4.0.0-beta.1'
 ```
 
+For Swift3 users:
+
+``` ruby
+pod 'Overcoat', :git => 'https://github.com/Overcoat/Overcoat.git', :branch => 'feature/Swift3'
+```
+
 If you don't have CocoaPods installed or integrated into your project,
 you can learn how to do so [here](http://cocoapods.org).
 
@@ -51,6 +59,12 @@ Add the following to your `Cartfile` and run `$ carthage update`.
 
 ```
 github "Overcoat/Overcoat" "4.0.0-beta.1"
+```
+
+For Swift3 users:
+
+``` ruby
+github "Overcoat/Overcoat" "feature/Swift3"
 ```
 
 If you don't have Carthage installed or integrated into your project,
