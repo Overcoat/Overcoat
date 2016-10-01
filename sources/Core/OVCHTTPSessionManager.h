@@ -74,11 +74,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `GET` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
@@ -87,15 +87,34 @@ NS_ASSUME_NONNULL_BEGIN
                                 parameters:(OVC_NULLABLE id)parameters
                                 completion:(OVC_NULLABLE void(^)
                                             (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
-                                             NSError * OVC__NULLABLE error))completion;
+                                             NSError * OVC__NULLABLE error))completion DEPRECATED_ATTRIBUTE;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `GET` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ @param downloadProgress A block object to be executed when the download progress is updated. Note this block is called on the session queue, not the main queue.
+ @param completion A block to be executed when the request finishes.
+ */
+- (OVC_NULLABLE NSURLSessionDataTask *)GET:(NSString *)URLString
+                                parameters:(OVC_NULLABLE id)parameters
+                                  progress:(OVC_NULLABLE void(^)(NSProgress *downloadProgress))downloadProgress
+                                completion:(OVC_NULLABLE void(^)
+                                            (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                             NSError * OVC__NULLABLE error))completion;
+
+/**
+ Creates and runs an `NSURLSessionDataTask` with a `HEAD` request.
+
+ If the request completes successfully, the `response` parameter of the completion block contains a
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
@@ -108,11 +127,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `POST` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
@@ -121,15 +140,15 @@ NS_ASSUME_NONNULL_BEGIN
                                  parameters:(OVC_NULLABLE id)parameters
                                  completion:(OVC_NULLABLE void(^)
                                              (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
-                                              NSError * OVC__NULLABLE error))completion;
+                                              NSError * OVC__NULLABLE error))completion DEPRECATED_ATTRIBUTE;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a multipart `POST` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param block A block that takes a single argument and appends data to the HTTP body. The block
@@ -141,15 +160,37 @@ NS_ASSUME_NONNULL_BEGIN
                   constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block
                                  completion:(OVC_NULLABLE void(^)
                                              (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
+                                              NSError * OVC__NULLABLE error))completion DEPRECATED_ATTRIBUTE;
+
+/**
+ Creates and runs an `NSURLSessionDataTask` with a multipart `POST` request.
+
+ If the request completes successfully, the `response` parameter of the completion block contains a
+ `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
+ contains information about the failure.
+
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ @param block A block that takes a single argument and appends data to the HTTP body. The block
+ argument is an object adopting the `AFMultipartFormData` protocol.
+ @param uploadProgress A block object to be executed when the upload progress is updated. Note this block is called on the session queue, not the main queue.
+ @param completion A block to be executed when the request finishes.
+ */
+- (OVC_NULLABLE NSURLSessionDataTask *)POST:(NSString *)URLString
+                                 parameters:(OVC_NULLABLE id)parameters
+                  constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block
+                                   progress:(OVC_NULLABLE void(^)(NSProgress *uploadProgress))uploadProgress
+                                 completion:(OVC_NULLABLE void(^)
+                                             (OVCGenericType(ResponseType, OVCResponse *) OVC__NULLABLE response,
                                               NSError * OVC__NULLABLE error))completion;
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `PUT` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
@@ -162,11 +203,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `PATCH` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
@@ -179,11 +220,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 /**
  Creates and runs an `NSURLSessionDataTask` with a `DELETE` request.
- 
+
  If the request completes successfully, the `response` parameter of the completion block contains a
  `OVCResponse` object, and the `error` parameter is `nil`. If the request fails, the error parameter
  contains information about the failure.
- 
+
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
  @param completion A block to be executed when the request finishes.
