@@ -79,12 +79,15 @@
     
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[self.client rac_GET:@"model/42" parameters:nil] subscribeNext:^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
@@ -105,12 +108,15 @@
     
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[self.client rac_GET:@"model/42" parameters:nil] subscribeError:^(NSError *e) {
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     OVCResponse *response = error.ovc_response;
@@ -161,12 +167,15 @@
     
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeNext:^(OVCResponse *r) {
         response = r;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertTrue([response.result isKindOfClass:[OVCTestModel class]], @"should return a test model");
@@ -187,12 +196,15 @@
     
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [[self.client rac_POST:@"models" parameters:@{@"name": @"Iron Man"}] subscribeError:^(NSError *e) {
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     OVCResponse *response = error.ovc_response;

@@ -90,13 +90,16 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNil(error, @"should not return an error");
@@ -122,12 +125,15 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client GET:@"model_with_custom_envelop/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNil(error, @"should not return an error");

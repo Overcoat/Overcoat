@@ -181,6 +181,20 @@
 
 - (NSURLSessionDataTask *)POST:(NSString *)URLString
                     parameters:(id)parameters
+                      progress:(void (^)(NSProgress *uploadProgress))uploadProgress
+                    completion:(void (^)(OVCResponse *, NSError *))completion {
+    NSURLSessionDataTask *task = [self _dataTaskWithHTTPMethod:@"POST"
+                                                     URLString:URLString
+                                                    parameters:parameters
+                                                uploadProgress:uploadProgress
+                                              downloadProgress:nil
+                                                    completion:completion];
+    [task resume];
+    return task;
+}
+
+- (NSURLSessionDataTask *)POST:(NSString *)URLString
+                    parameters:(id)parameters
      constructingBodyWithBlock:(void (^)(id<AFMultipartFormData> formData))block
                       progress:(void (^)(NSProgress *uploadProgress))uploadProgress
                     completion:(void (^)(OVCResponse *, NSError *))completion {
