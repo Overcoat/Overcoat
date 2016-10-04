@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.9'
 
   s.dependency 'Overcoat', "~> #{s.version.to_s}"
-  s.dependency 'ReactiveCocoa', '~> 2.4'
+  s.dependency 'ReactiveObjC', '~> 1.0.1'
 
   s.source_files = 'sources/ReactiveCocoa/*.{h,m}'
   s.header_dir = 'OvercoatReactiveCocoa'
