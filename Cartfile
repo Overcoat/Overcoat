@@ -1,6 +1,6 @@
 github "AFNetworking/AFNetworking" ~> 3.0
 github "Mantle/Mantle" ~> 2.0
 
-github "Mantle/MTLManagedObjectAdapter" "master"
+github "Mantle/MTLManagedObjectAdapter" ~> 1.0
 github "mxcl/PromiseKit" == 3.4.4
-github "ReactiveCocoa/ReactiveCocoa" ~> 4.0
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4
