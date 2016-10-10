@@ -91,11 +91,14 @@
     OVCResponse OVCGenerics(NSArray<OVCManagedTestModel *> *) * __block response = nil;
     NSError * __block error = nil;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client GET:@"models" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
+#pragma clang diagnostic pop
 
     [self waitForExpectationsWithTimeout:1 handler:nil];
 
