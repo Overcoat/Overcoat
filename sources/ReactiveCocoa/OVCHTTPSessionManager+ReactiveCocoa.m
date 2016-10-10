@@ -180,12 +180,12 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block {
                                               }
                                             completion:^(id response, NSError *error) {
                                                 if (!error) {
-                                                    [progress sendCompleted];
                                                     [subscriber sendNext:response];
                                                     [subscriber sendCompleted];
+                                                    [progress sendCompleted];
                                                 } else {
-                                                    [progress sendError:error];
                                                     [subscriber sendError:error];
+                                                    [progress sendError:error];
                                                 }
                                             }];
 
@@ -208,12 +208,12 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block {
                                                }
                                              completion:^(id response, NSError *error) {
                                                  if (!error) {
-                                                     [progress sendCompleted];
                                                      [subscriber sendNext:response];
                                                      [subscriber sendCompleted];
+                                                     [progress sendCompleted];
                                                  } else {
-                                                     [progress sendError:error];
                                                      [subscriber sendError:error];
+                                                     [progress sendError:error];
                                                  }
                                              }];
 
@@ -237,12 +237,12 @@ constructingBodyWithBlock:(void (^)(id <AFMultipartFormData> formData))block
                                                }
                                              completion:^(id response, NSError *error) {
                                                  if (!error) {
-                                                     [progress sendCompleted];
                                                      [subscriber sendNext:response];
                                                      [subscriber sendCompleted];
+                                                     [progress sendCompleted];
                                                  } else {
-                                                     [progress sendError:error];
                                                      [subscriber sendError:error];
+                                                     [progress sendError:error];
                                                  }
                                              }];
 
