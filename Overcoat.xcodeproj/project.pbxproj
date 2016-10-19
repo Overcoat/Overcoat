@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6061C8AAC7F003BB99E /* Result.framework */; };
-		37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */; };
+		3FF411571DB812630001B612 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF411561DB812630001B612 /* ReactiveObjC.framework */; };
+		3FF411581DB812690001B612 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF411541DB812580001B612 /* ReactiveObjC.framework */; };
 		7F04FFD59855694E0C09888F /* Pods_OvercoatTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D771E630FD6E31EBCD6BA7B /* Pods_OvercoatTests_OSX.framework */; };
 		B318DCE7C71E201814131CC5 /* Pods_OvercoatTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F17E5C7426B15896D263941 /* Pods_OvercoatTests_iOS.framework */; };
 		BB55DCD3903B96F4CFC59FC9 /* Pods_OvercoatTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8495121DDC0CBDFF6053EC /* Pods_OvercoatTests_tvOS.framework */; };
@@ -50,8 +50,6 @@
 		FE1041531C8AAFCF00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B61C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE1041541C8AAFCF00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5B71C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
 		FE1041551C8AAFCF00C3A1FD /* OvercoatReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B81C899E5C003BB99E /* OvercoatReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE1041561C8AAFDB00C3A1FD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */; };
-		FE1041571C8AAFDE00C3A1FD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF60B1C8AAC94003BB99E /* Result.framework */; };
 		FE1041651C8AB09900C3A1FD /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5BA1C899E5C003BB99E /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE1041661C8AB09900C3A1FD /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5BB1C899E5C003BB99E /* OVCSocialRequestSerializer.m */; };
 		FE1041671C8AB09900C3A1FD /* OvercoatSocial.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5BC1C899E5C003BB99E /* OvercoatSocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -198,6 +196,8 @@
 /* Begin PBXFileReference section */
 		3B8495121DDC0CBDFF6053EC /* Pods_OvercoatTests_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F17E5C7426B15896D263941 /* Pods_OvercoatTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF411541DB812580001B612 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/iOS/ReactiveObjC.framework; sourceTree = "<group>"; };
+		3FF411561DB812630001B612 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/Mac/ReactiveObjC.framework; sourceTree = "<group>"; };
 		4D771E630FD6E31EBCD6BA7B /* Pods_OvercoatTests_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5993A7DCAE1E1399C3AE925D /* Pods-OvercoatTests-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvercoatTests-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX.release.xcconfig"; sourceTree = "<group>"; };
 		7E874CAE0B0540B38AEE5F63 /* Pods-OvercoatTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvercoatTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,13 +282,9 @@
 		FEEEF6021C8AAC7F003BB99E /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/iOS/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
 		FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/iOS/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
 		FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
-		FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		FEEEF6061C8AAC7F003BB99E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		FEEEF6071C8AAC94003BB99E /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/Mac/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
 		FEEEF6081C8AAC94003BB99E /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/Mac/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
 		FEEEF6091C8AAC94003BB99E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
-		FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		FEEEF60B1C8AAC94003BB99E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,8 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1041321C8AAFA300C3A1FD /* Overcoat.framework in Frameworks */,
-				37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */,
-				37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */,
+				3FF411581DB812690001B612 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1041441C8AAFA700C3A1FD /* Overcoat.framework in Frameworks */,
-				FE1041561C8AAFDB00C3A1FD /* ReactiveCocoa.framework in Frameworks */,
-				FE1041571C8AAFDE00C3A1FD /* Result.framework in Frameworks */,
+				3FF411571DB812630001B612 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,8 +595,7 @@
 				FEEEF6071C8AAC94003BB99E /* MTLManagedObjectAdapter.framework */,
 				FEEEF6081C8AAC94003BB99E /* OMGHTTPURLRQ.framework */,
 				FEEEF6091C8AAC94003BB99E /* PromiseKit.framework */,
-				FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */,
-				FEEEF60B1C8AAC94003BB99E /* Result.framework */,
+				3FF411561DB812630001B612 /* ReactiveObjC.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
@@ -624,8 +617,7 @@
 				FEEEF6021C8AAC7F003BB99E /* MTLManagedObjectAdapter.framework */,
 				FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */,
 				FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */,
-				FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */,
-				FEEEF6061C8AAC7F003BB99E /* Result.framework */,
+				3FF411541DB812580001B612 /* ReactiveObjC.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -898,12 +890,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF50E1C898D6C003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-OSX" */;
 			buildPhases = (
-				C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */,
+				C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */,
 				FEEEF5021C898D6C003BB99E /* Sources */,
 				FEEEF5031C898D6C003BB99E /* Frameworks */,
 				FEEEF5041C898D6C003BB99E /* Resources */,
-				7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */,
-				76688393623171FB1B76F628 /* Copy Pods Resources */,
+				7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */,
+				76688393623171FB1B76F628 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -918,12 +910,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF5721C8995DA003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-iOS" */;
 			buildPhases = (
-				9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */,
+				9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */,
 				FEEEF5661C8995DA003BB99E /* Sources */,
 				FEEEF5671C8995DA003BB99E /* Frameworks */,
 				FEEEF5681C8995DA003BB99E /* Resources */,
-				6A6F826A171035064701B804 /* Embed Pods Frameworks */,
-				7AFCDCBC5436155B7B71776D /* Copy Pods Resources */,
+				6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */,
+				7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -938,12 +930,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FEEEF58B1C8996F4003BB99E /* Build configuration list for PBXNativeTarget "OvercoatTests-tvOS" */;
 			buildPhases = (
-				470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */,
+				470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */,
 				FEEEF5821C8996F4003BB99E /* Sources */,
 				FEEEF5831C8996F4003BB99E /* Frameworks */,
 				FEEEF5841C8996F4003BB99E /* Resources */,
-				12BECB6422D178911AD0F95B /* Embed Pods Frameworks */,
-				9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */,
+				12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */,
+				9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1173,14 +1165,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12BECB6422D178911AD0F95B /* Embed Pods Frameworks */ = {
+		12BECB6422D178911AD0F95B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1188,29 +1180,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		470C3723B078BA9C49DBC84D /* Check Pods Manifest.lock */ = {
+		470C3723B078BA9C49DBC84D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		6A6F826A171035064701B804 /* Embed Pods Frameworks */ = {
+		6A6F826A171035064701B804 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1218,14 +1210,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		76688393623171FB1B76F628 /* Copy Pods Resources */ = {
+		76688393623171FB1B76F628 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1233,14 +1225,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7AFCDCBC5436155B7B71776D /* Copy Pods Resources */ = {
+		7AFCDCBC5436155B7B71776D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1248,14 +1240,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7FDD896C2B4B034E9B1BE6D9 /* Embed Pods Frameworks */ = {
+		7FDD896C2B4B034E9B1BE6D9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1263,29 +1255,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9228A00C647CB2BD14A852C3 /* Check Pods Manifest.lock */ = {
+		9228A00C647CB2BD14A852C3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		9BD8B8BDA9D5A5311EC3B54D /* Copy Pods Resources */ = {
+		9BD8B8BDA9D5A5311EC3B54D /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1293,19 +1285,19 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-OvercoatTests-tvOS/Pods-OvercoatTests-tvOS-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C5F3E8DC657EFE2628D8B22E /* Check Pods Manifest.lock */ = {
+		C5F3E8DC657EFE2628D8B22E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
