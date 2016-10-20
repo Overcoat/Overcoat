@@ -83,13 +83,16 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNil(error, @"should not return an error");
@@ -113,13 +116,16 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client GET:@"model/42" parameters:nil completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNotNil(error, @"should return an error");
@@ -173,11 +179,14 @@
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client POST:@"models" parameters:@{@"name": @"Iron Man"} completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
+#pragma clang diagnostic pop
 
     [self waitForExpectationsWithTimeout:1 handler:nil];
 
@@ -203,13 +212,16 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client POST:@"models" parameters:@{@"name": @"Iron Man"} completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNil(error, @"should not return an error");
@@ -231,13 +243,16 @@
     XCTestExpectation *completed = [self expectationWithDescription:@"completed"];
     OVCResponse * __block response = nil;
     NSError * __block error = nil;
-    
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
     [self.client POST:@"models" parameters:@{@"name": @"Iron Man"} completion:^(OVCResponse *r, NSError *e) {
         response = r;
         error = e;
         [completed fulfill];
     }];
-    
+#pragma clang diagnostic pop
+
     [self waitForExpectationsWithTimeout:1 handler:nil];
     
     XCTAssertNotNil(error, @"should return an error");

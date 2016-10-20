@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6061C8AAC7F003BB99E /* Result.framework */; };
-		37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */; };
+		3FF411571DB812630001B612 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF411561DB812630001B612 /* ReactiveObjC.framework */; };
+		3FF411581DB812690001B612 /* ReactiveObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FF411541DB812580001B612 /* ReactiveObjC.framework */; };
 		7F04FFD59855694E0C09888F /* Pods_OvercoatTests_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D771E630FD6E31EBCD6BA7B /* Pods_OvercoatTests_OSX.framework */; };
 		B318DCE7C71E201814131CC5 /* Pods_OvercoatTests_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F17E5C7426B15896D263941 /* Pods_OvercoatTests_iOS.framework */; };
 		BB55DCD3903B96F4CFC59FC9 /* Pods_OvercoatTests_tvOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B8495121DDC0CBDFF6053EC /* Pods_OvercoatTests_tvOS.framework */; };
@@ -50,8 +50,6 @@
 		FE1041531C8AAFCF00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B61C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE1041541C8AAFCF00C3A1FD /* OVCHTTPSessionManager+ReactiveCocoa.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5B71C899E5C003BB99E /* OVCHTTPSessionManager+ReactiveCocoa.m */; };
 		FE1041551C8AAFCF00C3A1FD /* OvercoatReactiveCocoa.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5B81C899E5C003BB99E /* OvercoatReactiveCocoa.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FE1041561C8AAFDB00C3A1FD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */; };
-		FE1041571C8AAFDE00C3A1FD /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEEF60B1C8AAC94003BB99E /* Result.framework */; };
 		FE1041651C8AB09900C3A1FD /* OVCSocialRequestSerializer.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5BA1C899E5C003BB99E /* OVCSocialRequestSerializer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE1041661C8AB09900C3A1FD /* OVCSocialRequestSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEEF5BB1C899E5C003BB99E /* OVCSocialRequestSerializer.m */; };
 		FE1041671C8AB09900C3A1FD /* OvercoatSocial.h in Headers */ = {isa = PBXBuildFile; fileRef = FEEEF5BC1C899E5C003BB99E /* OvercoatSocial.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -198,6 +196,8 @@
 /* Begin PBXFileReference section */
 		3B8495121DDC0CBDFF6053EC /* Pods_OvercoatTests_tvOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_tvOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F17E5C7426B15896D263941 /* Pods_OvercoatTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FF411541DB812580001B612 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/iOS/ReactiveObjC.framework; sourceTree = "<group>"; };
+		3FF411561DB812630001B612 /* ReactiveObjC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveObjC.framework; path = Carthage/Build/Mac/ReactiveObjC.framework; sourceTree = "<group>"; };
 		4D771E630FD6E31EBCD6BA7B /* Pods_OvercoatTests_OSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OvercoatTests_OSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5993A7DCAE1E1399C3AE925D /* Pods-OvercoatTests-OSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvercoatTests-OSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-OvercoatTests-OSX/Pods-OvercoatTests-OSX.release.xcconfig"; sourceTree = "<group>"; };
 		7E874CAE0B0540B38AEE5F63 /* Pods-OvercoatTests-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OvercoatTests-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OvercoatTests-iOS/Pods-OvercoatTests-iOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -282,13 +282,9 @@
 		FEEEF6021C8AAC7F003BB99E /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/iOS/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
 		FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/iOS/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
 		FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
-		FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		FEEEF6061C8AAC7F003BB99E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
 		FEEEF6071C8AAC94003BB99E /* MTLManagedObjectAdapter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MTLManagedObjectAdapter.framework; path = Carthage/Build/Mac/MTLManagedObjectAdapter.framework; sourceTree = "<group>"; };
 		FEEEF6081C8AAC94003BB99E /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/Mac/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
 		FEEEF6091C8AAC94003BB99E /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/Mac/PromiseKit.framework; sourceTree = "<group>"; };
-		FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = "<group>"; };
-		FEEEF60B1C8AAC94003BB99E /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,8 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1041321C8AAFA300C3A1FD /* Overcoat.framework in Frameworks */,
-				37EAA11D1CBDA9A800549BBE /* Result.framework in Frameworks */,
-				37EAA11E1CBDA9B300549BBE /* ReactiveCocoa.framework in Frameworks */,
+				3FF411581DB812690001B612 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,8 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1041441C8AAFA700C3A1FD /* Overcoat.framework in Frameworks */,
-				FE1041561C8AAFDB00C3A1FD /* ReactiveCocoa.framework in Frameworks */,
-				FE1041571C8AAFDE00C3A1FD /* Result.framework in Frameworks */,
+				3FF411571DB812630001B612 /* ReactiveObjC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -601,8 +595,7 @@
 				FEEEF6071C8AAC94003BB99E /* MTLManagedObjectAdapter.framework */,
 				FEEEF6081C8AAC94003BB99E /* OMGHTTPURLRQ.framework */,
 				FEEEF6091C8AAC94003BB99E /* PromiseKit.framework */,
-				FEEEF60A1C8AAC94003BB99E /* ReactiveCocoa.framework */,
-				FEEEF60B1C8AAC94003BB99E /* Result.framework */,
+				3FF411561DB812630001B612 /* ReactiveObjC.framework */,
 			);
 			name = "OS X";
 			sourceTree = "<group>";
@@ -624,8 +617,7 @@
 				FEEEF6021C8AAC7F003BB99E /* MTLManagedObjectAdapter.framework */,
 				FEEEF6031C8AAC7F003BB99E /* OMGHTTPURLRQ.framework */,
 				FEEEF6041C8AAC7F003BB99E /* PromiseKit.framework */,
-				FEEEF6051C8AAC7F003BB99E /* ReactiveCocoa.framework */,
-				FEEEF6061C8AAC7F003BB99E /* Result.framework */,
+				3FF411541DB812580001B612 /* ReactiveObjC.framework */,
 			);
 			name = iOS;
 			sourceTree = "<group>";
@@ -1560,7 +1552,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1585,7 +1576,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1659,7 +1649,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1684,7 +1673,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1710,7 +1698,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1735,7 +1722,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1809,7 +1795,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1834,7 +1819,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1923,6 +1907,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1971,6 +1956,7 @@
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1993,7 +1979,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A22EB654A20787EC45F8246B /* Pods-OvercoatTests-OSX.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -2006,7 +1991,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5993A7DCAE1E1399C3AE925D /* Pods-OvercoatTests-OSX.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -2019,7 +2003,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E874CAE0B0540B38AEE5F63 /* Pods-OvercoatTests-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2035,7 +2018,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0ECAE52B40F744AF5804C71 /* Pods-OvercoatTests-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2052,7 +2034,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A02BF32FDE16A406A4CCBA8F /* Pods-OvercoatTests-tvOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
@@ -2066,7 +2047,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE7D4B58A080849176995E55 /* Pods-OvercoatTests-tvOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
@@ -2133,7 +2113,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -2158,7 +2137,6 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

@@ -24,6 +24,7 @@
 #import <Overcoat/OVCUtilities.h>
 
 @class RACSignal;
+@protocol RACSubscriber;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -34,10 +35,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
+ @param downloadProgress Subscribes `downloadProgress` to `next` events with `NSProgress` object,
+ to be sent on each downloading object update and completes then, send error on downloading error.
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_GET:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (RACSignal *)rac_GET:(NSString *)URLString
+            parameters:(OVC_NULLABLE id)parameters
+              progress:(OVC_NULLABLE id<RACSubscriber>)downloadProgress;
 
 /**
  Enqueues a `HEAD` request.
@@ -54,10 +59,14 @@ NS_ASSUME_NONNULL_BEGIN
 
  @param URLString The URL string used to create the request URL.
  @param parameters The parameters to be encoded according to the client request serializer.
+ @param uploadProgress Subscribes `uploadProgress` to `next` events with `NSProgress` object,
+ to be sent on each uploading object update and completes then, send error on uploading error.
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
-- (RACSignal *)rac_POST:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+- (RACSignal *)rac_POST:(NSString *)URLString
+             parameters:(OVC_NULLABLE id)parameters
+               progress:(OVC_NULLABLE id<RACSubscriber>)uploadProgress;
 
 /**
  Enqueues a multipart `POST` request.
@@ -66,12 +75,15 @@ NS_ASSUME_NONNULL_BEGIN
  @param parameters The parameters to be encoded according to the client request serializer.
  @param block A block that takes a single argument and appends data to the HTTP body. The block
  argument is an object adopting the `AFMultipartFormData` protocol.
+ @param uploadProgress Subscribes `uploadProgress` to `next` events with `NSProgress` object,
+ to be sent on each uploading object update and completes then, send error on uploading error.
 
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_POST:(NSString *)URLString
              parameters:(OVC_NULLABLE id)parameters
-constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData))block;
+constructingBodyWithBlock:(void(^)(id<AFMultipartFormData> formData))block
+               progress:(OVC_NULLABLE id<RACSubscriber>)uploadProgress;
 
 /**
  Enqueues a `PUT` request.
@@ -102,6 +114,48 @@ constructingBodyWithBlock:(OVC_NULLABLE void(^)(id<AFMultipartFormData> formData
  @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
  */
 - (RACSignal *)rac_DELETE:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters;
+
+@end
+
+#pragma mark - Deprecated Methods
+
+@interface OVCHTTPSessionManager (ReactiveCocoa_Deprecated)
+
+/**
+ Enqueues a `GET` request.
+
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+
+ @return A cold signal which sends a `NSProgress` object on each downloading object update
+ and `OVCResponse` when downloading complete on next event and completes, or error otherwise
+ */
+- (RACSignal *)rac_GET:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters OVC_DEPRECATED("Use `rac_GET:parameters:progress:` instead.");
+
+/**
+ Enqueues a `POST` request.
+
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+
+ @return A cold signal which sends a `NSProgress` object on each uploading object update
+ and `OVCResponse` when uploading complete on next event and completes, or error otherwise
+ */
+- (RACSignal *)rac_POST:(NSString *)URLString parameters:(OVC_NULLABLE id)parameters OVC_DEPRECATED("Use `rac_POST:parameters:progress:` instead.");
+
+/**
+ Enqueues a multipart `POST` request.
+
+ @param URLString The URL string used to create the request URL.
+ @param parameters The parameters to be encoded according to the client request serializer.
+ @param block A block that takes a single argument and appends data to the HTTP body. The block
+ argument is an object adopting the `AFMultipartFormData` protocol.
+
+ @return A cold signal which sends a `OVCResponse` on next event and completes, or error otherwise
+ */
+- (RACSignal *)rac_POST:(NSString *)URLString
+             parameters:(OVC_NULLABLE id)parameters
+constructingBodyWithBlock:(void(^)(id<AFMultipartFormData> formData))block OVC_DEPRECATED("Use `rac_POST:parameters:constructingBodyWithBlock:progress:` instead.");
 
 @end
 

@@ -33,9 +33,9 @@ target "OvercoatTests-tvOS" do
 end
 
 post_install do |installer|
-  rca_path = File.join __dir__, 'Pods', 'ReactiveCocoa'
+  rca_path = File.join __dir__, 'Pods', 'ReactiveObjC'
   ['EXTRuntimeExtensions', 'EXTScope', 'metamacros'].each do |header|
-    `grep -rl '"#{header}\\.h"' #{rca_path} | xargs sed -i '' 's/"#{header}\\.h"/<ReactiveCocoa\\/#{header}.h>/g'`
+    `grep -rl '"#{header}\\.h"' #{rca_path} | xargs sed -i '' 's/"#{header}\\.h"/<ReactiveObjC\\/#{header}.h>/g'`
   end
 
   installer.pods_project.targets.each do |target|
