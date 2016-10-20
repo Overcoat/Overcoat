@@ -3,7 +3,9 @@ XCODE_PROJ=Overcoat.xcodeproj
 
 OSX_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-OSX -sdk macosx
 IOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-iOS -sdk iphonesimulator
+IOS_TEST_DESTINATION:=-destination 'platform=iOS Simulator,name=iPhone 7,OS=10.0'
 TVOS_TEST_SCHEME_FLAGS:=-workspace $(XC_WORKSPACE) -scheme OvercoatTests-tvOS -sdk appletvsimulator
+TVOS_TEST_DESTINATION:=-destination 'platform=tvOS Simulator,name=Apple TV 1080p,OS=10.0'
 
 CARTHAGE_PLATFORMS=Mac,iOS
 CARTHAGE_FLAGS:=--platform $(CARTHAGE_PLATFORMS)
@@ -30,10 +32,10 @@ run-tests-osx:
 	xcodebuild $(OSX_TEST_SCHEME_FLAGS) test | xcpretty
 
 run-tests-ios:
-	xcodebuild $(IOS_TEST_SCHEME_FLAGS) test | xcpretty
+	xcodebuild $(IOS_TEST_SCHEME_FLAGS) $(IOS_TEST_DESTINATION) test | xcpretty
 
 run-tests-tvos:
-	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) test | xcpretty
+	xcodebuild $(TVOS_TEST_SCHEME_FLAGS) $(TVOS_TEST_DESTINATION) test | xcpretty
 
 # Intetfaces
 
