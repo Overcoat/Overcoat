@@ -39,15 +39,9 @@ PODS:
     - PromiseKit/CorePromise (~> 4.0)
   - Overcoat+ReactiveCocoa (4.0.0-beta.2):
     - Overcoat (~> 4.0.0-beta.2)
-    - ReactiveCocoa (~> 2.4)
+    - ReactiveObjC (~> 1.0)
   - PromiseKit/CorePromise (4.0.1)
-  - ReactiveCocoa (2.5):
-    - ReactiveCocoa/UI (= 2.5)
-  - ReactiveCocoa/Core (2.5):
-    - ReactiveCocoa/no-arc
-  - ReactiveCocoa/no-arc (2.5)
-  - ReactiveCocoa/UI (2.5):
-    - ReactiveCocoa/Core
+  - ReactiveObjC (1.0.1)
 
 DEPENDENCIES:
   - OHHTTPStubs
@@ -74,10 +68,10 @@ SPEC CHECKSUMS:
   Overcoat: 034cfff81a23d07c8e71a0c91c91666a70740115
   Overcoat+CoreData: b1561512e9686f52692e86d4d3eeb97a1c1d6249
   Overcoat+PromiseKit: 31e6aaa78e16592acbe06444bf240655fe0e0aa2
-  Overcoat+ReactiveCocoa: 5a24bcc11a99ec8251ab1132bd5ca0e112325c4c
+  Overcoat+ReactiveCocoa: 4c673450730e8ddf16cdb7a9f3523fbdec6e56b0
   PromiseKit: ae9e7f97ee758e23f7b9c5e80380a2e78d6338c5
-  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveObjC: 0e618037d7b883b4cebcc8da203e8ed9b69ca2d3
 
-PODFILE CHECKSUM: 7655d284c8e6cebe08c1cbfd0c95a6955588d9c2
+PODFILE CHECKSUM: 917e55393a79c015e486d0f1144e79976faed9b2
 
-COCOAPODS: 1.1.0.rc.2
+COCOAPODS: 1.1.0
