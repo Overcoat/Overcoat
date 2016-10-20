@@ -1979,7 +1979,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A22EB654A20787EC45F8246B /* Pods-OvercoatTests-OSX.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -1992,7 +1991,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5993A7DCAE1E1399C3AE925D /* Pods-OvercoatTests-OSX.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -2005,7 +2003,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E874CAE0B0540B38AEE5F63 /* Pods-OvercoatTests-iOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2021,7 +2018,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A0ECAE52B40F744AF5804C71 /* Pods-OvercoatTests-iOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = sources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
@@ -2038,7 +2034,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A02BF32FDE16A406A4CCBA8F /* Pods-OvercoatTests-tvOS.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
@@ -2052,7 +2047,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CE7D4B58A080849176995E55 /* Pods-OvercoatTests-tvOS.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.overcoat.OvercoatTests-tvOS";
